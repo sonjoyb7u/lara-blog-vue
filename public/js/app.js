@@ -1756,9 +1756,9 @@ function trim(str) {
  *  typeof document -> undefined
  *
  * react-native:
- *  navigator.product -> 'ReactNative'
+ *  navigator.post -> 'ReactNative'
  * nativescript
- *  navigator.product -> 'NativeScript' or 'NS'
+ *  navigator.post -> 'NativeScript' or 'NS'
  */
 function isStandardBrowserEnv() {
   if (typeof navigator !== 'undefined' && (navigator.product === 'ReactNative' ||
@@ -11189,7 +11189,7 @@ function adjustCSS( elem, prop, valueParts, tween ) {
 		while ( maxIterations-- ) {
 
 			// Evaluate and update our best guess (doubling guesses that zero out).
-			// Finish if the scale equals or crosses 1 (making the old*new product non-positive).
+			// Finish if the scale equals or crosses 1 (making the old*new post non-positive).
 			jQuery.style( elem, prop, initialInUnit + unit );
 			if ( ( 1 - scale ) * ( 1 - ( scale = currentValue() / initial || 0.5 ) ) <= 0 ) {
 				maxIterations = 0;
@@ -24429,25 +24429,25 @@ return jQuery;
      * @returns {Array} Returns the slice of `array`.
      * @example
      *
-     * var user = [
+     * var users = [
      *   { 'user': 'barney',  'active': true },
      *   { 'user': 'fred',    'active': false },
      *   { 'user': 'pebbles', 'active': false }
      * ];
      *
-     * _.dropRightWhile(user, function(o) { return !o.active; });
+     * _.dropRightWhile(users, function(o) { return !o.active; });
      * // => objects for ['barney']
      *
      * // The `_.matches` iteratee shorthand.
-     * _.dropRightWhile(user, { 'user': 'pebbles', 'active': false });
+     * _.dropRightWhile(users, { 'user': 'pebbles', 'active': false });
      * // => objects for ['barney', 'fred']
      *
      * // The `_.matchesProperty` iteratee shorthand.
-     * _.dropRightWhile(user, ['active', false]);
+     * _.dropRightWhile(users, ['active', false]);
      * // => objects for ['barney']
      *
      * // The `_.property` iteratee shorthand.
-     * _.dropRightWhile(user, 'active');
+     * _.dropRightWhile(users, 'active');
      * // => objects for ['barney', 'fred', 'pebbles']
      */
     function dropRightWhile(array, predicate) {
@@ -24470,25 +24470,25 @@ return jQuery;
      * @returns {Array} Returns the slice of `array`.
      * @example
      *
-     * var user = [
+     * var users = [
      *   { 'user': 'barney',  'active': false },
      *   { 'user': 'fred',    'active': false },
      *   { 'user': 'pebbles', 'active': true }
      * ];
      *
-     * _.dropWhile(user, function(o) { return !o.active; });
+     * _.dropWhile(users, function(o) { return !o.active; });
      * // => objects for ['pebbles']
      *
      * // The `_.matches` iteratee shorthand.
-     * _.dropWhile(user, { 'user': 'barney', 'active': false });
+     * _.dropWhile(users, { 'user': 'barney', 'active': false });
      * // => objects for ['fred', 'pebbles']
      *
      * // The `_.matchesProperty` iteratee shorthand.
-     * _.dropWhile(user, ['active', false]);
+     * _.dropWhile(users, ['active', false]);
      * // => objects for ['pebbles']
      *
      * // The `_.property` iteratee shorthand.
-     * _.dropWhile(user, 'active');
+     * _.dropWhile(users, 'active');
      * // => objects for ['barney', 'fred', 'pebbles']
      */
     function dropWhile(array, predicate) {
@@ -24552,25 +24552,25 @@ return jQuery;
      * @returns {number} Returns the index of the found element, else `-1`.
      * @example
      *
-     * var user = [
+     * var users = [
      *   { 'user': 'barney',  'active': false },
      *   { 'user': 'fred',    'active': false },
      *   { 'user': 'pebbles', 'active': true }
      * ];
      *
-     * _.findIndex(user, function(o) { return o.user == 'barney'; });
+     * _.findIndex(users, function(o) { return o.user == 'barney'; });
      * // => 0
      *
      * // The `_.matches` iteratee shorthand.
-     * _.findIndex(user, { 'user': 'fred', 'active': false });
+     * _.findIndex(users, { 'user': 'fred', 'active': false });
      * // => 1
      *
      * // The `_.matchesProperty` iteratee shorthand.
-     * _.findIndex(user, ['active', false]);
+     * _.findIndex(users, ['active', false]);
      * // => 0
      *
      * // The `_.property` iteratee shorthand.
-     * _.findIndex(user, 'active');
+     * _.findIndex(users, 'active');
      * // => 2
      */
     function findIndex(array, predicate, fromIndex) {
@@ -24599,25 +24599,25 @@ return jQuery;
      * @returns {number} Returns the index of the found element, else `-1`.
      * @example
      *
-     * var user = [
+     * var users = [
      *   { 'user': 'barney',  'active': true },
      *   { 'user': 'fred',    'active': false },
      *   { 'user': 'pebbles', 'active': false }
      * ];
      *
-     * _.findLastIndex(user, function(o) { return o.user == 'pebbles'; });
+     * _.findLastIndex(users, function(o) { return o.user == 'pebbles'; });
      * // => 2
      *
      * // The `_.matches` iteratee shorthand.
-     * _.findLastIndex(user, { 'user': 'barney', 'active': true });
+     * _.findLastIndex(users, { 'user': 'barney', 'active': true });
      * // => 0
      *
      * // The `_.matchesProperty` iteratee shorthand.
-     * _.findLastIndex(user, ['active', false]);
+     * _.findLastIndex(users, ['active', false]);
      * // => 2
      *
      * // The `_.property` iteratee shorthand.
-     * _.findLastIndex(user, 'active');
+     * _.findLastIndex(users, 'active');
      * // => 0
      */
     function findLastIndex(array, predicate, fromIndex) {
@@ -25550,25 +25550,25 @@ return jQuery;
      * @returns {Array} Returns the slice of `array`.
      * @example
      *
-     * var user = [
+     * var users = [
      *   { 'user': 'barney',  'active': true },
      *   { 'user': 'fred',    'active': false },
      *   { 'user': 'pebbles', 'active': false }
      * ];
      *
-     * _.takeRightWhile(user, function(o) { return !o.active; });
+     * _.takeRightWhile(users, function(o) { return !o.active; });
      * // => objects for ['fred', 'pebbles']
      *
      * // The `_.matches` iteratee shorthand.
-     * _.takeRightWhile(user, { 'user': 'pebbles', 'active': false });
+     * _.takeRightWhile(users, { 'user': 'pebbles', 'active': false });
      * // => objects for ['pebbles']
      *
      * // The `_.matchesProperty` iteratee shorthand.
-     * _.takeRightWhile(user, ['active', false]);
+     * _.takeRightWhile(users, ['active', false]);
      * // => objects for ['fred', 'pebbles']
      *
      * // The `_.property` iteratee shorthand.
-     * _.takeRightWhile(user, 'active');
+     * _.takeRightWhile(users, 'active');
      * // => []
      */
     function takeRightWhile(array, predicate) {
@@ -25591,25 +25591,25 @@ return jQuery;
      * @returns {Array} Returns the slice of `array`.
      * @example
      *
-     * var user = [
+     * var users = [
      *   { 'user': 'barney',  'active': false },
      *   { 'user': 'fred',    'active': false },
      *   { 'user': 'pebbles', 'active': true }
      * ];
      *
-     * _.takeWhile(user, function(o) { return !o.active; });
+     * _.takeWhile(users, function(o) { return !o.active; });
      * // => objects for ['barney', 'fred']
      *
      * // The `_.matches` iteratee shorthand.
-     * _.takeWhile(user, { 'user': 'barney', 'active': false });
+     * _.takeWhile(users, { 'user': 'barney', 'active': false });
      * // => objects for ['barney']
      *
      * // The `_.matchesProperty` iteratee shorthand.
-     * _.takeWhile(user, ['active', false]);
+     * _.takeWhile(users, ['active', false]);
      * // => objects for ['barney', 'fred']
      *
      * // The `_.property` iteratee shorthand.
-     * _.takeWhile(user, 'active');
+     * _.takeWhile(users, 'active');
      * // => []
      */
     function takeWhile(array, predicate) {
@@ -26045,14 +26045,14 @@ return jQuery;
      * @returns {Object} Returns the new `lodash` wrapper instance.
      * @example
      *
-     * var user = [
+     * var users = [
      *   { 'user': 'barney',  'age': 36 },
      *   { 'user': 'fred',    'age': 40 },
      *   { 'user': 'pebbles', 'age': 1 }
      * ];
      *
      * var youngest = _
-     *   .chain(user)
+     *   .chain(users)
      *   .sortBy('age')
      *   .map(function(o) {
      *     return o.user + ' is ' + o.age;
@@ -26172,17 +26172,17 @@ return jQuery;
      * @returns {Object} Returns the new `lodash` wrapper instance.
      * @example
      *
-     * var user = [
+     * var users = [
      *   { 'user': 'barney', 'age': 36 },
      *   { 'user': 'fred',   'age': 40 }
      * ];
      *
      * // A sequence without explicit chaining.
-     * _(user).head();
+     * _(users).head();
      * // => { 'user': 'barney', 'age': 36 }
      *
      * // A sequence with explicit chaining.
-     * _(user)
+     * _(users)
      *   .chain()
      *   .head()
      *   .pick('user')
@@ -26433,21 +26433,21 @@ return jQuery;
      * _.every([true, 1, null, 'yes'], Boolean);
      * // => false
      *
-     * var user = [
+     * var users = [
      *   { 'user': 'barney', 'age': 36, 'active': false },
      *   { 'user': 'fred',   'age': 40, 'active': false }
      * ];
      *
      * // The `_.matches` iteratee shorthand.
-     * _.every(user, { 'user': 'barney', 'active': false });
+     * _.every(users, { 'user': 'barney', 'active': false });
      * // => false
      *
      * // The `_.matchesProperty` iteratee shorthand.
-     * _.every(user, ['active', false]);
+     * _.every(users, ['active', false]);
      * // => true
      *
      * // The `_.property` iteratee shorthand.
-     * _.every(user, 'active');
+     * _.every(users, 'active');
      * // => false
      */
     function every(collection, predicate, guard) {
@@ -26475,28 +26475,28 @@ return jQuery;
      * @see _.reject
      * @example
      *
-     * var user = [
+     * var users = [
      *   { 'user': 'barney', 'age': 36, 'active': true },
      *   { 'user': 'fred',   'age': 40, 'active': false }
      * ];
      *
-     * _.filter(user, function(o) { return !o.active; });
+     * _.filter(users, function(o) { return !o.active; });
      * // => objects for ['fred']
      *
      * // The `_.matches` iteratee shorthand.
-     * _.filter(user, { 'age': 36, 'active': true });
+     * _.filter(users, { 'age': 36, 'active': true });
      * // => objects for ['barney']
      *
      * // The `_.matchesProperty` iteratee shorthand.
-     * _.filter(user, ['active', false]);
+     * _.filter(users, ['active', false]);
      * // => objects for ['fred']
      *
      * // The `_.property` iteratee shorthand.
-     * _.filter(user, 'active');
+     * _.filter(users, 'active');
      * // => objects for ['barney']
      *
      * // Combining several predicates using `_.overEvery` or `_.overSome`.
-     * _.filter(user, _.overSome([{ 'age': 36 }, ['age', 40]]));
+     * _.filter(users, _.overSome([{ 'age': 36 }, ['age', 40]]));
      * // => objects for ['fred', 'barney']
      */
     function filter(collection, predicate) {
@@ -26519,25 +26519,25 @@ return jQuery;
      * @returns {*} Returns the matched element, else `undefined`.
      * @example
      *
-     * var user = [
+     * var users = [
      *   { 'user': 'barney',  'age': 36, 'active': true },
      *   { 'user': 'fred',    'age': 40, 'active': false },
      *   { 'user': 'pebbles', 'age': 1,  'active': true }
      * ];
      *
-     * _.find(user, function(o) { return o.age < 40; });
+     * _.find(users, function(o) { return o.age < 40; });
      * // => object for 'barney'
      *
      * // The `_.matches` iteratee shorthand.
-     * _.find(user, { 'age': 1, 'active': true });
+     * _.find(users, { 'age': 1, 'active': true });
      * // => object for 'pebbles'
      *
      * // The `_.matchesProperty` iteratee shorthand.
-     * _.find(user, ['active', false]);
+     * _.find(users, ['active', false]);
      * // => object for 'fred'
      *
      * // The `_.property` iteratee shorthand.
-     * _.find(user, 'active');
+     * _.find(users, 'active');
      * // => object for 'barney'
      */
     var find = createFind(findIndex);
@@ -26871,13 +26871,13 @@ return jQuery;
      * _.map({ 'a': 4, 'b': 8 }, square);
      * // => [16, 64] (iteration order is not guaranteed)
      *
-     * var user = [
+     * var users = [
      *   { 'user': 'barney' },
      *   { 'user': 'fred' }
      * ];
      *
      * // The `_.property` iteratee shorthand.
-     * _.map(user, 'user');
+     * _.map(users, 'user');
      * // => ['barney', 'fred']
      */
     function map(collection, iteratee) {
@@ -26903,7 +26903,7 @@ return jQuery;
      * @returns {Array} Returns the new sorted array.
      * @example
      *
-     * var user = [
+     * var users = [
      *   { 'user': 'fred',   'age': 48 },
      *   { 'user': 'barney', 'age': 34 },
      *   { 'user': 'fred',   'age': 40 },
@@ -26911,7 +26911,7 @@ return jQuery;
      * ];
      *
      * // Sort by `user` in ascending order and by `age` in descending order.
-     * _.orderBy(user, ['user', 'age'], ['asc', 'desc']);
+     * _.orderBy(users, ['user', 'age'], ['asc', 'desc']);
      * // => objects for [['barney', 36], ['barney', 34], ['fred', 48], ['fred', 40]]
      */
     function orderBy(collection, iteratees, orders, guard) {
@@ -26943,25 +26943,25 @@ return jQuery;
      * @returns {Array} Returns the array of grouped elements.
      * @example
      *
-     * var user = [
+     * var users = [
      *   { 'user': 'barney',  'age': 36, 'active': false },
      *   { 'user': 'fred',    'age': 40, 'active': true },
      *   { 'user': 'pebbles', 'age': 1,  'active': false }
      * ];
      *
-     * _.partition(user, function(o) { return o.active; });
+     * _.partition(users, function(o) { return o.active; });
      * // => objects for [['fred'], ['barney', 'pebbles']]
      *
      * // The `_.matches` iteratee shorthand.
-     * _.partition(user, { 'age': 1, 'active': false });
+     * _.partition(users, { 'age': 1, 'active': false });
      * // => objects for [['pebbles'], ['barney', 'fred']]
      *
      * // The `_.matchesProperty` iteratee shorthand.
-     * _.partition(user, ['active', false]);
+     * _.partition(users, ['active', false]);
      * // => objects for [['barney', 'pebbles'], ['fred']]
      *
      * // The `_.property` iteratee shorthand.
-     * _.partition(user, 'active');
+     * _.partition(users, 'active');
      * // => objects for [['fred'], ['barney', 'pebbles']]
      */
     var partition = createAggregator(function(result, value, key) {
@@ -27055,24 +27055,24 @@ return jQuery;
      * @see _.filter
      * @example
      *
-     * var user = [
+     * var users = [
      *   { 'user': 'barney', 'age': 36, 'active': false },
      *   { 'user': 'fred',   'age': 40, 'active': true }
      * ];
      *
-     * _.reject(user, function(o) { return !o.active; });
+     * _.reject(users, function(o) { return !o.active; });
      * // => objects for ['fred']
      *
      * // The `_.matches` iteratee shorthand.
-     * _.reject(user, { 'age': 40, 'active': true });
+     * _.reject(users, { 'age': 40, 'active': true });
      * // => objects for ['barney']
      *
      * // The `_.matchesProperty` iteratee shorthand.
-     * _.reject(user, ['active', false]);
+     * _.reject(users, ['active', false]);
      * // => objects for ['fred']
      *
      * // The `_.property` iteratee shorthand.
-     * _.reject(user, 'active');
+     * _.reject(users, 'active');
      * // => objects for ['barney']
      */
     function reject(collection, predicate) {
@@ -27203,21 +27203,21 @@ return jQuery;
      * _.some([null, 0, 'yes', false], Boolean);
      * // => true
      *
-     * var user = [
+     * var users = [
      *   { 'user': 'barney', 'active': true },
      *   { 'user': 'fred',   'active': false }
      * ];
      *
      * // The `_.matches` iteratee shorthand.
-     * _.some(user, { 'user': 'barney', 'active': false });
+     * _.some(users, { 'user': 'barney', 'active': false });
      * // => false
      *
      * // The `_.matchesProperty` iteratee shorthand.
-     * _.some(user, ['active', false]);
+     * _.some(users, ['active', false]);
      * // => true
      *
      * // The `_.property` iteratee shorthand.
-     * _.some(user, 'active');
+     * _.some(users, 'active');
      * // => true
      */
     function some(collection, predicate, guard) {
@@ -27244,17 +27244,17 @@ return jQuery;
      * @returns {Array} Returns the new sorted array.
      * @example
      *
-     * var user = [
+     * var users = [
      *   { 'user': 'fred',   'age': 48 },
      *   { 'user': 'barney', 'age': 36 },
      *   { 'user': 'fred',   'age': 30 },
      *   { 'user': 'barney', 'age': 34 }
      * ];
      *
-     * _.sortBy(user, [function(o) { return o.user; }]);
+     * _.sortBy(users, [function(o) { return o.user; }]);
      * // => objects for [['barney', 36], ['barney', 34], ['fred', 48], ['fred', 30]]
      *
-     * _.sortBy(user, ['user', 'age']);
+     * _.sortBy(users, ['user', 'age']);
      * // => objects for [['barney', 34], ['barney', 36], ['fred', 30], ['fred', 48]]
      */
     var sortBy = baseRest(function(collection, iteratees) {
@@ -30183,25 +30183,25 @@ return jQuery;
      *  else `undefined`.
      * @example
      *
-     * var user = {
+     * var users = {
      *   'barney':  { 'age': 36, 'active': true },
      *   'fred':    { 'age': 40, 'active': false },
      *   'pebbles': { 'age': 1,  'active': true }
      * };
      *
-     * _.findKey(user, function(o) { return o.age < 40; });
+     * _.findKey(users, function(o) { return o.age < 40; });
      * // => 'barney' (iteration order is not guaranteed)
      *
      * // The `_.matches` iteratee shorthand.
-     * _.findKey(user, { 'age': 1, 'active': true });
+     * _.findKey(users, { 'age': 1, 'active': true });
      * // => 'pebbles'
      *
      * // The `_.matchesProperty` iteratee shorthand.
-     * _.findKey(user, ['active', false]);
+     * _.findKey(users, ['active', false]);
      * // => 'fred'
      *
      * // The `_.property` iteratee shorthand.
-     * _.findKey(user, 'active');
+     * _.findKey(users, 'active');
      * // => 'barney'
      */
     function findKey(object, predicate) {
@@ -30222,25 +30222,25 @@ return jQuery;
      *  else `undefined`.
      * @example
      *
-     * var user = {
+     * var users = {
      *   'barney':  { 'age': 36, 'active': true },
      *   'fred':    { 'age': 40, 'active': false },
      *   'pebbles': { 'age': 1,  'active': true }
      * };
      *
-     * _.findLastKey(user, function(o) { return o.age < 40; });
+     * _.findLastKey(users, function(o) { return o.age < 40; });
      * // => returns 'pebbles' assuming `_.findKey` returns 'barney'
      *
      * // The `_.matches` iteratee shorthand.
-     * _.findLastKey(user, { 'age': 36, 'active': true });
+     * _.findLastKey(users, { 'age': 36, 'active': true });
      * // => 'barney'
      *
      * // The `_.matchesProperty` iteratee shorthand.
-     * _.findLastKey(user, ['active', false]);
+     * _.findLastKey(users, ['active', false]);
      * // => 'fred'
      *
      * // The `_.property` iteratee shorthand.
-     * _.findLastKey(user, 'active');
+     * _.findLastKey(users, 'active');
      * // => 'pebbles'
      */
     function findLastKey(object, predicate) {
@@ -30712,16 +30712,16 @@ return jQuery;
      * @see _.mapKeys
      * @example
      *
-     * var user = {
+     * var users = {
      *   'fred':    { 'user': 'fred',    'age': 40 },
      *   'pebbles': { 'user': 'pebbles', 'age': 1 }
      * };
      *
-     * _.mapValues(user, function(o) { return o.age; });
+     * _.mapValues(users, function(o) { return o.age; });
      * // => { 'fred': 40, 'pebbles': 1 } (iteration order is not guaranteed)
      *
      * // The `_.property` iteratee shorthand.
-     * _.mapValues(user, 'age');
+     * _.mapValues(users, 'age');
      * // => { 'fred': 40, 'pebbles': 1 } (iteration order is not guaranteed)
      */
     function mapValues(object, iteratee) {
@@ -32044,8 +32044,8 @@ return jQuery;
      * // => '<b>&lt;script&gt;</b>'
      *
      * // Use the "evaluate" delimiter to execute JavaScript and generate HTML.
-     * var compiled = _.template('<% _.forEach(user, function(user) { %><li><%- user %></li><% }); %>');
-     * compiled({ 'user': ['fred', 'barney'] });
+     * var compiled = _.template('<% _.forEach(users, function(user) { %><li><%- user %></li><% }); %>');
+     * compiled({ 'users': ['fred', 'barney'] });
      * // => '<li>fred</li><li>barney</li>'
      *
      * // Use the internal `print` function in "evaluate" delimiters.
@@ -32065,9 +32065,9 @@ return jQuery;
      * // => '<%- value %>'
      *
      * // Use the `imports` option to import `jQuery` as `jq`.
-     * var text = '<% jq.each(user, function(user) { %><li><%- user %></li><% }); %>';
+     * var text = '<% jq.each(users, function(user) { %><li><%- user %></li><% }); %>';
      * var compiled = _.template(text, { 'imports': { 'jq': jQuery } });
-     * compiled({ 'user': ['fred', 'barney'] });
+     * compiled({ 'users': ['fred', 'barney'] });
      * // => '<li>fred</li><li>barney</li>'
      *
      * // Use the `sourceURL` option to specify a custom sourceURL for the template.
@@ -32830,21 +32830,21 @@ return jQuery;
      * @returns {Function} Returns the callback.
      * @example
      *
-     * var user = [
+     * var users = [
      *   { 'user': 'barney', 'age': 36, 'active': true },
      *   { 'user': 'fred',   'age': 40, 'active': false }
      * ];
      *
      * // The `_.matches` iteratee shorthand.
-     * _.filter(user, _.iteratee({ 'user': 'barney', 'active': true }));
+     * _.filter(users, _.iteratee({ 'user': 'barney', 'active': true }));
      * // => [{ 'user': 'barney', 'age': 36, 'active': true }]
      *
      * // The `_.matchesProperty` iteratee shorthand.
-     * _.filter(user, _.iteratee(['user', 'fred']));
+     * _.filter(users, _.iteratee(['user', 'fred']));
      * // => [{ 'user': 'fred', 'age': 40 }]
      *
      * // The `_.property` iteratee shorthand.
-     * _.map(user, _.iteratee('user'));
+     * _.map(users, _.iteratee('user'));
      * // => ['barney', 'fred']
      *
      * // Create custom iteratee shorthands.
@@ -32893,7 +32893,7 @@ return jQuery;
      * // => [{ 'a': 4, 'b': 5, 'c': 6 }]
      *
      * // Checking for several possible values
-     * _.filter(user, _.overSome([_.matches({ 'a': 1 }), _.matches({ 'a': 4 })]));
+     * _.filter(users, _.overSome([_.matches({ 'a': 1 }), _.matches({ 'a': 4 })]));
      * // => [{ 'a': 1, 'b': 2, 'c': 3 }, { 'a': 4, 'b': 5, 'c': 6 }]
      */
     function matches(source) {
@@ -32930,7 +32930,7 @@ return jQuery;
      * // => { 'a': 4, 'b': 5, 'c': 6 }
      *
      * // Checking for several possible values
-     * _.filter(user, _.overSome([_.matchesProperty('a', 1), _.matchesProperty('a', 4)]));
+     * _.filter(users, _.overSome([_.matchesProperty('a', 1), _.matchesProperty('a', 4)]));
      * // => [{ 'a': 1, 'b': 2, 'c': 3 }, { 'a': 4, 'b': 5, 'c': 6 }]
      */
     function matchesProperty(path, srcValue) {
@@ -33772,7 +33772,7 @@ return jQuery;
      * @category Math
      * @param {number} multiplier The first number in a multiplication.
      * @param {number} multiplicand The second number in a multiplication.
-     * @returns {number} Returns the product.
+     * @returns {number} Returns the post.
      * @example
      *
      * _.multiply(6, 4);
@@ -39139,7 +39139,7 @@ function addRouteRecord (
 
   if (route.children) {
     // Warn if route is named, does not redirect and has a default child route.
-    // If user navigate to this route by name, the default child will
+    // If users navigate to this route by name, the default child will
     // not be rendered (GH Issue #629)
     if (true) {
       if (
@@ -43405,7 +43405,7 @@ function normalizeScopedSlot(normalSlots, key, fn) {
       : res
   };
   // this is a slot using the new v-slot syntax without scope. although it is
-  // compiled as a scoped slot, render fn user would expect it to be present
+  // compiled as a scoped slot, render fn users would expect it to be present
   // on this.$slots because the usage is semantically a normal slot.
   if (fn.proxy) {
     Object.defineProperty(normalSlots, key, {

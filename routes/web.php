@@ -18,5 +18,12 @@ Route::get('/', function () {
 });
 
 Auth::routes();
-
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::group(['middleware'=>'auth', 'prefix'=>'home/category', 'as'=>'home.', 'namespace'=>'Admin\Category'], function() {
+    Route::get('index', 'CategoryController@index')->name('category.index');
+});
+
+Route::group(['middleware'=>'auth', 'prefix'=>'home/post', 'as'=>'home.', 'namespace'=>'Admin\Post'], function() {
+    Route::get('index', 'PostController@index')->name('post.index');
+});
