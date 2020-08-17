@@ -1,21 +1,21 @@
 // Fonts
 @import url('https://fonts.googleapis.com/css?family=Nunito');
-//@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700');
-
 
 // Variables
 @import 'variables';
 //$fa-font-path: "../webfonts";
 
+// FontAwesome Icon...
+//@import '~admin-lte/docs_html/assets/plugins/fontawesome-free/css/all.min.css';
+@import "~@fortawesome/fontawesome-free/scss/fontawesome.scss";
+@import "~@fortawesome/fontawesome-free/scss/solid.scss";
+@import "~@fortawesome/fontawesome-free/scss/brands.scss";
+
 // Bootstrap...
 @import '~bootstrap/scss/bootstrap';
 // Admin-lte css...
 @import '~admin-lte/dist/css/adminlte.css';
-// FontAwesome Icon...
-@import '~admin-lte/docs_html/assets/plugins/fontawesome-free/css/all.min.css';
-@import "~@fortawesome/fontawesome-free/scss/fontawesome.scss";
-@import "~@fortawesome/fontawesome-free/scss/solid.scss";
-@import "~@fortawesome/fontawesome-free/scss/brands.scss";
+
 
 
 
