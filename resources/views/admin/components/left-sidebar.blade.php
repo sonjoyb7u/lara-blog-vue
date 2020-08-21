@@ -2,7 +2,6 @@
     $prefix = Request::route()->getPrefix();
     $route = Route::current()->getName();
 @endphp
-{{-- @dd($route); --}}
 
 <!-- Main Sidebar Container -->
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
@@ -31,12 +30,12 @@
                 <!-- Add icons to the links using the .nav-icon class
                      with font-awesome or any other icon font library -->
                 <li class="nav-item">
-                    <a href="{{ route('home') }}" class="nav-link {{ request()->is('home') ? 'active' : '' }} ">
+                    <router-link to="/home" class="nav-link">
                         <i class="nav-icon fas fa-tachometer-alt"></i>
                         <p>
                             Dashboard
                         </p>
-                    </a>
+                    </router-link>
                 </li>
                 <li class="nav-item has-treeview">
                     <a href="#" class="nav-link">
@@ -48,7 +47,7 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="" class="nav-link active">
+                            <a href="" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Profile</p>
                             </a>
@@ -67,8 +66,8 @@
                         </li>
                     </ul>
                 </li>
-                <li class="nav-item has-treeview {{ request()->is('home/category*') ? 'menu-open' : '' }}">
-                    <a href="#" class="nav-link {{ request()->is('home/category*') ? 'active' : '' }}">
+                <li class="nav-item has-treeview {{ request()->is('categories', 'categories/create') ? 'menu-open' : '' }}">
+                    <a href="#" class="nav-link {{ request()->is('categories', 'categories/create') ? 'active' : '' }}">
                         <i class="nav-icon fas fa-th"></i>
                         <p>
                             Category
@@ -77,21 +76,21 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <router-link to="/categories/create" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Add</p>
-                            </a>
+                            </router-link>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ route('home.category.index') }}" class="nav-link {{ request()->is('home/category/index') ? 'active' : '' }}">
+                            <router-link to="/categories" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Manage</p>
-                            </a>
+                            </router-link>
                         </li>
                     </ul>
                 </li>
-                <li class="nav-item has-treeview {{ request()->is('home/post*') ? 'menu-open' : '' }}">
-                    <a href="#" class="nav-link {{ request()->is('home/post*') ? 'active' : '' }}">
+                <li class="nav-item has-treeview">
+                    <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-th"></i>
                         <p>
                             Post
@@ -106,7 +105,7 @@
                             </a>
                         </li>
                         <li class="nav-item ">
-                            <a href="{{ route('home.post.index') }}" class="nav-link {{ request()->is('home/post/index') ? 'active' : '' }}">
+                            <a href="" class="nav-link active">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Manage</p>
                             </a>
@@ -115,7 +114,7 @@
                 </li>
                 <li class="nav-item">
                     <a href="{{ route('logout') }}" class="nav-link" onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
+                                                 document.getElementById('logout-form').submit();">
                         <i class="nav-icon fas fa-power-off"></i>
                         <p>
                             Logout

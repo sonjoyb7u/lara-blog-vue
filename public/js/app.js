@@ -86,6 +86,2496 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./node_modules/@fortawesome/fontawesome-free/js/fontawesome.js":
+/*!**********************************************************************!*\
+  !*** ./node_modules/@fortawesome/fontawesome-free/js/fontawesome.js ***!
+  \**********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+/* WEBPACK VAR INJECTION */(function(global, setImmediate) {/*!
+ * Font Awesome Free 5.14.0 by @fontawesome - https://fontawesome.com
+ * License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
+ */
+(function () {
+  'use strict';
+
+  function _typeof(obj) {
+    if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") {
+      _typeof = function (obj) {
+        return typeof obj;
+      };
+    } else {
+      _typeof = function (obj) {
+        return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
+      };
+    }
+
+    return _typeof(obj);
+  }
+
+  function _classCallCheck(instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+      throw new TypeError("Cannot call a class as a function");
+    }
+  }
+
+  function _defineProperties(target, props) {
+    for (var i = 0; i < props.length; i++) {
+      var descriptor = props[i];
+      descriptor.enumerable = descriptor.enumerable || false;
+      descriptor.configurable = true;
+      if ("value" in descriptor) descriptor.writable = true;
+      Object.defineProperty(target, descriptor.key, descriptor);
+    }
+  }
+
+  function _createClass(Constructor, protoProps, staticProps) {
+    if (protoProps) _defineProperties(Constructor.prototype, protoProps);
+    if (staticProps) _defineProperties(Constructor, staticProps);
+    return Constructor;
+  }
+
+  function _defineProperty(obj, key, value) {
+    if (key in obj) {
+      Object.defineProperty(obj, key, {
+        value: value,
+        enumerable: true,
+        configurable: true,
+        writable: true
+      });
+    } else {
+      obj[key] = value;
+    }
+
+    return obj;
+  }
+
+  function _objectSpread(target) {
+    for (var i = 1; i < arguments.length; i++) {
+      var source = arguments[i] != null ? arguments[i] : {};
+      var ownKeys = Object.keys(source);
+
+      if (typeof Object.getOwnPropertySymbols === 'function') {
+        ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) {
+          return Object.getOwnPropertyDescriptor(source, sym).enumerable;
+        }));
+      }
+
+      ownKeys.forEach(function (key) {
+        _defineProperty(target, key, source[key]);
+      });
+    }
+
+    return target;
+  }
+
+  function _slicedToArray(arr, i) {
+    return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest();
+  }
+
+  function _toConsumableArray(arr) {
+    return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread();
+  }
+
+  function _arrayWithoutHoles(arr) {
+    if (Array.isArray(arr)) {
+      for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) arr2[i] = arr[i];
+
+      return arr2;
+    }
+  }
+
+  function _arrayWithHoles(arr) {
+    if (Array.isArray(arr)) return arr;
+  }
+
+  function _iterableToArray(iter) {
+    if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter);
+  }
+
+  function _iterableToArrayLimit(arr, i) {
+    var _arr = [];
+    var _n = true;
+    var _d = false;
+    var _e = undefined;
+
+    try {
+      for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) {
+        _arr.push(_s.value);
+
+        if (i && _arr.length === i) break;
+      }
+    } catch (err) {
+      _d = true;
+      _e = err;
+    } finally {
+      try {
+        if (!_n && _i["return"] != null) _i["return"]();
+      } finally {
+        if (_d) throw _e;
+      }
+    }
+
+    return _arr;
+  }
+
+  function _nonIterableSpread() {
+    throw new TypeError("Invalid attempt to spread non-iterable instance");
+  }
+
+  function _nonIterableRest() {
+    throw new TypeError("Invalid attempt to destructure non-iterable instance");
+  }
+
+  var noop = function noop() {};
+
+  var _WINDOW = {};
+  var _DOCUMENT = {};
+  var _MUTATION_OBSERVER = null;
+  var _PERFORMANCE = {
+    mark: noop,
+    measure: noop
+  };
+
+  try {
+    if (typeof window !== 'undefined') _WINDOW = window;
+    if (typeof document !== 'undefined') _DOCUMENT = document;
+    if (typeof MutationObserver !== 'undefined') _MUTATION_OBSERVER = MutationObserver;
+    if (typeof performance !== 'undefined') _PERFORMANCE = performance;
+  } catch (e) {}
+
+  var _ref = _WINDOW.navigator || {},
+      _ref$userAgent = _ref.userAgent,
+      userAgent = _ref$userAgent === void 0 ? '' : _ref$userAgent;
+
+  var WINDOW = _WINDOW;
+  var DOCUMENT = _DOCUMENT;
+  var MUTATION_OBSERVER = _MUTATION_OBSERVER;
+  var PERFORMANCE = _PERFORMANCE;
+  var IS_BROWSER = !!WINDOW.document;
+  var IS_DOM = !!DOCUMENT.documentElement && !!DOCUMENT.head && typeof DOCUMENT.addEventListener === 'function' && typeof DOCUMENT.createElement === 'function';
+  var IS_IE = ~userAgent.indexOf('MSIE') || ~userAgent.indexOf('Trident/');
+
+  var NAMESPACE_IDENTIFIER = '___FONT_AWESOME___';
+  var UNITS_IN_GRID = 16;
+  var DEFAULT_FAMILY_PREFIX = 'fa';
+  var DEFAULT_REPLACEMENT_CLASS = 'svg-inline--fa';
+  var DATA_FA_I2SVG = 'data-fa-i2svg';
+  var DATA_FA_PSEUDO_ELEMENT = 'data-fa-pseudo-element';
+  var DATA_FA_PSEUDO_ELEMENT_PENDING = 'data-fa-pseudo-element-pending';
+  var DATA_PREFIX = 'data-prefix';
+  var DATA_ICON = 'data-icon';
+  var HTML_CLASS_I2SVG_BASE_CLASS = 'fontawesome-i2svg';
+  var MUTATION_APPROACH_ASYNC = 'async';
+  var TAGNAMES_TO_SKIP_FOR_PSEUDOELEMENTS = ['HTML', 'HEAD', 'STYLE', 'SCRIPT'];
+  var PRODUCTION = function () {
+    try {
+      return "production" === 'production';
+    } catch (e) {
+      return false;
+    }
+  }();
+  var PREFIX_TO_STYLE = {
+    'fas': 'solid',
+    'far': 'regular',
+    'fal': 'light',
+    'fad': 'duotone',
+    'fab': 'brands',
+    'fa': 'solid'
+  };
+  var STYLE_TO_PREFIX = {
+    'solid': 'fas',
+    'regular': 'far',
+    'light': 'fal',
+    'duotone': 'fad',
+    'brands': 'fab'
+  };
+  var LAYERS_TEXT_CLASSNAME = 'fa-layers-text';
+  var FONT_FAMILY_PATTERN = /Font Awesome 5 (Solid|Regular|Light|Duotone|Brands|Free|Pro)/;
+  var FONT_WEIGHT_TO_PREFIX = {
+    '900': 'fas',
+    '400': 'far',
+    'normal': 'far',
+    '300': 'fal'
+  };
+  var oneToTen = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+  var oneToTwenty = oneToTen.concat([11, 12, 13, 14, 15, 16, 17, 18, 19, 20]);
+  var ATTRIBUTES_WATCHED_FOR_MUTATION = ['class', 'data-prefix', 'data-icon', 'data-fa-transform', 'data-fa-mask'];
+  var DUOTONE_CLASSES = {
+    GROUP: 'group',
+    SWAP_OPACITY: 'swap-opacity',
+    PRIMARY: 'primary',
+    SECONDARY: 'secondary'
+  };
+  var RESERVED_CLASSES = ['xs', 'sm', 'lg', 'fw', 'ul', 'li', 'border', 'pull-left', 'pull-right', 'spin', 'pulse', 'rotate-90', 'rotate-180', 'rotate-270', 'flip-horizontal', 'flip-vertical', 'flip-both', 'stack', 'stack-1x', 'stack-2x', 'inverse', 'layers', 'layers-text', 'layers-counter', DUOTONE_CLASSES.GROUP, DUOTONE_CLASSES.SWAP_OPACITY, DUOTONE_CLASSES.PRIMARY, DUOTONE_CLASSES.SECONDARY].concat(oneToTen.map(function (n) {
+    return "".concat(n, "x");
+  })).concat(oneToTwenty.map(function (n) {
+    return "w-".concat(n);
+  }));
+
+  var initial = WINDOW.FontAwesomeConfig || {};
+
+  function getAttrConfig(attr) {
+    var element = DOCUMENT.querySelector('script[' + attr + ']');
+
+    if (element) {
+      return element.getAttribute(attr);
+    }
+  }
+
+  function coerce(val) {
+    // Getting an empty string will occur if the attribute is set on the HTML tag but without a value
+    // We'll assume that this is an indication that it should be toggled to true
+    // For example <script data-search-pseudo-elements src="..."></script>
+    if (val === '') return true;
+    if (val === 'false') return false;
+    if (val === 'true') return true;
+    return val;
+  }
+
+  if (DOCUMENT && typeof DOCUMENT.querySelector === 'function') {
+    var attrs = [['data-family-prefix', 'familyPrefix'], ['data-replacement-class', 'replacementClass'], ['data-auto-replace-svg', 'autoReplaceSvg'], ['data-auto-add-css', 'autoAddCss'], ['data-auto-a11y', 'autoA11y'], ['data-search-pseudo-elements', 'searchPseudoElements'], ['data-observe-mutations', 'observeMutations'], ['data-mutate-approach', 'mutateApproach'], ['data-keep-original-source', 'keepOriginalSource'], ['data-measure-performance', 'measurePerformance'], ['data-show-missing-icons', 'showMissingIcons']];
+    attrs.forEach(function (_ref) {
+      var _ref2 = _slicedToArray(_ref, 2),
+          attr = _ref2[0],
+          key = _ref2[1];
+
+      var val = coerce(getAttrConfig(attr));
+
+      if (val !== undefined && val !== null) {
+        initial[key] = val;
+      }
+    });
+  }
+
+  var _default = {
+    familyPrefix: DEFAULT_FAMILY_PREFIX,
+    replacementClass: DEFAULT_REPLACEMENT_CLASS,
+    autoReplaceSvg: true,
+    autoAddCss: true,
+    autoA11y: true,
+    searchPseudoElements: false,
+    observeMutations: true,
+    mutateApproach: 'async',
+    keepOriginalSource: true,
+    measurePerformance: false,
+    showMissingIcons: true
+  };
+
+  var _config = _objectSpread({}, _default, initial);
+
+  if (!_config.autoReplaceSvg) _config.observeMutations = false;
+
+  var config = _objectSpread({}, _config);
+
+  WINDOW.FontAwesomeConfig = config;
+
+  var w = WINDOW || {};
+  if (!w[NAMESPACE_IDENTIFIER]) w[NAMESPACE_IDENTIFIER] = {};
+  if (!w[NAMESPACE_IDENTIFIER].styles) w[NAMESPACE_IDENTIFIER].styles = {};
+  if (!w[NAMESPACE_IDENTIFIER].hooks) w[NAMESPACE_IDENTIFIER].hooks = {};
+  if (!w[NAMESPACE_IDENTIFIER].shims) w[NAMESPACE_IDENTIFIER].shims = [];
+  var namespace = w[NAMESPACE_IDENTIFIER];
+
+  var functions = [];
+
+  var listener = function listener() {
+    DOCUMENT.removeEventListener('DOMContentLoaded', listener);
+    loaded = 1;
+    functions.map(function (fn) {
+      return fn();
+    });
+  };
+
+  var loaded = false;
+
+  if (IS_DOM) {
+    loaded = (DOCUMENT.documentElement.doScroll ? /^loaded|^c/ : /^loaded|^i|^c/).test(DOCUMENT.readyState);
+    if (!loaded) DOCUMENT.addEventListener('DOMContentLoaded', listener);
+  }
+
+  function domready (fn) {
+    if (!IS_DOM) return;
+    loaded ? setTimeout(fn, 0) : functions.push(fn);
+  }
+
+  var PENDING = 'pending';
+  var SETTLED = 'settled';
+  var FULFILLED = 'fulfilled';
+  var REJECTED = 'rejected';
+
+  var NOOP = function NOOP() {};
+
+  var isNode = typeof global !== 'undefined' && typeof global.process !== 'undefined' && typeof global.process.emit === 'function';
+  var asyncSetTimer = typeof setImmediate === 'undefined' ? setTimeout : setImmediate;
+  var asyncQueue = [];
+  var asyncTimer;
+
+  function asyncFlush() {
+    // run promise callbacks
+    for (var i = 0; i < asyncQueue.length; i++) {
+      asyncQueue[i][0](asyncQueue[i][1]);
+    } // reset async asyncQueue
+
+
+    asyncQueue = [];
+    asyncTimer = false;
+  }
+
+  function asyncCall(callback, arg) {
+    asyncQueue.push([callback, arg]);
+
+    if (!asyncTimer) {
+      asyncTimer = true;
+      asyncSetTimer(asyncFlush, 0);
+    }
+  }
+
+  function invokeResolver(resolver, promise) {
+    function resolvePromise(value) {
+      resolve(promise, value);
+    }
+
+    function rejectPromise(reason) {
+      reject(promise, reason);
+    }
+
+    try {
+      resolver(resolvePromise, rejectPromise);
+    } catch (e) {
+      rejectPromise(e);
+    }
+  }
+
+  function invokeCallback(subscriber) {
+    var owner = subscriber.owner;
+    var settled = owner._state;
+    var value = owner._data;
+    var callback = subscriber[settled];
+    var promise = subscriber.then;
+
+    if (typeof callback === 'function') {
+      settled = FULFILLED;
+
+      try {
+        value = callback(value);
+      } catch (e) {
+        reject(promise, e);
+      }
+    }
+
+    if (!handleThenable(promise, value)) {
+      if (settled === FULFILLED) {
+        resolve(promise, value);
+      }
+
+      if (settled === REJECTED) {
+        reject(promise, value);
+      }
+    }
+  }
+
+  function handleThenable(promise, value) {
+    var resolved;
+
+    try {
+      if (promise === value) {
+        throw new TypeError('A promises callback cannot return that same promise.');
+      }
+
+      if (value && (typeof value === 'function' || _typeof(value) === 'object')) {
+        // then should be retrieved only once
+        var then = value.then;
+
+        if (typeof then === 'function') {
+          then.call(value, function (val) {
+            if (!resolved) {
+              resolved = true;
+
+              if (value === val) {
+                fulfill(promise, val);
+              } else {
+                resolve(promise, val);
+              }
+            }
+          }, function (reason) {
+            if (!resolved) {
+              resolved = true;
+              reject(promise, reason);
+            }
+          });
+          return true;
+        }
+      }
+    } catch (e) {
+      if (!resolved) {
+        reject(promise, e);
+      }
+
+      return true;
+    }
+
+    return false;
+  }
+
+  function resolve(promise, value) {
+    if (promise === value || !handleThenable(promise, value)) {
+      fulfill(promise, value);
+    }
+  }
+
+  function fulfill(promise, value) {
+    if (promise._state === PENDING) {
+      promise._state = SETTLED;
+      promise._data = value;
+      asyncCall(publishFulfillment, promise);
+    }
+  }
+
+  function reject(promise, reason) {
+    if (promise._state === PENDING) {
+      promise._state = SETTLED;
+      promise._data = reason;
+      asyncCall(publishRejection, promise);
+    }
+  }
+
+  function publish(promise) {
+    promise._then = promise._then.forEach(invokeCallback);
+  }
+
+  function publishFulfillment(promise) {
+    promise._state = FULFILLED;
+    publish(promise);
+  }
+
+  function publishRejection(promise) {
+    promise._state = REJECTED;
+    publish(promise);
+
+    if (!promise._handled && isNode) {
+      global.process.emit('unhandledRejection', promise._data, promise);
+    }
+  }
+
+  function notifyRejectionHandled(promise) {
+    global.process.emit('rejectionHandled', promise);
+  }
+  /**
+   * @class
+   */
+
+
+  function P(resolver) {
+    if (typeof resolver !== 'function') {
+      throw new TypeError('Promise resolver ' + resolver + ' is not a function');
+    }
+
+    if (this instanceof P === false) {
+      throw new TypeError('Failed to construct \'Promise\': Please use the \'new\' operator, this object constructor cannot be called as a function.');
+    }
+
+    this._then = [];
+    invokeResolver(resolver, this);
+  }
+
+  P.prototype = {
+    constructor: P,
+    _state: PENDING,
+    _then: null,
+    _data: undefined,
+    _handled: false,
+    then: function then(onFulfillment, onRejection) {
+      var subscriber = {
+        owner: this,
+        then: new this.constructor(NOOP),
+        fulfilled: onFulfillment,
+        rejected: onRejection
+      };
+
+      if ((onRejection || onFulfillment) && !this._handled) {
+        this._handled = true;
+
+        if (this._state === REJECTED && isNode) {
+          asyncCall(notifyRejectionHandled, this);
+        }
+      }
+
+      if (this._state === FULFILLED || this._state === REJECTED) {
+        // already resolved, call callback async
+        asyncCall(invokeCallback, subscriber);
+      } else {
+        // subscribe
+        this._then.push(subscriber);
+      }
+
+      return subscriber.then;
+    },
+    catch: function _catch(onRejection) {
+      return this.then(null, onRejection);
+    }
+  };
+
+  P.all = function (promises) {
+    if (!Array.isArray(promises)) {
+      throw new TypeError('You must pass an array to Promise.all().');
+    }
+
+    return new P(function (resolve, reject) {
+      var results = [];
+      var remaining = 0;
+
+      function resolver(index) {
+        remaining++;
+        return function (value) {
+          results[index] = value;
+
+          if (! --remaining) {
+            resolve(results);
+          }
+        };
+      }
+
+      for (var i = 0, promise; i < promises.length; i++) {
+        promise = promises[i];
+
+        if (promise && typeof promise.then === 'function') {
+          promise.then(resolver(i), reject);
+        } else {
+          results[i] = promise;
+        }
+      }
+
+      if (!remaining) {
+        resolve(results);
+      }
+    });
+  };
+
+  P.race = function (promises) {
+    if (!Array.isArray(promises)) {
+      throw new TypeError('You must pass an array to Promise.race().');
+    }
+
+    return new P(function (resolve, reject) {
+      for (var i = 0, promise; i < promises.length; i++) {
+        promise = promises[i];
+
+        if (promise && typeof promise.then === 'function') {
+          promise.then(resolve, reject);
+        } else {
+          resolve(promise);
+        }
+      }
+    });
+  };
+
+  P.resolve = function (value) {
+    if (value && _typeof(value) === 'object' && value.constructor === P) {
+      return value;
+    }
+
+    return new P(function (resolve) {
+      resolve(value);
+    });
+  };
+
+  P.reject = function (reason) {
+    return new P(function (resolve, reject) {
+      reject(reason);
+    });
+  };
+
+  var picked = typeof Promise === 'function' ? Promise : P;
+
+  var d = UNITS_IN_GRID;
+  var meaninglessTransform = {
+    size: 16,
+    x: 0,
+    y: 0,
+    rotate: 0,
+    flipX: false,
+    flipY: false
+  };
+
+  function isReserved(name) {
+    return ~RESERVED_CLASSES.indexOf(name);
+  }
+
+  function bunker(fn) {
+    try {
+      fn();
+    } catch (e) {
+      if (!PRODUCTION) {
+        throw e;
+      }
+    }
+  }
+  function insertCss(css) {
+    if (!css || !IS_DOM) {
+      return;
+    }
+
+    var style = DOCUMENT.createElement('style');
+    style.setAttribute('type', 'text/css');
+    style.innerHTML = css;
+    var headChildren = DOCUMENT.head.childNodes;
+    var beforeChild = null;
+
+    for (var i = headChildren.length - 1; i > -1; i--) {
+      var child = headChildren[i];
+      var tagName = (child.tagName || '').toUpperCase();
+
+      if (['STYLE', 'LINK'].indexOf(tagName) > -1) {
+        beforeChild = child;
+      }
+    }
+
+    DOCUMENT.head.insertBefore(style, beforeChild);
+    return css;
+  }
+  var idPool = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+  function nextUniqueId() {
+    var size = 12;
+    var id = '';
+
+    while (size-- > 0) {
+      id += idPool[Math.random() * 62 | 0];
+    }
+
+    return id;
+  }
+  function toArray(obj) {
+    var array = [];
+
+    for (var i = (obj || []).length >>> 0; i--;) {
+      array[i] = obj[i];
+    }
+
+    return array;
+  }
+  function classArray(node) {
+    if (node.classList) {
+      return toArray(node.classList);
+    } else {
+      return (node.getAttribute('class') || '').split(' ').filter(function (i) {
+        return i;
+      });
+    }
+  }
+  function getIconName(familyPrefix, cls) {
+    var parts = cls.split('-');
+    var prefix = parts[0];
+    var iconName = parts.slice(1).join('-');
+
+    if (prefix === familyPrefix && iconName !== '' && !isReserved(iconName)) {
+      return iconName;
+    } else {
+      return null;
+    }
+  }
+  function htmlEscape(str) {
+    return "".concat(str).replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/'/g, '&#39;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  }
+  function joinAttributes(attributes) {
+    return Object.keys(attributes || {}).reduce(function (acc, attributeName) {
+      return acc + "".concat(attributeName, "=\"").concat(htmlEscape(attributes[attributeName]), "\" ");
+    }, '').trim();
+  }
+  function joinStyles(styles) {
+    return Object.keys(styles || {}).reduce(function (acc, styleName) {
+      return acc + "".concat(styleName, ": ").concat(styles[styleName], ";");
+    }, '');
+  }
+  function transformIsMeaningful(transform) {
+    return transform.size !== meaninglessTransform.size || transform.x !== meaninglessTransform.x || transform.y !== meaninglessTransform.y || transform.rotate !== meaninglessTransform.rotate || transform.flipX || transform.flipY;
+  }
+  function transformForSvg(_ref) {
+    var transform = _ref.transform,
+        containerWidth = _ref.containerWidth,
+        iconWidth = _ref.iconWidth;
+    var outer = {
+      transform: "translate(".concat(containerWidth / 2, " 256)")
+    };
+    var innerTranslate = "translate(".concat(transform.x * 32, ", ").concat(transform.y * 32, ") ");
+    var innerScale = "scale(".concat(transform.size / 16 * (transform.flipX ? -1 : 1), ", ").concat(transform.size / 16 * (transform.flipY ? -1 : 1), ") ");
+    var innerRotate = "rotate(".concat(transform.rotate, " 0 0)");
+    var inner = {
+      transform: "".concat(innerTranslate, " ").concat(innerScale, " ").concat(innerRotate)
+    };
+    var path = {
+      transform: "translate(".concat(iconWidth / 2 * -1, " -256)")
+    };
+    return {
+      outer: outer,
+      inner: inner,
+      path: path
+    };
+  }
+  function transformForCss(_ref2) {
+    var transform = _ref2.transform,
+        _ref2$width = _ref2.width,
+        width = _ref2$width === void 0 ? UNITS_IN_GRID : _ref2$width,
+        _ref2$height = _ref2.height,
+        height = _ref2$height === void 0 ? UNITS_IN_GRID : _ref2$height,
+        _ref2$startCentered = _ref2.startCentered,
+        startCentered = _ref2$startCentered === void 0 ? false : _ref2$startCentered;
+    var val = '';
+
+    if (startCentered && IS_IE) {
+      val += "translate(".concat(transform.x / d - width / 2, "em, ").concat(transform.y / d - height / 2, "em) ");
+    } else if (startCentered) {
+      val += "translate(calc(-50% + ".concat(transform.x / d, "em), calc(-50% + ").concat(transform.y / d, "em)) ");
+    } else {
+      val += "translate(".concat(transform.x / d, "em, ").concat(transform.y / d, "em) ");
+    }
+
+    val += "scale(".concat(transform.size / d * (transform.flipX ? -1 : 1), ", ").concat(transform.size / d * (transform.flipY ? -1 : 1), ") ");
+    val += "rotate(".concat(transform.rotate, "deg) ");
+    return val;
+  }
+
+  var ALL_SPACE = {
+    x: 0,
+    y: 0,
+    width: '100%',
+    height: '100%'
+  };
+
+  function fillBlack(abstract) {
+    var force = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : true;
+
+    if (abstract.attributes && (abstract.attributes.fill || force)) {
+      abstract.attributes.fill = 'black';
+    }
+
+    return abstract;
+  }
+
+  function deGroup(abstract) {
+    if (abstract.tag === 'g') {
+      return abstract.children;
+    } else {
+      return [abstract];
+    }
+  }
+
+  function makeIconMasking (_ref) {
+    var children = _ref.children,
+        attributes = _ref.attributes,
+        main = _ref.main,
+        mask = _ref.mask,
+        explicitMaskId = _ref.maskId,
+        transform = _ref.transform;
+    var mainWidth = main.width,
+        mainPath = main.icon;
+    var maskWidth = mask.width,
+        maskPath = mask.icon;
+    var trans = transformForSvg({
+      transform: transform,
+      containerWidth: maskWidth,
+      iconWidth: mainWidth
+    });
+    var maskRect = {
+      tag: 'rect',
+      attributes: _objectSpread({}, ALL_SPACE, {
+        fill: 'white'
+      })
+    };
+    var maskInnerGroupChildrenMixin = mainPath.children ? {
+      children: mainPath.children.map(fillBlack)
+    } : {};
+    var maskInnerGroup = {
+      tag: 'g',
+      attributes: _objectSpread({}, trans.inner),
+      children: [fillBlack(_objectSpread({
+        tag: mainPath.tag,
+        attributes: _objectSpread({}, mainPath.attributes, trans.path)
+      }, maskInnerGroupChildrenMixin))]
+    };
+    var maskOuterGroup = {
+      tag: 'g',
+      attributes: _objectSpread({}, trans.outer),
+      children: [maskInnerGroup]
+    };
+    var maskId = "mask-".concat(explicitMaskId || nextUniqueId());
+    var clipId = "clip-".concat(explicitMaskId || nextUniqueId());
+    var maskTag = {
+      tag: 'mask',
+      attributes: _objectSpread({}, ALL_SPACE, {
+        id: maskId,
+        maskUnits: 'userSpaceOnUse',
+        maskContentUnits: 'userSpaceOnUse'
+      }),
+      children: [maskRect, maskOuterGroup]
+    };
+    var defs = {
+      tag: 'defs',
+      children: [{
+        tag: 'clipPath',
+        attributes: {
+          id: clipId
+        },
+        children: deGroup(maskPath)
+      }, maskTag]
+    };
+    children.push(defs, {
+      tag: 'rect',
+      attributes: _objectSpread({
+        fill: 'currentColor',
+        'clip-path': "url(#".concat(clipId, ")"),
+        mask: "url(#".concat(maskId, ")")
+      }, ALL_SPACE)
+    });
+    return {
+      children: children,
+      attributes: attributes
+    };
+  }
+
+  function makeIconStandard (_ref) {
+    var children = _ref.children,
+        attributes = _ref.attributes,
+        main = _ref.main,
+        transform = _ref.transform,
+        styles = _ref.styles;
+    var styleString = joinStyles(styles);
+
+    if (styleString.length > 0) {
+      attributes['style'] = styleString;
+    }
+
+    if (transformIsMeaningful(transform)) {
+      var trans = transformForSvg({
+        transform: transform,
+        containerWidth: main.width,
+        iconWidth: main.width
+      });
+      children.push({
+        tag: 'g',
+        attributes: _objectSpread({}, trans.outer),
+        children: [{
+          tag: 'g',
+          attributes: _objectSpread({}, trans.inner),
+          children: [{
+            tag: main.icon.tag,
+            children: main.icon.children,
+            attributes: _objectSpread({}, main.icon.attributes, trans.path)
+          }]
+        }]
+      });
+    } else {
+      children.push(main.icon);
+    }
+
+    return {
+      children: children,
+      attributes: attributes
+    };
+  }
+
+  function asIcon (_ref) {
+    var children = _ref.children,
+        main = _ref.main,
+        mask = _ref.mask,
+        attributes = _ref.attributes,
+        styles = _ref.styles,
+        transform = _ref.transform;
+
+    if (transformIsMeaningful(transform) && main.found && !mask.found) {
+      var width = main.width,
+          height = main.height;
+      var offset = {
+        x: width / height / 2,
+        y: 0.5
+      };
+      attributes['style'] = joinStyles(_objectSpread({}, styles, {
+        'transform-origin': "".concat(offset.x + transform.x / 16, "em ").concat(offset.y + transform.y / 16, "em")
+      }));
+    }
+
+    return [{
+      tag: 'svg',
+      attributes: attributes,
+      children: children
+    }];
+  }
+
+  function asSymbol (_ref) {
+    var prefix = _ref.prefix,
+        iconName = _ref.iconName,
+        children = _ref.children,
+        attributes = _ref.attributes,
+        symbol = _ref.symbol;
+    var id = symbol === true ? "".concat(prefix, "-").concat(config.familyPrefix, "-").concat(iconName) : symbol;
+    return [{
+      tag: 'svg',
+      attributes: {
+        style: 'display: none;'
+      },
+      children: [{
+        tag: 'symbol',
+        attributes: _objectSpread({}, attributes, {
+          id: id
+        }),
+        children: children
+      }]
+    }];
+  }
+
+  function makeInlineSvgAbstract(params) {
+    var _params$icons = params.icons,
+        main = _params$icons.main,
+        mask = _params$icons.mask,
+        prefix = params.prefix,
+        iconName = params.iconName,
+        transform = params.transform,
+        symbol = params.symbol,
+        title = params.title,
+        maskId = params.maskId,
+        titleId = params.titleId,
+        extra = params.extra,
+        _params$watchable = params.watchable,
+        watchable = _params$watchable === void 0 ? false : _params$watchable;
+
+    var _ref = mask.found ? mask : main,
+        width = _ref.width,
+        height = _ref.height;
+
+    var widthClass = "fa-w-".concat(Math.ceil(width / height * 16));
+    var attrClass = [config.replacementClass, iconName ? "".concat(config.familyPrefix, "-").concat(iconName) : '', widthClass].filter(function (c) {
+      return extra.classes.indexOf(c) === -1;
+    }).concat(extra.classes).join(' ');
+    var content = {
+      children: [],
+      attributes: _objectSpread({}, extra.attributes, {
+        'data-prefix': prefix,
+        'data-icon': iconName,
+        'class': attrClass,
+        'role': extra.attributes.role || 'img',
+        'xmlns': 'http://www.w3.org/2000/svg',
+        'viewBox': "0 0 ".concat(width, " ").concat(height)
+      })
+    };
+
+    if (watchable) {
+      content.attributes[DATA_FA_I2SVG] = '';
+    }
+
+    if (title) content.children.push({
+      tag: 'title',
+      attributes: {
+        id: content.attributes['aria-labelledby'] || "title-".concat(titleId || nextUniqueId())
+      },
+      children: [title]
+    });
+
+    var args = _objectSpread({}, content, {
+      prefix: prefix,
+      iconName: iconName,
+      main: main,
+      mask: mask,
+      maskId: maskId,
+      transform: transform,
+      symbol: symbol,
+      styles: extra.styles
+    });
+
+    var _ref2 = mask.found && main.found ? makeIconMasking(args) : makeIconStandard(args),
+        children = _ref2.children,
+        attributes = _ref2.attributes;
+
+    args.children = children;
+    args.attributes = attributes;
+
+    if (symbol) {
+      return asSymbol(args);
+    } else {
+      return asIcon(args);
+    }
+  }
+  function makeLayersTextAbstract(params) {
+    var content = params.content,
+        width = params.width,
+        height = params.height,
+        transform = params.transform,
+        title = params.title,
+        extra = params.extra,
+        _params$watchable2 = params.watchable,
+        watchable = _params$watchable2 === void 0 ? false : _params$watchable2;
+
+    var attributes = _objectSpread({}, extra.attributes, title ? {
+      'title': title
+    } : {}, {
+      'class': extra.classes.join(' ')
+    });
+
+    if (watchable) {
+      attributes[DATA_FA_I2SVG] = '';
+    }
+
+    var styles = _objectSpread({}, extra.styles);
+
+    if (transformIsMeaningful(transform)) {
+      styles['transform'] = transformForCss({
+        transform: transform,
+        startCentered: true,
+        width: width,
+        height: height
+      });
+      styles['-webkit-transform'] = styles['transform'];
+    }
+
+    var styleString = joinStyles(styles);
+
+    if (styleString.length > 0) {
+      attributes['style'] = styleString;
+    }
+
+    var val = [];
+    val.push({
+      tag: 'span',
+      attributes: attributes,
+      children: [content]
+    });
+
+    if (title) {
+      val.push({
+        tag: 'span',
+        attributes: {
+          class: 'sr-only'
+        },
+        children: [title]
+      });
+    }
+
+    return val;
+  }
+  function makeLayersCounterAbstract(params) {
+    var content = params.content,
+        title = params.title,
+        extra = params.extra;
+
+    var attributes = _objectSpread({}, extra.attributes, title ? {
+      'title': title
+    } : {}, {
+      'class': extra.classes.join(' ')
+    });
+
+    var styleString = joinStyles(extra.styles);
+
+    if (styleString.length > 0) {
+      attributes['style'] = styleString;
+    }
+
+    var val = [];
+    val.push({
+      tag: 'span',
+      attributes: attributes,
+      children: [content]
+    });
+
+    if (title) {
+      val.push({
+        tag: 'span',
+        attributes: {
+          class: 'sr-only'
+        },
+        children: [title]
+      });
+    }
+
+    return val;
+  }
+
+  var noop$1 = function noop() {};
+
+  var p = config.measurePerformance && PERFORMANCE && PERFORMANCE.mark && PERFORMANCE.measure ? PERFORMANCE : {
+    mark: noop$1,
+    measure: noop$1
+  };
+  var preamble = "FA \"5.14.0\"";
+
+  var begin = function begin(name) {
+    p.mark("".concat(preamble, " ").concat(name, " begins"));
+    return function () {
+      return end(name);
+    };
+  };
+
+  var end = function end(name) {
+    p.mark("".concat(preamble, " ").concat(name, " ends"));
+    p.measure("".concat(preamble, " ").concat(name), "".concat(preamble, " ").concat(name, " begins"), "".concat(preamble, " ").concat(name, " ends"));
+  };
+
+  var perf = {
+    begin: begin,
+    end: end
+  };
+
+  /**
+   * Internal helper to bind a function known to have 4 arguments
+   * to a given context.
+   */
+
+  var bindInternal4 = function bindInternal4(func, thisContext) {
+    return function (a, b, c, d) {
+      return func.call(thisContext, a, b, c, d);
+    };
+  };
+
+  /**
+   * # Reduce
+   *
+   * A fast object `.reduce()` implementation.
+   *
+   * @param  {Object}   subject      The object to reduce over.
+   * @param  {Function} fn           The reducer function.
+   * @param  {mixed}    initialValue The initial value for the reducer, defaults to subject[0].
+   * @param  {Object}   thisContext  The context for the reducer.
+   * @return {mixed}                 The final result.
+   */
+
+
+  var reduce = function fastReduceObject(subject, fn, initialValue, thisContext) {
+    var keys = Object.keys(subject),
+        length = keys.length,
+        iterator = thisContext !== undefined ? bindInternal4(fn, thisContext) : fn,
+        i,
+        key,
+        result;
+
+    if (initialValue === undefined) {
+      i = 1;
+      result = subject[keys[0]];
+    } else {
+      i = 0;
+      result = initialValue;
+    }
+
+    for (; i < length; i++) {
+      key = keys[i];
+      result = iterator(result, subject[key], key, subject);
+    }
+
+    return result;
+  };
+
+  function toHex(unicode) {
+    var result = '';
+
+    for (var i = 0; i < unicode.length; i++) {
+      var hex = unicode.charCodeAt(i).toString(16);
+      result += ('000' + hex).slice(-4);
+    }
+
+    return result;
+  }
+
+  function defineIcons(prefix, icons) {
+    var params = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
+    var _params$skipHooks = params.skipHooks,
+        skipHooks = _params$skipHooks === void 0 ? false : _params$skipHooks;
+    var normalized = Object.keys(icons).reduce(function (acc, iconName) {
+      var icon = icons[iconName];
+      var expanded = !!icon.icon;
+
+      if (expanded) {
+        acc[icon.iconName] = icon.icon;
+      } else {
+        acc[iconName] = icon;
+      }
+
+      return acc;
+    }, {});
+
+    if (typeof namespace.hooks.addPack === 'function' && !skipHooks) {
+      namespace.hooks.addPack(prefix, normalized);
+    } else {
+      namespace.styles[prefix] = _objectSpread({}, namespace.styles[prefix] || {}, normalized);
+    }
+    /**
+     * Font Awesome 4 used the prefix of `fa` for all icons. With the introduction
+     * of new styles we needed to differentiate between them. Prefix `fa` is now an alias
+     * for `fas` so we'll easy the upgrade process for our users by automatically defining
+     * this as well.
+     */
+
+
+    if (prefix === 'fas') {
+      defineIcons('fa', icons);
+    }
+  }
+
+  var styles = namespace.styles,
+      shims = namespace.shims;
+  var _byUnicode = {};
+  var _byLigature = {};
+  var _byOldName = {};
+  var build = function build() {
+    var lookup = function lookup(reducer) {
+      return reduce(styles, function (o, style, prefix) {
+        o[prefix] = reduce(style, reducer, {});
+        return o;
+      }, {});
+    };
+
+    _byUnicode = lookup(function (acc, icon, iconName) {
+      if (icon[3]) {
+        acc[icon[3]] = iconName;
+      }
+
+      return acc;
+    });
+    _byLigature = lookup(function (acc, icon, iconName) {
+      var ligatures = icon[2];
+      acc[iconName] = iconName;
+      ligatures.forEach(function (ligature) {
+        acc[ligature] = iconName;
+      });
+      return acc;
+    });
+    var hasRegular = 'far' in styles;
+    _byOldName = reduce(shims, function (acc, shim) {
+      var oldName = shim[0];
+      var prefix = shim[1];
+      var iconName = shim[2];
+
+      if (prefix === 'far' && !hasRegular) {
+        prefix = 'fas';
+      }
+
+      acc[oldName] = {
+        prefix: prefix,
+        iconName: iconName
+      };
+      return acc;
+    }, {});
+  };
+  build();
+  function byUnicode(prefix, unicode) {
+    return (_byUnicode[prefix] || {})[unicode];
+  }
+  function byLigature(prefix, ligature) {
+    return (_byLigature[prefix] || {})[ligature];
+  }
+  function byOldName(name) {
+    return _byOldName[name] || {
+      prefix: null,
+      iconName: null
+    };
+  }
+
+  var styles$1 = namespace.styles;
+  var emptyCanonicalIcon = function emptyCanonicalIcon() {
+    return {
+      prefix: null,
+      iconName: null,
+      rest: []
+    };
+  };
+  function getCanonicalIcon(values) {
+    return values.reduce(function (acc, cls) {
+      var iconName = getIconName(config.familyPrefix, cls);
+
+      if (styles$1[cls]) {
+        acc.prefix = cls;
+      } else if (config.autoFetchSvg && ['fas', 'far', 'fal', 'fad', 'fab', 'fa'].indexOf(cls) > -1) {
+        acc.prefix = cls;
+      } else if (iconName) {
+        var shim = acc.prefix === 'fa' ? byOldName(iconName) : {};
+        acc.iconName = shim.iconName || iconName;
+        acc.prefix = shim.prefix || acc.prefix;
+      } else if (cls !== config.replacementClass && cls.indexOf('fa-w-') !== 0) {
+        acc.rest.push(cls);
+      }
+
+      return acc;
+    }, emptyCanonicalIcon());
+  }
+  function iconFromMapping(mapping, prefix, iconName) {
+    if (mapping && mapping[prefix] && mapping[prefix][iconName]) {
+      return {
+        prefix: prefix,
+        iconName: iconName,
+        icon: mapping[prefix][iconName]
+      };
+    }
+  }
+
+  function toHtml(abstractNodes) {
+    var tag = abstractNodes.tag,
+        _abstractNodes$attrib = abstractNodes.attributes,
+        attributes = _abstractNodes$attrib === void 0 ? {} : _abstractNodes$attrib,
+        _abstractNodes$childr = abstractNodes.children,
+        children = _abstractNodes$childr === void 0 ? [] : _abstractNodes$childr;
+
+    if (typeof abstractNodes === 'string') {
+      return htmlEscape(abstractNodes);
+    } else {
+      return "<".concat(tag, " ").concat(joinAttributes(attributes), ">").concat(children.map(toHtml).join(''), "</").concat(tag, ">");
+    }
+  }
+
+  var noop$2 = function noop() {};
+
+  function isWatched(node) {
+    var i2svg = node.getAttribute ? node.getAttribute(DATA_FA_I2SVG) : null;
+    return typeof i2svg === 'string';
+  }
+
+  function getMutator() {
+    if (config.autoReplaceSvg === true) {
+      return mutators.replace;
+    }
+
+    var mutator = mutators[config.autoReplaceSvg];
+    return mutator || mutators.replace;
+  }
+
+  var mutators = {
+    replace: function replace(mutation) {
+      var node = mutation[0];
+      var abstract = mutation[1];
+      var newOuterHTML = abstract.map(function (a) {
+        return toHtml(a);
+      }).join('\n');
+
+      if (node.parentNode && node.outerHTML) {
+        node.outerHTML = newOuterHTML + (config.keepOriginalSource && node.tagName.toLowerCase() !== 'svg' ? "<!-- ".concat(node.outerHTML, " -->") : '');
+      } else if (node.parentNode) {
+        var newNode = document.createElement('span');
+        node.parentNode.replaceChild(newNode, node);
+        newNode.outerHTML = newOuterHTML;
+      }
+    },
+    nest: function nest(mutation) {
+      var node = mutation[0];
+      var abstract = mutation[1]; // If we already have a replaced node we do not want to continue nesting within it.
+      // Short-circuit to the standard replacement
+
+      if (~classArray(node).indexOf(config.replacementClass)) {
+        return mutators.replace(mutation);
+      }
+
+      var forSvg = new RegExp("".concat(config.familyPrefix, "-.*"));
+      delete abstract[0].attributes.style;
+      delete abstract[0].attributes.id;
+      var splitClasses = abstract[0].attributes.class.split(' ').reduce(function (acc, cls) {
+        if (cls === config.replacementClass || cls.match(forSvg)) {
+          acc.toSvg.push(cls);
+        } else {
+          acc.toNode.push(cls);
+        }
+
+        return acc;
+      }, {
+        toNode: [],
+        toSvg: []
+      });
+      abstract[0].attributes.class = splitClasses.toSvg.join(' ');
+      var newInnerHTML = abstract.map(function (a) {
+        return toHtml(a);
+      }).join('\n');
+      node.setAttribute('class', splitClasses.toNode.join(' '));
+      node.setAttribute(DATA_FA_I2SVG, '');
+      node.innerHTML = newInnerHTML;
+    }
+  };
+
+  function performOperationSync(op) {
+    op();
+  }
+
+  function perform(mutations, callback) {
+    var callbackFunction = typeof callback === 'function' ? callback : noop$2;
+
+    if (mutations.length === 0) {
+      callbackFunction();
+    } else {
+      var frame = performOperationSync;
+
+      if (config.mutateApproach === MUTATION_APPROACH_ASYNC) {
+        frame = WINDOW.requestAnimationFrame || performOperationSync;
+      }
+
+      frame(function () {
+        var mutator = getMutator();
+        var mark = perf.begin('mutate');
+        mutations.map(mutator);
+        mark();
+        callbackFunction();
+      });
+    }
+  }
+  var disabled = false;
+  function disableObservation() {
+    disabled = true;
+  }
+  function enableObservation() {
+    disabled = false;
+  }
+  var mo = null;
+  function observe(options) {
+    if (!MUTATION_OBSERVER) {
+      return;
+    }
+
+    if (!config.observeMutations) {
+      return;
+    }
+
+    var treeCallback = options.treeCallback,
+        nodeCallback = options.nodeCallback,
+        pseudoElementsCallback = options.pseudoElementsCallback,
+        _options$observeMutat = options.observeMutationsRoot,
+        observeMutationsRoot = _options$observeMutat === void 0 ? DOCUMENT : _options$observeMutat;
+    mo = new MUTATION_OBSERVER(function (objects) {
+      if (disabled) return;
+      toArray(objects).forEach(function (mutationRecord) {
+        if (mutationRecord.type === 'childList' && mutationRecord.addedNodes.length > 0 && !isWatched(mutationRecord.addedNodes[0])) {
+          if (config.searchPseudoElements) {
+            pseudoElementsCallback(mutationRecord.target);
+          }
+
+          treeCallback(mutationRecord.target);
+        }
+
+        if (mutationRecord.type === 'attributes' && mutationRecord.target.parentNode && config.searchPseudoElements) {
+          pseudoElementsCallback(mutationRecord.target.parentNode);
+        }
+
+        if (mutationRecord.type === 'attributes' && isWatched(mutationRecord.target) && ~ATTRIBUTES_WATCHED_FOR_MUTATION.indexOf(mutationRecord.attributeName)) {
+          if (mutationRecord.attributeName === 'class') {
+            var _getCanonicalIcon = getCanonicalIcon(classArray(mutationRecord.target)),
+                prefix = _getCanonicalIcon.prefix,
+                iconName = _getCanonicalIcon.iconName;
+
+            if (prefix) mutationRecord.target.setAttribute('data-prefix', prefix);
+            if (iconName) mutationRecord.target.setAttribute('data-icon', iconName);
+          } else {
+            nodeCallback(mutationRecord.target);
+          }
+        }
+      });
+    });
+    if (!IS_DOM) return;
+    mo.observe(observeMutationsRoot, {
+      childList: true,
+      attributes: true,
+      characterData: true,
+      subtree: true
+    });
+  }
+  function disconnect() {
+    if (!mo) return;
+    mo.disconnect();
+  }
+
+  function styleParser (node) {
+    var style = node.getAttribute('style');
+    var val = [];
+
+    if (style) {
+      val = style.split(';').reduce(function (acc, style) {
+        var styles = style.split(':');
+        var prop = styles[0];
+        var value = styles.slice(1);
+
+        if (prop && value.length > 0) {
+          acc[prop] = value.join(':').trim();
+        }
+
+        return acc;
+      }, {});
+    }
+
+    return val;
+  }
+
+  function classParser (node) {
+    var existingPrefix = node.getAttribute('data-prefix');
+    var existingIconName = node.getAttribute('data-icon');
+    var innerText = node.innerText !== undefined ? node.innerText.trim() : '';
+    var val = getCanonicalIcon(classArray(node));
+
+    if (existingPrefix && existingIconName) {
+      val.prefix = existingPrefix;
+      val.iconName = existingIconName;
+    }
+
+    if (val.prefix && innerText.length > 1) {
+      val.iconName = byLigature(val.prefix, node.innerText);
+    } else if (val.prefix && innerText.length === 1) {
+      val.iconName = byUnicode(val.prefix, toHex(node.innerText));
+    }
+
+    return val;
+  }
+
+  var parseTransformString = function parseTransformString(transformString) {
+    var transform = {
+      size: 16,
+      x: 0,
+      y: 0,
+      flipX: false,
+      flipY: false,
+      rotate: 0
+    };
+
+    if (!transformString) {
+      return transform;
+    } else {
+      return transformString.toLowerCase().split(' ').reduce(function (acc, n) {
+        var parts = n.toLowerCase().split('-');
+        var first = parts[0];
+        var rest = parts.slice(1).join('-');
+
+        if (first && rest === 'h') {
+          acc.flipX = true;
+          return acc;
+        }
+
+        if (first && rest === 'v') {
+          acc.flipY = true;
+          return acc;
+        }
+
+        rest = parseFloat(rest);
+
+        if (isNaN(rest)) {
+          return acc;
+        }
+
+        switch (first) {
+          case 'grow':
+            acc.size = acc.size + rest;
+            break;
+
+          case 'shrink':
+            acc.size = acc.size - rest;
+            break;
+
+          case 'left':
+            acc.x = acc.x - rest;
+            break;
+
+          case 'right':
+            acc.x = acc.x + rest;
+            break;
+
+          case 'up':
+            acc.y = acc.y - rest;
+            break;
+
+          case 'down':
+            acc.y = acc.y + rest;
+            break;
+
+          case 'rotate':
+            acc.rotate = acc.rotate + rest;
+            break;
+        }
+
+        return acc;
+      }, transform);
+    }
+  };
+  function transformParser (node) {
+    return parseTransformString(node.getAttribute('data-fa-transform'));
+  }
+
+  function symbolParser (node) {
+    var symbol = node.getAttribute('data-fa-symbol');
+    return symbol === null ? false : symbol === '' ? true : symbol;
+  }
+
+  function attributesParser (node) {
+    var extraAttributes = toArray(node.attributes).reduce(function (acc, attr) {
+      if (acc.name !== 'class' && acc.name !== 'style') {
+        acc[attr.name] = attr.value;
+      }
+
+      return acc;
+    }, {});
+    var title = node.getAttribute('title');
+    var titleId = node.getAttribute('data-fa-title-id');
+
+    if (config.autoA11y) {
+      if (title) {
+        extraAttributes['aria-labelledby'] = "".concat(config.replacementClass, "-title-").concat(titleId || nextUniqueId());
+      } else {
+        extraAttributes['aria-hidden'] = 'true';
+        extraAttributes['focusable'] = 'false';
+      }
+    }
+
+    return extraAttributes;
+  }
+
+  function maskParser (node) {
+    var mask = node.getAttribute('data-fa-mask');
+
+    if (!mask) {
+      return emptyCanonicalIcon();
+    } else {
+      return getCanonicalIcon(mask.split(' ').map(function (i) {
+        return i.trim();
+      }));
+    }
+  }
+
+  function blankMeta() {
+    return {
+      iconName: null,
+      title: null,
+      titleId: null,
+      prefix: null,
+      transform: meaninglessTransform,
+      symbol: false,
+      mask: null,
+      maskId: null,
+      extra: {
+        classes: [],
+        styles: {},
+        attributes: {}
+      }
+    };
+  }
+  function parseMeta(node) {
+    var _classParser = classParser(node),
+        iconName = _classParser.iconName,
+        prefix = _classParser.prefix,
+        extraClasses = _classParser.rest;
+
+    var extraStyles = styleParser(node);
+    var transform = transformParser(node);
+    var symbol = symbolParser(node);
+    var extraAttributes = attributesParser(node);
+    var mask = maskParser(node);
+    return {
+      iconName: iconName,
+      title: node.getAttribute('title'),
+      titleId: node.getAttribute('data-fa-title-id'),
+      prefix: prefix,
+      transform: transform,
+      symbol: symbol,
+      mask: mask,
+      maskId: node.getAttribute('data-fa-mask-id'),
+      extra: {
+        classes: extraClasses,
+        styles: extraStyles,
+        attributes: extraAttributes
+      }
+    };
+  }
+
+  function MissingIcon(error) {
+    this.name = 'MissingIcon';
+    this.message = error || 'Icon unavailable';
+    this.stack = new Error().stack;
+  }
+  MissingIcon.prototype = Object.create(Error.prototype);
+  MissingIcon.prototype.constructor = MissingIcon;
+
+  var FILL = {
+    fill: 'currentColor'
+  };
+  var ANIMATION_BASE = {
+    attributeType: 'XML',
+    repeatCount: 'indefinite',
+    dur: '2s'
+  };
+  var RING = {
+    tag: 'path',
+    attributes: _objectSpread({}, FILL, {
+      d: 'M156.5,447.7l-12.6,29.5c-18.7-9.5-35.9-21.2-51.5-34.9l22.7-22.7C127.6,430.5,141.5,440,156.5,447.7z M40.6,272H8.5 c1.4,21.2,5.4,41.7,11.7,61.1L50,321.2C45.1,305.5,41.8,289,40.6,272z M40.6,240c1.4-18.8,5.2-37,11.1-54.1l-29.5-12.6 C14.7,194.3,10,216.7,8.5,240H40.6z M64.3,156.5c7.8-14.9,17.2-28.8,28.1-41.5L69.7,92.3c-13.7,15.6-25.5,32.8-34.9,51.5 L64.3,156.5z M397,419.6c-13.9,12-29.4,22.3-46.1,30.4l11.9,29.8c20.7-9.9,39.8-22.6,56.9-37.6L397,419.6z M115,92.4 c13.9-12,29.4-22.3,46.1-30.4l-11.9-29.8c-20.7,9.9-39.8,22.6-56.8,37.6L115,92.4z M447.7,355.5c-7.8,14.9-17.2,28.8-28.1,41.5 l22.7,22.7c13.7-15.6,25.5-32.9,34.9-51.5L447.7,355.5z M471.4,272c-1.4,18.8-5.2,37-11.1,54.1l29.5,12.6 c7.5-21.1,12.2-43.5,13.6-66.8H471.4z M321.2,462c-15.7,5-32.2,8.2-49.2,9.4v32.1c21.2-1.4,41.7-5.4,61.1-11.7L321.2,462z M240,471.4c-18.8-1.4-37-5.2-54.1-11.1l-12.6,29.5c21.1,7.5,43.5,12.2,66.8,13.6V471.4z M462,190.8c5,15.7,8.2,32.2,9.4,49.2h32.1 c-1.4-21.2-5.4-41.7-11.7-61.1L462,190.8z M92.4,397c-12-13.9-22.3-29.4-30.4-46.1l-29.8,11.9c9.9,20.7,22.6,39.8,37.6,56.9 L92.4,397z M272,40.6c18.8,1.4,36.9,5.2,54.1,11.1l12.6-29.5C317.7,14.7,295.3,10,272,8.5V40.6z M190.8,50 c15.7-5,32.2-8.2,49.2-9.4V8.5c-21.2,1.4-41.7,5.4-61.1,11.7L190.8,50z M442.3,92.3L419.6,115c12,13.9,22.3,29.4,30.5,46.1 l29.8-11.9C470,128.5,457.3,109.4,442.3,92.3z M397,92.4l22.7-22.7c-15.6-13.7-32.8-25.5-51.5-34.9l-12.6,29.5 C370.4,72.1,384.4,81.5,397,92.4z'
+    })
+  };
+
+  var OPACITY_ANIMATE = _objectSpread({}, ANIMATION_BASE, {
+    attributeName: 'opacity'
+  });
+
+  var DOT = {
+    tag: 'circle',
+    attributes: _objectSpread({}, FILL, {
+      cx: '256',
+      cy: '364',
+      r: '28'
+    }),
+    children: [{
+      tag: 'animate',
+      attributes: _objectSpread({}, ANIMATION_BASE, {
+        attributeName: 'r',
+        values: '28;14;28;28;14;28;'
+      })
+    }, {
+      tag: 'animate',
+      attributes: _objectSpread({}, OPACITY_ANIMATE, {
+        values: '1;0;1;1;0;1;'
+      })
+    }]
+  };
+  var QUESTION = {
+    tag: 'path',
+    attributes: _objectSpread({}, FILL, {
+      opacity: '1',
+      d: 'M263.7,312h-16c-6.6,0-12-5.4-12-12c0-71,77.4-63.9,77.4-107.8c0-20-17.8-40.2-57.4-40.2c-29.1,0-44.3,9.6-59.2,28.7 c-3.9,5-11.1,6-16.2,2.4l-13.1-9.2c-5.6-3.9-6.9-11.8-2.6-17.2c21.2-27.2,46.4-44.7,91.2-44.7c52.3,0,97.4,29.8,97.4,80.2 c0,67.6-77.4,63.5-77.4,107.8C275.7,306.6,270.3,312,263.7,312z'
+    }),
+    children: [{
+      tag: 'animate',
+      attributes: _objectSpread({}, OPACITY_ANIMATE, {
+        values: '1;0;0;0;0;1;'
+      })
+    }]
+  };
+  var EXCLAMATION = {
+    tag: 'path',
+    attributes: _objectSpread({}, FILL, {
+      opacity: '0',
+      d: 'M232.5,134.5l7,168c0.3,6.4,5.6,11.5,12,11.5h9c6.4,0,11.7-5.1,12-11.5l7-168c0.3-6.8-5.2-12.5-12-12.5h-23 C237.7,122,232.2,127.7,232.5,134.5z'
+    }),
+    children: [{
+      tag: 'animate',
+      attributes: _objectSpread({}, OPACITY_ANIMATE, {
+        values: '0;0;1;1;0;0;'
+      })
+    }]
+  };
+  var missing = {
+    tag: 'g',
+    children: [RING, DOT, QUESTION, EXCLAMATION]
+  };
+
+  var styles$2 = namespace.styles;
+  function asFoundIcon(icon) {
+    var width = icon[0];
+    var height = icon[1];
+
+    var _icon$slice = icon.slice(4),
+        _icon$slice2 = _slicedToArray(_icon$slice, 1),
+        vectorData = _icon$slice2[0];
+
+    var element = null;
+
+    if (Array.isArray(vectorData)) {
+      element = {
+        tag: 'g',
+        attributes: {
+          class: "".concat(config.familyPrefix, "-").concat(DUOTONE_CLASSES.GROUP)
+        },
+        children: [{
+          tag: 'path',
+          attributes: {
+            class: "".concat(config.familyPrefix, "-").concat(DUOTONE_CLASSES.SECONDARY),
+            fill: 'currentColor',
+            d: vectorData[0]
+          }
+        }, {
+          tag: 'path',
+          attributes: {
+            class: "".concat(config.familyPrefix, "-").concat(DUOTONE_CLASSES.PRIMARY),
+            fill: 'currentColor',
+            d: vectorData[1]
+          }
+        }]
+      };
+    } else {
+      element = {
+        tag: 'path',
+        attributes: {
+          fill: 'currentColor',
+          d: vectorData
+        }
+      };
+    }
+
+    return {
+      found: true,
+      width: width,
+      height: height,
+      icon: element
+    };
+  }
+  function findIcon(iconName, prefix) {
+    return new picked(function (resolve, reject) {
+      var val = {
+        found: false,
+        width: 512,
+        height: 512,
+        icon: missing
+      };
+
+      if (iconName && prefix && styles$2[prefix] && styles$2[prefix][iconName]) {
+        var icon = styles$2[prefix][iconName];
+        return resolve(asFoundIcon(icon));
+      }
+
+      var headers = {};
+
+      if (_typeof(WINDOW.FontAwesomeKitConfig) === 'object' && typeof window.FontAwesomeKitConfig.token === 'string') {
+        headers['fa-kit-token'] = WINDOW.FontAwesomeKitConfig.token;
+      }
+
+      if (iconName && prefix && !config.showMissingIcons) {
+        reject(new MissingIcon("Icon is missing for prefix ".concat(prefix, " with icon name ").concat(iconName)));
+      } else {
+        resolve(val);
+      }
+    });
+  }
+
+  var styles$3 = namespace.styles;
+
+  function generateSvgReplacementMutation(node, nodeMeta) {
+    var iconName = nodeMeta.iconName,
+        title = nodeMeta.title,
+        titleId = nodeMeta.titleId,
+        prefix = nodeMeta.prefix,
+        transform = nodeMeta.transform,
+        symbol = nodeMeta.symbol,
+        mask = nodeMeta.mask,
+        maskId = nodeMeta.maskId,
+        extra = nodeMeta.extra;
+    return new picked(function (resolve, reject) {
+      picked.all([findIcon(iconName, prefix), findIcon(mask.iconName, mask.prefix)]).then(function (_ref) {
+        var _ref2 = _slicedToArray(_ref, 2),
+            main = _ref2[0],
+            mask = _ref2[1];
+
+        resolve([node, makeInlineSvgAbstract({
+          icons: {
+            main: main,
+            mask: mask
+          },
+          prefix: prefix,
+          iconName: iconName,
+          transform: transform,
+          symbol: symbol,
+          mask: mask,
+          maskId: maskId,
+          title: title,
+          titleId: titleId,
+          extra: extra,
+          watchable: true
+        })]);
+      });
+    });
+  }
+
+  function generateLayersText(node, nodeMeta) {
+    var title = nodeMeta.title,
+        transform = nodeMeta.transform,
+        extra = nodeMeta.extra;
+    var width = null;
+    var height = null;
+
+    if (IS_IE) {
+      var computedFontSize = parseInt(getComputedStyle(node).fontSize, 10);
+      var boundingClientRect = node.getBoundingClientRect();
+      width = boundingClientRect.width / computedFontSize;
+      height = boundingClientRect.height / computedFontSize;
+    }
+
+    if (config.autoA11y && !title) {
+      extra.attributes['aria-hidden'] = 'true';
+    }
+
+    return picked.resolve([node, makeLayersTextAbstract({
+      content: node.innerHTML,
+      width: width,
+      height: height,
+      transform: transform,
+      title: title,
+      extra: extra,
+      watchable: true
+    })]);
+  }
+
+  function generateMutation(node) {
+    var nodeMeta = parseMeta(node);
+
+    if (~nodeMeta.extra.classes.indexOf(LAYERS_TEXT_CLASSNAME)) {
+      return generateLayersText(node, nodeMeta);
+    } else {
+      return generateSvgReplacementMutation(node, nodeMeta);
+    }
+  }
+
+  function onTree(root) {
+    var callback = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : null;
+    if (!IS_DOM) return;
+    var htmlClassList = DOCUMENT.documentElement.classList;
+
+    var hclAdd = function hclAdd(suffix) {
+      return htmlClassList.add("".concat(HTML_CLASS_I2SVG_BASE_CLASS, "-").concat(suffix));
+    };
+
+    var hclRemove = function hclRemove(suffix) {
+      return htmlClassList.remove("".concat(HTML_CLASS_I2SVG_BASE_CLASS, "-").concat(suffix));
+    };
+
+    var prefixes = config.autoFetchSvg ? Object.keys(PREFIX_TO_STYLE) : Object.keys(styles$3);
+    var prefixesDomQuery = [".".concat(LAYERS_TEXT_CLASSNAME, ":not([").concat(DATA_FA_I2SVG, "])")].concat(prefixes.map(function (p) {
+      return ".".concat(p, ":not([").concat(DATA_FA_I2SVG, "])");
+    })).join(', ');
+
+    if (prefixesDomQuery.length === 0) {
+      return;
+    }
+
+    var candidates = [];
+
+    try {
+      candidates = toArray(root.querySelectorAll(prefixesDomQuery));
+    } catch (e) {// noop
+    }
+
+    if (candidates.length > 0) {
+      hclAdd('pending');
+      hclRemove('complete');
+    } else {
+      return;
+    }
+
+    var mark = perf.begin('onTree');
+    var mutations = candidates.reduce(function (acc, node) {
+      try {
+        var mutation = generateMutation(node);
+
+        if (mutation) {
+          acc.push(mutation);
+        }
+      } catch (e) {
+        if (!PRODUCTION) {
+          if (e instanceof MissingIcon) {
+            console.error(e);
+          }
+        }
+      }
+
+      return acc;
+    }, []);
+    return new picked(function (resolve, reject) {
+      picked.all(mutations).then(function (resolvedMutations) {
+        perform(resolvedMutations, function () {
+          hclAdd('active');
+          hclAdd('complete');
+          hclRemove('pending');
+          if (typeof callback === 'function') callback();
+          mark();
+          resolve();
+        });
+      }).catch(function () {
+        mark();
+        reject();
+      });
+    });
+  }
+  function onNode(node) {
+    var callback = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : null;
+    generateMutation(node).then(function (mutation) {
+      if (mutation) {
+        perform([mutation], callback);
+      }
+    });
+  }
+
+  function replaceForPosition(node, position) {
+    var pendingAttribute = "".concat(DATA_FA_PSEUDO_ELEMENT_PENDING).concat(position.replace(':', '-'));
+    return new picked(function (resolve, reject) {
+      if (node.getAttribute(pendingAttribute) !== null) {
+        // This node is already being processed
+        return resolve();
+      }
+
+      var children = toArray(node.children);
+      var alreadyProcessedPseudoElement = children.filter(function (c) {
+        return c.getAttribute(DATA_FA_PSEUDO_ELEMENT) === position;
+      })[0];
+      var styles = WINDOW.getComputedStyle(node, position);
+      var fontFamily = styles.getPropertyValue('font-family').match(FONT_FAMILY_PATTERN);
+      var fontWeight = styles.getPropertyValue('font-weight');
+      var content = styles.getPropertyValue('content');
+
+      if (alreadyProcessedPseudoElement && !fontFamily) {
+        // If we've already processed it but the current computed style does not result in a font-family,
+        // that probably means that a class name that was previously present to make the icon has been
+        // removed. So we now should delete the icon.
+        node.removeChild(alreadyProcessedPseudoElement);
+        return resolve();
+      } else if (fontFamily && content !== 'none' && content !== '') {
+        var prefix = ~['Solid', 'Regular', 'Light', 'Duotone', 'Brands'].indexOf(fontFamily[1]) ? STYLE_TO_PREFIX[fontFamily[1].toLowerCase()] : FONT_WEIGHT_TO_PREFIX[fontWeight];
+        var hexValue = toHex(content.length === 3 ? content.substr(1, 1) : content);
+        var iconName = byUnicode(prefix, hexValue);
+        var iconIdentifier = iconName; // Only convert the pseudo element in this :before/:after position into an icon if we haven't
+        // already done so with the same prefix and iconName
+
+        if (iconName && (!alreadyProcessedPseudoElement || alreadyProcessedPseudoElement.getAttribute(DATA_PREFIX) !== prefix || alreadyProcessedPseudoElement.getAttribute(DATA_ICON) !== iconIdentifier)) {
+          node.setAttribute(pendingAttribute, iconIdentifier);
+
+          if (alreadyProcessedPseudoElement) {
+            // Delete the old one, since we're replacing it with a new one
+            node.removeChild(alreadyProcessedPseudoElement);
+          }
+
+          var meta = blankMeta();
+          var extra = meta.extra;
+          extra.attributes[DATA_FA_PSEUDO_ELEMENT] = position;
+          findIcon(iconName, prefix).then(function (main) {
+            var abstract = makeInlineSvgAbstract(_objectSpread({}, meta, {
+              icons: {
+                main: main,
+                mask: emptyCanonicalIcon()
+              },
+              prefix: prefix,
+              iconName: iconIdentifier,
+              extra: extra,
+              watchable: true
+            }));
+            var element = DOCUMENT.createElement('svg');
+
+            if (position === ':before') {
+              node.insertBefore(element, node.firstChild);
+            } else {
+              node.appendChild(element);
+            }
+
+            element.outerHTML = abstract.map(function (a) {
+              return toHtml(a);
+            }).join('\n');
+            node.removeAttribute(pendingAttribute);
+            resolve();
+          }).catch(reject);
+        } else {
+          resolve();
+        }
+      } else {
+        resolve();
+      }
+    });
+  }
+
+  function replace(node) {
+    return picked.all([replaceForPosition(node, ':before'), replaceForPosition(node, ':after')]);
+  }
+
+  function processable(node) {
+    return node.parentNode !== document.head && !~TAGNAMES_TO_SKIP_FOR_PSEUDOELEMENTS.indexOf(node.tagName.toUpperCase()) && !node.getAttribute(DATA_FA_PSEUDO_ELEMENT) && (!node.parentNode || node.parentNode.tagName !== 'svg');
+  }
+
+  function searchPseudoElements (root) {
+    if (!IS_DOM) return;
+    return new picked(function (resolve, reject) {
+      var operations = toArray(root.querySelectorAll('*')).filter(processable).map(replace);
+      var end = perf.begin('searchPseudoElements');
+      disableObservation();
+      picked.all(operations).then(function () {
+        end();
+        enableObservation();
+        resolve();
+      }).catch(function () {
+        end();
+        enableObservation();
+        reject();
+      });
+    });
+  }
+
+  var baseStyles = "svg:not(:root).svg-inline--fa{overflow:visible}.svg-inline--fa{display:inline-block;font-size:inherit;height:1em;overflow:visible;vertical-align:-.125em}.svg-inline--fa.fa-lg{vertical-align:-.225em}.svg-inline--fa.fa-w-1{width:.0625em}.svg-inline--fa.fa-w-2{width:.125em}.svg-inline--fa.fa-w-3{width:.1875em}.svg-inline--fa.fa-w-4{width:.25em}.svg-inline--fa.fa-w-5{width:.3125em}.svg-inline--fa.fa-w-6{width:.375em}.svg-inline--fa.fa-w-7{width:.4375em}.svg-inline--fa.fa-w-8{width:.5em}.svg-inline--fa.fa-w-9{width:.5625em}.svg-inline--fa.fa-w-10{width:.625em}.svg-inline--fa.fa-w-11{width:.6875em}.svg-inline--fa.fa-w-12{width:.75em}.svg-inline--fa.fa-w-13{width:.8125em}.svg-inline--fa.fa-w-14{width:.875em}.svg-inline--fa.fa-w-15{width:.9375em}.svg-inline--fa.fa-w-16{width:1em}.svg-inline--fa.fa-w-17{width:1.0625em}.svg-inline--fa.fa-w-18{width:1.125em}.svg-inline--fa.fa-w-19{width:1.1875em}.svg-inline--fa.fa-w-20{width:1.25em}.svg-inline--fa.fa-pull-left{margin-right:.3em;width:auto}.svg-inline--fa.fa-pull-right{margin-left:.3em;width:auto}.svg-inline--fa.fa-border{height:1.5em}.svg-inline--fa.fa-li{width:2em}.svg-inline--fa.fa-fw{width:1.25em}.fa-layers svg.svg-inline--fa{bottom:0;left:0;margin:auto;position:absolute;right:0;top:0}.fa-layers{display:inline-block;height:1em;position:relative;text-align:center;vertical-align:-.125em;width:1em}.fa-layers svg.svg-inline--fa{-webkit-transform-origin:center center;transform-origin:center center}.fa-layers-counter,.fa-layers-text{display:inline-block;position:absolute;text-align:center}.fa-layers-text{left:50%;top:50%;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%);-webkit-transform-origin:center center;transform-origin:center center}.fa-layers-counter{background-color:#ff253a;border-radius:1em;-webkit-box-sizing:border-box;box-sizing:border-box;color:#fff;height:1.5em;line-height:1;max-width:5em;min-width:1.5em;overflow:hidden;padding:.25em;right:0;text-overflow:ellipsis;top:0;-webkit-transform:scale(.25);transform:scale(.25);-webkit-transform-origin:top right;transform-origin:top right}.fa-layers-bottom-right{bottom:0;right:0;top:auto;-webkit-transform:scale(.25);transform:scale(.25);-webkit-transform-origin:bottom right;transform-origin:bottom right}.fa-layers-bottom-left{bottom:0;left:0;right:auto;top:auto;-webkit-transform:scale(.25);transform:scale(.25);-webkit-transform-origin:bottom left;transform-origin:bottom left}.fa-layers-top-right{right:0;top:0;-webkit-transform:scale(.25);transform:scale(.25);-webkit-transform-origin:top right;transform-origin:top right}.fa-layers-top-left{left:0;right:auto;top:0;-webkit-transform:scale(.25);transform:scale(.25);-webkit-transform-origin:top left;transform-origin:top left}.fa-lg{font-size:1.3333333333em;line-height:.75em;vertical-align:-.0667em}.fa-xs{font-size:.75em}.fa-sm{font-size:.875em}.fa-1x{font-size:1em}.fa-2x{font-size:2em}.fa-3x{font-size:3em}.fa-4x{font-size:4em}.fa-5x{font-size:5em}.fa-6x{font-size:6em}.fa-7x{font-size:7em}.fa-8x{font-size:8em}.fa-9x{font-size:9em}.fa-10x{font-size:10em}.fa-fw{text-align:center;width:1.25em}.fa-ul{list-style-type:none;margin-left:2.5em;padding-left:0}.fa-ul>li{position:relative}.fa-li{left:-2em;position:absolute;text-align:center;width:2em;line-height:inherit}.fa-border{border:solid .08em #eee;border-radius:.1em;padding:.2em .25em .15em}.fa-pull-left{float:left}.fa-pull-right{float:right}.fa.fa-pull-left,.fab.fa-pull-left,.fal.fa-pull-left,.far.fa-pull-left,.fas.fa-pull-left{margin-right:.3em}.fa.fa-pull-right,.fab.fa-pull-right,.fal.fa-pull-right,.far.fa-pull-right,.fas.fa-pull-right{margin-left:.3em}.fa-spin{-webkit-animation:fa-spin 2s infinite linear;animation:fa-spin 2s infinite linear}.fa-pulse{-webkit-animation:fa-spin 1s infinite steps(8);animation:fa-spin 1s infinite steps(8)}@-webkit-keyframes fa-spin{0%{-webkit-transform:rotate(0);transform:rotate(0)}100%{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}@keyframes fa-spin{0%{-webkit-transform:rotate(0);transform:rotate(0)}100%{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}.fa-rotate-90{-webkit-transform:rotate(90deg);transform:rotate(90deg)}.fa-rotate-180{-webkit-transform:rotate(180deg);transform:rotate(180deg)}.fa-rotate-270{-webkit-transform:rotate(270deg);transform:rotate(270deg)}.fa-flip-horizontal{-webkit-transform:scale(-1,1);transform:scale(-1,1)}.fa-flip-vertical{-webkit-transform:scale(1,-1);transform:scale(1,-1)}.fa-flip-both,.fa-flip-horizontal.fa-flip-vertical{-webkit-transform:scale(-1,-1);transform:scale(-1,-1)}:root .fa-flip-both,:root .fa-flip-horizontal,:root .fa-flip-vertical,:root .fa-rotate-180,:root .fa-rotate-270,:root .fa-rotate-90{-webkit-filter:none;filter:none}.fa-stack{display:inline-block;height:2em;position:relative;width:2.5em}.fa-stack-1x,.fa-stack-2x{bottom:0;left:0;margin:auto;position:absolute;right:0;top:0}.svg-inline--fa.fa-stack-1x{height:1em;width:1.25em}.svg-inline--fa.fa-stack-2x{height:2em;width:2.5em}.fa-inverse{color:#fff}.sr-only{border:0;clip:rect(0,0,0,0);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px}.sr-only-focusable:active,.sr-only-focusable:focus{clip:auto;height:auto;margin:0;overflow:visible;position:static;width:auto}.svg-inline--fa .fa-primary{fill:var(--fa-primary-color,currentColor);opacity:1;opacity:var(--fa-primary-opacity,1)}.svg-inline--fa .fa-secondary{fill:var(--fa-secondary-color,currentColor);opacity:.4;opacity:var(--fa-secondary-opacity,.4)}.svg-inline--fa.fa-swap-opacity .fa-primary{opacity:.4;opacity:var(--fa-secondary-opacity,.4)}.svg-inline--fa.fa-swap-opacity .fa-secondary{opacity:1;opacity:var(--fa-primary-opacity,1)}.svg-inline--fa mask .fa-primary,.svg-inline--fa mask .fa-secondary{fill:#000}.fad.fa-inverse{color:#fff}";
+
+  function css () {
+    var dfp = DEFAULT_FAMILY_PREFIX;
+    var drc = DEFAULT_REPLACEMENT_CLASS;
+    var fp = config.familyPrefix;
+    var rc = config.replacementClass;
+    var s = baseStyles;
+
+    if (fp !== dfp || rc !== drc) {
+      var dPatt = new RegExp("\\.".concat(dfp, "\\-"), 'g');
+      var customPropPatt = new RegExp("\\--".concat(dfp, "\\-"), 'g');
+      var rPatt = new RegExp("\\.".concat(drc), 'g');
+      s = s.replace(dPatt, ".".concat(fp, "-")).replace(customPropPatt, "--".concat(fp, "-")).replace(rPatt, ".".concat(rc));
+    }
+
+    return s;
+  }
+
+  var Library =
+  /*#__PURE__*/
+  function () {
+    function Library() {
+      _classCallCheck(this, Library);
+
+      this.definitions = {};
+    }
+
+    _createClass(Library, [{
+      key: "add",
+      value: function add() {
+        var _this = this;
+
+        for (var _len = arguments.length, definitions = new Array(_len), _key = 0; _key < _len; _key++) {
+          definitions[_key] = arguments[_key];
+        }
+
+        var additions = definitions.reduce(this._pullDefinitions, {});
+        Object.keys(additions).forEach(function (key) {
+          _this.definitions[key] = _objectSpread({}, _this.definitions[key] || {}, additions[key]);
+          defineIcons(key, additions[key]);
+          build();
+        });
+      }
+    }, {
+      key: "reset",
+      value: function reset() {
+        this.definitions = {};
+      }
+    }, {
+      key: "_pullDefinitions",
+      value: function _pullDefinitions(additions, definition) {
+        var normalized = definition.prefix && definition.iconName && definition.icon ? {
+          0: definition
+        } : definition;
+        Object.keys(normalized).map(function (key) {
+          var _normalized$key = normalized[key],
+              prefix = _normalized$key.prefix,
+              iconName = _normalized$key.iconName,
+              icon = _normalized$key.icon;
+          if (!additions[prefix]) additions[prefix] = {};
+          additions[prefix][iconName] = icon;
+        });
+        return additions;
+      }
+    }]);
+
+    return Library;
+  }();
+
+  function ensureCss() {
+    if (config.autoAddCss && !_cssInserted) {
+      insertCss(css());
+
+      _cssInserted = true;
+    }
+  }
+
+  function apiObject(val, abstractCreator) {
+    Object.defineProperty(val, 'abstract', {
+      get: abstractCreator
+    });
+    Object.defineProperty(val, 'html', {
+      get: function get() {
+        return val.abstract.map(function (a) {
+          return toHtml(a);
+        });
+      }
+    });
+    Object.defineProperty(val, 'node', {
+      get: function get() {
+        if (!IS_DOM) return;
+        var container = DOCUMENT.createElement('div');
+        container.innerHTML = val.html;
+        return container.children;
+      }
+    });
+    return val;
+  }
+
+  function findIconDefinition(iconLookup) {
+    var _iconLookup$prefix = iconLookup.prefix,
+        prefix = _iconLookup$prefix === void 0 ? 'fa' : _iconLookup$prefix,
+        iconName = iconLookup.iconName;
+    if (!iconName) return;
+    return iconFromMapping(library.definitions, prefix, iconName) || iconFromMapping(namespace.styles, prefix, iconName);
+  }
+
+  function resolveIcons(next) {
+    return function (maybeIconDefinition) {
+      var params = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+      var iconDefinition = (maybeIconDefinition || {}).icon ? maybeIconDefinition : findIconDefinition(maybeIconDefinition || {});
+      var mask = params.mask;
+
+      if (mask) {
+        mask = (mask || {}).icon ? mask : findIconDefinition(mask || {});
+      }
+
+      return next(iconDefinition, _objectSpread({}, params, {
+        mask: mask
+      }));
+    };
+  }
+
+  var library = new Library();
+  var noAuto = function noAuto() {
+    config.autoReplaceSvg = false;
+    config.observeMutations = false;
+    disconnect();
+  };
+  var _cssInserted = false;
+  var dom = {
+    i2svg: function i2svg() {
+      var params = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+
+      if (IS_DOM) {
+        ensureCss();
+        var _params$node = params.node,
+            node = _params$node === void 0 ? DOCUMENT : _params$node,
+            _params$callback = params.callback,
+            callback = _params$callback === void 0 ? function () {} : _params$callback;
+
+        if (config.searchPseudoElements) {
+          searchPseudoElements(node);
+        }
+
+        return onTree(node, callback);
+      } else {
+        return picked.reject('Operation requires a DOM of some kind.');
+      }
+    },
+    css: css,
+    insertCss: function insertCss$$1() {
+      if (!_cssInserted) {
+        insertCss(css());
+
+        _cssInserted = true;
+      }
+    },
+    watch: function watch() {
+      var params = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+      var autoReplaceSvgRoot = params.autoReplaceSvgRoot,
+          observeMutationsRoot = params.observeMutationsRoot;
+
+      if (config.autoReplaceSvg === false) {
+        config.autoReplaceSvg = true;
+      }
+
+      config.observeMutations = true;
+      domready(function () {
+        autoReplace({
+          autoReplaceSvgRoot: autoReplaceSvgRoot
+        });
+        observe({
+          treeCallback: onTree,
+          nodeCallback: onNode,
+          pseudoElementsCallback: searchPseudoElements,
+          observeMutationsRoot: observeMutationsRoot
+        });
+      });
+    }
+  };
+  var parse = {
+    transform: function transform(transformString) {
+      return parseTransformString(transformString);
+    }
+  };
+  var icon = resolveIcons(function (iconDefinition) {
+    var params = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+    var _params$transform = params.transform,
+        transform = _params$transform === void 0 ? meaninglessTransform : _params$transform,
+        _params$symbol = params.symbol,
+        symbol = _params$symbol === void 0 ? false : _params$symbol,
+        _params$mask = params.mask,
+        mask = _params$mask === void 0 ? null : _params$mask,
+        _params$maskId = params.maskId,
+        maskId = _params$maskId === void 0 ? null : _params$maskId,
+        _params$title = params.title,
+        title = _params$title === void 0 ? null : _params$title,
+        _params$titleId = params.titleId,
+        titleId = _params$titleId === void 0 ? null : _params$titleId,
+        _params$classes = params.classes,
+        classes = _params$classes === void 0 ? [] : _params$classes,
+        _params$attributes = params.attributes,
+        attributes = _params$attributes === void 0 ? {} : _params$attributes,
+        _params$styles = params.styles,
+        styles = _params$styles === void 0 ? {} : _params$styles;
+    if (!iconDefinition) return;
+    var prefix = iconDefinition.prefix,
+        iconName = iconDefinition.iconName,
+        icon = iconDefinition.icon;
+    return apiObject(_objectSpread({
+      type: 'icon'
+    }, iconDefinition), function () {
+      ensureCss();
+
+      if (config.autoA11y) {
+        if (title) {
+          attributes['aria-labelledby'] = "".concat(config.replacementClass, "-title-").concat(titleId || nextUniqueId());
+        } else {
+          attributes['aria-hidden'] = 'true';
+          attributes['focusable'] = 'false';
+        }
+      }
+
+      return makeInlineSvgAbstract({
+        icons: {
+          main: asFoundIcon(icon),
+          mask: mask ? asFoundIcon(mask.icon) : {
+            found: false,
+            width: null,
+            height: null,
+            icon: {}
+          }
+        },
+        prefix: prefix,
+        iconName: iconName,
+        transform: _objectSpread({}, meaninglessTransform, transform),
+        symbol: symbol,
+        title: title,
+        maskId: maskId,
+        titleId: titleId,
+        extra: {
+          attributes: attributes,
+          styles: styles,
+          classes: classes
+        }
+      });
+    });
+  });
+  var text = function text(content) {
+    var params = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+    var _params$transform2 = params.transform,
+        transform = _params$transform2 === void 0 ? meaninglessTransform : _params$transform2,
+        _params$title2 = params.title,
+        title = _params$title2 === void 0 ? null : _params$title2,
+        _params$classes2 = params.classes,
+        classes = _params$classes2 === void 0 ? [] : _params$classes2,
+        _params$attributes2 = params.attributes,
+        attributes = _params$attributes2 === void 0 ? {} : _params$attributes2,
+        _params$styles2 = params.styles,
+        styles = _params$styles2 === void 0 ? {} : _params$styles2;
+    return apiObject({
+      type: 'text',
+      content: content
+    }, function () {
+      ensureCss();
+      return makeLayersTextAbstract({
+        content: content,
+        transform: _objectSpread({}, meaninglessTransform, transform),
+        title: title,
+        extra: {
+          attributes: attributes,
+          styles: styles,
+          classes: ["".concat(config.familyPrefix, "-layers-text")].concat(_toConsumableArray(classes))
+        }
+      });
+    });
+  };
+  var counter = function counter(content) {
+    var params = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+    var _params$title3 = params.title,
+        title = _params$title3 === void 0 ? null : _params$title3,
+        _params$classes3 = params.classes,
+        classes = _params$classes3 === void 0 ? [] : _params$classes3,
+        _params$attributes3 = params.attributes,
+        attributes = _params$attributes3 === void 0 ? {} : _params$attributes3,
+        _params$styles3 = params.styles,
+        styles = _params$styles3 === void 0 ? {} : _params$styles3;
+    return apiObject({
+      type: 'counter',
+      content: content
+    }, function () {
+      ensureCss();
+      return makeLayersCounterAbstract({
+        content: content.toString(),
+        title: title,
+        extra: {
+          attributes: attributes,
+          styles: styles,
+          classes: ["".concat(config.familyPrefix, "-layers-counter")].concat(_toConsumableArray(classes))
+        }
+      });
+    });
+  };
+  var layer = function layer(assembler) {
+    var params = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+    var _params$classes4 = params.classes,
+        classes = _params$classes4 === void 0 ? [] : _params$classes4;
+    return apiObject({
+      type: 'layer'
+    }, function () {
+      ensureCss();
+      var children = [];
+      assembler(function (args) {
+        Array.isArray(args) ? args.map(function (a) {
+          children = children.concat(a.abstract);
+        }) : children = children.concat(args.abstract);
+      });
+      return [{
+        tag: 'span',
+        attributes: {
+          class: ["".concat(config.familyPrefix, "-layers")].concat(_toConsumableArray(classes)).join(' ')
+        },
+        children: children
+      }];
+    });
+  };
+  var api = {
+    noAuto: noAuto,
+    config: config,
+    dom: dom,
+    library: library,
+    parse: parse,
+    findIconDefinition: findIconDefinition,
+    icon: icon,
+    text: text,
+    counter: counter,
+    layer: layer,
+    toHtml: toHtml
+  };
+
+  var autoReplace = function autoReplace() {
+    var params = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+    var _params$autoReplaceSv = params.autoReplaceSvgRoot,
+        autoReplaceSvgRoot = _params$autoReplaceSv === void 0 ? DOCUMENT : _params$autoReplaceSv;
+    if ((Object.keys(namespace.styles).length > 0 || config.autoFetchSvg) && IS_DOM && config.autoReplaceSvg) api.dom.i2svg({
+      node: autoReplaceSvgRoot
+    });
+  };
+
+  function bootstrap() {
+    if (IS_BROWSER) {
+      if (!WINDOW.FontAwesome) {
+        WINDOW.FontAwesome = api;
+      }
+
+      domready(function () {
+        autoReplace();
+        observe({
+          treeCallback: onTree,
+          nodeCallback: onNode,
+          pseudoElementsCallback: searchPseudoElements
+        });
+      });
+    }
+
+    namespace.hooks = _objectSpread({}, namespace.hooks, {
+      addPack: function addPack(prefix, icons) {
+        namespace.styles[prefix] = _objectSpread({}, namespace.styles[prefix] || {}, icons);
+        build();
+        autoReplace();
+      },
+      addShims: function addShims(shims) {
+        var _namespace$shims;
+
+        (_namespace$shims = namespace.shims).push.apply(_namespace$shims, _toConsumableArray(shims));
+
+        build();
+        autoReplace();
+      }
+    });
+  }
+
+  bunker(bootstrap);
+
+}());
+
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../../webpack/buildin/global.js */ "./node_modules/webpack/buildin/global.js"), __webpack_require__(/*! ./../../../timers-browserify/main.js */ "./node_modules/timers-browserify/main.js").setImmediate))
+
+/***/ }),
+
 /***/ "./node_modules/admin-lte/dist/js/adminlte.min.js":
 /*!********************************************************!*\
   !*** ./node_modules/admin-lte/dist/js/adminlte.min.js ***!
@@ -100,6 +2590,266 @@
  */
 !function(t,e){ true?e(exports):undefined}(this,(function(t){"use strict";var e=function(t){var e="ControlSidebar",i="lte.controlsidebar",n=t.fn[e],s={COLLAPSED:"collapsed.lte.controlsidebar",EXPANDED:"expanded.lte.controlsidebar"},o=".control-sidebar",a=".control-sidebar-content",r='[data-widget="control-sidebar"]',l=".main-header",c=".main-footer",d="control-sidebar-animate",h="control-sidebar-open",f="control-sidebar-slide-open",u="layout-fixed",g="layout-navbar-fixed",p="layout-sm-navbar-fixed",_="layout-md-navbar-fixed",m="layout-lg-navbar-fixed",v="layout-xl-navbar-fixed",C="layout-footer-fixed",y="layout-sm-footer-fixed",b="layout-md-footer-fixed",w="layout-lg-footer-fixed",x="layout-xl-footer-fixed",E={controlsidebarSlide:!0,scrollbarTheme:"os-theme-light",scrollbarAutoHide:"l"},A=function(){function e(t,e){this._element=t,this._config=e,this._init()}var n=e.prototype;return n.collapse=function(){this._config.controlsidebarSlide?(t("html").addClass(d),t("body").removeClass(f).delay(300).queue((function(){t(o).hide(),t("html").removeClass(d),t(this).dequeue()}))):t("body").removeClass(h);var e=t.Event(s.COLLAPSED);t(this._element).trigger(e)},n.show=function(){this._config.controlsidebarSlide?(t("html").addClass(d),t(o).show().delay(10).queue((function(){t("body").addClass(f).delay(300).queue((function(){t("html").removeClass(d),t(this).dequeue()})),t(this).dequeue()}))):t("body").addClass(h);var e=t.Event(s.EXPANDED);t(this._element).trigger(e)},n.toggle=function(){t("body").hasClass(h)||t("body").hasClass(f)?this.collapse():this.show()},n._init=function(){var e=this;this._fixHeight(),this._fixScrollHeight(),t(window).resize((function(){e._fixHeight(),e._fixScrollHeight()})),t(window).scroll((function(){(t("body").hasClass(h)||t("body").hasClass(f))&&e._fixScrollHeight()}))},n._fixScrollHeight=function(){var e={scroll:t(document).height(),window:t(window).height(),header:t(l).outerHeight(),footer:t(c).outerHeight()},i=Math.abs(e.window+t(window).scrollTop()-e.scroll),n=t(window).scrollTop(),s=!1,r=!1;t("body").hasClass(u)&&((t("body").hasClass(g)||t("body").hasClass(p)||t("body").hasClass(_)||t("body").hasClass(m)||t("body").hasClass(v))&&"fixed"===t(l).css("position")&&(s=!0),(t("body").hasClass(C)||t("body").hasClass(y)||t("body").hasClass(b)||t("body").hasClass(w)||t("body").hasClass(x))&&"fixed"===t(c).css("position")&&(r=!0),0===n&&0===i?(t(o).css("bottom",e.footer),t(o).css("top",e.header),t(o+", "+o+" "+a).css("height",e.window-(e.header+e.footer))):i<=e.footer?!1===r?(t(o).css("bottom",e.footer-i),t(o+", "+o+" "+a).css("height",e.window-(e.footer-i))):t(o).css("bottom",e.footer):n<=e.header?!1===s?(t(o).css("top",e.header-n),t(o+", "+o+" "+a).css("height",e.window-(e.header-n))):t(o).css("top",e.header):!1===s?(t(o).css("top",0),t(o+", "+o+" "+a).css("height",e.window)):t(o).css("top",e.header))},n._fixHeight=function(){var e=t(window).height(),i=t(l).outerHeight(),n=t(c).outerHeight();if(t("body").hasClass(u)){var s=e-i;(t("body").hasClass(C)||t("body").hasClass(y)||t("body").hasClass(b)||t("body").hasClass(w)||t("body").hasClass(x))&&"fixed"===t(c).css("position")&&(s=e-i-n),t(o+" "+a).css("height",s),"undefined"!=typeof t.fn.overlayScrollbars&&t(o+" "+a).overlayScrollbars({className:this._config.scrollbarTheme,sizeAutoCapable:!0,scrollbars:{autoHide:this._config.scrollbarAutoHide,clickScrolling:!0}})}},e._jQueryInterface=function(n){return this.each((function(){var s=t(this).data(i),o=t.extend({},E,t(this).data());if(s||(s=new e(this,o),t(this).data(i,s)),"undefined"===s[n])throw new Error(n+" is not a function");s[n]()}))},e}();return t(document).on("click",r,(function(e){e.preventDefault(),A._jQueryInterface.call(t(this),"toggle")})),t.fn[e]=A._jQueryInterface,t.fn[e].Constructor=A,t.fn[e].noConflict=function(){return t.fn[e]=n,A._jQueryInterface},A}(jQuery),i=function(t){var e="Layout",i=t.fn[e],n=".main-header",s=".main-sidebar",o=".main-sidebar .sidebar",a=".content-wrapper",r=".control-sidebar-content",l='[data-widget="control-sidebar"]',c=".main-footer",d='[data-widget="pushmenu"]',h=".login-box",f=".register-box",u="sidebar-focused",g="layout-fixed",p="control-sidebar-slide-open",_="control-sidebar-open",m={scrollbarTheme:"os-theme-light",scrollbarAutoHide:"l",panelAutoHeight:!0,loginRegisterAutoHeight:!0},v=function(){function e(t,e){this._config=e,this._element=t,this._init()}var i=e.prototype;return i.fixLayoutHeight=function(e){void 0===e&&(e=null);var i=0;(t("body").hasClass(p)||t("body").hasClass(_)||"control_sidebar"==e)&&(i=t(r).height());var s={window:t(window).height(),header:0!==t(n).length?t(n).outerHeight():0,footer:0!==t(c).length?t(c).outerHeight():0,sidebar:0!==t(o).length?t(o).height():0,control_sidebar:i},l=this._max(s),d=this._config.panelAutoHeight;!0===d&&(d=0),!1!==d&&(l==s.control_sidebar?t(a).css("min-height",l+d):l==s.window?t(a).css("min-height",l+d-s.header-s.footer):t(a).css("min-height",l+d-s.header),this._isFooterFixed()&&t(a).css("min-height",parseFloat(t(a).css("min-height"))+s.footer)),t("body").hasClass(g)&&(!1!==d&&t(a).css("min-height",l+d-s.header-s.footer),"undefined"!=typeof t.fn.overlayScrollbars&&t(o).overlayScrollbars({className:this._config.scrollbarTheme,sizeAutoCapable:!0,scrollbars:{autoHide:this._config.scrollbarAutoHide,clickScrolling:!0}}))},i.fixLoginRegisterHeight=function(){if(0===t(h+", "+f).length)t("body, html").css("height","auto");else if(0!==t(h+", "+f).length){var e=t(h+", "+f).height();t("body").css("min-height")!==e&&t("body").css("min-height",e)}},i._init=function(){var e=this;this.fixLayoutHeight(),!0===this._config.loginRegisterAutoHeight?this.fixLoginRegisterHeight():Number.isInteger(this._config.loginRegisterAutoHeight)&&setInterval(this.fixLoginRegisterHeight,this._config.loginRegisterAutoHeight),t(o).on("collapsed.lte.treeview expanded.lte.treeview",(function(){e.fixLayoutHeight()})),t(d).on("collapsed.lte.pushmenu shown.lte.pushmenu",(function(){e.fixLayoutHeight()})),t(l).on("collapsed.lte.controlsidebar",(function(){e.fixLayoutHeight()})).on("expanded.lte.controlsidebar",(function(){e.fixLayoutHeight("control_sidebar")})),t(window).resize((function(){e.fixLayoutHeight()})),setTimeout((function(){t("body.hold-transition").removeClass("hold-transition")}),50)},i._max=function(t){var e=0;return Object.keys(t).forEach((function(i){t[i]>e&&(e=t[i])})),e},i._isFooterFixed=function(){return"fixed"===t(".main-footer").css("position")},e._jQueryInterface=function(i){return void 0===i&&(i=""),this.each((function(){var n=t(this).data("lte.layout"),s=t.extend({},m,t(this).data());n||(n=new e(t(this),s),t(this).data("lte.layout",n)),"init"===i||""===i?n._init():"fixLayoutHeight"!==i&&"fixLoginRegisterHeight"!==i||n[i]()}))},e}();return t(window).on("load",(function(){v._jQueryInterface.call(t("body"))})),t(o+" a").on("focusin",(function(){t(s).addClass(u)})),t(o+" a").on("focusout",(function(){t(s).removeClass(u)})),t.fn[e]=v._jQueryInterface,t.fn[e].Constructor=v,t.fn[e].noConflict=function(){return t.fn[e]=i,v._jQueryInterface},v}(jQuery),n=function(t){var e="PushMenu",i=".lte.pushmenu",n=t.fn[e],s={COLLAPSED:"collapsed"+i,SHOWN:"shown"+i},o={autoCollapseSize:992,enableRemember:!1,noTransitionAfterReload:!0},a='[data-widget="pushmenu"]',r="body",l="#sidebar-overlay",c=".wrapper",d="sidebar-collapse",h="sidebar-open",f="sidebar-closed",u=function(){function e(e,i){this._element=e,this._options=t.extend({},o,i),t(l).length||this._addOverlay(),this._init()}var n=e.prototype;return n.expand=function(){this._options.autoCollapseSize&&t(window).width()<=this._options.autoCollapseSize&&t(r).addClass(h),t(r).removeClass(d).removeClass(f),this._options.enableRemember&&localStorage.setItem("remember"+i,h);var e=t.Event(s.SHOWN);t(this._element).trigger(e)},n.collapse=function(){this._options.autoCollapseSize&&t(window).width()<=this._options.autoCollapseSize&&t(r).removeClass(h).addClass(f),t(r).addClass(d),this._options.enableRemember&&localStorage.setItem("remember"+i,d);var e=t.Event(s.COLLAPSED);t(this._element).trigger(e)},n.toggle=function(){t(r).hasClass(d)?this.expand():this.collapse()},n.autoCollapse=function(e){void 0===e&&(e=!1),this._options.autoCollapseSize&&(t(window).width()<=this._options.autoCollapseSize?t(r).hasClass(h)||this.collapse():1==e&&(t(r).hasClass(h)?t(r).removeClass(h):t(r).hasClass(f)&&this.expand()))},n.remember=function(){this._options.enableRemember&&(localStorage.getItem("remember"+i)==d?this._options.noTransitionAfterReload?t("body").addClass("hold-transition").addClass(d).delay(50).queue((function(){t(this).removeClass("hold-transition"),t(this).dequeue()})):t("body").addClass(d):this._options.noTransitionAfterReload?t("body").addClass("hold-transition").removeClass(d).delay(50).queue((function(){t(this).removeClass("hold-transition"),t(this).dequeue()})):t("body").removeClass(d))},n._init=function(){var e=this;this.remember(),this.autoCollapse(),t(window).resize((function(){e.autoCollapse(!0)}))},n._addOverlay=function(){var e=this,i=t("<div />",{id:"sidebar-overlay"});i.on("click",(function(){e.collapse()})),t(c).append(i)},e._jQueryInterface=function(i){return this.each((function(){var n=t(this).data("lte.pushmenu"),s=t.extend({},o,t(this).data());n||(n=new e(this,s),t(this).data("lte.pushmenu",n)),"string"==typeof i&&i.match(/collapse|expand|toggle/)&&n[i]()}))},e}();return t(document).on("click",a,(function(e){e.preventDefault();var i=e.currentTarget;"pushmenu"!==t(i).data("widget")&&(i=t(i).closest(a)),u._jQueryInterface.call(t(i),"toggle")})),t(window).on("load",(function(){u._jQueryInterface.call(t(a))})),t.fn[e]=u._jQueryInterface,t.fn[e].Constructor=u,t.fn[e].noConflict=function(){return t.fn[e]=n,u._jQueryInterface},u}(jQuery),s=function(t){var e="Treeview",i=t.fn[e],n={SELECTED:"selected.lte.treeview",EXPANDED:"expanded.lte.treeview",COLLAPSED:"collapsed.lte.treeview",LOAD_DATA_API:"load.lte.treeview"},s=".nav-item",o=".nav-treeview",a=".menu-open",r='[data-widget="treeview"]',l="menu-open",c="sidebar-collapse",d={trigger:r+" "+".nav-link",animationSpeed:300,accordion:!0,expandSidebar:!1,sidebarButtonSelector:'[data-widget="pushmenu"]'},h=function(){function e(t,e){this._config=e,this._element=t}var i=e.prototype;return i.init=function(){this._setupListeners()},i.expand=function(e,i){var s=this,r=t.Event(n.EXPANDED);if(this._config.accordion){var c=i.siblings(a).first(),d=c.find(o).first();this.collapse(d,c)}e.stop().slideDown(this._config.animationSpeed,(function(){i.addClass(l),t(s._element).trigger(r)})),this._config.expandSidebar&&this._expandSidebar()},i.collapse=function(e,i){var s=this,r=t.Event(n.COLLAPSED);e.stop().slideUp(this._config.animationSpeed,(function(){i.removeClass(l),t(s._element).trigger(r),e.find(a+" > "+o).slideUp(),e.find(a).removeClass(l)}))},i.toggle=function(e){var i=t(e.currentTarget),n=i.parent(),a=n.find("> "+o);if(a.is(o)||(n.is(s)||(a=n.parent().find("> "+o)),a.is(o))){e.preventDefault();var r=i.parents(s).first();r.hasClass(l)?this.collapse(t(a),r):this.expand(t(a),r)}},i._setupListeners=function(){var e=this;t(document).on("click",this._config.trigger,(function(t){e.toggle(t)}))},i._expandSidebar=function(){t("body").hasClass(c)&&t(this._config.sidebarButtonSelector).PushMenu("expand")},e._jQueryInterface=function(i){return this.each((function(){var n=t(this).data("lte.treeview"),s=t.extend({},d,t(this).data());n||(n=new e(t(this),s),t(this).data("lte.treeview",n)),"init"===i&&n[i]()}))},e}();return t(window).on(n.LOAD_DATA_API,(function(){t(r).each((function(){h._jQueryInterface.call(t(this),"init")}))})),t.fn[e]=h._jQueryInterface,t.fn[e].Constructor=h,t.fn[e].noConflict=function(){return t.fn[e]=i,h._jQueryInterface},h}(jQuery),o=function(t){var e="DirectChat",i=t.fn[e],n="toggled{EVENT_KEY}",s='[data-widget="chat-pane-toggle"]',o=".direct-chat",a="direct-chat-contacts-open",r=function(){function e(t,e){this._element=t}return e.prototype.toggle=function(){t(this._element).parents(o).first().toggleClass(a);var e=t.Event(n);t(this._element).trigger(e)},e._jQueryInterface=function(i){return this.each((function(){var n=t(this).data("lte.directchat");n||(n=new e(t(this)),t(this).data("lte.directchat",n)),n[i]()}))},e}();return t(document).on("click",s,(function(e){e&&e.preventDefault(),r._jQueryInterface.call(t(this),"toggle")})),t.fn[e]=r._jQueryInterface,t.fn[e].Constructor=r,t.fn[e].noConflict=function(){return t.fn[e]=i,r._jQueryInterface},r}(jQuery),a=function(t){var e="TodoList",i=t.fn[e],n='[data-widget="todo-list"]',s="done",o={onCheck:function(t){return t},onUnCheck:function(t){return t}},a=function(){function e(t,e){this._config=e,this._element=t,this._init()}var i=e.prototype;return i.toggle=function(e){e.parents("li").toggleClass(s),t(e).prop("checked")?this.check(e):this.unCheck(t(e))},i.check=function(t){this._config.onCheck.call(t)},i.unCheck=function(t){this._config.onUnCheck.call(t)},i._init=function(){var e=this;t(n).find("input:checkbox:checked").parents("li").toggleClass(s),t(n).on("change","input:checkbox",(function(i){e.toggle(t(i.target))}))},e._jQueryInterface=function(i){return this.each((function(){var n=t(this).data("lte.todolist"),s=t.extend({},o,t(this).data());n||(n=new e(t(this),s),t(this).data("lte.todolist",n)),"init"===i&&n[i]()}))},e}();return t(window).on("load",(function(){a._jQueryInterface.call(t(n))})),t.fn[e]=a._jQueryInterface,t.fn[e].Constructor=a,t.fn[e].noConflict=function(){return t.fn[e]=i,a._jQueryInterface},a}(jQuery),r=function(t){var e="CardWidget",i=".lte.cardwidget",n=t.fn[e],s={EXPANDED:"expanded"+i,COLLAPSED:"collapsed"+i,MAXIMIZED:"maximized"+i,MINIMIZED:"minimized"+i,REMOVED:"removed"+i},o="card",a="collapsed-card",r="collapsing-card",l="expanding-card",c="was-collapsed",d="maximized-card",h={DATA_REMOVE:'[data-card-widget="remove"]',DATA_COLLAPSE:'[data-card-widget="collapse"]',DATA_MAXIMIZE:'[data-card-widget="maximize"]',CARD:"."+o,CARD_HEADER:".card-header",CARD_BODY:".card-body",CARD_FOOTER:".card-footer",COLLAPSED:"."+a},f={animationSpeed:"normal",collapseTrigger:h.DATA_COLLAPSE,removeTrigger:h.DATA_REMOVE,maximizeTrigger:h.DATA_MAXIMIZE,collapseIcon:"fa-minus",expandIcon:"fa-plus",maximizeIcon:"fa-expand",minimizeIcon:"fa-compress"},u=function(){function e(e,i){this._element=e,this._parent=e.parents(h.CARD).first(),e.hasClass(o)&&(this._parent=e),this._settings=t.extend({},f,i)}var i=e.prototype;return i.collapse=function(){var e=this;this._parent.addClass(r).children(h.CARD_BODY+", "+h.CARD_FOOTER).slideUp(this._settings.animationSpeed,(function(){e._parent.addClass(a).removeClass(r)})),this._parent.find("> "+h.CARD_HEADER+" "+this._settings.collapseTrigger+" ."+this._settings.collapseIcon).addClass(this._settings.expandIcon).removeClass(this._settings.collapseIcon);var i=t.Event(s.COLLAPSED);this._element.trigger(i,this._parent)},i.expand=function(){var e=this;this._parent.addClass(l).children(h.CARD_BODY+", "+h.CARD_FOOTER).slideDown(this._settings.animationSpeed,(function(){e._parent.removeClass(a).removeClass(l)})),this._parent.find("> "+h.CARD_HEADER+" "+this._settings.collapseTrigger+" ."+this._settings.expandIcon).addClass(this._settings.collapseIcon).removeClass(this._settings.expandIcon);var i=t.Event(s.EXPANDED);this._element.trigger(i,this._parent)},i.remove=function(){this._parent.slideUp();var e=t.Event(s.REMOVED);this._element.trigger(e,this._parent)},i.toggle=function(){this._parent.hasClass(a)?this.expand():this.collapse()},i.maximize=function(){this._parent.find(this._settings.maximizeTrigger+" ."+this._settings.maximizeIcon).addClass(this._settings.minimizeIcon).removeClass(this._settings.maximizeIcon),this._parent.css({height:this._parent.height(),width:this._parent.width(),transition:"all .15s"}).delay(150).queue((function(){t(this).addClass(d),t("html").addClass(d),t(this).hasClass(a)&&t(this).addClass(c),t(this).dequeue()}));var e=t.Event(s.MAXIMIZED);this._element.trigger(e,this._parent)},i.minimize=function(){this._parent.find(this._settings.maximizeTrigger+" ."+this._settings.minimizeIcon).addClass(this._settings.maximizeIcon).removeClass(this._settings.minimizeIcon),this._parent.css("cssText","height:"+this._parent[0].style.height+" !important;width:"+this._parent[0].style.width+" !important; transition: all .15s;").delay(10).queue((function(){t(this).removeClass(d),t("html").removeClass(d),t(this).css({height:"inherit",width:"inherit"}),t(this).hasClass(c)&&t(this).removeClass(c),t(this).dequeue()}));var e=t.Event(s.MINIMIZED);this._element.trigger(e,this._parent)},i.toggleMaximize=function(){this._parent.hasClass(d)?this.minimize():this.maximize()},i._init=function(e){var i=this;this._parent=e,t(this).find(this._settings.collapseTrigger).click((function(){i.toggle()})),t(this).find(this._settings.maximizeTrigger).click((function(){i.toggleMaximize()})),t(this).find(this._settings.removeTrigger).click((function(){i.remove()}))},e._jQueryInterface=function(i){var n=t(this).data("lte.cardwidget"),s=t.extend({},f,t(this).data());n||(n=new e(t(this),s),t(this).data("lte.cardwidget","string"==typeof i?n:i)),"string"==typeof i&&i.match(/collapse|expand|remove|toggle|maximize|minimize|toggleMaximize/)?n[i]():"object"==typeof i&&n._init(t(this))},e}();return t(document).on("click",h.DATA_COLLAPSE,(function(e){e&&e.preventDefault(),u._jQueryInterface.call(t(this),"toggle")})),t(document).on("click",h.DATA_REMOVE,(function(e){e&&e.preventDefault(),u._jQueryInterface.call(t(this),"remove")})),t(document).on("click",h.DATA_MAXIMIZE,(function(e){e&&e.preventDefault(),u._jQueryInterface.call(t(this),"toggleMaximize")})),t.fn[e]=u._jQueryInterface,t.fn[e].Constructor=u,t.fn[e].noConflict=function(){return t.fn[e]=n,u._jQueryInterface},u}(jQuery),l=function(t){var e="CardRefresh",i=t.fn[e],n={LOADED:"loaded.lte.cardrefresh",OVERLAY_ADDED:"overlay.added.lte.cardrefresh",OVERLAY_REMOVED:"overlay.removed.lte.cardrefresh"},s="card",o={CARD:"."+s,DATA_REFRESH:'[data-card-widget="card-refresh"]'},a={source:"",sourceSelector:"",params:{},trigger:o.DATA_REFRESH,content:".card-body",loadInContent:!0,loadOnInit:!0,responseType:"",overlayTemplate:'<div class="overlay"><i class="fas fa-2x fa-sync-alt fa-spin"></i></div>',onLoadStart:function(){},onLoadDone:function(t){return t}},r=function(){function e(e,i){if(this._element=e,this._parent=e.parents(o.CARD).first(),this._settings=t.extend({},a,i),this._overlay=t(this._settings.overlayTemplate),e.hasClass(s)&&(this._parent=e),""===this._settings.source)throw new Error("Source url was not defined. Please specify a url in your CardRefresh source option.")}var i=e.prototype;return i.load=function(){this._addOverlay(),this._settings.onLoadStart.call(t(this)),t.get(this._settings.source,this._settings.params,function(e){this._settings.loadInContent&&(""!=this._settings.sourceSelector&&(e=t(e).find(this._settings.sourceSelector).html()),this._parent.find(this._settings.content).html(e)),this._settings.onLoadDone.call(t(this),e),this._removeOverlay()}.bind(this),""!==this._settings.responseType&&this._settings.responseType);var e=t.Event(n.LOADED);t(this._element).trigger(e)},i._addOverlay=function(){this._parent.append(this._overlay);var e=t.Event(n.OVERLAY_ADDED);t(this._element).trigger(e)},i._removeOverlay=function(){this._parent.find(this._overlay).remove();var e=t.Event(n.OVERLAY_REMOVED);t(this._element).trigger(e)},i._init=function(e){var i=this;t(this).find(this._settings.trigger).on("click",(function(){i.load()})),this._settings.loadOnInit&&this.load()},e._jQueryInterface=function(i){var n=t(this).data("lte.cardrefresh"),s=t.extend({},a,t(this).data());n||(n=new e(t(this),s),t(this).data("lte.cardrefresh","string"==typeof i?n:i)),"string"==typeof i&&i.match(/load/)?n[i]():n._init(t(this))},e}();return t(document).on("click",o.DATA_REFRESH,(function(e){e&&e.preventDefault(),r._jQueryInterface.call(t(this),"load")})),t(document).ready((function(){t(o.DATA_REFRESH).each((function(){r._jQueryInterface.call(t(this))}))})),t.fn[e]=r._jQueryInterface,t.fn[e].Constructor=r,t.fn[e].noConflict=function(){return t.fn[e]=i,r._jQueryInterface},r}(jQuery),c=function(t){var e="Dropdown",i=t.fn[e],n=".navbar",s=".dropdown-menu",o=".dropdown-menu.show",a='[data-toggle="dropdown"]',r="dropdown-menu-right",l={},c=function(){function e(t,e){this._config=e,this._element=t}var i=e.prototype;return i.toggleSubmenu=function(){this._element.siblings().show().toggleClass("show"),this._element.next().hasClass("show")||this._element.parents(".dropdown-menu").first().find(".show").removeClass("show").hide(),this._element.parents("li.nav-item.dropdown.show").on("hidden.bs.dropdown",(function(e){t(".dropdown-submenu .show").removeClass("show").hide()}))},i.fixPosition=function(){var e=t(o);if(0!==e.length){e.hasClass(r)?(e.css("left","inherit"),e.css("right",0)):(e.css("left",0),e.css("right","inherit"));var i=e.offset(),n=e.width(),s=t(window).width()-i.left;i.left<0?(e.css("left","inherit"),e.css("right",i.left-5)):s<n&&(e.css("left","inherit"),e.css("right",0))}},e._jQueryInterface=function(i){return this.each((function(){var n=t(this).data("lte.dropdown"),s=t.extend({},l,t(this).data());n||(n=new e(t(this),s),t(this).data("lte.dropdown",n)),"toggleSubmenu"!==i&&"fixPosition"!=i||n[i]()}))},e}();return t(s+" "+a).on("click",(function(e){e.preventDefault(),e.stopPropagation(),c._jQueryInterface.call(t(this),"toggleSubmenu")})),t(n+" "+a).on("click",(function(e){e.preventDefault(),setTimeout((function(){c._jQueryInterface.call(t(this),"fixPosition")}),1)})),t.fn[e]=c._jQueryInterface,t.fn[e].Constructor=c,t.fn[e].noConflict=function(){return t.fn[e]=i,c._jQueryInterface},c}(jQuery),d=function(t){var e="Toasts",i=t.fn[e],n={INIT:"init.lte.toasts",CREATED:"created.lte.toasts",REMOVED:"removed.lte.toasts"},s="#toastsContainerTopRight",o="#toastsContainerTopLeft",a="#toastsContainerBottomRight",r="#toastsContainerBottomLeft",l="toasts-top-right",c="toasts-top-left",d="toasts-bottom-right",h="toasts-bottom-left",f="topRight",u="topLeft",g="bottomRight",p="bottomLeft",_={position:f,fixed:!0,autohide:!1,autoremove:!0,delay:1e3,fade:!0,icon:null,image:null,imageAlt:null,imageHeight:"25px",title:null,subtitle:null,close:!0,body:null,class:null},m=function(){function e(e,i){this._config=i,this._prepareContainer();var s=t.Event(n.INIT);t("body").trigger(s)}var i=e.prototype;return i.create=function(){var e=t('<div class="toast" role="alert" aria-live="assertive" aria-atomic="true"/>');e.data("autohide",this._config.autohide),e.data("animation",this._config.fade),this._config.class&&e.addClass(this._config.class),this._config.delay&&500!=this._config.delay&&e.data("delay",this._config.delay);var i=t('<div class="toast-header">');if(null!=this._config.image){var s=t("<img />").addClass("rounded mr-2").attr("src",this._config.image).attr("alt",this._config.imageAlt);null!=this._config.imageHeight&&s.height(this._config.imageHeight).width("auto"),i.append(s)}if(null!=this._config.icon&&i.append(t("<i />").addClass("mr-2").addClass(this._config.icon)),null!=this._config.title&&i.append(t("<strong />").addClass("mr-auto").html(this._config.title)),null!=this._config.subtitle&&i.append(t("<small />").html(this._config.subtitle)),1==this._config.close){var o=t('<button data-dismiss="toast" />').attr("type","button").addClass("ml-2 mb-1 close").attr("aria-label","Close").append('<span aria-hidden="true">&times;</span>');null==this._config.title&&o.toggleClass("ml-2 ml-auto"),i.append(o)}e.append(i),null!=this._config.body&&e.append(t('<div class="toast-body" />').html(this._config.body)),t(this._getContainerId()).prepend(e);var a=t.Event(n.CREATED);t("body").trigger(a),e.toast("show"),this._config.autoremove&&e.on("hidden.bs.toast",(function(){t(this).delay(200).remove();var e=t.Event(n.REMOVED);t("body").trigger(e)}))},i._getContainerId=function(){return this._config.position==f?s:this._config.position==u?o:this._config.position==g?a:this._config.position==p?r:void 0},i._prepareContainer=function(){if(0===t(this._getContainerId()).length){var e=t("<div />").attr("id",this._getContainerId().replace("#",""));this._config.position==f?e.addClass(l):this._config.position==u?e.addClass(c):this._config.position==g?e.addClass(d):this._config.position==p&&e.addClass(h),t("body").append(e)}this._config.fixed?t(this._getContainerId()).addClass("fixed"):t(this._getContainerId()).removeClass("fixed")},e._jQueryInterface=function(i,n){return this.each((function(){var s=t.extend({},_,n),o=new e(t(this),s);"create"===i&&o[i]()}))},e}();return t.fn[e]=m._jQueryInterface,t.fn[e].Constructor=m,t.fn[e].noConflict=function(){return t.fn[e]=i,m._jQueryInterface},m}(jQuery);t.CardRefresh=l,t.CardWidget=r,t.ControlSidebar=e,t.DirectChat=o,t.Dropdown=c,t.Layout=i,t.PushMenu=n,t.Toasts=d,t.TodoList=a,t.Treeview=s,Object.defineProperty(t,"__esModule",{value:!0})}));
 //# sourceMappingURL=adminlte.min.js.map
+
+/***/ }),
+
+/***/ "./node_modules/admin-lte/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js":
+/*!***************************************************************************************!*\
+  !*** ./node_modules/admin-lte/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js ***!
+  \***************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
+ DataTables Bootstrap 4 integration
+ ©2011-2017 SpryMedia Ltd - datatables.net/license
+*/
+(function(b){ true?!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js"),__webpack_require__(/*! datatables.net */ "./node_modules/datatables.net/js/jquery.dataTables.js")], __WEBPACK_AMD_DEFINE_RESULT__ = (function(a){return b(a,window,document)}).apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__),
+				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)):undefined})(function(b,a,d,m){var f=b.fn.dataTable;b.extend(!0,f.defaults,{dom:"<'row'<'col-sm-12 col-md-6'l><'col-sm-12 col-md-6'f>><'row'<'col-sm-12'tr>><'row'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7'p>>",
+renderer:"bootstrap"});b.extend(f.ext.classes,{sWrapper:"dataTables_wrapper dt-bootstrap4",sFilterInput:"form-control form-control-sm",sLengthSelect:"custom-select custom-select-sm form-control form-control-sm",sProcessing:"dataTables_processing card",sPageButton:"paginate_button page-item"});f.ext.renderer.pageButton.bootstrap=function(a,h,r,s,j,n){var o=new f.Api(a),t=a.oClasses,k=a.oLanguage.oPaginate,u=a.oLanguage.oAria.paginate||{},e,g,p=0,q=function(d,f){var l,h,i,c,m=function(a){a.preventDefault();
+!b(a.currentTarget).hasClass("disabled")&&o.page()!=a.data.action&&o.page(a.data.action).draw("page")};l=0;for(h=f.length;l<h;l++)if(c=f[l],b.isArray(c))q(d,c);else{g=e="";switch(c){case "ellipsis":e="&#x2026;";g="disabled";break;case "first":e=k.sFirst;g=c+(0<j?"":" disabled");break;case "previous":e=k.sPrevious;g=c+(0<j?"":" disabled");break;case "next":e=k.sNext;g=c+(j<n-1?"":" disabled");break;case "last":e=k.sLast;g=c+(j<n-1?"":" disabled");break;default:e=c+1,g=j===c?"active":""}e&&(i=b("<li>",
+{"class":t.sPageButton+" "+g,id:0===r&&"string"===typeof c?a.sTableId+"_"+c:null}).append(b("<a>",{href:"#","aria-controls":a.sTableId,"aria-label":u[c],"data-dt-idx":p,tabindex:a.iTabIndex,"class":"page-link"}).html(e)).appendTo(d),a.oApi._fnBindAction(i,{action:c},m),p++)}},i;try{i=b(h).find(d.activeElement).data("dt-idx")}catch(v){}q(b(h).empty().html('<ul class="pagination"/>').children("ul"),s);i!==m&&b(h).find("[data-dt-idx="+i+"]").trigger("focus")};return f});
+
+
+/***/ }),
+
+/***/ "./node_modules/admin-lte/plugins/datatables-responsive/js/dataTables.responsive.min.js":
+/*!**********************************************************************************************!*\
+  !*** ./node_modules/admin-lte/plugins/datatables-responsive/js/dataTables.responsive.min.js ***!
+  \**********************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
+ Responsive 2.2.5
+ 2014-2020 SpryMedia Ltd - datatables.net/license
+*/
+(function(d){ true?!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js"),__webpack_require__(/*! datatables.net */ "./node_modules/datatables.net/js/jquery.dataTables.js")], __WEBPACK_AMD_DEFINE_RESULT__ = (function(m){return d(m,window,document)}).apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__),
+				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)):undefined})(function(d,m,l,q){function t(a,b,c){var e=b+"-"+c;if(n[e])return n[e];for(var d=[],a=a.cell(b,c).node().childNodes,b=0,c=a.length;b<c;b++)d.push(a[b]);return n[e]=d}function r(a,b,c){var e=b+
+"-"+c;if(n[e]){for(var a=a.cell(b,c).node(),c=n[e][0].parentNode.childNodes,b=[],d=0,g=c.length;d<g;d++)b.push(c[d]);c=0;for(d=b.length;c<d;c++)a.appendChild(b[c]);n[e]=q}}var o=d.fn.dataTable,i=function(a,b){if(!o.versionCheck||!o.versionCheck("1.10.10"))throw"DataTables Responsive requires DataTables 1.10.10 or newer";this.s={dt:new o.Api(a),columns:[],current:[]};this.s.dt.settings()[0].responsive||(b&&"string"===typeof b.details?b.details={type:b.details}:b&&!1===b.details?b.details={type:!1}:
+b&&!0===b.details&&(b.details={type:"inline"}),this.c=d.extend(!0,{},i.defaults,o.defaults.responsive,b),a.responsive=this,this._constructor())};d.extend(i.prototype,{_constructor:function(){var a=this,b=this.s.dt,c=b.settings()[0],e=d(m).innerWidth();b.settings()[0]._responsive=this;d(m).on("resize.dtr orientationchange.dtr",o.util.throttle(function(){var b=d(m).innerWidth();b!==e&&(a._resize(),e=b)}));c.oApi._fnCallbackReg(c,"aoRowCreatedCallback",function(c){-1!==d.inArray(!1,a.s.current)&&d(">td, >th",
+c).each(function(c){c=b.column.index("toData",c);!1===a.s.current[c]&&d(this).css("display","none")})});b.on("destroy.dtr",function(){b.off(".dtr");d(b.table().body()).off(".dtr");d(m).off("resize.dtr orientationchange.dtr");b.cells(".dtr-control").nodes().to$().removeClass("dtr-control");d.each(a.s.current,function(b,c){!1===c&&a._setColumnVis(b,!0)})});this.c.breakpoints.sort(function(a,b){return a.width<b.width?1:a.width>b.width?-1:0});this._classLogic();this._resizeAuto();c=this.c.details;!1!==
+c.type&&(a._detailsInit(),b.on("column-visibility.dtr",function(){a._timer&&clearTimeout(a._timer);a._timer=setTimeout(function(){a._timer=null;a._classLogic();a._resizeAuto();a._resize();a._redrawChildren()},100)}),b.on("draw.dtr",function(){a._redrawChildren()}),d(b.table().node()).addClass("dtr-"+c.type));b.on("column-reorder.dtr",function(){a._classLogic();a._resizeAuto();a._resize(true)});b.on("column-sizing.dtr",function(){a._resizeAuto();a._resize()});b.on("preXhr.dtr",function(){var c=[];
+b.rows().every(function(){this.child.isShown()&&c.push(this.id(true))});b.one("draw.dtr",function(){a._resizeAuto();a._resize();b.rows(c).every(function(){a._detailsDisplay(this,false)})})});b.on("draw.dtr",function(){a._controlClass()}).on("init.dtr",function(c){if(c.namespace==="dt"){a._resizeAuto();a._resize();d.inArray(false,a.s.current)&&b.columns.adjust()}});this._resize()},_columnsVisiblity:function(a){var b=this.s.dt,c=this.s.columns,e,f,g=c.map(function(a,b){return{columnIdx:b,priority:a.priority}}).sort(function(a,
+b){return a.priority!==b.priority?a.priority-b.priority:a.columnIdx-b.columnIdx}),j=d.map(c,function(c,e){return!1===b.column(e).visible()?"not-visible":c.auto&&null===c.minWidth?!1:!0===c.auto?"-":-1!==d.inArray(a,c.includeIn)}),h=0;e=0;for(f=j.length;e<f;e++)!0===j[e]&&(h+=c[e].minWidth);e=b.settings()[0].oScroll;e=e.sY||e.sX?e.iBarWidth:0;h=b.table().container().offsetWidth-e-h;e=0;for(f=j.length;e<f;e++)c[e].control&&(h-=c[e].minWidth);var s=!1;e=0;for(f=g.length;e<f;e++){var k=g[e].columnIdx;
+"-"===j[k]&&(!c[k].control&&c[k].minWidth)&&(s||0>h-c[k].minWidth?(s=!0,j[k]=!1):j[k]=!0,h-=c[k].minWidth)}g=!1;e=0;for(f=c.length;e<f;e++)if(!c[e].control&&!c[e].never&&!1===j[e]){g=!0;break}e=0;for(f=c.length;e<f;e++)c[e].control&&(j[e]=g),"not-visible"===j[e]&&(j[e]=!1);-1===d.inArray(!0,j)&&(j[0]=!0);return j},_classLogic:function(){var a=this,b=this.c.breakpoints,c=this.s.dt,e=c.columns().eq(0).map(function(a){var b=this.column(a),e=b.header().className,a=c.settings()[0].aoColumns[a].responsivePriority,
+b=b.header().getAttribute("data-priority");a===q&&(a=b===q||null===b?1E4:1*b);return{className:e,includeIn:[],auto:!1,control:!1,never:e.match(/\bnever\b/)?!0:!1,priority:a}}),f=function(a,b){var c=e[a].includeIn;-1===d.inArray(b,c)&&c.push(b)},g=function(c,d,g,k){if(g)if("max-"===g){k=a._find(d).width;d=0;for(g=b.length;d<g;d++)b[d].width<=k&&f(c,b[d].name)}else if("min-"===g){k=a._find(d).width;d=0;for(g=b.length;d<g;d++)b[d].width>=k&&f(c,b[d].name)}else{if("not-"===g){d=0;for(g=b.length;d<g;d++)-1===
+b[d].name.indexOf(k)&&f(c,b[d].name)}}else e[c].includeIn.push(d)};e.each(function(a,c){for(var e=a.className.split(" "),f=!1,i=0,m=e.length;i<m;i++){var l=d.trim(e[i]);if("all"===l){f=!0;a.includeIn=d.map(b,function(a){return a.name});return}if("none"===l||a.never){f=!0;return}if("control"===l){f=!0;a.control=!0;return}d.each(b,function(a,b){var d=b.name.split("-"),e=l.match(RegExp("(min\\-|max\\-|not\\-)?("+d[0]+")(\\-[_a-zA-Z0-9])?"));e&&(f=!0,e[2]===d[0]&&e[3]==="-"+d[1]?g(c,b.name,e[1],e[2]+
+e[3]):e[2]===d[0]&&!e[3]&&g(c,b.name,e[1],e[2]))})}f||(a.auto=!0)});this.s.columns=e},_controlClass:function(){if("inline"===this.c.details.type){var a=this.s.dt,b=d.inArray(!0,this.s.current);a.cells(null,function(a){return a!==b},{page:"current"}).nodes().to$().filter(".dtr-control").removeClass("dtr-control");a.cells(null,b,{page:"current"}).nodes().to$().addClass("dtr-control")}},_detailsDisplay:function(a,b){var c=this,e=this.s.dt,f=this.c.details;if(f&&!1!==f.type){var g=f.display(a,b,function(){return f.renderer(e,
+a[0],c._detailsObj(a[0]))});(!0===g||!1===g)&&d(e.table().node()).triggerHandler("responsive-display.dt",[e,a,g,b])}},_detailsInit:function(){var a=this,b=this.s.dt,c=this.c.details;"inline"===c.type&&(c.target="td.dtr-control, th.dtr-control");b.on("draw.dtr",function(){a._tabIndexes()});a._tabIndexes();d(b.table().body()).on("keyup.dtr","td, th",function(a){a.keyCode===13&&d(this).data("dtr-keyboard")&&d(this).click()});var e=c.target;if(e!==q||null!==e)d(b.table().body()).on("click.dtr mousedown.dtr mouseup.dtr",
+"string"===typeof e?e:"td, th",function(c){if(d(b.table().node()).hasClass("collapsed")&&d.inArray(d(this).closest("tr").get(0),b.rows().nodes().toArray())!==-1){if(typeof e==="number"){var g=e<0?b.columns().eq(0).length+e:e;if(b.cell(this).index().column!==g)return}g=b.row(d(this).closest("tr"));c.type==="click"?a._detailsDisplay(g,false):c.type==="mousedown"?d(this).css("outline","none"):c.type==="mouseup"&&d(this).trigger("blur").css("outline","")}})},_detailsObj:function(a){var b=this,c=this.s.dt;
+return d.map(this.s.columns,function(e,f){if(!e.never&&!e.control){var g=c.settings()[0].aoColumns[f];return{className:g.sClass,columnIndex:f,data:c.cell(a,f).render(b.c.orthogonal),hidden:c.column(f).visible()&&!b.s.current[f],rowIndex:a,title:null!==g.sTitle?g.sTitle:d(c.column(f).header()).text()}}})},_find:function(a){for(var b=this.c.breakpoints,c=0,d=b.length;c<d;c++)if(b[c].name===a)return b[c]},_redrawChildren:function(){var a=this,b=this.s.dt;b.rows({page:"current"}).iterator("row",function(c,
+d){b.row(d);a._detailsDisplay(b.row(d),!0)})},_resize:function(a){var b=this,c=this.s.dt,e=d(m).innerWidth(),f=this.c.breakpoints,g=f[0].name,j=this.s.columns,h,i=this.s.current.slice();for(h=f.length-1;0<=h;h--)if(e<=f[h].width){g=f[h].name;break}var k=this._columnsVisiblity(g);this.s.current=k;f=!1;h=0;for(e=j.length;h<e;h++)if(!1===k[h]&&!j[h].never&&!j[h].control&&!1===!c.column(h).visible()){f=!0;break}d(c.table().node()).toggleClass("collapsed",f);var l=!1,n=0;c.columns().eq(0).each(function(c,
+d){!0===k[d]&&n++;if(a||k[d]!==i[d])l=!0,b._setColumnVis(c,k[d])});l&&(this._redrawChildren(),d(c.table().node()).trigger("responsive-resize.dt",[c,this.s.current]),0===c.page.info().recordsDisplay&&d("td",c.table().body()).eq(0).attr("colspan",n))},_resizeAuto:function(){var a=this.s.dt,b=this.s.columns;if(this.c.auto&&-1!==d.inArray(!0,d.map(b,function(a){return a.auto}))){d.isEmptyObject(n)||d.each(n,function(b){b=b.split("-");r(a,1*b[0],1*b[1])});a.table().node();var c=a.table().node().cloneNode(!1),
+e=d(a.table().header().cloneNode(!1)).appendTo(c),f=d(a.table().body()).clone(!1,!1).empty().appendTo(c);c.style.width="auto";var g=a.columns().header().filter(function(b){return a.column(b).visible()}).to$().clone(!1).css("display","table-cell").css("width","auto").css("min-width",0);d(f).append(d(a.rows({page:"current"}).nodes()).clone(!1)).find("th, td").css("display","");if(f=a.table().footer()){var f=d(f.cloneNode(!1)).appendTo(c),j=a.columns().footer().filter(function(b){return a.column(b).visible()}).to$().clone(!1).css("display",
+"table-cell");d("<tr/>").append(j).appendTo(f)}d("<tr/>").append(g).appendTo(e);"inline"===this.c.details.type&&d(c).addClass("dtr-inline collapsed");d(c).find("[name]").removeAttr("name");d(c).css("position","relative");c=d("<div/>").css({width:1,height:1,overflow:"hidden",clear:"both"}).append(c);c.insertBefore(a.table().node());g.each(function(d){d=a.column.index("fromVisible",d);b[d].minWidth=this.offsetWidth||0});c.remove()}},_responsiveOnlyHidden:function(){var a=this.s.dt;return d.map(this.s.current,
+function(b,d){return!1===a.column(d).visible()?!0:b})},_setColumnVis:function(a,b){var c=this.s.dt,e=b?"":"none";d(c.column(a).header()).css("display",e);d(c.column(a).footer()).css("display",e);c.column(a).nodes().to$().css("display",e);d.isEmptyObject(n)||c.cells(null,a).indexes().each(function(a){r(c,a.row,a.column)})},_tabIndexes:function(){var a=this.s.dt,b=a.cells({page:"current"}).nodes().to$(),c=a.settings()[0],e=this.c.details.target;b.filter("[data-dtr-keyboard]").removeData("[data-dtr-keyboard]");
+"number"===typeof e?a.cells(null,e,{page:"current"}).nodes().to$().attr("tabIndex",c.iTabIndex).data("dtr-keyboard",1):("td:first-child, th:first-child"===e&&(e=">td:first-child, >th:first-child"),d(e,a.rows({page:"current"}).nodes()).attr("tabIndex",c.iTabIndex).data("dtr-keyboard",1))}});i.breakpoints=[{name:"desktop",width:Infinity},{name:"tablet-l",width:1024},{name:"tablet-p",width:768},{name:"mobile-l",width:480},{name:"mobile-p",width:320}];i.display={childRow:function(a,b,c){if(b){if(d(a.node()).hasClass("parent"))return a.child(c(),
+"child").show(),!0}else{if(a.child.isShown())return a.child(!1),d(a.node()).removeClass("parent"),!1;a.child(c(),"child").show();d(a.node()).addClass("parent");return!0}},childRowImmediate:function(a,b,c){if(!b&&a.child.isShown()||!a.responsive.hasHidden())return a.child(!1),d(a.node()).removeClass("parent"),!1;a.child(c(),"child").show();d(a.node()).addClass("parent");return!0},modal:function(a){return function(b,c,e){if(c)d("div.dtr-modal-content").empty().append(e());else{var f=function(){g.remove();
+d(l).off("keypress.dtr")},g=d('<div class="dtr-modal"/>').append(d('<div class="dtr-modal-display"/>').append(d('<div class="dtr-modal-content"/>').append(e())).append(d('<div class="dtr-modal-close">&times;</div>').click(function(){f()}))).append(d('<div class="dtr-modal-background"/>').click(function(){f()})).appendTo("body");d(l).on("keyup.dtr",function(a){27===a.keyCode&&(a.stopPropagation(),f())})}a&&a.header&&d("div.dtr-modal-content").prepend("<h2>"+a.header(b)+"</h2>")}}};var n={};i.renderer=
+{listHiddenNodes:function(){return function(a,b,c){var e=d('<ul data-dtr-index="'+b+'" class="dtr-details"/>'),f=!1;d.each(c,function(b,c){c.hidden&&(d("<li "+(c.className?'class="'+c.className+'"':"")+' data-dtr-index="'+c.columnIndex+'" data-dt-row="'+c.rowIndex+'" data-dt-column="'+c.columnIndex+'"><span class="dtr-title">'+c.title+"</span> </li>").append(d('<span class="dtr-data"/>').append(t(a,c.rowIndex,c.columnIndex))).appendTo(e),f=!0)});return f?e:!1}},listHidden:function(){return function(a,
+b,c){return(a=d.map(c,function(a){var b=a.className?'class="'+a.className+'"':"";return a.hidden?"<li "+b+' data-dtr-index="'+a.columnIndex+'" data-dt-row="'+a.rowIndex+'" data-dt-column="'+a.columnIndex+'"><span class="dtr-title">'+a.title+'</span> <span class="dtr-data">'+a.data+"</span></li>":""}).join(""))?d('<ul data-dtr-index="'+b+'" class="dtr-details"/>').append(a):!1}},tableAll:function(a){a=d.extend({tableClass:""},a);return function(b,c,e){b=d.map(e,function(a){return"<tr "+(a.className?
+'class="'+a.className+'"':"")+' data-dt-row="'+a.rowIndex+'" data-dt-column="'+a.columnIndex+'"><td>'+a.title+":</td> <td>"+a.data+"</td></tr>"}).join("");return d('<table class="'+a.tableClass+' dtr-details" width="100%"/>').append(b)}}};i.defaults={breakpoints:i.breakpoints,auto:!0,details:{display:i.display.childRow,renderer:i.renderer.listHidden(),target:0,type:"inline"},orthogonal:"display"};var p=d.fn.dataTable.Api;p.register("responsive()",function(){return this});p.register("responsive.index()",
+function(a){a=d(a);return{column:a.data("dtr-index"),row:a.parent().data("dtr-index")}});p.register("responsive.rebuild()",function(){return this.iterator("table",function(a){a._responsive&&a._responsive._classLogic()})});p.register("responsive.recalc()",function(){return this.iterator("table",function(a){a._responsive&&(a._responsive._resizeAuto(),a._responsive._resize())})});p.register("responsive.hasHidden()",function(){var a=this.context[0];return a._responsive?-1!==d.inArray(!1,a._responsive._responsiveOnlyHidden()):
+!1});p.registerPlural("columns().responsiveHidden()","column().responsiveHidden()",function(){return this.iterator("column",function(a,b){return a._responsive?a._responsive._responsiveOnlyHidden()[b]:!1},1)});i.version="2.2.5";d.fn.dataTable.Responsive=i;d.fn.DataTable.Responsive=i;d(l).on("preInit.dt.dtr",function(a,b){if("dt"===a.namespace&&(d(b.nTable).hasClass("responsive")||d(b.nTable).hasClass("dt-responsive")||b.oInit.responsive||o.defaults.responsive)){var c=b.oInit.responsive;!1!==c&&new i(b,
+d.isPlainObject(c)?c:{})}});return i});
+
+
+/***/ }),
+
+/***/ "./node_modules/admin-lte/plugins/datatables-responsive/js/responsive.bootstrap4.min.js":
+/*!**********************************************************************************************!*\
+  !*** ./node_modules/admin-lte/plugins/datatables-responsive/js/responsive.bootstrap4.min.js ***!
+  \**********************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
+ Bootstrap 4 integration for DataTables' Responsive
+ ©2016 SpryMedia Ltd - datatables.net/license
+*/
+(function(c){ true?!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js"),__webpack_require__(/*! datatables.net-bs4 */ "./node_modules/datatables.net-bs4/js/dataTables.bootstrap4.js"),__webpack_require__(/*! datatables.net-responsive */ "./node_modules/datatables.net-responsive/js/dataTables.responsive.js")], __WEBPACK_AMD_DEFINE_RESULT__ = (function(a){return c(a,window,document)}).apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__),
+				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)):undefined})(function(c){var a=c.fn.dataTable,b=a.Responsive.display,g=b.modal,e=c('<div class="modal fade dtr-bs-modal" role="dialog"><div class="modal-dialog" role="document"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button></div><div class="modal-body"/></div></div></div>');
+b.modal=function(a){return function(b,d,f){if(c.fn.modal){if(!d){if(a&&a.header){var d=e.find("div.modal-header"),h=d.find("button").detach();d.empty().append('<h4 class="modal-title">'+a.header(b)+"</h4>").append(h)}e.find("div.modal-body").empty().append(f());e.appendTo("body").modal()}}else g(b,d,f)}};return a.Responsive});
+
+
+/***/ }),
+
+/***/ "./node_modules/admin-lte/plugins/datatables/jquery.dataTables.min.js":
+/*!****************************************************************************!*\
+  !*** ./node_modules/admin-lte/plugins/datatables/jquery.dataTables.min.js ***!
+  \****************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
+ DataTables 1.10.21
+ ©2008-2020 SpryMedia Ltd - datatables.net/license
+*/
+(function(h){ true?!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")], __WEBPACK_AMD_DEFINE_RESULT__ = (function(E){return h(E,window,document)}).apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__),
+				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)):undefined})(function(h,E,H,k){function $(a){var b,c,d={};h.each(a,function(e){if((b=e.match(/^([^A-Z]+?)([A-Z])/))&&-1!=="a aa ai ao as b fn i m o s ".indexOf(b[1]+" "))c=e.replace(b[0],b[2].toLowerCase()),
+d[c]=e,"o"===b[1]&&$(a[e])});a._hungarianMap=d}function J(a,b,c){a._hungarianMap||$(a);var d;h.each(b,function(e){d=a._hungarianMap[e];if(d!==k&&(c||b[d]===k))"o"===d.charAt(0)?(b[d]||(b[d]={}),h.extend(!0,b[d],b[e]),J(a[d],b[d],c)):b[d]=b[e]})}function Ea(a){var b=n.defaults.oLanguage,c=b.sDecimal;c&&Fa(c);if(a){var d=a.sZeroRecords;!a.sEmptyTable&&(d&&"No data available in table"===b.sEmptyTable)&&F(a,a,"sZeroRecords","sEmptyTable");!a.sLoadingRecords&&(d&&"Loading..."===b.sLoadingRecords)&&F(a,
+a,"sZeroRecords","sLoadingRecords");a.sInfoThousands&&(a.sThousands=a.sInfoThousands);(a=a.sDecimal)&&c!==a&&Fa(a)}}function gb(a){A(a,"ordering","bSort");A(a,"orderMulti","bSortMulti");A(a,"orderClasses","bSortClasses");A(a,"orderCellsTop","bSortCellsTop");A(a,"order","aaSorting");A(a,"orderFixed","aaSortingFixed");A(a,"paging","bPaginate");A(a,"pagingType","sPaginationType");A(a,"pageLength","iDisplayLength");A(a,"searching","bFilter");"boolean"===typeof a.sScrollX&&(a.sScrollX=a.sScrollX?"100%":
+"");"boolean"===typeof a.scrollX&&(a.scrollX=a.scrollX?"100%":"");if(a=a.aoSearchCols)for(var b=0,c=a.length;b<c;b++)a[b]&&J(n.models.oSearch,a[b])}function hb(a){A(a,"orderable","bSortable");A(a,"orderData","aDataSort");A(a,"orderSequence","asSorting");A(a,"orderDataType","sortDataType");var b=a.aDataSort;"number"===typeof b&&!h.isArray(b)&&(a.aDataSort=[b])}function ib(a){if(!n.__browser){var b={};n.__browser=b;var c=h("<div/>").css({position:"fixed",top:0,left:-1*h(E).scrollLeft(),height:1,width:1,
+overflow:"hidden"}).append(h("<div/>").css({position:"absolute",top:1,left:1,width:100,overflow:"scroll"}).append(h("<div/>").css({width:"100%",height:10}))).appendTo("body"),d=c.children(),e=d.children();b.barWidth=d[0].offsetWidth-d[0].clientWidth;b.bScrollOversize=100===e[0].offsetWidth&&100!==d[0].clientWidth;b.bScrollbarLeft=1!==Math.round(e.offset().left);b.bBounding=c[0].getBoundingClientRect().width?!0:!1;c.remove()}h.extend(a.oBrowser,n.__browser);a.oScroll.iBarWidth=n.__browser.barWidth}
+function jb(a,b,c,d,e,f){var g,j=!1;c!==k&&(g=c,j=!0);for(;d!==e;)a.hasOwnProperty(d)&&(g=j?b(g,a[d],d,a):a[d],j=!0,d+=f);return g}function Ga(a,b){var c=n.defaults.column,d=a.aoColumns.length,c=h.extend({},n.models.oColumn,c,{nTh:b?b:H.createElement("th"),sTitle:c.sTitle?c.sTitle:b?b.innerHTML:"",aDataSort:c.aDataSort?c.aDataSort:[d],mData:c.mData?c.mData:d,idx:d});a.aoColumns.push(c);c=a.aoPreSearchCols;c[d]=h.extend({},n.models.oSearch,c[d]);la(a,d,h(b).data())}function la(a,b,c){var b=a.aoColumns[b],
+d=a.oClasses,e=h(b.nTh);if(!b.sWidthOrig){b.sWidthOrig=e.attr("width")||null;var f=(e.attr("style")||"").match(/width:\s*(\d+[pxem%]+)/);f&&(b.sWidthOrig=f[1])}c!==k&&null!==c&&(hb(c),J(n.defaults.column,c,!0),c.mDataProp!==k&&!c.mData&&(c.mData=c.mDataProp),c.sType&&(b._sManualType=c.sType),c.className&&!c.sClass&&(c.sClass=c.className),c.sClass&&e.addClass(c.sClass),h.extend(b,c),F(b,c,"sWidth","sWidthOrig"),c.iDataSort!==k&&(b.aDataSort=[c.iDataSort]),F(b,c,"aDataSort"));var g=b.mData,j=S(g),i=
+b.mRender?S(b.mRender):null,c=function(a){return"string"===typeof a&&-1!==a.indexOf("@")};b._bAttrSrc=h.isPlainObject(g)&&(c(g.sort)||c(g.type)||c(g.filter));b._setter=null;b.fnGetData=function(a,b,c){var d=j(a,b,k,c);return i&&b?i(d,b,a,c):d};b.fnSetData=function(a,b,c){return N(g)(a,b,c)};"number"!==typeof g&&(a._rowReadObject=!0);a.oFeatures.bSort||(b.bSortable=!1,e.addClass(d.sSortableNone));a=-1!==h.inArray("asc",b.asSorting);c=-1!==h.inArray("desc",b.asSorting);!b.bSortable||!a&&!c?(b.sSortingClass=
+d.sSortableNone,b.sSortingClassJUI=""):a&&!c?(b.sSortingClass=d.sSortableAsc,b.sSortingClassJUI=d.sSortJUIAscAllowed):!a&&c?(b.sSortingClass=d.sSortableDesc,b.sSortingClassJUI=d.sSortJUIDescAllowed):(b.sSortingClass=d.sSortable,b.sSortingClassJUI=d.sSortJUI)}function aa(a){if(!1!==a.oFeatures.bAutoWidth){var b=a.aoColumns;Ha(a);for(var c=0,d=b.length;c<d;c++)b[c].nTh.style.width=b[c].sWidth}b=a.oScroll;(""!==b.sY||""!==b.sX)&&ma(a);t(a,null,"column-sizing",[a])}function ba(a,b){var c=na(a,"bVisible");
+return"number"===typeof c[b]?c[b]:null}function ca(a,b){var c=na(a,"bVisible"),c=h.inArray(b,c);return-1!==c?c:null}function W(a){var b=0;h.each(a.aoColumns,function(a,d){d.bVisible&&"none"!==h(d.nTh).css("display")&&b++});return b}function na(a,b){var c=[];h.map(a.aoColumns,function(a,e){a[b]&&c.push(e)});return c}function Ia(a){var b=a.aoColumns,c=a.aoData,d=n.ext.type.detect,e,f,g,j,i,h,m,q,u;e=0;for(f=b.length;e<f;e++)if(m=b[e],u=[],!m.sType&&m._sManualType)m.sType=m._sManualType;else if(!m.sType){g=
+0;for(j=d.length;g<j;g++){i=0;for(h=c.length;i<h;i++){u[i]===k&&(u[i]=B(a,i,e,"type"));q=d[g](u[i],a);if(!q&&g!==d.length-1)break;if("html"===q)break}if(q){m.sType=q;break}}m.sType||(m.sType="string")}}function kb(a,b,c,d){var e,f,g,j,i,l,m=a.aoColumns;if(b)for(e=b.length-1;0<=e;e--){l=b[e];var q=l.targets!==k?l.targets:l.aTargets;h.isArray(q)||(q=[q]);f=0;for(g=q.length;f<g;f++)if("number"===typeof q[f]&&0<=q[f]){for(;m.length<=q[f];)Ga(a);d(q[f],l)}else if("number"===typeof q[f]&&0>q[f])d(m.length+
+q[f],l);else if("string"===typeof q[f]){j=0;for(i=m.length;j<i;j++)("_all"==q[f]||h(m[j].nTh).hasClass(q[f]))&&d(j,l)}}if(c){e=0;for(a=c.length;e<a;e++)d(e,c[e])}}function O(a,b,c,d){var e=a.aoData.length,f=h.extend(!0,{},n.models.oRow,{src:c?"dom":"data",idx:e});f._aData=b;a.aoData.push(f);for(var g=a.aoColumns,j=0,i=g.length;j<i;j++)g[j].sType=null;a.aiDisplayMaster.push(e);b=a.rowIdFn(b);b!==k&&(a.aIds[b]=f);(c||!a.oFeatures.bDeferRender)&&Ja(a,e,c,d);return e}function oa(a,b){var c;b instanceof
+h||(b=h(b));return b.map(function(b,e){c=Ka(a,e);return O(a,c.data,e,c.cells)})}function B(a,b,c,d){var e=a.iDraw,f=a.aoColumns[c],g=a.aoData[b]._aData,j=f.sDefaultContent,i=f.fnGetData(g,d,{settings:a,row:b,col:c});if(i===k)return a.iDrawError!=e&&null===j&&(K(a,0,"Requested unknown parameter "+("function"==typeof f.mData?"{function}":"'"+f.mData+"'")+" for row "+b+", column "+c,4),a.iDrawError=e),j;if((i===g||null===i)&&null!==j&&d!==k)i=j;else if("function"===typeof i)return i.call(g);return null===
+i&&"display"==d?"":i}function lb(a,b,c,d){a.aoColumns[c].fnSetData(a.aoData[b]._aData,d,{settings:a,row:b,col:c})}function La(a){return h.map(a.match(/(\\.|[^\.])+/g)||[""],function(a){return a.replace(/\\\./g,".")})}function S(a){if(h.isPlainObject(a)){var b={};h.each(a,function(a,c){c&&(b[a]=S(c))});return function(a,c,f,g){var j=b[c]||b._;return j!==k?j(a,c,f,g):a}}if(null===a)return function(a){return a};if("function"===typeof a)return function(b,c,f,g){return a(b,c,f,g)};if("string"===typeof a&&
+(-1!==a.indexOf(".")||-1!==a.indexOf("[")||-1!==a.indexOf("("))){var c=function(a,b,f){var g,j;if(""!==f){j=La(f);for(var i=0,l=j.length;i<l;i++){f=j[i].match(da);g=j[i].match(X);if(f){j[i]=j[i].replace(da,"");""!==j[i]&&(a=a[j[i]]);g=[];j.splice(0,i+1);j=j.join(".");if(h.isArray(a)){i=0;for(l=a.length;i<l;i++)g.push(c(a[i],b,j))}a=f[0].substring(1,f[0].length-1);a=""===a?g:g.join(a);break}else if(g){j[i]=j[i].replace(X,"");a=a[j[i]]();continue}if(null===a||a[j[i]]===k)return k;a=a[j[i]]}}return a};
+return function(b,e){return c(b,e,a)}}return function(b){return b[a]}}function N(a){if(h.isPlainObject(a))return N(a._);if(null===a)return function(){};if("function"===typeof a)return function(b,d,e){a(b,"set",d,e)};if("string"===typeof a&&(-1!==a.indexOf(".")||-1!==a.indexOf("[")||-1!==a.indexOf("("))){var b=function(a,d,e){var e=La(e),f;f=e[e.length-1];for(var g,j,i=0,l=e.length-1;i<l;i++){g=e[i].match(da);j=e[i].match(X);if(g){e[i]=e[i].replace(da,"");a[e[i]]=[];f=e.slice();f.splice(0,i+1);g=f.join(".");
+if(h.isArray(d)){j=0;for(l=d.length;j<l;j++)f={},b(f,d[j],g),a[e[i]].push(f)}else a[e[i]]=d;return}j&&(e[i]=e[i].replace(X,""),a=a[e[i]](d));if(null===a[e[i]]||a[e[i]]===k)a[e[i]]={};a=a[e[i]]}if(f.match(X))a[f.replace(X,"")](d);else a[f.replace(da,"")]=d};return function(c,d){return b(c,d,a)}}return function(b,d){b[a]=d}}function Ma(a){return C(a.aoData,"_aData")}function pa(a){a.aoData.length=0;a.aiDisplayMaster.length=0;a.aiDisplay.length=0;a.aIds={}}function qa(a,b,c){for(var d=-1,e=0,f=a.length;e<
+f;e++)a[e]==b?d=e:a[e]>b&&a[e]--; -1!=d&&c===k&&a.splice(d,1)}function ea(a,b,c,d){var e=a.aoData[b],f,g=function(c,d){for(;c.childNodes.length;)c.removeChild(c.firstChild);c.innerHTML=B(a,b,d,"display")};if("dom"===c||(!c||"auto"===c)&&"dom"===e.src)e._aData=Ka(a,e,d,d===k?k:e._aData).data;else{var j=e.anCells;if(j)if(d!==k)g(j[d],d);else{c=0;for(f=j.length;c<f;c++)g(j[c],c)}}e._aSortData=null;e._aFilterData=null;g=a.aoColumns;if(d!==k)g[d].sType=null;else{c=0;for(f=g.length;c<f;c++)g[c].sType=null;
+Na(a,e)}}function Ka(a,b,c,d){var e=[],f=b.firstChild,g,j,i=0,l,m=a.aoColumns,q=a._rowReadObject,d=d!==k?d:q?{}:[],u=function(a,b){if("string"===typeof a){var c=a.indexOf("@");-1!==c&&(c=a.substring(c+1),N(a)(d,b.getAttribute(c)))}},G=function(a){if(c===k||c===i)j=m[i],l=h.trim(a.innerHTML),j&&j._bAttrSrc?(N(j.mData._)(d,l),u(j.mData.sort,a),u(j.mData.type,a),u(j.mData.filter,a)):q?(j._setter||(j._setter=N(j.mData)),j._setter(d,l)):d[i]=l;i++};if(f)for(;f;){g=f.nodeName.toUpperCase();if("TD"==g||
+"TH"==g)G(f),e.push(f);f=f.nextSibling}else{e=b.anCells;f=0;for(g=e.length;f<g;f++)G(e[f])}if(b=b.firstChild?b:b.nTr)(b=b.getAttribute("id"))&&N(a.rowId)(d,b);return{data:d,cells:e}}function Ja(a,b,c,d){var e=a.aoData[b],f=e._aData,g=[],j,i,l,m,q,k;if(null===e.nTr){j=c||H.createElement("tr");e.nTr=j;e.anCells=g;j._DT_RowIndex=b;Na(a,e);m=0;for(q=a.aoColumns.length;m<q;m++){l=a.aoColumns[m];i=(k=c?!1:!0)?H.createElement(l.sCellType):d[m];i._DT_CellIndex={row:b,column:m};g.push(i);if(k||(!c||l.mRender||
+l.mData!==m)&&(!h.isPlainObject(l.mData)||l.mData._!==m+".display"))i.innerHTML=B(a,b,m,"display");l.sClass&&(i.className+=" "+l.sClass);l.bVisible&&!c?j.appendChild(i):!l.bVisible&&c&&i.parentNode.removeChild(i);l.fnCreatedCell&&l.fnCreatedCell.call(a.oInstance,i,B(a,b,m),f,b,m)}t(a,"aoRowCreatedCallback",null,[j,f,b,g])}e.nTr.setAttribute("role","row")}function Na(a,b){var c=b.nTr,d=b._aData;if(c){var e=a.rowIdFn(d);e&&(c.id=e);d.DT_RowClass&&(e=d.DT_RowClass.split(" "),b.__rowc=b.__rowc?ra(b.__rowc.concat(e)):
+e,h(c).removeClass(b.__rowc.join(" ")).addClass(d.DT_RowClass));d.DT_RowAttr&&h(c).attr(d.DT_RowAttr);d.DT_RowData&&h(c).data(d.DT_RowData)}}function mb(a){var b,c,d,e,f,g=a.nTHead,j=a.nTFoot,i=0===h("th, td",g).length,l=a.oClasses,m=a.aoColumns;i&&(e=h("<tr/>").appendTo(g));b=0;for(c=m.length;b<c;b++)f=m[b],d=h(f.nTh).addClass(f.sClass),i&&d.appendTo(e),a.oFeatures.bSort&&(d.addClass(f.sSortingClass),!1!==f.bSortable&&(d.attr("tabindex",a.iTabIndex).attr("aria-controls",a.sTableId),Oa(a,f.nTh,b))),
+f.sTitle!=d[0].innerHTML&&d.html(f.sTitle),Pa(a,"header")(a,d,f,l);i&&fa(a.aoHeader,g);h(g).find(">tr").attr("role","row");h(g).find(">tr>th, >tr>td").addClass(l.sHeaderTH);h(j).find(">tr>th, >tr>td").addClass(l.sFooterTH);if(null!==j){a=a.aoFooter[0];b=0;for(c=a.length;b<c;b++)f=m[b],f.nTf=a[b].cell,f.sClass&&h(f.nTf).addClass(f.sClass)}}function ga(a,b,c){var d,e,f,g=[],j=[],i=a.aoColumns.length,l;if(b){c===k&&(c=!1);d=0;for(e=b.length;d<e;d++){g[d]=b[d].slice();g[d].nTr=b[d].nTr;for(f=i-1;0<=f;f--)!a.aoColumns[f].bVisible&&
+!c&&g[d].splice(f,1);j.push([])}d=0;for(e=g.length;d<e;d++){if(a=g[d].nTr)for(;f=a.firstChild;)a.removeChild(f);f=0;for(b=g[d].length;f<b;f++)if(l=i=1,j[d][f]===k){a.appendChild(g[d][f].cell);for(j[d][f]=1;g[d+i]!==k&&g[d][f].cell==g[d+i][f].cell;)j[d+i][f]=1,i++;for(;g[d][f+l]!==k&&g[d][f].cell==g[d][f+l].cell;){for(c=0;c<i;c++)j[d+c][f+l]=1;l++}h(g[d][f].cell).attr("rowspan",i).attr("colspan",l)}}}}function P(a){var b=t(a,"aoPreDrawCallback","preDraw",[a]);if(-1!==h.inArray(!1,b))D(a,!1);else{var b=
+[],c=0,d=a.asStripeClasses,e=d.length,f=a.oLanguage,g=a.iInitDisplayStart,j="ssp"==y(a),i=a.aiDisplay;a.bDrawing=!0;g!==k&&-1!==g&&(a._iDisplayStart=j?g:g>=a.fnRecordsDisplay()?0:g,a.iInitDisplayStart=-1);var g=a._iDisplayStart,l=a.fnDisplayEnd();if(a.bDeferLoading)a.bDeferLoading=!1,a.iDraw++,D(a,!1);else if(j){if(!a.bDestroying&&!nb(a))return}else a.iDraw++;if(0!==i.length){f=j?a.aoData.length:l;for(j=j?0:g;j<f;j++){var m=i[j],q=a.aoData[m];null===q.nTr&&Ja(a,m);var u=q.nTr;if(0!==e){var G=d[c%
+e];q._sRowStripe!=G&&(h(u).removeClass(q._sRowStripe).addClass(G),q._sRowStripe=G)}t(a,"aoRowCallback",null,[u,q._aData,c,j,m]);b.push(u);c++}}else c=f.sZeroRecords,1==a.iDraw&&"ajax"==y(a)?c=f.sLoadingRecords:f.sEmptyTable&&0===a.fnRecordsTotal()&&(c=f.sEmptyTable),b[0]=h("<tr/>",{"class":e?d[0]:""}).append(h("<td />",{valign:"top",colSpan:W(a),"class":a.oClasses.sRowEmpty}).html(c))[0];t(a,"aoHeaderCallback","header",[h(a.nTHead).children("tr")[0],Ma(a),g,l,i]);t(a,"aoFooterCallback","footer",[h(a.nTFoot).children("tr")[0],
+Ma(a),g,l,i]);d=h(a.nTBody);d.children().detach();d.append(h(b));t(a,"aoDrawCallback","draw",[a]);a.bSorted=!1;a.bFiltered=!1;a.bDrawing=!1}}function T(a,b){var c=a.oFeatures,d=c.bFilter;c.bSort&&ob(a);d?ha(a,a.oPreviousSearch):a.aiDisplay=a.aiDisplayMaster.slice();!0!==b&&(a._iDisplayStart=0);a._drawHold=b;P(a);a._drawHold=!1}function pb(a){var b=a.oClasses,c=h(a.nTable),c=h("<div/>").insertBefore(c),d=a.oFeatures,e=h("<div/>",{id:a.sTableId+"_wrapper","class":b.sWrapper+(a.nTFoot?"":" "+b.sNoFooter)});
+a.nHolding=c[0];a.nTableWrapper=e[0];a.nTableReinsertBefore=a.nTable.nextSibling;for(var f=a.sDom.split(""),g,j,i,l,m,q,k=0;k<f.length;k++){g=null;j=f[k];if("<"==j){i=h("<div/>")[0];l=f[k+1];if("'"==l||'"'==l){m="";for(q=2;f[k+q]!=l;)m+=f[k+q],q++;"H"==m?m=b.sJUIHeader:"F"==m&&(m=b.sJUIFooter);-1!=m.indexOf(".")?(l=m.split("."),i.id=l[0].substr(1,l[0].length-1),i.className=l[1]):"#"==m.charAt(0)?i.id=m.substr(1,m.length-1):i.className=m;k+=q}e.append(i);e=h(i)}else if(">"==j)e=e.parent();else if("l"==
+j&&d.bPaginate&&d.bLengthChange)g=qb(a);else if("f"==j&&d.bFilter)g=rb(a);else if("r"==j&&d.bProcessing)g=sb(a);else if("t"==j)g=tb(a);else if("i"==j&&d.bInfo)g=ub(a);else if("p"==j&&d.bPaginate)g=vb(a);else if(0!==n.ext.feature.length){i=n.ext.feature;q=0;for(l=i.length;q<l;q++)if(j==i[q].cFeature){g=i[q].fnInit(a);break}}g&&(i=a.aanFeatures,i[j]||(i[j]=[]),i[j].push(g),e.append(g))}c.replaceWith(e);a.nHolding=null}function fa(a,b){var c=h(b).children("tr"),d,e,f,g,j,i,l,m,q,k;a.splice(0,a.length);
+f=0;for(i=c.length;f<i;f++)a.push([]);f=0;for(i=c.length;f<i;f++){d=c[f];for(e=d.firstChild;e;){if("TD"==e.nodeName.toUpperCase()||"TH"==e.nodeName.toUpperCase()){m=1*e.getAttribute("colspan");q=1*e.getAttribute("rowspan");m=!m||0===m||1===m?1:m;q=!q||0===q||1===q?1:q;g=0;for(j=a[f];j[g];)g++;l=g;k=1===m?!0:!1;for(j=0;j<m;j++)for(g=0;g<q;g++)a[f+g][l+j]={cell:e,unique:k},a[f+g].nTr=d}e=e.nextSibling}}}function sa(a,b,c){var d=[];c||(c=a.aoHeader,b&&(c=[],fa(c,b)));for(var b=0,e=c.length;b<e;b++)for(var f=
+0,g=c[b].length;f<g;f++)if(c[b][f].unique&&(!d[f]||!a.bSortCellsTop))d[f]=c[b][f].cell;return d}function ta(a,b,c){t(a,"aoServerParams","serverParams",[b]);if(b&&h.isArray(b)){var d={},e=/(.*?)\[\]$/;h.each(b,function(a,b){var c=b.name.match(e);c?(c=c[0],d[c]||(d[c]=[]),d[c].push(b.value)):d[b.name]=b.value});b=d}var f,g=a.ajax,j=a.oInstance,i=function(b){t(a,null,"xhr",[a,b,a.jqXHR]);c(b)};if(h.isPlainObject(g)&&g.data){f=g.data;var l="function"===typeof f?f(b,a):f,b="function"===typeof f&&l?l:h.extend(!0,
+b,l);delete g.data}l={data:b,success:function(b){var c=b.error||b.sError;c&&K(a,0,c);a.json=b;i(b)},dataType:"json",cache:!1,type:a.sServerMethod,error:function(b,c){var d=t(a,null,"xhr",[a,null,a.jqXHR]);-1===h.inArray(!0,d)&&("parsererror"==c?K(a,0,"Invalid JSON response",1):4===b.readyState&&K(a,0,"Ajax error",7));D(a,!1)}};a.oAjaxData=b;t(a,null,"preXhr",[a,b]);a.fnServerData?a.fnServerData.call(j,a.sAjaxSource,h.map(b,function(a,b){return{name:b,value:a}}),i,a):a.sAjaxSource||"string"===typeof g?
+a.jqXHR=h.ajax(h.extend(l,{url:g||a.sAjaxSource})):"function"===typeof g?a.jqXHR=g.call(j,b,i,a):(a.jqXHR=h.ajax(h.extend(l,g)),g.data=f)}function nb(a){return a.bAjaxDataGet?(a.iDraw++,D(a,!0),ta(a,wb(a),function(b){xb(a,b)}),!1):!0}function wb(a){var b=a.aoColumns,c=b.length,d=a.oFeatures,e=a.oPreviousSearch,f=a.aoPreSearchCols,g,j=[],i,l,m,k=Y(a);g=a._iDisplayStart;i=!1!==d.bPaginate?a._iDisplayLength:-1;var u=function(a,b){j.push({name:a,value:b})};u("sEcho",a.iDraw);u("iColumns",c);u("sColumns",
+C(b,"sName").join(","));u("iDisplayStart",g);u("iDisplayLength",i);var G={draw:a.iDraw,columns:[],order:[],start:g,length:i,search:{value:e.sSearch,regex:e.bRegex}};for(g=0;g<c;g++)l=b[g],m=f[g],i="function"==typeof l.mData?"function":l.mData,G.columns.push({data:i,name:l.sName,searchable:l.bSearchable,orderable:l.bSortable,search:{value:m.sSearch,regex:m.bRegex}}),u("mDataProp_"+g,i),d.bFilter&&(u("sSearch_"+g,m.sSearch),u("bRegex_"+g,m.bRegex),u("bSearchable_"+g,l.bSearchable)),d.bSort&&u("bSortable_"+
+g,l.bSortable);d.bFilter&&(u("sSearch",e.sSearch),u("bRegex",e.bRegex));d.bSort&&(h.each(k,function(a,b){G.order.push({column:b.col,dir:b.dir});u("iSortCol_"+a,b.col);u("sSortDir_"+a,b.dir)}),u("iSortingCols",k.length));b=n.ext.legacy.ajax;return null===b?a.sAjaxSource?j:G:b?j:G}function xb(a,b){var c=ua(a,b),d=b.sEcho!==k?b.sEcho:b.draw,e=b.iTotalRecords!==k?b.iTotalRecords:b.recordsTotal,f=b.iTotalDisplayRecords!==k?b.iTotalDisplayRecords:b.recordsFiltered;if(d!==k){if(1*d<a.iDraw)return;a.iDraw=
+1*d}pa(a);a._iRecordsTotal=parseInt(e,10);a._iRecordsDisplay=parseInt(f,10);d=0;for(e=c.length;d<e;d++)O(a,c[d]);a.aiDisplay=a.aiDisplayMaster.slice();a.bAjaxDataGet=!1;P(a);a._bInitComplete||va(a,b);a.bAjaxDataGet=!0;D(a,!1)}function ua(a,b){var c=h.isPlainObject(a.ajax)&&a.ajax.dataSrc!==k?a.ajax.dataSrc:a.sAjaxDataProp;return"data"===c?b.aaData||b[c]:""!==c?S(c)(b):b}function rb(a){var b=a.oClasses,c=a.sTableId,d=a.oLanguage,e=a.oPreviousSearch,f=a.aanFeatures,g='<input type="search" class="'+
+b.sFilterInput+'"/>',j=d.sSearch,j=j.match(/_INPUT_/)?j.replace("_INPUT_",g):j+g,b=h("<div/>",{id:!f.f?c+"_filter":null,"class":b.sFilter}).append(h("<label/>").append(j)),i=function(){var b=!this.value?"":this.value;b!=e.sSearch&&(ha(a,{sSearch:b,bRegex:e.bRegex,bSmart:e.bSmart,bCaseInsensitive:e.bCaseInsensitive}),a._iDisplayStart=0,P(a))},f=null!==a.searchDelay?a.searchDelay:"ssp"===y(a)?400:0,l=h("input",b).val(e.sSearch).attr("placeholder",d.sSearchPlaceholder).on("keyup.DT search.DT input.DT paste.DT cut.DT",
+f?Qa(i,f):i).on("mouseup",function(){setTimeout(function(){i.call(l[0])},10)}).on("keypress.DT",function(a){if(13==a.keyCode)return!1}).attr("aria-controls",c);h(a.nTable).on("search.dt.DT",function(b,c){if(a===c)try{l[0]!==H.activeElement&&l.val(e.sSearch)}catch(d){}});return b[0]}function ha(a,b,c){var d=a.oPreviousSearch,e=a.aoPreSearchCols,f=function(a){d.sSearch=a.sSearch;d.bRegex=a.bRegex;d.bSmart=a.bSmart;d.bCaseInsensitive=a.bCaseInsensitive};Ia(a);if("ssp"!=y(a)){yb(a,b.sSearch,c,b.bEscapeRegex!==
+k?!b.bEscapeRegex:b.bRegex,b.bSmart,b.bCaseInsensitive);f(b);for(b=0;b<e.length;b++)zb(a,e[b].sSearch,b,e[b].bEscapeRegex!==k?!e[b].bEscapeRegex:e[b].bRegex,e[b].bSmart,e[b].bCaseInsensitive);Ab(a)}else f(b);a.bFiltered=!0;t(a,null,"search",[a])}function Ab(a){for(var b=n.ext.search,c=a.aiDisplay,d,e,f=0,g=b.length;f<g;f++){for(var j=[],i=0,l=c.length;i<l;i++)e=c[i],d=a.aoData[e],b[f](a,d._aFilterData,e,d._aData,i)&&j.push(e);c.length=0;h.merge(c,j)}}function zb(a,b,c,d,e,f){if(""!==b){for(var g=
+[],j=a.aiDisplay,d=Ra(b,d,e,f),e=0;e<j.length;e++)b=a.aoData[j[e]]._aFilterData[c],d.test(b)&&g.push(j[e]);a.aiDisplay=g}}function yb(a,b,c,d,e,f){var e=Ra(b,d,e,f),g=a.oPreviousSearch.sSearch,j=a.aiDisplayMaster,i,f=[];0!==n.ext.search.length&&(c=!0);i=Bb(a);if(0>=b.length)a.aiDisplay=j.slice();else{if(i||c||d||g.length>b.length||0!==b.indexOf(g)||a.bSorted)a.aiDisplay=j.slice();b=a.aiDisplay;for(c=0;c<b.length;c++)e.test(a.aoData[b[c]]._sFilterRow)&&f.push(b[c]);a.aiDisplay=f}}function Ra(a,b,c,
+d){a=b?a:Sa(a);c&&(a="^(?=.*?"+h.map(a.match(/"[^"]+"|[^ ]+/g)||[""],function(a){if('"'===a.charAt(0))var b=a.match(/^"(.*)"$/),a=b?b[1]:a;return a.replace('"',"")}).join(")(?=.*?")+").*$");return RegExp(a,d?"i":"")}function Bb(a){var b=a.aoColumns,c,d,e,f,g,j,i,h,m=n.ext.type.search;c=!1;d=0;for(f=a.aoData.length;d<f;d++)if(h=a.aoData[d],!h._aFilterData){j=[];e=0;for(g=b.length;e<g;e++)c=b[e],c.bSearchable?(i=B(a,d,e,"filter"),m[c.sType]&&(i=m[c.sType](i)),null===i&&(i=""),"string"!==typeof i&&i.toString&&
+(i=i.toString())):i="",i.indexOf&&-1!==i.indexOf("&")&&(wa.innerHTML=i,i=Yb?wa.textContent:wa.innerText),i.replace&&(i=i.replace(/[\r\n\u2028]/g,"")),j.push(i);h._aFilterData=j;h._sFilterRow=j.join("  ");c=!0}return c}function Cb(a){return{search:a.sSearch,smart:a.bSmart,regex:a.bRegex,caseInsensitive:a.bCaseInsensitive}}function Db(a){return{sSearch:a.search,bSmart:a.smart,bRegex:a.regex,bCaseInsensitive:a.caseInsensitive}}function ub(a){var b=a.sTableId,c=a.aanFeatures.i,d=h("<div/>",{"class":a.oClasses.sInfo,
+id:!c?b+"_info":null});c||(a.aoDrawCallback.push({fn:Eb,sName:"information"}),d.attr("role","status").attr("aria-live","polite"),h(a.nTable).attr("aria-describedby",b+"_info"));return d[0]}function Eb(a){var b=a.aanFeatures.i;if(0!==b.length){var c=a.oLanguage,d=a._iDisplayStart+1,e=a.fnDisplayEnd(),f=a.fnRecordsTotal(),g=a.fnRecordsDisplay(),j=g?c.sInfo:c.sInfoEmpty;g!==f&&(j+=" "+c.sInfoFiltered);j+=c.sInfoPostFix;j=Fb(a,j);c=c.fnInfoCallback;null!==c&&(j=c.call(a.oInstance,a,d,e,f,g,j));h(b).html(j)}}
+function Fb(a,b){var c=a.fnFormatNumber,d=a._iDisplayStart+1,e=a._iDisplayLength,f=a.fnRecordsDisplay(),g=-1===e;return b.replace(/_START_/g,c.call(a,d)).replace(/_END_/g,c.call(a,a.fnDisplayEnd())).replace(/_MAX_/g,c.call(a,a.fnRecordsTotal())).replace(/_TOTAL_/g,c.call(a,f)).replace(/_PAGE_/g,c.call(a,g?1:Math.ceil(d/e))).replace(/_PAGES_/g,c.call(a,g?1:Math.ceil(f/e)))}function ia(a){var b,c,d=a.iInitDisplayStart,e=a.aoColumns,f;c=a.oFeatures;var g=a.bDeferLoading;if(a.bInitialised){pb(a);mb(a);
+ga(a,a.aoHeader);ga(a,a.aoFooter);D(a,!0);c.bAutoWidth&&Ha(a);b=0;for(c=e.length;b<c;b++)f=e[b],f.sWidth&&(f.nTh.style.width=w(f.sWidth));t(a,null,"preInit",[a]);T(a);e=y(a);if("ssp"!=e||g)"ajax"==e?ta(a,[],function(c){var f=ua(a,c);for(b=0;b<f.length;b++)O(a,f[b]);a.iInitDisplayStart=d;T(a);D(a,!1);va(a,c)},a):(D(a,!1),va(a))}else setTimeout(function(){ia(a)},200)}function va(a,b){a._bInitComplete=!0;(b||a.oInit.aaData)&&aa(a);t(a,null,"plugin-init",[a,b]);t(a,"aoInitComplete","init",[a,b])}function Ta(a,
+b){var c=parseInt(b,10);a._iDisplayLength=c;Ua(a);t(a,null,"length",[a,c])}function qb(a){for(var b=a.oClasses,c=a.sTableId,d=a.aLengthMenu,e=h.isArray(d[0]),f=e?d[0]:d,d=e?d[1]:d,e=h("<select/>",{name:c+"_length","aria-controls":c,"class":b.sLengthSelect}),g=0,j=f.length;g<j;g++)e[0][g]=new Option("number"===typeof d[g]?a.fnFormatNumber(d[g]):d[g],f[g]);var i=h("<div><label/></div>").addClass(b.sLength);a.aanFeatures.l||(i[0].id=c+"_length");i.children().append(a.oLanguage.sLengthMenu.replace("_MENU_",
+e[0].outerHTML));h("select",i).val(a._iDisplayLength).on("change.DT",function(){Ta(a,h(this).val());P(a)});h(a.nTable).on("length.dt.DT",function(b,c,d){a===c&&h("select",i).val(d)});return i[0]}function vb(a){var b=a.sPaginationType,c=n.ext.pager[b],d="function"===typeof c,e=function(a){P(a)},b=h("<div/>").addClass(a.oClasses.sPaging+b)[0],f=a.aanFeatures;d||c.fnInit(a,b,e);f.p||(b.id=a.sTableId+"_paginate",a.aoDrawCallback.push({fn:function(a){if(d){var b=a._iDisplayStart,i=a._iDisplayLength,h=
+a.fnRecordsDisplay(),m=-1===i,b=m?0:Math.ceil(b/i),i=m?1:Math.ceil(h/i),h=c(b,i),k,m=0;for(k=f.p.length;m<k;m++)Pa(a,"pageButton")(a,f.p[m],m,h,b,i)}else c.fnUpdate(a,e)},sName:"pagination"}));return b}function Va(a,b,c){var d=a._iDisplayStart,e=a._iDisplayLength,f=a.fnRecordsDisplay();0===f||-1===e?d=0:"number"===typeof b?(d=b*e,d>f&&(d=0)):"first"==b?d=0:"previous"==b?(d=0<=e?d-e:0,0>d&&(d=0)):"next"==b?d+e<f&&(d+=e):"last"==b?d=Math.floor((f-1)/e)*e:K(a,0,"Unknown paging action: "+b,5);b=a._iDisplayStart!==
+d;a._iDisplayStart=d;b&&(t(a,null,"page",[a]),c&&P(a));return b}function sb(a){return h("<div/>",{id:!a.aanFeatures.r?a.sTableId+"_processing":null,"class":a.oClasses.sProcessing}).html(a.oLanguage.sProcessing).insertBefore(a.nTable)[0]}function D(a,b){a.oFeatures.bProcessing&&h(a.aanFeatures.r).css("display",b?"block":"none");t(a,null,"processing",[a,b])}function tb(a){var b=h(a.nTable);b.attr("role","grid");var c=a.oScroll;if(""===c.sX&&""===c.sY)return a.nTable;var d=c.sX,e=c.sY,f=a.oClasses,g=
+b.children("caption"),j=g.length?g[0]._captionSide:null,i=h(b[0].cloneNode(!1)),l=h(b[0].cloneNode(!1)),m=b.children("tfoot");m.length||(m=null);i=h("<div/>",{"class":f.sScrollWrapper}).append(h("<div/>",{"class":f.sScrollHead}).css({overflow:"hidden",position:"relative",border:0,width:d?!d?null:w(d):"100%"}).append(h("<div/>",{"class":f.sScrollHeadInner}).css({"box-sizing":"content-box",width:c.sXInner||"100%"}).append(i.removeAttr("id").css("margin-left",0).append("top"===j?g:null).append(b.children("thead"))))).append(h("<div/>",
+{"class":f.sScrollBody}).css({position:"relative",overflow:"auto",width:!d?null:w(d)}).append(b));m&&i.append(h("<div/>",{"class":f.sScrollFoot}).css({overflow:"hidden",border:0,width:d?!d?null:w(d):"100%"}).append(h("<div/>",{"class":f.sScrollFootInner}).append(l.removeAttr("id").css("margin-left",0).append("bottom"===j?g:null).append(b.children("tfoot")))));var b=i.children(),k=b[0],f=b[1],u=m?b[2]:null;if(d)h(f).on("scroll.DT",function(){var a=this.scrollLeft;k.scrollLeft=a;m&&(u.scrollLeft=a)});
+h(f).css("max-height",e);c.bCollapse||h(f).css("height",e);a.nScrollHead=k;a.nScrollBody=f;a.nScrollFoot=u;a.aoDrawCallback.push({fn:ma,sName:"scrolling"});return i[0]}function ma(a){var b=a.oScroll,c=b.sX,d=b.sXInner,e=b.sY,b=b.iBarWidth,f=h(a.nScrollHead),g=f[0].style,j=f.children("div"),i=j[0].style,l=j.children("table"),j=a.nScrollBody,m=h(j),q=j.style,u=h(a.nScrollFoot).children("div"),n=u.children("table"),o=h(a.nTHead),p=h(a.nTable),r=p[0],t=r.style,s=a.nTFoot?h(a.nTFoot):null,U=a.oBrowser,
+V=U.bScrollOversize,Zb=C(a.aoColumns,"nTh"),Q,L,R,xa,v=[],x=[],y=[],z=[],A,B=function(a){a=a.style;a.paddingTop="0";a.paddingBottom="0";a.borderTopWidth="0";a.borderBottomWidth="0";a.height=0};L=j.scrollHeight>j.clientHeight;if(a.scrollBarVis!==L&&a.scrollBarVis!==k)a.scrollBarVis=L,aa(a);else{a.scrollBarVis=L;p.children("thead, tfoot").remove();s&&(R=s.clone().prependTo(p),Q=s.find("tr"),R=R.find("tr"));xa=o.clone().prependTo(p);o=o.find("tr");L=xa.find("tr");xa.find("th, td").removeAttr("tabindex");
+c||(q.width="100%",f[0].style.width="100%");h.each(sa(a,xa),function(b,c){A=ba(a,b);c.style.width=a.aoColumns[A].sWidth});s&&I(function(a){a.style.width=""},R);f=p.outerWidth();if(""===c){t.width="100%";if(V&&(p.find("tbody").height()>j.offsetHeight||"scroll"==m.css("overflow-y")))t.width=w(p.outerWidth()-b);f=p.outerWidth()}else""!==d&&(t.width=w(d),f=p.outerWidth());I(B,L);I(function(a){y.push(a.innerHTML);v.push(w(h(a).css("width")))},L);I(function(a,b){if(h.inArray(a,Zb)!==-1)a.style.width=v[b]},
+o);h(L).height(0);s&&(I(B,R),I(function(a){z.push(a.innerHTML);x.push(w(h(a).css("width")))},R),I(function(a,b){a.style.width=x[b]},Q),h(R).height(0));I(function(a,b){a.innerHTML='<div class="dataTables_sizing">'+y[b]+"</div>";a.childNodes[0].style.height="0";a.childNodes[0].style.overflow="hidden";a.style.width=v[b]},L);s&&I(function(a,b){a.innerHTML='<div class="dataTables_sizing">'+z[b]+"</div>";a.childNodes[0].style.height="0";a.childNodes[0].style.overflow="hidden";a.style.width=x[b]},R);if(p.outerWidth()<
+f){Q=j.scrollHeight>j.offsetHeight||"scroll"==m.css("overflow-y")?f+b:f;if(V&&(j.scrollHeight>j.offsetHeight||"scroll"==m.css("overflow-y")))t.width=w(Q-b);(""===c||""!==d)&&K(a,1,"Possible column misalignment",6)}else Q="100%";q.width=w(Q);g.width=w(Q);s&&(a.nScrollFoot.style.width=w(Q));!e&&V&&(q.height=w(r.offsetHeight+b));c=p.outerWidth();l[0].style.width=w(c);i.width=w(c);d=p.height()>j.clientHeight||"scroll"==m.css("overflow-y");e="padding"+(U.bScrollbarLeft?"Left":"Right");i[e]=d?b+"px":"0px";
+s&&(n[0].style.width=w(c),u[0].style.width=w(c),u[0].style[e]=d?b+"px":"0px");p.children("colgroup").insertBefore(p.children("thead"));m.trigger("scroll");if((a.bSorted||a.bFiltered)&&!a._drawHold)j.scrollTop=0}}function I(a,b,c){for(var d=0,e=0,f=b.length,g,j;e<f;){g=b[e].firstChild;for(j=c?c[e].firstChild:null;g;)1===g.nodeType&&(c?a(g,j,d):a(g,d),d++),g=g.nextSibling,j=c?j.nextSibling:null;e++}}function Ha(a){var b=a.nTable,c=a.aoColumns,d=a.oScroll,e=d.sY,f=d.sX,g=d.sXInner,j=c.length,i=na(a,
+"bVisible"),l=h("th",a.nTHead),m=b.getAttribute("width"),k=b.parentNode,u=!1,n,o,p=a.oBrowser,d=p.bScrollOversize;(n=b.style.width)&&-1!==n.indexOf("%")&&(m=n);for(n=0;n<i.length;n++)o=c[i[n]],null!==o.sWidth&&(o.sWidth=Gb(o.sWidthOrig,k),u=!0);if(d||!u&&!f&&!e&&j==W(a)&&j==l.length)for(n=0;n<j;n++)i=ba(a,n),null!==i&&(c[i].sWidth=w(l.eq(n).width()));else{j=h(b).clone().css("visibility","hidden").removeAttr("id");j.find("tbody tr").remove();var r=h("<tr/>").appendTo(j.find("tbody"));j.find("thead, tfoot").remove();
+j.append(h(a.nTHead).clone()).append(h(a.nTFoot).clone());j.find("tfoot th, tfoot td").css("width","");l=sa(a,j.find("thead")[0]);for(n=0;n<i.length;n++)o=c[i[n]],l[n].style.width=null!==o.sWidthOrig&&""!==o.sWidthOrig?w(o.sWidthOrig):"",o.sWidthOrig&&f&&h(l[n]).append(h("<div/>").css({width:o.sWidthOrig,margin:0,padding:0,border:0,height:1}));if(a.aoData.length)for(n=0;n<i.length;n++)u=i[n],o=c[u],h(Hb(a,u)).clone(!1).append(o.sContentPadding).appendTo(r);h("[name]",j).removeAttr("name");o=h("<div/>").css(f||
+e?{position:"absolute",top:0,left:0,height:1,right:0,overflow:"hidden"}:{}).append(j).appendTo(k);f&&g?j.width(g):f?(j.css("width","auto"),j.removeAttr("width"),j.width()<k.clientWidth&&m&&j.width(k.clientWidth)):e?j.width(k.clientWidth):m&&j.width(m);for(n=e=0;n<i.length;n++)k=h(l[n]),g=k.outerWidth()-k.width(),k=p.bBounding?Math.ceil(l[n].getBoundingClientRect().width):k.outerWidth(),e+=k,c[i[n]].sWidth=w(k-g);b.style.width=w(e);o.remove()}m&&(b.style.width=w(m));if((m||f)&&!a._reszEvt)b=function(){h(E).on("resize.DT-"+
+a.sInstance,Qa(function(){aa(a)}))},d?setTimeout(b,1E3):b(),a._reszEvt=!0}function Gb(a,b){if(!a)return 0;var c=h("<div/>").css("width",w(a)).appendTo(b||H.body),d=c[0].offsetWidth;c.remove();return d}function Hb(a,b){var c=Ib(a,b);if(0>c)return null;var d=a.aoData[c];return!d.nTr?h("<td/>").html(B(a,c,b,"display"))[0]:d.anCells[b]}function Ib(a,b){for(var c,d=-1,e=-1,f=0,g=a.aoData.length;f<g;f++)c=B(a,f,b,"display")+"",c=c.replace($b,""),c=c.replace(/&nbsp;/g," "),c.length>d&&(d=c.length,e=f);return e}
+function w(a){return null===a?"0px":"number"==typeof a?0>a?"0px":a+"px":a.match(/\d$/)?a+"px":a}function Y(a){var b,c,d=[],e=a.aoColumns,f,g,j,i;b=a.aaSortingFixed;c=h.isPlainObject(b);var l=[];f=function(a){a.length&&!h.isArray(a[0])?l.push(a):h.merge(l,a)};h.isArray(b)&&f(b);c&&b.pre&&f(b.pre);f(a.aaSorting);c&&b.post&&f(b.post);for(a=0;a<l.length;a++){i=l[a][0];f=e[i].aDataSort;b=0;for(c=f.length;b<c;b++)g=f[b],j=e[g].sType||"string",l[a]._idx===k&&(l[a]._idx=h.inArray(l[a][1],e[g].asSorting)),
+d.push({src:i,col:g,dir:l[a][1],index:l[a]._idx,type:j,formatter:n.ext.type.order[j+"-pre"]})}return d}function ob(a){var b,c,d=[],e=n.ext.type.order,f=a.aoData,g=0,j,i=a.aiDisplayMaster,h;Ia(a);h=Y(a);b=0;for(c=h.length;b<c;b++)j=h[b],j.formatter&&g++,Jb(a,j.col);if("ssp"!=y(a)&&0!==h.length){b=0;for(c=i.length;b<c;b++)d[i[b]]=b;g===h.length?i.sort(function(a,b){var c,e,g,j,i=h.length,k=f[a]._aSortData,n=f[b]._aSortData;for(g=0;g<i;g++)if(j=h[g],c=k[j.col],e=n[j.col],c=c<e?-1:c>e?1:0,0!==c)return"asc"===
+j.dir?c:-c;c=d[a];e=d[b];return c<e?-1:c>e?1:0}):i.sort(function(a,b){var c,g,j,i,k=h.length,n=f[a]._aSortData,o=f[b]._aSortData;for(j=0;j<k;j++)if(i=h[j],c=n[i.col],g=o[i.col],i=e[i.type+"-"+i.dir]||e["string-"+i.dir],c=i(c,g),0!==c)return c;c=d[a];g=d[b];return c<g?-1:c>g?1:0})}a.bSorted=!0}function Kb(a){for(var b,c,d=a.aoColumns,e=Y(a),a=a.oLanguage.oAria,f=0,g=d.length;f<g;f++){c=d[f];var j=c.asSorting;b=c.sTitle.replace(/<.*?>/g,"");var i=c.nTh;i.removeAttribute("aria-sort");c.bSortable&&(0<
+e.length&&e[0].col==f?(i.setAttribute("aria-sort","asc"==e[0].dir?"ascending":"descending"),c=j[e[0].index+1]||j[0]):c=j[0],b+="asc"===c?a.sSortAscending:a.sSortDescending);i.setAttribute("aria-label",b)}}function Wa(a,b,c,d){var e=a.aaSorting,f=a.aoColumns[b].asSorting,g=function(a,b){var c=a._idx;c===k&&(c=h.inArray(a[1],f));return c+1<f.length?c+1:b?null:0};"number"===typeof e[0]&&(e=a.aaSorting=[e]);c&&a.oFeatures.bSortMulti?(c=h.inArray(b,C(e,"0")),-1!==c?(b=g(e[c],!0),null===b&&1===e.length&&
+(b=0),null===b?e.splice(c,1):(e[c][1]=f[b],e[c]._idx=b)):(e.push([b,f[0],0]),e[e.length-1]._idx=0)):e.length&&e[0][0]==b?(b=g(e[0]),e.length=1,e[0][1]=f[b],e[0]._idx=b):(e.length=0,e.push([b,f[0]]),e[0]._idx=0);T(a);"function"==typeof d&&d(a)}function Oa(a,b,c,d){var e=a.aoColumns[c];Xa(b,{},function(b){!1!==e.bSortable&&(a.oFeatures.bProcessing?(D(a,!0),setTimeout(function(){Wa(a,c,b.shiftKey,d);"ssp"!==y(a)&&D(a,!1)},0)):Wa(a,c,b.shiftKey,d))})}function ya(a){var b=a.aLastSort,c=a.oClasses.sSortColumn,
+d=Y(a),e=a.oFeatures,f,g;if(e.bSort&&e.bSortClasses){e=0;for(f=b.length;e<f;e++)g=b[e].src,h(C(a.aoData,"anCells",g)).removeClass(c+(2>e?e+1:3));e=0;for(f=d.length;e<f;e++)g=d[e].src,h(C(a.aoData,"anCells",g)).addClass(c+(2>e?e+1:3))}a.aLastSort=d}function Jb(a,b){var c=a.aoColumns[b],d=n.ext.order[c.sSortDataType],e;d&&(e=d.call(a.oInstance,a,b,ca(a,b)));for(var f,g=n.ext.type.order[c.sType+"-pre"],j=0,i=a.aoData.length;j<i;j++)if(c=a.aoData[j],c._aSortData||(c._aSortData=[]),!c._aSortData[b]||d)f=
+d?e[j]:B(a,j,b,"sort"),c._aSortData[b]=g?g(f):f}function za(a){if(a.oFeatures.bStateSave&&!a.bDestroying){var b={time:+new Date,start:a._iDisplayStart,length:a._iDisplayLength,order:h.extend(!0,[],a.aaSorting),search:Cb(a.oPreviousSearch),columns:h.map(a.aoColumns,function(b,d){return{visible:b.bVisible,search:Cb(a.aoPreSearchCols[d])}})};t(a,"aoStateSaveParams","stateSaveParams",[a,b]);a.oSavedState=b;a.fnStateSaveCallback.call(a.oInstance,a,b)}}function Lb(a,b,c){var d,e,f=a.aoColumns,b=function(b){if(b&&
+b.time){var g=t(a,"aoStateLoadParams","stateLoadParams",[a,b]);if(-1===h.inArray(!1,g)&&(g=a.iStateDuration,!(0<g&&b.time<+new Date-1E3*g)&&!(b.columns&&f.length!==b.columns.length))){a.oLoadedState=h.extend(!0,{},b);b.start!==k&&(a._iDisplayStart=b.start,a.iInitDisplayStart=b.start);b.length!==k&&(a._iDisplayLength=b.length);b.order!==k&&(a.aaSorting=[],h.each(b.order,function(b,c){a.aaSorting.push(c[0]>=f.length?[0,c[1]]:c)}));b.search!==k&&h.extend(a.oPreviousSearch,Db(b.search));if(b.columns){d=
+0;for(e=b.columns.length;d<e;d++)g=b.columns[d],g.visible!==k&&(f[d].bVisible=g.visible),g.search!==k&&h.extend(a.aoPreSearchCols[d],Db(g.search))}t(a,"aoStateLoaded","stateLoaded",[a,b])}}c()};if(a.oFeatures.bStateSave){var g=a.fnStateLoadCallback.call(a.oInstance,a,b);g!==k&&b(g)}else c()}function Aa(a){var b=n.settings,a=h.inArray(a,C(b,"nTable"));return-1!==a?b[a]:null}function K(a,b,c,d){c="DataTables warning: "+(a?"table id="+a.sTableId+" - ":"")+c;d&&(c+=". For more information about this error, please see http://datatables.net/tn/"+
+d);if(b)E.console&&console.log&&console.log(c);else if(b=n.ext,b=b.sErrMode||b.errMode,a&&t(a,null,"error",[a,d,c]),"alert"==b)alert(c);else{if("throw"==b)throw Error(c);"function"==typeof b&&b(a,d,c)}}function F(a,b,c,d){h.isArray(c)?h.each(c,function(c,d){h.isArray(d)?F(a,b,d[0],d[1]):F(a,b,d)}):(d===k&&(d=c),b[c]!==k&&(a[d]=b[c]))}function Ya(a,b,c){var d,e;for(e in b)b.hasOwnProperty(e)&&(d=b[e],h.isPlainObject(d)?(h.isPlainObject(a[e])||(a[e]={}),h.extend(!0,a[e],d)):a[e]=c&&"data"!==e&&"aaData"!==
+e&&h.isArray(d)?d.slice():d);return a}function Xa(a,b,c){h(a).on("click.DT",b,function(b){h(a).trigger("blur");c(b)}).on("keypress.DT",b,function(a){13===a.which&&(a.preventDefault(),c(a))}).on("selectstart.DT",function(){return!1})}function z(a,b,c,d){c&&a[b].push({fn:c,sName:d})}function t(a,b,c,d){var e=[];b&&(e=h.map(a[b].slice().reverse(),function(b){return b.fn.apply(a.oInstance,d)}));null!==c&&(b=h.Event(c+".dt"),h(a.nTable).trigger(b,d),e.push(b.result));return e}function Ua(a){var b=a._iDisplayStart,
+c=a.fnDisplayEnd(),d=a._iDisplayLength;b>=c&&(b=c-d);b-=b%d;if(-1===d||0>b)b=0;a._iDisplayStart=b}function Pa(a,b){var c=a.renderer,d=n.ext.renderer[b];return h.isPlainObject(c)&&c[b]?d[c[b]]||d._:"string"===typeof c?d[c]||d._:d._}function y(a){return a.oFeatures.bServerSide?"ssp":a.ajax||a.sAjaxSource?"ajax":"dom"}function ja(a,b){var c=[],c=Mb.numbers_length,d=Math.floor(c/2);b<=c?c=Z(0,b):a<=d?(c=Z(0,c-2),c.push("ellipsis"),c.push(b-1)):(a>=b-1-d?c=Z(b-(c-2),b):(c=Z(a-d+2,a+d-1),c.push("ellipsis"),
+c.push(b-1)),c.splice(0,0,"ellipsis"),c.splice(0,0,0));c.DT_el="span";return c}function Fa(a){h.each({num:function(b){return Ba(b,a)},"num-fmt":function(b){return Ba(b,a,Za)},"html-num":function(b){return Ba(b,a,Ca)},"html-num-fmt":function(b){return Ba(b,a,Ca,Za)}},function(b,c){v.type.order[b+a+"-pre"]=c;b.match(/^html\-/)&&(v.type.search[b+a]=v.type.search.html)})}function Nb(a){return function(){var b=[Aa(this[n.ext.iApiIndex])].concat(Array.prototype.slice.call(arguments));return n.ext.internal[a].apply(this,
+b)}}var n=function(a){this.$=function(a,b){return this.api(!0).$(a,b)};this._=function(a,b){return this.api(!0).rows(a,b).data()};this.api=function(a){return a?new r(Aa(this[v.iApiIndex])):new r(this)};this.fnAddData=function(a,b){var c=this.api(!0),d=h.isArray(a)&&(h.isArray(a[0])||h.isPlainObject(a[0]))?c.rows.add(a):c.row.add(a);(b===k||b)&&c.draw();return d.flatten().toArray()};this.fnAdjustColumnSizing=function(a){var b=this.api(!0).columns.adjust(),c=b.settings()[0],d=c.oScroll;a===k||a?b.draw(!1):
+(""!==d.sX||""!==d.sY)&&ma(c)};this.fnClearTable=function(a){var b=this.api(!0).clear();(a===k||a)&&b.draw()};this.fnClose=function(a){this.api(!0).row(a).child.hide()};this.fnDeleteRow=function(a,b,c){var d=this.api(!0),a=d.rows(a),e=a.settings()[0],h=e.aoData[a[0][0]];a.remove();b&&b.call(this,e,h);(c===k||c)&&d.draw();return h};this.fnDestroy=function(a){this.api(!0).destroy(a)};this.fnDraw=function(a){this.api(!0).draw(a)};this.fnFilter=function(a,b,c,d,e,h){e=this.api(!0);null===b||b===k?e.search(a,
+c,d,h):e.column(b).search(a,c,d,h);e.draw()};this.fnGetData=function(a,b){var c=this.api(!0);if(a!==k){var d=a.nodeName?a.nodeName.toLowerCase():"";return b!==k||"td"==d||"th"==d?c.cell(a,b).data():c.row(a).data()||null}return c.data().toArray()};this.fnGetNodes=function(a){var b=this.api(!0);return a!==k?b.row(a).node():b.rows().nodes().flatten().toArray()};this.fnGetPosition=function(a){var b=this.api(!0),c=a.nodeName.toUpperCase();return"TR"==c?b.row(a).index():"TD"==c||"TH"==c?(a=b.cell(a).index(),
+[a.row,a.columnVisible,a.column]):null};this.fnIsOpen=function(a){return this.api(!0).row(a).child.isShown()};this.fnOpen=function(a,b,c){return this.api(!0).row(a).child(b,c).show().child()[0]};this.fnPageChange=function(a,b){var c=this.api(!0).page(a);(b===k||b)&&c.draw(!1)};this.fnSetColumnVis=function(a,b,c){a=this.api(!0).column(a).visible(b);(c===k||c)&&a.columns.adjust().draw()};this.fnSettings=function(){return Aa(this[v.iApiIndex])};this.fnSort=function(a){this.api(!0).order(a).draw()};this.fnSortListener=
+function(a,b,c){this.api(!0).order.listener(a,b,c)};this.fnUpdate=function(a,b,c,d,e){var h=this.api(!0);c===k||null===c?h.row(b).data(a):h.cell(b,c).data(a);(e===k||e)&&h.columns.adjust();(d===k||d)&&h.draw();return 0};this.fnVersionCheck=v.fnVersionCheck;var b=this,c=a===k,d=this.length;c&&(a={});this.oApi=this.internal=v.internal;for(var e in n.ext.internal)e&&(this[e]=Nb(e));this.each(function(){var e={},g=1<d?Ya(e,a,!0):a,j=0,i,e=this.getAttribute("id"),l=!1,m=n.defaults,q=h(this);if("table"!=
+this.nodeName.toLowerCase())K(null,0,"Non-table node initialisation ("+this.nodeName+")",2);else{gb(m);hb(m.column);J(m,m,!0);J(m.column,m.column,!0);J(m,h.extend(g,q.data()),!0);var u=n.settings,j=0;for(i=u.length;j<i;j++){var o=u[j];if(o.nTable==this||o.nTHead&&o.nTHead.parentNode==this||o.nTFoot&&o.nTFoot.parentNode==this){var r=g.bRetrieve!==k?g.bRetrieve:m.bRetrieve;if(c||r)return o.oInstance;if(g.bDestroy!==k?g.bDestroy:m.bDestroy){o.oInstance.fnDestroy();break}else{K(o,0,"Cannot reinitialise DataTable",
+3);return}}if(o.sTableId==this.id){u.splice(j,1);break}}if(null===e||""===e)this.id=e="DataTables_Table_"+n.ext._unique++;var p=h.extend(!0,{},n.models.oSettings,{sDestroyWidth:q[0].style.width,sInstance:e,sTableId:e});p.nTable=this;p.oApi=b.internal;p.oInit=g;u.push(p);p.oInstance=1===b.length?b:q.dataTable();gb(g);Ea(g.oLanguage);g.aLengthMenu&&!g.iDisplayLength&&(g.iDisplayLength=h.isArray(g.aLengthMenu[0])?g.aLengthMenu[0][0]:g.aLengthMenu[0]);g=Ya(h.extend(!0,{},m),g);F(p.oFeatures,g,"bPaginate bLengthChange bFilter bSort bSortMulti bInfo bProcessing bAutoWidth bSortClasses bServerSide bDeferRender".split(" "));
+F(p,g,["asStripeClasses","ajax","fnServerData","fnFormatNumber","sServerMethod","aaSorting","aaSortingFixed","aLengthMenu","sPaginationType","sAjaxSource","sAjaxDataProp","iStateDuration","sDom","bSortCellsTop","iTabIndex","fnStateLoadCallback","fnStateSaveCallback","renderer","searchDelay","rowId",["iCookieDuration","iStateDuration"],["oSearch","oPreviousSearch"],["aoSearchCols","aoPreSearchCols"],["iDisplayLength","_iDisplayLength"]]);F(p.oScroll,g,[["sScrollX","sX"],["sScrollXInner","sXInner"],
+["sScrollY","sY"],["bScrollCollapse","bCollapse"]]);F(p.oLanguage,g,"fnInfoCallback");z(p,"aoDrawCallback",g.fnDrawCallback,"user");z(p,"aoServerParams",g.fnServerParams,"user");z(p,"aoStateSaveParams",g.fnStateSaveParams,"user");z(p,"aoStateLoadParams",g.fnStateLoadParams,"user");z(p,"aoStateLoaded",g.fnStateLoaded,"user");z(p,"aoRowCallback",g.fnRowCallback,"user");z(p,"aoRowCreatedCallback",g.fnCreatedRow,"user");z(p,"aoHeaderCallback",g.fnHeaderCallback,"user");z(p,"aoFooterCallback",g.fnFooterCallback,
+"user");z(p,"aoInitComplete",g.fnInitComplete,"user");z(p,"aoPreDrawCallback",g.fnPreDrawCallback,"user");p.rowIdFn=S(g.rowId);ib(p);var s=p.oClasses;h.extend(s,n.ext.classes,g.oClasses);q.addClass(s.sTable);p.iInitDisplayStart===k&&(p.iInitDisplayStart=g.iDisplayStart,p._iDisplayStart=g.iDisplayStart);null!==g.iDeferLoading&&(p.bDeferLoading=!0,e=h.isArray(g.iDeferLoading),p._iRecordsDisplay=e?g.iDeferLoading[0]:g.iDeferLoading,p._iRecordsTotal=e?g.iDeferLoading[1]:g.iDeferLoading);var w=p.oLanguage;
+h.extend(!0,w,g.oLanguage);w.sUrl&&(h.ajax({dataType:"json",url:w.sUrl,success:function(a){Ea(a);J(m.oLanguage,a);h.extend(true,w,a);ia(p)},error:function(){ia(p)}}),l=!0);null===g.asStripeClasses&&(p.asStripeClasses=[s.sStripeOdd,s.sStripeEven]);var e=p.asStripeClasses,v=q.children("tbody").find("tr").eq(0);-1!==h.inArray(!0,h.map(e,function(a){return v.hasClass(a)}))&&(h("tbody tr",this).removeClass(e.join(" ")),p.asDestroyStripes=e.slice());e=[];u=this.getElementsByTagName("thead");0!==u.length&&
+(fa(p.aoHeader,u[0]),e=sa(p));if(null===g.aoColumns){u=[];j=0;for(i=e.length;j<i;j++)u.push(null)}else u=g.aoColumns;j=0;for(i=u.length;j<i;j++)Ga(p,e?e[j]:null);kb(p,g.aoColumnDefs,u,function(a,b){la(p,a,b)});if(v.length){var U=function(a,b){return a.getAttribute("data-"+b)!==null?b:null};h(v[0]).children("th, td").each(function(a,b){var c=p.aoColumns[a];if(c.mData===a){var d=U(b,"sort")||U(b,"order"),e=U(b,"filter")||U(b,"search");if(d!==null||e!==null){c.mData={_:a+".display",sort:d!==null?a+".@data-"+
+d:k,type:d!==null?a+".@data-"+d:k,filter:e!==null?a+".@data-"+e:k};la(p,a)}}})}var V=p.oFeatures,e=function(){if(g.aaSorting===k){var a=p.aaSorting;j=0;for(i=a.length;j<i;j++)a[j][1]=p.aoColumns[j].asSorting[0]}ya(p);V.bSort&&z(p,"aoDrawCallback",function(){if(p.bSorted){var a=Y(p),b={};h.each(a,function(a,c){b[c.src]=c.dir});t(p,null,"order",[p,a,b]);Kb(p)}});z(p,"aoDrawCallback",function(){(p.bSorted||y(p)==="ssp"||V.bDeferRender)&&ya(p)},"sc");var a=q.children("caption").each(function(){this._captionSide=
+h(this).css("caption-side")}),b=q.children("thead");b.length===0&&(b=h("<thead/>").appendTo(q));p.nTHead=b[0];b=q.children("tbody");b.length===0&&(b=h("<tbody/>").appendTo(q));p.nTBody=b[0];b=q.children("tfoot");if(b.length===0&&a.length>0&&(p.oScroll.sX!==""||p.oScroll.sY!==""))b=h("<tfoot/>").appendTo(q);if(b.length===0||b.children().length===0)q.addClass(s.sNoFooter);else if(b.length>0){p.nTFoot=b[0];fa(p.aoFooter,p.nTFoot)}if(g.aaData)for(j=0;j<g.aaData.length;j++)O(p,g.aaData[j]);else(p.bDeferLoading||
+y(p)=="dom")&&oa(p,h(p.nTBody).children("tr"));p.aiDisplay=p.aiDisplayMaster.slice();p.bInitialised=true;l===false&&ia(p)};g.bStateSave?(V.bStateSave=!0,z(p,"aoDrawCallback",za,"state_save"),Lb(p,g,e)):e()}});b=null;return this},v,r,o,s,$a={},Ob=/[\r\n\u2028]/g,Ca=/<.*?>/g,ac=/^\d{2,4}[\.\/\-]\d{1,2}[\.\/\-]\d{1,2}([T ]{1}\d{1,2}[:\.]\d{2}([\.:]\d{2})?)?$/,bc=RegExp("(\\/|\\.|\\*|\\+|\\?|\\||\\(|\\)|\\[|\\]|\\{|\\}|\\\\|\\$|\\^|\\-)","g"),Za=/[',$£€¥%\u2009\u202F\u20BD\u20a9\u20BArfkɃΞ]/gi,M=function(a){return!a||
+!0===a||"-"===a?!0:!1},Pb=function(a){var b=parseInt(a,10);return!isNaN(b)&&isFinite(a)?b:null},Qb=function(a,b){$a[b]||($a[b]=RegExp(Sa(b),"g"));return"string"===typeof a&&"."!==b?a.replace(/\./g,"").replace($a[b],"."):a},ab=function(a,b,c){var d="string"===typeof a;if(M(a))return!0;b&&d&&(a=Qb(a,b));c&&d&&(a=a.replace(Za,""));return!isNaN(parseFloat(a))&&isFinite(a)},Rb=function(a,b,c){return M(a)?!0:!(M(a)||"string"===typeof a)?null:ab(a.replace(Ca,""),b,c)?!0:null},C=function(a,b,c){var d=[],
+e=0,f=a.length;if(c!==k)for(;e<f;e++)a[e]&&a[e][b]&&d.push(a[e][b][c]);else for(;e<f;e++)a[e]&&d.push(a[e][b]);return d},ka=function(a,b,c,d){var e=[],f=0,g=b.length;if(d!==k)for(;f<g;f++)a[b[f]][c]&&e.push(a[b[f]][c][d]);else for(;f<g;f++)e.push(a[b[f]][c]);return e},Z=function(a,b){var c=[],d;b===k?(b=0,d=a):(d=b,b=a);for(var e=b;e<d;e++)c.push(e);return c},Sb=function(a){for(var b=[],c=0,d=a.length;c<d;c++)a[c]&&b.push(a[c]);return b},ra=function(a){var b;a:{if(!(2>a.length)){b=a.slice().sort();
+for(var c=b[0],d=1,e=b.length;d<e;d++){if(b[d]===c){b=!1;break a}c=b[d]}}b=!0}if(b)return a.slice();b=[];var e=a.length,f,g=0,d=0;a:for(;d<e;d++){c=a[d];for(f=0;f<g;f++)if(b[f]===c)continue a;b.push(c);g++}return b};n.util={throttle:function(a,b){var c=b!==k?b:200,d,e;return function(){var b=this,g=+new Date,j=arguments;d&&g<d+c?(clearTimeout(e),e=setTimeout(function(){d=k;a.apply(b,j)},c)):(d=g,a.apply(b,j))}},escapeRegex:function(a){return a.replace(bc,"\\$1")}};var A=function(a,b,c){a[b]!==k&&
+(a[c]=a[b])},da=/\[.*?\]$/,X=/\(\)$/,Sa=n.util.escapeRegex,wa=h("<div>")[0],Yb=wa.textContent!==k,$b=/<.*?>/g,Qa=n.util.throttle,Tb=[],x=Array.prototype,cc=function(a){var b,c,d=n.settings,e=h.map(d,function(a){return a.nTable});if(a){if(a.nTable&&a.oApi)return[a];if(a.nodeName&&"table"===a.nodeName.toLowerCase())return b=h.inArray(a,e),-1!==b?[d[b]]:null;if(a&&"function"===typeof a.settings)return a.settings().toArray();"string"===typeof a?c=h(a):a instanceof h&&(c=a)}else return[];if(c)return c.map(function(){b=
+h.inArray(this,e);return-1!==b?d[b]:null}).toArray()};r=function(a,b){if(!(this instanceof r))return new r(a,b);var c=[],d=function(a){(a=cc(a))&&c.push.apply(c,a)};if(h.isArray(a))for(var e=0,f=a.length;e<f;e++)d(a[e]);else d(a);this.context=ra(c);b&&h.merge(this,b);this.selector={rows:null,cols:null,opts:null};r.extend(this,this,Tb)};n.Api=r;h.extend(r.prototype,{any:function(){return 0!==this.count()},concat:x.concat,context:[],count:function(){return this.flatten().length},each:function(a){for(var b=
+0,c=this.length;b<c;b++)a.call(this,this[b],b,this);return this},eq:function(a){var b=this.context;return b.length>a?new r(b[a],this[a]):null},filter:function(a){var b=[];if(x.filter)b=x.filter.call(this,a,this);else for(var c=0,d=this.length;c<d;c++)a.call(this,this[c],c,this)&&b.push(this[c]);return new r(this.context,b)},flatten:function(){var a=[];return new r(this.context,a.concat.apply(a,this.toArray()))},join:x.join,indexOf:x.indexOf||function(a,b){for(var c=b||0,d=this.length;c<d;c++)if(this[c]===
+a)return c;return-1},iterator:function(a,b,c,d){var e=[],f,g,j,h,l,m=this.context,n,o,s=this.selector;"string"===typeof a&&(d=c,c=b,b=a,a=!1);g=0;for(j=m.length;g<j;g++){var t=new r(m[g]);if("table"===b)f=c.call(t,m[g],g),f!==k&&e.push(f);else if("columns"===b||"rows"===b)f=c.call(t,m[g],this[g],g),f!==k&&e.push(f);else if("column"===b||"column-rows"===b||"row"===b||"cell"===b){o=this[g];"column-rows"===b&&(n=Da(m[g],s.opts));h=0;for(l=o.length;h<l;h++)f=o[h],f="cell"===b?c.call(t,m[g],f.row,f.column,
+g,h):c.call(t,m[g],f,g,h,n),f!==k&&e.push(f)}}return e.length||d?(a=new r(m,a?e.concat.apply([],e):e),b=a.selector,b.rows=s.rows,b.cols=s.cols,b.opts=s.opts,a):this},lastIndexOf:x.lastIndexOf||function(a,b){return this.indexOf.apply(this.toArray.reverse(),arguments)},length:0,map:function(a){var b=[];if(x.map)b=x.map.call(this,a,this);else for(var c=0,d=this.length;c<d;c++)b.push(a.call(this,this[c],c));return new r(this.context,b)},pluck:function(a){return this.map(function(b){return b[a]})},pop:x.pop,
+push:x.push,reduce:x.reduce||function(a,b){return jb(this,a,b,0,this.length,1)},reduceRight:x.reduceRight||function(a,b){return jb(this,a,b,this.length-1,-1,-1)},reverse:x.reverse,selector:null,shift:x.shift,slice:function(){return new r(this.context,this)},sort:x.sort,splice:x.splice,toArray:function(){return x.slice.call(this)},to$:function(){return h(this)},toJQuery:function(){return h(this)},unique:function(){return new r(this.context,ra(this))},unshift:x.unshift});r.extend=function(a,b,c){if(c.length&&
+b&&(b instanceof r||b.__dt_wrapper)){var d,e,f,g=function(a,b,c){return function(){var d=b.apply(a,arguments);r.extend(d,d,c.methodExt);return d}};d=0;for(e=c.length;d<e;d++)f=c[d],b[f.name]="function"===f.type?g(a,f.val,f):"object"===f.type?{}:f.val,b[f.name].__dt_wrapper=!0,r.extend(a,b[f.name],f.propExt)}};r.register=o=function(a,b){if(h.isArray(a))for(var c=0,d=a.length;c<d;c++)r.register(a[c],b);else for(var e=a.split("."),f=Tb,g,j,c=0,d=e.length;c<d;c++){g=(j=-1!==e[c].indexOf("()"))?e[c].replace("()",
+""):e[c];var i;a:{i=0;for(var l=f.length;i<l;i++)if(f[i].name===g){i=f[i];break a}i=null}i||(i={name:g,val:{},methodExt:[],propExt:[],type:"object"},f.push(i));c===d-1?(i.val=b,i.type="function"===typeof b?"function":h.isPlainObject(b)?"object":"other"):f=j?i.methodExt:i.propExt}};r.registerPlural=s=function(a,b,c){r.register(a,c);r.register(b,function(){var a=c.apply(this,arguments);return a===this?this:a instanceof r?a.length?h.isArray(a[0])?new r(a.context,a[0]):a[0]:k:a})};var Ub=function(a,b){if(h.isArray(a))return h.map(a,
+function(a){return Ub(a,b)});if("number"===typeof a)return[b[a]];var c=h.map(b,function(a){return a.nTable});return h(c).filter(a).map(function(){var a=h.inArray(this,c);return b[a]}).toArray()};o("tables()",function(a){return a!==k&&null!==a?new r(Ub(a,this.context)):this});o("table()",function(a){var a=this.tables(a),b=a.context;return b.length?new r(b[0]):a});s("tables().nodes()","table().node()",function(){return this.iterator("table",function(a){return a.nTable},1)});s("tables().body()","table().body()",
+function(){return this.iterator("table",function(a){return a.nTBody},1)});s("tables().header()","table().header()",function(){return this.iterator("table",function(a){return a.nTHead},1)});s("tables().footer()","table().footer()",function(){return this.iterator("table",function(a){return a.nTFoot},1)});s("tables().containers()","table().container()",function(){return this.iterator("table",function(a){return a.nTableWrapper},1)});o("draw()",function(a){return this.iterator("table",function(b){"page"===
+a?P(b):("string"===typeof a&&(a="full-hold"===a?!1:!0),T(b,!1===a))})});o("page()",function(a){return a===k?this.page.info().page:this.iterator("table",function(b){Va(b,a)})});o("page.info()",function(){if(0===this.context.length)return k;var a=this.context[0],b=a._iDisplayStart,c=a.oFeatures.bPaginate?a._iDisplayLength:-1,d=a.fnRecordsDisplay(),e=-1===c;return{page:e?0:Math.floor(b/c),pages:e?1:Math.ceil(d/c),start:b,end:a.fnDisplayEnd(),length:c,recordsTotal:a.fnRecordsTotal(),recordsDisplay:d,
+serverSide:"ssp"===y(a)}});o("page.len()",function(a){return a===k?0!==this.context.length?this.context[0]._iDisplayLength:k:this.iterator("table",function(b){Ta(b,a)})});var Vb=function(a,b,c){if(c){var d=new r(a);d.one("draw",function(){c(d.ajax.json())})}if("ssp"==y(a))T(a,b);else{D(a,!0);var e=a.jqXHR;e&&4!==e.readyState&&e.abort();ta(a,[],function(c){pa(a);for(var c=ua(a,c),d=0,e=c.length;d<e;d++)O(a,c[d]);T(a,b);D(a,!1)})}};o("ajax.json()",function(){var a=this.context;if(0<a.length)return a[0].json});
+o("ajax.params()",function(){var a=this.context;if(0<a.length)return a[0].oAjaxData});o("ajax.reload()",function(a,b){return this.iterator("table",function(c){Vb(c,!1===b,a)})});o("ajax.url()",function(a){var b=this.context;if(a===k){if(0===b.length)return k;b=b[0];return b.ajax?h.isPlainObject(b.ajax)?b.ajax.url:b.ajax:b.sAjaxSource}return this.iterator("table",function(b){h.isPlainObject(b.ajax)?b.ajax.url=a:b.ajax=a})});o("ajax.url().load()",function(a,b){return this.iterator("table",function(c){Vb(c,
+!1===b,a)})});var bb=function(a,b,c,d,e){var f=[],g,j,i,l,m,n;i=typeof b;if(!b||"string"===i||"function"===i||b.length===k)b=[b];i=0;for(l=b.length;i<l;i++){j=b[i]&&b[i].split&&!b[i].match(/[\[\(:]/)?b[i].split(","):[b[i]];m=0;for(n=j.length;m<n;m++)(g=c("string"===typeof j[m]?h.trim(j[m]):j[m]))&&g.length&&(f=f.concat(g))}a=v.selector[a];if(a.length){i=0;for(l=a.length;i<l;i++)f=a[i](d,e,f)}return ra(f)},cb=function(a){a||(a={});a.filter&&a.search===k&&(a.search=a.filter);return h.extend({search:"none",
+order:"current",page:"all"},a)},db=function(a){for(var b=0,c=a.length;b<c;b++)if(0<a[b].length)return a[0]=a[b],a[0].length=1,a.length=1,a.context=[a.context[b]],a;a.length=0;return a},Da=function(a,b){var c,d,e,f=[],g=a.aiDisplay;e=a.aiDisplayMaster;var j=b.search;c=b.order;d=b.page;if("ssp"==y(a))return"removed"===j?[]:Z(0,e.length);if("current"==d){c=a._iDisplayStart;for(d=a.fnDisplayEnd();c<d;c++)f.push(g[c])}else if("current"==c||"applied"==c)if("none"==j)f=e.slice();else if("applied"==j)f=g.slice();
+else{if("removed"==j){var i={};c=0;for(d=g.length;c<d;c++)i[g[c]]=null;f=h.map(e,function(a){return!i.hasOwnProperty(a)?a:null})}}else if("index"==c||"original"==c){c=0;for(d=a.aoData.length;c<d;c++)"none"==j?f.push(c):(e=h.inArray(c,g),(-1===e&&"removed"==j||0<=e&&"applied"==j)&&f.push(c))}return f};o("rows()",function(a,b){a===k?a="":h.isPlainObject(a)&&(b=a,a="");var b=cb(b),c=this.iterator("table",function(c){var e=b,f;return bb("row",a,function(a){var b=Pb(a),i=c.aoData;if(b!==null&&!e)return[b];
+f||(f=Da(c,e));if(b!==null&&h.inArray(b,f)!==-1)return[b];if(a===null||a===k||a==="")return f;if(typeof a==="function")return h.map(f,function(b){var c=i[b];return a(b,c._aData,c.nTr)?b:null});if(a.nodeName){var b=a._DT_RowIndex,l=a._DT_CellIndex;if(b!==k)return i[b]&&i[b].nTr===a?[b]:[];if(l)return i[l.row]&&i[l.row].nTr===a.parentNode?[l.row]:[];b=h(a).closest("*[data-dt-row]");return b.length?[b.data("dt-row")]:[]}if(typeof a==="string"&&a.charAt(0)==="#"){b=c.aIds[a.replace(/^#/,"")];if(b!==k)return[b.idx]}b=
+Sb(ka(c.aoData,f,"nTr"));return h(b).filter(a).map(function(){return this._DT_RowIndex}).toArray()},c,e)},1);c.selector.rows=a;c.selector.opts=b;return c});o("rows().nodes()",function(){return this.iterator("row",function(a,b){return a.aoData[b].nTr||k},1)});o("rows().data()",function(){return this.iterator(!0,"rows",function(a,b){return ka(a.aoData,b,"_aData")},1)});s("rows().cache()","row().cache()",function(a){return this.iterator("row",function(b,c){var d=b.aoData[c];return"search"===a?d._aFilterData:
+d._aSortData},1)});s("rows().invalidate()","row().invalidate()",function(a){return this.iterator("row",function(b,c){ea(b,c,a)})});s("rows().indexes()","row().index()",function(){return this.iterator("row",function(a,b){return b},1)});s("rows().ids()","row().id()",function(a){for(var b=[],c=this.context,d=0,e=c.length;d<e;d++)for(var f=0,g=this[d].length;f<g;f++){var h=c[d].rowIdFn(c[d].aoData[this[d][f]]._aData);b.push((!0===a?"#":"")+h)}return new r(c,b)});s("rows().remove()","row().remove()",function(){var a=
+this;this.iterator("row",function(b,c,d){var e=b.aoData,f=e[c],g,h,i,l,m;e.splice(c,1);g=0;for(h=e.length;g<h;g++)if(i=e[g],m=i.anCells,null!==i.nTr&&(i.nTr._DT_RowIndex=g),null!==m){i=0;for(l=m.length;i<l;i++)m[i]._DT_CellIndex.row=g}qa(b.aiDisplayMaster,c);qa(b.aiDisplay,c);qa(a[d],c,!1);0<b._iRecordsDisplay&&b._iRecordsDisplay--;Ua(b);c=b.rowIdFn(f._aData);c!==k&&delete b.aIds[c]});this.iterator("table",function(a){for(var c=0,d=a.aoData.length;c<d;c++)a.aoData[c].idx=c});return this});o("rows.add()",
+function(a){var b=this.iterator("table",function(b){var c,f,g,h=[];f=0;for(g=a.length;f<g;f++)c=a[f],c.nodeName&&"TR"===c.nodeName.toUpperCase()?h.push(oa(b,c)[0]):h.push(O(b,c));return h},1),c=this.rows(-1);c.pop();h.merge(c,b);return c});o("row()",function(a,b){return db(this.rows(a,b))});o("row().data()",function(a){var b=this.context;if(a===k)return b.length&&this.length?b[0].aoData[this[0]]._aData:k;var c=b[0].aoData[this[0]];c._aData=a;h.isArray(a)&&(c.nTr&&c.nTr.id)&&N(b[0].rowId)(a,c.nTr.id);
+ea(b[0],this[0],"data");return this});o("row().node()",function(){var a=this.context;return a.length&&this.length?a[0].aoData[this[0]].nTr||null:null});o("row.add()",function(a){a instanceof h&&a.length&&(a=a[0]);var b=this.iterator("table",function(b){return a.nodeName&&"TR"===a.nodeName.toUpperCase()?oa(b,a)[0]:O(b,a)});return this.row(b[0])});var eb=function(a,b){var c=a.context;if(c.length&&(c=c[0].aoData[b!==k?b:a[0]])&&c._details)c._details.remove(),c._detailsShow=k,c._details=k},Wb=function(a,
+b){var c=a.context;if(c.length&&a.length){var d=c[0].aoData[a[0]];if(d._details){(d._detailsShow=b)?d._details.insertAfter(d.nTr):d._details.detach();var e=c[0],f=new r(e),g=e.aoData;f.off("draw.dt.DT_details column-visibility.dt.DT_details destroy.dt.DT_details");0<C(g,"_details").length&&(f.on("draw.dt.DT_details",function(a,b){e===b&&f.rows({page:"current"}).eq(0).each(function(a){a=g[a];a._detailsShow&&a._details.insertAfter(a.nTr)})}),f.on("column-visibility.dt.DT_details",function(a,b){if(e===
+b)for(var c,d=W(b),f=0,h=g.length;f<h;f++)c=g[f],c._details&&c._details.children("td[colspan]").attr("colspan",d)}),f.on("destroy.dt.DT_details",function(a,b){if(e===b)for(var c=0,d=g.length;c<d;c++)g[c]._details&&eb(f,c)}))}}};o("row().child()",function(a,b){var c=this.context;if(a===k)return c.length&&this.length?c[0].aoData[this[0]]._details:k;if(!0===a)this.child.show();else if(!1===a)eb(this);else if(c.length&&this.length){var d=c[0],c=c[0].aoData[this[0]],e=[],f=function(a,b){if(h.isArray(a)||
+a instanceof h)for(var c=0,k=a.length;c<k;c++)f(a[c],b);else a.nodeName&&"tr"===a.nodeName.toLowerCase()?e.push(a):(c=h("<tr><td/></tr>").addClass(b),h("td",c).addClass(b).html(a)[0].colSpan=W(d),e.push(c[0]))};f(a,b);c._details&&c._details.detach();c._details=h(e);c._detailsShow&&c._details.insertAfter(c.nTr)}return this});o(["row().child.show()","row().child().show()"],function(){Wb(this,!0);return this});o(["row().child.hide()","row().child().hide()"],function(){Wb(this,!1);return this});o(["row().child.remove()",
+"row().child().remove()"],function(){eb(this);return this});o("row().child.isShown()",function(){var a=this.context;return a.length&&this.length?a[0].aoData[this[0]]._detailsShow||!1:!1});var dc=/^([^:]+):(name|visIdx|visible)$/,Xb=function(a,b,c,d,e){for(var c=[],d=0,f=e.length;d<f;d++)c.push(B(a,e[d],b));return c};o("columns()",function(a,b){a===k?a="":h.isPlainObject(a)&&(b=a,a="");var b=cb(b),c=this.iterator("table",function(c){var e=a,f=b,g=c.aoColumns,j=C(g,"sName"),i=C(g,"nTh");return bb("column",
+e,function(a){var b=Pb(a);if(a==="")return Z(g.length);if(b!==null)return[b>=0?b:g.length+b];if(typeof a==="function"){var e=Da(c,f);return h.map(g,function(b,f){return a(f,Xb(c,f,0,0,e),i[f])?f:null})}var k=typeof a==="string"?a.match(dc):"";if(k)switch(k[2]){case "visIdx":case "visible":b=parseInt(k[1],10);if(b<0){var n=h.map(g,function(a,b){return a.bVisible?b:null});return[n[n.length+b]]}return[ba(c,b)];case "name":return h.map(j,function(a,b){return a===k[1]?b:null});default:return[]}if(a.nodeName&&
+a._DT_CellIndex)return[a._DT_CellIndex.column];b=h(i).filter(a).map(function(){return h.inArray(this,i)}).toArray();if(b.length||!a.nodeName)return b;b=h(a).closest("*[data-dt-column]");return b.length?[b.data("dt-column")]:[]},c,f)},1);c.selector.cols=a;c.selector.opts=b;return c});s("columns().header()","column().header()",function(){return this.iterator("column",function(a,b){return a.aoColumns[b].nTh},1)});s("columns().footer()","column().footer()",function(){return this.iterator("column",function(a,
+b){return a.aoColumns[b].nTf},1)});s("columns().data()","column().data()",function(){return this.iterator("column-rows",Xb,1)});s("columns().dataSrc()","column().dataSrc()",function(){return this.iterator("column",function(a,b){return a.aoColumns[b].mData},1)});s("columns().cache()","column().cache()",function(a){return this.iterator("column-rows",function(b,c,d,e,f){return ka(b.aoData,f,"search"===a?"_aFilterData":"_aSortData",c)},1)});s("columns().nodes()","column().nodes()",function(){return this.iterator("column-rows",
+function(a,b,c,d,e){return ka(a.aoData,e,"anCells",b)},1)});s("columns().visible()","column().visible()",function(a,b){var c=this,d=this.iterator("column",function(b,c){if(a===k)return b.aoColumns[c].bVisible;var d=b.aoColumns,j=d[c],i=b.aoData,l,m,n;if(a!==k&&j.bVisible!==a){if(a){var o=h.inArray(!0,C(d,"bVisible"),c+1);l=0;for(m=i.length;l<m;l++)n=i[l].nTr,d=i[l].anCells,n&&n.insertBefore(d[c],d[o]||null)}else h(C(b.aoData,"anCells",c)).detach();j.bVisible=a}});a!==k&&this.iterator("table",function(d){ga(d,
+d.aoHeader);ga(d,d.aoFooter);d.aiDisplay.length||h(d.nTBody).find("td[colspan]").attr("colspan",W(d));za(d);c.iterator("column",function(c,d){t(c,null,"column-visibility",[c,d,a,b])});(b===k||b)&&c.columns.adjust()});return d});s("columns().indexes()","column().index()",function(a){return this.iterator("column",function(b,c){return"visible"===a?ca(b,c):c},1)});o("columns.adjust()",function(){return this.iterator("table",function(a){aa(a)},1)});o("column.index()",function(a,b){if(0!==this.context.length){var c=
+this.context[0];if("fromVisible"===a||"toData"===a)return ba(c,b);if("fromData"===a||"toVisible"===a)return ca(c,b)}});o("column()",function(a,b){return db(this.columns(a,b))});o("cells()",function(a,b,c){h.isPlainObject(a)&&(a.row===k?(c=a,a=null):(c=b,b=null));h.isPlainObject(b)&&(c=b,b=null);if(null===b||b===k)return this.iterator("table",function(b){var d=a,e=cb(c),f=b.aoData,g=Da(b,e),j=Sb(ka(f,g,"anCells")),i=h([].concat.apply([],j)),l,n=b.aoColumns.length,o,s,r,t,w,v;return bb("cell",d,function(a){var c=
+typeof a==="function";if(a===null||a===k||c){o=[];s=0;for(r=g.length;s<r;s++){l=g[s];for(t=0;t<n;t++){w={row:l,column:t};if(c){v=f[l];a(w,B(b,l,t),v.anCells?v.anCells[t]:null)&&o.push(w)}else o.push(w)}}return o}if(h.isPlainObject(a))return a.column!==k&&a.row!==k&&h.inArray(a.row,g)!==-1?[a]:[];c=i.filter(a).map(function(a,b){return{row:b._DT_CellIndex.row,column:b._DT_CellIndex.column}}).toArray();if(c.length||!a.nodeName)return c;v=h(a).closest("*[data-dt-row]");return v.length?[{row:v.data("dt-row"),
+column:v.data("dt-column")}]:[]},b,e)});var d=c?{page:c.page,order:c.order,search:c.search}:{},e=this.columns(b,d),f=this.rows(a,d),g,j,i,l,d=this.iterator("table",function(a,b){var c=[];g=0;for(j=f[b].length;g<j;g++){i=0;for(l=e[b].length;i<l;i++)c.push({row:f[b][g],column:e[b][i]})}return c},1),d=c&&c.selected?this.cells(d,c):d;h.extend(d.selector,{cols:b,rows:a,opts:c});return d});s("cells().nodes()","cell().node()",function(){return this.iterator("cell",function(a,b,c){return(a=a.aoData[b])&&
+a.anCells?a.anCells[c]:k},1)});o("cells().data()",function(){return this.iterator("cell",function(a,b,c){return B(a,b,c)},1)});s("cells().cache()","cell().cache()",function(a){a="search"===a?"_aFilterData":"_aSortData";return this.iterator("cell",function(b,c,d){return b.aoData[c][a][d]},1)});s("cells().render()","cell().render()",function(a){return this.iterator("cell",function(b,c,d){return B(b,c,d,a)},1)});s("cells().indexes()","cell().index()",function(){return this.iterator("cell",function(a,
+b,c){return{row:b,column:c,columnVisible:ca(a,c)}},1)});s("cells().invalidate()","cell().invalidate()",function(a){return this.iterator("cell",function(b,c,d){ea(b,c,a,d)})});o("cell()",function(a,b,c){return db(this.cells(a,b,c))});o("cell().data()",function(a){var b=this.context,c=this[0];if(a===k)return b.length&&c.length?B(b[0],c[0].row,c[0].column):k;lb(b[0],c[0].row,c[0].column,a);ea(b[0],c[0].row,"data",c[0].column);return this});o("order()",function(a,b){var c=this.context;if(a===k)return 0!==
+c.length?c[0].aaSorting:k;"number"===typeof a?a=[[a,b]]:a.length&&!h.isArray(a[0])&&(a=Array.prototype.slice.call(arguments));return this.iterator("table",function(b){b.aaSorting=a.slice()})});o("order.listener()",function(a,b,c){return this.iterator("table",function(d){Oa(d,a,b,c)})});o("order.fixed()",function(a){if(!a){var b=this.context,b=b.length?b[0].aaSortingFixed:k;return h.isArray(b)?{pre:b}:b}return this.iterator("table",function(b){b.aaSortingFixed=h.extend(!0,{},a)})});o(["columns().order()",
+"column().order()"],function(a){var b=this;return this.iterator("table",function(c,d){var e=[];h.each(b[d],function(b,c){e.push([c,a])});c.aaSorting=e})});o("search()",function(a,b,c,d){var e=this.context;return a===k?0!==e.length?e[0].oPreviousSearch.sSearch:k:this.iterator("table",function(e){e.oFeatures.bFilter&&ha(e,h.extend({},e.oPreviousSearch,{sSearch:a+"",bRegex:null===b?!1:b,bSmart:null===c?!0:c,bCaseInsensitive:null===d?!0:d}),1)})});s("columns().search()","column().search()",function(a,
+b,c,d){return this.iterator("column",function(e,f){var g=e.aoPreSearchCols;if(a===k)return g[f].sSearch;e.oFeatures.bFilter&&(h.extend(g[f],{sSearch:a+"",bRegex:null===b?!1:b,bSmart:null===c?!0:c,bCaseInsensitive:null===d?!0:d}),ha(e,e.oPreviousSearch,1))})});o("state()",function(){return this.context.length?this.context[0].oSavedState:null});o("state.clear()",function(){return this.iterator("table",function(a){a.fnStateSaveCallback.call(a.oInstance,a,{})})});o("state.loaded()",function(){return this.context.length?
+this.context[0].oLoadedState:null});o("state.save()",function(){return this.iterator("table",function(a){za(a)})});n.versionCheck=n.fnVersionCheck=function(a){for(var b=n.version.split("."),a=a.split("."),c,d,e=0,f=a.length;e<f;e++)if(c=parseInt(b[e],10)||0,d=parseInt(a[e],10)||0,c!==d)return c>d;return!0};n.isDataTable=n.fnIsDataTable=function(a){var b=h(a).get(0),c=!1;if(a instanceof n.Api)return!0;h.each(n.settings,function(a,e){var f=e.nScrollHead?h("table",e.nScrollHead)[0]:null,g=e.nScrollFoot?
+h("table",e.nScrollFoot)[0]:null;if(e.nTable===b||f===b||g===b)c=!0});return c};n.tables=n.fnTables=function(a){var b=!1;h.isPlainObject(a)&&(b=a.api,a=a.visible);var c=h.map(n.settings,function(b){if(!a||a&&h(b.nTable).is(":visible"))return b.nTable});return b?new r(c):c};n.camelToHungarian=J;o("$()",function(a,b){var c=this.rows(b).nodes(),c=h(c);return h([].concat(c.filter(a).toArray(),c.find(a).toArray()))});h.each(["on","one","off"],function(a,b){o(b+"()",function(){var a=Array.prototype.slice.call(arguments);
+a[0]=h.map(a[0].split(/\s/),function(a){return!a.match(/\.dt\b/)?a+".dt":a}).join(" ");var d=h(this.tables().nodes());d[b].apply(d,a);return this})});o("clear()",function(){return this.iterator("table",function(a){pa(a)})});o("settings()",function(){return new r(this.context,this.context)});o("init()",function(){var a=this.context;return a.length?a[0].oInit:null});o("data()",function(){return this.iterator("table",function(a){return C(a.aoData,"_aData")}).flatten()});o("destroy()",function(a){a=a||
+!1;return this.iterator("table",function(b){var c=b.nTableWrapper.parentNode,d=b.oClasses,e=b.nTable,f=b.nTBody,g=b.nTHead,j=b.nTFoot,i=h(e),f=h(f),k=h(b.nTableWrapper),m=h.map(b.aoData,function(a){return a.nTr}),o;b.bDestroying=!0;t(b,"aoDestroyCallback","destroy",[b]);a||(new r(b)).columns().visible(!0);k.off(".DT").find(":not(tbody *)").off(".DT");h(E).off(".DT-"+b.sInstance);e!=g.parentNode&&(i.children("thead").detach(),i.append(g));j&&e!=j.parentNode&&(i.children("tfoot").detach(),i.append(j));
+b.aaSorting=[];b.aaSortingFixed=[];ya(b);h(m).removeClass(b.asStripeClasses.join(" "));h("th, td",g).removeClass(d.sSortable+" "+d.sSortableAsc+" "+d.sSortableDesc+" "+d.sSortableNone);f.children().detach();f.append(m);g=a?"remove":"detach";i[g]();k[g]();!a&&c&&(c.insertBefore(e,b.nTableReinsertBefore),i.css("width",b.sDestroyWidth).removeClass(d.sTable),(o=b.asDestroyStripes.length)&&f.children().each(function(a){h(this).addClass(b.asDestroyStripes[a%o])}));c=h.inArray(b,n.settings);-1!==c&&n.settings.splice(c,
+1)})});h.each(["column","row","cell"],function(a,b){o(b+"s().every()",function(a){var d=this.selector.opts,e=this;return this.iterator(b,function(f,g,h,i,l){a.call(e[b](g,"cell"===b?h:d,"cell"===b?d:k),g,h,i,l)})})});o("i18n()",function(a,b,c){var d=this.context[0],a=S(a)(d.oLanguage);a===k&&(a=b);c!==k&&h.isPlainObject(a)&&(a=a[c]!==k?a[c]:a._);return a.replace("%d",c)});n.version="1.10.21";n.settings=[];n.models={};n.models.oSearch={bCaseInsensitive:!0,sSearch:"",bRegex:!1,bSmart:!0};n.models.oRow=
+{nTr:null,anCells:null,_aData:[],_aSortData:null,_aFilterData:null,_sFilterRow:null,_sRowStripe:"",src:null,idx:-1};n.models.oColumn={idx:null,aDataSort:null,asSorting:null,bSearchable:null,bSortable:null,bVisible:null,_sManualType:null,_bAttrSrc:!1,fnCreatedCell:null,fnGetData:null,fnSetData:null,mData:null,mRender:null,nTh:null,nTf:null,sClass:null,sContentPadding:null,sDefaultContent:null,sName:null,sSortDataType:"std",sSortingClass:null,sSortingClassJUI:null,sTitle:null,sType:null,sWidth:null,
+sWidthOrig:null};n.defaults={aaData:null,aaSorting:[[0,"asc"]],aaSortingFixed:[],ajax:null,aLengthMenu:[10,25,50,100],aoColumns:null,aoColumnDefs:null,aoSearchCols:[],asStripeClasses:null,bAutoWidth:!0,bDeferRender:!1,bDestroy:!1,bFilter:!0,bInfo:!0,bLengthChange:!0,bPaginate:!0,bProcessing:!1,bRetrieve:!1,bScrollCollapse:!1,bServerSide:!1,bSort:!0,bSortMulti:!0,bSortCellsTop:!1,bSortClasses:!0,bStateSave:!1,fnCreatedRow:null,fnDrawCallback:null,fnFooterCallback:null,fnFormatNumber:function(a){return a.toString().replace(/\B(?=(\d{3})+(?!\d))/g,
+this.oLanguage.sThousands)},fnHeaderCallback:null,fnInfoCallback:null,fnInitComplete:null,fnPreDrawCallback:null,fnRowCallback:null,fnServerData:null,fnServerParams:null,fnStateLoadCallback:function(a){try{return JSON.parse((-1===a.iStateDuration?sessionStorage:localStorage).getItem("DataTables_"+a.sInstance+"_"+location.pathname))}catch(b){return{}}},fnStateLoadParams:null,fnStateLoaded:null,fnStateSaveCallback:function(a,b){try{(-1===a.iStateDuration?sessionStorage:localStorage).setItem("DataTables_"+
+a.sInstance+"_"+location.pathname,JSON.stringify(b))}catch(c){}},fnStateSaveParams:null,iStateDuration:7200,iDeferLoading:null,iDisplayLength:10,iDisplayStart:0,iTabIndex:0,oClasses:{},oLanguage:{oAria:{sSortAscending:": activate to sort column ascending",sSortDescending:": activate to sort column descending"},oPaginate:{sFirst:"First",sLast:"Last",sNext:"Next",sPrevious:"Previous"},sEmptyTable:"No data available in table",sInfo:"Showing _START_ to _END_ of _TOTAL_ entries",sInfoEmpty:"Showing 0 to 0 of 0 entries",
+sInfoFiltered:"(filtered from _MAX_ total entries)",sInfoPostFix:"",sDecimal:"",sThousands:",",sLengthMenu:"Show _MENU_ entries",sLoadingRecords:"Loading...",sProcessing:"Processing...",sSearch:"Search:",sSearchPlaceholder:"",sUrl:"",sZeroRecords:"No matching records found"},oSearch:h.extend({},n.models.oSearch),sAjaxDataProp:"data",sAjaxSource:null,sDom:"lfrtip",searchDelay:null,sPaginationType:"simple_numbers",sScrollX:"",sScrollXInner:"",sScrollY:"",sServerMethod:"GET",renderer:null,rowId:"DT_RowId"};
+$(n.defaults);n.defaults.column={aDataSort:null,iDataSort:-1,asSorting:["asc","desc"],bSearchable:!0,bSortable:!0,bVisible:!0,fnCreatedCell:null,mData:null,mRender:null,sCellType:"td",sClass:"",sContentPadding:"",sDefaultContent:null,sName:"",sSortDataType:"std",sTitle:null,sType:null,sWidth:null};$(n.defaults.column);n.models.oSettings={oFeatures:{bAutoWidth:null,bDeferRender:null,bFilter:null,bInfo:null,bLengthChange:null,bPaginate:null,bProcessing:null,bServerSide:null,bSort:null,bSortMulti:null,
+bSortClasses:null,bStateSave:null},oScroll:{bCollapse:null,iBarWidth:0,sX:null,sXInner:null,sY:null},oLanguage:{fnInfoCallback:null},oBrowser:{bScrollOversize:!1,bScrollbarLeft:!1,bBounding:!1,barWidth:0},ajax:null,aanFeatures:[],aoData:[],aiDisplay:[],aiDisplayMaster:[],aIds:{},aoColumns:[],aoHeader:[],aoFooter:[],oPreviousSearch:{},aoPreSearchCols:[],aaSorting:null,aaSortingFixed:[],asStripeClasses:null,asDestroyStripes:[],sDestroyWidth:0,aoRowCallback:[],aoHeaderCallback:[],aoFooterCallback:[],
+aoDrawCallback:[],aoRowCreatedCallback:[],aoPreDrawCallback:[],aoInitComplete:[],aoStateSaveParams:[],aoStateLoadParams:[],aoStateLoaded:[],sTableId:"",nTable:null,nTHead:null,nTFoot:null,nTBody:null,nTableWrapper:null,bDeferLoading:!1,bInitialised:!1,aoOpenRows:[],sDom:null,searchDelay:null,sPaginationType:"two_button",iStateDuration:0,aoStateSave:[],aoStateLoad:[],oSavedState:null,oLoadedState:null,sAjaxSource:null,sAjaxDataProp:null,bAjaxDataGet:!0,jqXHR:null,json:k,oAjaxData:k,fnServerData:null,
+aoServerParams:[],sServerMethod:null,fnFormatNumber:null,aLengthMenu:null,iDraw:0,bDrawing:!1,iDrawError:-1,_iDisplayLength:10,_iDisplayStart:0,_iRecordsTotal:0,_iRecordsDisplay:0,oClasses:{},bFiltered:!1,bSorted:!1,bSortCellsTop:null,oInit:null,aoDestroyCallback:[],fnRecordsTotal:function(){return"ssp"==y(this)?1*this._iRecordsTotal:this.aiDisplayMaster.length},fnRecordsDisplay:function(){return"ssp"==y(this)?1*this._iRecordsDisplay:this.aiDisplay.length},fnDisplayEnd:function(){var a=this._iDisplayLength,
+b=this._iDisplayStart,c=b+a,d=this.aiDisplay.length,e=this.oFeatures,f=e.bPaginate;return e.bServerSide?!1===f||-1===a?b+d:Math.min(b+a,this._iRecordsDisplay):!f||c>d||-1===a?d:c},oInstance:null,sInstance:null,iTabIndex:0,nScrollHead:null,nScrollFoot:null,aLastSort:[],oPlugins:{},rowIdFn:null,rowId:null};n.ext=v={buttons:{},classes:{},builder:"-source-",errMode:"alert",feature:[],search:[],selector:{cell:[],column:[],row:[]},internal:{},legacy:{ajax:null},pager:{},renderer:{pageButton:{},header:{}},
+order:{},type:{detect:[],search:{},order:{}},_unique:0,fnVersionCheck:n.fnVersionCheck,iApiIndex:0,oJUIClasses:{},sVersion:n.version};h.extend(v,{afnFiltering:v.search,aTypes:v.type.detect,ofnSearch:v.type.search,oSort:v.type.order,afnSortData:v.order,aoFeatures:v.feature,oApi:v.internal,oStdClasses:v.classes,oPagination:v.pager});h.extend(n.ext.classes,{sTable:"dataTable",sNoFooter:"no-footer",sPageButton:"paginate_button",sPageButtonActive:"current",sPageButtonDisabled:"disabled",sStripeOdd:"odd",
+sStripeEven:"even",sRowEmpty:"dataTables_empty",sWrapper:"dataTables_wrapper",sFilter:"dataTables_filter",sInfo:"dataTables_info",sPaging:"dataTables_paginate paging_",sLength:"dataTables_length",sProcessing:"dataTables_processing",sSortAsc:"sorting_asc",sSortDesc:"sorting_desc",sSortable:"sorting",sSortableAsc:"sorting_asc_disabled",sSortableDesc:"sorting_desc_disabled",sSortableNone:"sorting_disabled",sSortColumn:"sorting_",sFilterInput:"",sLengthSelect:"",sScrollWrapper:"dataTables_scroll",sScrollHead:"dataTables_scrollHead",
+sScrollHeadInner:"dataTables_scrollHeadInner",sScrollBody:"dataTables_scrollBody",sScrollFoot:"dataTables_scrollFoot",sScrollFootInner:"dataTables_scrollFootInner",sHeaderTH:"",sFooterTH:"",sSortJUIAsc:"",sSortJUIDesc:"",sSortJUI:"",sSortJUIAscAllowed:"",sSortJUIDescAllowed:"",sSortJUIWrapper:"",sSortIcon:"",sJUIHeader:"",sJUIFooter:""});var Mb=n.ext.pager;h.extend(Mb,{simple:function(){return["previous","next"]},full:function(){return["first","previous","next","last"]},numbers:function(a,b){return[ja(a,
+b)]},simple_numbers:function(a,b){return["previous",ja(a,b),"next"]},full_numbers:function(a,b){return["first","previous",ja(a,b),"next","last"]},first_last_numbers:function(a,b){return["first",ja(a,b),"last"]},_numbers:ja,numbers_length:7});h.extend(!0,n.ext.renderer,{pageButton:{_:function(a,b,c,d,e,f){var g=a.oClasses,j=a.oLanguage.oPaginate,i=a.oLanguage.oAria.paginate||{},l,m,n=0,o=function(b,d){var k,s,r,t,v=g.sPageButtonDisabled,w=function(b){Va(a,b.data.action,true)};k=0;for(s=d.length;k<
+s;k++){t=d[k];if(h.isArray(t)){r=h("<"+(t.DT_el||"div")+"/>").appendTo(b);o(r,t)}else{l=null;m=t;r=a.iTabIndex;switch(t){case "ellipsis":b.append('<span class="ellipsis">&#x2026;</span>');break;case "first":l=j.sFirst;if(e===0){r=-1;m=m+(" "+v)}break;case "previous":l=j.sPrevious;if(e===0){r=-1;m=m+(" "+v)}break;case "next":l=j.sNext;if(f===0||e===f-1){r=-1;m=m+(" "+v)}break;case "last":l=j.sLast;if(e===f-1){r=-1;m=m+(" "+v)}break;default:l=t+1;m=e===t?g.sPageButtonActive:""}if(l!==null){r=h("<a>",
+{"class":g.sPageButton+" "+m,"aria-controls":a.sTableId,"aria-label":i[t],"data-dt-idx":n,tabindex:r,id:c===0&&typeof t==="string"?a.sTableId+"_"+t:null}).html(l).appendTo(b);Xa(r,{action:t},w);n++}}}},s;try{s=h(b).find(H.activeElement).data("dt-idx")}catch(r){}o(h(b).empty(),d);s!==k&&h(b).find("[data-dt-idx="+s+"]").trigger("focus")}}});h.extend(n.ext.type.detect,[function(a,b){var c=b.oLanguage.sDecimal;return ab(a,c)?"num"+c:null},function(a){if(a&&!(a instanceof Date)&&!ac.test(a))return null;
+var b=Date.parse(a);return null!==b&&!isNaN(b)||M(a)?"date":null},function(a,b){var c=b.oLanguage.sDecimal;return ab(a,c,!0)?"num-fmt"+c:null},function(a,b){var c=b.oLanguage.sDecimal;return Rb(a,c)?"html-num"+c:null},function(a,b){var c=b.oLanguage.sDecimal;return Rb(a,c,!0)?"html-num-fmt"+c:null},function(a){return M(a)||"string"===typeof a&&-1!==a.indexOf("<")?"html":null}]);h.extend(n.ext.type.search,{html:function(a){return M(a)?a:"string"===typeof a?a.replace(Ob," ").replace(Ca,""):""},string:function(a){return M(a)?
+a:"string"===typeof a?a.replace(Ob," "):a}});var Ba=function(a,b,c,d){if(0!==a&&(!a||"-"===a))return-Infinity;b&&(a=Qb(a,b));a.replace&&(c&&(a=a.replace(c,"")),d&&(a=a.replace(d,"")));return 1*a};h.extend(v.type.order,{"date-pre":function(a){a=Date.parse(a);return isNaN(a)?-Infinity:a},"html-pre":function(a){return M(a)?"":a.replace?a.replace(/<.*?>/g,"").toLowerCase():a+""},"string-pre":function(a){return M(a)?"":"string"===typeof a?a.toLowerCase():!a.toString?"":a.toString()},"string-asc":function(a,
+b){return a<b?-1:a>b?1:0},"string-desc":function(a,b){return a<b?1:a>b?-1:0}});Fa("");h.extend(!0,n.ext.renderer,{header:{_:function(a,b,c,d){h(a.nTable).on("order.dt.DT",function(e,f,g,h){if(a===f){e=c.idx;b.removeClass(c.sSortingClass+" "+d.sSortAsc+" "+d.sSortDesc).addClass(h[e]=="asc"?d.sSortAsc:h[e]=="desc"?d.sSortDesc:c.sSortingClass)}})},jqueryui:function(a,b,c,d){h("<div/>").addClass(d.sSortJUIWrapper).append(b.contents()).append(h("<span/>").addClass(d.sSortIcon+" "+c.sSortingClassJUI)).appendTo(b);
+h(a.nTable).on("order.dt.DT",function(e,f,g,h){if(a===f){e=c.idx;b.removeClass(d.sSortAsc+" "+d.sSortDesc).addClass(h[e]=="asc"?d.sSortAsc:h[e]=="desc"?d.sSortDesc:c.sSortingClass);b.find("span."+d.sSortIcon).removeClass(d.sSortJUIAsc+" "+d.sSortJUIDesc+" "+d.sSortJUI+" "+d.sSortJUIAscAllowed+" "+d.sSortJUIDescAllowed).addClass(h[e]=="asc"?d.sSortJUIAsc:h[e]=="desc"?d.sSortJUIDesc:c.sSortingClassJUI)}})}}});var fb=function(a){return"string"===typeof a?a.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,
+"&gt;").replace(/"/g,"&quot;"):a};n.render={number:function(a,b,c,d,e){return{display:function(f){if("number"!==typeof f&&"string"!==typeof f)return f;var g=0>f?"-":"",h=parseFloat(f);if(isNaN(h))return fb(f);h=h.toFixed(c);f=Math.abs(h);h=parseInt(f,10);f=c?b+(f-h).toFixed(c).substring(2):"";return g+(d||"")+h.toString().replace(/\B(?=(\d{3})+(?!\d))/g,a)+f+(e||"")}}},text:function(){return{display:fb,filter:fb}}};h.extend(n.ext.internal,{_fnExternApiFunc:Nb,_fnBuildAjax:ta,_fnAjaxUpdate:nb,_fnAjaxParameters:wb,
+_fnAjaxUpdateDraw:xb,_fnAjaxDataSrc:ua,_fnAddColumn:Ga,_fnColumnOptions:la,_fnAdjustColumnSizing:aa,_fnVisibleToColumnIndex:ba,_fnColumnIndexToVisible:ca,_fnVisbleColumns:W,_fnGetColumns:na,_fnColumnTypes:Ia,_fnApplyColumnDefs:kb,_fnHungarianMap:$,_fnCamelToHungarian:J,_fnLanguageCompat:Ea,_fnBrowserDetect:ib,_fnAddData:O,_fnAddTr:oa,_fnNodeToDataIndex:function(a,b){return b._DT_RowIndex!==k?b._DT_RowIndex:null},_fnNodeToColumnIndex:function(a,b,c){return h.inArray(c,a.aoData[b].anCells)},_fnGetCellData:B,
+_fnSetCellData:lb,_fnSplitObjNotation:La,_fnGetObjectDataFn:S,_fnSetObjectDataFn:N,_fnGetDataMaster:Ma,_fnClearTable:pa,_fnDeleteIndex:qa,_fnInvalidate:ea,_fnGetRowElements:Ka,_fnCreateTr:Ja,_fnBuildHead:mb,_fnDrawHead:ga,_fnDraw:P,_fnReDraw:T,_fnAddOptionsHtml:pb,_fnDetectHeader:fa,_fnGetUniqueThs:sa,_fnFeatureHtmlFilter:rb,_fnFilterComplete:ha,_fnFilterCustom:Ab,_fnFilterColumn:zb,_fnFilter:yb,_fnFilterCreateSearch:Ra,_fnEscapeRegex:Sa,_fnFilterData:Bb,_fnFeatureHtmlInfo:ub,_fnUpdateInfo:Eb,_fnInfoMacros:Fb,
+_fnInitialise:ia,_fnInitComplete:va,_fnLengthChange:Ta,_fnFeatureHtmlLength:qb,_fnFeatureHtmlPaginate:vb,_fnPageChange:Va,_fnFeatureHtmlProcessing:sb,_fnProcessingDisplay:D,_fnFeatureHtmlTable:tb,_fnScrollDraw:ma,_fnApplyToChildren:I,_fnCalculateColumnWidths:Ha,_fnThrottle:Qa,_fnConvertToWidth:Gb,_fnGetWidestNode:Hb,_fnGetMaxLenString:Ib,_fnStringToCss:w,_fnSortFlatten:Y,_fnSort:ob,_fnSortAria:Kb,_fnSortListener:Wa,_fnSortAttachListener:Oa,_fnSortingClasses:ya,_fnSortData:Jb,_fnSaveState:za,_fnLoadState:Lb,
+_fnSettingsFromNode:Aa,_fnLog:K,_fnMap:F,_fnBindAction:Xa,_fnCallbackReg:z,_fnCallbackFire:t,_fnLengthOverflow:Ua,_fnRenderer:Pa,_fnDataSource:y,_fnRowAttributes:Na,_fnExtend:Ya,_fnCalculateEnd:function(){}});h.fn.dataTable=n;n.$=h;h.fn.dataTableSettings=n.settings;h.fn.dataTableExt=n.ext;h.fn.DataTable=function(a){return h(this).dataTable(a).api()};h.each(n,function(a,b){h.fn.DataTable[a]=b});return h.fn.dataTable});
+
 
 /***/ }),
 
@@ -1916,10 +4666,10 @@ module.exports = {
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Dashboard.vue?vue&type=script&lang=js&":
-/*!********************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Dashboard.vue?vue&type=script&lang=js& ***!
-  \********************************************************************************************************************************************************************/
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/backend/HomeComponent.vue?vue&type=script&lang=js&":
+/*!********************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/backend/HomeComponent.vue?vue&type=script&lang=js& ***!
+  \********************************************************************************************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -1941,18 +4691,93 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
+  name: "HomeComponent",
   mounted: function mounted() {
-    console.log('Component mounted.');
+    console.log('Home Component mounted.');
   }
 });
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Profile.vue?vue&type=script&lang=js&":
-/*!******************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Profile.vue?vue&type=script&lang=js& ***!
-  \******************************************************************************************************************************************************************/
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/backend/category/CreateComponent.vue?vue&type=script&lang=js&":
+/*!*******************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/backend/category/CreateComponent.vue?vue&type=script&lang=js& ***!
+  \*******************************************************************************************************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -1974,9 +4799,182 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
+  name: "CreateComponent",
+  data: function data() {
+    return {
+      form: new Form({
+        name: null,
+        status: null
+      })
+    };
+  },
+  methods: {
+    addCategory: function addCategory() {
+      this.form.post('/category/store').then( // ES 6 using...
+      // ({data}) => { console.log(data) }
+      function (data) {
+        // console.log(data);
+        Toast.fire({
+          icon: 'success',
+          title: 'Category Added success'
+        });
+      });
+    }
+  },
   mounted: function mounted() {
-    console.log('Component mounted.');
+    console.log('Create Category Component mounted.');
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/backend/category/IndexComponent.vue?vue&type=script&lang=js&":
+/*!******************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/backend/category/IndexComponent.vue?vue&type=script&lang=js& ***!
+  \******************************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  name: "IndexComponent",
+  mounted: function mounted() {
+    console.log('Category Component mounted.');
   }
 });
 
@@ -6408,6 +9406,16994 @@ __webpack_require__.r(__webpack_exports__);
 
 })));
 //# sourceMappingURL=bootstrap.js.map
+
+
+/***/ }),
+
+/***/ "./node_modules/datatables.net-bs4/js/dataTables.bootstrap4.js":
+/*!*********************************************************************!*\
+  !*** ./node_modules/datatables.net-bs4/js/dataTables.bootstrap4.js ***!
+  \*********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*! DataTables Bootstrap 4 integration
+ * ©2011-2017 SpryMedia Ltd - datatables.net/license
+ */
+
+/**
+ * DataTables integration for Bootstrap 4. This requires Bootstrap 4 and
+ * DataTables 1.10 or newer.
+ *
+ * This file sets the defaults and adds options to DataTables to style its
+ * controls using Bootstrap. See http://datatables.net/manual/styling/bootstrap
+ * for further information.
+ */
+(function( factory ){
+	if ( true ) {
+		// AMD
+		!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js"), __webpack_require__(/*! datatables.net */ "./node_modules/datatables.net/js/jquery.dataTables.js")], __WEBPACK_AMD_DEFINE_RESULT__ = (function ( $ ) {
+			return factory( $, window, document );
+		}).apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__),
+				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+	}
+	else {}
+}(function( $, window, document, undefined ) {
+'use strict';
+var DataTable = $.fn.dataTable;
+
+
+/* Set the defaults for DataTables initialisation */
+$.extend( true, DataTable.defaults, {
+	dom:
+		"<'row'<'col-sm-12 col-md-6'l><'col-sm-12 col-md-6'f>>" +
+		"<'row'<'col-sm-12'tr>>" +
+		"<'row'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7'p>>",
+	renderer: 'bootstrap'
+} );
+
+
+/* Default class modification */
+$.extend( DataTable.ext.classes, {
+	sWrapper:      "dataTables_wrapper dt-bootstrap4",
+	sFilterInput:  "form-control form-control-sm",
+	sLengthSelect: "custom-select custom-select-sm form-control form-control-sm",
+	sProcessing:   "dataTables_processing card",
+	sPageButton:   "paginate_button page-item"
+} );
+
+
+/* Bootstrap paging button renderer */
+DataTable.ext.renderer.pageButton.bootstrap = function ( settings, host, idx, buttons, page, pages ) {
+	var api     = new DataTable.Api( settings );
+	var classes = settings.oClasses;
+	var lang    = settings.oLanguage.oPaginate;
+	var aria = settings.oLanguage.oAria.paginate || {};
+	var btnDisplay, btnClass, counter=0;
+
+	var attach = function( container, buttons ) {
+		var i, ien, node, button;
+		var clickHandler = function ( e ) {
+			e.preventDefault();
+			if ( !$(e.currentTarget).hasClass('disabled') && api.page() != e.data.action ) {
+				api.page( e.data.action ).draw( 'page' );
+			}
+		};
+
+		for ( i=0, ien=buttons.length ; i<ien ; i++ ) {
+			button = buttons[i];
+
+			if ( $.isArray( button ) ) {
+				attach( container, button );
+			}
+			else {
+				btnDisplay = '';
+				btnClass = '';
+
+				switch ( button ) {
+					case 'ellipsis':
+						btnDisplay = '&#x2026;';
+						btnClass = 'disabled';
+						break;
+
+					case 'first':
+						btnDisplay = lang.sFirst;
+						btnClass = button + (page > 0 ?
+							'' : ' disabled');
+						break;
+
+					case 'previous':
+						btnDisplay = lang.sPrevious;
+						btnClass = button + (page > 0 ?
+							'' : ' disabled');
+						break;
+
+					case 'next':
+						btnDisplay = lang.sNext;
+						btnClass = button + (page < pages-1 ?
+							'' : ' disabled');
+						break;
+
+					case 'last':
+						btnDisplay = lang.sLast;
+						btnClass = button + (page < pages-1 ?
+							'' : ' disabled');
+						break;
+
+					default:
+						btnDisplay = button + 1;
+						btnClass = page === button ?
+							'active' : '';
+						break;
+				}
+
+				if ( btnDisplay ) {
+					node = $('<li>', {
+							'class': classes.sPageButton+' '+btnClass,
+							'id': idx === 0 && typeof button === 'string' ?
+								settings.sTableId +'_'+ button :
+								null
+						} )
+						.append( $('<a>', {
+								'href': '#',
+								'aria-controls': settings.sTableId,
+								'aria-label': aria[ button ],
+								'data-dt-idx': counter,
+								'tabindex': settings.iTabIndex,
+								'class': 'page-link'
+							} )
+							.html( btnDisplay )
+						)
+						.appendTo( container );
+
+					settings.oApi._fnBindAction(
+						node, {action: button}, clickHandler
+					);
+
+					counter++;
+				}
+			}
+		}
+	};
+
+	// IE9 throws an 'unknown error' if document.activeElement is used
+	// inside an iframe or frame. 
+	var activeEl;
+
+	try {
+		// Because this approach is destroying and recreating the paging
+		// elements, focus is lost on the select button which is bad for
+		// accessibility. So we want to restore focus once the draw has
+		// completed
+		activeEl = $(host).find(document.activeElement).data('dt-idx');
+	}
+	catch (e) {}
+
+	attach(
+		$(host).empty().html('<ul class="pagination"/>').children('ul'),
+		buttons
+	);
+
+	if ( activeEl !== undefined ) {
+		$(host).find( '[data-dt-idx='+activeEl+']' ).trigger('focus');
+	}
+};
+
+
+return DataTable;
+}));
+
+
+/***/ }),
+
+/***/ "./node_modules/datatables.net-responsive/js/dataTables.responsive.js":
+/*!****************************************************************************!*\
+  !*** ./node_modules/datatables.net-responsive/js/dataTables.responsive.js ***!
+  \****************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*! Responsive 2.2.5
+ * 2014-2020 SpryMedia Ltd - datatables.net/license
+ */
+
+/**
+ * @summary     Responsive
+ * @description Responsive tables plug-in for DataTables
+ * @version     2.2.5
+ * @file        dataTables.responsive.js
+ * @author      SpryMedia Ltd (www.sprymedia.co.uk)
+ * @contact     www.sprymedia.co.uk/contact
+ * @copyright   Copyright 2014-2020 SpryMedia Ltd.
+ *
+ * This source file is free software, available under the following license:
+ *   MIT license - http://datatables.net/license/mit
+ *
+ * This source file is distributed in the hope that it will be useful, but
+ * WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
+ * or FITNESS FOR A PARTICULAR PURPOSE. See the license files for details.
+ *
+ * For details please refer to: http://www.datatables.net
+ */
+(function( factory ){
+	if ( true ) {
+		// AMD
+		!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js"), __webpack_require__(/*! datatables.net */ "./node_modules/datatables.net/js/jquery.dataTables.js")], __WEBPACK_AMD_DEFINE_RESULT__ = (function ( $ ) {
+			return factory( $, window, document );
+		}).apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__),
+				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+	}
+	else {}
+}(function( $, window, document, undefined ) {
+'use strict';
+var DataTable = $.fn.dataTable;
+
+
+/**
+ * Responsive is a plug-in for the DataTables library that makes use of
+ * DataTables' ability to change the visibility of columns, changing the
+ * visibility of columns so the displayed columns fit into the table container.
+ * The end result is that complex tables will be dynamically adjusted to fit
+ * into the viewport, be it on a desktop, tablet or mobile browser.
+ *
+ * Responsive for DataTables has two modes of operation, which can used
+ * individually or combined:
+ *
+ * * Class name based control - columns assigned class names that match the
+ *   breakpoint logic can be shown / hidden as required for each breakpoint.
+ * * Automatic control - columns are automatically hidden when there is no
+ *   room left to display them. Columns removed from the right.
+ *
+ * In additional to column visibility control, Responsive also has built into
+ * options to use DataTables' child row display to show / hide the information
+ * from the table that has been hidden. There are also two modes of operation
+ * for this child row display:
+ *
+ * * Inline - when the control element that the user can use to show / hide
+ *   child rows is displayed inside the first column of the table.
+ * * Column - where a whole column is dedicated to be the show / hide control.
+ *
+ * Initialisation of Responsive is performed by:
+ *
+ * * Adding the class `responsive` or `dt-responsive` to the table. In this case
+ *   Responsive will automatically be initialised with the default configuration
+ *   options when the DataTable is created.
+ * * Using the `responsive` option in the DataTables configuration options. This
+ *   can also be used to specify the configuration options, or simply set to
+ *   `true` to use the defaults.
+ *
+ *  @class
+ *  @param {object} settings DataTables settings object for the host table
+ *  @param {object} [opts] Configuration options
+ *  @requires jQuery 1.7+
+ *  @requires DataTables 1.10.3+
+ *
+ *  @example
+ *      $('#example').DataTable( {
+ *        responsive: true
+ *      } );
+ *    } );
+ */
+var Responsive = function ( settings, opts ) {
+	// Sanity check that we are using DataTables 1.10 or newer
+	if ( ! DataTable.versionCheck || ! DataTable.versionCheck( '1.10.10' ) ) {
+		throw 'DataTables Responsive requires DataTables 1.10.10 or newer';
+	}
+
+	this.s = {
+		dt: new DataTable.Api( settings ),
+		columns: [],
+		current: []
+	};
+
+	// Check if responsive has already been initialised on this table
+	if ( this.s.dt.settings()[0].responsive ) {
+		return;
+	}
+
+	// details is an object, but for simplicity the user can give it as a string
+	// or a boolean
+	if ( opts && typeof opts.details === 'string' ) {
+		opts.details = { type: opts.details };
+	}
+	else if ( opts && opts.details === false ) {
+		opts.details = { type: false };
+	}
+	else if ( opts && opts.details === true ) {
+		opts.details = { type: 'inline' };
+	}
+
+	this.c = $.extend( true, {}, Responsive.defaults, DataTable.defaults.responsive, opts );
+	settings.responsive = this;
+	this._constructor();
+};
+
+$.extend( Responsive.prototype, {
+	/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+	 * Constructor
+	 */
+
+	/**
+	 * Initialise the Responsive instance
+	 *
+	 * @private
+	 */
+	_constructor: function ()
+	{
+		var that = this;
+		var dt = this.s.dt;
+		var dtPrivateSettings = dt.settings()[0];
+		var oldWindowWidth = $(window).innerWidth();
+
+		dt.settings()[0]._responsive = this;
+
+		// Use DataTables' throttle function to avoid processor thrashing on
+		// resize
+		$(window).on( 'resize.dtr orientationchange.dtr', DataTable.util.throttle( function () {
+			// iOS has a bug whereby resize can fire when only scrolling
+			// See: http://stackoverflow.com/questions/8898412
+			var width = $(window).innerWidth();
+
+			if ( width !== oldWindowWidth ) {
+				that._resize();
+				oldWindowWidth = width;
+			}
+		} ) );
+
+		// DataTables doesn't currently trigger an event when a row is added, so
+		// we need to hook into its private API to enforce the hidden rows when
+		// new data is added
+		dtPrivateSettings.oApi._fnCallbackReg( dtPrivateSettings, 'aoRowCreatedCallback', function (tr, data, idx) {
+			if ( $.inArray( false, that.s.current ) !== -1 ) {
+				$('>td, >th', tr).each( function ( i ) {
+					var idx = dt.column.index( 'toData', i );
+
+					if ( that.s.current[idx] === false ) {
+						$(this).css('display', 'none');
+					}
+				} );
+			}
+		} );
+
+		// Destroy event handler
+		dt.on( 'destroy.dtr', function () {
+			dt.off( '.dtr' );
+			$( dt.table().body() ).off( '.dtr' );
+			$(window).off( 'resize.dtr orientationchange.dtr' );
+			dt.cells('.dtr-control').nodes().to$().removeClass('dtr-control');
+
+			// Restore the columns that we've hidden
+			$.each( that.s.current, function ( i, val ) {
+				if ( val === false ) {
+					that._setColumnVis( i, true );
+				}
+			} );
+		} );
+
+		// Reorder the breakpoints array here in case they have been added out
+		// of order
+		this.c.breakpoints.sort( function (a, b) {
+			return a.width < b.width ? 1 :
+				a.width > b.width ? -1 : 0;
+		} );
+
+		this._classLogic();
+		this._resizeAuto();
+
+		// Details handler
+		var details = this.c.details;
+
+		if ( details.type !== false ) {
+			that._detailsInit();
+
+			// DataTables will trigger this event on every column it shows and
+			// hides individually
+			dt.on( 'column-visibility.dtr', function () {
+				// Use a small debounce to allow multiple columns to be set together
+				if ( that._timer ) {
+					clearTimeout( that._timer );
+				}
+
+				that._timer = setTimeout( function () {
+					that._timer = null;
+
+					that._classLogic();
+					that._resizeAuto();
+					that._resize();
+
+					that._redrawChildren();
+				}, 100 );
+			} );
+
+			// Redraw the details box on each draw which will happen if the data
+			// has changed. This is used until DataTables implements a native
+			// `updated` event for rows
+			dt.on( 'draw.dtr', function () {
+				that._redrawChildren();
+			} );
+
+			$(dt.table().node()).addClass( 'dtr-'+details.type );
+		}
+
+		dt.on( 'column-reorder.dtr', function (e, settings, details) {
+			that._classLogic();
+			that._resizeAuto();
+			that._resize(true);
+		} );
+
+		// Change in column sizes means we need to calc
+		dt.on( 'column-sizing.dtr', function () {
+			that._resizeAuto();
+			that._resize();
+		});
+
+		// On Ajax reload we want to reopen any child rows which are displayed
+		// by responsive
+		dt.on( 'preXhr.dtr', function () {
+			var rowIds = [];
+			dt.rows().every( function () {
+				if ( this.child.isShown() ) {
+					rowIds.push( this.id(true) );
+				}
+			} );
+
+			dt.one( 'draw.dtr', function () {
+				that._resizeAuto();
+				that._resize();
+
+				dt.rows( rowIds ).every( function () {
+					that._detailsDisplay( this, false );
+				} );
+			} );
+		});
+
+		dt
+			.on( 'draw.dtr', function () {
+				that._controlClass();
+			})
+			.on( 'init.dtr', function (e, settings, details) {
+				if ( e.namespace !== 'dt' ) {
+					return;
+				}
+
+				that._resizeAuto();
+				that._resize();
+
+				// If columns were hidden, then DataTables needs to adjust the
+				// column sizing
+				if ( $.inArray( false, that.s.current ) ) {
+					dt.columns.adjust();
+				}
+			} );
+
+		// First pass - draw the table for the current viewport size
+		this._resize();
+	},
+
+
+	/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+	 * Private methods
+	 */
+
+	/**
+	 * Calculate the visibility for the columns in a table for a given
+	 * breakpoint. The result is pre-determined based on the class logic if
+	 * class names are used to control all columns, but the width of the table
+	 * is also used if there are columns which are to be automatically shown
+	 * and hidden.
+	 *
+	 * @param  {string} breakpoint Breakpoint name to use for the calculation
+	 * @return {array} Array of boolean values initiating the visibility of each
+	 *   column.
+	 *  @private
+	 */
+	_columnsVisiblity: function ( breakpoint )
+	{
+		var dt = this.s.dt;
+		var columns = this.s.columns;
+		var i, ien;
+
+		// Create an array that defines the column ordering based first on the
+		// column's priority, and secondly the column index. This allows the
+		// columns to be removed from the right if the priority matches
+		var order = columns
+			.map( function ( col, idx ) {
+				return {
+					columnIdx: idx,
+					priority: col.priority
+				};
+			} )
+			.sort( function ( a, b ) {
+				if ( a.priority !== b.priority ) {
+					return a.priority - b.priority;
+				}
+				return a.columnIdx - b.columnIdx;
+			} );
+
+		// Class logic - determine which columns are in this breakpoint based
+		// on the classes. If no class control (i.e. `auto`) then `-` is used
+		// to indicate this to the rest of the function
+		var display = $.map( columns, function ( col, i ) {
+			if ( dt.column(i).visible() === false ) {
+				return 'not-visible';
+			}
+			return col.auto && col.minWidth === null ?
+				false :
+				col.auto === true ?
+					'-' :
+					$.inArray( breakpoint, col.includeIn ) !== -1;
+		} );
+
+		// Auto column control - first pass: how much width is taken by the
+		// ones that must be included from the non-auto columns
+		var requiredWidth = 0;
+		for ( i=0, ien=display.length ; i<ien ; i++ ) {
+			if ( display[i] === true ) {
+				requiredWidth += columns[i].minWidth;
+			}
+		}
+
+		// Second pass, use up any remaining width for other columns. For
+		// scrolling tables we need to subtract the width of the scrollbar. It
+		// may not be requires which makes this sub-optimal, but it would
+		// require another full redraw to make complete use of those extra few
+		// pixels
+		var scrolling = dt.settings()[0].oScroll;
+		var bar = scrolling.sY || scrolling.sX ? scrolling.iBarWidth : 0;
+		var widthAvailable = dt.table().container().offsetWidth - bar;
+		var usedWidth = widthAvailable - requiredWidth;
+
+		// Control column needs to always be included. This makes it sub-
+		// optimal in terms of using the available with, but to stop layout
+		// thrashing or overflow. Also we need to account for the control column
+		// width first so we know how much width is available for the other
+		// columns, since the control column might not be the first one shown
+		for ( i=0, ien=display.length ; i<ien ; i++ ) {
+			if ( columns[i].control ) {
+				usedWidth -= columns[i].minWidth;
+			}
+		}
+
+		// Allow columns to be shown (counting by priority and then right to
+		// left) until we run out of room
+		var empty = false;
+		for ( i=0, ien=order.length ; i<ien ; i++ ) {
+			var colIdx = order[i].columnIdx;
+
+			if ( display[colIdx] === '-' && ! columns[colIdx].control && columns[colIdx].minWidth ) {
+				// Once we've found a column that won't fit we don't let any
+				// others display either, or columns might disappear in the
+				// middle of the table
+				if ( empty || usedWidth - columns[colIdx].minWidth < 0 ) {
+					empty = true;
+					display[colIdx] = false;
+				}
+				else {
+					display[colIdx] = true;
+				}
+
+				usedWidth -= columns[colIdx].minWidth;
+			}
+		}
+
+		// Determine if the 'control' column should be shown (if there is one).
+		// This is the case when there is a hidden column (that is not the
+		// control column). The two loops look inefficient here, but they are
+		// trivial and will fly through. We need to know the outcome from the
+		// first , before the action in the second can be taken
+		var showControl = false;
+
+		for ( i=0, ien=columns.length ; i<ien ; i++ ) {
+			if ( ! columns[i].control && ! columns[i].never && display[i] === false ) {
+				showControl = true;
+				break;
+			}
+		}
+
+		for ( i=0, ien=columns.length ; i<ien ; i++ ) {
+			if ( columns[i].control ) {
+				display[i] = showControl;
+			}
+
+			// Replace not visible string with false from the control column detection above
+			if ( display[i] === 'not-visible' ) {
+				display[i] = false;
+			}
+		}
+
+		// Finally we need to make sure that there is at least one column that
+		// is visible
+		if ( $.inArray( true, display ) === -1 ) {
+			display[0] = true;
+		}
+
+		return display;
+	},
+
+
+	/**
+	 * Create the internal `columns` array with information about the columns
+	 * for the table. This includes determining which breakpoints the column
+	 * will appear in, based upon class names in the column, which makes up the
+	 * vast majority of this method.
+	 *
+	 * @private
+	 */
+	_classLogic: function ()
+	{
+		var that = this;
+		var calc = {};
+		var breakpoints = this.c.breakpoints;
+		var dt = this.s.dt;
+		var columns = dt.columns().eq(0).map( function (i) {
+			var column = this.column(i);
+			var className = column.header().className;
+			var priority = dt.settings()[0].aoColumns[i].responsivePriority;
+			var dataPriority = column.header().getAttribute('data-priority');
+
+			if ( priority === undefined ) {
+				priority = dataPriority === undefined || dataPriority === null?
+					10000 :
+					dataPriority * 1;
+			}
+
+			return {
+				className: className,
+				includeIn: [],
+				auto:      false,
+				control:   false,
+				never:     className.match(/\bnever\b/) ? true : false,
+				priority:  priority
+			};
+		} );
+
+		// Simply add a breakpoint to `includeIn` array, ensuring that there are
+		// no duplicates
+		var add = function ( colIdx, name ) {
+			var includeIn = columns[ colIdx ].includeIn;
+
+			if ( $.inArray( name, includeIn ) === -1 ) {
+				includeIn.push( name );
+			}
+		};
+
+		var column = function ( colIdx, name, operator, matched ) {
+			var size, i, ien;
+
+			if ( ! operator ) {
+				columns[ colIdx ].includeIn.push( name );
+			}
+			else if ( operator === 'max-' ) {
+				// Add this breakpoint and all smaller
+				size = that._find( name ).width;
+
+				for ( i=0, ien=breakpoints.length ; i<ien ; i++ ) {
+					if ( breakpoints[i].width <= size ) {
+						add( colIdx, breakpoints[i].name );
+					}
+				}
+			}
+			else if ( operator === 'min-' ) {
+				// Add this breakpoint and all larger
+				size = that._find( name ).width;
+
+				for ( i=0, ien=breakpoints.length ; i<ien ; i++ ) {
+					if ( breakpoints[i].width >= size ) {
+						add( colIdx, breakpoints[i].name );
+					}
+				}
+			}
+			else if ( operator === 'not-' ) {
+				// Add all but this breakpoint
+				for ( i=0, ien=breakpoints.length ; i<ien ; i++ ) {
+					if ( breakpoints[i].name.indexOf( matched ) === -1 ) {
+						add( colIdx, breakpoints[i].name );
+					}
+				}
+			}
+		};
+
+		// Loop over each column and determine if it has a responsive control
+		// class
+		columns.each( function ( col, i ) {
+			var classNames = col.className.split(' ');
+			var hasClass = false;
+
+			// Split the class name up so multiple rules can be applied if needed
+			for ( var k=0, ken=classNames.length ; k<ken ; k++ ) {
+				var className = $.trim( classNames[k] );
+
+				if ( className === 'all' ) {
+					// Include in all
+					hasClass = true;
+					col.includeIn = $.map( breakpoints, function (a) {
+						return a.name;
+					} );
+					return;
+				}
+				else if ( className === 'none' || col.never ) {
+					// Include in none (default) and no auto
+					hasClass = true;
+					return;
+				}
+				else if ( className === 'control' ) {
+					// Special column that is only visible, when one of the other
+					// columns is hidden. This is used for the details control
+					hasClass = true;
+					col.control = true;
+					return;
+				}
+
+				$.each( breakpoints, function ( j, breakpoint ) {
+					// Does this column have a class that matches this breakpoint?
+					var brokenPoint = breakpoint.name.split('-');
+					var re = new RegExp( '(min\\-|max\\-|not\\-)?('+brokenPoint[0]+')(\\-[_a-zA-Z0-9])?' );
+					var match = className.match( re );
+
+					if ( match ) {
+						hasClass = true;
+
+						if ( match[2] === brokenPoint[0] && match[3] === '-'+brokenPoint[1] ) {
+							// Class name matches breakpoint name fully
+							column( i, breakpoint.name, match[1], match[2]+match[3] );
+						}
+						else if ( match[2] === brokenPoint[0] && ! match[3] ) {
+							// Class name matched primary breakpoint name with no qualifier
+							column( i, breakpoint.name, match[1], match[2] );
+						}
+					}
+				} );
+			}
+
+			// If there was no control class, then automatic sizing is used
+			if ( ! hasClass ) {
+				col.auto = true;
+			}
+		} );
+
+		this.s.columns = columns;
+	},
+
+	/**
+	 * Update the cells to show the correct control class / button
+	 * @private
+	 */
+	_controlClass: function ()
+	{
+		if ( this.c.details.type === 'inline' ) {
+			var dt = this.s.dt;
+			var columnsVis = this.s.current;
+			var firstVisible = $.inArray(true, columnsVis);
+
+			// Remove from any cells which shouldn't have it
+			dt.cells(
+				null,
+				function(idx) {
+					return idx !== firstVisible;
+				},
+				{page: 'current'}
+			)
+				.nodes()
+				.to$()
+				.filter('.dtr-control')
+				.removeClass('dtr-control');
+
+			dt.cells(null, firstVisible, {page: 'current'})
+				.nodes()
+				.to$()
+				.addClass('dtr-control');
+		}
+	},
+
+	/**
+	 * Show the details for the child row
+	 *
+	 * @param  {DataTables.Api} row    API instance for the row
+	 * @param  {boolean}        update Update flag
+	 * @private
+	 */
+	_detailsDisplay: function ( row, update )
+	{
+		var that = this;
+		var dt = this.s.dt;
+		var details = this.c.details;
+
+		if ( details && details.type !== false ) {
+			var res = details.display( row, update, function () {
+				return details.renderer(
+					dt, row[0], that._detailsObj(row[0])
+				);
+			} );
+
+			if ( res === true || res === false ) {
+				$(dt.table().node()).triggerHandler( 'responsive-display.dt', [dt, row, res, update] );
+			}
+		}
+	},
+
+
+	/**
+	 * Initialisation for the details handler
+	 *
+	 * @private
+	 */
+	_detailsInit: function ()
+	{
+		var that    = this;
+		var dt      = this.s.dt;
+		var details = this.c.details;
+
+		// The inline type always uses the first child as the target
+		if ( details.type === 'inline' ) {
+			details.target = 'td.dtr-control, th.dtr-control';
+		}
+
+		// Keyboard accessibility
+		dt.on( 'draw.dtr', function () {
+			that._tabIndexes();
+		} );
+		that._tabIndexes(); // Initial draw has already happened
+
+		$( dt.table().body() ).on( 'keyup.dtr', 'td, th', function (e) {
+			if ( e.keyCode === 13 && $(this).data('dtr-keyboard') ) {
+				$(this).click();
+			}
+		} );
+
+		// type.target can be a string jQuery selector or a column index
+		var target   = details.target;
+		var selector = typeof target === 'string' ? target : 'td, th';
+
+		if ( target !== undefined || target !== null ) {
+			// Click handler to show / hide the details rows when they are available
+			$( dt.table().body() )
+				.on( 'click.dtr mousedown.dtr mouseup.dtr', selector, function (e) {
+					// If the table is not collapsed (i.e. there is no hidden columns)
+					// then take no action
+					if ( ! $(dt.table().node()).hasClass('collapsed' ) ) {
+						return;
+					}
+
+					// Check that the row is actually a DataTable's controlled node
+					if ( $.inArray( $(this).closest('tr').get(0), dt.rows().nodes().toArray() ) === -1 ) {
+						return;
+					}
+
+					// For column index, we determine if we should act or not in the
+					// handler - otherwise it is already okay
+					if ( typeof target === 'number' ) {
+						var targetIdx = target < 0 ?
+							dt.columns().eq(0).length + target :
+							target;
+
+						if ( dt.cell( this ).index().column !== targetIdx ) {
+							return;
+						}
+					}
+
+					// $().closest() includes itself in its check
+					var row = dt.row( $(this).closest('tr') );
+
+					// Check event type to do an action
+					if ( e.type === 'click' ) {
+						// The renderer is given as a function so the caller can execute it
+						// only when they need (i.e. if hiding there is no point is running
+						// the renderer)
+						that._detailsDisplay( row, false );
+					}
+					else if ( e.type === 'mousedown' ) {
+						// For mouse users, prevent the focus ring from showing
+						$(this).css('outline', 'none');
+					}
+					else if ( e.type === 'mouseup' ) {
+						// And then re-allow at the end of the click
+						$(this).trigger('blur').css('outline', '');
+					}
+				} );
+		}
+	},
+
+
+	/**
+	 * Get the details to pass to a renderer for a row
+	 * @param  {int} rowIdx Row index
+	 * @private
+	 */
+	_detailsObj: function ( rowIdx )
+	{
+		var that = this;
+		var dt = this.s.dt;
+
+		return $.map( this.s.columns, function( col, i ) {
+			// Never and control columns should not be passed to the renderer
+			if ( col.never || col.control ) {
+				return;
+			}
+
+			var dtCol = dt.settings()[0].aoColumns[ i ];
+
+			return {
+				className:   dtCol.sClass,
+				columnIndex: i,
+				data:        dt.cell( rowIdx, i ).render( that.c.orthogonal ),
+				hidden:      dt.column( i ).visible() && !that.s.current[ i ],
+				rowIndex:    rowIdx,
+				title:       dtCol.sTitle !== null ?
+					dtCol.sTitle :
+					$(dt.column(i).header()).text()
+			};
+		} );
+	},
+
+
+	/**
+	 * Find a breakpoint object from a name
+	 *
+	 * @param  {string} name Breakpoint name to find
+	 * @return {object}      Breakpoint description object
+	 * @private
+	 */
+	_find: function ( name )
+	{
+		var breakpoints = this.c.breakpoints;
+
+		for ( var i=0, ien=breakpoints.length ; i<ien ; i++ ) {
+			if ( breakpoints[i].name === name ) {
+				return breakpoints[i];
+			}
+		}
+	},
+
+
+	/**
+	 * Re-create the contents of the child rows as the display has changed in
+	 * some way.
+	 *
+	 * @private
+	 */
+	_redrawChildren: function ()
+	{
+		var that = this;
+		var dt = this.s.dt;
+
+		dt.rows( {page: 'current'} ).iterator( 'row', function ( settings, idx ) {
+			var row = dt.row( idx );
+
+			that._detailsDisplay( dt.row( idx ), true );
+		} );
+	},
+
+
+	/**
+	 * Alter the table display for a resized viewport. This involves first
+	 * determining what breakpoint the window currently is in, getting the
+	 * column visibilities to apply and then setting them.
+	 *
+	 * @param  {boolean} forceRedraw Force a redraw
+	 * @private
+	 */
+	_resize: function (forceRedraw)
+	{
+		var that = this;
+		var dt = this.s.dt;
+		var width = $(window).innerWidth();
+		var breakpoints = this.c.breakpoints;
+		var breakpoint = breakpoints[0].name;
+		var columns = this.s.columns;
+		var i, ien;
+		var oldVis = this.s.current.slice();
+
+		// Determine what breakpoint we are currently at
+		for ( i=breakpoints.length-1 ; i>=0 ; i-- ) {
+			if ( width <= breakpoints[i].width ) {
+				breakpoint = breakpoints[i].name;
+				break;
+			}
+		}
+		
+		// Show the columns for that break point
+		var columnsVis = this._columnsVisiblity( breakpoint );
+		this.s.current = columnsVis;
+
+		// Set the class before the column visibility is changed so event
+		// listeners know what the state is. Need to determine if there are
+		// any columns that are not visible but can be shown
+		var collapsedClass = false;
+	
+		for ( i=0, ien=columns.length ; i<ien ; i++ ) {
+			if ( columnsVis[i] === false && ! columns[i].never && ! columns[i].control && ! dt.column(i).visible() === false ) {
+				collapsedClass = true;
+				break;
+			}
+		}
+
+		$( dt.table().node() ).toggleClass( 'collapsed', collapsedClass );
+
+		var changed = false;
+		var visible = 0;
+
+		dt.columns().eq(0).each( function ( colIdx, i ) {
+			if ( columnsVis[i] === true ) {
+				visible++;
+			}
+
+			if ( forceRedraw || columnsVis[i] !== oldVis[i] ) {
+				changed = true;
+				that._setColumnVis( colIdx, columnsVis[i] );
+			}
+		} );
+
+		if ( changed ) {
+			this._redrawChildren();
+
+			// Inform listeners of the change
+			$(dt.table().node()).trigger( 'responsive-resize.dt', [dt, this.s.current] );
+
+			// If no records, update the "No records" display element
+			if ( dt.page.info().recordsDisplay === 0 ) {
+				$('td', dt.table().body()).eq(0).attr('colspan', visible);
+			}
+		}
+	},
+
+
+	/**
+	 * Determine the width of each column in the table so the auto column hiding
+	 * has that information to work with. This method is never going to be 100%
+	 * perfect since column widths can change slightly per page, but without
+	 * seriously compromising performance this is quite effective.
+	 *
+	 * @private
+	 */
+	_resizeAuto: function ()
+	{
+		var dt = this.s.dt;
+		var columns = this.s.columns;
+
+		// Are we allowed to do auto sizing?
+		if ( ! this.c.auto ) {
+			return;
+		}
+
+		// Are there any columns that actually need auto-sizing, or do they all
+		// have classes defined
+		if ( $.inArray( true, $.map( columns, function (c) { return c.auto; } ) ) === -1 ) {
+			return;
+		}
+
+		// Need to restore all children. They will be reinstated by a re-render
+		if ( ! $.isEmptyObject( _childNodeStore ) ) {
+			$.each( _childNodeStore, function ( key ) {
+				var idx = key.split('-');
+
+				_childNodesRestore( dt, idx[0]*1, idx[1]*1 );
+			} );
+		}
+
+		// Clone the table with the current data in it
+		var tableWidth   = dt.table().node().offsetWidth;
+		var columnWidths = dt.columns;
+		var clonedTable  = dt.table().node().cloneNode( false );
+		var clonedHeader = $( dt.table().header().cloneNode( false ) ).appendTo( clonedTable );
+		var clonedBody   = $( dt.table().body() ).clone( false, false ).empty().appendTo( clonedTable ); // use jQuery because of IE8
+
+		clonedTable.style.width = 'auto';
+
+		// Header
+		var headerCells = dt.columns()
+			.header()
+			.filter( function (idx) {
+				return dt.column(idx).visible();
+			} )
+			.to$()
+			.clone( false )
+			.css( 'display', 'table-cell' )
+			.css( 'width', 'auto' )
+			.css( 'min-width', 0 );
+
+		// Body rows - we don't need to take account of DataTables' column
+		// visibility since we implement our own here (hence the `display` set)
+		$(clonedBody)
+			.append( $(dt.rows( { page: 'current' } ).nodes()).clone( false ) )
+			.find( 'th, td' ).css( 'display', '' );
+
+		// Footer
+		var footer = dt.table().footer();
+		if ( footer ) {
+			var clonedFooter = $( footer.cloneNode( false ) ).appendTo( clonedTable );
+			var footerCells = dt.columns()
+				.footer()
+				.filter( function (idx) {
+					return dt.column(idx).visible();
+				} )
+				.to$()
+				.clone( false )
+				.css( 'display', 'table-cell' );
+
+			$('<tr/>')
+				.append( footerCells )
+				.appendTo( clonedFooter );
+		}
+
+		$('<tr/>')
+			.append( headerCells )
+			.appendTo( clonedHeader );
+
+		// In the inline case extra padding is applied to the first column to
+		// give space for the show / hide icon. We need to use this in the
+		// calculation
+		if ( this.c.details.type === 'inline' ) {
+			$(clonedTable).addClass( 'dtr-inline collapsed' );
+		}
+		
+		// It is unsafe to insert elements with the same name into the DOM
+		// multiple times. For example, cloning and inserting a checked radio
+		// clears the chcecked state of the original radio.
+		$( clonedTable ).find( '[name]' ).removeAttr( 'name' );
+
+		// A position absolute table would take the table out of the flow of
+		// our container element, bypassing the height and width (Scroller)
+		$( clonedTable ).css( 'position', 'relative' )
+		
+		var inserted = $('<div/>')
+			.css( {
+				width: 1,
+				height: 1,
+				overflow: 'hidden',
+				clear: 'both'
+			} )
+			.append( clonedTable );
+
+		inserted.insertBefore( dt.table().node() );
+
+		// The cloned header now contains the smallest that each column can be
+		headerCells.each( function (i) {
+			var idx = dt.column.index( 'fromVisible', i );
+			columns[ idx ].minWidth =  this.offsetWidth || 0;
+		} );
+
+		inserted.remove();
+	},
+
+	/**
+	 * Get the state of the current hidden columns - controlled by Responsive only
+	 */
+	_responsiveOnlyHidden: function ()
+	{
+		var dt = this.s.dt;
+
+		return $.map( this.s.current, function (v, i) {
+			// If the column is hidden by DataTables then it can't be hidden by
+			// Responsive!
+			if ( dt.column(i).visible() === false ) {
+				return true;
+			}
+			return v;
+		} );
+	},
+
+	/**
+	 * Set a column's visibility.
+	 *
+	 * We don't use DataTables' column visibility controls in order to ensure
+	 * that column visibility can Responsive can no-exist. Since only IE8+ is
+	 * supported (and all evergreen browsers of course) the control of the
+	 * display attribute works well.
+	 *
+	 * @param {integer} col      Column index
+	 * @param {boolean} showHide Show or hide (true or false)
+	 * @private
+	 */
+	_setColumnVis: function ( col, showHide )
+	{
+		var dt = this.s.dt;
+		var display = showHide ? '' : 'none'; // empty string will remove the attr
+
+		$( dt.column( col ).header() ).css( 'display', display );
+		$( dt.column( col ).footer() ).css( 'display', display );
+		dt.column( col ).nodes().to$().css( 'display', display );
+
+		// If the are child nodes stored, we might need to reinsert them
+		if ( ! $.isEmptyObject( _childNodeStore ) ) {
+			dt.cells( null, col ).indexes().each( function (idx) {
+				_childNodesRestore( dt, idx.row, idx.column );
+			} );
+		}
+	},
+
+
+	/**
+	 * Update the cell tab indexes for keyboard accessibility. This is called on
+	 * every table draw - that is potentially inefficient, but also the least
+	 * complex option given that column visibility can change on the fly. Its a
+	 * shame user-focus was removed from CSS 3 UI, as it would have solved this
+	 * issue with a single CSS statement.
+	 *
+	 * @private
+	 */
+	_tabIndexes: function ()
+	{
+		var dt = this.s.dt;
+		var cells = dt.cells( { page: 'current' } ).nodes().to$();
+		var ctx = dt.settings()[0];
+		var target = this.c.details.target;
+
+		cells.filter( '[data-dtr-keyboard]' ).removeData( '[data-dtr-keyboard]' );
+
+		if ( typeof target === 'number' ) {
+			dt.cells( null, target, { page: 'current' } ).nodes().to$()
+				.attr( 'tabIndex', ctx.iTabIndex )
+				.data( 'dtr-keyboard', 1 );
+		}
+		else {
+			// This is a bit of a hack - we need to limit the selected nodes to just
+			// those of this table
+			if ( target === 'td:first-child, th:first-child' ) {
+				target = '>td:first-child, >th:first-child';
+			}
+
+			$( target, dt.rows( { page: 'current' } ).nodes() )
+				.attr( 'tabIndex', ctx.iTabIndex )
+				.data( 'dtr-keyboard', 1 );
+		}
+	}
+} );
+
+
+/**
+ * List of default breakpoints. Each item in the array is an object with two
+ * properties:
+ *
+ * * `name` - the breakpoint name.
+ * * `width` - the breakpoint width
+ *
+ * @name Responsive.breakpoints
+ * @static
+ */
+Responsive.breakpoints = [
+	{ name: 'desktop',  width: Infinity },
+	{ name: 'tablet-l', width: 1024 },
+	{ name: 'tablet-p', width: 768 },
+	{ name: 'mobile-l', width: 480 },
+	{ name: 'mobile-p', width: 320 }
+];
+
+
+/**
+ * Display methods - functions which define how the hidden data should be shown
+ * in the table.
+ *
+ * @namespace
+ * @name Responsive.defaults
+ * @static
+ */
+Responsive.display = {
+	childRow: function ( row, update, render ) {
+		if ( update ) {
+			if ( $(row.node()).hasClass('parent') ) {
+				row.child( render(), 'child' ).show();
+
+				return true;
+			}
+		}
+		else {
+			if ( ! row.child.isShown()  ) {
+				row.child( render(), 'child' ).show();
+				$( row.node() ).addClass( 'parent' );
+
+				return true;
+			}
+			else {
+				row.child( false );
+				$( row.node() ).removeClass( 'parent' );
+
+				return false;
+			}
+		}
+	},
+
+	childRowImmediate: function ( row, update, render ) {
+		if ( (! update && row.child.isShown()) || ! row.responsive.hasHidden() ) {
+			// User interaction and the row is show, or nothing to show
+			row.child( false );
+			$( row.node() ).removeClass( 'parent' );
+
+			return false;
+		}
+		else {
+			// Display
+			row.child( render(), 'child' ).show();
+			$( row.node() ).addClass( 'parent' );
+
+			return true;
+		}
+	},
+
+	// This is a wrapper so the modal options for Bootstrap and jQuery UI can
+	// have options passed into them. This specific one doesn't need to be a
+	// function but it is for consistency in the `modal` name
+	modal: function ( options ) {
+		return function ( row, update, render ) {
+			if ( ! update ) {
+				// Show a modal
+				var close = function () {
+					modal.remove(); // will tidy events for us
+					$(document).off( 'keypress.dtr' );
+				};
+
+				var modal = $('<div class="dtr-modal"/>')
+					.append( $('<div class="dtr-modal-display"/>')
+						.append( $('<div class="dtr-modal-content"/>')
+							.append( render() )
+						)
+						.append( $('<div class="dtr-modal-close">&times;</div>' )
+							.click( function () {
+								close();
+							} )
+						)
+					)
+					.append( $('<div class="dtr-modal-background"/>')
+						.click( function () {
+							close();
+						} )
+					)
+					.appendTo( 'body' );
+
+				$(document).on( 'keyup.dtr', function (e) {
+					if ( e.keyCode === 27 ) {
+						e.stopPropagation();
+
+						close();
+					}
+				} );
+			}
+			else {
+				$('div.dtr-modal-content')
+					.empty()
+					.append( render() );
+			}
+
+			if ( options && options.header ) {
+				$('div.dtr-modal-content').prepend(
+					'<h2>'+options.header( row )+'</h2>'
+				);
+			}
+		};
+	}
+};
+
+
+var _childNodeStore = {};
+
+function _childNodes( dt, row, col ) {
+	var name = row+'-'+col;
+
+	if ( _childNodeStore[ name ] ) {
+		return _childNodeStore[ name ];
+	}
+
+	// https://jsperf.com/childnodes-array-slice-vs-loop
+	var nodes = [];
+	var children = dt.cell( row, col ).node().childNodes;
+	for ( var i=0, ien=children.length ; i<ien ; i++ ) {
+		nodes.push( children[i] );
+	}
+
+	_childNodeStore[ name ] = nodes;
+
+	return nodes;
+}
+
+function _childNodesRestore( dt, row, col ) {
+	var name = row+'-'+col;
+
+	if ( ! _childNodeStore[ name ] ) {
+		return;
+	}
+
+	var node = dt.cell( row, col ).node();
+	var store = _childNodeStore[ name ];
+	var parent = store[0].parentNode;
+	var parentChildren = parent.childNodes;
+	var a = [];
+
+	for ( var i=0, ien=parentChildren.length ; i<ien ; i++ ) {
+		a.push( parentChildren[i] );
+	}
+
+	for ( var j=0, jen=a.length ; j<jen ; j++ ) {
+		node.appendChild( a[j] );
+	}
+
+	_childNodeStore[ name ] = undefined;
+}
+
+
+/**
+ * Display methods - functions which define how the hidden data should be shown
+ * in the table.
+ *
+ * @namespace
+ * @name Responsive.defaults
+ * @static
+ */
+Responsive.renderer = {
+	listHiddenNodes: function () {
+		return function ( api, rowIdx, columns ) {
+			var ul = $('<ul data-dtr-index="'+rowIdx+'" class="dtr-details"/>');
+			var found = false;
+
+			var data = $.each( columns, function ( i, col ) {
+				if ( col.hidden ) {
+					var klass = col.className ?
+						'class="'+ col.className +'"' :
+						'';
+	
+					$(
+						'<li '+klass+' data-dtr-index="'+col.columnIndex+'" data-dt-row="'+col.rowIndex+'" data-dt-column="'+col.columnIndex+'">'+
+							'<span class="dtr-title">'+
+								col.title+
+							'</span> '+
+						'</li>'
+					)
+						.append( $('<span class="dtr-data"/>').append( _childNodes( api, col.rowIndex, col.columnIndex ) ) )// api.cell( col.rowIndex, col.columnIndex ).node().childNodes ) )
+						.appendTo( ul );
+
+					found = true;
+				}
+			} );
+
+			return found ?
+				ul :
+				false;
+		};
+	},
+
+	listHidden: function () {
+		return function ( api, rowIdx, columns ) {
+			var data = $.map( columns, function ( col ) {
+				var klass = col.className ?
+					'class="'+ col.className +'"' :
+					'';
+
+				return col.hidden ?
+					'<li '+klass+' data-dtr-index="'+col.columnIndex+'" data-dt-row="'+col.rowIndex+'" data-dt-column="'+col.columnIndex+'">'+
+						'<span class="dtr-title">'+
+							col.title+
+						'</span> '+
+						'<span class="dtr-data">'+
+							col.data+
+						'</span>'+
+					'</li>' :
+					'';
+			} ).join('');
+
+			return data ?
+				$('<ul data-dtr-index="'+rowIdx+'" class="dtr-details"/>').append( data ) :
+				false;
+		}
+	},
+
+	tableAll: function ( options ) {
+		options = $.extend( {
+			tableClass: ''
+		}, options );
+
+		return function ( api, rowIdx, columns ) {
+			var data = $.map( columns, function ( col ) {
+				var klass = col.className ?
+					'class="'+ col.className +'"' :
+					'';
+
+				return '<tr '+klass+' data-dt-row="'+col.rowIndex+'" data-dt-column="'+col.columnIndex+'">'+
+						'<td>'+col.title+':'+'</td> '+
+						'<td>'+col.data+'</td>'+
+					'</tr>';
+			} ).join('');
+
+			return $('<table class="'+options.tableClass+' dtr-details" width="100%"/>').append( data );
+		}
+	}
+};
+
+/**
+ * Responsive default settings for initialisation
+ *
+ * @namespace
+ * @name Responsive.defaults
+ * @static
+ */
+Responsive.defaults = {
+	/**
+	 * List of breakpoints for the instance. Note that this means that each
+	 * instance can have its own breakpoints. Additionally, the breakpoints
+	 * cannot be changed once an instance has been creased.
+	 *
+	 * @type {Array}
+	 * @default Takes the value of `Responsive.breakpoints`
+	 */
+	breakpoints: Responsive.breakpoints,
+
+	/**
+	 * Enable / disable auto hiding calculations. It can help to increase
+	 * performance slightly if you disable this option, but all columns would
+	 * need to have breakpoint classes assigned to them
+	 *
+	 * @type {Boolean}
+	 * @default  `true`
+	 */
+	auto: true,
+
+	/**
+	 * Details control. If given as a string value, the `type` property of the
+	 * default object is set to that value, and the defaults used for the rest
+	 * of the object - this is for ease of implementation.
+	 *
+	 * The object consists of the following properties:
+	 *
+	 * * `display` - A function that is used to show and hide the hidden details
+	 * * `renderer` - function that is called for display of the child row data.
+	 *   The default function will show the data from the hidden columns
+	 * * `target` - Used as the selector for what objects to attach the child
+	 *   open / close to
+	 * * `type` - `false` to disable the details display, `inline` or `column`
+	 *   for the two control types
+	 *
+	 * @type {Object|string}
+	 */
+	details: {
+		display: Responsive.display.childRow,
+
+		renderer: Responsive.renderer.listHidden(),
+
+		target: 0,
+
+		type: 'inline'
+	},
+
+	/**
+	 * Orthogonal data request option. This is used to define the data type
+	 * requested when Responsive gets the data to show in the child row.
+	 *
+	 * @type {String}
+	 */
+	orthogonal: 'display'
+};
+
+
+/*
+ * API
+ */
+var Api = $.fn.dataTable.Api;
+
+// Doesn't do anything - work around for a bug in DT... Not documented
+Api.register( 'responsive()', function () {
+	return this;
+} );
+
+Api.register( 'responsive.index()', function ( li ) {
+	li = $(li);
+
+	return {
+		column: li.data('dtr-index'),
+		row:    li.parent().data('dtr-index')
+	};
+} );
+
+Api.register( 'responsive.rebuild()', function () {
+	return this.iterator( 'table', function ( ctx ) {
+		if ( ctx._responsive ) {
+			ctx._responsive._classLogic();
+		}
+	} );
+} );
+
+Api.register( 'responsive.recalc()', function () {
+	return this.iterator( 'table', function ( ctx ) {
+		if ( ctx._responsive ) {
+			ctx._responsive._resizeAuto();
+			ctx._responsive._resize();
+		}
+	} );
+} );
+
+Api.register( 'responsive.hasHidden()', function () {
+	var ctx = this.context[0];
+
+	return ctx._responsive ?
+		$.inArray( false, ctx._responsive._responsiveOnlyHidden() ) !== -1 :
+		false;
+} );
+
+Api.registerPlural( 'columns().responsiveHidden()', 'column().responsiveHidden()', function () {
+	return this.iterator( 'column', function ( settings, column ) {
+		return settings._responsive ?
+			settings._responsive._responsiveOnlyHidden()[ column ] :
+			false;
+	}, 1 );
+} );
+
+
+/**
+ * Version information
+ *
+ * @name Responsive.version
+ * @static
+ */
+Responsive.version = '2.2.5';
+
+
+$.fn.dataTable.Responsive = Responsive;
+$.fn.DataTable.Responsive = Responsive;
+
+// Attach a listener to the document which listens for DataTables initialisation
+// events so we can automatically initialise
+$(document).on( 'preInit.dt.dtr', function (e, settings, json) {
+	if ( e.namespace !== 'dt' ) {
+		return;
+	}
+
+	if ( $(settings.nTable).hasClass( 'responsive' ) ||
+		 $(settings.nTable).hasClass( 'dt-responsive' ) ||
+		 settings.oInit.responsive ||
+		 DataTable.defaults.responsive
+	) {
+		var init = settings.oInit.responsive;
+
+		if ( init !== false ) {
+			new Responsive( settings, $.isPlainObject( init ) ? init : {}  );
+		}
+	}
+} );
+
+
+return Responsive;
+}));
+
+
+/***/ }),
+
+/***/ "./node_modules/datatables.net/js/jquery.dataTables.js":
+/*!*************************************************************!*\
+  !*** ./node_modules/datatables.net/js/jquery.dataTables.js ***!
+  \*************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*! DataTables 1.10.21
+ * ©2008-2020 SpryMedia Ltd - datatables.net/license
+ */
+
+/**
+ * @summary     DataTables
+ * @description Paginate, search and order HTML tables
+ * @version     1.10.21
+ * @file        jquery.dataTables.js
+ * @author      SpryMedia Ltd
+ * @contact     www.datatables.net
+ * @copyright   Copyright 2008-2020 SpryMedia Ltd.
+ *
+ * This source file is free software, available under the following license:
+ *   MIT license - http://datatables.net/license
+ *
+ * This source file is distributed in the hope that it will be useful, but
+ * WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
+ * or FITNESS FOR A PARTICULAR PURPOSE. See the license files for details.
+ *
+ * For details please refer to: http://www.datatables.net
+ */
+
+/*jslint evil: true, undef: true, browser: true */
+/*globals $,require,jQuery,define,_selector_run,_selector_opts,_selector_first,_selector_row_indexes,_ext,_Api,_api_register,_api_registerPlural,_re_new_lines,_re_html,_re_formatted_numeric,_re_escape_regex,_empty,_intVal,_numToDecimal,_isNumber,_isHtml,_htmlNumeric,_pluck,_pluck_order,_range,_stripHtml,_unique,_fnBuildAjax,_fnAjaxUpdate,_fnAjaxParameters,_fnAjaxUpdateDraw,_fnAjaxDataSrc,_fnAddColumn,_fnColumnOptions,_fnAdjustColumnSizing,_fnVisibleToColumnIndex,_fnColumnIndexToVisible,_fnVisbleColumns,_fnGetColumns,_fnColumnTypes,_fnApplyColumnDefs,_fnHungarianMap,_fnCamelToHungarian,_fnLanguageCompat,_fnBrowserDetect,_fnAddData,_fnAddTr,_fnNodeToDataIndex,_fnNodeToColumnIndex,_fnGetCellData,_fnSetCellData,_fnSplitObjNotation,_fnGetObjectDataFn,_fnSetObjectDataFn,_fnGetDataMaster,_fnClearTable,_fnDeleteIndex,_fnInvalidate,_fnGetRowElements,_fnCreateTr,_fnBuildHead,_fnDrawHead,_fnDraw,_fnReDraw,_fnAddOptionsHtml,_fnDetectHeader,_fnGetUniqueThs,_fnFeatureHtmlFilter,_fnFilterComplete,_fnFilterCustom,_fnFilterColumn,_fnFilter,_fnFilterCreateSearch,_fnEscapeRegex,_fnFilterData,_fnFeatureHtmlInfo,_fnUpdateInfo,_fnInfoMacros,_fnInitialise,_fnInitComplete,_fnLengthChange,_fnFeatureHtmlLength,_fnFeatureHtmlPaginate,_fnPageChange,_fnFeatureHtmlProcessing,_fnProcessingDisplay,_fnFeatureHtmlTable,_fnScrollDraw,_fnApplyToChildren,_fnCalculateColumnWidths,_fnThrottle,_fnConvertToWidth,_fnGetWidestNode,_fnGetMaxLenString,_fnStringToCss,_fnSortFlatten,_fnSort,_fnSortAria,_fnSortListener,_fnSortAttachListener,_fnSortingClasses,_fnSortData,_fnSaveState,_fnLoadState,_fnSettingsFromNode,_fnLog,_fnMap,_fnBindAction,_fnCallbackReg,_fnCallbackFire,_fnLengthOverflow,_fnRenderer,_fnDataSource,_fnRowAttributes*/
+
+(function( factory ) {
+	"use strict";
+
+	if ( true ) {
+		// AMD
+		!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")], __WEBPACK_AMD_DEFINE_RESULT__ = (function ( $ ) {
+			return factory( $, window, document );
+		}).apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__),
+				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+	}
+	else {}
+}
+(function( $, window, document, undefined ) {
+	"use strict";
+
+	/**
+	 * DataTables is a plug-in for the jQuery Javascript library. It is a highly
+	 * flexible tool, based upon the foundations of progressive enhancement,
+	 * which will add advanced interaction controls to any HTML table. For a
+	 * full list of features please refer to
+	 * [DataTables.net](href="http://datatables.net).
+	 *
+	 * Note that the `DataTable` object is not a global variable but is aliased
+	 * to `jQuery.fn.DataTable` and `jQuery.fn.dataTable` through which it may
+	 * be  accessed.
+	 *
+	 *  @class
+	 *  @param {object} [init={}] Configuration object for DataTables. Options
+	 *    are defined by {@link DataTable.defaults}
+	 *  @requires jQuery 1.7+
+	 *
+	 *  @example
+	 *    // Basic initialisation
+	 *    $(document).ready( function {
+	 *      $('#example').dataTable();
+	 *    } );
+	 *
+	 *  @example
+	 *    // Initialisation with configuration options - in this case, disable
+	 *    // pagination and sorting.
+	 *    $(document).ready( function {
+	 *      $('#example').dataTable( {
+	 *        "paginate": false,
+	 *        "sort": false
+	 *      } );
+	 *    } );
+	 */
+	var DataTable = function ( options )
+	{
+		/**
+		 * Perform a jQuery selector action on the table's TR elements (from the tbody) and
+		 * return the resulting jQuery object.
+		 *  @param {string|node|jQuery} sSelector jQuery selector or node collection to act on
+		 *  @param {object} [oOpts] Optional parameters for modifying the rows to be included
+		 *  @param {string} [oOpts.filter=none] Select TR elements that meet the current filter
+		 *    criterion ("applied") or all TR elements (i.e. no filter).
+		 *  @param {string} [oOpts.order=current] Order of the TR elements in the processed array.
+		 *    Can be either 'current', whereby the current sorting of the table is used, or
+		 *    'original' whereby the original order the data was read into the table is used.
+		 *  @param {string} [oOpts.page=all] Limit the selection to the currently displayed page
+		 *    ("current") or not ("all"). If 'current' is given, then order is assumed to be
+		 *    'current' and filter is 'applied', regardless of what they might be given as.
+		 *  @returns {object} jQuery object, filtered by the given selector.
+		 *  @dtopt API
+		 *  @deprecated Since v1.10
+		 *
+		 *  @example
+		 *    $(document).ready(function() {
+		 *      var oTable = $('#example').dataTable();
+		 *
+		 *      // Highlight every second row
+		 *      oTable.$('tr:odd').css('backgroundColor', 'blue');
+		 *    } );
+		 *
+		 *  @example
+		 *    $(document).ready(function() {
+		 *      var oTable = $('#example').dataTable();
+		 *
+		 *      // Filter to rows with 'Webkit' in them, add a background colour and then
+		 *      // remove the filter, thus highlighting the 'Webkit' rows only.
+		 *      oTable.fnFilter('Webkit');
+		 *      oTable.$('tr', {"search": "applied"}).css('backgroundColor', 'blue');
+		 *      oTable.fnFilter('');
+		 *    } );
+		 */
+		this.$ = function ( sSelector, oOpts )
+		{
+			return this.api(true).$( sSelector, oOpts );
+		};
+		
+		
+		/**
+		 * Almost identical to $ in operation, but in this case returns the data for the matched
+		 * rows - as such, the jQuery selector used should match TR row nodes or TD/TH cell nodes
+		 * rather than any descendants, so the data can be obtained for the row/cell. If matching
+		 * rows are found, the data returned is the original data array/object that was used to
+		 * create the row (or a generated array if from a DOM source).
+		 *
+		 * This method is often useful in-combination with $ where both functions are given the
+		 * same parameters and the array indexes will match identically.
+		 *  @param {string|node|jQuery} sSelector jQuery selector or node collection to act on
+		 *  @param {object} [oOpts] Optional parameters for modifying the rows to be included
+		 *  @param {string} [oOpts.filter=none] Select elements that meet the current filter
+		 *    criterion ("applied") or all elements (i.e. no filter).
+		 *  @param {string} [oOpts.order=current] Order of the data in the processed array.
+		 *    Can be either 'current', whereby the current sorting of the table is used, or
+		 *    'original' whereby the original order the data was read into the table is used.
+		 *  @param {string} [oOpts.page=all] Limit the selection to the currently displayed page
+		 *    ("current") or not ("all"). If 'current' is given, then order is assumed to be
+		 *    'current' and filter is 'applied', regardless of what they might be given as.
+		 *  @returns {array} Data for the matched elements. If any elements, as a result of the
+		 *    selector, were not TR, TD or TH elements in the DataTable, they will have a null
+		 *    entry in the array.
+		 *  @dtopt API
+		 *  @deprecated Since v1.10
+		 *
+		 *  @example
+		 *    $(document).ready(function() {
+		 *      var oTable = $('#example').dataTable();
+		 *
+		 *      // Get the data from the first row in the table
+		 *      var data = oTable._('tr:first');
+		 *
+		 *      // Do something useful with the data
+		 *      alert( "First cell is: "+data[0] );
+		 *    } );
+		 *
+		 *  @example
+		 *    $(document).ready(function() {
+		 *      var oTable = $('#example').dataTable();
+		 *
+		 *      // Filter to 'Webkit' and get all data for
+		 *      oTable.fnFilter('Webkit');
+		 *      var data = oTable._('tr', {"search": "applied"});
+		 *
+		 *      // Do something with the data
+		 *      alert( data.length+" rows matched the search" );
+		 *    } );
+		 */
+		this._ = function ( sSelector, oOpts )
+		{
+			return this.api(true).rows( sSelector, oOpts ).data();
+		};
+		
+		
+		/**
+		 * Create a DataTables Api instance, with the currently selected tables for
+		 * the Api's context.
+		 * @param {boolean} [traditional=false] Set the API instance's context to be
+		 *   only the table referred to by the `DataTable.ext.iApiIndex` option, as was
+		 *   used in the API presented by DataTables 1.9- (i.e. the traditional mode),
+		 *   or if all tables captured in the jQuery object should be used.
+		 * @return {DataTables.Api}
+		 */
+		this.api = function ( traditional )
+		{
+			return traditional ?
+				new _Api(
+					_fnSettingsFromNode( this[ _ext.iApiIndex ] )
+				) :
+				new _Api( this );
+		};
+		
+		
+		/**
+		 * Add a single new row or multiple rows of data to the table. Please note
+		 * that this is suitable for client-side processing only - if you are using
+		 * server-side processing (i.e. "bServerSide": true), then to add data, you
+		 * must add it to the data source, i.e. the server-side, through an Ajax call.
+		 *  @param {array|object} data The data to be added to the table. This can be:
+		 *    <ul>
+		 *      <li>1D array of data - add a single row with the data provided</li>
+		 *      <li>2D array of arrays - add multiple rows in a single call</li>
+		 *      <li>object - data object when using <i>mData</i></li>
+		 *      <li>array of objects - multiple data objects when using <i>mData</i></li>
+		 *    </ul>
+		 *  @param {bool} [redraw=true] redraw the table or not
+		 *  @returns {array} An array of integers, representing the list of indexes in
+		 *    <i>aoData</i> ({@link DataTable.models.oSettings}) that have been added to
+		 *    the table.
+		 *  @dtopt API
+		 *  @deprecated Since v1.10
+		 *
+		 *  @example
+		 *    // Global var for counter
+		 *    var giCount = 2;
+		 *
+		 *    $(document).ready(function() {
+		 *      $('#example').dataTable();
+		 *    } );
+		 *
+		 *    function fnClickAddRow() {
+		 *      $('#example').dataTable().fnAddData( [
+		 *        giCount+".1",
+		 *        giCount+".2",
+		 *        giCount+".3",
+		 *        giCount+".4" ]
+		 *      );
+		 *
+		 *      giCount++;
+		 *    }
+		 */
+		this.fnAddData = function( data, redraw )
+		{
+			var api = this.api( true );
+		
+			/* Check if we want to add multiple rows or not */
+			var rows = $.isArray(data) && ( $.isArray(data[0]) || $.isPlainObject(data[0]) ) ?
+				api.rows.add( data ) :
+				api.row.add( data );
+		
+			if ( redraw === undefined || redraw ) {
+				api.draw();
+			}
+		
+			return rows.flatten().toArray();
+		};
+		
+		
+		/**
+		 * This function will make DataTables recalculate the column sizes, based on the data
+		 * contained in the table and the sizes applied to the columns (in the DOM, CSS or
+		 * through the sWidth parameter). This can be useful when the width of the table's
+		 * parent element changes (for example a window resize).
+		 *  @param {boolean} [bRedraw=true] Redraw the table or not, you will typically want to
+		 *  @dtopt API
+		 *  @deprecated Since v1.10
+		 *
+		 *  @example
+		 *    $(document).ready(function() {
+		 *      var oTable = $('#example').dataTable( {
+		 *        "sScrollY": "200px",
+		 *        "bPaginate": false
+		 *      } );
+		 *
+		 *      $(window).on('resize', function () {
+		 *        oTable.fnAdjustColumnSizing();
+		 *      } );
+		 *    } );
+		 */
+		this.fnAdjustColumnSizing = function ( bRedraw )
+		{
+			var api = this.api( true ).columns.adjust();
+			var settings = api.settings()[0];
+			var scroll = settings.oScroll;
+		
+			if ( bRedraw === undefined || bRedraw ) {
+				api.draw( false );
+			}
+			else if ( scroll.sX !== "" || scroll.sY !== "" ) {
+				/* If not redrawing, but scrolling, we want to apply the new column sizes anyway */
+				_fnScrollDraw( settings );
+			}
+		};
+		
+		
+		/**
+		 * Quickly and simply clear a table
+		 *  @param {bool} [bRedraw=true] redraw the table or not
+		 *  @dtopt API
+		 *  @deprecated Since v1.10
+		 *
+		 *  @example
+		 *    $(document).ready(function() {
+		 *      var oTable = $('#example').dataTable();
+		 *
+		 *      // Immediately 'nuke' the current rows (perhaps waiting for an Ajax callback...)
+		 *      oTable.fnClearTable();
+		 *    } );
+		 */
+		this.fnClearTable = function( bRedraw )
+		{
+			var api = this.api( true ).clear();
+		
+			if ( bRedraw === undefined || bRedraw ) {
+				api.draw();
+			}
+		};
+		
+		
+		/**
+		 * The exact opposite of 'opening' a row, this function will close any rows which
+		 * are currently 'open'.
+		 *  @param {node} nTr the table row to 'close'
+		 *  @returns {int} 0 on success, or 1 if failed (can't find the row)
+		 *  @dtopt API
+		 *  @deprecated Since v1.10
+		 *
+		 *  @example
+		 *    $(document).ready(function() {
+		 *      var oTable;
+		 *
+		 *      // 'open' an information row when a row is clicked on
+		 *      $('#example tbody tr').click( function () {
+		 *        if ( oTable.fnIsOpen(this) ) {
+		 *          oTable.fnClose( this );
+		 *        } else {
+		 *          oTable.fnOpen( this, "Temporary row opened", "info_row" );
+		 *        }
+		 *      } );
+		 *
+		 *      oTable = $('#example').dataTable();
+		 *    } );
+		 */
+		this.fnClose = function( nTr )
+		{
+			this.api( true ).row( nTr ).child.hide();
+		};
+		
+		
+		/**
+		 * Remove a row for the table
+		 *  @param {mixed} target The index of the row from aoData to be deleted, or
+		 *    the TR element you want to delete
+		 *  @param {function|null} [callBack] Callback function
+		 *  @param {bool} [redraw=true] Redraw the table or not
+		 *  @returns {array} The row that was deleted
+		 *  @dtopt API
+		 *  @deprecated Since v1.10
+		 *
+		 *  @example
+		 *    $(document).ready(function() {
+		 *      var oTable = $('#example').dataTable();
+		 *
+		 *      // Immediately remove the first row
+		 *      oTable.fnDeleteRow( 0 );
+		 *    } );
+		 */
+		this.fnDeleteRow = function( target, callback, redraw )
+		{
+			var api = this.api( true );
+			var rows = api.rows( target );
+			var settings = rows.settings()[0];
+			var data = settings.aoData[ rows[0][0] ];
+		
+			rows.remove();
+		
+			if ( callback ) {
+				callback.call( this, settings, data );
+			}
+		
+			if ( redraw === undefined || redraw ) {
+				api.draw();
+			}
+		
+			return data;
+		};
+		
+		
+		/**
+		 * Restore the table to it's original state in the DOM by removing all of DataTables
+		 * enhancements, alterations to the DOM structure of the table and event listeners.
+		 *  @param {boolean} [remove=false] Completely remove the table from the DOM
+		 *  @dtopt API
+		 *  @deprecated Since v1.10
+		 *
+		 *  @example
+		 *    $(document).ready(function() {
+		 *      // This example is fairly pointless in reality, but shows how fnDestroy can be used
+		 *      var oTable = $('#example').dataTable();
+		 *      oTable.fnDestroy();
+		 *    } );
+		 */
+		this.fnDestroy = function ( remove )
+		{
+			this.api( true ).destroy( remove );
+		};
+		
+		
+		/**
+		 * Redraw the table
+		 *  @param {bool} [complete=true] Re-filter and resort (if enabled) the table before the draw.
+		 *  @dtopt API
+		 *  @deprecated Since v1.10
+		 *
+		 *  @example
+		 *    $(document).ready(function() {
+		 *      var oTable = $('#example').dataTable();
+		 *
+		 *      // Re-draw the table - you wouldn't want to do it here, but it's an example :-)
+		 *      oTable.fnDraw();
+		 *    } );
+		 */
+		this.fnDraw = function( complete )
+		{
+			// Note that this isn't an exact match to the old call to _fnDraw - it takes
+			// into account the new data, but can hold position.
+			this.api( true ).draw( complete );
+		};
+		
+		
+		/**
+		 * Filter the input based on data
+		 *  @param {string} sInput String to filter the table on
+		 *  @param {int|null} [iColumn] Column to limit filtering to
+		 *  @param {bool} [bRegex=false] Treat as regular expression or not
+		 *  @param {bool} [bSmart=true] Perform smart filtering or not
+		 *  @param {bool} [bShowGlobal=true] Show the input global filter in it's input box(es)
+		 *  @param {bool} [bCaseInsensitive=true] Do case-insensitive matching (true) or not (false)
+		 *  @dtopt API
+		 *  @deprecated Since v1.10
+		 *
+		 *  @example
+		 *    $(document).ready(function() {
+		 *      var oTable = $('#example').dataTable();
+		 *
+		 *      // Sometime later - filter...
+		 *      oTable.fnFilter( 'test string' );
+		 *    } );
+		 */
+		this.fnFilter = function( sInput, iColumn, bRegex, bSmart, bShowGlobal, bCaseInsensitive )
+		{
+			var api = this.api( true );
+		
+			if ( iColumn === null || iColumn === undefined ) {
+				api.search( sInput, bRegex, bSmart, bCaseInsensitive );
+			}
+			else {
+				api.column( iColumn ).search( sInput, bRegex, bSmart, bCaseInsensitive );
+			}
+		
+			api.draw();
+		};
+		
+		
+		/**
+		 * Get the data for the whole table, an individual row or an individual cell based on the
+		 * provided parameters.
+		 *  @param {int|node} [src] A TR row node, TD/TH cell node or an integer. If given as
+		 *    a TR node then the data source for the whole row will be returned. If given as a
+		 *    TD/TH cell node then iCol will be automatically calculated and the data for the
+		 *    cell returned. If given as an integer, then this is treated as the aoData internal
+		 *    data index for the row (see fnGetPosition) and the data for that row used.
+		 *  @param {int} [col] Optional column index that you want the data of.
+		 *  @returns {array|object|string} If mRow is undefined, then the data for all rows is
+		 *    returned. If mRow is defined, just data for that row, and is iCol is
+		 *    defined, only data for the designated cell is returned.
+		 *  @dtopt API
+		 *  @deprecated Since v1.10
+		 *
+		 *  @example
+		 *    // Row data
+		 *    $(document).ready(function() {
+		 *      oTable = $('#example').dataTable();
+		 *
+		 *      oTable.$('tr').click( function () {
+		 *        var data = oTable.fnGetData( this );
+		 *        // ... do something with the array / object of data for the row
+		 *      } );
+		 *    } );
+		 *
+		 *  @example
+		 *    // Individual cell data
+		 *    $(document).ready(function() {
+		 *      oTable = $('#example').dataTable();
+		 *
+		 *      oTable.$('td').click( function () {
+		 *        var sData = oTable.fnGetData( this );
+		 *        alert( 'The cell clicked on had the value of '+sData );
+		 *      } );
+		 *    } );
+		 */
+		this.fnGetData = function( src, col )
+		{
+			var api = this.api( true );
+		
+			if ( src !== undefined ) {
+				var type = src.nodeName ? src.nodeName.toLowerCase() : '';
+		
+				return col !== undefined || type == 'td' || type == 'th' ?
+					api.cell( src, col ).data() :
+					api.row( src ).data() || null;
+			}
+		
+			return api.data().toArray();
+		};
+		
+		
+		/**
+		 * Get an array of the TR nodes that are used in the table's body. Note that you will
+		 * typically want to use the '$' API method in preference to this as it is more
+		 * flexible.
+		 *  @param {int} [iRow] Optional row index for the TR element you want
+		 *  @returns {array|node} If iRow is undefined, returns an array of all TR elements
+		 *    in the table's body, or iRow is defined, just the TR element requested.
+		 *  @dtopt API
+		 *  @deprecated Since v1.10
+		 *
+		 *  @example
+		 *    $(document).ready(function() {
+		 *      var oTable = $('#example').dataTable();
+		 *
+		 *      // Get the nodes from the table
+		 *      var nNodes = oTable.fnGetNodes( );
+		 *    } );
+		 */
+		this.fnGetNodes = function( iRow )
+		{
+			var api = this.api( true );
+		
+			return iRow !== undefined ?
+				api.row( iRow ).node() :
+				api.rows().nodes().flatten().toArray();
+		};
+		
+		
+		/**
+		 * Get the array indexes of a particular cell from it's DOM element
+		 * and column index including hidden columns
+		 *  @param {node} node this can either be a TR, TD or TH in the table's body
+		 *  @returns {int} If nNode is given as a TR, then a single index is returned, or
+		 *    if given as a cell, an array of [row index, column index (visible),
+		 *    column index (all)] is given.
+		 *  @dtopt API
+		 *  @deprecated Since v1.10
+		 *
+		 *  @example
+		 *    $(document).ready(function() {
+		 *      $('#example tbody td').click( function () {
+		 *        // Get the position of the current data from the node
+		 *        var aPos = oTable.fnGetPosition( this );
+		 *
+		 *        // Get the data array for this row
+		 *        var aData = oTable.fnGetData( aPos[0] );
+		 *
+		 *        // Update the data array and return the value
+		 *        aData[ aPos[1] ] = 'clicked';
+		 *        this.innerHTML = 'clicked';
+		 *      } );
+		 *
+		 *      // Init DataTables
+		 *      oTable = $('#example').dataTable();
+		 *    } );
+		 */
+		this.fnGetPosition = function( node )
+		{
+			var api = this.api( true );
+			var nodeName = node.nodeName.toUpperCase();
+		
+			if ( nodeName == 'TR' ) {
+				return api.row( node ).index();
+			}
+			else if ( nodeName == 'TD' || nodeName == 'TH' ) {
+				var cell = api.cell( node ).index();
+		
+				return [
+					cell.row,
+					cell.columnVisible,
+					cell.column
+				];
+			}
+			return null;
+		};
+		
+		
+		/**
+		 * Check to see if a row is 'open' or not.
+		 *  @param {node} nTr the table row to check
+		 *  @returns {boolean} true if the row is currently open, false otherwise
+		 *  @dtopt API
+		 *  @deprecated Since v1.10
+		 *
+		 *  @example
+		 *    $(document).ready(function() {
+		 *      var oTable;
+		 *
+		 *      // 'open' an information row when a row is clicked on
+		 *      $('#example tbody tr').click( function () {
+		 *        if ( oTable.fnIsOpen(this) ) {
+		 *          oTable.fnClose( this );
+		 *        } else {
+		 *          oTable.fnOpen( this, "Temporary row opened", "info_row" );
+		 *        }
+		 *      } );
+		 *
+		 *      oTable = $('#example').dataTable();
+		 *    } );
+		 */
+		this.fnIsOpen = function( nTr )
+		{
+			return this.api( true ).row( nTr ).child.isShown();
+		};
+		
+		
+		/**
+		 * This function will place a new row directly after a row which is currently
+		 * on display on the page, with the HTML contents that is passed into the
+		 * function. This can be used, for example, to ask for confirmation that a
+		 * particular record should be deleted.
+		 *  @param {node} nTr The table row to 'open'
+		 *  @param {string|node|jQuery} mHtml The HTML to put into the row
+		 *  @param {string} sClass Class to give the new TD cell
+		 *  @returns {node} The row opened. Note that if the table row passed in as the
+		 *    first parameter, is not found in the table, this method will silently
+		 *    return.
+		 *  @dtopt API
+		 *  @deprecated Since v1.10
+		 *
+		 *  @example
+		 *    $(document).ready(function() {
+		 *      var oTable;
+		 *
+		 *      // 'open' an information row when a row is clicked on
+		 *      $('#example tbody tr').click( function () {
+		 *        if ( oTable.fnIsOpen(this) ) {
+		 *          oTable.fnClose( this );
+		 *        } else {
+		 *          oTable.fnOpen( this, "Temporary row opened", "info_row" );
+		 *        }
+		 *      } );
+		 *
+		 *      oTable = $('#example').dataTable();
+		 *    } );
+		 */
+		this.fnOpen = function( nTr, mHtml, sClass )
+		{
+			return this.api( true )
+				.row( nTr )
+				.child( mHtml, sClass )
+				.show()
+				.child()[0];
+		};
+		
+		
+		/**
+		 * Change the pagination - provides the internal logic for pagination in a simple API
+		 * function. With this function you can have a DataTables table go to the next,
+		 * previous, first or last pages.
+		 *  @param {string|int} mAction Paging action to take: "first", "previous", "next" or "last"
+		 *    or page number to jump to (integer), note that page 0 is the first page.
+		 *  @param {bool} [bRedraw=true] Redraw the table or not
+		 *  @dtopt API
+		 *  @deprecated Since v1.10
+		 *
+		 *  @example
+		 *    $(document).ready(function() {
+		 *      var oTable = $('#example').dataTable();
+		 *      oTable.fnPageChange( 'next' );
+		 *    } );
+		 */
+		this.fnPageChange = function ( mAction, bRedraw )
+		{
+			var api = this.api( true ).page( mAction );
+		
+			if ( bRedraw === undefined || bRedraw ) {
+				api.draw(false);
+			}
+		};
+		
+		
+		/**
+		 * Show a particular column
+		 *  @param {int} iCol The column whose display should be changed
+		 *  @param {bool} bShow Show (true) or hide (false) the column
+		 *  @param {bool} [bRedraw=true] Redraw the table or not
+		 *  @dtopt API
+		 *  @deprecated Since v1.10
+		 *
+		 *  @example
+		 *    $(document).ready(function() {
+		 *      var oTable = $('#example').dataTable();
+		 *
+		 *      // Hide the second column after initialisation
+		 *      oTable.fnSetColumnVis( 1, false );
+		 *    } );
+		 */
+		this.fnSetColumnVis = function ( iCol, bShow, bRedraw )
+		{
+			var api = this.api( true ).column( iCol ).visible( bShow );
+		
+			if ( bRedraw === undefined || bRedraw ) {
+				api.columns.adjust().draw();
+			}
+		};
+		
+		
+		/**
+		 * Get the settings for a particular table for external manipulation
+		 *  @returns {object} DataTables settings object. See
+		 *    {@link DataTable.models.oSettings}
+		 *  @dtopt API
+		 *  @deprecated Since v1.10
+		 *
+		 *  @example
+		 *    $(document).ready(function() {
+		 *      var oTable = $('#example').dataTable();
+		 *      var oSettings = oTable.fnSettings();
+		 *
+		 *      // Show an example parameter from the settings
+		 *      alert( oSettings._iDisplayStart );
+		 *    } );
+		 */
+		this.fnSettings = function()
+		{
+			return _fnSettingsFromNode( this[_ext.iApiIndex] );
+		};
+		
+		
+		/**
+		 * Sort the table by a particular column
+		 *  @param {int} iCol the data index to sort on. Note that this will not match the
+		 *    'display index' if you have hidden data entries
+		 *  @dtopt API
+		 *  @deprecated Since v1.10
+		 *
+		 *  @example
+		 *    $(document).ready(function() {
+		 *      var oTable = $('#example').dataTable();
+		 *
+		 *      // Sort immediately with columns 0 and 1
+		 *      oTable.fnSort( [ [0,'asc'], [1,'asc'] ] );
+		 *    } );
+		 */
+		this.fnSort = function( aaSort )
+		{
+			this.api( true ).order( aaSort ).draw();
+		};
+		
+		
+		/**
+		 * Attach a sort listener to an element for a given column
+		 *  @param {node} nNode the element to attach the sort listener to
+		 *  @param {int} iColumn the column that a click on this node will sort on
+		 *  @param {function} [fnCallback] callback function when sort is run
+		 *  @dtopt API
+		 *  @deprecated Since v1.10
+		 *
+		 *  @example
+		 *    $(document).ready(function() {
+		 *      var oTable = $('#example').dataTable();
+		 *
+		 *      // Sort on column 1, when 'sorter' is clicked on
+		 *      oTable.fnSortListener( document.getElementById('sorter'), 1 );
+		 *    } );
+		 */
+		this.fnSortListener = function( nNode, iColumn, fnCallback )
+		{
+			this.api( true ).order.listener( nNode, iColumn, fnCallback );
+		};
+		
+		
+		/**
+		 * Update a table cell or row - this method will accept either a single value to
+		 * update the cell with, an array of values with one element for each column or
+		 * an object in the same format as the original data source. The function is
+		 * self-referencing in order to make the multi column updates easier.
+		 *  @param {object|array|string} mData Data to update the cell/row with
+		 *  @param {node|int} mRow TR element you want to update or the aoData index
+		 *  @param {int} [iColumn] The column to update, give as null or undefined to
+		 *    update a whole row.
+		 *  @param {bool} [bRedraw=true] Redraw the table or not
+		 *  @param {bool} [bAction=true] Perform pre-draw actions or not
+		 *  @returns {int} 0 on success, 1 on error
+		 *  @dtopt API
+		 *  @deprecated Since v1.10
+		 *
+		 *  @example
+		 *    $(document).ready(function() {
+		 *      var oTable = $('#example').dataTable();
+		 *      oTable.fnUpdate( 'Example update', 0, 0 ); // Single cell
+		 *      oTable.fnUpdate( ['a', 'b', 'c', 'd', 'e'], $('tbody tr')[0] ); // Row
+		 *    } );
+		 */
+		this.fnUpdate = function( mData, mRow, iColumn, bRedraw, bAction )
+		{
+			var api = this.api( true );
+		
+			if ( iColumn === undefined || iColumn === null ) {
+				api.row( mRow ).data( mData );
+			}
+			else {
+				api.cell( mRow, iColumn ).data( mData );
+			}
+		
+			if ( bAction === undefined || bAction ) {
+				api.columns.adjust();
+			}
+		
+			if ( bRedraw === undefined || bRedraw ) {
+				api.draw();
+			}
+			return 0;
+		};
+		
+		
+		/**
+		 * Provide a common method for plug-ins to check the version of DataTables being used, in order
+		 * to ensure compatibility.
+		 *  @param {string} sVersion Version string to check for, in the format "X.Y.Z". Note that the
+		 *    formats "X" and "X.Y" are also acceptable.
+		 *  @returns {boolean} true if this version of DataTables is greater or equal to the required
+		 *    version, or false if this version of DataTales is not suitable
+		 *  @method
+		 *  @dtopt API
+		 *  @deprecated Since v1.10
+		 *
+		 *  @example
+		 *    $(document).ready(function() {
+		 *      var oTable = $('#example').dataTable();
+		 *      alert( oTable.fnVersionCheck( '1.9.0' ) );
+		 *    } );
+		 */
+		this.fnVersionCheck = _ext.fnVersionCheck;
+		
+
+		var _that = this;
+		var emptyInit = options === undefined;
+		var len = this.length;
+
+		if ( emptyInit ) {
+			options = {};
+		}
+
+		this.oApi = this.internal = _ext.internal;
+
+		// Extend with old style plug-in API methods
+		for ( var fn in DataTable.ext.internal ) {
+			if ( fn ) {
+				this[fn] = _fnExternApiFunc(fn);
+			}
+		}
+
+		this.each(function() {
+			// For each initialisation we want to give it a clean initialisation
+			// object that can be bashed around
+			var o = {};
+			var oInit = len > 1 ? // optimisation for single table case
+				_fnExtend( o, options, true ) :
+				options;
+
+			/*global oInit,_that,emptyInit*/
+			var i=0, iLen, j, jLen, k, kLen;
+			var sId = this.getAttribute( 'id' );
+			var bInitHandedOff = false;
+			var defaults = DataTable.defaults;
+			var $this = $(this);
+			
+			
+			/* Sanity check */
+			if ( this.nodeName.toLowerCase() != 'table' )
+			{
+				_fnLog( null, 0, 'Non-table node initialisation ('+this.nodeName+')', 2 );
+				return;
+			}
+			
+			/* Backwards compatibility for the defaults */
+			_fnCompatOpts( defaults );
+			_fnCompatCols( defaults.column );
+			
+			/* Convert the camel-case defaults to Hungarian */
+			_fnCamelToHungarian( defaults, defaults, true );
+			_fnCamelToHungarian( defaults.column, defaults.column, true );
+			
+			/* Setting up the initialisation object */
+			_fnCamelToHungarian( defaults, $.extend( oInit, $this.data() ), true );
+			
+			
+			
+			/* Check to see if we are re-initialising a table */
+			var allSettings = DataTable.settings;
+			for ( i=0, iLen=allSettings.length ; i<iLen ; i++ )
+			{
+				var s = allSettings[i];
+			
+				/* Base check on table node */
+				if (
+					s.nTable == this ||
+					(s.nTHead && s.nTHead.parentNode == this) ||
+					(s.nTFoot && s.nTFoot.parentNode == this)
+				) {
+					var bRetrieve = oInit.bRetrieve !== undefined ? oInit.bRetrieve : defaults.bRetrieve;
+					var bDestroy = oInit.bDestroy !== undefined ? oInit.bDestroy : defaults.bDestroy;
+			
+					if ( emptyInit || bRetrieve )
+					{
+						return s.oInstance;
+					}
+					else if ( bDestroy )
+					{
+						s.oInstance.fnDestroy();
+						break;
+					}
+					else
+					{
+						_fnLog( s, 0, 'Cannot reinitialise DataTable', 3 );
+						return;
+					}
+				}
+			
+				/* If the element we are initialising has the same ID as a table which was previously
+				 * initialised, but the table nodes don't match (from before) then we destroy the old
+				 * instance by simply deleting it. This is under the assumption that the table has been
+				 * destroyed by other methods. Anyone using non-id selectors will need to do this manually
+				 */
+				if ( s.sTableId == this.id )
+				{
+					allSettings.splice( i, 1 );
+					break;
+				}
+			}
+			
+			/* Ensure the table has an ID - required for accessibility */
+			if ( sId === null || sId === "" )
+			{
+				sId = "DataTables_Table_"+(DataTable.ext._unique++);
+				this.id = sId;
+			}
+			
+			/* Create the settings object for this table and set some of the default parameters */
+			var oSettings = $.extend( true, {}, DataTable.models.oSettings, {
+				"sDestroyWidth": $this[0].style.width,
+				"sInstance":     sId,
+				"sTableId":      sId
+			} );
+			oSettings.nTable = this;
+			oSettings.oApi   = _that.internal;
+			oSettings.oInit  = oInit;
+			
+			allSettings.push( oSettings );
+			
+			// Need to add the instance after the instance after the settings object has been added
+			// to the settings array, so we can self reference the table instance if more than one
+			oSettings.oInstance = (_that.length===1) ? _that : $this.dataTable();
+			
+			// Backwards compatibility, before we apply all the defaults
+			_fnCompatOpts( oInit );
+			_fnLanguageCompat( oInit.oLanguage );
+			
+			// If the length menu is given, but the init display length is not, use the length menu
+			if ( oInit.aLengthMenu && ! oInit.iDisplayLength )
+			{
+				oInit.iDisplayLength = $.isArray( oInit.aLengthMenu[0] ) ?
+					oInit.aLengthMenu[0][0] : oInit.aLengthMenu[0];
+			}
+			
+			// Apply the defaults and init options to make a single init object will all
+			// options defined from defaults and instance options.
+			oInit = _fnExtend( $.extend( true, {}, defaults ), oInit );
+			
+			
+			// Map the initialisation options onto the settings object
+			_fnMap( oSettings.oFeatures, oInit, [
+				"bPaginate",
+				"bLengthChange",
+				"bFilter",
+				"bSort",
+				"bSortMulti",
+				"bInfo",
+				"bProcessing",
+				"bAutoWidth",
+				"bSortClasses",
+				"bServerSide",
+				"bDeferRender"
+			] );
+			_fnMap( oSettings, oInit, [
+				"asStripeClasses",
+				"ajax",
+				"fnServerData",
+				"fnFormatNumber",
+				"sServerMethod",
+				"aaSorting",
+				"aaSortingFixed",
+				"aLengthMenu",
+				"sPaginationType",
+				"sAjaxSource",
+				"sAjaxDataProp",
+				"iStateDuration",
+				"sDom",
+				"bSortCellsTop",
+				"iTabIndex",
+				"fnStateLoadCallback",
+				"fnStateSaveCallback",
+				"renderer",
+				"searchDelay",
+				"rowId",
+				[ "iCookieDuration", "iStateDuration" ], // backwards compat
+				[ "oSearch", "oPreviousSearch" ],
+				[ "aoSearchCols", "aoPreSearchCols" ],
+				[ "iDisplayLength", "_iDisplayLength" ]
+			] );
+			_fnMap( oSettings.oScroll, oInit, [
+				[ "sScrollX", "sX" ],
+				[ "sScrollXInner", "sXInner" ],
+				[ "sScrollY", "sY" ],
+				[ "bScrollCollapse", "bCollapse" ]
+			] );
+			_fnMap( oSettings.oLanguage, oInit, "fnInfoCallback" );
+			
+			/* Callback functions which are array driven */
+			_fnCallbackReg( oSettings, 'aoDrawCallback',       oInit.fnDrawCallback,      'user' );
+			_fnCallbackReg( oSettings, 'aoServerParams',       oInit.fnServerParams,      'user' );
+			_fnCallbackReg( oSettings, 'aoStateSaveParams',    oInit.fnStateSaveParams,   'user' );
+			_fnCallbackReg( oSettings, 'aoStateLoadParams',    oInit.fnStateLoadParams,   'user' );
+			_fnCallbackReg( oSettings, 'aoStateLoaded',        oInit.fnStateLoaded,       'user' );
+			_fnCallbackReg( oSettings, 'aoRowCallback',        oInit.fnRowCallback,       'user' );
+			_fnCallbackReg( oSettings, 'aoRowCreatedCallback', oInit.fnCreatedRow,        'user' );
+			_fnCallbackReg( oSettings, 'aoHeaderCallback',     oInit.fnHeaderCallback,    'user' );
+			_fnCallbackReg( oSettings, 'aoFooterCallback',     oInit.fnFooterCallback,    'user' );
+			_fnCallbackReg( oSettings, 'aoInitComplete',       oInit.fnInitComplete,      'user' );
+			_fnCallbackReg( oSettings, 'aoPreDrawCallback',    oInit.fnPreDrawCallback,   'user' );
+			
+			oSettings.rowIdFn = _fnGetObjectDataFn( oInit.rowId );
+			
+			/* Browser support detection */
+			_fnBrowserDetect( oSettings );
+			
+			var oClasses = oSettings.oClasses;
+			
+			$.extend( oClasses, DataTable.ext.classes, oInit.oClasses );
+			$this.addClass( oClasses.sTable );
+			
+			
+			if ( oSettings.iInitDisplayStart === undefined )
+			{
+				/* Display start point, taking into account the save saving */
+				oSettings.iInitDisplayStart = oInit.iDisplayStart;
+				oSettings._iDisplayStart = oInit.iDisplayStart;
+			}
+			
+			if ( oInit.iDeferLoading !== null )
+			{
+				oSettings.bDeferLoading = true;
+				var tmp = $.isArray( oInit.iDeferLoading );
+				oSettings._iRecordsDisplay = tmp ? oInit.iDeferLoading[0] : oInit.iDeferLoading;
+				oSettings._iRecordsTotal = tmp ? oInit.iDeferLoading[1] : oInit.iDeferLoading;
+			}
+			
+			/* Language definitions */
+			var oLanguage = oSettings.oLanguage;
+			$.extend( true, oLanguage, oInit.oLanguage );
+			
+			if ( oLanguage.sUrl )
+			{
+				/* Get the language definitions from a file - because this Ajax call makes the language
+				 * get async to the remainder of this function we use bInitHandedOff to indicate that
+				 * _fnInitialise will be fired by the returned Ajax handler, rather than the constructor
+				 */
+				$.ajax( {
+					dataType: 'json',
+					url: oLanguage.sUrl,
+					success: function ( json ) {
+						_fnLanguageCompat( json );
+						_fnCamelToHungarian( defaults.oLanguage, json );
+						$.extend( true, oLanguage, json );
+						_fnInitialise( oSettings );
+					},
+					error: function () {
+						// Error occurred loading language file, continue on as best we can
+						_fnInitialise( oSettings );
+					}
+				} );
+				bInitHandedOff = true;
+			}
+			
+			/*
+			 * Stripes
+			 */
+			if ( oInit.asStripeClasses === null )
+			{
+				oSettings.asStripeClasses =[
+					oClasses.sStripeOdd,
+					oClasses.sStripeEven
+				];
+			}
+			
+			/* Remove row stripe classes if they are already on the table row */
+			var stripeClasses = oSettings.asStripeClasses;
+			var rowOne = $this.children('tbody').find('tr').eq(0);
+			if ( $.inArray( true, $.map( stripeClasses, function(el, i) {
+				return rowOne.hasClass(el);
+			} ) ) !== -1 ) {
+				$('tbody tr', this).removeClass( stripeClasses.join(' ') );
+				oSettings.asDestroyStripes = stripeClasses.slice();
+			}
+			
+			/*
+			 * Columns
+			 * See if we should load columns automatically or use defined ones
+			 */
+			var anThs = [];
+			var aoColumnsInit;
+			var nThead = this.getElementsByTagName('thead');
+			if ( nThead.length !== 0 )
+			{
+				_fnDetectHeader( oSettings.aoHeader, nThead[0] );
+				anThs = _fnGetUniqueThs( oSettings );
+			}
+			
+			/* If not given a column array, generate one with nulls */
+			if ( oInit.aoColumns === null )
+			{
+				aoColumnsInit = [];
+				for ( i=0, iLen=anThs.length ; i<iLen ; i++ )
+				{
+					aoColumnsInit.push( null );
+				}
+			}
+			else
+			{
+				aoColumnsInit = oInit.aoColumns;
+			}
+			
+			/* Add the columns */
+			for ( i=0, iLen=aoColumnsInit.length ; i<iLen ; i++ )
+			{
+				_fnAddColumn( oSettings, anThs ? anThs[i] : null );
+			}
+			
+			/* Apply the column definitions */
+			_fnApplyColumnDefs( oSettings, oInit.aoColumnDefs, aoColumnsInit, function (iCol, oDef) {
+				_fnColumnOptions( oSettings, iCol, oDef );
+			} );
+			
+			/* HTML5 attribute detection - build an mData object automatically if the
+			 * attributes are found
+			 */
+			if ( rowOne.length ) {
+				var a = function ( cell, name ) {
+					return cell.getAttribute( 'data-'+name ) !== null ? name : null;
+				};
+			
+				$( rowOne[0] ).children('th, td').each( function (i, cell) {
+					var col = oSettings.aoColumns[i];
+			
+					if ( col.mData === i ) {
+						var sort = a( cell, 'sort' ) || a( cell, 'order' );
+						var filter = a( cell, 'filter' ) || a( cell, 'search' );
+			
+						if ( sort !== null || filter !== null ) {
+							col.mData = {
+								_:      i+'.display',
+								sort:   sort !== null   ? i+'.@data-'+sort   : undefined,
+								type:   sort !== null   ? i+'.@data-'+sort   : undefined,
+								filter: filter !== null ? i+'.@data-'+filter : undefined
+							};
+			
+							_fnColumnOptions( oSettings, i );
+						}
+					}
+				} );
+			}
+			
+			var features = oSettings.oFeatures;
+			var loadedInit = function () {
+				/*
+				 * Sorting
+				 * @todo For modularisation (1.11) this needs to do into a sort start up handler
+				 */
+			
+				// If aaSorting is not defined, then we use the first indicator in asSorting
+				// in case that has been altered, so the default sort reflects that option
+				if ( oInit.aaSorting === undefined ) {
+					var sorting = oSettings.aaSorting;
+					for ( i=0, iLen=sorting.length ; i<iLen ; i++ ) {
+						sorting[i][1] = oSettings.aoColumns[ i ].asSorting[0];
+					}
+				}
+			
+				/* Do a first pass on the sorting classes (allows any size changes to be taken into
+				 * account, and also will apply sorting disabled classes if disabled
+				 */
+				_fnSortingClasses( oSettings );
+			
+				if ( features.bSort ) {
+					_fnCallbackReg( oSettings, 'aoDrawCallback', function () {
+						if ( oSettings.bSorted ) {
+							var aSort = _fnSortFlatten( oSettings );
+							var sortedColumns = {};
+			
+							$.each( aSort, function (i, val) {
+								sortedColumns[ val.src ] = val.dir;
+							} );
+			
+							_fnCallbackFire( oSettings, null, 'order', [oSettings, aSort, sortedColumns] );
+							_fnSortAria( oSettings );
+						}
+					} );
+				}
+			
+				_fnCallbackReg( oSettings, 'aoDrawCallback', function () {
+					if ( oSettings.bSorted || _fnDataSource( oSettings ) === 'ssp' || features.bDeferRender ) {
+						_fnSortingClasses( oSettings );
+					}
+				}, 'sc' );
+			
+			
+				/*
+				 * Final init
+				 * Cache the header, body and footer as required, creating them if needed
+				 */
+			
+				// Work around for Webkit bug 83867 - store the caption-side before removing from doc
+				var captions = $this.children('caption').each( function () {
+					this._captionSide = $(this).css('caption-side');
+				} );
+			
+				var thead = $this.children('thead');
+				if ( thead.length === 0 ) {
+					thead = $('<thead/>').appendTo($this);
+				}
+				oSettings.nTHead = thead[0];
+			
+				var tbody = $this.children('tbody');
+				if ( tbody.length === 0 ) {
+					tbody = $('<tbody/>').appendTo($this);
+				}
+				oSettings.nTBody = tbody[0];
+			
+				var tfoot = $this.children('tfoot');
+				if ( tfoot.length === 0 && captions.length > 0 && (oSettings.oScroll.sX !== "" || oSettings.oScroll.sY !== "") ) {
+					// If we are a scrolling table, and no footer has been given, then we need to create
+					// a tfoot element for the caption element to be appended to
+					tfoot = $('<tfoot/>').appendTo($this);
+				}
+			
+				if ( tfoot.length === 0 || tfoot.children().length === 0 ) {
+					$this.addClass( oClasses.sNoFooter );
+				}
+				else if ( tfoot.length > 0 ) {
+					oSettings.nTFoot = tfoot[0];
+					_fnDetectHeader( oSettings.aoFooter, oSettings.nTFoot );
+				}
+			
+				/* Check if there is data passing into the constructor */
+				if ( oInit.aaData ) {
+					for ( i=0 ; i<oInit.aaData.length ; i++ ) {
+						_fnAddData( oSettings, oInit.aaData[ i ] );
+					}
+				}
+				else if ( oSettings.bDeferLoading || _fnDataSource( oSettings ) == 'dom' ) {
+					/* Grab the data from the page - only do this when deferred loading or no Ajax
+					 * source since there is no point in reading the DOM data if we are then going
+					 * to replace it with Ajax data
+					 */
+					_fnAddTr( oSettings, $(oSettings.nTBody).children('tr') );
+				}
+			
+				/* Copy the data index array */
+				oSettings.aiDisplay = oSettings.aiDisplayMaster.slice();
+			
+				/* Initialisation complete - table can be drawn */
+				oSettings.bInitialised = true;
+			
+				/* Check if we need to initialise the table (it might not have been handed off to the
+				 * language processor)
+				 */
+				if ( bInitHandedOff === false ) {
+					_fnInitialise( oSettings );
+				}
+			};
+			
+			/* Must be done after everything which can be overridden by the state saving! */
+			if ( oInit.bStateSave )
+			{
+				features.bStateSave = true;
+				_fnCallbackReg( oSettings, 'aoDrawCallback', _fnSaveState, 'state_save' );
+				_fnLoadState( oSettings, oInit, loadedInit );
+			}
+			else {
+				loadedInit();
+			}
+			
+		} );
+		_that = null;
+		return this;
+	};
+
+	
+	/*
+	 * It is useful to have variables which are scoped locally so only the
+	 * DataTables functions can access them and they don't leak into global space.
+	 * At the same time these functions are often useful over multiple files in the
+	 * core and API, so we list, or at least document, all variables which are used
+	 * by DataTables as private variables here. This also ensures that there is no
+	 * clashing of variable names and that they can easily referenced for reuse.
+	 */
+	
+	
+	// Defined else where
+	//  _selector_run
+	//  _selector_opts
+	//  _selector_first
+	//  _selector_row_indexes
+	
+	var _ext; // DataTable.ext
+	var _Api; // DataTable.Api
+	var _api_register; // DataTable.Api.register
+	var _api_registerPlural; // DataTable.Api.registerPlural
+	
+	var _re_dic = {};
+	var _re_new_lines = /[\r\n\u2028]/g;
+	var _re_html = /<.*?>/g;
+	
+	// This is not strict ISO8601 - Date.parse() is quite lax, although
+	// implementations differ between browsers.
+	var _re_date = /^\d{2,4}[\.\/\-]\d{1,2}[\.\/\-]\d{1,2}([T ]{1}\d{1,2}[:\.]\d{2}([\.:]\d{2})?)?$/;
+	
+	// Escape regular expression special characters
+	var _re_escape_regex = new RegExp( '(\\' + [ '/', '.', '*', '+', '?', '|', '(', ')', '[', ']', '{', '}', '\\', '$', '^', '-' ].join('|\\') + ')', 'g' );
+	
+	// http://en.wikipedia.org/wiki/Foreign_exchange_market
+	// - \u20BD - Russian ruble.
+	// - \u20a9 - South Korean Won
+	// - \u20BA - Turkish Lira
+	// - \u20B9 - Indian Rupee
+	// - R - Brazil (R$) and South Africa
+	// - fr - Swiss Franc
+	// - kr - Swedish krona, Norwegian krone and Danish krone
+	// - \u2009 is thin space and \u202F is narrow no-break space, both used in many
+	// - Ƀ - Bitcoin
+	// - Ξ - Ethereum
+	//   standards as thousands separators.
+	var _re_formatted_numeric = /[',$£€¥%\u2009\u202F\u20BD\u20a9\u20BArfkɃΞ]/gi;
+	
+	
+	var _empty = function ( d ) {
+		return !d || d === true || d === '-' ? true : false;
+	};
+	
+	
+	var _intVal = function ( s ) {
+		var integer = parseInt( s, 10 );
+		return !isNaN(integer) && isFinite(s) ? integer : null;
+	};
+	
+	// Convert from a formatted number with characters other than `.` as the
+	// decimal place, to a Javascript number
+	var _numToDecimal = function ( num, decimalPoint ) {
+		// Cache created regular expressions for speed as this function is called often
+		if ( ! _re_dic[ decimalPoint ] ) {
+			_re_dic[ decimalPoint ] = new RegExp( _fnEscapeRegex( decimalPoint ), 'g' );
+		}
+		return typeof num === 'string' && decimalPoint !== '.' ?
+			num.replace( /\./g, '' ).replace( _re_dic[ decimalPoint ], '.' ) :
+			num;
+	};
+	
+	
+	var _isNumber = function ( d, decimalPoint, formatted ) {
+		var strType = typeof d === 'string';
+	
+		// If empty return immediately so there must be a number if it is a
+		// formatted string (this stops the string "k", or "kr", etc being detected
+		// as a formatted number for currency
+		if ( _empty( d ) ) {
+			return true;
+		}
+	
+		if ( decimalPoint && strType ) {
+			d = _numToDecimal( d, decimalPoint );
+		}
+	
+		if ( formatted && strType ) {
+			d = d.replace( _re_formatted_numeric, '' );
+		}
+	
+		return !isNaN( parseFloat(d) ) && isFinite( d );
+	};
+	
+	
+	// A string without HTML in it can be considered to be HTML still
+	var _isHtml = function ( d ) {
+		return _empty( d ) || typeof d === 'string';
+	};
+	
+	
+	var _htmlNumeric = function ( d, decimalPoint, formatted ) {
+		if ( _empty( d ) ) {
+			return true;
+		}
+	
+		var html = _isHtml( d );
+		return ! html ?
+			null :
+			_isNumber( _stripHtml( d ), decimalPoint, formatted ) ?
+				true :
+				null;
+	};
+	
+	
+	var _pluck = function ( a, prop, prop2 ) {
+		var out = [];
+		var i=0, ien=a.length;
+	
+		// Could have the test in the loop for slightly smaller code, but speed
+		// is essential here
+		if ( prop2 !== undefined ) {
+			for ( ; i<ien ; i++ ) {
+				if ( a[i] && a[i][ prop ] ) {
+					out.push( a[i][ prop ][ prop2 ] );
+				}
+			}
+		}
+		else {
+			for ( ; i<ien ; i++ ) {
+				if ( a[i] ) {
+					out.push( a[i][ prop ] );
+				}
+			}
+		}
+	
+		return out;
+	};
+	
+	
+	// Basically the same as _pluck, but rather than looping over `a` we use `order`
+	// as the indexes to pick from `a`
+	var _pluck_order = function ( a, order, prop, prop2 )
+	{
+		var out = [];
+		var i=0, ien=order.length;
+	
+		// Could have the test in the loop for slightly smaller code, but speed
+		// is essential here
+		if ( prop2 !== undefined ) {
+			for ( ; i<ien ; i++ ) {
+				if ( a[ order[i] ][ prop ] ) {
+					out.push( a[ order[i] ][ prop ][ prop2 ] );
+				}
+			}
+		}
+		else {
+			for ( ; i<ien ; i++ ) {
+				out.push( a[ order[i] ][ prop ] );
+			}
+		}
+	
+		return out;
+	};
+	
+	
+	var _range = function ( len, start )
+	{
+		var out = [];
+		var end;
+	
+		if ( start === undefined ) {
+			start = 0;
+			end = len;
+		}
+		else {
+			end = start;
+			start = len;
+		}
+	
+		for ( var i=start ; i<end ; i++ ) {
+			out.push( i );
+		}
+	
+		return out;
+	};
+	
+	
+	var _removeEmpty = function ( a )
+	{
+		var out = [];
+	
+		for ( var i=0, ien=a.length ; i<ien ; i++ ) {
+			if ( a[i] ) { // careful - will remove all falsy values!
+				out.push( a[i] );
+			}
+		}
+	
+		return out;
+	};
+	
+	
+	var _stripHtml = function ( d ) {
+		return d.replace( _re_html, '' );
+	};
+	
+	
+	/**
+	 * Determine if all values in the array are unique. This means we can short
+	 * cut the _unique method at the cost of a single loop. A sorted array is used
+	 * to easily check the values.
+	 *
+	 * @param  {array} src Source array
+	 * @return {boolean} true if all unique, false otherwise
+	 * @ignore
+	 */
+	var _areAllUnique = function ( src ) {
+		if ( src.length < 2 ) {
+			return true;
+		}
+	
+		var sorted = src.slice().sort();
+		var last = sorted[0];
+	
+		for ( var i=1, ien=sorted.length ; i<ien ; i++ ) {
+			if ( sorted[i] === last ) {
+				return false;
+			}
+	
+			last = sorted[i];
+		}
+	
+		return true;
+	};
+	
+	
+	/**
+	 * Find the unique elements in a source array.
+	 *
+	 * @param  {array} src Source array
+	 * @return {array} Array of unique items
+	 * @ignore
+	 */
+	var _unique = function ( src )
+	{
+		if ( _areAllUnique( src ) ) {
+			return src.slice();
+		}
+	
+		// A faster unique method is to use object keys to identify used values,
+		// but this doesn't work with arrays or objects, which we must also
+		// consider. See jsperf.com/compare-array-unique-versions/4 for more
+		// information.
+		var
+			out = [],
+			val,
+			i, ien=src.length,
+			j, k=0;
+	
+		again: for ( i=0 ; i<ien ; i++ ) {
+			val = src[i];
+	
+			for ( j=0 ; j<k ; j++ ) {
+				if ( out[j] === val ) {
+					continue again;
+				}
+			}
+	
+			out.push( val );
+			k++;
+		}
+	
+		return out;
+	};
+	
+	
+	/**
+	 * DataTables utility methods
+	 * 
+	 * This namespace provides helper methods that DataTables uses internally to
+	 * create a DataTable, but which are not exclusively used only for DataTables.
+	 * These methods can be used by extension authors to save the duplication of
+	 * code.
+	 *
+	 *  @namespace
+	 */
+	DataTable.util = {
+		/**
+		 * Throttle the calls to a function. Arguments and context are maintained
+		 * for the throttled function.
+		 *
+		 * @param {function} fn Function to be called
+		 * @param {integer} freq Call frequency in mS
+		 * @return {function} Wrapped function
+		 */
+		throttle: function ( fn, freq ) {
+			var
+				frequency = freq !== undefined ? freq : 200,
+				last,
+				timer;
+	
+			return function () {
+				var
+					that = this,
+					now  = +new Date(),
+					args = arguments;
+	
+				if ( last && now < last + frequency ) {
+					clearTimeout( timer );
+	
+					timer = setTimeout( function () {
+						last = undefined;
+						fn.apply( that, args );
+					}, frequency );
+				}
+				else {
+					last = now;
+					fn.apply( that, args );
+				}
+			};
+		},
+	
+	
+		/**
+		 * Escape a string such that it can be used in a regular expression
+		 *
+		 *  @param {string} val string to escape
+		 *  @returns {string} escaped string
+		 */
+		escapeRegex: function ( val ) {
+			return val.replace( _re_escape_regex, '\\$1' );
+		}
+	};
+	
+	
+	
+	/**
+	 * Create a mapping object that allows camel case parameters to be looked up
+	 * for their Hungarian counterparts. The mapping is stored in a private
+	 * parameter called `_hungarianMap` which can be accessed on the source object.
+	 *  @param {object} o
+	 *  @memberof DataTable#oApi
+	 */
+	function _fnHungarianMap ( o )
+	{
+		var
+			hungarian = 'a aa ai ao as b fn i m o s ',
+			match,
+			newKey,
+			map = {};
+	
+		$.each( o, function (key, val) {
+			match = key.match(/^([^A-Z]+?)([A-Z])/);
+	
+			if ( match && hungarian.indexOf(match[1]+' ') !== -1 )
+			{
+				newKey = key.replace( match[0], match[2].toLowerCase() );
+				map[ newKey ] = key;
+	
+				if ( match[1] === 'o' )
+				{
+					_fnHungarianMap( o[key] );
+				}
+			}
+		} );
+	
+		o._hungarianMap = map;
+	}
+	
+	
+	/**
+	 * Convert from camel case parameters to Hungarian, based on a Hungarian map
+	 * created by _fnHungarianMap.
+	 *  @param {object} src The model object which holds all parameters that can be
+	 *    mapped.
+	 *  @param {object} user The object to convert from camel case to Hungarian.
+	 *  @param {boolean} force When set to `true`, properties which already have a
+	 *    Hungarian value in the `user` object will be overwritten. Otherwise they
+	 *    won't be.
+	 *  @memberof DataTable#oApi
+	 */
+	function _fnCamelToHungarian ( src, user, force )
+	{
+		if ( ! src._hungarianMap ) {
+			_fnHungarianMap( src );
+		}
+	
+		var hungarianKey;
+	
+		$.each( user, function (key, val) {
+			hungarianKey = src._hungarianMap[ key ];
+	
+			if ( hungarianKey !== undefined && (force || user[hungarianKey] === undefined) )
+			{
+				// For objects, we need to buzz down into the object to copy parameters
+				if ( hungarianKey.charAt(0) === 'o' )
+				{
+					// Copy the camelCase options over to the hungarian
+					if ( ! user[ hungarianKey ] ) {
+						user[ hungarianKey ] = {};
+					}
+					$.extend( true, user[hungarianKey], user[key] );
+	
+					_fnCamelToHungarian( src[hungarianKey], user[hungarianKey], force );
+				}
+				else {
+					user[hungarianKey] = user[ key ];
+				}
+			}
+		} );
+	}
+	
+	
+	/**
+	 * Language compatibility - when certain options are given, and others aren't, we
+	 * need to duplicate the values over, in order to provide backwards compatibility
+	 * with older language files.
+	 *  @param {object} oSettings dataTables settings object
+	 *  @memberof DataTable#oApi
+	 */
+	function _fnLanguageCompat( lang )
+	{
+		// Note the use of the Hungarian notation for the parameters in this method as
+		// this is called after the mapping of camelCase to Hungarian
+		var defaults = DataTable.defaults.oLanguage;
+	
+		// Default mapping
+		var defaultDecimal = defaults.sDecimal;
+		if ( defaultDecimal ) {
+			_addNumericSort( defaultDecimal );
+		}
+	
+		if ( lang ) {
+			var zeroRecords = lang.sZeroRecords;
+	
+			// Backwards compatibility - if there is no sEmptyTable given, then use the same as
+			// sZeroRecords - assuming that is given.
+			if ( ! lang.sEmptyTable && zeroRecords &&
+				defaults.sEmptyTable === "No data available in table" )
+			{
+				_fnMap( lang, lang, 'sZeroRecords', 'sEmptyTable' );
+			}
+	
+			// Likewise with loading records
+			if ( ! lang.sLoadingRecords && zeroRecords &&
+				defaults.sLoadingRecords === "Loading..." )
+			{
+				_fnMap( lang, lang, 'sZeroRecords', 'sLoadingRecords' );
+			}
+	
+			// Old parameter name of the thousands separator mapped onto the new
+			if ( lang.sInfoThousands ) {
+				lang.sThousands = lang.sInfoThousands;
+			}
+	
+			var decimal = lang.sDecimal;
+			if ( decimal && defaultDecimal !== decimal ) {
+				_addNumericSort( decimal );
+			}
+		}
+	}
+	
+	
+	/**
+	 * Map one parameter onto another
+	 *  @param {object} o Object to map
+	 *  @param {*} knew The new parameter name
+	 *  @param {*} old The old parameter name
+	 */
+	var _fnCompatMap = function ( o, knew, old ) {
+		if ( o[ knew ] !== undefined ) {
+			o[ old ] = o[ knew ];
+		}
+	};
+	
+	
+	/**
+	 * Provide backwards compatibility for the main DT options. Note that the new
+	 * options are mapped onto the old parameters, so this is an external interface
+	 * change only.
+	 *  @param {object} init Object to map
+	 */
+	function _fnCompatOpts ( init )
+	{
+		_fnCompatMap( init, 'ordering',      'bSort' );
+		_fnCompatMap( init, 'orderMulti',    'bSortMulti' );
+		_fnCompatMap( init, 'orderClasses',  'bSortClasses' );
+		_fnCompatMap( init, 'orderCellsTop', 'bSortCellsTop' );
+		_fnCompatMap( init, 'order',         'aaSorting' );
+		_fnCompatMap( init, 'orderFixed',    'aaSortingFixed' );
+		_fnCompatMap( init, 'paging',        'bPaginate' );
+		_fnCompatMap( init, 'pagingType',    'sPaginationType' );
+		_fnCompatMap( init, 'pageLength',    'iDisplayLength' );
+		_fnCompatMap( init, 'searching',     'bFilter' );
+	
+		// Boolean initialisation of x-scrolling
+		if ( typeof init.sScrollX === 'boolean' ) {
+			init.sScrollX = init.sScrollX ? '100%' : '';
+		}
+		if ( typeof init.scrollX === 'boolean' ) {
+			init.scrollX = init.scrollX ? '100%' : '';
+		}
+	
+		// Column search objects are in an array, so it needs to be converted
+		// element by element
+		var searchCols = init.aoSearchCols;
+	
+		if ( searchCols ) {
+			for ( var i=0, ien=searchCols.length ; i<ien ; i++ ) {
+				if ( searchCols[i] ) {
+					_fnCamelToHungarian( DataTable.models.oSearch, searchCols[i] );
+				}
+			}
+		}
+	}
+	
+	
+	/**
+	 * Provide backwards compatibility for column options. Note that the new options
+	 * are mapped onto the old parameters, so this is an external interface change
+	 * only.
+	 *  @param {object} init Object to map
+	 */
+	function _fnCompatCols ( init )
+	{
+		_fnCompatMap( init, 'orderable',     'bSortable' );
+		_fnCompatMap( init, 'orderData',     'aDataSort' );
+		_fnCompatMap( init, 'orderSequence', 'asSorting' );
+		_fnCompatMap( init, 'orderDataType', 'sortDataType' );
+	
+		// orderData can be given as an integer
+		var dataSort = init.aDataSort;
+		if ( typeof dataSort === 'number' && ! $.isArray( dataSort ) ) {
+			init.aDataSort = [ dataSort ];
+		}
+	}
+	
+	
+	/**
+	 * Browser feature detection for capabilities, quirks
+	 *  @param {object} settings dataTables settings object
+	 *  @memberof DataTable#oApi
+	 */
+	function _fnBrowserDetect( settings )
+	{
+		// We don't need to do this every time DataTables is constructed, the values
+		// calculated are specific to the browser and OS configuration which we
+		// don't expect to change between initialisations
+		if ( ! DataTable.__browser ) {
+			var browser = {};
+			DataTable.__browser = browser;
+	
+			// Scrolling feature / quirks detection
+			var n = $('<div/>')
+				.css( {
+					position: 'fixed',
+					top: 0,
+					left: $(window).scrollLeft()*-1, // allow for scrolling
+					height: 1,
+					width: 1,
+					overflow: 'hidden'
+				} )
+				.append(
+					$('<div/>')
+						.css( {
+							position: 'absolute',
+							top: 1,
+							left: 1,
+							width: 100,
+							overflow: 'scroll'
+						} )
+						.append(
+							$('<div/>')
+								.css( {
+									width: '100%',
+									height: 10
+								} )
+						)
+				)
+				.appendTo( 'body' );
+	
+			var outer = n.children();
+			var inner = outer.children();
+	
+			// Numbers below, in order, are:
+			// inner.offsetWidth, inner.clientWidth, outer.offsetWidth, outer.clientWidth
+			//
+			// IE6 XP:                           100 100 100  83
+			// IE7 Vista:                        100 100 100  83
+			// IE 8+ Windows:                     83  83 100  83
+			// Evergreen Windows:                 83  83 100  83
+			// Evergreen Mac with scrollbars:     85  85 100  85
+			// Evergreen Mac without scrollbars: 100 100 100 100
+	
+			// Get scrollbar width
+			browser.barWidth = outer[0].offsetWidth - outer[0].clientWidth;
+	
+			// IE6/7 will oversize a width 100% element inside a scrolling element, to
+			// include the width of the scrollbar, while other browsers ensure the inner
+			// element is contained without forcing scrolling
+			browser.bScrollOversize = inner[0].offsetWidth === 100 && outer[0].clientWidth !== 100;
+	
+			// In rtl text layout, some browsers (most, but not all) will place the
+			// scrollbar on the left, rather than the right.
+			browser.bScrollbarLeft = Math.round( inner.offset().left ) !== 1;
+	
+			// IE8- don't provide height and width for getBoundingClientRect
+			browser.bBounding = n[0].getBoundingClientRect().width ? true : false;
+	
+			n.remove();
+		}
+	
+		$.extend( settings.oBrowser, DataTable.__browser );
+		settings.oScroll.iBarWidth = DataTable.__browser.barWidth;
+	}
+	
+	
+	/**
+	 * Array.prototype reduce[Right] method, used for browsers which don't support
+	 * JS 1.6. Done this way to reduce code size, since we iterate either way
+	 *  @param {object} settings dataTables settings object
+	 *  @memberof DataTable#oApi
+	 */
+	function _fnReduce ( that, fn, init, start, end, inc )
+	{
+		var
+			i = start,
+			value,
+			isSet = false;
+	
+		if ( init !== undefined ) {
+			value = init;
+			isSet = true;
+		}
+	
+		while ( i !== end ) {
+			if ( ! that.hasOwnProperty(i) ) {
+				continue;
+			}
+	
+			value = isSet ?
+				fn( value, that[i], i, that ) :
+				that[i];
+	
+			isSet = true;
+			i += inc;
+		}
+	
+		return value;
+	}
+	
+	/**
+	 * Add a column to the list used for the table with default values
+	 *  @param {object} oSettings dataTables settings object
+	 *  @param {node} nTh The th element for this column
+	 *  @memberof DataTable#oApi
+	 */
+	function _fnAddColumn( oSettings, nTh )
+	{
+		// Add column to aoColumns array
+		var oDefaults = DataTable.defaults.column;
+		var iCol = oSettings.aoColumns.length;
+		var oCol = $.extend( {}, DataTable.models.oColumn, oDefaults, {
+			"nTh": nTh ? nTh : document.createElement('th'),
+			"sTitle":    oDefaults.sTitle    ? oDefaults.sTitle    : nTh ? nTh.innerHTML : '',
+			"aDataSort": oDefaults.aDataSort ? oDefaults.aDataSort : [iCol],
+			"mData": oDefaults.mData ? oDefaults.mData : iCol,
+			idx: iCol
+		} );
+		oSettings.aoColumns.push( oCol );
+	
+		// Add search object for column specific search. Note that the `searchCols[ iCol ]`
+		// passed into extend can be undefined. This allows the user to give a default
+		// with only some of the parameters defined, and also not give a default
+		var searchCols = oSettings.aoPreSearchCols;
+		searchCols[ iCol ] = $.extend( {}, DataTable.models.oSearch, searchCols[ iCol ] );
+	
+		// Use the default column options function to initialise classes etc
+		_fnColumnOptions( oSettings, iCol, $(nTh).data() );
+	}
+	
+	
+	/**
+	 * Apply options for a column
+	 *  @param {object} oSettings dataTables settings object
+	 *  @param {int} iCol column index to consider
+	 *  @param {object} oOptions object with sType, bVisible and bSearchable etc
+	 *  @memberof DataTable#oApi
+	 */
+	function _fnColumnOptions( oSettings, iCol, oOptions )
+	{
+		var oCol = oSettings.aoColumns[ iCol ];
+		var oClasses = oSettings.oClasses;
+		var th = $(oCol.nTh);
+	
+		// Try to get width information from the DOM. We can't get it from CSS
+		// as we'd need to parse the CSS stylesheet. `width` option can override
+		if ( ! oCol.sWidthOrig ) {
+			// Width attribute
+			oCol.sWidthOrig = th.attr('width') || null;
+	
+			// Style attribute
+			var t = (th.attr('style') || '').match(/width:\s*(\d+[pxem%]+)/);
+			if ( t ) {
+				oCol.sWidthOrig = t[1];
+			}
+		}
+	
+		/* User specified column options */
+		if ( oOptions !== undefined && oOptions !== null )
+		{
+			// Backwards compatibility
+			_fnCompatCols( oOptions );
+	
+			// Map camel case parameters to their Hungarian counterparts
+			_fnCamelToHungarian( DataTable.defaults.column, oOptions, true );
+	
+			/* Backwards compatibility for mDataProp */
+			if ( oOptions.mDataProp !== undefined && !oOptions.mData )
+			{
+				oOptions.mData = oOptions.mDataProp;
+			}
+	
+			if ( oOptions.sType )
+			{
+				oCol._sManualType = oOptions.sType;
+			}
+	
+			// `class` is a reserved word in Javascript, so we need to provide
+			// the ability to use a valid name for the camel case input
+			if ( oOptions.className && ! oOptions.sClass )
+			{
+				oOptions.sClass = oOptions.className;
+			}
+			if ( oOptions.sClass ) {
+				th.addClass( oOptions.sClass );
+			}
+	
+			$.extend( oCol, oOptions );
+			_fnMap( oCol, oOptions, "sWidth", "sWidthOrig" );
+	
+			/* iDataSort to be applied (backwards compatibility), but aDataSort will take
+			 * priority if defined
+			 */
+			if ( oOptions.iDataSort !== undefined )
+			{
+				oCol.aDataSort = [ oOptions.iDataSort ];
+			}
+			_fnMap( oCol, oOptions, "aDataSort" );
+		}
+	
+		/* Cache the data get and set functions for speed */
+		var mDataSrc = oCol.mData;
+		var mData = _fnGetObjectDataFn( mDataSrc );
+		var mRender = oCol.mRender ? _fnGetObjectDataFn( oCol.mRender ) : null;
+	
+		var attrTest = function( src ) {
+			return typeof src === 'string' && src.indexOf('@') !== -1;
+		};
+		oCol._bAttrSrc = $.isPlainObject( mDataSrc ) && (
+			attrTest(mDataSrc.sort) || attrTest(mDataSrc.type) || attrTest(mDataSrc.filter)
+		);
+		oCol._setter = null;
+	
+		oCol.fnGetData = function (rowData, type, meta) {
+			var innerData = mData( rowData, type, undefined, meta );
+	
+			return mRender && type ?
+				mRender( innerData, type, rowData, meta ) :
+				innerData;
+		};
+		oCol.fnSetData = function ( rowData, val, meta ) {
+			return _fnSetObjectDataFn( mDataSrc )( rowData, val, meta );
+		};
+	
+		// Indicate if DataTables should read DOM data as an object or array
+		// Used in _fnGetRowElements
+		if ( typeof mDataSrc !== 'number' ) {
+			oSettings._rowReadObject = true;
+		}
+	
+		/* Feature sorting overrides column specific when off */
+		if ( !oSettings.oFeatures.bSort )
+		{
+			oCol.bSortable = false;
+			th.addClass( oClasses.sSortableNone ); // Have to add class here as order event isn't called
+		}
+	
+		/* Check that the class assignment is correct for sorting */
+		var bAsc = $.inArray('asc', oCol.asSorting) !== -1;
+		var bDesc = $.inArray('desc', oCol.asSorting) !== -1;
+		if ( !oCol.bSortable || (!bAsc && !bDesc) )
+		{
+			oCol.sSortingClass = oClasses.sSortableNone;
+			oCol.sSortingClassJUI = "";
+		}
+		else if ( bAsc && !bDesc )
+		{
+			oCol.sSortingClass = oClasses.sSortableAsc;
+			oCol.sSortingClassJUI = oClasses.sSortJUIAscAllowed;
+		}
+		else if ( !bAsc && bDesc )
+		{
+			oCol.sSortingClass = oClasses.sSortableDesc;
+			oCol.sSortingClassJUI = oClasses.sSortJUIDescAllowed;
+		}
+		else
+		{
+			oCol.sSortingClass = oClasses.sSortable;
+			oCol.sSortingClassJUI = oClasses.sSortJUI;
+		}
+	}
+	
+	
+	/**
+	 * Adjust the table column widths for new data. Note: you would probably want to
+	 * do a redraw after calling this function!
+	 *  @param {object} settings dataTables settings object
+	 *  @memberof DataTable#oApi
+	 */
+	function _fnAdjustColumnSizing ( settings )
+	{
+		/* Not interested in doing column width calculation if auto-width is disabled */
+		if ( settings.oFeatures.bAutoWidth !== false )
+		{
+			var columns = settings.aoColumns;
+	
+			_fnCalculateColumnWidths( settings );
+			for ( var i=0 , iLen=columns.length ; i<iLen ; i++ )
+			{
+				columns[i].nTh.style.width = columns[i].sWidth;
+			}
+		}
+	
+		var scroll = settings.oScroll;
+		if ( scroll.sY !== '' || scroll.sX !== '')
+		{
+			_fnScrollDraw( settings );
+		}
+	
+		_fnCallbackFire( settings, null, 'column-sizing', [settings] );
+	}
+	
+	
+	/**
+	 * Covert the index of a visible column to the index in the data array (take account
+	 * of hidden columns)
+	 *  @param {object} oSettings dataTables settings object
+	 *  @param {int} iMatch Visible column index to lookup
+	 *  @returns {int} i the data index
+	 *  @memberof DataTable#oApi
+	 */
+	function _fnVisibleToColumnIndex( oSettings, iMatch )
+	{
+		var aiVis = _fnGetColumns( oSettings, 'bVisible' );
+	
+		return typeof aiVis[iMatch] === 'number' ?
+			aiVis[iMatch] :
+			null;
+	}
+	
+	
+	/**
+	 * Covert the index of an index in the data array and convert it to the visible
+	 *   column index (take account of hidden columns)
+	 *  @param {int} iMatch Column index to lookup
+	 *  @param {object} oSettings dataTables settings object
+	 *  @returns {int} i the data index
+	 *  @memberof DataTable#oApi
+	 */
+	function _fnColumnIndexToVisible( oSettings, iMatch )
+	{
+		var aiVis = _fnGetColumns( oSettings, 'bVisible' );
+		var iPos = $.inArray( iMatch, aiVis );
+	
+		return iPos !== -1 ? iPos : null;
+	}
+	
+	
+	/**
+	 * Get the number of visible columns
+	 *  @param {object} oSettings dataTables settings object
+	 *  @returns {int} i the number of visible columns
+	 *  @memberof DataTable#oApi
+	 */
+	function _fnVisbleColumns( oSettings )
+	{
+		var vis = 0;
+	
+		// No reduce in IE8, use a loop for now
+		$.each( oSettings.aoColumns, function ( i, col ) {
+			if ( col.bVisible && $(col.nTh).css('display') !== 'none' ) {
+				vis++;
+			}
+		} );
+	
+		return vis;
+	}
+	
+	
+	/**
+	 * Get an array of column indexes that match a given property
+	 *  @param {object} oSettings dataTables settings object
+	 *  @param {string} sParam Parameter in aoColumns to look for - typically
+	 *    bVisible or bSearchable
+	 *  @returns {array} Array of indexes with matched properties
+	 *  @memberof DataTable#oApi
+	 */
+	function _fnGetColumns( oSettings, sParam )
+	{
+		var a = [];
+	
+		$.map( oSettings.aoColumns, function(val, i) {
+			if ( val[sParam] ) {
+				a.push( i );
+			}
+		} );
+	
+		return a;
+	}
+	
+	
+	/**
+	 * Calculate the 'type' of a column
+	 *  @param {object} settings dataTables settings object
+	 *  @memberof DataTable#oApi
+	 */
+	function _fnColumnTypes ( settings )
+	{
+		var columns = settings.aoColumns;
+		var data = settings.aoData;
+		var types = DataTable.ext.type.detect;
+		var i, ien, j, jen, k, ken;
+		var col, cell, detectedType, cache;
+	
+		// For each column, spin over the 
+		for ( i=0, ien=columns.length ; i<ien ; i++ ) {
+			col = columns[i];
+			cache = [];
+	
+			if ( ! col.sType && col._sManualType ) {
+				col.sType = col._sManualType;
+			}
+			else if ( ! col.sType ) {
+				for ( j=0, jen=types.length ; j<jen ; j++ ) {
+					for ( k=0, ken=data.length ; k<ken ; k++ ) {
+						// Use a cache array so we only need to get the type data
+						// from the formatter once (when using multiple detectors)
+						if ( cache[k] === undefined ) {
+							cache[k] = _fnGetCellData( settings, k, i, 'type' );
+						}
+	
+						detectedType = types[j]( cache[k], settings );
+	
+						// If null, then this type can't apply to this column, so
+						// rather than testing all cells, break out. There is an
+						// exception for the last type which is `html`. We need to
+						// scan all rows since it is possible to mix string and HTML
+						// types
+						if ( ! detectedType && j !== types.length-1 ) {
+							break;
+						}
+	
+						// Only a single match is needed for html type since it is
+						// bottom of the pile and very similar to string
+						if ( detectedType === 'html' ) {
+							break;
+						}
+					}
+	
+					// Type is valid for all data points in the column - use this
+					// type
+					if ( detectedType ) {
+						col.sType = detectedType;
+						break;
+					}
+				}
+	
+				// Fall back - if no type was detected, always use string
+				if ( ! col.sType ) {
+					col.sType = 'string';
+				}
+			}
+		}
+	}
+	
+	
+	/**
+	 * Take the column definitions and static columns arrays and calculate how
+	 * they relate to column indexes. The callback function will then apply the
+	 * definition found for a column to a suitable configuration object.
+	 *  @param {object} oSettings dataTables settings object
+	 *  @param {array} aoColDefs The aoColumnDefs array that is to be applied
+	 *  @param {array} aoCols The aoColumns array that defines columns individually
+	 *  @param {function} fn Callback function - takes two parameters, the calculated
+	 *    column index and the definition for that column.
+	 *  @memberof DataTable#oApi
+	 */
+	function _fnApplyColumnDefs( oSettings, aoColDefs, aoCols, fn )
+	{
+		var i, iLen, j, jLen, k, kLen, def;
+		var columns = oSettings.aoColumns;
+	
+		// Column definitions with aTargets
+		if ( aoColDefs )
+		{
+			/* Loop over the definitions array - loop in reverse so first instance has priority */
+			for ( i=aoColDefs.length-1 ; i>=0 ; i-- )
+			{
+				def = aoColDefs[i];
+	
+				/* Each definition can target multiple columns, as it is an array */
+				var aTargets = def.targets !== undefined ?
+					def.targets :
+					def.aTargets;
+	
+				if ( ! $.isArray( aTargets ) )
+				{
+					aTargets = [ aTargets ];
+				}
+	
+				for ( j=0, jLen=aTargets.length ; j<jLen ; j++ )
+				{
+					if ( typeof aTargets[j] === 'number' && aTargets[j] >= 0 )
+					{
+						/* Add columns that we don't yet know about */
+						while( columns.length <= aTargets[j] )
+						{
+							_fnAddColumn( oSettings );
+						}
+	
+						/* Integer, basic index */
+						fn( aTargets[j], def );
+					}
+					else if ( typeof aTargets[j] === 'number' && aTargets[j] < 0 )
+					{
+						/* Negative integer, right to left column counting */
+						fn( columns.length+aTargets[j], def );
+					}
+					else if ( typeof aTargets[j] === 'string' )
+					{
+						/* Class name matching on TH element */
+						for ( k=0, kLen=columns.length ; k<kLen ; k++ )
+						{
+							if ( aTargets[j] == "_all" ||
+							     $(columns[k].nTh).hasClass( aTargets[j] ) )
+							{
+								fn( k, def );
+							}
+						}
+					}
+				}
+			}
+		}
+	
+		// Statically defined columns array
+		if ( aoCols )
+		{
+			for ( i=0, iLen=aoCols.length ; i<iLen ; i++ )
+			{
+				fn( i, aoCols[i] );
+			}
+		}
+	}
+	
+	/**
+	 * Add a data array to the table, creating DOM node etc. This is the parallel to
+	 * _fnGatherData, but for adding rows from a Javascript source, rather than a
+	 * DOM source.
+	 *  @param {object} oSettings dataTables settings object
+	 *  @param {array} aData data array to be added
+	 *  @param {node} [nTr] TR element to add to the table - optional. If not given,
+	 *    DataTables will create a row automatically
+	 *  @param {array} [anTds] Array of TD|TH elements for the row - must be given
+	 *    if nTr is.
+	 *  @returns {int} >=0 if successful (index of new aoData entry), -1 if failed
+	 *  @memberof DataTable#oApi
+	 */
+	function _fnAddData ( oSettings, aDataIn, nTr, anTds )
+	{
+		/* Create the object for storing information about this new row */
+		var iRow = oSettings.aoData.length;
+		var oData = $.extend( true, {}, DataTable.models.oRow, {
+			src: nTr ? 'dom' : 'data',
+			idx: iRow
+		} );
+	
+		oData._aData = aDataIn;
+		oSettings.aoData.push( oData );
+	
+		/* Create the cells */
+		var nTd, sThisType;
+		var columns = oSettings.aoColumns;
+	
+		// Invalidate the column types as the new data needs to be revalidated
+		for ( var i=0, iLen=columns.length ; i<iLen ; i++ )
+		{
+			columns[i].sType = null;
+		}
+	
+		/* Add to the display array */
+		oSettings.aiDisplayMaster.push( iRow );
+	
+		var id = oSettings.rowIdFn( aDataIn );
+		if ( id !== undefined ) {
+			oSettings.aIds[ id ] = oData;
+		}
+	
+		/* Create the DOM information, or register it if already present */
+		if ( nTr || ! oSettings.oFeatures.bDeferRender )
+		{
+			_fnCreateTr( oSettings, iRow, nTr, anTds );
+		}
+	
+		return iRow;
+	}
+	
+	
+	/**
+	 * Add one or more TR elements to the table. Generally we'd expect to
+	 * use this for reading data from a DOM sourced table, but it could be
+	 * used for an TR element. Note that if a TR is given, it is used (i.e.
+	 * it is not cloned).
+	 *  @param {object} settings dataTables settings object
+	 *  @param {array|node|jQuery} trs The TR element(s) to add to the table
+	 *  @returns {array} Array of indexes for the added rows
+	 *  @memberof DataTable#oApi
+	 */
+	function _fnAddTr( settings, trs )
+	{
+		var row;
+	
+		// Allow an individual node to be passed in
+		if ( ! (trs instanceof $) ) {
+			trs = $(trs);
+		}
+	
+		return trs.map( function (i, el) {
+			row = _fnGetRowElements( settings, el );
+			return _fnAddData( settings, row.data, el, row.cells );
+		} );
+	}
+	
+	
+	/**
+	 * Take a TR element and convert it to an index in aoData
+	 *  @param {object} oSettings dataTables settings object
+	 *  @param {node} n the TR element to find
+	 *  @returns {int} index if the node is found, null if not
+	 *  @memberof DataTable#oApi
+	 */
+	function _fnNodeToDataIndex( oSettings, n )
+	{
+		return (n._DT_RowIndex!==undefined) ? n._DT_RowIndex : null;
+	}
+	
+	
+	/**
+	 * Take a TD element and convert it into a column data index (not the visible index)
+	 *  @param {object} oSettings dataTables settings object
+	 *  @param {int} iRow The row number the TD/TH can be found in
+	 *  @param {node} n The TD/TH element to find
+	 *  @returns {int} index if the node is found, -1 if not
+	 *  @memberof DataTable#oApi
+	 */
+	function _fnNodeToColumnIndex( oSettings, iRow, n )
+	{
+		return $.inArray( n, oSettings.aoData[ iRow ].anCells );
+	}
+	
+	
+	/**
+	 * Get the data for a given cell from the internal cache, taking into account data mapping
+	 *  @param {object} settings dataTables settings object
+	 *  @param {int} rowIdx aoData row id
+	 *  @param {int} colIdx Column index
+	 *  @param {string} type data get type ('display', 'type' 'filter' 'sort')
+	 *  @returns {*} Cell data
+	 *  @memberof DataTable#oApi
+	 */
+	function _fnGetCellData( settings, rowIdx, colIdx, type )
+	{
+		var draw           = settings.iDraw;
+		var col            = settings.aoColumns[colIdx];
+		var rowData        = settings.aoData[rowIdx]._aData;
+		var defaultContent = col.sDefaultContent;
+		var cellData       = col.fnGetData( rowData, type, {
+			settings: settings,
+			row:      rowIdx,
+			col:      colIdx
+		} );
+	
+		if ( cellData === undefined ) {
+			if ( settings.iDrawError != draw && defaultContent === null ) {
+				_fnLog( settings, 0, "Requested unknown parameter "+
+					(typeof col.mData=='function' ? '{function}' : "'"+col.mData+"'")+
+					" for row "+rowIdx+", column "+colIdx, 4 );
+				settings.iDrawError = draw;
+			}
+			return defaultContent;
+		}
+	
+		// When the data source is null and a specific data type is requested (i.e.
+		// not the original data), we can use default column data
+		if ( (cellData === rowData || cellData === null) && defaultContent !== null && type !== undefined ) {
+			cellData = defaultContent;
+		}
+		else if ( typeof cellData === 'function' ) {
+			// If the data source is a function, then we run it and use the return,
+			// executing in the scope of the data object (for instances)
+			return cellData.call( rowData );
+		}
+	
+		if ( cellData === null && type == 'display' ) {
+			return '';
+		}
+		return cellData;
+	}
+	
+	
+	/**
+	 * Set the value for a specific cell, into the internal data cache
+	 *  @param {object} settings dataTables settings object
+	 *  @param {int} rowIdx aoData row id
+	 *  @param {int} colIdx Column index
+	 *  @param {*} val Value to set
+	 *  @memberof DataTable#oApi
+	 */
+	function _fnSetCellData( settings, rowIdx, colIdx, val )
+	{
+		var col     = settings.aoColumns[colIdx];
+		var rowData = settings.aoData[rowIdx]._aData;
+	
+		col.fnSetData( rowData, val, {
+			settings: settings,
+			row:      rowIdx,
+			col:      colIdx
+		}  );
+	}
+	
+	
+	// Private variable that is used to match action syntax in the data property object
+	var __reArray = /\[.*?\]$/;
+	var __reFn = /\(\)$/;
+	
+	/**
+	 * Split string on periods, taking into account escaped periods
+	 * @param  {string} str String to split
+	 * @return {array} Split string
+	 */
+	function _fnSplitObjNotation( str )
+	{
+		return $.map( str.match(/(\\.|[^\.])+/g) || [''], function ( s ) {
+			return s.replace(/\\\./g, '.');
+		} );
+	}
+	
+	
+	/**
+	 * Return a function that can be used to get data from a source object, taking
+	 * into account the ability to use nested objects as a source
+	 *  @param {string|int|function} mSource The data source for the object
+	 *  @returns {function} Data get function
+	 *  @memberof DataTable#oApi
+	 */
+	function _fnGetObjectDataFn( mSource )
+	{
+		if ( $.isPlainObject( mSource ) )
+		{
+			/* Build an object of get functions, and wrap them in a single call */
+			var o = {};
+			$.each( mSource, function (key, val) {
+				if ( val ) {
+					o[key] = _fnGetObjectDataFn( val );
+				}
+			} );
+	
+			return function (data, type, row, meta) {
+				var t = o[type] || o._;
+				return t !== undefined ?
+					t(data, type, row, meta) :
+					data;
+			};
+		}
+		else if ( mSource === null )
+		{
+			/* Give an empty string for rendering / sorting etc */
+			return function (data) { // type, row and meta also passed, but not used
+				return data;
+			};
+		}
+		else if ( typeof mSource === 'function' )
+		{
+			return function (data, type, row, meta) {
+				return mSource( data, type, row, meta );
+			};
+		}
+		else if ( typeof mSource === 'string' && (mSource.indexOf('.') !== -1 ||
+			      mSource.indexOf('[') !== -1 || mSource.indexOf('(') !== -1) )
+		{
+			/* If there is a . in the source string then the data source is in a
+			 * nested object so we loop over the data for each level to get the next
+			 * level down. On each loop we test for undefined, and if found immediately
+			 * return. This allows entire objects to be missing and sDefaultContent to
+			 * be used if defined, rather than throwing an error
+			 */
+			var fetchData = function (data, type, src) {
+				var arrayNotation, funcNotation, out, innerSrc;
+	
+				if ( src !== "" )
+				{
+					var a = _fnSplitObjNotation( src );
+	
+					for ( var i=0, iLen=a.length ; i<iLen ; i++ )
+					{
+						// Check if we are dealing with special notation
+						arrayNotation = a[i].match(__reArray);
+						funcNotation = a[i].match(__reFn);
+	
+						if ( arrayNotation )
+						{
+							// Array notation
+							a[i] = a[i].replace(__reArray, '');
+	
+							// Condition allows simply [] to be passed in
+							if ( a[i] !== "" ) {
+								data = data[ a[i] ];
+							}
+							out = [];
+	
+							// Get the remainder of the nested object to get
+							a.splice( 0, i+1 );
+							innerSrc = a.join('.');
+	
+							// Traverse each entry in the array getting the properties requested
+							if ( $.isArray( data ) ) {
+								for ( var j=0, jLen=data.length ; j<jLen ; j++ ) {
+									out.push( fetchData( data[j], type, innerSrc ) );
+								}
+							}
+	
+							// If a string is given in between the array notation indicators, that
+							// is used to join the strings together, otherwise an array is returned
+							var join = arrayNotation[0].substring(1, arrayNotation[0].length-1);
+							data = (join==="") ? out : out.join(join);
+	
+							// The inner call to fetchData has already traversed through the remainder
+							// of the source requested, so we exit from the loop
+							break;
+						}
+						else if ( funcNotation )
+						{
+							// Function call
+							a[i] = a[i].replace(__reFn, '');
+							data = data[ a[i] ]();
+							continue;
+						}
+	
+						if ( data === null || data[ a[i] ] === undefined )
+						{
+							return undefined;
+						}
+						data = data[ a[i] ];
+					}
+				}
+	
+				return data;
+			};
+	
+			return function (data, type) { // row and meta also passed, but not used
+				return fetchData( data, type, mSource );
+			};
+		}
+		else
+		{
+			/* Array or flat object mapping */
+			return function (data, type) { // row and meta also passed, but not used
+				return data[mSource];
+			};
+		}
+	}
+	
+	
+	/**
+	 * Return a function that can be used to set data from a source object, taking
+	 * into account the ability to use nested objects as a source
+	 *  @param {string|int|function} mSource The data source for the object
+	 *  @returns {function} Data set function
+	 *  @memberof DataTable#oApi
+	 */
+	function _fnSetObjectDataFn( mSource )
+	{
+		if ( $.isPlainObject( mSource ) )
+		{
+			/* Unlike get, only the underscore (global) option is used for for
+			 * setting data since we don't know the type here. This is why an object
+			 * option is not documented for `mData` (which is read/write), but it is
+			 * for `mRender` which is read only.
+			 */
+			return _fnSetObjectDataFn( mSource._ );
+		}
+		else if ( mSource === null )
+		{
+			/* Nothing to do when the data source is null */
+			return function () {};
+		}
+		else if ( typeof mSource === 'function' )
+		{
+			return function (data, val, meta) {
+				mSource( data, 'set', val, meta );
+			};
+		}
+		else if ( typeof mSource === 'string' && (mSource.indexOf('.') !== -1 ||
+			      mSource.indexOf('[') !== -1 || mSource.indexOf('(') !== -1) )
+		{
+			/* Like the get, we need to get data from a nested object */
+			var setData = function (data, val, src) {
+				var a = _fnSplitObjNotation( src ), b;
+				var aLast = a[a.length-1];
+				var arrayNotation, funcNotation, o, innerSrc;
+	
+				for ( var i=0, iLen=a.length-1 ; i<iLen ; i++ )
+				{
+					// Check if we are dealing with an array notation request
+					arrayNotation = a[i].match(__reArray);
+					funcNotation = a[i].match(__reFn);
+	
+					if ( arrayNotation )
+					{
+						a[i] = a[i].replace(__reArray, '');
+						data[ a[i] ] = [];
+	
+						// Get the remainder of the nested object to set so we can recurse
+						b = a.slice();
+						b.splice( 0, i+1 );
+						innerSrc = b.join('.');
+	
+						// Traverse each entry in the array setting the properties requested
+						if ( $.isArray( val ) )
+						{
+							for ( var j=0, jLen=val.length ; j<jLen ; j++ )
+							{
+								o = {};
+								setData( o, val[j], innerSrc );
+								data[ a[i] ].push( o );
+							}
+						}
+						else
+						{
+							// We've been asked to save data to an array, but it
+							// isn't array data to be saved. Best that can be done
+							// is to just save the value.
+							data[ a[i] ] = val;
+						}
+	
+						// The inner call to setData has already traversed through the remainder
+						// of the source and has set the data, thus we can exit here
+						return;
+					}
+					else if ( funcNotation )
+					{
+						// Function call
+						a[i] = a[i].replace(__reFn, '');
+						data = data[ a[i] ]( val );
+					}
+	
+					// If the nested object doesn't currently exist - since we are
+					// trying to set the value - create it
+					if ( data[ a[i] ] === null || data[ a[i] ] === undefined )
+					{
+						data[ a[i] ] = {};
+					}
+					data = data[ a[i] ];
+				}
+	
+				// Last item in the input - i.e, the actual set
+				if ( aLast.match(__reFn ) )
+				{
+					// Function call
+					data = data[ aLast.replace(__reFn, '') ]( val );
+				}
+				else
+				{
+					// If array notation is used, we just want to strip it and use the property name
+					// and assign the value. If it isn't used, then we get the result we want anyway
+					data[ aLast.replace(__reArray, '') ] = val;
+				}
+			};
+	
+			return function (data, val) { // meta is also passed in, but not used
+				return setData( data, val, mSource );
+			};
+		}
+		else
+		{
+			/* Array or flat object mapping */
+			return function (data, val) { // meta is also passed in, but not used
+				data[mSource] = val;
+			};
+		}
+	}
+	
+	
+	/**
+	 * Return an array with the full table data
+	 *  @param {object} oSettings dataTables settings object
+	 *  @returns array {array} aData Master data array
+	 *  @memberof DataTable#oApi
+	 */
+	function _fnGetDataMaster ( settings )
+	{
+		return _pluck( settings.aoData, '_aData' );
+	}
+	
+	
+	/**
+	 * Nuke the table
+	 *  @param {object} oSettings dataTables settings object
+	 *  @memberof DataTable#oApi
+	 */
+	function _fnClearTable( settings )
+	{
+		settings.aoData.length = 0;
+		settings.aiDisplayMaster.length = 0;
+		settings.aiDisplay.length = 0;
+		settings.aIds = {};
+	}
+	
+	
+	 /**
+	 * Take an array of integers (index array) and remove a target integer (value - not
+	 * the key!)
+	 *  @param {array} a Index array to target
+	 *  @param {int} iTarget value to find
+	 *  @memberof DataTable#oApi
+	 */
+	function _fnDeleteIndex( a, iTarget, splice )
+	{
+		var iTargetIndex = -1;
+	
+		for ( var i=0, iLen=a.length ; i<iLen ; i++ )
+		{
+			if ( a[i] == iTarget )
+			{
+				iTargetIndex = i;
+			}
+			else if ( a[i] > iTarget )
+			{
+				a[i]--;
+			}
+		}
+	
+		if ( iTargetIndex != -1 && splice === undefined )
+		{
+			a.splice( iTargetIndex, 1 );
+		}
+	}
+	
+	
+	/**
+	 * Mark cached data as invalid such that a re-read of the data will occur when
+	 * the cached data is next requested. Also update from the data source object.
+	 *
+	 * @param {object} settings DataTables settings object
+	 * @param {int}    rowIdx   Row index to invalidate
+	 * @param {string} [src]    Source to invalidate from: undefined, 'auto', 'dom'
+	 *     or 'data'
+	 * @param {int}    [colIdx] Column index to invalidate. If undefined the whole
+	 *     row will be invalidated
+	 * @memberof DataTable#oApi
+	 *
+	 * @todo For the modularisation of v1.11 this will need to become a callback, so
+	 *   the sort and filter methods can subscribe to it. That will required
+	 *   initialisation options for sorting, which is why it is not already baked in
+	 */
+	function _fnInvalidate( settings, rowIdx, src, colIdx )
+	{
+		var row = settings.aoData[ rowIdx ];
+		var i, ien;
+		var cellWrite = function ( cell, col ) {
+			// This is very frustrating, but in IE if you just write directly
+			// to innerHTML, and elements that are overwritten are GC'ed,
+			// even if there is a reference to them elsewhere
+			while ( cell.childNodes.length ) {
+				cell.removeChild( cell.firstChild );
+			}
+	
+			cell.innerHTML = _fnGetCellData( settings, rowIdx, col, 'display' );
+		};
+	
+		// Are we reading last data from DOM or the data object?
+		if ( src === 'dom' || ((! src || src === 'auto') && row.src === 'dom') ) {
+			// Read the data from the DOM
+			row._aData = _fnGetRowElements(
+					settings, row, colIdx, colIdx === undefined ? undefined : row._aData
+				)
+				.data;
+		}
+		else {
+			// Reading from data object, update the DOM
+			var cells = row.anCells;
+	
+			if ( cells ) {
+				if ( colIdx !== undefined ) {
+					cellWrite( cells[colIdx], colIdx );
+				}
+				else {
+					for ( i=0, ien=cells.length ; i<ien ; i++ ) {
+						cellWrite( cells[i], i );
+					}
+				}
+			}
+		}
+	
+		// For both row and cell invalidation, the cached data for sorting and
+		// filtering is nulled out
+		row._aSortData = null;
+		row._aFilterData = null;
+	
+		// Invalidate the type for a specific column (if given) or all columns since
+		// the data might have changed
+		var cols = settings.aoColumns;
+		if ( colIdx !== undefined ) {
+			cols[ colIdx ].sType = null;
+		}
+		else {
+			for ( i=0, ien=cols.length ; i<ien ; i++ ) {
+				cols[i].sType = null;
+			}
+	
+			// Update DataTables special `DT_*` attributes for the row
+			_fnRowAttributes( settings, row );
+		}
+	}
+	
+	
+	/**
+	 * Build a data source object from an HTML row, reading the contents of the
+	 * cells that are in the row.
+	 *
+	 * @param {object} settings DataTables settings object
+	 * @param {node|object} TR element from which to read data or existing row
+	 *   object from which to re-read the data from the cells
+	 * @param {int} [colIdx] Optional column index
+	 * @param {array|object} [d] Data source object. If `colIdx` is given then this
+	 *   parameter should also be given and will be used to write the data into.
+	 *   Only the column in question will be written
+	 * @returns {object} Object with two parameters: `data` the data read, in
+	 *   document order, and `cells` and array of nodes (they can be useful to the
+	 *   caller, so rather than needing a second traversal to get them, just return
+	 *   them from here).
+	 * @memberof DataTable#oApi
+	 */
+	function _fnGetRowElements( settings, row, colIdx, d )
+	{
+		var
+			tds = [],
+			td = row.firstChild,
+			name, col, o, i=0, contents,
+			columns = settings.aoColumns,
+			objectRead = settings._rowReadObject;
+	
+		// Allow the data object to be passed in, or construct
+		d = d !== undefined ?
+			d :
+			objectRead ?
+				{} :
+				[];
+	
+		var attr = function ( str, td  ) {
+			if ( typeof str === 'string' ) {
+				var idx = str.indexOf('@');
+	
+				if ( idx !== -1 ) {
+					var attr = str.substring( idx+1 );
+					var setter = _fnSetObjectDataFn( str );
+					setter( d, td.getAttribute( attr ) );
+				}
+			}
+		};
+	
+		// Read data from a cell and store into the data object
+		var cellProcess = function ( cell ) {
+			if ( colIdx === undefined || colIdx === i ) {
+				col = columns[i];
+				contents = $.trim(cell.innerHTML);
+	
+				if ( col && col._bAttrSrc ) {
+					var setter = _fnSetObjectDataFn( col.mData._ );
+					setter( d, contents );
+	
+					attr( col.mData.sort, cell );
+					attr( col.mData.type, cell );
+					attr( col.mData.filter, cell );
+				}
+				else {
+					// Depending on the `data` option for the columns the data can
+					// be read to either an object or an array.
+					if ( objectRead ) {
+						if ( ! col._setter ) {
+							// Cache the setter function
+							col._setter = _fnSetObjectDataFn( col.mData );
+						}
+						col._setter( d, contents );
+					}
+					else {
+						d[i] = contents;
+					}
+				}
+			}
+	
+			i++;
+		};
+	
+		if ( td ) {
+			// `tr` element was passed in
+			while ( td ) {
+				name = td.nodeName.toUpperCase();
+	
+				if ( name == "TD" || name == "TH" ) {
+					cellProcess( td );
+					tds.push( td );
+				}
+	
+				td = td.nextSibling;
+			}
+		}
+		else {
+			// Existing row object passed in
+			tds = row.anCells;
+	
+			for ( var j=0, jen=tds.length ; j<jen ; j++ ) {
+				cellProcess( tds[j] );
+			}
+		}
+	
+		// Read the ID from the DOM if present
+		var rowNode = row.firstChild ? row : row.nTr;
+	
+		if ( rowNode ) {
+			var id = rowNode.getAttribute( 'id' );
+	
+			if ( id ) {
+				_fnSetObjectDataFn( settings.rowId )( d, id );
+			}
+		}
+	
+		return {
+			data: d,
+			cells: tds
+		};
+	}
+	/**
+	 * Create a new TR element (and it's TD children) for a row
+	 *  @param {object} oSettings dataTables settings object
+	 *  @param {int} iRow Row to consider
+	 *  @param {node} [nTrIn] TR element to add to the table - optional. If not given,
+	 *    DataTables will create a row automatically
+	 *  @param {array} [anTds] Array of TD|TH elements for the row - must be given
+	 *    if nTr is.
+	 *  @memberof DataTable#oApi
+	 */
+	function _fnCreateTr ( oSettings, iRow, nTrIn, anTds )
+	{
+		var
+			row = oSettings.aoData[iRow],
+			rowData = row._aData,
+			cells = [],
+			nTr, nTd, oCol,
+			i, iLen, create;
+	
+		if ( row.nTr === null )
+		{
+			nTr = nTrIn || document.createElement('tr');
+	
+			row.nTr = nTr;
+			row.anCells = cells;
+	
+			/* Use a private property on the node to allow reserve mapping from the node
+			 * to the aoData array for fast look up
+			 */
+			nTr._DT_RowIndex = iRow;
+	
+			/* Special parameters can be given by the data source to be used on the row */
+			_fnRowAttributes( oSettings, row );
+	
+			/* Process each column */
+			for ( i=0, iLen=oSettings.aoColumns.length ; i<iLen ; i++ )
+			{
+				oCol = oSettings.aoColumns[i];
+				create = nTrIn ? false : true;
+	
+				nTd = create ? document.createElement( oCol.sCellType ) : anTds[i];
+				nTd._DT_CellIndex = {
+					row: iRow,
+					column: i
+				};
+				
+				cells.push( nTd );
+	
+				// Need to create the HTML if new, or if a rendering function is defined
+				if ( create || ((!nTrIn || oCol.mRender || oCol.mData !== i) &&
+					 (!$.isPlainObject(oCol.mData) || oCol.mData._ !== i+'.display')
+				)) {
+					nTd.innerHTML = _fnGetCellData( oSettings, iRow, i, 'display' );
+				}
+	
+				/* Add user defined class */
+				if ( oCol.sClass )
+				{
+					nTd.className += ' '+oCol.sClass;
+				}
+	
+				// Visibility - add or remove as required
+				if ( oCol.bVisible && ! nTrIn )
+				{
+					nTr.appendChild( nTd );
+				}
+				else if ( ! oCol.bVisible && nTrIn )
+				{
+					nTd.parentNode.removeChild( nTd );
+				}
+	
+				if ( oCol.fnCreatedCell )
+				{
+					oCol.fnCreatedCell.call( oSettings.oInstance,
+						nTd, _fnGetCellData( oSettings, iRow, i ), rowData, iRow, i
+					);
+				}
+			}
+	
+			_fnCallbackFire( oSettings, 'aoRowCreatedCallback', null, [nTr, rowData, iRow, cells] );
+		}
+	
+		// Remove once webkit bug 131819 and Chromium bug 365619 have been resolved
+		// and deployed
+		row.nTr.setAttribute( 'role', 'row' );
+	}
+	
+	
+	/**
+	 * Add attributes to a row based on the special `DT_*` parameters in a data
+	 * source object.
+	 *  @param {object} settings DataTables settings object
+	 *  @param {object} DataTables row object for the row to be modified
+	 *  @memberof DataTable#oApi
+	 */
+	function _fnRowAttributes( settings, row )
+	{
+		var tr = row.nTr;
+		var data = row._aData;
+	
+		if ( tr ) {
+			var id = settings.rowIdFn( data );
+	
+			if ( id ) {
+				tr.id = id;
+			}
+	
+			if ( data.DT_RowClass ) {
+				// Remove any classes added by DT_RowClass before
+				var a = data.DT_RowClass.split(' ');
+				row.__rowc = row.__rowc ?
+					_unique( row.__rowc.concat( a ) ) :
+					a;
+	
+				$(tr)
+					.removeClass( row.__rowc.join(' ') )
+					.addClass( data.DT_RowClass );
+			}
+	
+			if ( data.DT_RowAttr ) {
+				$(tr).attr( data.DT_RowAttr );
+			}
+	
+			if ( data.DT_RowData ) {
+				$(tr).data( data.DT_RowData );
+			}
+		}
+	}
+	
+	
+	/**
+	 * Create the HTML header for the table
+	 *  @param {object} oSettings dataTables settings object
+	 *  @memberof DataTable#oApi
+	 */
+	function _fnBuildHead( oSettings )
+	{
+		var i, ien, cell, row, column;
+		var thead = oSettings.nTHead;
+		var tfoot = oSettings.nTFoot;
+		var createHeader = $('th, td', thead).length === 0;
+		var classes = oSettings.oClasses;
+		var columns = oSettings.aoColumns;
+	
+		if ( createHeader ) {
+			row = $('<tr/>').appendTo( thead );
+		}
+	
+		for ( i=0, ien=columns.length ; i<ien ; i++ ) {
+			column = columns[i];
+			cell = $( column.nTh ).addClass( column.sClass );
+	
+			if ( createHeader ) {
+				cell.appendTo( row );
+			}
+	
+			// 1.11 move into sorting
+			if ( oSettings.oFeatures.bSort ) {
+				cell.addClass( column.sSortingClass );
+	
+				if ( column.bSortable !== false ) {
+					cell
+						.attr( 'tabindex', oSettings.iTabIndex )
+						.attr( 'aria-controls', oSettings.sTableId );
+	
+					_fnSortAttachListener( oSettings, column.nTh, i );
+				}
+			}
+	
+			if ( column.sTitle != cell[0].innerHTML ) {
+				cell.html( column.sTitle );
+			}
+	
+			_fnRenderer( oSettings, 'header' )(
+				oSettings, cell, column, classes
+			);
+		}
+	
+		if ( createHeader ) {
+			_fnDetectHeader( oSettings.aoHeader, thead );
+		}
+		
+		/* ARIA role for the rows */
+	 	$(thead).find('>tr').attr('role', 'row');
+	
+		/* Deal with the footer - add classes if required */
+		$(thead).find('>tr>th, >tr>td').addClass( classes.sHeaderTH );
+		$(tfoot).find('>tr>th, >tr>td').addClass( classes.sFooterTH );
+	
+		// Cache the footer cells. Note that we only take the cells from the first
+		// row in the footer. If there is more than one row the user wants to
+		// interact with, they need to use the table().foot() method. Note also this
+		// allows cells to be used for multiple columns using colspan
+		if ( tfoot !== null ) {
+			var cells = oSettings.aoFooter[0];
+	
+			for ( i=0, ien=cells.length ; i<ien ; i++ ) {
+				column = columns[i];
+				column.nTf = cells[i].cell;
+	
+				if ( column.sClass ) {
+					$(column.nTf).addClass( column.sClass );
+				}
+			}
+		}
+	}
+	
+	
+	/**
+	 * Draw the header (or footer) element based on the column visibility states. The
+	 * methodology here is to use the layout array from _fnDetectHeader, modified for
+	 * the instantaneous column visibility, to construct the new layout. The grid is
+	 * traversed over cell at a time in a rows x columns grid fashion, although each
+	 * cell insert can cover multiple elements in the grid - which is tracks using the
+	 * aApplied array. Cell inserts in the grid will only occur where there isn't
+	 * already a cell in that position.
+	 *  @param {object} oSettings dataTables settings object
+	 *  @param array {objects} aoSource Layout array from _fnDetectHeader
+	 *  @param {boolean} [bIncludeHidden=false] If true then include the hidden columns in the calc,
+	 *  @memberof DataTable#oApi
+	 */
+	function _fnDrawHead( oSettings, aoSource, bIncludeHidden )
+	{
+		var i, iLen, j, jLen, k, kLen, n, nLocalTr;
+		var aoLocal = [];
+		var aApplied = [];
+		var iColumns = oSettings.aoColumns.length;
+		var iRowspan, iColspan;
+	
+		if ( ! aoSource )
+		{
+			return;
+		}
+	
+		if (  bIncludeHidden === undefined )
+		{
+			bIncludeHidden = false;
+		}
+	
+		/* Make a copy of the master layout array, but without the visible columns in it */
+		for ( i=0, iLen=aoSource.length ; i<iLen ; i++ )
+		{
+			aoLocal[i] = aoSource[i].slice();
+			aoLocal[i].nTr = aoSource[i].nTr;
+	
+			/* Remove any columns which are currently hidden */
+			for ( j=iColumns-1 ; j>=0 ; j-- )
+			{
+				if ( !oSettings.aoColumns[j].bVisible && !bIncludeHidden )
+				{
+					aoLocal[i].splice( j, 1 );
+				}
+			}
+	
+			/* Prep the applied array - it needs an element for each row */
+			aApplied.push( [] );
+		}
+	
+		for ( i=0, iLen=aoLocal.length ; i<iLen ; i++ )
+		{
+			nLocalTr = aoLocal[i].nTr;
+	
+			/* All cells are going to be replaced, so empty out the row */
+			if ( nLocalTr )
+			{
+				while( (n = nLocalTr.firstChild) )
+				{
+					nLocalTr.removeChild( n );
+				}
+			}
+	
+			for ( j=0, jLen=aoLocal[i].length ; j<jLen ; j++ )
+			{
+				iRowspan = 1;
+				iColspan = 1;
+	
+				/* Check to see if there is already a cell (row/colspan) covering our target
+				 * insert point. If there is, then there is nothing to do.
+				 */
+				if ( aApplied[i][j] === undefined )
+				{
+					nLocalTr.appendChild( aoLocal[i][j].cell );
+					aApplied[i][j] = 1;
+	
+					/* Expand the cell to cover as many rows as needed */
+					while ( aoLocal[i+iRowspan] !== undefined &&
+					        aoLocal[i][j].cell == aoLocal[i+iRowspan][j].cell )
+					{
+						aApplied[i+iRowspan][j] = 1;
+						iRowspan++;
+					}
+	
+					/* Expand the cell to cover as many columns as needed */
+					while ( aoLocal[i][j+iColspan] !== undefined &&
+					        aoLocal[i][j].cell == aoLocal[i][j+iColspan].cell )
+					{
+						/* Must update the applied array over the rows for the columns */
+						for ( k=0 ; k<iRowspan ; k++ )
+						{
+							aApplied[i+k][j+iColspan] = 1;
+						}
+						iColspan++;
+					}
+	
+					/* Do the actual expansion in the DOM */
+					$(aoLocal[i][j].cell)
+						.attr('rowspan', iRowspan)
+						.attr('colspan', iColspan);
+				}
+			}
+		}
+	}
+	
+	
+	/**
+	 * Insert the required TR nodes into the table for display
+	 *  @param {object} oSettings dataTables settings object
+	 *  @memberof DataTable#oApi
+	 */
+	function _fnDraw( oSettings )
+	{
+		/* Provide a pre-callback function which can be used to cancel the draw is false is returned */
+		var aPreDraw = _fnCallbackFire( oSettings, 'aoPreDrawCallback', 'preDraw', [oSettings] );
+		if ( $.inArray( false, aPreDraw ) !== -1 )
+		{
+			_fnProcessingDisplay( oSettings, false );
+			return;
+		}
+	
+		var i, iLen, n;
+		var anRows = [];
+		var iRowCount = 0;
+		var asStripeClasses = oSettings.asStripeClasses;
+		var iStripes = asStripeClasses.length;
+		var iOpenRows = oSettings.aoOpenRows.length;
+		var oLang = oSettings.oLanguage;
+		var iInitDisplayStart = oSettings.iInitDisplayStart;
+		var bServerSide = _fnDataSource( oSettings ) == 'ssp';
+		var aiDisplay = oSettings.aiDisplay;
+	
+		oSettings.bDrawing = true;
+	
+		/* Check and see if we have an initial draw position from state saving */
+		if ( iInitDisplayStart !== undefined && iInitDisplayStart !== -1 )
+		{
+			oSettings._iDisplayStart = bServerSide ?
+				iInitDisplayStart :
+				iInitDisplayStart >= oSettings.fnRecordsDisplay() ?
+					0 :
+					iInitDisplayStart;
+	
+			oSettings.iInitDisplayStart = -1;
+		}
+	
+		var iDisplayStart = oSettings._iDisplayStart;
+		var iDisplayEnd = oSettings.fnDisplayEnd();
+	
+		/* Server-side processing draw intercept */
+		if ( oSettings.bDeferLoading )
+		{
+			oSettings.bDeferLoading = false;
+			oSettings.iDraw++;
+			_fnProcessingDisplay( oSettings, false );
+		}
+		else if ( !bServerSide )
+		{
+			oSettings.iDraw++;
+		}
+		else if ( !oSettings.bDestroying && !_fnAjaxUpdate( oSettings ) )
+		{
+			return;
+		}
+	
+		if ( aiDisplay.length !== 0 )
+		{
+			var iStart = bServerSide ? 0 : iDisplayStart;
+			var iEnd = bServerSide ? oSettings.aoData.length : iDisplayEnd;
+	
+			for ( var j=iStart ; j<iEnd ; j++ )
+			{
+				var iDataIndex = aiDisplay[j];
+				var aoData = oSettings.aoData[ iDataIndex ];
+				if ( aoData.nTr === null )
+				{
+					_fnCreateTr( oSettings, iDataIndex );
+				}
+	
+				var nRow = aoData.nTr;
+	
+				/* Remove the old striping classes and then add the new one */
+				if ( iStripes !== 0 )
+				{
+					var sStripe = asStripeClasses[ iRowCount % iStripes ];
+					if ( aoData._sRowStripe != sStripe )
+					{
+						$(nRow).removeClass( aoData._sRowStripe ).addClass( sStripe );
+						aoData._sRowStripe = sStripe;
+					}
+				}
+	
+				// Row callback functions - might want to manipulate the row
+				// iRowCount and j are not currently documented. Are they at all
+				// useful?
+				_fnCallbackFire( oSettings, 'aoRowCallback', null,
+					[nRow, aoData._aData, iRowCount, j, iDataIndex] );
+	
+				anRows.push( nRow );
+				iRowCount++;
+			}
+		}
+		else
+		{
+			/* Table is empty - create a row with an empty message in it */
+			var sZero = oLang.sZeroRecords;
+			if ( oSettings.iDraw == 1 &&  _fnDataSource( oSettings ) == 'ajax' )
+			{
+				sZero = oLang.sLoadingRecords;
+			}
+			else if ( oLang.sEmptyTable && oSettings.fnRecordsTotal() === 0 )
+			{
+				sZero = oLang.sEmptyTable;
+			}
+	
+			anRows[ 0 ] = $( '<tr/>', { 'class': iStripes ? asStripeClasses[0] : '' } )
+				.append( $('<td />', {
+					'valign':  'top',
+					'colSpan': _fnVisbleColumns( oSettings ),
+					'class':   oSettings.oClasses.sRowEmpty
+				} ).html( sZero ) )[0];
+		}
+	
+		/* Header and footer callbacks */
+		_fnCallbackFire( oSettings, 'aoHeaderCallback', 'header', [ $(oSettings.nTHead).children('tr')[0],
+			_fnGetDataMaster( oSettings ), iDisplayStart, iDisplayEnd, aiDisplay ] );
+	
+		_fnCallbackFire( oSettings, 'aoFooterCallback', 'footer', [ $(oSettings.nTFoot).children('tr')[0],
+			_fnGetDataMaster( oSettings ), iDisplayStart, iDisplayEnd, aiDisplay ] );
+	
+		var body = $(oSettings.nTBody);
+	
+		body.children().detach();
+		body.append( $(anRows) );
+	
+		/* Call all required callback functions for the end of a draw */
+		_fnCallbackFire( oSettings, 'aoDrawCallback', 'draw', [oSettings] );
+	
+		/* Draw is complete, sorting and filtering must be as well */
+		oSettings.bSorted = false;
+		oSettings.bFiltered = false;
+		oSettings.bDrawing = false;
+	}
+	
+	
+	/**
+	 * Redraw the table - taking account of the various features which are enabled
+	 *  @param {object} oSettings dataTables settings object
+	 *  @param {boolean} [holdPosition] Keep the current paging position. By default
+	 *    the paging is reset to the first page
+	 *  @memberof DataTable#oApi
+	 */
+	function _fnReDraw( settings, holdPosition )
+	{
+		var
+			features = settings.oFeatures,
+			sort     = features.bSort,
+			filter   = features.bFilter;
+	
+		if ( sort ) {
+			_fnSort( settings );
+		}
+	
+		if ( filter ) {
+			_fnFilterComplete( settings, settings.oPreviousSearch );
+		}
+		else {
+			// No filtering, so we want to just use the display master
+			settings.aiDisplay = settings.aiDisplayMaster.slice();
+		}
+	
+		if ( holdPosition !== true ) {
+			settings._iDisplayStart = 0;
+		}
+	
+		// Let any modules know about the draw hold position state (used by
+		// scrolling internally)
+		settings._drawHold = holdPosition;
+	
+		_fnDraw( settings );
+	
+		settings._drawHold = false;
+	}
+	
+	
+	/**
+	 * Add the options to the page HTML for the table
+	 *  @param {object} oSettings dataTables settings object
+	 *  @memberof DataTable#oApi
+	 */
+	function _fnAddOptionsHtml ( oSettings )
+	{
+		var classes = oSettings.oClasses;
+		var table = $(oSettings.nTable);
+		var holding = $('<div/>').insertBefore( table ); // Holding element for speed
+		var features = oSettings.oFeatures;
+	
+		// All DataTables are wrapped in a div
+		var insert = $('<div/>', {
+			id:      oSettings.sTableId+'_wrapper',
+			'class': classes.sWrapper + (oSettings.nTFoot ? '' : ' '+classes.sNoFooter)
+		} );
+	
+		oSettings.nHolding = holding[0];
+		oSettings.nTableWrapper = insert[0];
+		oSettings.nTableReinsertBefore = oSettings.nTable.nextSibling;
+	
+		/* Loop over the user set positioning and place the elements as needed */
+		var aDom = oSettings.sDom.split('');
+		var featureNode, cOption, nNewNode, cNext, sAttr, j;
+		for ( var i=0 ; i<aDom.length ; i++ )
+		{
+			featureNode = null;
+			cOption = aDom[i];
+	
+			if ( cOption == '<' )
+			{
+				/* New container div */
+				nNewNode = $('<div/>')[0];
+	
+				/* Check to see if we should append an id and/or a class name to the container */
+				cNext = aDom[i+1];
+				if ( cNext == "'" || cNext == '"' )
+				{
+					sAttr = "";
+					j = 2;
+					while ( aDom[i+j] != cNext )
+					{
+						sAttr += aDom[i+j];
+						j++;
+					}
+	
+					/* Replace jQuery UI constants @todo depreciated */
+					if ( sAttr == "H" )
+					{
+						sAttr = classes.sJUIHeader;
+					}
+					else if ( sAttr == "F" )
+					{
+						sAttr = classes.sJUIFooter;
+					}
+	
+					/* The attribute can be in the format of "#id.class", "#id" or "class" This logic
+					 * breaks the string into parts and applies them as needed
+					 */
+					if ( sAttr.indexOf('.') != -1 )
+					{
+						var aSplit = sAttr.split('.');
+						nNewNode.id = aSplit[0].substr(1, aSplit[0].length-1);
+						nNewNode.className = aSplit[1];
+					}
+					else if ( sAttr.charAt(0) == "#" )
+					{
+						nNewNode.id = sAttr.substr(1, sAttr.length-1);
+					}
+					else
+					{
+						nNewNode.className = sAttr;
+					}
+	
+					i += j; /* Move along the position array */
+				}
+	
+				insert.append( nNewNode );
+				insert = $(nNewNode);
+			}
+			else if ( cOption == '>' )
+			{
+				/* End container div */
+				insert = insert.parent();
+			}
+			// @todo Move options into their own plugins?
+			else if ( cOption == 'l' && features.bPaginate && features.bLengthChange )
+			{
+				/* Length */
+				featureNode = _fnFeatureHtmlLength( oSettings );
+			}
+			else if ( cOption == 'f' && features.bFilter )
+			{
+				/* Filter */
+				featureNode = _fnFeatureHtmlFilter( oSettings );
+			}
+			else if ( cOption == 'r' && features.bProcessing )
+			{
+				/* pRocessing */
+				featureNode = _fnFeatureHtmlProcessing( oSettings );
+			}
+			else if ( cOption == 't' )
+			{
+				/* Table */
+				featureNode = _fnFeatureHtmlTable( oSettings );
+			}
+			else if ( cOption ==  'i' && features.bInfo )
+			{
+				/* Info */
+				featureNode = _fnFeatureHtmlInfo( oSettings );
+			}
+			else if ( cOption == 'p' && features.bPaginate )
+			{
+				/* Pagination */
+				featureNode = _fnFeatureHtmlPaginate( oSettings );
+			}
+			else if ( DataTable.ext.feature.length !== 0 )
+			{
+				/* Plug-in features */
+				var aoFeatures = DataTable.ext.feature;
+				for ( var k=0, kLen=aoFeatures.length ; k<kLen ; k++ )
+				{
+					if ( cOption == aoFeatures[k].cFeature )
+					{
+						featureNode = aoFeatures[k].fnInit( oSettings );
+						break;
+					}
+				}
+			}
+	
+			/* Add to the 2D features array */
+			if ( featureNode )
+			{
+				var aanFeatures = oSettings.aanFeatures;
+	
+				if ( ! aanFeatures[cOption] )
+				{
+					aanFeatures[cOption] = [];
+				}
+	
+				aanFeatures[cOption].push( featureNode );
+				insert.append( featureNode );
+			}
+		}
+	
+		/* Built our DOM structure - replace the holding div with what we want */
+		holding.replaceWith( insert );
+		oSettings.nHolding = null;
+	}
+	
+	
+	/**
+	 * Use the DOM source to create up an array of header cells. The idea here is to
+	 * create a layout grid (array) of rows x columns, which contains a reference
+	 * to the cell that that point in the grid (regardless of col/rowspan), such that
+	 * any column / row could be removed and the new grid constructed
+	 *  @param array {object} aLayout Array to store the calculated layout in
+	 *  @param {node} nThead The header/footer element for the table
+	 *  @memberof DataTable#oApi
+	 */
+	function _fnDetectHeader ( aLayout, nThead )
+	{
+		var nTrs = $(nThead).children('tr');
+		var nTr, nCell;
+		var i, k, l, iLen, jLen, iColShifted, iColumn, iColspan, iRowspan;
+		var bUnique;
+		var fnShiftCol = function ( a, i, j ) {
+			var k = a[i];
+	                while ( k[j] ) {
+				j++;
+			}
+			return j;
+		};
+	
+		aLayout.splice( 0, aLayout.length );
+	
+		/* We know how many rows there are in the layout - so prep it */
+		for ( i=0, iLen=nTrs.length ; i<iLen ; i++ )
+		{
+			aLayout.push( [] );
+		}
+	
+		/* Calculate a layout array */
+		for ( i=0, iLen=nTrs.length ; i<iLen ; i++ )
+		{
+			nTr = nTrs[i];
+			iColumn = 0;
+	
+			/* For every cell in the row... */
+			nCell = nTr.firstChild;
+			while ( nCell ) {
+				if ( nCell.nodeName.toUpperCase() == "TD" ||
+				     nCell.nodeName.toUpperCase() == "TH" )
+				{
+					/* Get the col and rowspan attributes from the DOM and sanitise them */
+					iColspan = nCell.getAttribute('colspan') * 1;
+					iRowspan = nCell.getAttribute('rowspan') * 1;
+					iColspan = (!iColspan || iColspan===0 || iColspan===1) ? 1 : iColspan;
+					iRowspan = (!iRowspan || iRowspan===0 || iRowspan===1) ? 1 : iRowspan;
+	
+					/* There might be colspan cells already in this row, so shift our target
+					 * accordingly
+					 */
+					iColShifted = fnShiftCol( aLayout, i, iColumn );
+	
+					/* Cache calculation for unique columns */
+					bUnique = iColspan === 1 ? true : false;
+	
+					/* If there is col / rowspan, copy the information into the layout grid */
+					for ( l=0 ; l<iColspan ; l++ )
+					{
+						for ( k=0 ; k<iRowspan ; k++ )
+						{
+							aLayout[i+k][iColShifted+l] = {
+								"cell": nCell,
+								"unique": bUnique
+							};
+							aLayout[i+k].nTr = nTr;
+						}
+					}
+				}
+				nCell = nCell.nextSibling;
+			}
+		}
+	}
+	
+	
+	/**
+	 * Get an array of unique th elements, one for each column
+	 *  @param {object} oSettings dataTables settings object
+	 *  @param {node} nHeader automatically detect the layout from this node - optional
+	 *  @param {array} aLayout thead/tfoot layout from _fnDetectHeader - optional
+	 *  @returns array {node} aReturn list of unique th's
+	 *  @memberof DataTable#oApi
+	 */
+	function _fnGetUniqueThs ( oSettings, nHeader, aLayout )
+	{
+		var aReturn = [];
+		if ( !aLayout )
+		{
+			aLayout = oSettings.aoHeader;
+			if ( nHeader )
+			{
+				aLayout = [];
+				_fnDetectHeader( aLayout, nHeader );
+			}
+		}
+	
+		for ( var i=0, iLen=aLayout.length ; i<iLen ; i++ )
+		{
+			for ( var j=0, jLen=aLayout[i].length ; j<jLen ; j++ )
+			{
+				if ( aLayout[i][j].unique &&
+					 (!aReturn[j] || !oSettings.bSortCellsTop) )
+				{
+					aReturn[j] = aLayout[i][j].cell;
+				}
+			}
+		}
+	
+		return aReturn;
+	}
+	
+	/**
+	 * Create an Ajax call based on the table's settings, taking into account that
+	 * parameters can have multiple forms, and backwards compatibility.
+	 *
+	 * @param {object} oSettings dataTables settings object
+	 * @param {array} data Data to send to the server, required by
+	 *     DataTables - may be augmented by developer callbacks
+	 * @param {function} fn Callback function to run when data is obtained
+	 */
+	function _fnBuildAjax( oSettings, data, fn )
+	{
+		// Compatibility with 1.9-, allow fnServerData and event to manipulate
+		_fnCallbackFire( oSettings, 'aoServerParams', 'serverParams', [data] );
+	
+		// Convert to object based for 1.10+ if using the old array scheme which can
+		// come from server-side processing or serverParams
+		if ( data && $.isArray(data) ) {
+			var tmp = {};
+			var rbracket = /(.*?)\[\]$/;
+	
+			$.each( data, function (key, val) {
+				var match = val.name.match(rbracket);
+	
+				if ( match ) {
+					// Support for arrays
+					var name = match[0];
+	
+					if ( ! tmp[ name ] ) {
+						tmp[ name ] = [];
+					}
+					tmp[ name ].push( val.value );
+				}
+				else {
+					tmp[val.name] = val.value;
+				}
+			} );
+			data = tmp;
+		}
+	
+		var ajaxData;
+		var ajax = oSettings.ajax;
+		var instance = oSettings.oInstance;
+		var callback = function ( json ) {
+			_fnCallbackFire( oSettings, null, 'xhr', [oSettings, json, oSettings.jqXHR] );
+			fn( json );
+		};
+	
+		if ( $.isPlainObject( ajax ) && ajax.data )
+		{
+			ajaxData = ajax.data;
+	
+			var newData = typeof ajaxData === 'function' ?
+				ajaxData( data, oSettings ) :  // fn can manipulate data or return
+				ajaxData;                      // an object object or array to merge
+	
+			// If the function returned something, use that alone
+			data = typeof ajaxData === 'function' && newData ?
+				newData :
+				$.extend( true, data, newData );
+	
+			// Remove the data property as we've resolved it already and don't want
+			// jQuery to do it again (it is restored at the end of the function)
+			delete ajax.data;
+		}
+	
+		var baseAjax = {
+			"data": data,
+			"success": function (json) {
+				var error = json.error || json.sError;
+				if ( error ) {
+					_fnLog( oSettings, 0, error );
+				}
+	
+				oSettings.json = json;
+				callback( json );
+			},
+			"dataType": "json",
+			"cache": false,
+			"type": oSettings.sServerMethod,
+			"error": function (xhr, error, thrown) {
+				var ret = _fnCallbackFire( oSettings, null, 'xhr', [oSettings, null, oSettings.jqXHR] );
+	
+				if ( $.inArray( true, ret ) === -1 ) {
+					if ( error == "parsererror" ) {
+						_fnLog( oSettings, 0, 'Invalid JSON response', 1 );
+					}
+					else if ( xhr.readyState === 4 ) {
+						_fnLog( oSettings, 0, 'Ajax error', 7 );
+					}
+				}
+	
+				_fnProcessingDisplay( oSettings, false );
+			}
+		};
+	
+		// Store the data submitted for the API
+		oSettings.oAjaxData = data;
+	
+		// Allow plug-ins and external processes to modify the data
+		_fnCallbackFire( oSettings, null, 'preXhr', [oSettings, data] );
+	
+		if ( oSettings.fnServerData )
+		{
+			// DataTables 1.9- compatibility
+			oSettings.fnServerData.call( instance,
+				oSettings.sAjaxSource,
+				$.map( data, function (val, key) { // Need to convert back to 1.9 trad format
+					return { name: key, value: val };
+				} ),
+				callback,
+				oSettings
+			);
+		}
+		else if ( oSettings.sAjaxSource || typeof ajax === 'string' )
+		{
+			// DataTables 1.9- compatibility
+			oSettings.jqXHR = $.ajax( $.extend( baseAjax, {
+				url: ajax || oSettings.sAjaxSource
+			} ) );
+		}
+		else if ( typeof ajax === 'function' )
+		{
+			// Is a function - let the caller define what needs to be done
+			oSettings.jqXHR = ajax.call( instance, data, callback, oSettings );
+		}
+		else
+		{
+			// Object to extend the base settings
+			oSettings.jqXHR = $.ajax( $.extend( baseAjax, ajax ) );
+	
+			// Restore for next time around
+			ajax.data = ajaxData;
+		}
+	}
+	
+	
+	/**
+	 * Update the table using an Ajax call
+	 *  @param {object} settings dataTables settings object
+	 *  @returns {boolean} Block the table drawing or not
+	 *  @memberof DataTable#oApi
+	 */
+	function _fnAjaxUpdate( settings )
+	{
+		if ( settings.bAjaxDataGet ) {
+			settings.iDraw++;
+			_fnProcessingDisplay( settings, true );
+	
+			_fnBuildAjax(
+				settings,
+				_fnAjaxParameters( settings ),
+				function(json) {
+					_fnAjaxUpdateDraw( settings, json );
+				}
+			);
+	
+			return false;
+		}
+		return true;
+	}
+	
+	
+	/**
+	 * Build up the parameters in an object needed for a server-side processing
+	 * request. Note that this is basically done twice, is different ways - a modern
+	 * method which is used by default in DataTables 1.10 which uses objects and
+	 * arrays, or the 1.9- method with is name / value pairs. 1.9 method is used if
+	 * the sAjaxSource option is used in the initialisation, or the legacyAjax
+	 * option is set.
+	 *  @param {object} oSettings dataTables settings object
+	 *  @returns {bool} block the table drawing or not
+	 *  @memberof DataTable#oApi
+	 */
+	function _fnAjaxParameters( settings )
+	{
+		var
+			columns = settings.aoColumns,
+			columnCount = columns.length,
+			features = settings.oFeatures,
+			preSearch = settings.oPreviousSearch,
+			preColSearch = settings.aoPreSearchCols,
+			i, data = [], dataProp, column, columnSearch,
+			sort = _fnSortFlatten( settings ),
+			displayStart = settings._iDisplayStart,
+			displayLength = features.bPaginate !== false ?
+				settings._iDisplayLength :
+				-1;
+	
+		var param = function ( name, value ) {
+			data.push( { 'name': name, 'value': value } );
+		};
+	
+		// DataTables 1.9- compatible method
+		param( 'sEcho',          settings.iDraw );
+		param( 'iColumns',       columnCount );
+		param( 'sColumns',       _pluck( columns, 'sName' ).join(',') );
+		param( 'iDisplayStart',  displayStart );
+		param( 'iDisplayLength', displayLength );
+	
+		// DataTables 1.10+ method
+		var d = {
+			draw:    settings.iDraw,
+			columns: [],
+			order:   [],
+			start:   displayStart,
+			length:  displayLength,
+			search:  {
+				value: preSearch.sSearch,
+				regex: preSearch.bRegex
+			}
+		};
+	
+		for ( i=0 ; i<columnCount ; i++ ) {
+			column = columns[i];
+			columnSearch = preColSearch[i];
+			dataProp = typeof column.mData=="function" ? 'function' : column.mData ;
+	
+			d.columns.push( {
+				data:       dataProp,
+				name:       column.sName,
+				searchable: column.bSearchable,
+				orderable:  column.bSortable,
+				search:     {
+					value: columnSearch.sSearch,
+					regex: columnSearch.bRegex
+				}
+			} );
+	
+			param( "mDataProp_"+i, dataProp );
+	
+			if ( features.bFilter ) {
+				param( 'sSearch_'+i,     columnSearch.sSearch );
+				param( 'bRegex_'+i,      columnSearch.bRegex );
+				param( 'bSearchable_'+i, column.bSearchable );
+			}
+	
+			if ( features.bSort ) {
+				param( 'bSortable_'+i, column.bSortable );
+			}
+		}
+	
+		if ( features.bFilter ) {
+			param( 'sSearch', preSearch.sSearch );
+			param( 'bRegex', preSearch.bRegex );
+		}
+	
+		if ( features.bSort ) {
+			$.each( sort, function ( i, val ) {
+				d.order.push( { column: val.col, dir: val.dir } );
+	
+				param( 'iSortCol_'+i, val.col );
+				param( 'sSortDir_'+i, val.dir );
+			} );
+	
+			param( 'iSortingCols', sort.length );
+		}
+	
+		// If the legacy.ajax parameter is null, then we automatically decide which
+		// form to use, based on sAjaxSource
+		var legacy = DataTable.ext.legacy.ajax;
+		if ( legacy === null ) {
+			return settings.sAjaxSource ? data : d;
+		}
+	
+		// Otherwise, if legacy has been specified then we use that to decide on the
+		// form
+		return legacy ? data : d;
+	}
+	
+	
+	/**
+	 * Data the data from the server (nuking the old) and redraw the table
+	 *  @param {object} oSettings dataTables settings object
+	 *  @param {object} json json data return from the server.
+	 *  @param {string} json.sEcho Tracking flag for DataTables to match requests
+	 *  @param {int} json.iTotalRecords Number of records in the data set, not accounting for filtering
+	 *  @param {int} json.iTotalDisplayRecords Number of records in the data set, accounting for filtering
+	 *  @param {array} json.aaData The data to display on this page
+	 *  @param {string} [json.sColumns] Column ordering (sName, comma separated)
+	 *  @memberof DataTable#oApi
+	 */
+	function _fnAjaxUpdateDraw ( settings, json )
+	{
+		// v1.10 uses camelCase variables, while 1.9 uses Hungarian notation.
+		// Support both
+		var compat = function ( old, modern ) {
+			return json[old] !== undefined ? json[old] : json[modern];
+		};
+	
+		var data = _fnAjaxDataSrc( settings, json );
+		var draw            = compat( 'sEcho',                'draw' );
+		var recordsTotal    = compat( 'iTotalRecords',        'recordsTotal' );
+		var recordsFiltered = compat( 'iTotalDisplayRecords', 'recordsFiltered' );
+	
+		if ( draw !== undefined ) {
+			// Protect against out of sequence returns
+			if ( draw*1 < settings.iDraw ) {
+				return;
+			}
+			settings.iDraw = draw * 1;
+		}
+	
+		_fnClearTable( settings );
+		settings._iRecordsTotal   = parseInt(recordsTotal, 10);
+		settings._iRecordsDisplay = parseInt(recordsFiltered, 10);
+	
+		for ( var i=0, ien=data.length ; i<ien ; i++ ) {
+			_fnAddData( settings, data[i] );
+		}
+		settings.aiDisplay = settings.aiDisplayMaster.slice();
+	
+		settings.bAjaxDataGet = false;
+		_fnDraw( settings );
+	
+		if ( ! settings._bInitComplete ) {
+			_fnInitComplete( settings, json );
+		}
+	
+		settings.bAjaxDataGet = true;
+		_fnProcessingDisplay( settings, false );
+	}
+	
+	
+	/**
+	 * Get the data from the JSON data source to use for drawing a table. Using
+	 * `_fnGetObjectDataFn` allows the data to be sourced from a property of the
+	 * source object, or from a processing function.
+	 *  @param {object} oSettings dataTables settings object
+	 *  @param  {object} json Data source object / array from the server
+	 *  @return {array} Array of data to use
+	 */
+	function _fnAjaxDataSrc ( oSettings, json )
+	{
+		var dataSrc = $.isPlainObject( oSettings.ajax ) && oSettings.ajax.dataSrc !== undefined ?
+			oSettings.ajax.dataSrc :
+			oSettings.sAjaxDataProp; // Compatibility with 1.9-.
+	
+		// Compatibility with 1.9-. In order to read from aaData, check if the
+		// default has been changed, if not, check for aaData
+		if ( dataSrc === 'data' ) {
+			return json.aaData || json[dataSrc];
+		}
+	
+		return dataSrc !== "" ?
+			_fnGetObjectDataFn( dataSrc )( json ) :
+			json;
+	}
+	
+	/**
+	 * Generate the node required for filtering text
+	 *  @returns {node} Filter control element
+	 *  @param {object} oSettings dataTables settings object
+	 *  @memberof DataTable#oApi
+	 */
+	function _fnFeatureHtmlFilter ( settings )
+	{
+		var classes = settings.oClasses;
+		var tableId = settings.sTableId;
+		var language = settings.oLanguage;
+		var previousSearch = settings.oPreviousSearch;
+		var features = settings.aanFeatures;
+		var input = '<input type="search" class="'+classes.sFilterInput+'"/>';
+	
+		var str = language.sSearch;
+		str = str.match(/_INPUT_/) ?
+			str.replace('_INPUT_', input) :
+			str+input;
+	
+		var filter = $('<div/>', {
+				'id': ! features.f ? tableId+'_filter' : null,
+				'class': classes.sFilter
+			} )
+			.append( $('<label/>' ).append( str ) );
+	
+		var searchFn = function() {
+			/* Update all other filter input elements for the new display */
+			var n = features.f;
+			var val = !this.value ? "" : this.value; // mental IE8 fix :-(
+	
+			/* Now do the filter */
+			if ( val != previousSearch.sSearch ) {
+				_fnFilterComplete( settings, {
+					"sSearch": val,
+					"bRegex": previousSearch.bRegex,
+					"bSmart": previousSearch.bSmart ,
+					"bCaseInsensitive": previousSearch.bCaseInsensitive
+				} );
+	
+				// Need to redraw, without resorting
+				settings._iDisplayStart = 0;
+				_fnDraw( settings );
+			}
+		};
+	
+		var searchDelay = settings.searchDelay !== null ?
+			settings.searchDelay :
+			_fnDataSource( settings ) === 'ssp' ?
+				400 :
+				0;
+	
+		var jqFilter = $('input', filter)
+			.val( previousSearch.sSearch )
+			.attr( 'placeholder', language.sSearchPlaceholder )
+			.on(
+				'keyup.DT search.DT input.DT paste.DT cut.DT',
+				searchDelay ?
+					_fnThrottle( searchFn, searchDelay ) :
+					searchFn
+			)
+			.on( 'mouseup', function(e) {
+				// Edge fix! Edge 17 does not trigger anything other than mouse events when clicking
+				// on the clear icon (Edge bug 17584515). This is safe in other browsers as `searchFn`
+				// checks the value to see if it has changed. In other browsers it won't have.
+				setTimeout( function () {
+					searchFn.call(jqFilter[0]);
+				}, 10);
+			} )
+			.on( 'keypress.DT', function(e) {
+				/* Prevent form submission */
+				if ( e.keyCode == 13 ) {
+					return false;
+				}
+			} )
+			.attr('aria-controls', tableId);
+	
+		// Update the input elements whenever the table is filtered
+		$(settings.nTable).on( 'search.dt.DT', function ( ev, s ) {
+			if ( settings === s ) {
+				// IE9 throws an 'unknown error' if document.activeElement is used
+				// inside an iframe or frame...
+				try {
+					if ( jqFilter[0] !== document.activeElement ) {
+						jqFilter.val( previousSearch.sSearch );
+					}
+				}
+				catch ( e ) {}
+			}
+		} );
+	
+		return filter[0];
+	}
+	
+	
+	/**
+	 * Filter the table using both the global filter and column based filtering
+	 *  @param {object} oSettings dataTables settings object
+	 *  @param {object} oSearch search information
+	 *  @param {int} [iForce] force a research of the master array (1) or not (undefined or 0)
+	 *  @memberof DataTable#oApi
+	 */
+	function _fnFilterComplete ( oSettings, oInput, iForce )
+	{
+		var oPrevSearch = oSettings.oPreviousSearch;
+		var aoPrevSearch = oSettings.aoPreSearchCols;
+		var fnSaveFilter = function ( oFilter ) {
+			/* Save the filtering values */
+			oPrevSearch.sSearch = oFilter.sSearch;
+			oPrevSearch.bRegex = oFilter.bRegex;
+			oPrevSearch.bSmart = oFilter.bSmart;
+			oPrevSearch.bCaseInsensitive = oFilter.bCaseInsensitive;
+		};
+		var fnRegex = function ( o ) {
+			// Backwards compatibility with the bEscapeRegex option
+			return o.bEscapeRegex !== undefined ? !o.bEscapeRegex : o.bRegex;
+		};
+	
+		// Resolve any column types that are unknown due to addition or invalidation
+		// @todo As per sort - can this be moved into an event handler?
+		_fnColumnTypes( oSettings );
+	
+		/* In server-side processing all filtering is done by the server, so no point hanging around here */
+		if ( _fnDataSource( oSettings ) != 'ssp' )
+		{
+			/* Global filter */
+			_fnFilter( oSettings, oInput.sSearch, iForce, fnRegex(oInput), oInput.bSmart, oInput.bCaseInsensitive );
+			fnSaveFilter( oInput );
+	
+			/* Now do the individual column filter */
+			for ( var i=0 ; i<aoPrevSearch.length ; i++ )
+			{
+				_fnFilterColumn( oSettings, aoPrevSearch[i].sSearch, i, fnRegex(aoPrevSearch[i]),
+					aoPrevSearch[i].bSmart, aoPrevSearch[i].bCaseInsensitive );
+			}
+	
+			/* Custom filtering */
+			_fnFilterCustom( oSettings );
+		}
+		else
+		{
+			fnSaveFilter( oInput );
+		}
+	
+		/* Tell the draw function we have been filtering */
+		oSettings.bFiltered = true;
+		_fnCallbackFire( oSettings, null, 'search', [oSettings] );
+	}
+	
+	
+	/**
+	 * Apply custom filtering functions
+	 *  @param {object} oSettings dataTables settings object
+	 *  @memberof DataTable#oApi
+	 */
+	function _fnFilterCustom( settings )
+	{
+		var filters = DataTable.ext.search;
+		var displayRows = settings.aiDisplay;
+		var row, rowIdx;
+	
+		for ( var i=0, ien=filters.length ; i<ien ; i++ ) {
+			var rows = [];
+	
+			// Loop over each row and see if it should be included
+			for ( var j=0, jen=displayRows.length ; j<jen ; j++ ) {
+				rowIdx = displayRows[ j ];
+				row = settings.aoData[ rowIdx ];
+	
+				if ( filters[i]( settings, row._aFilterData, rowIdx, row._aData, j ) ) {
+					rows.push( rowIdx );
+				}
+			}
+	
+			// So the array reference doesn't break set the results into the
+			// existing array
+			displayRows.length = 0;
+			$.merge( displayRows, rows );
+		}
+	}
+	
+	
+	/**
+	 * Filter the table on a per-column basis
+	 *  @param {object} oSettings dataTables settings object
+	 *  @param {string} sInput string to filter on
+	 *  @param {int} iColumn column to filter
+	 *  @param {bool} bRegex treat search string as a regular expression or not
+	 *  @param {bool} bSmart use smart filtering or not
+	 *  @param {bool} bCaseInsensitive Do case insenstive matching or not
+	 *  @memberof DataTable#oApi
+	 */
+	function _fnFilterColumn ( settings, searchStr, colIdx, regex, smart, caseInsensitive )
+	{
+		if ( searchStr === '' ) {
+			return;
+		}
+	
+		var data;
+		var out = [];
+		var display = settings.aiDisplay;
+		var rpSearch = _fnFilterCreateSearch( searchStr, regex, smart, caseInsensitive );
+	
+		for ( var i=0 ; i<display.length ; i++ ) {
+			data = settings.aoData[ display[i] ]._aFilterData[ colIdx ];
+	
+			if ( rpSearch.test( data ) ) {
+				out.push( display[i] );
+			}
+		}
+	
+		settings.aiDisplay = out;
+	}
+	
+	
+	/**
+	 * Filter the data table based on user input and draw the table
+	 *  @param {object} settings dataTables settings object
+	 *  @param {string} input string to filter on
+	 *  @param {int} force optional - force a research of the master array (1) or not (undefined or 0)
+	 *  @param {bool} regex treat as a regular expression or not
+	 *  @param {bool} smart perform smart filtering or not
+	 *  @param {bool} caseInsensitive Do case insenstive matching or not
+	 *  @memberof DataTable#oApi
+	 */
+	function _fnFilter( settings, input, force, regex, smart, caseInsensitive )
+	{
+		var rpSearch = _fnFilterCreateSearch( input, regex, smart, caseInsensitive );
+		var prevSearch = settings.oPreviousSearch.sSearch;
+		var displayMaster = settings.aiDisplayMaster;
+		var display, invalidated, i;
+		var filtered = [];
+	
+		// Need to take account of custom filtering functions - always filter
+		if ( DataTable.ext.search.length !== 0 ) {
+			force = true;
+		}
+	
+		// Check if any of the rows were invalidated
+		invalidated = _fnFilterData( settings );
+	
+		// If the input is blank - we just want the full data set
+		if ( input.length <= 0 ) {
+			settings.aiDisplay = displayMaster.slice();
+		}
+		else {
+			// New search - start from the master array
+			if ( invalidated ||
+				 force ||
+				 regex ||
+				 prevSearch.length > input.length ||
+				 input.indexOf(prevSearch) !== 0 ||
+				 settings.bSorted // On resort, the display master needs to be
+				                  // re-filtered since indexes will have changed
+			) {
+				settings.aiDisplay = displayMaster.slice();
+			}
+	
+			// Search the display array
+			display = settings.aiDisplay;
+	
+			for ( i=0 ; i<display.length ; i++ ) {
+				if ( rpSearch.test( settings.aoData[ display[i] ]._sFilterRow ) ) {
+					filtered.push( display[i] );
+				}
+			}
+	
+			settings.aiDisplay = filtered;
+		}
+	}
+	
+	
+	/**
+	 * Build a regular expression object suitable for searching a table
+	 *  @param {string} sSearch string to search for
+	 *  @param {bool} bRegex treat as a regular expression or not
+	 *  @param {bool} bSmart perform smart filtering or not
+	 *  @param {bool} bCaseInsensitive Do case insensitive matching or not
+	 *  @returns {RegExp} constructed object
+	 *  @memberof DataTable#oApi
+	 */
+	function _fnFilterCreateSearch( search, regex, smart, caseInsensitive )
+	{
+		search = regex ?
+			search :
+			_fnEscapeRegex( search );
+		
+		if ( smart ) {
+			/* For smart filtering we want to allow the search to work regardless of
+			 * word order. We also want double quoted text to be preserved, so word
+			 * order is important - a la google. So this is what we want to
+			 * generate:
+			 * 
+			 * ^(?=.*?\bone\b)(?=.*?\btwo three\b)(?=.*?\bfour\b).*$
+			 */
+			var a = $.map( search.match( /"[^"]+"|[^ ]+/g ) || [''], function ( word ) {
+				if ( word.charAt(0) === '"' ) {
+					var m = word.match( /^"(.*)"$/ );
+					word = m ? m[1] : word;
+				}
+	
+				return word.replace('"', '');
+			} );
+	
+			search = '^(?=.*?'+a.join( ')(?=.*?' )+').*$';
+		}
+	
+		return new RegExp( search, caseInsensitive ? 'i' : '' );
+	}
+	
+	
+	/**
+	 * Escape a string such that it can be used in a regular expression
+	 *  @param {string} sVal string to escape
+	 *  @returns {string} escaped string
+	 *  @memberof DataTable#oApi
+	 */
+	var _fnEscapeRegex = DataTable.util.escapeRegex;
+	
+	var __filter_div = $('<div>')[0];
+	var __filter_div_textContent = __filter_div.textContent !== undefined;
+	
+	// Update the filtering data for each row if needed (by invalidation or first run)
+	function _fnFilterData ( settings )
+	{
+		var columns = settings.aoColumns;
+		var column;
+		var i, j, ien, jen, filterData, cellData, row;
+		var fomatters = DataTable.ext.type.search;
+		var wasInvalidated = false;
+	
+		for ( i=0, ien=settings.aoData.length ; i<ien ; i++ ) {
+			row = settings.aoData[i];
+	
+			if ( ! row._aFilterData ) {
+				filterData = [];
+	
+				for ( j=0, jen=columns.length ; j<jen ; j++ ) {
+					column = columns[j];
+	
+					if ( column.bSearchable ) {
+						cellData = _fnGetCellData( settings, i, j, 'filter' );
+	
+						if ( fomatters[ column.sType ] ) {
+							cellData = fomatters[ column.sType ]( cellData );
+						}
+	
+						// Search in DataTables 1.10 is string based. In 1.11 this
+						// should be altered to also allow strict type checking.
+						if ( cellData === null ) {
+							cellData = '';
+						}
+	
+						if ( typeof cellData !== 'string' && cellData.toString ) {
+							cellData = cellData.toString();
+						}
+					}
+					else {
+						cellData = '';
+					}
+	
+					// If it looks like there is an HTML entity in the string,
+					// attempt to decode it so sorting works as expected. Note that
+					// we could use a single line of jQuery to do this, but the DOM
+					// method used here is much faster http://jsperf.com/html-decode
+					if ( cellData.indexOf && cellData.indexOf('&') !== -1 ) {
+						__filter_div.innerHTML = cellData;
+						cellData = __filter_div_textContent ?
+							__filter_div.textContent :
+							__filter_div.innerText;
+					}
+	
+					if ( cellData.replace ) {
+						cellData = cellData.replace(/[\r\n\u2028]/g, '');
+					}
+	
+					filterData.push( cellData );
+				}
+	
+				row._aFilterData = filterData;
+				row._sFilterRow = filterData.join('  ');
+				wasInvalidated = true;
+			}
+		}
+	
+		return wasInvalidated;
+	}
+	
+	
+	/**
+	 * Convert from the internal Hungarian notation to camelCase for external
+	 * interaction
+	 *  @param {object} obj Object to convert
+	 *  @returns {object} Inverted object
+	 *  @memberof DataTable#oApi
+	 */
+	function _fnSearchToCamel ( obj )
+	{
+		return {
+			search:          obj.sSearch,
+			smart:           obj.bSmart,
+			regex:           obj.bRegex,
+			caseInsensitive: obj.bCaseInsensitive
+		};
+	}
+	
+	
+	
+	/**
+	 * Convert from camelCase notation to the internal Hungarian. We could use the
+	 * Hungarian convert function here, but this is cleaner
+	 *  @param {object} obj Object to convert
+	 *  @returns {object} Inverted object
+	 *  @memberof DataTable#oApi
+	 */
+	function _fnSearchToHung ( obj )
+	{
+		return {
+			sSearch:          obj.search,
+			bSmart:           obj.smart,
+			bRegex:           obj.regex,
+			bCaseInsensitive: obj.caseInsensitive
+		};
+	}
+	
+	/**
+	 * Generate the node required for the info display
+	 *  @param {object} oSettings dataTables settings object
+	 *  @returns {node} Information element
+	 *  @memberof DataTable#oApi
+	 */
+	function _fnFeatureHtmlInfo ( settings )
+	{
+		var
+			tid = settings.sTableId,
+			nodes = settings.aanFeatures.i,
+			n = $('<div/>', {
+				'class': settings.oClasses.sInfo,
+				'id': ! nodes ? tid+'_info' : null
+			} );
+	
+		if ( ! nodes ) {
+			// Update display on each draw
+			settings.aoDrawCallback.push( {
+				"fn": _fnUpdateInfo,
+				"sName": "information"
+			} );
+	
+			n
+				.attr( 'role', 'status' )
+				.attr( 'aria-live', 'polite' );
+	
+			// Table is described by our info div
+			$(settings.nTable).attr( 'aria-describedby', tid+'_info' );
+		}
+	
+		return n[0];
+	}
+	
+	
+	/**
+	 * Update the information elements in the display
+	 *  @param {object} settings dataTables settings object
+	 *  @memberof DataTable#oApi
+	 */
+	function _fnUpdateInfo ( settings )
+	{
+		/* Show information about the table */
+		var nodes = settings.aanFeatures.i;
+		if ( nodes.length === 0 ) {
+			return;
+		}
+	
+		var
+			lang  = settings.oLanguage,
+			start = settings._iDisplayStart+1,
+			end   = settings.fnDisplayEnd(),
+			max   = settings.fnRecordsTotal(),
+			total = settings.fnRecordsDisplay(),
+			out   = total ?
+				lang.sInfo :
+				lang.sInfoEmpty;
+	
+		if ( total !== max ) {
+			/* Record set after filtering */
+			out += ' ' + lang.sInfoFiltered;
+		}
+	
+		// Convert the macros
+		out += lang.sInfoPostFix;
+		out = _fnInfoMacros( settings, out );
+	
+		var callback = lang.fnInfoCallback;
+		if ( callback !== null ) {
+			out = callback.call( settings.oInstance,
+				settings, start, end, max, total, out
+			);
+		}
+	
+		$(nodes).html( out );
+	}
+	
+	
+	function _fnInfoMacros ( settings, str )
+	{
+		// When infinite scrolling, we are always starting at 1. _iDisplayStart is used only
+		// internally
+		var
+			formatter  = settings.fnFormatNumber,
+			start      = settings._iDisplayStart+1,
+			len        = settings._iDisplayLength,
+			vis        = settings.fnRecordsDisplay(),
+			all        = len === -1;
+	
+		return str.
+			replace(/_START_/g, formatter.call( settings, start ) ).
+			replace(/_END_/g,   formatter.call( settings, settings.fnDisplayEnd() ) ).
+			replace(/_MAX_/g,   formatter.call( settings, settings.fnRecordsTotal() ) ).
+			replace(/_TOTAL_/g, formatter.call( settings, vis ) ).
+			replace(/_PAGE_/g,  formatter.call( settings, all ? 1 : Math.ceil( start / len ) ) ).
+			replace(/_PAGES_/g, formatter.call( settings, all ? 1 : Math.ceil( vis / len ) ) );
+	}
+	
+	
+	
+	/**
+	 * Draw the table for the first time, adding all required features
+	 *  @param {object} settings dataTables settings object
+	 *  @memberof DataTable#oApi
+	 */
+	function _fnInitialise ( settings )
+	{
+		var i, iLen, iAjaxStart=settings.iInitDisplayStart;
+		var columns = settings.aoColumns, column;
+		var features = settings.oFeatures;
+		var deferLoading = settings.bDeferLoading; // value modified by the draw
+	
+		/* Ensure that the table data is fully initialised */
+		if ( ! settings.bInitialised ) {
+			setTimeout( function(){ _fnInitialise( settings ); }, 200 );
+			return;
+		}
+	
+		/* Show the display HTML options */
+		_fnAddOptionsHtml( settings );
+	
+		/* Build and draw the header / footer for the table */
+		_fnBuildHead( settings );
+		_fnDrawHead( settings, settings.aoHeader );
+		_fnDrawHead( settings, settings.aoFooter );
+	
+		/* Okay to show that something is going on now */
+		_fnProcessingDisplay( settings, true );
+	
+		/* Calculate sizes for columns */
+		if ( features.bAutoWidth ) {
+			_fnCalculateColumnWidths( settings );
+		}
+	
+		for ( i=0, iLen=columns.length ; i<iLen ; i++ ) {
+			column = columns[i];
+	
+			if ( column.sWidth ) {
+				column.nTh.style.width = _fnStringToCss( column.sWidth );
+			}
+		}
+	
+		_fnCallbackFire( settings, null, 'preInit', [settings] );
+	
+		// If there is default sorting required - let's do it. The sort function
+		// will do the drawing for us. Otherwise we draw the table regardless of the
+		// Ajax source - this allows the table to look initialised for Ajax sourcing
+		// data (show 'loading' message possibly)
+		_fnReDraw( settings );
+	
+		// Server-side processing init complete is done by _fnAjaxUpdateDraw
+		var dataSrc = _fnDataSource( settings );
+		if ( dataSrc != 'ssp' || deferLoading ) {
+			// if there is an ajax source load the data
+			if ( dataSrc == 'ajax' ) {
+				_fnBuildAjax( settings, [], function(json) {
+					var aData = _fnAjaxDataSrc( settings, json );
+	
+					// Got the data - add it to the table
+					for ( i=0 ; i<aData.length ; i++ ) {
+						_fnAddData( settings, aData[i] );
+					}
+	
+					// Reset the init display for cookie saving. We've already done
+					// a filter, and therefore cleared it before. So we need to make
+					// it appear 'fresh'
+					settings.iInitDisplayStart = iAjaxStart;
+	
+					_fnReDraw( settings );
+	
+					_fnProcessingDisplay( settings, false );
+					_fnInitComplete( settings, json );
+				}, settings );
+			}
+			else {
+				_fnProcessingDisplay( settings, false );
+				_fnInitComplete( settings );
+			}
+		}
+	}
+	
+	
+	/**
+	 * Draw the table for the first time, adding all required features
+	 *  @param {object} oSettings dataTables settings object
+	 *  @param {object} [json] JSON from the server that completed the table, if using Ajax source
+	 *    with client-side processing (optional)
+	 *  @memberof DataTable#oApi
+	 */
+	function _fnInitComplete ( settings, json )
+	{
+		settings._bInitComplete = true;
+	
+		// When data was added after the initialisation (data or Ajax) we need to
+		// calculate the column sizing
+		if ( json || settings.oInit.aaData ) {
+			_fnAdjustColumnSizing( settings );
+		}
+	
+		_fnCallbackFire( settings, null, 'plugin-init', [settings, json] );
+		_fnCallbackFire( settings, 'aoInitComplete', 'init', [settings, json] );
+	}
+	
+	
+	function _fnLengthChange ( settings, val )
+	{
+		var len = parseInt( val, 10 );
+		settings._iDisplayLength = len;
+	
+		_fnLengthOverflow( settings );
+	
+		// Fire length change event
+		_fnCallbackFire( settings, null, 'length', [settings, len] );
+	}
+	
+	
+	/**
+	 * Generate the node required for user display length changing
+	 *  @param {object} settings dataTables settings object
+	 *  @returns {node} Display length feature node
+	 *  @memberof DataTable#oApi
+	 */
+	function _fnFeatureHtmlLength ( settings )
+	{
+		var
+			classes  = settings.oClasses,
+			tableId  = settings.sTableId,
+			menu     = settings.aLengthMenu,
+			d2       = $.isArray( menu[0] ),
+			lengths  = d2 ? menu[0] : menu,
+			language = d2 ? menu[1] : menu;
+	
+		var select = $('<select/>', {
+			'name':          tableId+'_length',
+			'aria-controls': tableId,
+			'class':         classes.sLengthSelect
+		} );
+	
+		for ( var i=0, ien=lengths.length ; i<ien ; i++ ) {
+			select[0][ i ] = new Option(
+				typeof language[i] === 'number' ?
+					settings.fnFormatNumber( language[i] ) :
+					language[i],
+				lengths[i]
+			);
+		}
+	
+		var div = $('<div><label/></div>').addClass( classes.sLength );
+		if ( ! settings.aanFeatures.l ) {
+			div[0].id = tableId+'_length';
+		}
+	
+		div.children().append(
+			settings.oLanguage.sLengthMenu.replace( '_MENU_', select[0].outerHTML )
+		);
+	
+		// Can't use `select` variable as user might provide their own and the
+		// reference is broken by the use of outerHTML
+		$('select', div)
+			.val( settings._iDisplayLength )
+			.on( 'change.DT', function(e) {
+				_fnLengthChange( settings, $(this).val() );
+				_fnDraw( settings );
+			} );
+	
+		// Update node value whenever anything changes the table's length
+		$(settings.nTable).on( 'length.dt.DT', function (e, s, len) {
+			if ( settings === s ) {
+				$('select', div).val( len );
+			}
+		} );
+	
+		return div[0];
+	}
+	
+	
+	
+	/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+	 * Note that most of the paging logic is done in
+	 * DataTable.ext.pager
+	 */
+	
+	/**
+	 * Generate the node required for default pagination
+	 *  @param {object} oSettings dataTables settings object
+	 *  @returns {node} Pagination feature node
+	 *  @memberof DataTable#oApi
+	 */
+	function _fnFeatureHtmlPaginate ( settings )
+	{
+		var
+			type   = settings.sPaginationType,
+			plugin = DataTable.ext.pager[ type ],
+			modern = typeof plugin === 'function',
+			redraw = function( settings ) {
+				_fnDraw( settings );
+			},
+			node = $('<div/>').addClass( settings.oClasses.sPaging + type )[0],
+			features = settings.aanFeatures;
+	
+		if ( ! modern ) {
+			plugin.fnInit( settings, node, redraw );
+		}
+	
+		/* Add a draw callback for the pagination on first instance, to update the paging display */
+		if ( ! features.p )
+		{
+			node.id = settings.sTableId+'_paginate';
+	
+			settings.aoDrawCallback.push( {
+				"fn": function( settings ) {
+					if ( modern ) {
+						var
+							start      = settings._iDisplayStart,
+							len        = settings._iDisplayLength,
+							visRecords = settings.fnRecordsDisplay(),
+							all        = len === -1,
+							page = all ? 0 : Math.ceil( start / len ),
+							pages = all ? 1 : Math.ceil( visRecords / len ),
+							buttons = plugin(page, pages),
+							i, ien;
+	
+						for ( i=0, ien=features.p.length ; i<ien ; i++ ) {
+							_fnRenderer( settings, 'pageButton' )(
+								settings, features.p[i], i, buttons, page, pages
+							);
+						}
+					}
+					else {
+						plugin.fnUpdate( settings, redraw );
+					}
+				},
+				"sName": "pagination"
+			} );
+		}
+	
+		return node;
+	}
+	
+	
+	/**
+	 * Alter the display settings to change the page
+	 *  @param {object} settings DataTables settings object
+	 *  @param {string|int} action Paging action to take: "first", "previous",
+	 *    "next" or "last" or page number to jump to (integer)
+	 *  @param [bool] redraw Automatically draw the update or not
+	 *  @returns {bool} true page has changed, false - no change
+	 *  @memberof DataTable#oApi
+	 */
+	function _fnPageChange ( settings, action, redraw )
+	{
+		var
+			start     = settings._iDisplayStart,
+			len       = settings._iDisplayLength,
+			records   = settings.fnRecordsDisplay();
+	
+		if ( records === 0 || len === -1 )
+		{
+			start = 0;
+		}
+		else if ( typeof action === "number" )
+		{
+			start = action * len;
+	
+			if ( start > records )
+			{
+				start = 0;
+			}
+		}
+		else if ( action == "first" )
+		{
+			start = 0;
+		}
+		else if ( action == "previous" )
+		{
+			start = len >= 0 ?
+				start - len :
+				0;
+	
+			if ( start < 0 )
+			{
+			  start = 0;
+			}
+		}
+		else if ( action == "next" )
+		{
+			if ( start + len < records )
+			{
+				start += len;
+			}
+		}
+		else if ( action == "last" )
+		{
+			start = Math.floor( (records-1) / len) * len;
+		}
+		else
+		{
+			_fnLog( settings, 0, "Unknown paging action: "+action, 5 );
+		}
+	
+		var changed = settings._iDisplayStart !== start;
+		settings._iDisplayStart = start;
+	
+		if ( changed ) {
+			_fnCallbackFire( settings, null, 'page', [settings] );
+	
+			if ( redraw ) {
+				_fnDraw( settings );
+			}
+		}
+	
+		return changed;
+	}
+	
+	
+	
+	/**
+	 * Generate the node required for the processing node
+	 *  @param {object} settings dataTables settings object
+	 *  @returns {node} Processing element
+	 *  @memberof DataTable#oApi
+	 */
+	function _fnFeatureHtmlProcessing ( settings )
+	{
+		return $('<div/>', {
+				'id': ! settings.aanFeatures.r ? settings.sTableId+'_processing' : null,
+				'class': settings.oClasses.sProcessing
+			} )
+			.html( settings.oLanguage.sProcessing )
+			.insertBefore( settings.nTable )[0];
+	}
+	
+	
+	/**
+	 * Display or hide the processing indicator
+	 *  @param {object} settings dataTables settings object
+	 *  @param {bool} show Show the processing indicator (true) or not (false)
+	 *  @memberof DataTable#oApi
+	 */
+	function _fnProcessingDisplay ( settings, show )
+	{
+		if ( settings.oFeatures.bProcessing ) {
+			$(settings.aanFeatures.r).css( 'display', show ? 'block' : 'none' );
+		}
+	
+		_fnCallbackFire( settings, null, 'processing', [settings, show] );
+	}
+	
+	/**
+	 * Add any control elements for the table - specifically scrolling
+	 *  @param {object} settings dataTables settings object
+	 *  @returns {node} Node to add to the DOM
+	 *  @memberof DataTable#oApi
+	 */
+	function _fnFeatureHtmlTable ( settings )
+	{
+		var table = $(settings.nTable);
+	
+		// Add the ARIA grid role to the table
+		table.attr( 'role', 'grid' );
+	
+		// Scrolling from here on in
+		var scroll = settings.oScroll;
+	
+		if ( scroll.sX === '' && scroll.sY === '' ) {
+			return settings.nTable;
+		}
+	
+		var scrollX = scroll.sX;
+		var scrollY = scroll.sY;
+		var classes = settings.oClasses;
+		var caption = table.children('caption');
+		var captionSide = caption.length ? caption[0]._captionSide : null;
+		var headerClone = $( table[0].cloneNode(false) );
+		var footerClone = $( table[0].cloneNode(false) );
+		var footer = table.children('tfoot');
+		var _div = '<div/>';
+		var size = function ( s ) {
+			return !s ? null : _fnStringToCss( s );
+		};
+	
+		if ( ! footer.length ) {
+			footer = null;
+		}
+	
+		/*
+		 * The HTML structure that we want to generate in this function is:
+		 *  div - scroller
+		 *    div - scroll head
+		 *      div - scroll head inner
+		 *        table - scroll head table
+		 *          thead - thead
+		 *    div - scroll body
+		 *      table - table (master table)
+		 *        thead - thead clone for sizing
+		 *        tbody - tbody
+		 *    div - scroll foot
+		 *      div - scroll foot inner
+		 *        table - scroll foot table
+		 *          tfoot - tfoot
+		 */
+		var scroller = $( _div, { 'class': classes.sScrollWrapper } )
+			.append(
+				$(_div, { 'class': classes.sScrollHead } )
+					.css( {
+						overflow: 'hidden',
+						position: 'relative',
+						border: 0,
+						width: scrollX ? size(scrollX) : '100%'
+					} )
+					.append(
+						$(_div, { 'class': classes.sScrollHeadInner } )
+							.css( {
+								'box-sizing': 'content-box',
+								width: scroll.sXInner || '100%'
+							} )
+							.append(
+								headerClone
+									.removeAttr('id')
+									.css( 'margin-left', 0 )
+									.append( captionSide === 'top' ? caption : null )
+									.append(
+										table.children('thead')
+									)
+							)
+					)
+			)
+			.append(
+				$(_div, { 'class': classes.sScrollBody } )
+					.css( {
+						position: 'relative',
+						overflow: 'auto',
+						width: size( scrollX )
+					} )
+					.append( table )
+			);
+	
+		if ( footer ) {
+			scroller.append(
+				$(_div, { 'class': classes.sScrollFoot } )
+					.css( {
+						overflow: 'hidden',
+						border: 0,
+						width: scrollX ? size(scrollX) : '100%'
+					} )
+					.append(
+						$(_div, { 'class': classes.sScrollFootInner } )
+							.append(
+								footerClone
+									.removeAttr('id')
+									.css( 'margin-left', 0 )
+									.append( captionSide === 'bottom' ? caption : null )
+									.append(
+										table.children('tfoot')
+									)
+							)
+					)
+			);
+		}
+	
+		var children = scroller.children();
+		var scrollHead = children[0];
+		var scrollBody = children[1];
+		var scrollFoot = footer ? children[2] : null;
+	
+		// When the body is scrolled, then we also want to scroll the headers
+		if ( scrollX ) {
+			$(scrollBody).on( 'scroll.DT', function (e) {
+				var scrollLeft = this.scrollLeft;
+	
+				scrollHead.scrollLeft = scrollLeft;
+	
+				if ( footer ) {
+					scrollFoot.scrollLeft = scrollLeft;
+				}
+			} );
+		}
+	
+		$(scrollBody).css('max-height', scrollY);
+		if (! scroll.bCollapse) {
+			$(scrollBody).css('height', scrollY);
+		}
+	
+		settings.nScrollHead = scrollHead;
+		settings.nScrollBody = scrollBody;
+		settings.nScrollFoot = scrollFoot;
+	
+		// On redraw - align columns
+		settings.aoDrawCallback.push( {
+			"fn": _fnScrollDraw,
+			"sName": "scrolling"
+		} );
+	
+		return scroller[0];
+	}
+	
+	
+	
+	/**
+	 * Update the header, footer and body tables for resizing - i.e. column
+	 * alignment.
+	 *
+	 * Welcome to the most horrible function DataTables. The process that this
+	 * function follows is basically:
+	 *   1. Re-create the table inside the scrolling div
+	 *   2. Take live measurements from the DOM
+	 *   3. Apply the measurements to align the columns
+	 *   4. Clean up
+	 *
+	 *  @param {object} settings dataTables settings object
+	 *  @memberof DataTable#oApi
+	 */
+	function _fnScrollDraw ( settings )
+	{
+		// Given that this is such a monster function, a lot of variables are use
+		// to try and keep the minimised size as small as possible
+		var
+			scroll         = settings.oScroll,
+			scrollX        = scroll.sX,
+			scrollXInner   = scroll.sXInner,
+			scrollY        = scroll.sY,
+			barWidth       = scroll.iBarWidth,
+			divHeader      = $(settings.nScrollHead),
+			divHeaderStyle = divHeader[0].style,
+			divHeaderInner = divHeader.children('div'),
+			divHeaderInnerStyle = divHeaderInner[0].style,
+			divHeaderTable = divHeaderInner.children('table'),
+			divBodyEl      = settings.nScrollBody,
+			divBody        = $(divBodyEl),
+			divBodyStyle   = divBodyEl.style,
+			divFooter      = $(settings.nScrollFoot),
+			divFooterInner = divFooter.children('div'),
+			divFooterTable = divFooterInner.children('table'),
+			header         = $(settings.nTHead),
+			table          = $(settings.nTable),
+			tableEl        = table[0],
+			tableStyle     = tableEl.style,
+			footer         = settings.nTFoot ? $(settings.nTFoot) : null,
+			browser        = settings.oBrowser,
+			ie67           = browser.bScrollOversize,
+			dtHeaderCells  = _pluck( settings.aoColumns, 'nTh' ),
+			headerTrgEls, footerTrgEls,
+			headerSrcEls, footerSrcEls,
+			headerCopy, footerCopy,
+			headerWidths=[], footerWidths=[],
+			headerContent=[], footerContent=[],
+			idx, correction, sanityWidth,
+			zeroOut = function(nSizer) {
+				var style = nSizer.style;
+				style.paddingTop = "0";
+				style.paddingBottom = "0";
+				style.borderTopWidth = "0";
+				style.borderBottomWidth = "0";
+				style.height = 0;
+			};
+	
+		// If the scrollbar visibility has changed from the last draw, we need to
+		// adjust the column sizes as the table width will have changed to account
+		// for the scrollbar
+		var scrollBarVis = divBodyEl.scrollHeight > divBodyEl.clientHeight;
+		
+		if ( settings.scrollBarVis !== scrollBarVis && settings.scrollBarVis !== undefined ) {
+			settings.scrollBarVis = scrollBarVis;
+			_fnAdjustColumnSizing( settings );
+			return; // adjust column sizing will call this function again
+		}
+		else {
+			settings.scrollBarVis = scrollBarVis;
+		}
+	
+		/*
+		 * 1. Re-create the table inside the scrolling div
+		 */
+	
+		// Remove the old minimised thead and tfoot elements in the inner table
+		table.children('thead, tfoot').remove();
+	
+		if ( footer ) {
+			footerCopy = footer.clone().prependTo( table );
+			footerTrgEls = footer.find('tr'); // the original tfoot is in its own table and must be sized
+			footerSrcEls = footerCopy.find('tr');
+		}
+	
+		// Clone the current header and footer elements and then place it into the inner table
+		headerCopy = header.clone().prependTo( table );
+		headerTrgEls = header.find('tr'); // original header is in its own table
+		headerSrcEls = headerCopy.find('tr');
+		headerCopy.find('th, td').removeAttr('tabindex');
+	
+	
+		/*
+		 * 2. Take live measurements from the DOM - do not alter the DOM itself!
+		 */
+	
+		// Remove old sizing and apply the calculated column widths
+		// Get the unique column headers in the newly created (cloned) header. We want to apply the
+		// calculated sizes to this header
+		if ( ! scrollX )
+		{
+			divBodyStyle.width = '100%';
+			divHeader[0].style.width = '100%';
+		}
+	
+		$.each( _fnGetUniqueThs( settings, headerCopy ), function ( i, el ) {
+			idx = _fnVisibleToColumnIndex( settings, i );
+			el.style.width = settings.aoColumns[idx].sWidth;
+		} );
+	
+		if ( footer ) {
+			_fnApplyToChildren( function(n) {
+				n.style.width = "";
+			}, footerSrcEls );
+		}
+	
+		// Size the table as a whole
+		sanityWidth = table.outerWidth();
+		if ( scrollX === "" ) {
+			// No x scrolling
+			tableStyle.width = "100%";
+	
+			// IE7 will make the width of the table when 100% include the scrollbar
+			// - which is shouldn't. When there is a scrollbar we need to take this
+			// into account.
+			if ( ie67 && (table.find('tbody').height() > divBodyEl.offsetHeight ||
+				divBody.css('overflow-y') == "scroll")
+			) {
+				tableStyle.width = _fnStringToCss( table.outerWidth() - barWidth);
+			}
+	
+			// Recalculate the sanity width
+			sanityWidth = table.outerWidth();
+		}
+		else if ( scrollXInner !== "" ) {
+			// legacy x scroll inner has been given - use it
+			tableStyle.width = _fnStringToCss(scrollXInner);
+	
+			// Recalculate the sanity width
+			sanityWidth = table.outerWidth();
+		}
+	
+		// Hidden header should have zero height, so remove padding and borders. Then
+		// set the width based on the real headers
+	
+		// Apply all styles in one pass
+		_fnApplyToChildren( zeroOut, headerSrcEls );
+	
+		// Read all widths in next pass
+		_fnApplyToChildren( function(nSizer) {
+			headerContent.push( nSizer.innerHTML );
+			headerWidths.push( _fnStringToCss( $(nSizer).css('width') ) );
+		}, headerSrcEls );
+	
+		// Apply all widths in final pass
+		_fnApplyToChildren( function(nToSize, i) {
+			// Only apply widths to the DataTables detected header cells - this
+			// prevents complex headers from having contradictory sizes applied
+			if ( $.inArray( nToSize, dtHeaderCells ) !== -1 ) {
+				nToSize.style.width = headerWidths[i];
+			}
+		}, headerTrgEls );
+	
+		$(headerSrcEls).height(0);
+	
+		/* Same again with the footer if we have one */
+		if ( footer )
+		{
+			_fnApplyToChildren( zeroOut, footerSrcEls );
+	
+			_fnApplyToChildren( function(nSizer) {
+				footerContent.push( nSizer.innerHTML );
+				footerWidths.push( _fnStringToCss( $(nSizer).css('width') ) );
+			}, footerSrcEls );
+	
+			_fnApplyToChildren( function(nToSize, i) {
+				nToSize.style.width = footerWidths[i];
+			}, footerTrgEls );
+	
+			$(footerSrcEls).height(0);
+		}
+	
+	
+		/*
+		 * 3. Apply the measurements
+		 */
+	
+		// "Hide" the header and footer that we used for the sizing. We need to keep
+		// the content of the cell so that the width applied to the header and body
+		// both match, but we want to hide it completely. We want to also fix their
+		// width to what they currently are
+		_fnApplyToChildren( function(nSizer, i) {
+			nSizer.innerHTML = '<div class="dataTables_sizing">'+headerContent[i]+'</div>';
+			nSizer.childNodes[0].style.height = "0";
+			nSizer.childNodes[0].style.overflow = "hidden";
+			nSizer.style.width = headerWidths[i];
+		}, headerSrcEls );
+	
+		if ( footer )
+		{
+			_fnApplyToChildren( function(nSizer, i) {
+				nSizer.innerHTML = '<div class="dataTables_sizing">'+footerContent[i]+'</div>';
+				nSizer.childNodes[0].style.height = "0";
+				nSizer.childNodes[0].style.overflow = "hidden";
+				nSizer.style.width = footerWidths[i];
+			}, footerSrcEls );
+		}
+	
+		// Sanity check that the table is of a sensible width. If not then we are going to get
+		// misalignment - try to prevent this by not allowing the table to shrink below its min width
+		if ( table.outerWidth() < sanityWidth )
+		{
+			// The min width depends upon if we have a vertical scrollbar visible or not */
+			correction = ((divBodyEl.scrollHeight > divBodyEl.offsetHeight ||
+				divBody.css('overflow-y') == "scroll")) ?
+					sanityWidth+barWidth :
+					sanityWidth;
+	
+			// IE6/7 are a law unto themselves...
+			if ( ie67 && (divBodyEl.scrollHeight >
+				divBodyEl.offsetHeight || divBody.css('overflow-y') == "scroll")
+			) {
+				tableStyle.width = _fnStringToCss( correction-barWidth );
+			}
+	
+			// And give the user a warning that we've stopped the table getting too small
+			if ( scrollX === "" || scrollXInner !== "" ) {
+				_fnLog( settings, 1, 'Possible column misalignment', 6 );
+			}
+		}
+		else
+		{
+			correction = '100%';
+		}
+	
+		// Apply to the container elements
+		divBodyStyle.width = _fnStringToCss( correction );
+		divHeaderStyle.width = _fnStringToCss( correction );
+	
+		if ( footer ) {
+			settings.nScrollFoot.style.width = _fnStringToCss( correction );
+		}
+	
+	
+		/*
+		 * 4. Clean up
+		 */
+		if ( ! scrollY ) {
+			/* IE7< puts a vertical scrollbar in place (when it shouldn't be) due to subtracting
+			 * the scrollbar height from the visible display, rather than adding it on. We need to
+			 * set the height in order to sort this. Don't want to do it in any other browsers.
+			 */
+			if ( ie67 ) {
+				divBodyStyle.height = _fnStringToCss( tableEl.offsetHeight+barWidth );
+			}
+		}
+	
+		/* Finally set the width's of the header and footer tables */
+		var iOuterWidth = table.outerWidth();
+		divHeaderTable[0].style.width = _fnStringToCss( iOuterWidth );
+		divHeaderInnerStyle.width = _fnStringToCss( iOuterWidth );
+	
+		// Figure out if there are scrollbar present - if so then we need a the header and footer to
+		// provide a bit more space to allow "overflow" scrolling (i.e. past the scrollbar)
+		var bScrolling = table.height() > divBodyEl.clientHeight || divBody.css('overflow-y') == "scroll";
+		var padding = 'padding' + (browser.bScrollbarLeft ? 'Left' : 'Right' );
+		divHeaderInnerStyle[ padding ] = bScrolling ? barWidth+"px" : "0px";
+	
+		if ( footer ) {
+			divFooterTable[0].style.width = _fnStringToCss( iOuterWidth );
+			divFooterInner[0].style.width = _fnStringToCss( iOuterWidth );
+			divFooterInner[0].style[padding] = bScrolling ? barWidth+"px" : "0px";
+		}
+	
+		// Correct DOM ordering for colgroup - comes before the thead
+		table.children('colgroup').insertBefore( table.children('thead') );
+	
+		/* Adjust the position of the header in case we loose the y-scrollbar */
+		divBody.trigger('scroll');
+	
+		// If sorting or filtering has occurred, jump the scrolling back to the top
+		// only if we aren't holding the position
+		if ( (settings.bSorted || settings.bFiltered) && ! settings._drawHold ) {
+			divBodyEl.scrollTop = 0;
+		}
+	}
+	
+	
+	
+	/**
+	 * Apply a given function to the display child nodes of an element array (typically
+	 * TD children of TR rows
+	 *  @param {function} fn Method to apply to the objects
+	 *  @param array {nodes} an1 List of elements to look through for display children
+	 *  @param array {nodes} an2 Another list (identical structure to the first) - optional
+	 *  @memberof DataTable#oApi
+	 */
+	function _fnApplyToChildren( fn, an1, an2 )
+	{
+		var index=0, i=0, iLen=an1.length;
+		var nNode1, nNode2;
+	
+		while ( i < iLen ) {
+			nNode1 = an1[i].firstChild;
+			nNode2 = an2 ? an2[i].firstChild : null;
+	
+			while ( nNode1 ) {
+				if ( nNode1.nodeType === 1 ) {
+					if ( an2 ) {
+						fn( nNode1, nNode2, index );
+					}
+					else {
+						fn( nNode1, index );
+					}
+	
+					index++;
+				}
+	
+				nNode1 = nNode1.nextSibling;
+				nNode2 = an2 ? nNode2.nextSibling : null;
+			}
+	
+			i++;
+		}
+	}
+	
+	
+	
+	var __re_html_remove = /<.*?>/g;
+	
+	
+	/**
+	 * Calculate the width of columns for the table
+	 *  @param {object} oSettings dataTables settings object
+	 *  @memberof DataTable#oApi
+	 */
+	function _fnCalculateColumnWidths ( oSettings )
+	{
+		var
+			table = oSettings.nTable,
+			columns = oSettings.aoColumns,
+			scroll = oSettings.oScroll,
+			scrollY = scroll.sY,
+			scrollX = scroll.sX,
+			scrollXInner = scroll.sXInner,
+			columnCount = columns.length,
+			visibleColumns = _fnGetColumns( oSettings, 'bVisible' ),
+			headerCells = $('th', oSettings.nTHead),
+			tableWidthAttr = table.getAttribute('width'), // from DOM element
+			tableContainer = table.parentNode,
+			userInputs = false,
+			i, column, columnIdx, width, outerWidth,
+			browser = oSettings.oBrowser,
+			ie67 = browser.bScrollOversize;
+	
+		var styleWidth = table.style.width;
+		if ( styleWidth && styleWidth.indexOf('%') !== -1 ) {
+			tableWidthAttr = styleWidth;
+		}
+	
+		/* Convert any user input sizes into pixel sizes */
+		for ( i=0 ; i<visibleColumns.length ; i++ ) {
+			column = columns[ visibleColumns[i] ];
+	
+			if ( column.sWidth !== null ) {
+				column.sWidth = _fnConvertToWidth( column.sWidthOrig, tableContainer );
+	
+				userInputs = true;
+			}
+		}
+	
+		/* If the number of columns in the DOM equals the number that we have to
+		 * process in DataTables, then we can use the offsets that are created by
+		 * the web- browser. No custom sizes can be set in order for this to happen,
+		 * nor scrolling used
+		 */
+		if ( ie67 || ! userInputs && ! scrollX && ! scrollY &&
+		     columnCount == _fnVisbleColumns( oSettings ) &&
+		     columnCount == headerCells.length
+		) {
+			for ( i=0 ; i<columnCount ; i++ ) {
+				var colIdx = _fnVisibleToColumnIndex( oSettings, i );
+	
+				if ( colIdx !== null ) {
+					columns[ colIdx ].sWidth = _fnStringToCss( headerCells.eq(i).width() );
+				}
+			}
+		}
+		else
+		{
+			// Otherwise construct a single row, worst case, table with the widest
+			// node in the data, assign any user defined widths, then insert it into
+			// the DOM and allow the browser to do all the hard work of calculating
+			// table widths
+			var tmpTable = $(table).clone() // don't use cloneNode - IE8 will remove events on the main table
+				.css( 'visibility', 'hidden' )
+				.removeAttr( 'id' );
+	
+			// Clean up the table body
+			tmpTable.find('tbody tr').remove();
+			var tr = $('<tr/>').appendTo( tmpTable.find('tbody') );
+	
+			// Clone the table header and footer - we can't use the header / footer
+			// from the cloned table, since if scrolling is active, the table's
+			// real header and footer are contained in different table tags
+			tmpTable.find('thead, tfoot').remove();
+			tmpTable
+				.append( $(oSettings.nTHead).clone() )
+				.append( $(oSettings.nTFoot).clone() );
+	
+			// Remove any assigned widths from the footer (from scrolling)
+			tmpTable.find('tfoot th, tfoot td').css('width', '');
+	
+			// Apply custom sizing to the cloned header
+			headerCells = _fnGetUniqueThs( oSettings, tmpTable.find('thead')[0] );
+	
+			for ( i=0 ; i<visibleColumns.length ; i++ ) {
+				column = columns[ visibleColumns[i] ];
+	
+				headerCells[i].style.width = column.sWidthOrig !== null && column.sWidthOrig !== '' ?
+					_fnStringToCss( column.sWidthOrig ) :
+					'';
+	
+				// For scrollX we need to force the column width otherwise the
+				// browser will collapse it. If this width is smaller than the
+				// width the column requires, then it will have no effect
+				if ( column.sWidthOrig && scrollX ) {
+					$( headerCells[i] ).append( $('<div/>').css( {
+						width: column.sWidthOrig,
+						margin: 0,
+						padding: 0,
+						border: 0,
+						height: 1
+					} ) );
+				}
+			}
+	
+			// Find the widest cell for each column and put it into the table
+			if ( oSettings.aoData.length ) {
+				for ( i=0 ; i<visibleColumns.length ; i++ ) {
+					columnIdx = visibleColumns[i];
+					column = columns[ columnIdx ];
+	
+					$( _fnGetWidestNode( oSettings, columnIdx ) )
+						.clone( false )
+						.append( column.sContentPadding )
+						.appendTo( tr );
+				}
+			}
+	
+			// Tidy the temporary table - remove name attributes so there aren't
+			// duplicated in the dom (radio elements for example)
+			$('[name]', tmpTable).removeAttr('name');
+	
+			// Table has been built, attach to the document so we can work with it.
+			// A holding element is used, positioned at the top of the container
+			// with minimal height, so it has no effect on if the container scrolls
+			// or not. Otherwise it might trigger scrolling when it actually isn't
+			// needed
+			var holder = $('<div/>').css( scrollX || scrollY ?
+					{
+						position: 'absolute',
+						top: 0,
+						left: 0,
+						height: 1,
+						right: 0,
+						overflow: 'hidden'
+					} :
+					{}
+				)
+				.append( tmpTable )
+				.appendTo( tableContainer );
+	
+			// When scrolling (X or Y) we want to set the width of the table as 
+			// appropriate. However, when not scrolling leave the table width as it
+			// is. This results in slightly different, but I think correct behaviour
+			if ( scrollX && scrollXInner ) {
+				tmpTable.width( scrollXInner );
+			}
+			else if ( scrollX ) {
+				tmpTable.css( 'width', 'auto' );
+				tmpTable.removeAttr('width');
+	
+				// If there is no width attribute or style, then allow the table to
+				// collapse
+				if ( tmpTable.width() < tableContainer.clientWidth && tableWidthAttr ) {
+					tmpTable.width( tableContainer.clientWidth );
+				}
+			}
+			else if ( scrollY ) {
+				tmpTable.width( tableContainer.clientWidth );
+			}
+			else if ( tableWidthAttr ) {
+				tmpTable.width( tableWidthAttr );
+			}
+	
+			// Get the width of each column in the constructed table - we need to
+			// know the inner width (so it can be assigned to the other table's
+			// cells) and the outer width so we can calculate the full width of the
+			// table. This is safe since DataTables requires a unique cell for each
+			// column, but if ever a header can span multiple columns, this will
+			// need to be modified.
+			var total = 0;
+			for ( i=0 ; i<visibleColumns.length ; i++ ) {
+				var cell = $(headerCells[i]);
+				var border = cell.outerWidth() - cell.width();
+	
+				// Use getBounding... where possible (not IE8-) because it can give
+				// sub-pixel accuracy, which we then want to round up!
+				var bounding = browser.bBounding ?
+					Math.ceil( headerCells[i].getBoundingClientRect().width ) :
+					cell.outerWidth();
+	
+				// Total is tracked to remove any sub-pixel errors as the outerWidth
+				// of the table might not equal the total given here (IE!).
+				total += bounding;
+	
+				// Width for each column to use
+				columns[ visibleColumns[i] ].sWidth = _fnStringToCss( bounding - border );
+			}
+	
+			table.style.width = _fnStringToCss( total );
+	
+			// Finished with the table - ditch it
+			holder.remove();
+		}
+	
+		// If there is a width attr, we want to attach an event listener which
+		// allows the table sizing to automatically adjust when the window is
+		// resized. Use the width attr rather than CSS, since we can't know if the
+		// CSS is a relative value or absolute - DOM read is always px.
+		if ( tableWidthAttr ) {
+			table.style.width = _fnStringToCss( tableWidthAttr );
+		}
+	
+		if ( (tableWidthAttr || scrollX) && ! oSettings._reszEvt ) {
+			var bindResize = function () {
+				$(window).on('resize.DT-'+oSettings.sInstance, _fnThrottle( function () {
+					_fnAdjustColumnSizing( oSettings );
+				} ) );
+			};
+	
+			// IE6/7 will crash if we bind a resize event handler on page load.
+			// To be removed in 1.11 which drops IE6/7 support
+			if ( ie67 ) {
+				setTimeout( bindResize, 1000 );
+			}
+			else {
+				bindResize();
+			}
+	
+			oSettings._reszEvt = true;
+		}
+	}
+	
+	
+	/**
+	 * Throttle the calls to a function. Arguments and context are maintained for
+	 * the throttled function
+	 *  @param {function} fn Function to be called
+	 *  @param {int} [freq=200] call frequency in mS
+	 *  @returns {function} wrapped function
+	 *  @memberof DataTable#oApi
+	 */
+	var _fnThrottle = DataTable.util.throttle;
+	
+	
+	/**
+	 * Convert a CSS unit width to pixels (e.g. 2em)
+	 *  @param {string} width width to be converted
+	 *  @param {node} parent parent to get the with for (required for relative widths) - optional
+	 *  @returns {int} width in pixels
+	 *  @memberof DataTable#oApi
+	 */
+	function _fnConvertToWidth ( width, parent )
+	{
+		if ( ! width ) {
+			return 0;
+		}
+	
+		var n = $('<div/>')
+			.css( 'width', _fnStringToCss( width ) )
+			.appendTo( parent || document.body );
+	
+		var val = n[0].offsetWidth;
+		n.remove();
+	
+		return val;
+	}
+	
+	
+	/**
+	 * Get the widest node
+	 *  @param {object} settings dataTables settings object
+	 *  @param {int} colIdx column of interest
+	 *  @returns {node} widest table node
+	 *  @memberof DataTable#oApi
+	 */
+	function _fnGetWidestNode( settings, colIdx )
+	{
+		var idx = _fnGetMaxLenString( settings, colIdx );
+		if ( idx < 0 ) {
+			return null;
+		}
+	
+		var data = settings.aoData[ idx ];
+		return ! data.nTr ? // Might not have been created when deferred rendering
+			$('<td/>').html( _fnGetCellData( settings, idx, colIdx, 'display' ) )[0] :
+			data.anCells[ colIdx ];
+	}
+	
+	
+	/**
+	 * Get the maximum strlen for each data column
+	 *  @param {object} settings dataTables settings object
+	 *  @param {int} colIdx column of interest
+	 *  @returns {string} max string length for each column
+	 *  @memberof DataTable#oApi
+	 */
+	function _fnGetMaxLenString( settings, colIdx )
+	{
+		var s, max=-1, maxIdx = -1;
+	
+		for ( var i=0, ien=settings.aoData.length ; i<ien ; i++ ) {
+			s = _fnGetCellData( settings, i, colIdx, 'display' )+'';
+			s = s.replace( __re_html_remove, '' );
+			s = s.replace( /&nbsp;/g, ' ' );
+	
+			if ( s.length > max ) {
+				max = s.length;
+				maxIdx = i;
+			}
+		}
+	
+		return maxIdx;
+	}
+	
+	
+	/**
+	 * Append a CSS unit (only if required) to a string
+	 *  @param {string} value to css-ify
+	 *  @returns {string} value with css unit
+	 *  @memberof DataTable#oApi
+	 */
+	function _fnStringToCss( s )
+	{
+		if ( s === null ) {
+			return '0px';
+		}
+	
+		if ( typeof s == 'number' ) {
+			return s < 0 ?
+				'0px' :
+				s+'px';
+		}
+	
+		// Check it has a unit character already
+		return s.match(/\d$/) ?
+			s+'px' :
+			s;
+	}
+	
+	
+	
+	function _fnSortFlatten ( settings )
+	{
+		var
+			i, iLen, k, kLen,
+			aSort = [],
+			aiOrig = [],
+			aoColumns = settings.aoColumns,
+			aDataSort, iCol, sType, srcCol,
+			fixed = settings.aaSortingFixed,
+			fixedObj = $.isPlainObject( fixed ),
+			nestedSort = [],
+			add = function ( a ) {
+				if ( a.length && ! $.isArray( a[0] ) ) {
+					// 1D array
+					nestedSort.push( a );
+				}
+				else {
+					// 2D array
+					$.merge( nestedSort, a );
+				}
+			};
+	
+		// Build the sort array, with pre-fix and post-fix options if they have been
+		// specified
+		if ( $.isArray( fixed ) ) {
+			add( fixed );
+		}
+	
+		if ( fixedObj && fixed.pre ) {
+			add( fixed.pre );
+		}
+	
+		add( settings.aaSorting );
+	
+		if (fixedObj && fixed.post ) {
+			add( fixed.post );
+		}
+	
+		for ( i=0 ; i<nestedSort.length ; i++ )
+		{
+			srcCol = nestedSort[i][0];
+			aDataSort = aoColumns[ srcCol ].aDataSort;
+	
+			for ( k=0, kLen=aDataSort.length ; k<kLen ; k++ )
+			{
+				iCol = aDataSort[k];
+				sType = aoColumns[ iCol ].sType || 'string';
+	
+				if ( nestedSort[i]._idx === undefined ) {
+					nestedSort[i]._idx = $.inArray( nestedSort[i][1], aoColumns[iCol].asSorting );
+				}
+	
+				aSort.push( {
+					src:       srcCol,
+					col:       iCol,
+					dir:       nestedSort[i][1],
+					index:     nestedSort[i]._idx,
+					type:      sType,
+					formatter: DataTable.ext.type.order[ sType+"-pre" ]
+				} );
+			}
+		}
+	
+		return aSort;
+	}
+	
+	/**
+	 * Change the order of the table
+	 *  @param {object} oSettings dataTables settings object
+	 *  @memberof DataTable#oApi
+	 *  @todo This really needs split up!
+	 */
+	function _fnSort ( oSettings )
+	{
+		var
+			i, ien, iLen, j, jLen, k, kLen,
+			sDataType, nTh,
+			aiOrig = [],
+			oExtSort = DataTable.ext.type.order,
+			aoData = oSettings.aoData,
+			aoColumns = oSettings.aoColumns,
+			aDataSort, data, iCol, sType, oSort,
+			formatters = 0,
+			sortCol,
+			displayMaster = oSettings.aiDisplayMaster,
+			aSort;
+	
+		// Resolve any column types that are unknown due to addition or invalidation
+		// @todo Can this be moved into a 'data-ready' handler which is called when
+		//   data is going to be used in the table?
+		_fnColumnTypes( oSettings );
+	
+		aSort = _fnSortFlatten( oSettings );
+	
+		for ( i=0, ien=aSort.length ; i<ien ; i++ ) {
+			sortCol = aSort[i];
+	
+			// Track if we can use the fast sort algorithm
+			if ( sortCol.formatter ) {
+				formatters++;
+			}
+	
+			// Load the data needed for the sort, for each cell
+			_fnSortData( oSettings, sortCol.col );
+		}
+	
+		/* No sorting required if server-side or no sorting array */
+		if ( _fnDataSource( oSettings ) != 'ssp' && aSort.length !== 0 )
+		{
+			// Create a value - key array of the current row positions such that we can use their
+			// current position during the sort, if values match, in order to perform stable sorting
+			for ( i=0, iLen=displayMaster.length ; i<iLen ; i++ ) {
+				aiOrig[ displayMaster[i] ] = i;
+			}
+	
+			/* Do the sort - here we want multi-column sorting based on a given data source (column)
+			 * and sorting function (from oSort) in a certain direction. It's reasonably complex to
+			 * follow on it's own, but this is what we want (example two column sorting):
+			 *  fnLocalSorting = function(a,b){
+			 *    var iTest;
+			 *    iTest = oSort['string-asc']('data11', 'data12');
+			 *      if (iTest !== 0)
+			 *        return iTest;
+			 *    iTest = oSort['numeric-desc']('data21', 'data22');
+			 *    if (iTest !== 0)
+			 *      return iTest;
+			 *    return oSort['numeric-asc']( aiOrig[a], aiOrig[b] );
+			 *  }
+			 * Basically we have a test for each sorting column, if the data in that column is equal,
+			 * test the next column. If all columns match, then we use a numeric sort on the row
+			 * positions in the original data array to provide a stable sort.
+			 *
+			 * Note - I know it seems excessive to have two sorting methods, but the first is around
+			 * 15% faster, so the second is only maintained for backwards compatibility with sorting
+			 * methods which do not have a pre-sort formatting function.
+			 */
+			if ( formatters === aSort.length ) {
+				// All sort types have formatting functions
+				displayMaster.sort( function ( a, b ) {
+					var
+						x, y, k, test, sort,
+						len=aSort.length,
+						dataA = aoData[a]._aSortData,
+						dataB = aoData[b]._aSortData;
+	
+					for ( k=0 ; k<len ; k++ ) {
+						sort = aSort[k];
+	
+						x = dataA[ sort.col ];
+						y = dataB[ sort.col ];
+	
+						test = x<y ? -1 : x>y ? 1 : 0;
+						if ( test !== 0 ) {
+							return sort.dir === 'asc' ? test : -test;
+						}
+					}
+	
+					x = aiOrig[a];
+					y = aiOrig[b];
+					return x<y ? -1 : x>y ? 1 : 0;
+				} );
+			}
+			else {
+				// Depreciated - remove in 1.11 (providing a plug-in option)
+				// Not all sort types have formatting methods, so we have to call their sorting
+				// methods.
+				displayMaster.sort( function ( a, b ) {
+					var
+						x, y, k, l, test, sort, fn,
+						len=aSort.length,
+						dataA = aoData[a]._aSortData,
+						dataB = aoData[b]._aSortData;
+	
+					for ( k=0 ; k<len ; k++ ) {
+						sort = aSort[k];
+	
+						x = dataA[ sort.col ];
+						y = dataB[ sort.col ];
+	
+						fn = oExtSort[ sort.type+"-"+sort.dir ] || oExtSort[ "string-"+sort.dir ];
+						test = fn( x, y );
+						if ( test !== 0 ) {
+							return test;
+						}
+					}
+	
+					x = aiOrig[a];
+					y = aiOrig[b];
+					return x<y ? -1 : x>y ? 1 : 0;
+				} );
+			}
+		}
+	
+		/* Tell the draw function that we have sorted the data */
+		oSettings.bSorted = true;
+	}
+	
+	
+	function _fnSortAria ( settings )
+	{
+		var label;
+		var nextSort;
+		var columns = settings.aoColumns;
+		var aSort = _fnSortFlatten( settings );
+		var oAria = settings.oLanguage.oAria;
+	
+		// ARIA attributes - need to loop all columns, to update all (removing old
+		// attributes as needed)
+		for ( var i=0, iLen=columns.length ; i<iLen ; i++ )
+		{
+			var col = columns[i];
+			var asSorting = col.asSorting;
+			var sTitle = col.sTitle.replace( /<.*?>/g, "" );
+			var th = col.nTh;
+	
+			// IE7 is throwing an error when setting these properties with jQuery's
+			// attr() and removeAttr() methods...
+			th.removeAttribute('aria-sort');
+	
+			/* In ARIA only the first sorting column can be marked as sorting - no multi-sort option */
+			if ( col.bSortable ) {
+				if ( aSort.length > 0 && aSort[0].col == i ) {
+					th.setAttribute('aria-sort', aSort[0].dir=="asc" ? "ascending" : "descending" );
+					nextSort = asSorting[ aSort[0].index+1 ] || asSorting[0];
+				}
+				else {
+					nextSort = asSorting[0];
+				}
+	
+				label = sTitle + ( nextSort === "asc" ?
+					oAria.sSortAscending :
+					oAria.sSortDescending
+				);
+			}
+			else {
+				label = sTitle;
+			}
+	
+			th.setAttribute('aria-label', label);
+		}
+	}
+	
+	
+	/**
+	 * Function to run on user sort request
+	 *  @param {object} settings dataTables settings object
+	 *  @param {node} attachTo node to attach the handler to
+	 *  @param {int} colIdx column sorting index
+	 *  @param {boolean} [append=false] Append the requested sort to the existing
+	 *    sort if true (i.e. multi-column sort)
+	 *  @param {function} [callback] callback function
+	 *  @memberof DataTable#oApi
+	 */
+	function _fnSortListener ( settings, colIdx, append, callback )
+	{
+		var col = settings.aoColumns[ colIdx ];
+		var sorting = settings.aaSorting;
+		var asSorting = col.asSorting;
+		var nextSortIdx;
+		var next = function ( a, overflow ) {
+			var idx = a._idx;
+			if ( idx === undefined ) {
+				idx = $.inArray( a[1], asSorting );
+			}
+	
+			return idx+1 < asSorting.length ?
+				idx+1 :
+				overflow ?
+					null :
+					0;
+		};
+	
+		// Convert to 2D array if needed
+		if ( typeof sorting[0] === 'number' ) {
+			sorting = settings.aaSorting = [ sorting ];
+		}
+	
+		// If appending the sort then we are multi-column sorting
+		if ( append && settings.oFeatures.bSortMulti ) {
+			// Are we already doing some kind of sort on this column?
+			var sortIdx = $.inArray( colIdx, _pluck(sorting, '0') );
+	
+			if ( sortIdx !== -1 ) {
+				// Yes, modify the sort
+				nextSortIdx = next( sorting[sortIdx], true );
+	
+				if ( nextSortIdx === null && sorting.length === 1 ) {
+					nextSortIdx = 0; // can't remove sorting completely
+				}
+	
+				if ( nextSortIdx === null ) {
+					sorting.splice( sortIdx, 1 );
+				}
+				else {
+					sorting[sortIdx][1] = asSorting[ nextSortIdx ];
+					sorting[sortIdx]._idx = nextSortIdx;
+				}
+			}
+			else {
+				// No sort on this column yet
+				sorting.push( [ colIdx, asSorting[0], 0 ] );
+				sorting[sorting.length-1]._idx = 0;
+			}
+		}
+		else if ( sorting.length && sorting[0][0] == colIdx ) {
+			// Single column - already sorting on this column, modify the sort
+			nextSortIdx = next( sorting[0] );
+	
+			sorting.length = 1;
+			sorting[0][1] = asSorting[ nextSortIdx ];
+			sorting[0]._idx = nextSortIdx;
+		}
+		else {
+			// Single column - sort only on this column
+			sorting.length = 0;
+			sorting.push( [ colIdx, asSorting[0] ] );
+			sorting[0]._idx = 0;
+		}
+	
+		// Run the sort by calling a full redraw
+		_fnReDraw( settings );
+	
+		// callback used for async user interaction
+		if ( typeof callback == 'function' ) {
+			callback( settings );
+		}
+	}
+	
+	
+	/**
+	 * Attach a sort handler (click) to a node
+	 *  @param {object} settings dataTables settings object
+	 *  @param {node} attachTo node to attach the handler to
+	 *  @param {int} colIdx column sorting index
+	 *  @param {function} [callback] callback function
+	 *  @memberof DataTable#oApi
+	 */
+	function _fnSortAttachListener ( settings, attachTo, colIdx, callback )
+	{
+		var col = settings.aoColumns[ colIdx ];
+	
+		_fnBindAction( attachTo, {}, function (e) {
+			/* If the column is not sortable - don't to anything */
+			if ( col.bSortable === false ) {
+				return;
+			}
+	
+			// If processing is enabled use a timeout to allow the processing
+			// display to be shown - otherwise to it synchronously
+			if ( settings.oFeatures.bProcessing ) {
+				_fnProcessingDisplay( settings, true );
+	
+				setTimeout( function() {
+					_fnSortListener( settings, colIdx, e.shiftKey, callback );
+	
+					// In server-side processing, the draw callback will remove the
+					// processing display
+					if ( _fnDataSource( settings ) !== 'ssp' ) {
+						_fnProcessingDisplay( settings, false );
+					}
+				}, 0 );
+			}
+			else {
+				_fnSortListener( settings, colIdx, e.shiftKey, callback );
+			}
+		} );
+	}
+	
+	
+	/**
+	 * Set the sorting classes on table's body, Note: it is safe to call this function
+	 * when bSort and bSortClasses are false
+	 *  @param {object} oSettings dataTables settings object
+	 *  @memberof DataTable#oApi
+	 */
+	function _fnSortingClasses( settings )
+	{
+		var oldSort = settings.aLastSort;
+		var sortClass = settings.oClasses.sSortColumn;
+		var sort = _fnSortFlatten( settings );
+		var features = settings.oFeatures;
+		var i, ien, colIdx;
+	
+		if ( features.bSort && features.bSortClasses ) {
+			// Remove old sorting classes
+			for ( i=0, ien=oldSort.length ; i<ien ; i++ ) {
+				colIdx = oldSort[i].src;
+	
+				// Remove column sorting
+				$( _pluck( settings.aoData, 'anCells', colIdx ) )
+					.removeClass( sortClass + (i<2 ? i+1 : 3) );
+			}
+	
+			// Add new column sorting
+			for ( i=0, ien=sort.length ; i<ien ; i++ ) {
+				colIdx = sort[i].src;
+	
+				$( _pluck( settings.aoData, 'anCells', colIdx ) )
+					.addClass( sortClass + (i<2 ? i+1 : 3) );
+			}
+		}
+	
+		settings.aLastSort = sort;
+	}
+	
+	
+	// Get the data to sort a column, be it from cache, fresh (populating the
+	// cache), or from a sort formatter
+	function _fnSortData( settings, idx )
+	{
+		// Custom sorting function - provided by the sort data type
+		var column = settings.aoColumns[ idx ];
+		var customSort = DataTable.ext.order[ column.sSortDataType ];
+		var customData;
+	
+		if ( customSort ) {
+			customData = customSort.call( settings.oInstance, settings, idx,
+				_fnColumnIndexToVisible( settings, idx )
+			);
+		}
+	
+		// Use / populate cache
+		var row, cellData;
+		var formatter = DataTable.ext.type.order[ column.sType+"-pre" ];
+	
+		for ( var i=0, ien=settings.aoData.length ; i<ien ; i++ ) {
+			row = settings.aoData[i];
+	
+			if ( ! row._aSortData ) {
+				row._aSortData = [];
+			}
+	
+			if ( ! row._aSortData[idx] || customSort ) {
+				cellData = customSort ?
+					customData[i] : // If there was a custom sort function, use data from there
+					_fnGetCellData( settings, i, idx, 'sort' );
+	
+				row._aSortData[ idx ] = formatter ?
+					formatter( cellData ) :
+					cellData;
+			}
+		}
+	}
+	
+	
+	
+	/**
+	 * Save the state of a table
+	 *  @param {object} oSettings dataTables settings object
+	 *  @memberof DataTable#oApi
+	 */
+	function _fnSaveState ( settings )
+	{
+		if ( !settings.oFeatures.bStateSave || settings.bDestroying )
+		{
+			return;
+		}
+	
+		/* Store the interesting variables */
+		var state = {
+			time:    +new Date(),
+			start:   settings._iDisplayStart,
+			length:  settings._iDisplayLength,
+			order:   $.extend( true, [], settings.aaSorting ),
+			search:  _fnSearchToCamel( settings.oPreviousSearch ),
+			columns: $.map( settings.aoColumns, function ( col, i ) {
+				return {
+					visible: col.bVisible,
+					search: _fnSearchToCamel( settings.aoPreSearchCols[i] )
+				};
+			} )
+		};
+	
+		_fnCallbackFire( settings, "aoStateSaveParams", 'stateSaveParams', [settings, state] );
+	
+		settings.oSavedState = state;
+		settings.fnStateSaveCallback.call( settings.oInstance, settings, state );
+	}
+	
+	
+	/**
+	 * Attempt to load a saved table state
+	 *  @param {object} oSettings dataTables settings object
+	 *  @param {object} oInit DataTables init object so we can override settings
+	 *  @param {function} callback Callback to execute when the state has been loaded
+	 *  @memberof DataTable#oApi
+	 */
+	function _fnLoadState ( settings, oInit, callback )
+	{
+		var i, ien;
+		var columns = settings.aoColumns;
+		var loaded = function ( s ) {
+			if ( ! s || ! s.time ) {
+				callback();
+				return;
+			}
+	
+			// Allow custom and plug-in manipulation functions to alter the saved data set and
+			// cancelling of loading by returning false
+			var abStateLoad = _fnCallbackFire( settings, 'aoStateLoadParams', 'stateLoadParams', [settings, s] );
+			if ( $.inArray( false, abStateLoad ) !== -1 ) {
+				callback();
+				return;
+			}
+	
+			// Reject old data
+			var duration = settings.iStateDuration;
+			if ( duration > 0 && s.time < +new Date() - (duration*1000) ) {
+				callback();
+				return;
+			}
+	
+			// Number of columns have changed - all bets are off, no restore of settings
+			if ( s.columns && columns.length !== s.columns.length ) {
+				callback();
+				return;
+			}
+	
+			// Store the saved state so it might be accessed at any time
+			settings.oLoadedState = $.extend( true, {}, s );
+	
+			// Restore key features - todo - for 1.11 this needs to be done by
+			// subscribed events
+			if ( s.start !== undefined ) {
+				settings._iDisplayStart    = s.start;
+				settings.iInitDisplayStart = s.start;
+			}
+			if ( s.length !== undefined ) {
+				settings._iDisplayLength   = s.length;
+			}
+	
+			// Order
+			if ( s.order !== undefined ) {
+				settings.aaSorting = [];
+				$.each( s.order, function ( i, col ) {
+					settings.aaSorting.push( col[0] >= columns.length ?
+						[ 0, col[1] ] :
+						col
+					);
+				} );
+			}
+	
+			// Search
+			if ( s.search !== undefined ) {
+				$.extend( settings.oPreviousSearch, _fnSearchToHung( s.search ) );
+			}
+	
+			// Columns
+			//
+			if ( s.columns ) {
+				for ( i=0, ien=s.columns.length ; i<ien ; i++ ) {
+					var col = s.columns[i];
+	
+					// Visibility
+					if ( col.visible !== undefined ) {
+						columns[i].bVisible = col.visible;
+					}
+	
+					// Search
+					if ( col.search !== undefined ) {
+						$.extend( settings.aoPreSearchCols[i], _fnSearchToHung( col.search ) );
+					}
+				}
+			}
+	
+			_fnCallbackFire( settings, 'aoStateLoaded', 'stateLoaded', [settings, s] );
+			callback();
+		};
+	
+		if ( ! settings.oFeatures.bStateSave ) {
+			callback();
+			return;
+		}
+	
+		var state = settings.fnStateLoadCallback.call( settings.oInstance, settings, loaded );
+	
+		if ( state !== undefined ) {
+			loaded( state );
+		}
+		// otherwise, wait for the loaded callback to be executed
+	}
+	
+	
+	/**
+	 * Return the settings object for a particular table
+	 *  @param {node} table table we are using as a dataTable
+	 *  @returns {object} Settings object - or null if not found
+	 *  @memberof DataTable#oApi
+	 */
+	function _fnSettingsFromNode ( table )
+	{
+		var settings = DataTable.settings;
+		var idx = $.inArray( table, _pluck( settings, 'nTable' ) );
+	
+		return idx !== -1 ?
+			settings[ idx ] :
+			null;
+	}
+	
+	
+	/**
+	 * Log an error message
+	 *  @param {object} settings dataTables settings object
+	 *  @param {int} level log error messages, or display them to the user
+	 *  @param {string} msg error message
+	 *  @param {int} tn Technical note id to get more information about the error.
+	 *  @memberof DataTable#oApi
+	 */
+	function _fnLog( settings, level, msg, tn )
+	{
+		msg = 'DataTables warning: '+
+			(settings ? 'table id='+settings.sTableId+' - ' : '')+msg;
+	
+		if ( tn ) {
+			msg += '. For more information about this error, please see '+
+			'http://datatables.net/tn/'+tn;
+		}
+	
+		if ( ! level  ) {
+			// Backwards compatibility pre 1.10
+			var ext = DataTable.ext;
+			var type = ext.sErrMode || ext.errMode;
+	
+			if ( settings ) {
+				_fnCallbackFire( settings, null, 'error', [ settings, tn, msg ] );
+			}
+	
+			if ( type == 'alert' ) {
+				alert( msg );
+			}
+			else if ( type == 'throw' ) {
+				throw new Error(msg);
+			}
+			else if ( typeof type == 'function' ) {
+				type( settings, tn, msg );
+			}
+		}
+		else if ( window.console && console.log ) {
+			console.log( msg );
+		}
+	}
+	
+	
+	/**
+	 * See if a property is defined on one object, if so assign it to the other object
+	 *  @param {object} ret target object
+	 *  @param {object} src source object
+	 *  @param {string} name property
+	 *  @param {string} [mappedName] name to map too - optional, name used if not given
+	 *  @memberof DataTable#oApi
+	 */
+	function _fnMap( ret, src, name, mappedName )
+	{
+		if ( $.isArray( name ) ) {
+			$.each( name, function (i, val) {
+				if ( $.isArray( val ) ) {
+					_fnMap( ret, src, val[0], val[1] );
+				}
+				else {
+					_fnMap( ret, src, val );
+				}
+			} );
+	
+			return;
+		}
+	
+		if ( mappedName === undefined ) {
+			mappedName = name;
+		}
+	
+		if ( src[name] !== undefined ) {
+			ret[mappedName] = src[name];
+		}
+	}
+	
+	
+	/**
+	 * Extend objects - very similar to jQuery.extend, but deep copy objects, and
+	 * shallow copy arrays. The reason we need to do this, is that we don't want to
+	 * deep copy array init values (such as aaSorting) since the dev wouldn't be
+	 * able to override them, but we do want to deep copy arrays.
+	 *  @param {object} out Object to extend
+	 *  @param {object} extender Object from which the properties will be applied to
+	 *      out
+	 *  @param {boolean} breakRefs If true, then arrays will be sliced to take an
+	 *      independent copy with the exception of the `data` or `aaData` parameters
+	 *      if they are present. This is so you can pass in a collection to
+	 *      DataTables and have that used as your data source without breaking the
+	 *      references
+	 *  @returns {object} out Reference, just for convenience - out === the return.
+	 *  @memberof DataTable#oApi
+	 *  @todo This doesn't take account of arrays inside the deep copied objects.
+	 */
+	function _fnExtend( out, extender, breakRefs )
+	{
+		var val;
+	
+		for ( var prop in extender ) {
+			if ( extender.hasOwnProperty(prop) ) {
+				val = extender[prop];
+	
+				if ( $.isPlainObject( val ) ) {
+					if ( ! $.isPlainObject( out[prop] ) ) {
+						out[prop] = {};
+					}
+					$.extend( true, out[prop], val );
+				}
+				else if ( breakRefs && prop !== 'data' && prop !== 'aaData' && $.isArray(val) ) {
+					out[prop] = val.slice();
+				}
+				else {
+					out[prop] = val;
+				}
+			}
+		}
+	
+		return out;
+	}
+	
+	
+	/**
+	 * Bind an event handers to allow a click or return key to activate the callback.
+	 * This is good for accessibility since a return on the keyboard will have the
+	 * same effect as a click, if the element has focus.
+	 *  @param {element} n Element to bind the action to
+	 *  @param {object} oData Data object to pass to the triggered function
+	 *  @param {function} fn Callback function for when the event is triggered
+	 *  @memberof DataTable#oApi
+	 */
+	function _fnBindAction( n, oData, fn )
+	{
+		$(n)
+			.on( 'click.DT', oData, function (e) {
+					$(n).trigger('blur'); // Remove focus outline for mouse users
+					fn(e);
+				} )
+			.on( 'keypress.DT', oData, function (e){
+					if ( e.which === 13 ) {
+						e.preventDefault();
+						fn(e);
+					}
+				} )
+			.on( 'selectstart.DT', function () {
+					/* Take the brutal approach to cancelling text selection */
+					return false;
+				} );
+	}
+	
+	
+	/**
+	 * Register a callback function. Easily allows a callback function to be added to
+	 * an array store of callback functions that can then all be called together.
+	 *  @param {object} oSettings dataTables settings object
+	 *  @param {string} sStore Name of the array storage for the callbacks in oSettings
+	 *  @param {function} fn Function to be called back
+	 *  @param {string} sName Identifying name for the callback (i.e. a label)
+	 *  @memberof DataTable#oApi
+	 */
+	function _fnCallbackReg( oSettings, sStore, fn, sName )
+	{
+		if ( fn )
+		{
+			oSettings[sStore].push( {
+				"fn": fn,
+				"sName": sName
+			} );
+		}
+	}
+	
+	
+	/**
+	 * Fire callback functions and trigger events. Note that the loop over the
+	 * callback array store is done backwards! Further note that you do not want to
+	 * fire off triggers in time sensitive applications (for example cell creation)
+	 * as its slow.
+	 *  @param {object} settings dataTables settings object
+	 *  @param {string} callbackArr Name of the array storage for the callbacks in
+	 *      oSettings
+	 *  @param {string} eventName Name of the jQuery custom event to trigger. If
+	 *      null no trigger is fired
+	 *  @param {array} args Array of arguments to pass to the callback function /
+	 *      trigger
+	 *  @memberof DataTable#oApi
+	 */
+	function _fnCallbackFire( settings, callbackArr, eventName, args )
+	{
+		var ret = [];
+	
+		if ( callbackArr ) {
+			ret = $.map( settings[callbackArr].slice().reverse(), function (val, i) {
+				return val.fn.apply( settings.oInstance, args );
+			} );
+		}
+	
+		if ( eventName !== null ) {
+			var e = $.Event( eventName+'.dt' );
+	
+			$(settings.nTable).trigger( e, args );
+	
+			ret.push( e.result );
+		}
+	
+		return ret;
+	}
+	
+	
+	function _fnLengthOverflow ( settings )
+	{
+		var
+			start = settings._iDisplayStart,
+			end = settings.fnDisplayEnd(),
+			len = settings._iDisplayLength;
+	
+		/* If we have space to show extra rows (backing up from the end point - then do so */
+		if ( start >= end )
+		{
+			start = end - len;
+		}
+	
+		// Keep the start record on the current page
+		start -= (start % len);
+	
+		if ( len === -1 || start < 0 )
+		{
+			start = 0;
+		}
+	
+		settings._iDisplayStart = start;
+	}
+	
+	
+	function _fnRenderer( settings, type )
+	{
+		var renderer = settings.renderer;
+		var host = DataTable.ext.renderer[type];
+	
+		if ( $.isPlainObject( renderer ) && renderer[type] ) {
+			// Specific renderer for this type. If available use it, otherwise use
+			// the default.
+			return host[renderer[type]] || host._;
+		}
+		else if ( typeof renderer === 'string' ) {
+			// Common renderer - if there is one available for this type use it,
+			// otherwise use the default
+			return host[renderer] || host._;
+		}
+	
+		// Use the default
+		return host._;
+	}
+	
+	
+	/**
+	 * Detect the data source being used for the table. Used to simplify the code
+	 * a little (ajax) and to make it compress a little smaller.
+	 *
+	 *  @param {object} settings dataTables settings object
+	 *  @returns {string} Data source
+	 *  @memberof DataTable#oApi
+	 */
+	function _fnDataSource ( settings )
+	{
+		if ( settings.oFeatures.bServerSide ) {
+			return 'ssp';
+		}
+		else if ( settings.ajax || settings.sAjaxSource ) {
+			return 'ajax';
+		}
+		return 'dom';
+	}
+	
+
+	
+	
+	/**
+	 * Computed structure of the DataTables API, defined by the options passed to
+	 * `DataTable.Api.register()` when building the API.
+	 *
+	 * The structure is built in order to speed creation and extension of the Api
+	 * objects since the extensions are effectively pre-parsed.
+	 *
+	 * The array is an array of objects with the following structure, where this
+	 * base array represents the Api prototype base:
+	 *
+	 *     [
+	 *       {
+	 *         name:      'data'                -- string   - Property name
+	 *         val:       function () {},       -- function - Api method (or undefined if just an object
+	 *         methodExt: [ ... ],              -- array    - Array of Api object definitions to extend the method result
+	 *         propExt:   [ ... ]               -- array    - Array of Api object definitions to extend the property
+	 *       },
+	 *       {
+	 *         name:     'row'
+	 *         val:       {},
+	 *         methodExt: [ ... ],
+	 *         propExt:   [
+	 *           {
+	 *             name:      'data'
+	 *             val:       function () {},
+	 *             methodExt: [ ... ],
+	 *             propExt:   [ ... ]
+	 *           },
+	 *           ...
+	 *         ]
+	 *       }
+	 *     ]
+	 *
+	 * @type {Array}
+	 * @ignore
+	 */
+	var __apiStruct = [];
+	
+	
+	/**
+	 * `Array.prototype` reference.
+	 *
+	 * @type object
+	 * @ignore
+	 */
+	var __arrayProto = Array.prototype;
+	
+	
+	/**
+	 * Abstraction for `context` parameter of the `Api` constructor to allow it to
+	 * take several different forms for ease of use.
+	 *
+	 * Each of the input parameter types will be converted to a DataTables settings
+	 * object where possible.
+	 *
+	 * @param  {string|node|jQuery|object} mixed DataTable identifier. Can be one
+	 *   of:
+	 *
+	 *   * `string` - jQuery selector. Any DataTables' matching the given selector
+	 *     with be found and used.
+	 *   * `node` - `TABLE` node which has already been formed into a DataTable.
+	 *   * `jQuery` - A jQuery object of `TABLE` nodes.
+	 *   * `object` - DataTables settings object
+	 *   * `DataTables.Api` - API instance
+	 * @return {array|null} Matching DataTables settings objects. `null` or
+	 *   `undefined` is returned if no matching DataTable is found.
+	 * @ignore
+	 */
+	var _toSettings = function ( mixed )
+	{
+		var idx, jq;
+		var settings = DataTable.settings;
+		var tables = $.map( settings, function (el, i) {
+			return el.nTable;
+		} );
+	
+		if ( ! mixed ) {
+			return [];
+		}
+		else if ( mixed.nTable && mixed.oApi ) {
+			// DataTables settings object
+			return [ mixed ];
+		}
+		else if ( mixed.nodeName && mixed.nodeName.toLowerCase() === 'table' ) {
+			// Table node
+			idx = $.inArray( mixed, tables );
+			return idx !== -1 ? [ settings[idx] ] : null;
+		}
+		else if ( mixed && typeof mixed.settings === 'function' ) {
+			return mixed.settings().toArray();
+		}
+		else if ( typeof mixed === 'string' ) {
+			// jQuery selector
+			jq = $(mixed);
+		}
+		else if ( mixed instanceof $ ) {
+			// jQuery object (also DataTables instance)
+			jq = mixed;
+		}
+	
+		if ( jq ) {
+			return jq.map( function(i) {
+				idx = $.inArray( this, tables );
+				return idx !== -1 ? settings[idx] : null;
+			} ).toArray();
+		}
+	};
+	
+	
+	/**
+	 * DataTables API class - used to control and interface with  one or more
+	 * DataTables enhanced tables.
+	 *
+	 * The API class is heavily based on jQuery, presenting a chainable interface
+	 * that you can use to interact with tables. Each instance of the API class has
+	 * a "context" - i.e. the tables that it will operate on. This could be a single
+	 * table, all tables on a page or a sub-set thereof.
+	 *
+	 * Additionally the API is designed to allow you to easily work with the data in
+	 * the tables, retrieving and manipulating it as required. This is done by
+	 * presenting the API class as an array like interface. The contents of the
+	 * array depend upon the actions requested by each method (for example
+	 * `rows().nodes()` will return an array of nodes, while `rows().data()` will
+	 * return an array of objects or arrays depending upon your table's
+	 * configuration). The API object has a number of array like methods (`push`,
+	 * `pop`, `reverse` etc) as well as additional helper methods (`each`, `pluck`,
+	 * `unique` etc) to assist your working with the data held in a table.
+	 *
+	 * Most methods (those which return an Api instance) are chainable, which means
+	 * the return from a method call also has all of the methods available that the
+	 * top level object had. For example, these two calls are equivalent:
+	 *
+	 *     // Not chained
+	 *     api.row.add( {...} );
+	 *     api.draw();
+	 *
+	 *     // Chained
+	 *     api.row.add( {...} ).draw();
+	 *
+	 * @class DataTable.Api
+	 * @param {array|object|string|jQuery} context DataTable identifier. This is
+	 *   used to define which DataTables enhanced tables this API will operate on.
+	 *   Can be one of:
+	 *
+	 *   * `string` - jQuery selector. Any DataTables' matching the given selector
+	 *     with be found and used.
+	 *   * `node` - `TABLE` node which has already been formed into a DataTable.
+	 *   * `jQuery` - A jQuery object of `TABLE` nodes.
+	 *   * `object` - DataTables settings object
+	 * @param {array} [data] Data to initialise the Api instance with.
+	 *
+	 * @example
+	 *   // Direct initialisation during DataTables construction
+	 *   var api = $('#example').DataTable();
+	 *
+	 * @example
+	 *   // Initialisation using a DataTables jQuery object
+	 *   var api = $('#example').dataTable().api();
+	 *
+	 * @example
+	 *   // Initialisation as a constructor
+	 *   var api = new $.fn.DataTable.Api( 'table.dataTable' );
+	 */
+	_Api = function ( context, data )
+	{
+		if ( ! (this instanceof _Api) ) {
+			return new _Api( context, data );
+		}
+	
+		var settings = [];
+		var ctxSettings = function ( o ) {
+			var a = _toSettings( o );
+			if ( a ) {
+				settings.push.apply( settings, a );
+			}
+		};
+	
+		if ( $.isArray( context ) ) {
+			for ( var i=0, ien=context.length ; i<ien ; i++ ) {
+				ctxSettings( context[i] );
+			}
+		}
+		else {
+			ctxSettings( context );
+		}
+	
+		// Remove duplicates
+		this.context = _unique( settings );
+	
+		// Initial data
+		if ( data ) {
+			$.merge( this, data );
+		}
+	
+		// selector
+		this.selector = {
+			rows: null,
+			cols: null,
+			opts: null
+		};
+	
+		_Api.extend( this, this, __apiStruct );
+	};
+	
+	DataTable.Api = _Api;
+	
+	// Don't destroy the existing prototype, just extend it. Required for jQuery 2's
+	// isPlainObject.
+	$.extend( _Api.prototype, {
+		any: function ()
+		{
+			return this.count() !== 0;
+		},
+	
+	
+		concat:  __arrayProto.concat,
+	
+	
+		context: [], // array of table settings objects
+	
+	
+		count: function ()
+		{
+			return this.flatten().length;
+		},
+	
+	
+		each: function ( fn )
+		{
+			for ( var i=0, ien=this.length ; i<ien; i++ ) {
+				fn.call( this, this[i], i, this );
+			}
+	
+			return this;
+		},
+	
+	
+		eq: function ( idx )
+		{
+			var ctx = this.context;
+	
+			return ctx.length > idx ?
+				new _Api( ctx[idx], this[idx] ) :
+				null;
+		},
+	
+	
+		filter: function ( fn )
+		{
+			var a = [];
+	
+			if ( __arrayProto.filter ) {
+				a = __arrayProto.filter.call( this, fn, this );
+			}
+			else {
+				// Compatibility for browsers without EMCA-252-5 (JS 1.6)
+				for ( var i=0, ien=this.length ; i<ien ; i++ ) {
+					if ( fn.call( this, this[i], i, this ) ) {
+						a.push( this[i] );
+					}
+				}
+			}
+	
+			return new _Api( this.context, a );
+		},
+	
+	
+		flatten: function ()
+		{
+			var a = [];
+			return new _Api( this.context, a.concat.apply( a, this.toArray() ) );
+		},
+	
+	
+		join:    __arrayProto.join,
+	
+	
+		indexOf: __arrayProto.indexOf || function (obj, start)
+		{
+			for ( var i=(start || 0), ien=this.length ; i<ien ; i++ ) {
+				if ( this[i] === obj ) {
+					return i;
+				}
+			}
+			return -1;
+		},
+	
+		iterator: function ( flatten, type, fn, alwaysNew ) {
+			var
+				a = [], ret,
+				i, ien, j, jen,
+				context = this.context,
+				rows, items, item,
+				selector = this.selector;
+	
+			// Argument shifting
+			if ( typeof flatten === 'string' ) {
+				alwaysNew = fn;
+				fn = type;
+				type = flatten;
+				flatten = false;
+			}
+	
+			for ( i=0, ien=context.length ; i<ien ; i++ ) {
+				var apiInst = new _Api( context[i] );
+	
+				if ( type === 'table' ) {
+					ret = fn.call( apiInst, context[i], i );
+	
+					if ( ret !== undefined ) {
+						a.push( ret );
+					}
+				}
+				else if ( type === 'columns' || type === 'rows' ) {
+					// this has same length as context - one entry for each table
+					ret = fn.call( apiInst, context[i], this[i], i );
+	
+					if ( ret !== undefined ) {
+						a.push( ret );
+					}
+				}
+				else if ( type === 'column' || type === 'column-rows' || type === 'row' || type === 'cell' ) {
+					// columns and rows share the same structure.
+					// 'this' is an array of column indexes for each context
+					items = this[i];
+	
+					if ( type === 'column-rows' ) {
+						rows = _selector_row_indexes( context[i], selector.opts );
+					}
+	
+					for ( j=0, jen=items.length ; j<jen ; j++ ) {
+						item = items[j];
+	
+						if ( type === 'cell' ) {
+							ret = fn.call( apiInst, context[i], item.row, item.column, i, j );
+						}
+						else {
+							ret = fn.call( apiInst, context[i], item, i, j, rows );
+						}
+	
+						if ( ret !== undefined ) {
+							a.push( ret );
+						}
+					}
+				}
+			}
+	
+			if ( a.length || alwaysNew ) {
+				var api = new _Api( context, flatten ? a.concat.apply( [], a ) : a );
+				var apiSelector = api.selector;
+				apiSelector.rows = selector.rows;
+				apiSelector.cols = selector.cols;
+				apiSelector.opts = selector.opts;
+				return api;
+			}
+			return this;
+		},
+	
+	
+		lastIndexOf: __arrayProto.lastIndexOf || function (obj, start)
+		{
+			// Bit cheeky...
+			return this.indexOf.apply( this.toArray.reverse(), arguments );
+		},
+	
+	
+		length:  0,
+	
+	
+		map: function ( fn )
+		{
+			var a = [];
+	
+			if ( __arrayProto.map ) {
+				a = __arrayProto.map.call( this, fn, this );
+			}
+			else {
+				// Compatibility for browsers without EMCA-252-5 (JS 1.6)
+				for ( var i=0, ien=this.length ; i<ien ; i++ ) {
+					a.push( fn.call( this, this[i], i ) );
+				}
+			}
+	
+			return new _Api( this.context, a );
+		},
+	
+	
+		pluck: function ( prop )
+		{
+			return this.map( function ( el ) {
+				return el[ prop ];
+			} );
+		},
+	
+		pop:     __arrayProto.pop,
+	
+	
+		push:    __arrayProto.push,
+	
+	
+		// Does not return an API instance
+		reduce: __arrayProto.reduce || function ( fn, init )
+		{
+			return _fnReduce( this, fn, init, 0, this.length, 1 );
+		},
+	
+	
+		reduceRight: __arrayProto.reduceRight || function ( fn, init )
+		{
+			return _fnReduce( this, fn, init, this.length-1, -1, -1 );
+		},
+	
+	
+		reverse: __arrayProto.reverse,
+	
+	
+		// Object with rows, columns and opts
+		selector: null,
+	
+	
+		shift:   __arrayProto.shift,
+	
+	
+		slice: function () {
+			return new _Api( this.context, this );
+		},
+	
+	
+		sort:    __arrayProto.sort, // ? name - order?
+	
+	
+		splice:  __arrayProto.splice,
+	
+	
+		toArray: function ()
+		{
+			return __arrayProto.slice.call( this );
+		},
+	
+	
+		to$: function ()
+		{
+			return $( this );
+		},
+	
+	
+		toJQuery: function ()
+		{
+			return $( this );
+		},
+	
+	
+		unique: function ()
+		{
+			return new _Api( this.context, _unique(this) );
+		},
+	
+	
+		unshift: __arrayProto.unshift
+	} );
+	
+	
+	_Api.extend = function ( scope, obj, ext )
+	{
+		// Only extend API instances and static properties of the API
+		if ( ! ext.length || ! obj || ( ! (obj instanceof _Api) && ! obj.__dt_wrapper ) ) {
+			return;
+		}
+	
+		var
+			i, ien,
+			struct,
+			methodScoping = function ( scope, fn, struc ) {
+				return function () {
+					var ret = fn.apply( scope, arguments );
+	
+					// Method extension
+					_Api.extend( ret, ret, struc.methodExt );
+					return ret;
+				};
+			};
+	
+		for ( i=0, ien=ext.length ; i<ien ; i++ ) {
+			struct = ext[i];
+	
+			// Value
+			obj[ struct.name ] = struct.type === 'function' ?
+				methodScoping( scope, struct.val, struct ) :
+				struct.type === 'object' ?
+					{} :
+					struct.val;
+	
+			obj[ struct.name ].__dt_wrapper = true;
+	
+			// Property extension
+			_Api.extend( scope, obj[ struct.name ], struct.propExt );
+		}
+	};
+	
+	
+	// @todo - Is there need for an augment function?
+	// _Api.augment = function ( inst, name )
+	// {
+	// 	// Find src object in the structure from the name
+	// 	var parts = name.split('.');
+	
+	// 	_Api.extend( inst, obj );
+	// };
+	
+	
+	//     [
+	//       {
+	//         name:      'data'                -- string   - Property name
+	//         val:       function () {},       -- function - Api method (or undefined if just an object
+	//         methodExt: [ ... ],              -- array    - Array of Api object definitions to extend the method result
+	//         propExt:   [ ... ]               -- array    - Array of Api object definitions to extend the property
+	//       },
+	//       {
+	//         name:     'row'
+	//         val:       {},
+	//         methodExt: [ ... ],
+	//         propExt:   [
+	//           {
+	//             name:      'data'
+	//             val:       function () {},
+	//             methodExt: [ ... ],
+	//             propExt:   [ ... ]
+	//           },
+	//           ...
+	//         ]
+	//       }
+	//     ]
+	
+	_Api.register = _api_register = function ( name, val )
+	{
+		if ( $.isArray( name ) ) {
+			for ( var j=0, jen=name.length ; j<jen ; j++ ) {
+				_Api.register( name[j], val );
+			}
+			return;
+		}
+	
+		var
+			i, ien,
+			heir = name.split('.'),
+			struct = __apiStruct,
+			key, method;
+	
+		var find = function ( src, name ) {
+			for ( var i=0, ien=src.length ; i<ien ; i++ ) {
+				if ( src[i].name === name ) {
+					return src[i];
+				}
+			}
+			return null;
+		};
+	
+		for ( i=0, ien=heir.length ; i<ien ; i++ ) {
+			method = heir[i].indexOf('()') !== -1;
+			key = method ?
+				heir[i].replace('()', '') :
+				heir[i];
+	
+			var src = find( struct, key );
+			if ( ! src ) {
+				src = {
+					name:      key,
+					val:       {},
+					methodExt: [],
+					propExt:   [],
+					type:      'object'
+				};
+				struct.push( src );
+			}
+	
+			if ( i === ien-1 ) {
+				src.val = val;
+				src.type = typeof val === 'function' ?
+					'function' :
+					$.isPlainObject( val ) ?
+						'object' :
+						'other';
+			}
+			else {
+				struct = method ?
+					src.methodExt :
+					src.propExt;
+			}
+		}
+	};
+	
+	_Api.registerPlural = _api_registerPlural = function ( pluralName, singularName, val ) {
+		_Api.register( pluralName, val );
+	
+		_Api.register( singularName, function () {
+			var ret = val.apply( this, arguments );
+	
+			if ( ret === this ) {
+				// Returned item is the API instance that was passed in, return it
+				return this;
+			}
+			else if ( ret instanceof _Api ) {
+				// New API instance returned, want the value from the first item
+				// in the returned array for the singular result.
+				return ret.length ?
+					$.isArray( ret[0] ) ?
+						new _Api( ret.context, ret[0] ) : // Array results are 'enhanced'
+						ret[0] :
+					undefined;
+			}
+	
+			// Non-API return - just fire it back
+			return ret;
+		} );
+	};
+	
+	
+	/**
+	 * Selector for HTML tables. Apply the given selector to the give array of
+	 * DataTables settings objects.
+	 *
+	 * @param {string|integer} [selector] jQuery selector string or integer
+	 * @param  {array} Array of DataTables settings objects to be filtered
+	 * @return {array}
+	 * @ignore
+	 */
+	var __table_selector = function ( selector, a )
+	{
+		if ( $.isArray(selector) ) {
+			return $.map( selector, function (item) {
+				return __table_selector(item, a);
+			} );
+		}
+	
+		// Integer is used to pick out a table by index
+		if ( typeof selector === 'number' ) {
+			return [ a[ selector ] ];
+		}
+	
+		// Perform a jQuery selector on the table nodes
+		var nodes = $.map( a, function (el, i) {
+			return el.nTable;
+		} );
+	
+		return $(nodes)
+			.filter( selector )
+			.map( function (i) {
+				// Need to translate back from the table node to the settings
+				var idx = $.inArray( this, nodes );
+				return a[ idx ];
+			} )
+			.toArray();
+	};
+	
+	
+	
+	/**
+	 * Context selector for the API's context (i.e. the tables the API instance
+	 * refers to.
+	 *
+	 * @name    DataTable.Api#tables
+	 * @param {string|integer} [selector] Selector to pick which tables the iterator
+	 *   should operate on. If not given, all tables in the current context are
+	 *   used. This can be given as a jQuery selector (for example `':gt(0)'`) to
+	 *   select multiple tables or as an integer to select a single table.
+	 * @returns {DataTable.Api} Returns a new API instance if a selector is given.
+	 */
+	_api_register( 'tables()', function ( selector ) {
+		// A new instance is created if there was a selector specified
+		return selector !== undefined && selector !== null ?
+			new _Api( __table_selector( selector, this.context ) ) :
+			this;
+	} );
+	
+	
+	_api_register( 'table()', function ( selector ) {
+		var tables = this.tables( selector );
+		var ctx = tables.context;
+	
+		// Truncate to the first matched table
+		return ctx.length ?
+			new _Api( ctx[0] ) :
+			tables;
+	} );
+	
+	
+	_api_registerPlural( 'tables().nodes()', 'table().node()' , function () {
+		return this.iterator( 'table', function ( ctx ) {
+			return ctx.nTable;
+		}, 1 );
+	} );
+	
+	
+	_api_registerPlural( 'tables().body()', 'table().body()' , function () {
+		return this.iterator( 'table', function ( ctx ) {
+			return ctx.nTBody;
+		}, 1 );
+	} );
+	
+	
+	_api_registerPlural( 'tables().header()', 'table().header()' , function () {
+		return this.iterator( 'table', function ( ctx ) {
+			return ctx.nTHead;
+		}, 1 );
+	} );
+	
+	
+	_api_registerPlural( 'tables().footer()', 'table().footer()' , function () {
+		return this.iterator( 'table', function ( ctx ) {
+			return ctx.nTFoot;
+		}, 1 );
+	} );
+	
+	
+	_api_registerPlural( 'tables().containers()', 'table().container()' , function () {
+		return this.iterator( 'table', function ( ctx ) {
+			return ctx.nTableWrapper;
+		}, 1 );
+	} );
+	
+	
+	
+	/**
+	 * Redraw the tables in the current context.
+	 */
+	_api_register( 'draw()', function ( paging ) {
+		return this.iterator( 'table', function ( settings ) {
+			if ( paging === 'page' ) {
+				_fnDraw( settings );
+			}
+			else {
+				if ( typeof paging === 'string' ) {
+					paging = paging === 'full-hold' ?
+						false :
+						true;
+				}
+	
+				_fnReDraw( settings, paging===false );
+			}
+		} );
+	} );
+	
+	
+	
+	/**
+	 * Get the current page index.
+	 *
+	 * @return {integer} Current page index (zero based)
+	 *//**
+	 * Set the current page.
+	 *
+	 * Note that if you attempt to show a page which does not exist, DataTables will
+	 * not throw an error, but rather reset the paging.
+	 *
+	 * @param {integer|string} action The paging action to take. This can be one of:
+	 *  * `integer` - The page index to jump to
+	 *  * `string` - An action to take:
+	 *    * `first` - Jump to first page.
+	 *    * `next` - Jump to the next page
+	 *    * `previous` - Jump to previous page
+	 *    * `last` - Jump to the last page.
+	 * @returns {DataTables.Api} this
+	 */
+	_api_register( 'page()', function ( action ) {
+		if ( action === undefined ) {
+			return this.page.info().page; // not an expensive call
+		}
+	
+		// else, have an action to take on all tables
+		return this.iterator( 'table', function ( settings ) {
+			_fnPageChange( settings, action );
+		} );
+	} );
+	
+	
+	/**
+	 * Paging information for the first table in the current context.
+	 *
+	 * If you require paging information for another table, use the `table()` method
+	 * with a suitable selector.
+	 *
+	 * @return {object} Object with the following properties set:
+	 *  * `page` - Current page index (zero based - i.e. the first page is `0`)
+	 *  * `pages` - Total number of pages
+	 *  * `start` - Display index for the first record shown on the current page
+	 *  * `end` - Display index for the last record shown on the current page
+	 *  * `length` - Display length (number of records). Note that generally `start
+	 *    + length = end`, but this is not always true, for example if there are
+	 *    only 2 records to show on the final page, with a length of 10.
+	 *  * `recordsTotal` - Full data set length
+	 *  * `recordsDisplay` - Data set length once the current filtering criterion
+	 *    are applied.
+	 */
+	_api_register( 'page.info()', function ( action ) {
+		if ( this.context.length === 0 ) {
+			return undefined;
+		}
+	
+		var
+			settings   = this.context[0],
+			start      = settings._iDisplayStart,
+			len        = settings.oFeatures.bPaginate ? settings._iDisplayLength : -1,
+			visRecords = settings.fnRecordsDisplay(),
+			all        = len === -1;
+	
+		return {
+			"page":           all ? 0 : Math.floor( start / len ),
+			"pages":          all ? 1 : Math.ceil( visRecords / len ),
+			"start":          start,
+			"end":            settings.fnDisplayEnd(),
+			"length":         len,
+			"recordsTotal":   settings.fnRecordsTotal(),
+			"recordsDisplay": visRecords,
+			"serverSide":     _fnDataSource( settings ) === 'ssp'
+		};
+	} );
+	
+	
+	/**
+	 * Get the current page length.
+	 *
+	 * @return {integer} Current page length. Note `-1` indicates that all records
+	 *   are to be shown.
+	 *//**
+	 * Set the current page length.
+	 *
+	 * @param {integer} Page length to set. Use `-1` to show all records.
+	 * @returns {DataTables.Api} this
+	 */
+	_api_register( 'page.len()', function ( len ) {
+		// Note that we can't call this function 'length()' because `length`
+		// is a Javascript property of functions which defines how many arguments
+		// the function expects.
+		if ( len === undefined ) {
+			return this.context.length !== 0 ?
+				this.context[0]._iDisplayLength :
+				undefined;
+		}
+	
+		// else, set the page length
+		return this.iterator( 'table', function ( settings ) {
+			_fnLengthChange( settings, len );
+		} );
+	} );
+	
+	
+	
+	var __reload = function ( settings, holdPosition, callback ) {
+		// Use the draw event to trigger a callback
+		if ( callback ) {
+			var api = new _Api( settings );
+	
+			api.one( 'draw', function () {
+				callback( api.ajax.json() );
+			} );
+		}
+	
+		if ( _fnDataSource( settings ) == 'ssp' ) {
+			_fnReDraw( settings, holdPosition );
+		}
+		else {
+			_fnProcessingDisplay( settings, true );
+	
+			// Cancel an existing request
+			var xhr = settings.jqXHR;
+			if ( xhr && xhr.readyState !== 4 ) {
+				xhr.abort();
+			}
+	
+			// Trigger xhr
+			_fnBuildAjax( settings, [], function( json ) {
+				_fnClearTable( settings );
+	
+				var data = _fnAjaxDataSrc( settings, json );
+				for ( var i=0, ien=data.length ; i<ien ; i++ ) {
+					_fnAddData( settings, data[i] );
+				}
+	
+				_fnReDraw( settings, holdPosition );
+				_fnProcessingDisplay( settings, false );
+			} );
+		}
+	};
+	
+	
+	/**
+	 * Get the JSON response from the last Ajax request that DataTables made to the
+	 * server. Note that this returns the JSON from the first table in the current
+	 * context.
+	 *
+	 * @return {object} JSON received from the server.
+	 */
+	_api_register( 'ajax.json()', function () {
+		var ctx = this.context;
+	
+		if ( ctx.length > 0 ) {
+			return ctx[0].json;
+		}
+	
+		// else return undefined;
+	} );
+	
+	
+	/**
+	 * Get the data submitted in the last Ajax request
+	 */
+	_api_register( 'ajax.params()', function () {
+		var ctx = this.context;
+	
+		if ( ctx.length > 0 ) {
+			return ctx[0].oAjaxData;
+		}
+	
+		// else return undefined;
+	} );
+	
+	
+	/**
+	 * Reload tables from the Ajax data source. Note that this function will
+	 * automatically re-draw the table when the remote data has been loaded.
+	 *
+	 * @param {boolean} [reset=true] Reset (default) or hold the current paging
+	 *   position. A full re-sort and re-filter is performed when this method is
+	 *   called, which is why the pagination reset is the default action.
+	 * @returns {DataTables.Api} this
+	 */
+	_api_register( 'ajax.reload()', function ( callback, resetPaging ) {
+		return this.iterator( 'table', function (settings) {
+			__reload( settings, resetPaging===false, callback );
+		} );
+	} );
+	
+	
+	/**
+	 * Get the current Ajax URL. Note that this returns the URL from the first
+	 * table in the current context.
+	 *
+	 * @return {string} Current Ajax source URL
+	 *//**
+	 * Set the Ajax URL. Note that this will set the URL for all tables in the
+	 * current context.
+	 *
+	 * @param {string} url URL to set.
+	 * @returns {DataTables.Api} this
+	 */
+	_api_register( 'ajax.url()', function ( url ) {
+		var ctx = this.context;
+	
+		if ( url === undefined ) {
+			// get
+			if ( ctx.length === 0 ) {
+				return undefined;
+			}
+			ctx = ctx[0];
+	
+			return ctx.ajax ?
+				$.isPlainObject( ctx.ajax ) ?
+					ctx.ajax.url :
+					ctx.ajax :
+				ctx.sAjaxSource;
+		}
+	
+		// set
+		return this.iterator( 'table', function ( settings ) {
+			if ( $.isPlainObject( settings.ajax ) ) {
+				settings.ajax.url = url;
+			}
+			else {
+				settings.ajax = url;
+			}
+			// No need to consider sAjaxSource here since DataTables gives priority
+			// to `ajax` over `sAjaxSource`. So setting `ajax` here, renders any
+			// value of `sAjaxSource` redundant.
+		} );
+	} );
+	
+	
+	/**
+	 * Load data from the newly set Ajax URL. Note that this method is only
+	 * available when `ajax.url()` is used to set a URL. Additionally, this method
+	 * has the same effect as calling `ajax.reload()` but is provided for
+	 * convenience when setting a new URL. Like `ajax.reload()` it will
+	 * automatically redraw the table once the remote data has been loaded.
+	 *
+	 * @returns {DataTables.Api} this
+	 */
+	_api_register( 'ajax.url().load()', function ( callback, resetPaging ) {
+		// Same as a reload, but makes sense to present it for easy access after a
+		// url change
+		return this.iterator( 'table', function ( ctx ) {
+			__reload( ctx, resetPaging===false, callback );
+		} );
+	} );
+	
+	
+	
+	
+	var _selector_run = function ( type, selector, selectFn, settings, opts )
+	{
+		var
+			out = [], res,
+			a, i, ien, j, jen,
+			selectorType = typeof selector;
+	
+		// Can't just check for isArray here, as an API or jQuery instance might be
+		// given with their array like look
+		if ( ! selector || selectorType === 'string' || selectorType === 'function' || selector.length === undefined ) {
+			selector = [ selector ];
+		}
+	
+		for ( i=0, ien=selector.length ; i<ien ; i++ ) {
+			// Only split on simple strings - complex expressions will be jQuery selectors
+			a = selector[i] && selector[i].split && ! selector[i].match(/[\[\(:]/) ?
+				selector[i].split(',') :
+				[ selector[i] ];
+	
+			for ( j=0, jen=a.length ; j<jen ; j++ ) {
+				res = selectFn( typeof a[j] === 'string' ? $.trim(a[j]) : a[j] );
+	
+				if ( res && res.length ) {
+					out = out.concat( res );
+				}
+			}
+		}
+	
+		// selector extensions
+		var ext = _ext.selector[ type ];
+		if ( ext.length ) {
+			for ( i=0, ien=ext.length ; i<ien ; i++ ) {
+				out = ext[i]( settings, opts, out );
+			}
+		}
+	
+		return _unique( out );
+	};
+	
+	
+	var _selector_opts = function ( opts )
+	{
+		if ( ! opts ) {
+			opts = {};
+		}
+	
+		// Backwards compatibility for 1.9- which used the terminology filter rather
+		// than search
+		if ( opts.filter && opts.search === undefined ) {
+			opts.search = opts.filter;
+		}
+	
+		return $.extend( {
+			search: 'none',
+			order: 'current',
+			page: 'all'
+		}, opts );
+	};
+	
+	
+	var _selector_first = function ( inst )
+	{
+		// Reduce the API instance to the first item found
+		for ( var i=0, ien=inst.length ; i<ien ; i++ ) {
+			if ( inst[i].length > 0 ) {
+				// Assign the first element to the first item in the instance
+				// and truncate the instance and context
+				inst[0] = inst[i];
+				inst[0].length = 1;
+				inst.length = 1;
+				inst.context = [ inst.context[i] ];
+	
+				return inst;
+			}
+		}
+	
+		// Not found - return an empty instance
+		inst.length = 0;
+		return inst;
+	};
+	
+	
+	var _selector_row_indexes = function ( settings, opts )
+	{
+		var
+			i, ien, tmp, a=[],
+			displayFiltered = settings.aiDisplay,
+			displayMaster = settings.aiDisplayMaster;
+	
+		var
+			search = opts.search,  // none, applied, removed
+			order  = opts.order,   // applied, current, index (original - compatibility with 1.9)
+			page   = opts.page;    // all, current
+	
+		if ( _fnDataSource( settings ) == 'ssp' ) {
+			// In server-side processing mode, most options are irrelevant since
+			// rows not shown don't exist and the index order is the applied order
+			// Removed is a special case - for consistency just return an empty
+			// array
+			return search === 'removed' ?
+				[] :
+				_range( 0, displayMaster.length );
+		}
+		else if ( page == 'current' ) {
+			// Current page implies that order=current and fitler=applied, since it is
+			// fairly senseless otherwise, regardless of what order and search actually
+			// are
+			for ( i=settings._iDisplayStart, ien=settings.fnDisplayEnd() ; i<ien ; i++ ) {
+				a.push( displayFiltered[i] );
+			}
+		}
+		else if ( order == 'current' || order == 'applied' ) {
+			if ( search == 'none') {
+				a = displayMaster.slice();
+			}
+			else if ( search == 'applied' ) {
+				a = displayFiltered.slice();
+			}
+			else if ( search == 'removed' ) {
+				// O(n+m) solution by creating a hash map
+				var displayFilteredMap = {};
+	
+				for ( var i=0, ien=displayFiltered.length ; i<ien ; i++ ) {
+					displayFilteredMap[displayFiltered[i]] = null;
+				}
+	
+				a = $.map( displayMaster, function (el) {
+					return ! displayFilteredMap.hasOwnProperty(el) ?
+						el :
+						null;
+				} );
+			}
+		}
+		else if ( order == 'index' || order == 'original' ) {
+			for ( i=0, ien=settings.aoData.length ; i<ien ; i++ ) {
+				if ( search == 'none' ) {
+					a.push( i );
+				}
+				else { // applied | removed
+					tmp = $.inArray( i, displayFiltered );
+	
+					if ((tmp === -1 && search == 'removed') ||
+						(tmp >= 0   && search == 'applied') )
+					{
+						a.push( i );
+					}
+				}
+			}
+		}
+	
+		return a;
+	};
+	
+	
+	/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+	 * Rows
+	 *
+	 * {}          - no selector - use all available rows
+	 * {integer}   - row aoData index
+	 * {node}      - TR node
+	 * {string}    - jQuery selector to apply to the TR elements
+	 * {array}     - jQuery array of nodes, or simply an array of TR nodes
+	 *
+	 */
+	var __row_selector = function ( settings, selector, opts )
+	{
+		var rows;
+		var run = function ( sel ) {
+			var selInt = _intVal( sel );
+			var i, ien;
+			var aoData = settings.aoData;
+	
+			// Short cut - selector is a number and no options provided (default is
+			// all records, so no need to check if the index is in there, since it
+			// must be - dev error if the index doesn't exist).
+			if ( selInt !== null && ! opts ) {
+				return [ selInt ];
+			}
+	
+			if ( ! rows ) {
+				rows = _selector_row_indexes( settings, opts );
+			}
+	
+			if ( selInt !== null && $.inArray( selInt, rows ) !== -1 ) {
+				// Selector - integer
+				return [ selInt ];
+			}
+			else if ( sel === null || sel === undefined || sel === '' ) {
+				// Selector - none
+				return rows;
+			}
+	
+			// Selector - function
+			if ( typeof sel === 'function' ) {
+				return $.map( rows, function (idx) {
+					var row = aoData[ idx ];
+					return sel( idx, row._aData, row.nTr ) ? idx : null;
+				} );
+			}
+	
+			// Selector - node
+			if ( sel.nodeName ) {
+				var rowIdx = sel._DT_RowIndex;  // Property added by DT for fast lookup
+				var cellIdx = sel._DT_CellIndex;
+	
+				if ( rowIdx !== undefined ) {
+					// Make sure that the row is actually still present in the table
+					return aoData[ rowIdx ] && aoData[ rowIdx ].nTr === sel ?
+						[ rowIdx ] :
+						[];
+				}
+				else if ( cellIdx ) {
+					return aoData[ cellIdx.row ] && aoData[ cellIdx.row ].nTr === sel.parentNode ?
+						[ cellIdx.row ] :
+						[];
+				}
+				else {
+					var host = $(sel).closest('*[data-dt-row]');
+					return host.length ?
+						[ host.data('dt-row') ] :
+						[];
+				}
+			}
+	
+			// ID selector. Want to always be able to select rows by id, regardless
+			// of if the tr element has been created or not, so can't rely upon
+			// jQuery here - hence a custom implementation. This does not match
+			// Sizzle's fast selector or HTML4 - in HTML5 the ID can be anything,
+			// but to select it using a CSS selector engine (like Sizzle or
+			// querySelect) it would need to need to be escaped for some characters.
+			// DataTables simplifies this for row selectors since you can select
+			// only a row. A # indicates an id any anything that follows is the id -
+			// unescaped.
+			if ( typeof sel === 'string' && sel.charAt(0) === '#' ) {
+				// get row index from id
+				var rowObj = settings.aIds[ sel.replace( /^#/, '' ) ];
+				if ( rowObj !== undefined ) {
+					return [ rowObj.idx ];
+				}
+	
+				// need to fall through to jQuery in case there is DOM id that
+				// matches
+			}
+			
+			// Get nodes in the order from the `rows` array with null values removed
+			var nodes = _removeEmpty(
+				_pluck_order( settings.aoData, rows, 'nTr' )
+			);
+	
+			// Selector - jQuery selector string, array of nodes or jQuery object/
+			// As jQuery's .filter() allows jQuery objects to be passed in filter,
+			// it also allows arrays, so this will cope with all three options
+			return $(nodes)
+				.filter( sel )
+				.map( function () {
+					return this._DT_RowIndex;
+				} )
+				.toArray();
+		};
+	
+		return _selector_run( 'row', selector, run, settings, opts );
+	};
+	
+	
+	_api_register( 'rows()', function ( selector, opts ) {
+		// argument shifting
+		if ( selector === undefined ) {
+			selector = '';
+		}
+		else if ( $.isPlainObject( selector ) ) {
+			opts = selector;
+			selector = '';
+		}
+	
+		opts = _selector_opts( opts );
+	
+		var inst = this.iterator( 'table', function ( settings ) {
+			return __row_selector( settings, selector, opts );
+		}, 1 );
+	
+		// Want argument shifting here and in __row_selector?
+		inst.selector.rows = selector;
+		inst.selector.opts = opts;
+	
+		return inst;
+	} );
+	
+	_api_register( 'rows().nodes()', function () {
+		return this.iterator( 'row', function ( settings, row ) {
+			return settings.aoData[ row ].nTr || undefined;
+		}, 1 );
+	} );
+	
+	_api_register( 'rows().data()', function () {
+		return this.iterator( true, 'rows', function ( settings, rows ) {
+			return _pluck_order( settings.aoData, rows, '_aData' );
+		}, 1 );
+	} );
+	
+	_api_registerPlural( 'rows().cache()', 'row().cache()', function ( type ) {
+		return this.iterator( 'row', function ( settings, row ) {
+			var r = settings.aoData[ row ];
+			return type === 'search' ? r._aFilterData : r._aSortData;
+		}, 1 );
+	} );
+	
+	_api_registerPlural( 'rows().invalidate()', 'row().invalidate()', function ( src ) {
+		return this.iterator( 'row', function ( settings, row ) {
+			_fnInvalidate( settings, row, src );
+		} );
+	} );
+	
+	_api_registerPlural( 'rows().indexes()', 'row().index()', function () {
+		return this.iterator( 'row', function ( settings, row ) {
+			return row;
+		}, 1 );
+	} );
+	
+	_api_registerPlural( 'rows().ids()', 'row().id()', function ( hash ) {
+		var a = [];
+		var context = this.context;
+	
+		// `iterator` will drop undefined values, but in this case we want them
+		for ( var i=0, ien=context.length ; i<ien ; i++ ) {
+			for ( var j=0, jen=this[i].length ; j<jen ; j++ ) {
+				var id = context[i].rowIdFn( context[i].aoData[ this[i][j] ]._aData );
+				a.push( (hash === true ? '#' : '' )+ id );
+			}
+		}
+	
+		return new _Api( context, a );
+	} );
+	
+	_api_registerPlural( 'rows().remove()', 'row().remove()', function () {
+		var that = this;
+	
+		this.iterator( 'row', function ( settings, row, thatIdx ) {
+			var data = settings.aoData;
+			var rowData = data[ row ];
+			var i, ien, j, jen;
+			var loopRow, loopCells;
+	
+			data.splice( row, 1 );
+	
+			// Update the cached indexes
+			for ( i=0, ien=data.length ; i<ien ; i++ ) {
+				loopRow = data[i];
+				loopCells = loopRow.anCells;
+	
+				// Rows
+				if ( loopRow.nTr !== null ) {
+					loopRow.nTr._DT_RowIndex = i;
+				}
+	
+				// Cells
+				if ( loopCells !== null ) {
+					for ( j=0, jen=loopCells.length ; j<jen ; j++ ) {
+						loopCells[j]._DT_CellIndex.row = i;
+					}
+				}
+			}
+	
+			// Delete from the display arrays
+			_fnDeleteIndex( settings.aiDisplayMaster, row );
+			_fnDeleteIndex( settings.aiDisplay, row );
+			_fnDeleteIndex( that[ thatIdx ], row, false ); // maintain local indexes
+	
+			// For server-side processing tables - subtract the deleted row from the count
+			if ( settings._iRecordsDisplay > 0 ) {
+				settings._iRecordsDisplay--;
+			}
+	
+			// Check for an 'overflow' they case for displaying the table
+			_fnLengthOverflow( settings );
+	
+			// Remove the row's ID reference if there is one
+			var id = settings.rowIdFn( rowData._aData );
+			if ( id !== undefined ) {
+				delete settings.aIds[ id ];
+			}
+		} );
+	
+		this.iterator( 'table', function ( settings ) {
+			for ( var i=0, ien=settings.aoData.length ; i<ien ; i++ ) {
+				settings.aoData[i].idx = i;
+			}
+		} );
+	
+		return this;
+	} );
+	
+	
+	_api_register( 'rows.add()', function ( rows ) {
+		var newRows = this.iterator( 'table', function ( settings ) {
+				var row, i, ien;
+				var out = [];
+	
+				for ( i=0, ien=rows.length ; i<ien ; i++ ) {
+					row = rows[i];
+	
+					if ( row.nodeName && row.nodeName.toUpperCase() === 'TR' ) {
+						out.push( _fnAddTr( settings, row )[0] );
+					}
+					else {
+						out.push( _fnAddData( settings, row ) );
+					}
+				}
+	
+				return out;
+			}, 1 );
+	
+		// Return an Api.rows() extended instance, so rows().nodes() etc can be used
+		var modRows = this.rows( -1 );
+		modRows.pop();
+		$.merge( modRows, newRows );
+	
+		return modRows;
+	} );
+	
+	
+	
+	
+	
+	/**
+	 *
+	 */
+	_api_register( 'row()', function ( selector, opts ) {
+		return _selector_first( this.rows( selector, opts ) );
+	} );
+	
+	
+	_api_register( 'row().data()', function ( data ) {
+		var ctx = this.context;
+	
+		if ( data === undefined ) {
+			// Get
+			return ctx.length && this.length ?
+				ctx[0].aoData[ this[0] ]._aData :
+				undefined;
+		}
+	
+		// Set
+		var row = ctx[0].aoData[ this[0] ];
+		row._aData = data;
+	
+		// If the DOM has an id, and the data source is an array
+		if ( $.isArray( data ) && row.nTr && row.nTr.id ) {
+			_fnSetObjectDataFn( ctx[0].rowId )( data, row.nTr.id );
+		}
+	
+		// Automatically invalidate
+		_fnInvalidate( ctx[0], this[0], 'data' );
+	
+		return this;
+	} );
+	
+	
+	_api_register( 'row().node()', function () {
+		var ctx = this.context;
+	
+		return ctx.length && this.length ?
+			ctx[0].aoData[ this[0] ].nTr || null :
+			null;
+	} );
+	
+	
+	_api_register( 'row.add()', function ( row ) {
+		// Allow a jQuery object to be passed in - only a single row is added from
+		// it though - the first element in the set
+		if ( row instanceof $ && row.length ) {
+			row = row[0];
+		}
+	
+		var rows = this.iterator( 'table', function ( settings ) {
+			if ( row.nodeName && row.nodeName.toUpperCase() === 'TR' ) {
+				return _fnAddTr( settings, row )[0];
+			}
+			return _fnAddData( settings, row );
+		} );
+	
+		// Return an Api.rows() extended instance, with the newly added row selected
+		return this.row( rows[0] );
+	} );
+	
+	
+	
+	var __details_add = function ( ctx, row, data, klass )
+	{
+		// Convert to array of TR elements
+		var rows = [];
+		var addRow = function ( r, k ) {
+			// Recursion to allow for arrays of jQuery objects
+			if ( $.isArray( r ) || r instanceof $ ) {
+				for ( var i=0, ien=r.length ; i<ien ; i++ ) {
+					addRow( r[i], k );
+				}
+				return;
+			}
+	
+			// If we get a TR element, then just add it directly - up to the dev
+			// to add the correct number of columns etc
+			if ( r.nodeName && r.nodeName.toLowerCase() === 'tr' ) {
+				rows.push( r );
+			}
+			else {
+				// Otherwise create a row with a wrapper
+				var created = $('<tr><td/></tr>').addClass( k );
+				$('td', created)
+					.addClass( k )
+					.html( r )
+					[0].colSpan = _fnVisbleColumns( ctx );
+	
+				rows.push( created[0] );
+			}
+		};
+	
+		addRow( data, klass );
+	
+		if ( row._details ) {
+			row._details.detach();
+		}
+	
+		row._details = $(rows);
+	
+		// If the children were already shown, that state should be retained
+		if ( row._detailsShow ) {
+			row._details.insertAfter( row.nTr );
+		}
+	};
+	
+	
+	var __details_remove = function ( api, idx )
+	{
+		var ctx = api.context;
+	
+		if ( ctx.length ) {
+			var row = ctx[0].aoData[ idx !== undefined ? idx : api[0] ];
+	
+			if ( row && row._details ) {
+				row._details.remove();
+	
+				row._detailsShow = undefined;
+				row._details = undefined;
+			}
+		}
+	};
+	
+	
+	var __details_display = function ( api, show ) {
+		var ctx = api.context;
+	
+		if ( ctx.length && api.length ) {
+			var row = ctx[0].aoData[ api[0] ];
+	
+			if ( row._details ) {
+				row._detailsShow = show;
+	
+				if ( show ) {
+					row._details.insertAfter( row.nTr );
+				}
+				else {
+					row._details.detach();
+				}
+	
+				__details_events( ctx[0] );
+			}
+		}
+	};
+	
+	
+	var __details_events = function ( settings )
+	{
+		var api = new _Api( settings );
+		var namespace = '.dt.DT_details';
+		var drawEvent = 'draw'+namespace;
+		var colvisEvent = 'column-visibility'+namespace;
+		var destroyEvent = 'destroy'+namespace;
+		var data = settings.aoData;
+	
+		api.off( drawEvent +' '+ colvisEvent +' '+ destroyEvent );
+	
+		if ( _pluck( data, '_details' ).length > 0 ) {
+			// On each draw, insert the required elements into the document
+			api.on( drawEvent, function ( e, ctx ) {
+				if ( settings !== ctx ) {
+					return;
+				}
+	
+				api.rows( {page:'current'} ).eq(0).each( function (idx) {
+					// Internal data grab
+					var row = data[ idx ];
+	
+					if ( row._detailsShow ) {
+						row._details.insertAfter( row.nTr );
+					}
+				} );
+			} );
+	
+			// Column visibility change - update the colspan
+			api.on( colvisEvent, function ( e, ctx, idx, vis ) {
+				if ( settings !== ctx ) {
+					return;
+				}
+	
+				// Update the colspan for the details rows (note, only if it already has
+				// a colspan)
+				var row, visible = _fnVisbleColumns( ctx );
+	
+				for ( var i=0, ien=data.length ; i<ien ; i++ ) {
+					row = data[i];
+	
+					if ( row._details ) {
+						row._details.children('td[colspan]').attr('colspan', visible );
+					}
+				}
+			} );
+	
+			// Table destroyed - nuke any child rows
+			api.on( destroyEvent, function ( e, ctx ) {
+				if ( settings !== ctx ) {
+					return;
+				}
+	
+				for ( var i=0, ien=data.length ; i<ien ; i++ ) {
+					if ( data[i]._details ) {
+						__details_remove( api, i );
+					}
+				}
+			} );
+		}
+	};
+	
+	// Strings for the method names to help minification
+	var _emp = '';
+	var _child_obj = _emp+'row().child';
+	var _child_mth = _child_obj+'()';
+	
+	// data can be:
+	//  tr
+	//  string
+	//  jQuery or array of any of the above
+	_api_register( _child_mth, function ( data, klass ) {
+		var ctx = this.context;
+	
+		if ( data === undefined ) {
+			// get
+			return ctx.length && this.length ?
+				ctx[0].aoData[ this[0] ]._details :
+				undefined;
+		}
+		else if ( data === true ) {
+			// show
+			this.child.show();
+		}
+		else if ( data === false ) {
+			// remove
+			__details_remove( this );
+		}
+		else if ( ctx.length && this.length ) {
+			// set
+			__details_add( ctx[0], ctx[0].aoData[ this[0] ], data, klass );
+		}
+	
+		return this;
+	} );
+	
+	
+	_api_register( [
+		_child_obj+'.show()',
+		_child_mth+'.show()' // only when `child()` was called with parameters (without
+	], function ( show ) {   // it returns an object and this method is not executed)
+		__details_display( this, true );
+		return this;
+	} );
+	
+	
+	_api_register( [
+		_child_obj+'.hide()',
+		_child_mth+'.hide()' // only when `child()` was called with parameters (without
+	], function () {         // it returns an object and this method is not executed)
+		__details_display( this, false );
+		return this;
+	} );
+	
+	
+	_api_register( [
+		_child_obj+'.remove()',
+		_child_mth+'.remove()' // only when `child()` was called with parameters (without
+	], function () {           // it returns an object and this method is not executed)
+		__details_remove( this );
+		return this;
+	} );
+	
+	
+	_api_register( _child_obj+'.isShown()', function () {
+		var ctx = this.context;
+	
+		if ( ctx.length && this.length ) {
+			// _detailsShown as false or undefined will fall through to return false
+			return ctx[0].aoData[ this[0] ]._detailsShow || false;
+		}
+		return false;
+	} );
+	
+	
+	
+	/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+	 * Columns
+	 *
+	 * {integer}           - column index (>=0 count from left, <0 count from right)
+	 * "{integer}:visIdx"  - visible column index (i.e. translate to column index)  (>=0 count from left, <0 count from right)
+	 * "{integer}:visible" - alias for {integer}:visIdx  (>=0 count from left, <0 count from right)
+	 * "{string}:name"     - column name
+	 * "{string}"          - jQuery selector on column header nodes
+	 *
+	 */
+	
+	// can be an array of these items, comma separated list, or an array of comma
+	// separated lists
+	
+	var __re_column_selector = /^([^:]+):(name|visIdx|visible)$/;
+	
+	
+	// r1 and r2 are redundant - but it means that the parameters match for the
+	// iterator callback in columns().data()
+	var __columnData = function ( settings, column, r1, r2, rows ) {
+		var a = [];
+		for ( var row=0, ien=rows.length ; row<ien ; row++ ) {
+			a.push( _fnGetCellData( settings, rows[row], column ) );
+		}
+		return a;
+	};
+	
+	
+	var __column_selector = function ( settings, selector, opts )
+	{
+		var
+			columns = settings.aoColumns,
+			names = _pluck( columns, 'sName' ),
+			nodes = _pluck( columns, 'nTh' );
+	
+		var run = function ( s ) {
+			var selInt = _intVal( s );
+	
+			// Selector - all
+			if ( s === '' ) {
+				return _range( columns.length );
+			}
+	
+			// Selector - index
+			if ( selInt !== null ) {
+				return [ selInt >= 0 ?
+					selInt : // Count from left
+					columns.length + selInt // Count from right (+ because its a negative value)
+				];
+			}
+	
+			// Selector = function
+			if ( typeof s === 'function' ) {
+				var rows = _selector_row_indexes( settings, opts );
+	
+				return $.map( columns, function (col, idx) {
+					return s(
+							idx,
+							__columnData( settings, idx, 0, 0, rows ),
+							nodes[ idx ]
+						) ? idx : null;
+				} );
+			}
+	
+			// jQuery or string selector
+			var match = typeof s === 'string' ?
+				s.match( __re_column_selector ) :
+				'';
+	
+			if ( match ) {
+				switch( match[2] ) {
+					case 'visIdx':
+					case 'visible':
+						var idx = parseInt( match[1], 10 );
+						// Visible index given, convert to column index
+						if ( idx < 0 ) {
+							// Counting from the right
+							var visColumns = $.map( columns, function (col,i) {
+								return col.bVisible ? i : null;
+							} );
+							return [ visColumns[ visColumns.length + idx ] ];
+						}
+						// Counting from the left
+						return [ _fnVisibleToColumnIndex( settings, idx ) ];
+	
+					case 'name':
+						// match by name. `names` is column index complete and in order
+						return $.map( names, function (name, i) {
+							return name === match[1] ? i : null;
+						} );
+	
+					default:
+						return [];
+				}
+			}
+	
+			// Cell in the table body
+			if ( s.nodeName && s._DT_CellIndex ) {
+				return [ s._DT_CellIndex.column ];
+			}
+	
+			// jQuery selector on the TH elements for the columns
+			var jqResult = $( nodes )
+				.filter( s )
+				.map( function () {
+					return $.inArray( this, nodes ); // `nodes` is column index complete and in order
+				} )
+				.toArray();
+	
+			if ( jqResult.length || ! s.nodeName ) {
+				return jqResult;
+			}
+	
+			// Otherwise a node which might have a `dt-column` data attribute, or be
+			// a child or such an element
+			var host = $(s).closest('*[data-dt-column]');
+			return host.length ?
+				[ host.data('dt-column') ] :
+				[];
+		};
+	
+		return _selector_run( 'column', selector, run, settings, opts );
+	};
+	
+	
+	var __setColumnVis = function ( settings, column, vis ) {
+		var
+			cols = settings.aoColumns,
+			col  = cols[ column ],
+			data = settings.aoData,
+			row, cells, i, ien, tr;
+	
+		// Get
+		if ( vis === undefined ) {
+			return col.bVisible;
+		}
+	
+		// Set
+		// No change
+		if ( col.bVisible === vis ) {
+			return;
+		}
+	
+		if ( vis ) {
+			// Insert column
+			// Need to decide if we should use appendChild or insertBefore
+			var insertBefore = $.inArray( true, _pluck(cols, 'bVisible'), column+1 );
+	
+			for ( i=0, ien=data.length ; i<ien ; i++ ) {
+				tr = data[i].nTr;
+				cells = data[i].anCells;
+	
+				if ( tr ) {
+					// insertBefore can act like appendChild if 2nd arg is null
+					tr.insertBefore( cells[ column ], cells[ insertBefore ] || null );
+				}
+			}
+		}
+		else {
+			// Remove column
+			$( _pluck( settings.aoData, 'anCells', column ) ).detach();
+		}
+	
+		// Common actions
+		col.bVisible = vis;
+	};
+	
+	
+	_api_register( 'columns()', function ( selector, opts ) {
+		// argument shifting
+		if ( selector === undefined ) {
+			selector = '';
+		}
+		else if ( $.isPlainObject( selector ) ) {
+			opts = selector;
+			selector = '';
+		}
+	
+		opts = _selector_opts( opts );
+	
+		var inst = this.iterator( 'table', function ( settings ) {
+			return __column_selector( settings, selector, opts );
+		}, 1 );
+	
+		// Want argument shifting here and in _row_selector?
+		inst.selector.cols = selector;
+		inst.selector.opts = opts;
+	
+		return inst;
+	} );
+	
+	_api_registerPlural( 'columns().header()', 'column().header()', function ( selector, opts ) {
+		return this.iterator( 'column', function ( settings, column ) {
+			return settings.aoColumns[column].nTh;
+		}, 1 );
+	} );
+	
+	_api_registerPlural( 'columns().footer()', 'column().footer()', function ( selector, opts ) {
+		return this.iterator( 'column', function ( settings, column ) {
+			return settings.aoColumns[column].nTf;
+		}, 1 );
+	} );
+	
+	_api_registerPlural( 'columns().data()', 'column().data()', function () {
+		return this.iterator( 'column-rows', __columnData, 1 );
+	} );
+	
+	_api_registerPlural( 'columns().dataSrc()', 'column().dataSrc()', function () {
+		return this.iterator( 'column', function ( settings, column ) {
+			return settings.aoColumns[column].mData;
+		}, 1 );
+	} );
+	
+	_api_registerPlural( 'columns().cache()', 'column().cache()', function ( type ) {
+		return this.iterator( 'column-rows', function ( settings, column, i, j, rows ) {
+			return _pluck_order( settings.aoData, rows,
+				type === 'search' ? '_aFilterData' : '_aSortData', column
+			);
+		}, 1 );
+	} );
+	
+	_api_registerPlural( 'columns().nodes()', 'column().nodes()', function () {
+		return this.iterator( 'column-rows', function ( settings, column, i, j, rows ) {
+			return _pluck_order( settings.aoData, rows, 'anCells', column ) ;
+		}, 1 );
+	} );
+	
+	_api_registerPlural( 'columns().visible()', 'column().visible()', function ( vis, calc ) {
+		var that = this;
+		var ret = this.iterator( 'column', function ( settings, column ) {
+			if ( vis === undefined ) {
+				return settings.aoColumns[ column ].bVisible;
+			} // else
+			__setColumnVis( settings, column, vis );
+		} );
+	
+		// Group the column visibility changes
+		if ( vis !== undefined ) {
+			this.iterator( 'table', function ( settings ) {
+				// Redraw the header after changes
+				_fnDrawHead( settings, settings.aoHeader );
+				_fnDrawHead( settings, settings.aoFooter );
+		
+				// Update colspan for no records display. Child rows and extensions will use their own
+				// listeners to do this - only need to update the empty table item here
+				if ( ! settings.aiDisplay.length ) {
+					$(settings.nTBody).find('td[colspan]').attr('colspan', _fnVisbleColumns(settings));
+				}
+		
+				_fnSaveState( settings );
+	
+				// Second loop once the first is done for events
+				that.iterator( 'column', function ( settings, column ) {
+					_fnCallbackFire( settings, null, 'column-visibility', [settings, column, vis, calc] );
+				} );
+	
+				if ( calc === undefined || calc ) {
+					that.columns.adjust();
+				}
+			});
+		}
+	
+		return ret;
+	} );
+	
+	_api_registerPlural( 'columns().indexes()', 'column().index()', function ( type ) {
+		return this.iterator( 'column', function ( settings, column ) {
+			return type === 'visible' ?
+				_fnColumnIndexToVisible( settings, column ) :
+				column;
+		}, 1 );
+	} );
+	
+	_api_register( 'columns.adjust()', function () {
+		return this.iterator( 'table', function ( settings ) {
+			_fnAdjustColumnSizing( settings );
+		}, 1 );
+	} );
+	
+	_api_register( 'column.index()', function ( type, idx ) {
+		if ( this.context.length !== 0 ) {
+			var ctx = this.context[0];
+	
+			if ( type === 'fromVisible' || type === 'toData' ) {
+				return _fnVisibleToColumnIndex( ctx, idx );
+			}
+			else if ( type === 'fromData' || type === 'toVisible' ) {
+				return _fnColumnIndexToVisible( ctx, idx );
+			}
+		}
+	} );
+	
+	_api_register( 'column()', function ( selector, opts ) {
+		return _selector_first( this.columns( selector, opts ) );
+	} );
+	
+	
+	
+	var __cell_selector = function ( settings, selector, opts )
+	{
+		var data = settings.aoData;
+		var rows = _selector_row_indexes( settings, opts );
+		var cells = _removeEmpty( _pluck_order( data, rows, 'anCells' ) );
+		var allCells = $( [].concat.apply([], cells) );
+		var row;
+		var columns = settings.aoColumns.length;
+		var a, i, ien, j, o, host;
+	
+		var run = function ( s ) {
+			var fnSelector = typeof s === 'function';
+	
+			if ( s === null || s === undefined || fnSelector ) {
+				// All cells and function selectors
+				a = [];
+	
+				for ( i=0, ien=rows.length ; i<ien ; i++ ) {
+					row = rows[i];
+	
+					for ( j=0 ; j<columns ; j++ ) {
+						o = {
+							row: row,
+							column: j
+						};
+	
+						if ( fnSelector ) {
+							// Selector - function
+							host = data[ row ];
+	
+							if ( s( o, _fnGetCellData(settings, row, j), host.anCells ? host.anCells[j] : null ) ) {
+								a.push( o );
+							}
+						}
+						else {
+							// Selector - all
+							a.push( o );
+						}
+					}
+				}
+	
+				return a;
+			}
+			
+			// Selector - index
+			if ( $.isPlainObject( s ) ) {
+				// Valid cell index and its in the array of selectable rows
+				return s.column !== undefined && s.row !== undefined && $.inArray( s.row, rows ) !== -1 ?
+					[s] :
+					[];
+			}
+	
+			// Selector - jQuery filtered cells
+			var jqResult = allCells
+				.filter( s )
+				.map( function (i, el) {
+					return { // use a new object, in case someone changes the values
+						row:    el._DT_CellIndex.row,
+						column: el._DT_CellIndex.column
+	 				};
+				} )
+				.toArray();
+	
+			if ( jqResult.length || ! s.nodeName ) {
+				return jqResult;
+			}
+	
+			// Otherwise the selector is a node, and there is one last option - the
+			// element might be a child of an element which has dt-row and dt-column
+			// data attributes
+			host = $(s).closest('*[data-dt-row]');
+			return host.length ?
+				[ {
+					row: host.data('dt-row'),
+					column: host.data('dt-column')
+				} ] :
+				[];
+		};
+	
+		return _selector_run( 'cell', selector, run, settings, opts );
+	};
+	
+	
+	
+	
+	_api_register( 'cells()', function ( rowSelector, columnSelector, opts ) {
+		// Argument shifting
+		if ( $.isPlainObject( rowSelector ) ) {
+			// Indexes
+			if ( rowSelector.row === undefined ) {
+				// Selector options in first parameter
+				opts = rowSelector;
+				rowSelector = null;
+			}
+			else {
+				// Cell index objects in first parameter
+				opts = columnSelector;
+				columnSelector = null;
+			}
+		}
+		if ( $.isPlainObject( columnSelector ) ) {
+			opts = columnSelector;
+			columnSelector = null;
+		}
+	
+		// Cell selector
+		if ( columnSelector === null || columnSelector === undefined ) {
+			return this.iterator( 'table', function ( settings ) {
+				return __cell_selector( settings, rowSelector, _selector_opts( opts ) );
+			} );
+		}
+	
+		// The default built in options need to apply to row and columns
+		var internalOpts = opts ? {
+			page: opts.page,
+			order: opts.order,
+			search: opts.search
+		} : {};
+	
+		// Row + column selector
+		var columns = this.columns( columnSelector, internalOpts );
+		var rows = this.rows( rowSelector, internalOpts );
+		var i, ien, j, jen;
+	
+		var cellsNoOpts = this.iterator( 'table', function ( settings, idx ) {
+			var a = [];
+	
+			for ( i=0, ien=rows[idx].length ; i<ien ; i++ ) {
+				for ( j=0, jen=columns[idx].length ; j<jen ; j++ ) {
+					a.push( {
+						row:    rows[idx][i],
+						column: columns[idx][j]
+					} );
+				}
+			}
+	
+			return a;
+		}, 1 );
+	
+		// There is currently only one extension which uses a cell selector extension
+		// It is a _major_ performance drag to run this if it isn't needed, so this is
+		// an extension specific check at the moment
+		var cells = opts && opts.selected ?
+			this.cells( cellsNoOpts, opts ) :
+			cellsNoOpts;
+	
+		$.extend( cells.selector, {
+			cols: columnSelector,
+			rows: rowSelector,
+			opts: opts
+		} );
+	
+		return cells;
+	} );
+	
+	
+	_api_registerPlural( 'cells().nodes()', 'cell().node()', function () {
+		return this.iterator( 'cell', function ( settings, row, column ) {
+			var data = settings.aoData[ row ];
+	
+			return data && data.anCells ?
+				data.anCells[ column ] :
+				undefined;
+		}, 1 );
+	} );
+	
+	
+	_api_register( 'cells().data()', function () {
+		return this.iterator( 'cell', function ( settings, row, column ) {
+			return _fnGetCellData( settings, row, column );
+		}, 1 );
+	} );
+	
+	
+	_api_registerPlural( 'cells().cache()', 'cell().cache()', function ( type ) {
+		type = type === 'search' ? '_aFilterData' : '_aSortData';
+	
+		return this.iterator( 'cell', function ( settings, row, column ) {
+			return settings.aoData[ row ][ type ][ column ];
+		}, 1 );
+	} );
+	
+	
+	_api_registerPlural( 'cells().render()', 'cell().render()', function ( type ) {
+		return this.iterator( 'cell', function ( settings, row, column ) {
+			return _fnGetCellData( settings, row, column, type );
+		}, 1 );
+	} );
+	
+	
+	_api_registerPlural( 'cells().indexes()', 'cell().index()', function () {
+		return this.iterator( 'cell', function ( settings, row, column ) {
+			return {
+				row: row,
+				column: column,
+				columnVisible: _fnColumnIndexToVisible( settings, column )
+			};
+		}, 1 );
+	} );
+	
+	
+	_api_registerPlural( 'cells().invalidate()', 'cell().invalidate()', function ( src ) {
+		return this.iterator( 'cell', function ( settings, row, column ) {
+			_fnInvalidate( settings, row, src, column );
+		} );
+	} );
+	
+	
+	
+	_api_register( 'cell()', function ( rowSelector, columnSelector, opts ) {
+		return _selector_first( this.cells( rowSelector, columnSelector, opts ) );
+	} );
+	
+	
+	_api_register( 'cell().data()', function ( data ) {
+		var ctx = this.context;
+		var cell = this[0];
+	
+		if ( data === undefined ) {
+			// Get
+			return ctx.length && cell.length ?
+				_fnGetCellData( ctx[0], cell[0].row, cell[0].column ) :
+				undefined;
+		}
+	
+		// Set
+		_fnSetCellData( ctx[0], cell[0].row, cell[0].column, data );
+		_fnInvalidate( ctx[0], cell[0].row, 'data', cell[0].column );
+	
+		return this;
+	} );
+	
+	
+	
+	/**
+	 * Get current ordering (sorting) that has been applied to the table.
+	 *
+	 * @returns {array} 2D array containing the sorting information for the first
+	 *   table in the current context. Each element in the parent array represents
+	 *   a column being sorted upon (i.e. multi-sorting with two columns would have
+	 *   2 inner arrays). The inner arrays may have 2 or 3 elements. The first is
+	 *   the column index that the sorting condition applies to, the second is the
+	 *   direction of the sort (`desc` or `asc`) and, optionally, the third is the
+	 *   index of the sorting order from the `column.sorting` initialisation array.
+	 *//**
+	 * Set the ordering for the table.
+	 *
+	 * @param {integer} order Column index to sort upon.
+	 * @param {string} direction Direction of the sort to be applied (`asc` or `desc`)
+	 * @returns {DataTables.Api} this
+	 *//**
+	 * Set the ordering for the table.
+	 *
+	 * @param {array} order 1D array of sorting information to be applied.
+	 * @param {array} [...] Optional additional sorting conditions
+	 * @returns {DataTables.Api} this
+	 *//**
+	 * Set the ordering for the table.
+	 *
+	 * @param {array} order 2D array of sorting information to be applied.
+	 * @returns {DataTables.Api} this
+	 */
+	_api_register( 'order()', function ( order, dir ) {
+		var ctx = this.context;
+	
+		if ( order === undefined ) {
+			// get
+			return ctx.length !== 0 ?
+				ctx[0].aaSorting :
+				undefined;
+		}
+	
+		// set
+		if ( typeof order === 'number' ) {
+			// Simple column / direction passed in
+			order = [ [ order, dir ] ];
+		}
+		else if ( order.length && ! $.isArray( order[0] ) ) {
+			// Arguments passed in (list of 1D arrays)
+			order = Array.prototype.slice.call( arguments );
+		}
+		// otherwise a 2D array was passed in
+	
+		return this.iterator( 'table', function ( settings ) {
+			settings.aaSorting = order.slice();
+		} );
+	} );
+	
+	
+	/**
+	 * Attach a sort listener to an element for a given column
+	 *
+	 * @param {node|jQuery|string} node Identifier for the element(s) to attach the
+	 *   listener to. This can take the form of a single DOM node, a jQuery
+	 *   collection of nodes or a jQuery selector which will identify the node(s).
+	 * @param {integer} column the column that a click on this node will sort on
+	 * @param {function} [callback] callback function when sort is run
+	 * @returns {DataTables.Api} this
+	 */
+	_api_register( 'order.listener()', function ( node, column, callback ) {
+		return this.iterator( 'table', function ( settings ) {
+			_fnSortAttachListener( settings, node, column, callback );
+		} );
+	} );
+	
+	
+	_api_register( 'order.fixed()', function ( set ) {
+		if ( ! set ) {
+			var ctx = this.context;
+			var fixed = ctx.length ?
+				ctx[0].aaSortingFixed :
+				undefined;
+	
+			return $.isArray( fixed ) ?
+				{ pre: fixed } :
+				fixed;
+		}
+	
+		return this.iterator( 'table', function ( settings ) {
+			settings.aaSortingFixed = $.extend( true, {}, set );
+		} );
+	} );
+	
+	
+	// Order by the selected column(s)
+	_api_register( [
+		'columns().order()',
+		'column().order()'
+	], function ( dir ) {
+		var that = this;
+	
+		return this.iterator( 'table', function ( settings, i ) {
+			var sort = [];
+	
+			$.each( that[i], function (j, col) {
+				sort.push( [ col, dir ] );
+			} );
+	
+			settings.aaSorting = sort;
+		} );
+	} );
+	
+	
+	
+	_api_register( 'search()', function ( input, regex, smart, caseInsen ) {
+		var ctx = this.context;
+	
+		if ( input === undefined ) {
+			// get
+			return ctx.length !== 0 ?
+				ctx[0].oPreviousSearch.sSearch :
+				undefined;
+		}
+	
+		// set
+		return this.iterator( 'table', function ( settings ) {
+			if ( ! settings.oFeatures.bFilter ) {
+				return;
+			}
+	
+			_fnFilterComplete( settings, $.extend( {}, settings.oPreviousSearch, {
+				"sSearch": input+"",
+				"bRegex":  regex === null ? false : regex,
+				"bSmart":  smart === null ? true  : smart,
+				"bCaseInsensitive": caseInsen === null ? true : caseInsen
+			} ), 1 );
+		} );
+	} );
+	
+	
+	_api_registerPlural(
+		'columns().search()',
+		'column().search()',
+		function ( input, regex, smart, caseInsen ) {
+			return this.iterator( 'column', function ( settings, column ) {
+				var preSearch = settings.aoPreSearchCols;
+	
+				if ( input === undefined ) {
+					// get
+					return preSearch[ column ].sSearch;
+				}
+	
+				// set
+				if ( ! settings.oFeatures.bFilter ) {
+					return;
+				}
+	
+				$.extend( preSearch[ column ], {
+					"sSearch": input+"",
+					"bRegex":  regex === null ? false : regex,
+					"bSmart":  smart === null ? true  : smart,
+					"bCaseInsensitive": caseInsen === null ? true : caseInsen
+				} );
+	
+				_fnFilterComplete( settings, settings.oPreviousSearch, 1 );
+			} );
+		}
+	);
+	
+	/*
+	 * State API methods
+	 */
+	
+	_api_register( 'state()', function () {
+		return this.context.length ?
+			this.context[0].oSavedState :
+			null;
+	} );
+	
+	
+	_api_register( 'state.clear()', function () {
+		return this.iterator( 'table', function ( settings ) {
+			// Save an empty object
+			settings.fnStateSaveCallback.call( settings.oInstance, settings, {} );
+		} );
+	} );
+	
+	
+	_api_register( 'state.loaded()', function () {
+		return this.context.length ?
+			this.context[0].oLoadedState :
+			null;
+	} );
+	
+	
+	_api_register( 'state.save()', function () {
+		return this.iterator( 'table', function ( settings ) {
+			_fnSaveState( settings );
+		} );
+	} );
+	
+	
+	
+	/**
+	 * Provide a common method for plug-ins to check the version of DataTables being
+	 * used, in order to ensure compatibility.
+	 *
+	 *  @param {string} version Version string to check for, in the format "X.Y.Z".
+	 *    Note that the formats "X" and "X.Y" are also acceptable.
+	 *  @returns {boolean} true if this version of DataTables is greater or equal to
+	 *    the required version, or false if this version of DataTales is not
+	 *    suitable
+	 *  @static
+	 *  @dtopt API-Static
+	 *
+	 *  @example
+	 *    alert( $.fn.dataTable.versionCheck( '1.9.0' ) );
+	 */
+	DataTable.versionCheck = DataTable.fnVersionCheck = function( version )
+	{
+		var aThis = DataTable.version.split('.');
+		var aThat = version.split('.');
+		var iThis, iThat;
+	
+		for ( var i=0, iLen=aThat.length ; i<iLen ; i++ ) {
+			iThis = parseInt( aThis[i], 10 ) || 0;
+			iThat = parseInt( aThat[i], 10 ) || 0;
+	
+			// Parts are the same, keep comparing
+			if (iThis === iThat) {
+				continue;
+			}
+	
+			// Parts are different, return immediately
+			return iThis > iThat;
+		}
+	
+		return true;
+	};
+	
+	
+	/**
+	 * Check if a `<table>` node is a DataTable table already or not.
+	 *
+	 *  @param {node|jquery|string} table Table node, jQuery object or jQuery
+	 *      selector for the table to test. Note that if more than more than one
+	 *      table is passed on, only the first will be checked
+	 *  @returns {boolean} true the table given is a DataTable, or false otherwise
+	 *  @static
+	 *  @dtopt API-Static
+	 *
+	 *  @example
+	 *    if ( ! $.fn.DataTable.isDataTable( '#example' ) ) {
+	 *      $('#example').dataTable();
+	 *    }
+	 */
+	DataTable.isDataTable = DataTable.fnIsDataTable = function ( table )
+	{
+		var t = $(table).get(0);
+		var is = false;
+	
+		if ( table instanceof DataTable.Api ) {
+			return true;
+		}
+	
+		$.each( DataTable.settings, function (i, o) {
+			var head = o.nScrollHead ? $('table', o.nScrollHead)[0] : null;
+			var foot = o.nScrollFoot ? $('table', o.nScrollFoot)[0] : null;
+	
+			if ( o.nTable === t || head === t || foot === t ) {
+				is = true;
+			}
+		} );
+	
+		return is;
+	};
+	
+	
+	/**
+	 * Get all DataTable tables that have been initialised - optionally you can
+	 * select to get only currently visible tables.
+	 *
+	 *  @param {boolean} [visible=false] Flag to indicate if you want all (default)
+	 *    or visible tables only.
+	 *  @returns {array} Array of `table` nodes (not DataTable instances) which are
+	 *    DataTables
+	 *  @static
+	 *  @dtopt API-Static
+	 *
+	 *  @example
+	 *    $.each( $.fn.dataTable.tables(true), function () {
+	 *      $(table).DataTable().columns.adjust();
+	 *    } );
+	 */
+	DataTable.tables = DataTable.fnTables = function ( visible )
+	{
+		var api = false;
+	
+		if ( $.isPlainObject( visible ) ) {
+			api = visible.api;
+			visible = visible.visible;
+		}
+	
+		var a = $.map( DataTable.settings, function (o) {
+			if ( !visible || (visible && $(o.nTable).is(':visible')) ) {
+				return o.nTable;
+			}
+		} );
+	
+		return api ?
+			new _Api( a ) :
+			a;
+	};
+	
+	
+	/**
+	 * Convert from camel case parameters to Hungarian notation. This is made public
+	 * for the extensions to provide the same ability as DataTables core to accept
+	 * either the 1.9 style Hungarian notation, or the 1.10+ style camelCase
+	 * parameters.
+	 *
+	 *  @param {object} src The model object which holds all parameters that can be
+	 *    mapped.
+	 *  @param {object} user The object to convert from camel case to Hungarian.
+	 *  @param {boolean} force When set to `true`, properties which already have a
+	 *    Hungarian value in the `user` object will be overwritten. Otherwise they
+	 *    won't be.
+	 */
+	DataTable.camelToHungarian = _fnCamelToHungarian;
+	
+	
+	
+	/**
+	 *
+	 */
+	_api_register( '$()', function ( selector, opts ) {
+		var
+			rows   = this.rows( opts ).nodes(), // Get all rows
+			jqRows = $(rows);
+	
+		return $( [].concat(
+			jqRows.filter( selector ).toArray(),
+			jqRows.find( selector ).toArray()
+		) );
+	} );
+	
+	
+	// jQuery functions to operate on the tables
+	$.each( [ 'on', 'one', 'off' ], function (i, key) {
+		_api_register( key+'()', function ( /* event, handler */ ) {
+			var args = Array.prototype.slice.call(arguments);
+	
+			// Add the `dt` namespace automatically if it isn't already present
+			args[0] = $.map( args[0].split( /\s/ ), function ( e ) {
+				return ! e.match(/\.dt\b/) ?
+					e+'.dt' :
+					e;
+				} ).join( ' ' );
+	
+			var inst = $( this.tables().nodes() );
+			inst[key].apply( inst, args );
+			return this;
+		} );
+	} );
+	
+	
+	_api_register( 'clear()', function () {
+		return this.iterator( 'table', function ( settings ) {
+			_fnClearTable( settings );
+		} );
+	} );
+	
+	
+	_api_register( 'settings()', function () {
+		return new _Api( this.context, this.context );
+	} );
+	
+	
+	_api_register( 'init()', function () {
+		var ctx = this.context;
+		return ctx.length ? ctx[0].oInit : null;
+	} );
+	
+	
+	_api_register( 'data()', function () {
+		return this.iterator( 'table', function ( settings ) {
+			return _pluck( settings.aoData, '_aData' );
+		} ).flatten();
+	} );
+	
+	
+	_api_register( 'destroy()', function ( remove ) {
+		remove = remove || false;
+	
+		return this.iterator( 'table', function ( settings ) {
+			var orig      = settings.nTableWrapper.parentNode;
+			var classes   = settings.oClasses;
+			var table     = settings.nTable;
+			var tbody     = settings.nTBody;
+			var thead     = settings.nTHead;
+			var tfoot     = settings.nTFoot;
+			var jqTable   = $(table);
+			var jqTbody   = $(tbody);
+			var jqWrapper = $(settings.nTableWrapper);
+			var rows      = $.map( settings.aoData, function (r) { return r.nTr; } );
+			var i, ien;
+	
+			// Flag to note that the table is currently being destroyed - no action
+			// should be taken
+			settings.bDestroying = true;
+	
+			// Fire off the destroy callbacks for plug-ins etc
+			_fnCallbackFire( settings, "aoDestroyCallback", "destroy", [settings] );
+	
+			// If not being removed from the document, make all columns visible
+			if ( ! remove ) {
+				new _Api( settings ).columns().visible( true );
+			}
+	
+			// Blitz all `DT` namespaced events (these are internal events, the
+			// lowercase, `dt` events are user subscribed and they are responsible
+			// for removing them
+			jqWrapper.off('.DT').find(':not(tbody *)').off('.DT');
+			$(window).off('.DT-'+settings.sInstance);
+	
+			// When scrolling we had to break the table up - restore it
+			if ( table != thead.parentNode ) {
+				jqTable.children('thead').detach();
+				jqTable.append( thead );
+			}
+	
+			if ( tfoot && table != tfoot.parentNode ) {
+				jqTable.children('tfoot').detach();
+				jqTable.append( tfoot );
+			}
+	
+			settings.aaSorting = [];
+			settings.aaSortingFixed = [];
+			_fnSortingClasses( settings );
+	
+			$( rows ).removeClass( settings.asStripeClasses.join(' ') );
+	
+			$('th, td', thead).removeClass( classes.sSortable+' '+
+				classes.sSortableAsc+' '+classes.sSortableDesc+' '+classes.sSortableNone
+			);
+	
+			// Add the TR elements back into the table in their original order
+			jqTbody.children().detach();
+			jqTbody.append( rows );
+	
+			// Remove the DataTables generated nodes, events and classes
+			var removedMethod = remove ? 'remove' : 'detach';
+			jqTable[ removedMethod ]();
+			jqWrapper[ removedMethod ]();
+	
+			// If we need to reattach the table to the document
+			if ( ! remove && orig ) {
+				// insertBefore acts like appendChild if !arg[1]
+				orig.insertBefore( table, settings.nTableReinsertBefore );
+	
+				// Restore the width of the original table - was read from the style property,
+				// so we can restore directly to that
+				jqTable
+					.css( 'width', settings.sDestroyWidth )
+					.removeClass( classes.sTable );
+	
+				// If the were originally stripe classes - then we add them back here.
+				// Note this is not fool proof (for example if not all rows had stripe
+				// classes - but it's a good effort without getting carried away
+				ien = settings.asDestroyStripes.length;
+	
+				if ( ien ) {
+					jqTbody.children().each( function (i) {
+						$(this).addClass( settings.asDestroyStripes[i % ien] );
+					} );
+				}
+			}
+	
+			/* Remove the settings object from the settings array */
+			var idx = $.inArray( settings, DataTable.settings );
+			if ( idx !== -1 ) {
+				DataTable.settings.splice( idx, 1 );
+			}
+		} );
+	} );
+	
+	
+	// Add the `every()` method for rows, columns and cells in a compact form
+	$.each( [ 'column', 'row', 'cell' ], function ( i, type ) {
+		_api_register( type+'s().every()', function ( fn ) {
+			var opts = this.selector.opts;
+			var api = this;
+	
+			return this.iterator( type, function ( settings, arg1, arg2, arg3, arg4 ) {
+				// Rows and columns:
+				//  arg1 - index
+				//  arg2 - table counter
+				//  arg3 - loop counter
+				//  arg4 - undefined
+				// Cells:
+				//  arg1 - row index
+				//  arg2 - column index
+				//  arg3 - table counter
+				//  arg4 - loop counter
+				fn.call(
+					api[ type ](
+						arg1,
+						type==='cell' ? arg2 : opts,
+						type==='cell' ? opts : undefined
+					),
+					arg1, arg2, arg3, arg4
+				);
+			} );
+		} );
+	} );
+	
+	
+	// i18n method for extensions to be able to use the language object from the
+	// DataTable
+	_api_register( 'i18n()', function ( token, def, plural ) {
+		var ctx = this.context[0];
+		var resolved = _fnGetObjectDataFn( token )( ctx.oLanguage );
+	
+		if ( resolved === undefined ) {
+			resolved = def;
+		}
+	
+		if ( plural !== undefined && $.isPlainObject( resolved ) ) {
+			resolved = resolved[ plural ] !== undefined ?
+				resolved[ plural ] :
+				resolved._;
+		}
+	
+		return resolved.replace( '%d', plural ); // nb: plural might be undefined,
+	} );
+	/**
+	 * Version string for plug-ins to check compatibility. Allowed format is
+	 * `a.b.c-d` where: a:int, b:int, c:int, d:string(dev|beta|alpha). `d` is used
+	 * only for non-release builds. See http://semver.org/ for more information.
+	 *  @member
+	 *  @type string
+	 *  @default Version number
+	 */
+	DataTable.version = "1.10.21";
+
+	/**
+	 * Private data store, containing all of the settings objects that are
+	 * created for the tables on a given page.
+	 *
+	 * Note that the `DataTable.settings` object is aliased to
+	 * `jQuery.fn.dataTableExt` through which it may be accessed and
+	 * manipulated, or `jQuery.fn.dataTable.settings`.
+	 *  @member
+	 *  @type array
+	 *  @default []
+	 *  @private
+	 */
+	DataTable.settings = [];
+
+	/**
+	 * Object models container, for the various models that DataTables has
+	 * available to it. These models define the objects that are used to hold
+	 * the active state and configuration of the table.
+	 *  @namespace
+	 */
+	DataTable.models = {};
+	
+	
+	
+	/**
+	 * Template object for the way in which DataTables holds information about
+	 * search information for the global filter and individual column filters.
+	 *  @namespace
+	 */
+	DataTable.models.oSearch = {
+		/**
+		 * Flag to indicate if the filtering should be case insensitive or not
+		 *  @type boolean
+		 *  @default true
+		 */
+		"bCaseInsensitive": true,
+	
+		/**
+		 * Applied search term
+		 *  @type string
+		 *  @default <i>Empty string</i>
+		 */
+		"sSearch": "",
+	
+		/**
+		 * Flag to indicate if the search term should be interpreted as a
+		 * regular expression (true) or not (false) and therefore and special
+		 * regex characters escaped.
+		 *  @type boolean
+		 *  @default false
+		 */
+		"bRegex": false,
+	
+		/**
+		 * Flag to indicate if DataTables is to use its smart filtering or not.
+		 *  @type boolean
+		 *  @default true
+		 */
+		"bSmart": true
+	};
+	
+	
+	
+	
+	/**
+	 * Template object for the way in which DataTables holds information about
+	 * each individual row. This is the object format used for the settings
+	 * aoData array.
+	 *  @namespace
+	 */
+	DataTable.models.oRow = {
+		/**
+		 * TR element for the row
+		 *  @type node
+		 *  @default null
+		 */
+		"nTr": null,
+	
+		/**
+		 * Array of TD elements for each row. This is null until the row has been
+		 * created.
+		 *  @type array nodes
+		 *  @default []
+		 */
+		"anCells": null,
+	
+		/**
+		 * Data object from the original data source for the row. This is either
+		 * an array if using the traditional form of DataTables, or an object if
+		 * using mData options. The exact type will depend on the passed in
+		 * data from the data source, or will be an array if using DOM a data
+		 * source.
+		 *  @type array|object
+		 *  @default []
+		 */
+		"_aData": [],
+	
+		/**
+		 * Sorting data cache - this array is ostensibly the same length as the
+		 * number of columns (although each index is generated only as it is
+		 * needed), and holds the data that is used for sorting each column in the
+		 * row. We do this cache generation at the start of the sort in order that
+		 * the formatting of the sort data need be done only once for each cell
+		 * per sort. This array should not be read from or written to by anything
+		 * other than the master sorting methods.
+		 *  @type array
+		 *  @default null
+		 *  @private
+		 */
+		"_aSortData": null,
+	
+		/**
+		 * Per cell filtering data cache. As per the sort data cache, used to
+		 * increase the performance of the filtering in DataTables
+		 *  @type array
+		 *  @default null
+		 *  @private
+		 */
+		"_aFilterData": null,
+	
+		/**
+		 * Filtering data cache. This is the same as the cell filtering cache, but
+		 * in this case a string rather than an array. This is easily computed with
+		 * a join on `_aFilterData`, but is provided as a cache so the join isn't
+		 * needed on every search (memory traded for performance)
+		 *  @type array
+		 *  @default null
+		 *  @private
+		 */
+		"_sFilterRow": null,
+	
+		/**
+		 * Cache of the class name that DataTables has applied to the row, so we
+		 * can quickly look at this variable rather than needing to do a DOM check
+		 * on className for the nTr property.
+		 *  @type string
+		 *  @default <i>Empty string</i>
+		 *  @private
+		 */
+		"_sRowStripe": "",
+	
+		/**
+		 * Denote if the original data source was from the DOM, or the data source
+		 * object. This is used for invalidating data, so DataTables can
+		 * automatically read data from the original source, unless uninstructed
+		 * otherwise.
+		 *  @type string
+		 *  @default null
+		 *  @private
+		 */
+		"src": null,
+	
+		/**
+		 * Index in the aoData array. This saves an indexOf lookup when we have the
+		 * object, but want to know the index
+		 *  @type integer
+		 *  @default -1
+		 *  @private
+		 */
+		"idx": -1
+	};
+	
+	
+	/**
+	 * Template object for the column information object in DataTables. This object
+	 * is held in the settings aoColumns array and contains all the information that
+	 * DataTables needs about each individual column.
+	 *
+	 * Note that this object is related to {@link DataTable.defaults.column}
+	 * but this one is the internal data store for DataTables's cache of columns.
+	 * It should NOT be manipulated outside of DataTables. Any configuration should
+	 * be done through the initialisation options.
+	 *  @namespace
+	 */
+	DataTable.models.oColumn = {
+		/**
+		 * Column index. This could be worked out on-the-fly with $.inArray, but it
+		 * is faster to just hold it as a variable
+		 *  @type integer
+		 *  @default null
+		 */
+		"idx": null,
+	
+		/**
+		 * A list of the columns that sorting should occur on when this column
+		 * is sorted. That this property is an array allows multi-column sorting
+		 * to be defined for a column (for example first name / last name columns
+		 * would benefit from this). The values are integers pointing to the
+		 * columns to be sorted on (typically it will be a single integer pointing
+		 * at itself, but that doesn't need to be the case).
+		 *  @type array
+		 */
+		"aDataSort": null,
+	
+		/**
+		 * Define the sorting directions that are applied to the column, in sequence
+		 * as the column is repeatedly sorted upon - i.e. the first value is used
+		 * as the sorting direction when the column if first sorted (clicked on).
+		 * Sort it again (click again) and it will move on to the next index.
+		 * Repeat until loop.
+		 *  @type array
+		 */
+		"asSorting": null,
+	
+		/**
+		 * Flag to indicate if the column is searchable, and thus should be included
+		 * in the filtering or not.
+		 *  @type boolean
+		 */
+		"bSearchable": null,
+	
+		/**
+		 * Flag to indicate if the column is sortable or not.
+		 *  @type boolean
+		 */
+		"bSortable": null,
+	
+		/**
+		 * Flag to indicate if the column is currently visible in the table or not
+		 *  @type boolean
+		 */
+		"bVisible": null,
+	
+		/**
+		 * Store for manual type assignment using the `column.type` option. This
+		 * is held in store so we can manipulate the column's `sType` property.
+		 *  @type string
+		 *  @default null
+		 *  @private
+		 */
+		"_sManualType": null,
+	
+		/**
+		 * Flag to indicate if HTML5 data attributes should be used as the data
+		 * source for filtering or sorting. True is either are.
+		 *  @type boolean
+		 *  @default false
+		 *  @private
+		 */
+		"_bAttrSrc": false,
+	
+		/**
+		 * Developer definable function that is called whenever a cell is created (Ajax source,
+		 * etc) or processed for input (DOM source). This can be used as a compliment to mRender
+		 * allowing you to modify the DOM element (add background colour for example) when the
+		 * element is available.
+		 *  @type function
+		 *  @param {element} nTd The TD node that has been created
+		 *  @param {*} sData The Data for the cell
+		 *  @param {array|object} oData The data for the whole row
+		 *  @param {int} iRow The row index for the aoData data store
+		 *  @default null
+		 */
+		"fnCreatedCell": null,
+	
+		/**
+		 * Function to get data from a cell in a column. You should <b>never</b>
+		 * access data directly through _aData internally in DataTables - always use
+		 * the method attached to this property. It allows mData to function as
+		 * required. This function is automatically assigned by the column
+		 * initialisation method
+		 *  @type function
+		 *  @param {array|object} oData The data array/object for the array
+		 *    (i.e. aoData[]._aData)
+		 *  @param {string} sSpecific The specific data type you want to get -
+		 *    'display', 'type' 'filter' 'sort'
+		 *  @returns {*} The data for the cell from the given row's data
+		 *  @default null
+		 */
+		"fnGetData": null,
+	
+		/**
+		 * Function to set data for a cell in the column. You should <b>never</b>
+		 * set the data directly to _aData internally in DataTables - always use
+		 * this method. It allows mData to function as required. This function
+		 * is automatically assigned by the column initialisation method
+		 *  @type function
+		 *  @param {array|object} oData The data array/object for the array
+		 *    (i.e. aoData[]._aData)
+		 *  @param {*} sValue Value to set
+		 *  @default null
+		 */
+		"fnSetData": null,
+	
+		/**
+		 * Property to read the value for the cells in the column from the data
+		 * source array / object. If null, then the default content is used, if a
+		 * function is given then the return from the function is used.
+		 *  @type function|int|string|null
+		 *  @default null
+		 */
+		"mData": null,
+	
+		/**
+		 * Partner property to mData which is used (only when defined) to get
+		 * the data - i.e. it is basically the same as mData, but without the
+		 * 'set' option, and also the data fed to it is the result from mData.
+		 * This is the rendering method to match the data method of mData.
+		 *  @type function|int|string|null
+		 *  @default null
+		 */
+		"mRender": null,
+	
+		/**
+		 * Unique header TH/TD element for this column - this is what the sorting
+		 * listener is attached to (if sorting is enabled.)
+		 *  @type node
+		 *  @default null
+		 */
+		"nTh": null,
+	
+		/**
+		 * Unique footer TH/TD element for this column (if there is one). Not used
+		 * in DataTables as such, but can be used for plug-ins to reference the
+		 * footer for each column.
+		 *  @type node
+		 *  @default null
+		 */
+		"nTf": null,
+	
+		/**
+		 * The class to apply to all TD elements in the table's TBODY for the column
+		 *  @type string
+		 *  @default null
+		 */
+		"sClass": null,
+	
+		/**
+		 * When DataTables calculates the column widths to assign to each column,
+		 * it finds the longest string in each column and then constructs a
+		 * temporary table and reads the widths from that. The problem with this
+		 * is that "mmm" is much wider then "iiii", but the latter is a longer
+		 * string - thus the calculation can go wrong (doing it properly and putting
+		 * it into an DOM object and measuring that is horribly(!) slow). Thus as
+		 * a "work around" we provide this option. It will append its value to the
+		 * text that is found to be the longest string for the column - i.e. padding.
+		 *  @type string
+		 */
+		"sContentPadding": null,
+	
+		/**
+		 * Allows a default value to be given for a column's data, and will be used
+		 * whenever a null data source is encountered (this can be because mData
+		 * is set to null, or because the data source itself is null).
+		 *  @type string
+		 *  @default null
+		 */
+		"sDefaultContent": null,
+	
+		/**
+		 * Name for the column, allowing reference to the column by name as well as
+		 * by index (needs a lookup to work by name).
+		 *  @type string
+		 */
+		"sName": null,
+	
+		/**
+		 * Custom sorting data type - defines which of the available plug-ins in
+		 * afnSortData the custom sorting will use - if any is defined.
+		 *  @type string
+		 *  @default std
+		 */
+		"sSortDataType": 'std',
+	
+		/**
+		 * Class to be applied to the header element when sorting on this column
+		 *  @type string
+		 *  @default null
+		 */
+		"sSortingClass": null,
+	
+		/**
+		 * Class to be applied to the header element when sorting on this column -
+		 * when jQuery UI theming is used.
+		 *  @type string
+		 *  @default null
+		 */
+		"sSortingClassJUI": null,
+	
+		/**
+		 * Title of the column - what is seen in the TH element (nTh).
+		 *  @type string
+		 */
+		"sTitle": null,
+	
+		/**
+		 * Column sorting and filtering type
+		 *  @type string
+		 *  @default null
+		 */
+		"sType": null,
+	
+		/**
+		 * Width of the column
+		 *  @type string
+		 *  @default null
+		 */
+		"sWidth": null,
+	
+		/**
+		 * Width of the column when it was first "encountered"
+		 *  @type string
+		 *  @default null
+		 */
+		"sWidthOrig": null
+	};
+	
+	
+	/*
+	 * Developer note: The properties of the object below are given in Hungarian
+	 * notation, that was used as the interface for DataTables prior to v1.10, however
+	 * from v1.10 onwards the primary interface is camel case. In order to avoid
+	 * breaking backwards compatibility utterly with this change, the Hungarian
+	 * version is still, internally the primary interface, but is is not documented
+	 * - hence the @name tags in each doc comment. This allows a Javascript function
+	 * to create a map from Hungarian notation to camel case (going the other direction
+	 * would require each property to be listed, which would at around 3K to the size
+	 * of DataTables, while this method is about a 0.5K hit.
+	 *
+	 * Ultimately this does pave the way for Hungarian notation to be dropped
+	 * completely, but that is a massive amount of work and will break current
+	 * installs (therefore is on-hold until v2).
+	 */
+	
+	/**
+	 * Initialisation options that can be given to DataTables at initialisation
+	 * time.
+	 *  @namespace
+	 */
+	DataTable.defaults = {
+		/**
+		 * An array of data to use for the table, passed in at initialisation which
+		 * will be used in preference to any data which is already in the DOM. This is
+		 * particularly useful for constructing tables purely in Javascript, for
+		 * example with a custom Ajax call.
+		 *  @type array
+		 *  @default null
+		 *
+		 *  @dtopt Option
+		 *  @name DataTable.defaults.data
+		 *
+		 *  @example
+		 *    // Using a 2D array data source
+		 *    $(document).ready( function () {
+		 *      $('#example').dataTable( {
+		 *        "data": [
+		 *          ['Trident', 'Internet Explorer 4.0', 'Win 95+', 4, 'X'],
+		 *          ['Trident', 'Internet Explorer 5.0', 'Win 95+', 5, 'C'],
+		 *        ],
+		 *        "columns": [
+		 *          { "title": "Engine" },
+		 *          { "title": "Browser" },
+		 *          { "title": "Platform" },
+		 *          { "title": "Version" },
+		 *          { "title": "Grade" }
+		 *        ]
+		 *      } );
+		 *    } );
+		 *
+		 *  @example
+		 *    // Using an array of objects as a data source (`data`)
+		 *    $(document).ready( function () {
+		 *      $('#example').dataTable( {
+		 *        "data": [
+		 *          {
+		 *            "engine":   "Trident",
+		 *            "browser":  "Internet Explorer 4.0",
+		 *            "platform": "Win 95+",
+		 *            "version":  4,
+		 *            "grade":    "X"
+		 *          },
+		 *          {
+		 *            "engine":   "Trident",
+		 *            "browser":  "Internet Explorer 5.0",
+		 *            "platform": "Win 95+",
+		 *            "version":  5,
+		 *            "grade":    "C"
+		 *          }
+		 *        ],
+		 *        "columns": [
+		 *          { "title": "Engine",   "data": "engine" },
+		 *          { "title": "Browser",  "data": "browser" },
+		 *          { "title": "Platform", "data": "platform" },
+		 *          { "title": "Version",  "data": "version" },
+		 *          { "title": "Grade",    "data": "grade" }
+		 *        ]
+		 *      } );
+		 *    } );
+		 */
+		"aaData": null,
+	
+	
+		/**
+		 * If ordering is enabled, then DataTables will perform a first pass sort on
+		 * initialisation. You can define which column(s) the sort is performed
+		 * upon, and the sorting direction, with this variable. The `sorting` array
+		 * should contain an array for each column to be sorted initially containing
+		 * the column's index and a direction string ('asc' or 'desc').
+		 *  @type array
+		 *  @default [[0,'asc']]
+		 *
+		 *  @dtopt Option
+		 *  @name DataTable.defaults.order
+		 *
+		 *  @example
+		 *    // Sort by 3rd column first, and then 4th column
+		 *    $(document).ready( function() {
+		 *      $('#example').dataTable( {
+		 *        "order": [[2,'asc'], [3,'desc']]
+		 *      } );
+		 *    } );
+		 *
+		 *    // No initial sorting
+		 *    $(document).ready( function() {
+		 *      $('#example').dataTable( {
+		 *        "order": []
+		 *      } );
+		 *    } );
+		 */
+		"aaSorting": [[0,'asc']],
+	
+	
+		/**
+		 * This parameter is basically identical to the `sorting` parameter, but
+		 * cannot be overridden by user interaction with the table. What this means
+		 * is that you could have a column (visible or hidden) which the sorting
+		 * will always be forced on first - any sorting after that (from the user)
+		 * will then be performed as required. This can be useful for grouping rows
+		 * together.
+		 *  @type array
+		 *  @default null
+		 *
+		 *  @dtopt Option
+		 *  @name DataTable.defaults.orderFixed
+		 *
+		 *  @example
+		 *    $(document).ready( function() {
+		 *      $('#example').dataTable( {
+		 *        "orderFixed": [[0,'asc']]
+		 *      } );
+		 *    } )
+		 */
+		"aaSortingFixed": [],
+	
+	
+		/**
+		 * DataTables can be instructed to load data to display in the table from a
+		 * Ajax source. This option defines how that Ajax call is made and where to.
+		 *
+		 * The `ajax` property has three different modes of operation, depending on
+		 * how it is defined. These are:
+		 *
+		 * * `string` - Set the URL from where the data should be loaded from.
+		 * * `object` - Define properties for `jQuery.ajax`.
+		 * * `function` - Custom data get function
+		 *
+		 * `string`
+		 * --------
+		 *
+		 * As a string, the `ajax` property simply defines the URL from which
+		 * DataTables will load data.
+		 *
+		 * `object`
+		 * --------
+		 *
+		 * As an object, the parameters in the object are passed to
+		 * [jQuery.ajax](http://api.jquery.com/jQuery.ajax/) allowing fine control
+		 * of the Ajax request. DataTables has a number of default parameters which
+		 * you can override using this option. Please refer to the jQuery
+		 * documentation for a full description of the options available, although
+		 * the following parameters provide additional options in DataTables or
+		 * require special consideration:
+		 *
+		 * * `data` - As with jQuery, `data` can be provided as an object, but it
+		 *   can also be used as a function to manipulate the data DataTables sends
+		 *   to the server. The function takes a single parameter, an object of
+		 *   parameters with the values that DataTables has readied for sending. An
+		 *   object may be returned which will be merged into the DataTables
+		 *   defaults, or you can add the items to the object that was passed in and
+		 *   not return anything from the function. This supersedes `fnServerParams`
+		 *   from DataTables 1.9-.
+		 *
+		 * * `dataSrc` - By default DataTables will look for the property `data` (or
+		 *   `aaData` for compatibility with DataTables 1.9-) when obtaining data
+		 *   from an Ajax source or for server-side processing - this parameter
+		 *   allows that property to be changed. You can use Javascript dotted
+		 *   object notation to get a data source for multiple levels of nesting, or
+		 *   it my be used as a function. As a function it takes a single parameter,
+		 *   the JSON returned from the server, which can be manipulated as
+		 *   required, with the returned value being that used by DataTables as the
+		 *   data source for the table. This supersedes `sAjaxDataProp` from
+		 *   DataTables 1.9-.
+		 *
+		 * * `success` - Should not be overridden it is used internally in
+		 *   DataTables. To manipulate / transform the data returned by the server
+		 *   use `ajax.dataSrc`, or use `ajax` as a function (see below).
+		 *
+		 * `function`
+		 * ----------
+		 *
+		 * As a function, making the Ajax call is left up to yourself allowing
+		 * complete control of the Ajax request. Indeed, if desired, a method other
+		 * than Ajax could be used to obtain the required data, such as Web storage
+		 * or an AIR database.
+		 *
+		 * The function is given four parameters and no return is required. The
+		 * parameters are:
+		 *
+		 * 1. _object_ - Data to send to the server
+		 * 2. _function_ - Callback function that must be executed when the required
+		 *    data has been obtained. That data should be passed into the callback
+		 *    as the only parameter
+		 * 3. _object_ - DataTables settings object for the table
+		 *
+		 * Note that this supersedes `fnServerData` from DataTables 1.9-.
+		 *
+		 *  @type string|object|function
+		 *  @default null
+		 *
+		 *  @dtopt Option
+		 *  @name DataTable.defaults.ajax
+		 *  @since 1.10.0
+		 *
+		 * @example
+		 *   // Get JSON data from a file via Ajax.
+		 *   // Note DataTables expects data in the form `{ data: [ ...data... ] }` by default).
+		 *   $('#example').dataTable( {
+		 *     "ajax": "data.json"
+		 *   } );
+		 *
+		 * @example
+		 *   // Get JSON data from a file via Ajax, using `dataSrc` to change
+		 *   // `data` to `tableData` (i.e. `{ tableData: [ ...data... ] }`)
+		 *   $('#example').dataTable( {
+		 *     "ajax": {
+		 *       "url": "data.json",
+		 *       "dataSrc": "tableData"
+		 *     }
+		 *   } );
+		 *
+		 * @example
+		 *   // Get JSON data from a file via Ajax, using `dataSrc` to read data
+		 *   // from a plain array rather than an array in an object
+		 *   $('#example').dataTable( {
+		 *     "ajax": {
+		 *       "url": "data.json",
+		 *       "dataSrc": ""
+		 *     }
+		 *   } );
+		 *
+		 * @example
+		 *   // Manipulate the data returned from the server - add a link to data
+		 *   // (note this can, should, be done using `render` for the column - this
+		 *   // is just a simple example of how the data can be manipulated).
+		 *   $('#example').dataTable( {
+		 *     "ajax": {
+		 *       "url": "data.json",
+		 *       "dataSrc": function ( json ) {
+		 *         for ( var i=0, ien=json.length ; i<ien ; i++ ) {
+		 *           json[i][0] = '<a href="/message/'+json[i][0]+'>View message</a>';
+		 *         }
+		 *         return json;
+		 *       }
+		 *     }
+		 *   } );
+		 *
+		 * @example
+		 *   // Add data to the request
+		 *   $('#example').dataTable( {
+		 *     "ajax": {
+		 *       "url": "data.json",
+		 *       "data": function ( d ) {
+		 *         return {
+		 *           "extra_search": $('#extra').val()
+		 *         };
+		 *       }
+		 *     }
+		 *   } );
+		 *
+		 * @example
+		 *   // Send request as POST
+		 *   $('#example').dataTable( {
+		 *     "ajax": {
+		 *       "url": "data.json",
+		 *       "type": "POST"
+		 *     }
+		 *   } );
+		 *
+		 * @example
+		 *   // Get the data from localStorage (could interface with a form for
+		 *   // adding, editing and removing rows).
+		 *   $('#example').dataTable( {
+		 *     "ajax": function (data, callback, settings) {
+		 *       callback(
+		 *         JSON.parse( localStorage.getItem('dataTablesData') )
+		 *       );
+		 *     }
+		 *   } );
+		 */
+		"ajax": null,
+	
+	
+		/**
+		 * This parameter allows you to readily specify the entries in the length drop
+		 * down menu that DataTables shows when pagination is enabled. It can be
+		 * either a 1D array of options which will be used for both the displayed
+		 * option and the value, or a 2D array which will use the array in the first
+		 * position as the value, and the array in the second position as the
+		 * displayed options (useful for language strings such as 'All').
+		 *
+		 * Note that the `pageLength` property will be automatically set to the
+		 * first value given in this array, unless `pageLength` is also provided.
+		 *  @type array
+		 *  @default [ 10, 25, 50, 100 ]
+		 *
+		 *  @dtopt Option
+		 *  @name DataTable.defaults.lengthMenu
+		 *
+		 *  @example
+		 *    $(document).ready( function() {
+		 *      $('#example').dataTable( {
+		 *        "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]]
+		 *      } );
+		 *    } );
+		 */
+		"aLengthMenu": [ 10, 25, 50, 100 ],
+	
+	
+		/**
+		 * The `columns` option in the initialisation parameter allows you to define
+		 * details about the way individual columns behave. For a full list of
+		 * column options that can be set, please see
+		 * {@link DataTable.defaults.column}. Note that if you use `columns` to
+		 * define your columns, you must have an entry in the array for every single
+		 * column that you have in your table (these can be null if you don't which
+		 * to specify any options).
+		 *  @member
+		 *
+		 *  @name DataTable.defaults.column
+		 */
+		"aoColumns": null,
+	
+		/**
+		 * Very similar to `columns`, `columnDefs` allows you to target a specific
+		 * column, multiple columns, or all columns, using the `targets` property of
+		 * each object in the array. This allows great flexibility when creating
+		 * tables, as the `columnDefs` arrays can be of any length, targeting the
+		 * columns you specifically want. `columnDefs` may use any of the column
+		 * options available: {@link DataTable.defaults.column}, but it _must_
+		 * have `targets` defined in each object in the array. Values in the `targets`
+		 * array may be:
+		 *   <ul>
+		 *     <li>a string - class name will be matched on the TH for the column</li>
+		 *     <li>0 or a positive integer - column index counting from the left</li>
+		 *     <li>a negative integer - column index counting from the right</li>
+		 *     <li>the string "_all" - all columns (i.e. assign a default)</li>
+		 *   </ul>
+		 *  @member
+		 *
+		 *  @name DataTable.defaults.columnDefs
+		 */
+		"aoColumnDefs": null,
+	
+	
+		/**
+		 * Basically the same as `search`, this parameter defines the individual column
+		 * filtering state at initialisation time. The array must be of the same size
+		 * as the number of columns, and each element be an object with the parameters
+		 * `search` and `escapeRegex` (the latter is optional). 'null' is also
+		 * accepted and the default will be used.
+		 *  @type array
+		 *  @default []
+		 *
+		 *  @dtopt Option
+		 *  @name DataTable.defaults.searchCols
+		 *
+		 *  @example
+		 *    $(document).ready( function() {
+		 *      $('#example').dataTable( {
+		 *        "searchCols": [
+		 *          null,
+		 *          { "search": "My filter" },
+		 *          null,
+		 *          { "search": "^[0-9]", "escapeRegex": false }
+		 *        ]
+		 *      } );
+		 *    } )
+		 */
+		"aoSearchCols": [],
+	
+	
+		/**
+		 * An array of CSS classes that should be applied to displayed rows. This
+		 * array may be of any length, and DataTables will apply each class
+		 * sequentially, looping when required.
+		 *  @type array
+		 *  @default null <i>Will take the values determined by the `oClasses.stripe*`
+		 *    options</i>
+		 *
+		 *  @dtopt Option
+		 *  @name DataTable.defaults.stripeClasses
+		 *
+		 *  @example
+		 *    $(document).ready( function() {
+		 *      $('#example').dataTable( {
+		 *        "stripeClasses": [ 'strip1', 'strip2', 'strip3' ]
+		 *      } );
+		 *    } )
+		 */
+		"asStripeClasses": null,
+	
+	
+		/**
+		 * Enable or disable automatic column width calculation. This can be disabled
+		 * as an optimisation (it takes some time to calculate the widths) if the
+		 * tables widths are passed in using `columns`.
+		 *  @type boolean
+		 *  @default true
+		 *
+		 *  @dtopt Features
+		 *  @name DataTable.defaults.autoWidth
+		 *
+		 *  @example
+		 *    $(document).ready( function () {
+		 *      $('#example').dataTable( {
+		 *        "autoWidth": false
+		 *      } );
+		 *    } );
+		 */
+		"bAutoWidth": true,
+	
+	
+		/**
+		 * Deferred rendering can provide DataTables with a huge speed boost when you
+		 * are using an Ajax or JS data source for the table. This option, when set to
+		 * true, will cause DataTables to defer the creation of the table elements for
+		 * each row until they are needed for a draw - saving a significant amount of
+		 * time.
+		 *  @type boolean
+		 *  @default false
+		 *
+		 *  @dtopt Features
+		 *  @name DataTable.defaults.deferRender
+		 *
+		 *  @example
+		 *    $(document).ready( function() {
+		 *      $('#example').dataTable( {
+		 *        "ajax": "sources/arrays.txt",
+		 *        "deferRender": true
+		 *      } );
+		 *    } );
+		 */
+		"bDeferRender": false,
+	
+	
+		/**
+		 * Replace a DataTable which matches the given selector and replace it with
+		 * one which has the properties of the new initialisation object passed. If no
+		 * table matches the selector, then the new DataTable will be constructed as
+		 * per normal.
+		 *  @type boolean
+		 *  @default false
+		 *
+		 *  @dtopt Options
+		 *  @name DataTable.defaults.destroy
+		 *
+		 *  @example
+		 *    $(document).ready( function() {
+		 *      $('#example').dataTable( {
+		 *        "srollY": "200px",
+		 *        "paginate": false
+		 *      } );
+		 *
+		 *      // Some time later....
+		 *      $('#example').dataTable( {
+		 *        "filter": false,
+		 *        "destroy": true
+		 *      } );
+		 *    } );
+		 */
+		"bDestroy": false,
+	
+	
+		/**
+		 * Enable or disable filtering of data. Filtering in DataTables is "smart" in
+		 * that it allows the end user to input multiple words (space separated) and
+		 * will match a row containing those words, even if not in the order that was
+		 * specified (this allow matching across multiple columns). Note that if you
+		 * wish to use filtering in DataTables this must remain 'true' - to remove the
+		 * default filtering input box and retain filtering abilities, please use
+		 * {@link DataTable.defaults.dom}.
+		 *  @type boolean
+		 *  @default true
+		 *
+		 *  @dtopt Features
+		 *  @name DataTable.defaults.searching
+		 *
+		 *  @example
+		 *    $(document).ready( function () {
+		 *      $('#example').dataTable( {
+		 *        "searching": false
+		 *      } );
+		 *    } );
+		 */
+		"bFilter": true,
+	
+	
+		/**
+		 * Enable or disable the table information display. This shows information
+		 * about the data that is currently visible on the page, including information
+		 * about filtered data if that action is being performed.
+		 *  @type boolean
+		 *  @default true
+		 *
+		 *  @dtopt Features
+		 *  @name DataTable.defaults.info
+		 *
+		 *  @example
+		 *    $(document).ready( function () {
+		 *      $('#example').dataTable( {
+		 *        "info": false
+		 *      } );
+		 *    } );
+		 */
+		"bInfo": true,
+	
+	
+		/**
+		 * Allows the end user to select the size of a formatted page from a select
+		 * menu (sizes are 10, 25, 50 and 100). Requires pagination (`paginate`).
+		 *  @type boolean
+		 *  @default true
+		 *
+		 *  @dtopt Features
+		 *  @name DataTable.defaults.lengthChange
+		 *
+		 *  @example
+		 *    $(document).ready( function () {
+		 *      $('#example').dataTable( {
+		 *        "lengthChange": false
+		 *      } );
+		 *    } );
+		 */
+		"bLengthChange": true,
+	
+	
+		/**
+		 * Enable or disable pagination.
+		 *  @type boolean
+		 *  @default true
+		 *
+		 *  @dtopt Features
+		 *  @name DataTable.defaults.paging
+		 *
+		 *  @example
+		 *    $(document).ready( function () {
+		 *      $('#example').dataTable( {
+		 *        "paging": false
+		 *      } );
+		 *    } );
+		 */
+		"bPaginate": true,
+	
+	
+		/**
+		 * Enable or disable the display of a 'processing' indicator when the table is
+		 * being processed (e.g. a sort). This is particularly useful for tables with
+		 * large amounts of data where it can take a noticeable amount of time to sort
+		 * the entries.
+		 *  @type boolean
+		 *  @default false
+		 *
+		 *  @dtopt Features
+		 *  @name DataTable.defaults.processing
+		 *
+		 *  @example
+		 *    $(document).ready( function () {
+		 *      $('#example').dataTable( {
+		 *        "processing": true
+		 *      } );
+		 *    } );
+		 */
+		"bProcessing": false,
+	
+	
+		/**
+		 * Retrieve the DataTables object for the given selector. Note that if the
+		 * table has already been initialised, this parameter will cause DataTables
+		 * to simply return the object that has already been set up - it will not take
+		 * account of any changes you might have made to the initialisation object
+		 * passed to DataTables (setting this parameter to true is an acknowledgement
+		 * that you understand this). `destroy` can be used to reinitialise a table if
+		 * you need.
+		 *  @type boolean
+		 *  @default false
+		 *
+		 *  @dtopt Options
+		 *  @name DataTable.defaults.retrieve
+		 *
+		 *  @example
+		 *    $(document).ready( function() {
+		 *      initTable();
+		 *      tableActions();
+		 *    } );
+		 *
+		 *    function initTable ()
+		 *    {
+		 *      return $('#example').dataTable( {
+		 *        "scrollY": "200px",
+		 *        "paginate": false,
+		 *        "retrieve": true
+		 *      } );
+		 *    }
+		 *
+		 *    function tableActions ()
+		 *    {
+		 *      var table = initTable();
+		 *      // perform API operations with oTable
+		 *    }
+		 */
+		"bRetrieve": false,
+	
+	
+		/**
+		 * When vertical (y) scrolling is enabled, DataTables will force the height of
+		 * the table's viewport to the given height at all times (useful for layout).
+		 * However, this can look odd when filtering data down to a small data set,
+		 * and the footer is left "floating" further down. This parameter (when
+		 * enabled) will cause DataTables to collapse the table's viewport down when
+		 * the result set will fit within the given Y height.
+		 *  @type boolean
+		 *  @default false
+		 *
+		 *  @dtopt Options
+		 *  @name DataTable.defaults.scrollCollapse
+		 *
+		 *  @example
+		 *    $(document).ready( function() {
+		 *      $('#example').dataTable( {
+		 *        "scrollY": "200",
+		 *        "scrollCollapse": true
+		 *      } );
+		 *    } );
+		 */
+		"bScrollCollapse": false,
+	
+	
+		/**
+		 * Configure DataTables to use server-side processing. Note that the
+		 * `ajax` parameter must also be given in order to give DataTables a
+		 * source to obtain the required data for each draw.
+		 *  @type boolean
+		 *  @default false
+		 *
+		 *  @dtopt Features
+		 *  @dtopt Server-side
+		 *  @name DataTable.defaults.serverSide
+		 *
+		 *  @example
+		 *    $(document).ready( function () {
+		 *      $('#example').dataTable( {
+		 *        "serverSide": true,
+		 *        "ajax": "xhr.php"
+		 *      } );
+		 *    } );
+		 */
+		"bServerSide": false,
+	
+	
+		/**
+		 * Enable or disable sorting of columns. Sorting of individual columns can be
+		 * disabled by the `sortable` option for each column.
+		 *  @type boolean
+		 *  @default true
+		 *
+		 *  @dtopt Features
+		 *  @name DataTable.defaults.ordering
+		 *
+		 *  @example
+		 *    $(document).ready( function () {
+		 *      $('#example').dataTable( {
+		 *        "ordering": false
+		 *      } );
+		 *    } );
+		 */
+		"bSort": true,
+	
+	
+		/**
+		 * Enable or display DataTables' ability to sort multiple columns at the
+		 * same time (activated by shift-click by the user).
+		 *  @type boolean
+		 *  @default true
+		 *
+		 *  @dtopt Options
+		 *  @name DataTable.defaults.orderMulti
+		 *
+		 *  @example
+		 *    // Disable multiple column sorting ability
+		 *    $(document).ready( function () {
+		 *      $('#example').dataTable( {
+		 *        "orderMulti": false
+		 *      } );
+		 *    } );
+		 */
+		"bSortMulti": true,
+	
+	
+		/**
+		 * Allows control over whether DataTables should use the top (true) unique
+		 * cell that is found for a single column, or the bottom (false - default).
+		 * This is useful when using complex headers.
+		 *  @type boolean
+		 *  @default false
+		 *
+		 *  @dtopt Options
+		 *  @name DataTable.defaults.orderCellsTop
+		 *
+		 *  @example
+		 *    $(document).ready( function() {
+		 *      $('#example').dataTable( {
+		 *        "orderCellsTop": true
+		 *      } );
+		 *    } );
+		 */
+		"bSortCellsTop": false,
+	
+	
+		/**
+		 * Enable or disable the addition of the classes `sorting\_1`, `sorting\_2` and
+		 * `sorting\_3` to the columns which are currently being sorted on. This is
+		 * presented as a feature switch as it can increase processing time (while
+		 * classes are removed and added) so for large data sets you might want to
+		 * turn this off.
+		 *  @type boolean
+		 *  @default true
+		 *
+		 *  @dtopt Features
+		 *  @name DataTable.defaults.orderClasses
+		 *
+		 *  @example
+		 *    $(document).ready( function () {
+		 *      $('#example').dataTable( {
+		 *        "orderClasses": false
+		 *      } );
+		 *    } );
+		 */
+		"bSortClasses": true,
+	
+	
+		/**
+		 * Enable or disable state saving. When enabled HTML5 `localStorage` will be
+		 * used to save table display information such as pagination information,
+		 * display length, filtering and sorting. As such when the end user reloads
+		 * the page the display display will match what thy had previously set up.
+		 *
+		 * Due to the use of `localStorage` the default state saving is not supported
+		 * in IE6 or 7. If state saving is required in those browsers, use
+		 * `stateSaveCallback` to provide a storage solution such as cookies.
+		 *  @type boolean
+		 *  @default false
+		 *
+		 *  @dtopt Features
+		 *  @name DataTable.defaults.stateSave
+		 *
+		 *  @example
+		 *    $(document).ready( function () {
+		 *      $('#example').dataTable( {
+		 *        "stateSave": true
+		 *      } );
+		 *    } );
+		 */
+		"bStateSave": false,
+	
+	
+		/**
+		 * This function is called when a TR element is created (and all TD child
+		 * elements have been inserted), or registered if using a DOM source, allowing
+		 * manipulation of the TR element (adding classes etc).
+		 *  @type function
+		 *  @param {node} row "TR" element for the current row
+		 *  @param {array} data Raw data array for this row
+		 *  @param {int} dataIndex The index of this row in the internal aoData array
+		 *
+		 *  @dtopt Callbacks
+		 *  @name DataTable.defaults.createdRow
+		 *
+		 *  @example
+		 *    $(document).ready( function() {
+		 *      $('#example').dataTable( {
+		 *        "createdRow": function( row, data, dataIndex ) {
+		 *          // Bold the grade for all 'A' grade browsers
+		 *          if ( data[4] == "A" )
+		 *          {
+		 *            $('td:eq(4)', row).html( '<b>A</b>' );
+		 *          }
+		 *        }
+		 *      } );
+		 *    } );
+		 */
+		"fnCreatedRow": null,
+	
+	
+		/**
+		 * This function is called on every 'draw' event, and allows you to
+		 * dynamically modify any aspect you want about the created DOM.
+		 *  @type function
+		 *  @param {object} settings DataTables settings object
+		 *
+		 *  @dtopt Callbacks
+		 *  @name DataTable.defaults.drawCallback
+		 *
+		 *  @example
+		 *    $(document).ready( function() {
+		 *      $('#example').dataTable( {
+		 *        "drawCallback": function( settings ) {
+		 *          alert( 'DataTables has redrawn the table' );
+		 *        }
+		 *      } );
+		 *    } );
+		 */
+		"fnDrawCallback": null,
+	
+	
+		/**
+		 * Identical to fnHeaderCallback() but for the table footer this function
+		 * allows you to modify the table footer on every 'draw' event.
+		 *  @type function
+		 *  @param {node} foot "TR" element for the footer
+		 *  @param {array} data Full table data (as derived from the original HTML)
+		 *  @param {int} start Index for the current display starting point in the
+		 *    display array
+		 *  @param {int} end Index for the current display ending point in the
+		 *    display array
+		 *  @param {array int} display Index array to translate the visual position
+		 *    to the full data array
+		 *
+		 *  @dtopt Callbacks
+		 *  @name DataTable.defaults.footerCallback
+		 *
+		 *  @example
+		 *    $(document).ready( function() {
+		 *      $('#example').dataTable( {
+		 *        "footerCallback": function( tfoot, data, start, end, display ) {
+		 *          tfoot.getElementsByTagName('th')[0].innerHTML = "Starting index is "+start;
+		 *        }
+		 *      } );
+		 *    } )
+		 */
+		"fnFooterCallback": null,
+	
+	
+		/**
+		 * When rendering large numbers in the information element for the table
+		 * (i.e. "Showing 1 to 10 of 57 entries") DataTables will render large numbers
+		 * to have a comma separator for the 'thousands' units (e.g. 1 million is
+		 * rendered as "1,000,000") to help readability for the end user. This
+		 * function will override the default method DataTables uses.
+		 *  @type function
+		 *  @member
+		 *  @param {int} toFormat number to be formatted
+		 *  @returns {string} formatted string for DataTables to show the number
+		 *
+		 *  @dtopt Callbacks
+		 *  @name DataTable.defaults.formatNumber
+		 *
+		 *  @example
+		 *    // Format a number using a single quote for the separator (note that
+		 *    // this can also be done with the language.thousands option)
+		 *    $(document).ready( function() {
+		 *      $('#example').dataTable( {
+		 *        "formatNumber": function ( toFormat ) {
+		 *          return toFormat.toString().replace(
+		 *            /\B(?=(\d{3})+(?!\d))/g, "'"
+		 *          );
+		 *        };
+		 *      } );
+		 *    } );
+		 */
+		"fnFormatNumber": function ( toFormat ) {
+			return toFormat.toString().replace(
+				/\B(?=(\d{3})+(?!\d))/g,
+				this.oLanguage.sThousands
+			);
+		},
+	
+	
+		/**
+		 * This function is called on every 'draw' event, and allows you to
+		 * dynamically modify the header row. This can be used to calculate and
+		 * display useful information about the table.
+		 *  @type function
+		 *  @param {node} head "TR" element for the header
+		 *  @param {array} data Full table data (as derived from the original HTML)
+		 *  @param {int} start Index for the current display starting point in the
+		 *    display array
+		 *  @param {int} end Index for the current display ending point in the
+		 *    display array
+		 *  @param {array int} display Index array to translate the visual position
+		 *    to the full data array
+		 *
+		 *  @dtopt Callbacks
+		 *  @name DataTable.defaults.headerCallback
+		 *
+		 *  @example
+		 *    $(document).ready( function() {
+		 *      $('#example').dataTable( {
+		 *        "fheaderCallback": function( head, data, start, end, display ) {
+		 *          head.getElementsByTagName('th')[0].innerHTML = "Displaying "+(end-start)+" records";
+		 *        }
+		 *      } );
+		 *    } )
+		 */
+		"fnHeaderCallback": null,
+	
+	
+		/**
+		 * The information element can be used to convey information about the current
+		 * state of the table. Although the internationalisation options presented by
+		 * DataTables are quite capable of dealing with most customisations, there may
+		 * be times where you wish to customise the string further. This callback
+		 * allows you to do exactly that.
+		 *  @type function
+		 *  @param {object} oSettings DataTables settings object
+		 *  @param {int} start Starting position in data for the draw
+		 *  @param {int} end End position in data for the draw
+		 *  @param {int} max Total number of rows in the table (regardless of
+		 *    filtering)
+		 *  @param {int} total Total number of rows in the data set, after filtering
+		 *  @param {string} pre The string that DataTables has formatted using it's
+		 *    own rules
+		 *  @returns {string} The string to be displayed in the information element.
+		 *
+		 *  @dtopt Callbacks
+		 *  @name DataTable.defaults.infoCallback
+		 *
+		 *  @example
+		 *    $('#example').dataTable( {
+		 *      "infoCallback": function( settings, start, end, max, total, pre ) {
+		 *        return start +" to "+ end;
+		 *      }
+		 *    } );
+		 */
+		"fnInfoCallback": null,
+	
+	
+		/**
+		 * Called when the table has been initialised. Normally DataTables will
+		 * initialise sequentially and there will be no need for this function,
+		 * however, this does not hold true when using external language information
+		 * since that is obtained using an async XHR call.
+		 *  @type function
+		 *  @param {object} settings DataTables settings object
+		 *  @param {object} json The JSON object request from the server - only
+		 *    present if client-side Ajax sourced data is used
+		 *
+		 *  @dtopt Callbacks
+		 *  @name DataTable.defaults.initComplete
+		 *
+		 *  @example
+		 *    $(document).ready( function() {
+		 *      $('#example').dataTable( {
+		 *        "initComplete": function(settings, json) {
+		 *          alert( 'DataTables has finished its initialisation.' );
+		 *        }
+		 *      } );
+		 *    } )
+		 */
+		"fnInitComplete": null,
+	
+	
+		/**
+		 * Called at the very start of each table draw and can be used to cancel the
+		 * draw by returning false, any other return (including undefined) results in
+		 * the full draw occurring).
+		 *  @type function
+		 *  @param {object} settings DataTables settings object
+		 *  @returns {boolean} False will cancel the draw, anything else (including no
+		 *    return) will allow it to complete.
+		 *
+		 *  @dtopt Callbacks
+		 *  @name DataTable.defaults.preDrawCallback
+		 *
+		 *  @example
+		 *    $(document).ready( function() {
+		 *      $('#example').dataTable( {
+		 *        "preDrawCallback": function( settings ) {
+		 *          if ( $('#test').val() == 1 ) {
+		 *            return false;
+		 *          }
+		 *        }
+		 *      } );
+		 *    } );
+		 */
+		"fnPreDrawCallback": null,
+	
+	
+		/**
+		 * This function allows you to 'post process' each row after it have been
+		 * generated for each table draw, but before it is rendered on screen. This
+		 * function might be used for setting the row class name etc.
+		 *  @type function
+		 *  @param {node} row "TR" element for the current row
+		 *  @param {array} data Raw data array for this row
+		 *  @param {int} displayIndex The display index for the current table draw
+		 *  @param {int} displayIndexFull The index of the data in the full list of
+		 *    rows (after filtering)
+		 *
+		 *  @dtopt Callbacks
+		 *  @name DataTable.defaults.rowCallback
+		 *
+		 *  @example
+		 *    $(document).ready( function() {
+		 *      $('#example').dataTable( {
+		 *        "rowCallback": function( row, data, displayIndex, displayIndexFull ) {
+		 *          // Bold the grade for all 'A' grade browsers
+		 *          if ( data[4] == "A" ) {
+		 *            $('td:eq(4)', row).html( '<b>A</b>' );
+		 *          }
+		 *        }
+		 *      } );
+		 *    } );
+		 */
+		"fnRowCallback": null,
+	
+	
+		/**
+		 * __Deprecated__ The functionality provided by this parameter has now been
+		 * superseded by that provided through `ajax`, which should be used instead.
+		 *
+		 * This parameter allows you to override the default function which obtains
+		 * the data from the server so something more suitable for your application.
+		 * For example you could use POST data, or pull information from a Gears or
+		 * AIR database.
+		 *  @type function
+		 *  @member
+		 *  @param {string} source HTTP source to obtain the data from (`ajax`)
+		 *  @param {array} data A key/value pair object containing the data to send
+		 *    to the server
+		 *  @param {function} callback to be called on completion of the data get
+		 *    process that will draw the data on the page.
+		 *  @param {object} settings DataTables settings object
+		 *
+		 *  @dtopt Callbacks
+		 *  @dtopt Server-side
+		 *  @name DataTable.defaults.serverData
+		 *
+		 *  @deprecated 1.10. Please use `ajax` for this functionality now.
+		 */
+		"fnServerData": null,
+	
+	
+		/**
+		 * __Deprecated__ The functionality provided by this parameter has now been
+		 * superseded by that provided through `ajax`, which should be used instead.
+		 *
+		 *  It is often useful to send extra data to the server when making an Ajax
+		 * request - for example custom filtering information, and this callback
+		 * function makes it trivial to send extra information to the server. The
+		 * passed in parameter is the data set that has been constructed by
+		 * DataTables, and you can add to this or modify it as you require.
+		 *  @type function
+		 *  @param {array} data Data array (array of objects which are name/value
+		 *    pairs) that has been constructed by DataTables and will be sent to the
+		 *    server. In the case of Ajax sourced data with server-side processing
+		 *    this will be an empty array, for server-side processing there will be a
+		 *    significant number of parameters!
+		 *  @returns {undefined} Ensure that you modify the data array passed in,
+		 *    as this is passed by reference.
+		 *
+		 *  @dtopt Callbacks
+		 *  @dtopt Server-side
+		 *  @name DataTable.defaults.serverParams
+		 *
+		 *  @deprecated 1.10. Please use `ajax` for this functionality now.
+		 */
+		"fnServerParams": null,
+	
+	
+		/**
+		 * Load the table state. With this function you can define from where, and how, the
+		 * state of a table is loaded. By default DataTables will load from `localStorage`
+		 * but you might wish to use a server-side database or cookies.
+		 *  @type function
+		 *  @member
+		 *  @param {object} settings DataTables settings object
+		 *  @param {object} callback Callback that can be executed when done. It
+		 *    should be passed the loaded state object.
+		 *  @return {object} The DataTables state object to be loaded
+		 *
+		 *  @dtopt Callbacks
+		 *  @name DataTable.defaults.stateLoadCallback
+		 *
+		 *  @example
+		 *    $(document).ready( function() {
+		 *      $('#example').dataTable( {
+		 *        "stateSave": true,
+		 *        "stateLoadCallback": function (settings, callback) {
+		 *          $.ajax( {
+		 *            "url": "/state_load",
+		 *            "dataType": "json",
+		 *            "success": function (json) {
+		 *              callback( json );
+		 *            }
+		 *          } );
+		 *        }
+		 *      } );
+		 *    } );
+		 */
+		"fnStateLoadCallback": function ( settings ) {
+			try {
+				return JSON.parse(
+					(settings.iStateDuration === -1 ? sessionStorage : localStorage).getItem(
+						'DataTables_'+settings.sInstance+'_'+location.pathname
+					)
+				);
+			} catch (e) {
+				return {};
+			}
+		},
+	
+	
+		/**
+		 * Callback which allows modification of the saved state prior to loading that state.
+		 * This callback is called when the table is loading state from the stored data, but
+		 * prior to the settings object being modified by the saved state. Note that for
+		 * plug-in authors, you should use the `stateLoadParams` event to load parameters for
+		 * a plug-in.
+		 *  @type function
+		 *  @param {object} settings DataTables settings object
+		 *  @param {object} data The state object that is to be loaded
+		 *
+		 *  @dtopt Callbacks
+		 *  @name DataTable.defaults.stateLoadParams
+		 *
+		 *  @example
+		 *    // Remove a saved filter, so filtering is never loaded
+		 *    $(document).ready( function() {
+		 *      $('#example').dataTable( {
+		 *        "stateSave": true,
+		 *        "stateLoadParams": function (settings, data) {
+		 *          data.oSearch.sSearch = "";
+		 *        }
+		 *      } );
+		 *    } );
+		 *
+		 *  @example
+		 *    // Disallow state loading by returning false
+		 *    $(document).ready( function() {
+		 *      $('#example').dataTable( {
+		 *        "stateSave": true,
+		 *        "stateLoadParams": function (settings, data) {
+		 *          return false;
+		 *        }
+		 *      } );
+		 *    } );
+		 */
+		"fnStateLoadParams": null,
+	
+	
+		/**
+		 * Callback that is called when the state has been loaded from the state saving method
+		 * and the DataTables settings object has been modified as a result of the loaded state.
+		 *  @type function
+		 *  @param {object} settings DataTables settings object
+		 *  @param {object} data The state object that was loaded
+		 *
+		 *  @dtopt Callbacks
+		 *  @name DataTable.defaults.stateLoaded
+		 *
+		 *  @example
+		 *    // Show an alert with the filtering value that was saved
+		 *    $(document).ready( function() {
+		 *      $('#example').dataTable( {
+		 *        "stateSave": true,
+		 *        "stateLoaded": function (settings, data) {
+		 *          alert( 'Saved filter was: '+data.oSearch.sSearch );
+		 *        }
+		 *      } );
+		 *    } );
+		 */
+		"fnStateLoaded": null,
+	
+	
+		/**
+		 * Save the table state. This function allows you to define where and how the state
+		 * information for the table is stored By default DataTables will use `localStorage`
+		 * but you might wish to use a server-side database or cookies.
+		 *  @type function
+		 *  @member
+		 *  @param {object} settings DataTables settings object
+		 *  @param {object} data The state object to be saved
+		 *
+		 *  @dtopt Callbacks
+		 *  @name DataTable.defaults.stateSaveCallback
+		 *
+		 *  @example
+		 *    $(document).ready( function() {
+		 *      $('#example').dataTable( {
+		 *        "stateSave": true,
+		 *        "stateSaveCallback": function (settings, data) {
+		 *          // Send an Ajax request to the server with the state object
+		 *          $.ajax( {
+		 *            "url": "/state_save",
+		 *            "data": data,
+		 *            "dataType": "json",
+		 *            "method": "POST"
+		 *            "success": function () {}
+		 *          } );
+		 *        }
+		 *      } );
+		 *    } );
+		 */
+		"fnStateSaveCallback": function ( settings, data ) {
+			try {
+				(settings.iStateDuration === -1 ? sessionStorage : localStorage).setItem(
+					'DataTables_'+settings.sInstance+'_'+location.pathname,
+					JSON.stringify( data )
+				);
+			} catch (e) {}
+		},
+	
+	
+		/**
+		 * Callback which allows modification of the state to be saved. Called when the table
+		 * has changed state a new state save is required. This method allows modification of
+		 * the state saving object prior to actually doing the save, including addition or
+		 * other state properties or modification. Note that for plug-in authors, you should
+		 * use the `stateSaveParams` event to save parameters for a plug-in.
+		 *  @type function
+		 *  @param {object} settings DataTables settings object
+		 *  @param {object} data The state object to be saved
+		 *
+		 *  @dtopt Callbacks
+		 *  @name DataTable.defaults.stateSaveParams
+		 *
+		 *  @example
+		 *    // Remove a saved filter, so filtering is never saved
+		 *    $(document).ready( function() {
+		 *      $('#example').dataTable( {
+		 *        "stateSave": true,
+		 *        "stateSaveParams": function (settings, data) {
+		 *          data.oSearch.sSearch = "";
+		 *        }
+		 *      } );
+		 *    } );
+		 */
+		"fnStateSaveParams": null,
+	
+	
+		/**
+		 * Duration for which the saved state information is considered valid. After this period
+		 * has elapsed the state will be returned to the default.
+		 * Value is given in seconds.
+		 *  @type int
+		 *  @default 7200 <i>(2 hours)</i>
+		 *
+		 *  @dtopt Options
+		 *  @name DataTable.defaults.stateDuration
+		 *
+		 *  @example
+		 *    $(document).ready( function() {
+		 *      $('#example').dataTable( {
+		 *        "stateDuration": 60*60*24; // 1 day
+		 *      } );
+		 *    } )
+		 */
+		"iStateDuration": 7200,
+	
+	
+		/**
+		 * When enabled DataTables will not make a request to the server for the first
+		 * page draw - rather it will use the data already on the page (no sorting etc
+		 * will be applied to it), thus saving on an XHR at load time. `deferLoading`
+		 * is used to indicate that deferred loading is required, but it is also used
+		 * to tell DataTables how many records there are in the full table (allowing
+		 * the information element and pagination to be displayed correctly). In the case
+		 * where a filtering is applied to the table on initial load, this can be
+		 * indicated by giving the parameter as an array, where the first element is
+		 * the number of records available after filtering and the second element is the
+		 * number of records without filtering (allowing the table information element
+		 * to be shown correctly).
+		 *  @type int | array
+		 *  @default null
+		 *
+		 *  @dtopt Options
+		 *  @name DataTable.defaults.deferLoading
+		 *
+		 *  @example
+		 *    // 57 records available in the table, no filtering applied
+		 *    $(document).ready( function() {
+		 *      $('#example').dataTable( {
+		 *        "serverSide": true,
+		 *        "ajax": "scripts/server_processing.php",
+		 *        "deferLoading": 57
+		 *      } );
+		 *    } );
+		 *
+		 *  @example
+		 *    // 57 records after filtering, 100 without filtering (an initial filter applied)
+		 *    $(document).ready( function() {
+		 *      $('#example').dataTable( {
+		 *        "serverSide": true,
+		 *        "ajax": "scripts/server_processing.php",
+		 *        "deferLoading": [ 57, 100 ],
+		 *        "search": {
+		 *          "search": "my_filter"
+		 *        }
+		 *      } );
+		 *    } );
+		 */
+		"iDeferLoading": null,
+	
+	
+		/**
+		 * Number of rows to display on a single page when using pagination. If
+		 * feature enabled (`lengthChange`) then the end user will be able to override
+		 * this to a custom setting using a pop-up menu.
+		 *  @type int
+		 *  @default 10
+		 *
+		 *  @dtopt Options
+		 *  @name DataTable.defaults.pageLength
+		 *
+		 *  @example
+		 *    $(document).ready( function() {
+		 *      $('#example').dataTable( {
+		 *        "pageLength": 50
+		 *      } );
+		 *    } )
+		 */
+		"iDisplayLength": 10,
+	
+	
+		/**
+		 * Define the starting point for data display when using DataTables with
+		 * pagination. Note that this parameter is the number of records, rather than
+		 * the page number, so if you have 10 records per page and want to start on
+		 * the third page, it should be "20".
+		 *  @type int
+		 *  @default 0
+		 *
+		 *  @dtopt Options
+		 *  @name DataTable.defaults.displayStart
+		 *
+		 *  @example
+		 *    $(document).ready( function() {
+		 *      $('#example').dataTable( {
+		 *        "displayStart": 20
+		 *      } );
+		 *    } )
+		 */
+		"iDisplayStart": 0,
+	
+	
+		/**
+		 * By default DataTables allows keyboard navigation of the table (sorting, paging,
+		 * and filtering) by adding a `tabindex` attribute to the required elements. This
+		 * allows you to tab through the controls and press the enter key to activate them.
+		 * The tabindex is default 0, meaning that the tab follows the flow of the document.
+		 * You can overrule this using this parameter if you wish. Use a value of -1 to
+		 * disable built-in keyboard navigation.
+		 *  @type int
+		 *  @default 0
+		 *
+		 *  @dtopt Options
+		 *  @name DataTable.defaults.tabIndex
+		 *
+		 *  @example
+		 *    $(document).ready( function() {
+		 *      $('#example').dataTable( {
+		 *        "tabIndex": 1
+		 *      } );
+		 *    } );
+		 */
+		"iTabIndex": 0,
+	
+	
+		/**
+		 * Classes that DataTables assigns to the various components and features
+		 * that it adds to the HTML table. This allows classes to be configured
+		 * during initialisation in addition to through the static
+		 * {@link DataTable.ext.oStdClasses} object).
+		 *  @namespace
+		 *  @name DataTable.defaults.classes
+		 */
+		"oClasses": {},
+	
+	
+		/**
+		 * All strings that DataTables uses in the user interface that it creates
+		 * are defined in this object, allowing you to modified them individually or
+		 * completely replace them all as required.
+		 *  @namespace
+		 *  @name DataTable.defaults.language
+		 */
+		"oLanguage": {
+			/**
+			 * Strings that are used for WAI-ARIA labels and controls only (these are not
+			 * actually visible on the page, but will be read by screenreaders, and thus
+			 * must be internationalised as well).
+			 *  @namespace
+			 *  @name DataTable.defaults.language.aria
+			 */
+			"oAria": {
+				/**
+				 * ARIA label that is added to the table headers when the column may be
+				 * sorted ascending by activing the column (click or return when focused).
+				 * Note that the column header is prefixed to this string.
+				 *  @type string
+				 *  @default : activate to sort column ascending
+				 *
+				 *  @dtopt Language
+				 *  @name DataTable.defaults.language.aria.sortAscending
+				 *
+				 *  @example
+				 *    $(document).ready( function() {
+				 *      $('#example').dataTable( {
+				 *        "language": {
+				 *          "aria": {
+				 *            "sortAscending": " - click/return to sort ascending"
+				 *          }
+				 *        }
+				 *      } );
+				 *    } );
+				 */
+				"sSortAscending": ": activate to sort column ascending",
+	
+				/**
+				 * ARIA label that is added to the table headers when the column may be
+				 * sorted descending by activing the column (click or return when focused).
+				 * Note that the column header is prefixed to this string.
+				 *  @type string
+				 *  @default : activate to sort column ascending
+				 *
+				 *  @dtopt Language
+				 *  @name DataTable.defaults.language.aria.sortDescending
+				 *
+				 *  @example
+				 *    $(document).ready( function() {
+				 *      $('#example').dataTable( {
+				 *        "language": {
+				 *          "aria": {
+				 *            "sortDescending": " - click/return to sort descending"
+				 *          }
+				 *        }
+				 *      } );
+				 *    } );
+				 */
+				"sSortDescending": ": activate to sort column descending"
+			},
+	
+			/**
+			 * Pagination string used by DataTables for the built-in pagination
+			 * control types.
+			 *  @namespace
+			 *  @name DataTable.defaults.language.paginate
+			 */
+			"oPaginate": {
+				/**
+				 * Text to use when using the 'full_numbers' type of pagination for the
+				 * button to take the user to the first page.
+				 *  @type string
+				 *  @default First
+				 *
+				 *  @dtopt Language
+				 *  @name DataTable.defaults.language.paginate.first
+				 *
+				 *  @example
+				 *    $(document).ready( function() {
+				 *      $('#example').dataTable( {
+				 *        "language": {
+				 *          "paginate": {
+				 *            "first": "First page"
+				 *          }
+				 *        }
+				 *      } );
+				 *    } );
+				 */
+				"sFirst": "First",
+	
+	
+				/**
+				 * Text to use when using the 'full_numbers' type of pagination for the
+				 * button to take the user to the last page.
+				 *  @type string
+				 *  @default Last
+				 *
+				 *  @dtopt Language
+				 *  @name DataTable.defaults.language.paginate.last
+				 *
+				 *  @example
+				 *    $(document).ready( function() {
+				 *      $('#example').dataTable( {
+				 *        "language": {
+				 *          "paginate": {
+				 *            "last": "Last page"
+				 *          }
+				 *        }
+				 *      } );
+				 *    } );
+				 */
+				"sLast": "Last",
+	
+	
+				/**
+				 * Text to use for the 'next' pagination button (to take the user to the
+				 * next page).
+				 *  @type string
+				 *  @default Next
+				 *
+				 *  @dtopt Language
+				 *  @name DataTable.defaults.language.paginate.next
+				 *
+				 *  @example
+				 *    $(document).ready( function() {
+				 *      $('#example').dataTable( {
+				 *        "language": {
+				 *          "paginate": {
+				 *            "next": "Next page"
+				 *          }
+				 *        }
+				 *      } );
+				 *    } );
+				 */
+				"sNext": "Next",
+	
+	
+				/**
+				 * Text to use for the 'previous' pagination button (to take the user to
+				 * the previous page).
+				 *  @type string
+				 *  @default Previous
+				 *
+				 *  @dtopt Language
+				 *  @name DataTable.defaults.language.paginate.previous
+				 *
+				 *  @example
+				 *    $(document).ready( function() {
+				 *      $('#example').dataTable( {
+				 *        "language": {
+				 *          "paginate": {
+				 *            "previous": "Previous page"
+				 *          }
+				 *        }
+				 *      } );
+				 *    } );
+				 */
+				"sPrevious": "Previous"
+			},
+	
+			/**
+			 * This string is shown in preference to `zeroRecords` when the table is
+			 * empty of data (regardless of filtering). Note that this is an optional
+			 * parameter - if it is not given, the value of `zeroRecords` will be used
+			 * instead (either the default or given value).
+			 *  @type string
+			 *  @default No data available in table
+			 *
+			 *  @dtopt Language
+			 *  @name DataTable.defaults.language.emptyTable
+			 *
+			 *  @example
+			 *    $(document).ready( function() {
+			 *      $('#example').dataTable( {
+			 *        "language": {
+			 *          "emptyTable": "No data available in table"
+			 *        }
+			 *      } );
+			 *    } );
+			 */
+			"sEmptyTable": "No data available in table",
+	
+	
+			/**
+			 * This string gives information to the end user about the information
+			 * that is current on display on the page. The following tokens can be
+			 * used in the string and will be dynamically replaced as the table
+			 * display updates. This tokens can be placed anywhere in the string, or
+			 * removed as needed by the language requires:
+			 *
+			 * * `\_START\_` - Display index of the first record on the current page
+			 * * `\_END\_` - Display index of the last record on the current page
+			 * * `\_TOTAL\_` - Number of records in the table after filtering
+			 * * `\_MAX\_` - Number of records in the table without filtering
+			 * * `\_PAGE\_` - Current page number
+			 * * `\_PAGES\_` - Total number of pages of data in the table
+			 *
+			 *  @type string
+			 *  @default Showing _START_ to _END_ of _TOTAL_ entries
+			 *
+			 *  @dtopt Language
+			 *  @name DataTable.defaults.language.info
+			 *
+			 *  @example
+			 *    $(document).ready( function() {
+			 *      $('#example').dataTable( {
+			 *        "language": {
+			 *          "info": "Showing page _PAGE_ of _PAGES_"
+			 *        }
+			 *      } );
+			 *    } );
+			 */
+			"sInfo": "Showing _START_ to _END_ of _TOTAL_ entries",
+	
+	
+			/**
+			 * Display information string for when the table is empty. Typically the
+			 * format of this string should match `info`.
+			 *  @type string
+			 *  @default Showing 0 to 0 of 0 entries
+			 *
+			 *  @dtopt Language
+			 *  @name DataTable.defaults.language.infoEmpty
+			 *
+			 *  @example
+			 *    $(document).ready( function() {
+			 *      $('#example').dataTable( {
+			 *        "language": {
+			 *          "infoEmpty": "No entries to show"
+			 *        }
+			 *      } );
+			 *    } );
+			 */
+			"sInfoEmpty": "Showing 0 to 0 of 0 entries",
+	
+	
+			/**
+			 * When a user filters the information in a table, this string is appended
+			 * to the information (`info`) to give an idea of how strong the filtering
+			 * is. The variable _MAX_ is dynamically updated.
+			 *  @type string
+			 *  @default (filtered from _MAX_ total entries)
+			 *
+			 *  @dtopt Language
+			 *  @name DataTable.defaults.language.infoFiltered
+			 *
+			 *  @example
+			 *    $(document).ready( function() {
+			 *      $('#example').dataTable( {
+			 *        "language": {
+			 *          "infoFiltered": " - filtering from _MAX_ records"
+			 *        }
+			 *      } );
+			 *    } );
+			 */
+			"sInfoFiltered": "(filtered from _MAX_ total entries)",
+	
+	
+			/**
+			 * If can be useful to append extra information to the info string at times,
+			 * and this variable does exactly that. This information will be appended to
+			 * the `info` (`infoEmpty` and `infoFiltered` in whatever combination they are
+			 * being used) at all times.
+			 *  @type string
+			 *  @default <i>Empty string</i>
+			 *
+			 *  @dtopt Language
+			 *  @name DataTable.defaults.language.infoPostFix
+			 *
+			 *  @example
+			 *    $(document).ready( function() {
+			 *      $('#example').dataTable( {
+			 *        "language": {
+			 *          "infoPostFix": "All records shown are derived from real information."
+			 *        }
+			 *      } );
+			 *    } );
+			 */
+			"sInfoPostFix": "",
+	
+	
+			/**
+			 * This decimal place operator is a little different from the other
+			 * language options since DataTables doesn't output floating point
+			 * numbers, so it won't ever use this for display of a number. Rather,
+			 * what this parameter does is modify the sort methods of the table so
+			 * that numbers which are in a format which has a character other than
+			 * a period (`.`) as a decimal place will be sorted numerically.
+			 *
+			 * Note that numbers with different decimal places cannot be shown in
+			 * the same table and still be sortable, the table must be consistent.
+			 * However, multiple different tables on the page can use different
+			 * decimal place characters.
+			 *  @type string
+			 *  @default 
+			 *
+			 *  @dtopt Language
+			 *  @name DataTable.defaults.language.decimal
+			 *
+			 *  @example
+			 *    $(document).ready( function() {
+			 *      $('#example').dataTable( {
+			 *        "language": {
+			 *          "decimal": ","
+			 *          "thousands": "."
+			 *        }
+			 *      } );
+			 *    } );
+			 */
+			"sDecimal": "",
+	
+	
+			/**
+			 * DataTables has a build in number formatter (`formatNumber`) which is
+			 * used to format large numbers that are used in the table information.
+			 * By default a comma is used, but this can be trivially changed to any
+			 * character you wish with this parameter.
+			 *  @type string
+			 *  @default ,
+			 *
+			 *  @dtopt Language
+			 *  @name DataTable.defaults.language.thousands
+			 *
+			 *  @example
+			 *    $(document).ready( function() {
+			 *      $('#example').dataTable( {
+			 *        "language": {
+			 *          "thousands": "'"
+			 *        }
+			 *      } );
+			 *    } );
+			 */
+			"sThousands": ",",
+	
+	
+			/**
+			 * Detail the action that will be taken when the drop down menu for the
+			 * pagination length option is changed. The '_MENU_' variable is replaced
+			 * with a default select list of 10, 25, 50 and 100, and can be replaced
+			 * with a custom select box if required.
+			 *  @type string
+			 *  @default Show _MENU_ entries
+			 *
+			 *  @dtopt Language
+			 *  @name DataTable.defaults.language.lengthMenu
+			 *
+			 *  @example
+			 *    // Language change only
+			 *    $(document).ready( function() {
+			 *      $('#example').dataTable( {
+			 *        "language": {
+			 *          "lengthMenu": "Display _MENU_ records"
+			 *        }
+			 *      } );
+			 *    } );
+			 *
+			 *  @example
+			 *    // Language and options change
+			 *    $(document).ready( function() {
+			 *      $('#example').dataTable( {
+			 *        "language": {
+			 *          "lengthMenu": 'Display <select>'+
+			 *            '<option value="10">10</option>'+
+			 *            '<option value="20">20</option>'+
+			 *            '<option value="30">30</option>'+
+			 *            '<option value="40">40</option>'+
+			 *            '<option value="50">50</option>'+
+			 *            '<option value="-1">All</option>'+
+			 *            '</select> records'
+			 *        }
+			 *      } );
+			 *    } );
+			 */
+			"sLengthMenu": "Show _MENU_ entries",
+	
+	
+			/**
+			 * When using Ajax sourced data and during the first draw when DataTables is
+			 * gathering the data, this message is shown in an empty row in the table to
+			 * indicate to the end user the the data is being loaded. Note that this
+			 * parameter is not used when loading data by server-side processing, just
+			 * Ajax sourced data with client-side processing.
+			 *  @type string
+			 *  @default Loading...
+			 *
+			 *  @dtopt Language
+			 *  @name DataTable.defaults.language.loadingRecords
+			 *
+			 *  @example
+			 *    $(document).ready( function() {
+			 *      $('#example').dataTable( {
+			 *        "language": {
+			 *          "loadingRecords": "Please wait - loading..."
+			 *        }
+			 *      } );
+			 *    } );
+			 */
+			"sLoadingRecords": "Loading...",
+	
+	
+			/**
+			 * Text which is displayed when the table is processing a user action
+			 * (usually a sort command or similar).
+			 *  @type string
+			 *  @default Processing...
+			 *
+			 *  @dtopt Language
+			 *  @name DataTable.defaults.language.processing
+			 *
+			 *  @example
+			 *    $(document).ready( function() {
+			 *      $('#example').dataTable( {
+			 *        "language": {
+			 *          "processing": "DataTables is currently busy"
+			 *        }
+			 *      } );
+			 *    } );
+			 */
+			"sProcessing": "Processing...",
+	
+	
+			/**
+			 * Details the actions that will be taken when the user types into the
+			 * filtering input text box. The variable "_INPUT_", if used in the string,
+			 * is replaced with the HTML text box for the filtering input allowing
+			 * control over where it appears in the string. If "_INPUT_" is not given
+			 * then the input box is appended to the string automatically.
+			 *  @type string
+			 *  @default Search:
+			 *
+			 *  @dtopt Language
+			 *  @name DataTable.defaults.language.search
+			 *
+			 *  @example
+			 *    // Input text box will be appended at the end automatically
+			 *    $(document).ready( function() {
+			 *      $('#example').dataTable( {
+			 *        "language": {
+			 *          "search": "Filter records:"
+			 *        }
+			 *      } );
+			 *    } );
+			 *
+			 *  @example
+			 *    // Specify where the filter should appear
+			 *    $(document).ready( function() {
+			 *      $('#example').dataTable( {
+			 *        "language": {
+			 *          "search": "Apply filter _INPUT_ to table"
+			 *        }
+			 *      } );
+			 *    } );
+			 */
+			"sSearch": "Search:",
+	
+	
+			/**
+			 * Assign a `placeholder` attribute to the search `input` element
+			 *  @type string
+			 *  @default 
+			 *
+			 *  @dtopt Language
+			 *  @name DataTable.defaults.language.searchPlaceholder
+			 */
+			"sSearchPlaceholder": "",
+	
+	
+			/**
+			 * All of the language information can be stored in a file on the
+			 * server-side, which DataTables will look up if this parameter is passed.
+			 * It must store the URL of the language file, which is in a JSON format,
+			 * and the object has the same properties as the oLanguage object in the
+			 * initialiser object (i.e. the above parameters). Please refer to one of
+			 * the example language files to see how this works in action.
+			 *  @type string
+			 *  @default <i>Empty string - i.e. disabled</i>
+			 *
+			 *  @dtopt Language
+			 *  @name DataTable.defaults.language.url
+			 *
+			 *  @example
+			 *    $(document).ready( function() {
+			 *      $('#example').dataTable( {
+			 *        "language": {
+			 *          "url": "http://www.sprymedia.co.uk/dataTables/lang.txt"
+			 *        }
+			 *      } );
+			 *    } );
+			 */
+			"sUrl": "",
+	
+	
+			/**
+			 * Text shown inside the table records when the is no information to be
+			 * displayed after filtering. `emptyTable` is shown when there is simply no
+			 * information in the table at all (regardless of filtering).
+			 *  @type string
+			 *  @default No matching records found
+			 *
+			 *  @dtopt Language
+			 *  @name DataTable.defaults.language.zeroRecords
+			 *
+			 *  @example
+			 *    $(document).ready( function() {
+			 *      $('#example').dataTable( {
+			 *        "language": {
+			 *          "zeroRecords": "No records to display"
+			 *        }
+			 *      } );
+			 *    } );
+			 */
+			"sZeroRecords": "No matching records found"
+		},
+	
+	
+		/**
+		 * This parameter allows you to have define the global filtering state at
+		 * initialisation time. As an object the `search` parameter must be
+		 * defined, but all other parameters are optional. When `regex` is true,
+		 * the search string will be treated as a regular expression, when false
+		 * (default) it will be treated as a straight string. When `smart`
+		 * DataTables will use it's smart filtering methods (to word match at
+		 * any point in the data), when false this will not be done.
+		 *  @namespace
+		 *  @extends DataTable.models.oSearch
+		 *
+		 *  @dtopt Options
+		 *  @name DataTable.defaults.search
+		 *
+		 *  @example
+		 *    $(document).ready( function() {
+		 *      $('#example').dataTable( {
+		 *        "search": {"search": "Initial search"}
+		 *      } );
+		 *    } )
+		 */
+		"oSearch": $.extend( {}, DataTable.models.oSearch ),
+	
+	
+		/**
+		 * __Deprecated__ The functionality provided by this parameter has now been
+		 * superseded by that provided through `ajax`, which should be used instead.
+		 *
+		 * By default DataTables will look for the property `data` (or `aaData` for
+		 * compatibility with DataTables 1.9-) when obtaining data from an Ajax
+		 * source or for server-side processing - this parameter allows that
+		 * property to be changed. You can use Javascript dotted object notation to
+		 * get a data source for multiple levels of nesting.
+		 *  @type string
+		 *  @default data
+		 *
+		 *  @dtopt Options
+		 *  @dtopt Server-side
+		 *  @name DataTable.defaults.ajaxDataProp
+		 *
+		 *  @deprecated 1.10. Please use `ajax` for this functionality now.
+		 */
+		"sAjaxDataProp": "data",
+	
+	
+		/**
+		 * __Deprecated__ The functionality provided by this parameter has now been
+		 * superseded by that provided through `ajax`, which should be used instead.
+		 *
+		 * You can instruct DataTables to load data from an external
+		 * source using this parameter (use aData if you want to pass data in you
+		 * already have). Simply provide a url a JSON object can be obtained from.
+		 *  @type string
+		 *  @default null
+		 *
+		 *  @dtopt Options
+		 *  @dtopt Server-side
+		 *  @name DataTable.defaults.ajaxSource
+		 *
+		 *  @deprecated 1.10. Please use `ajax` for this functionality now.
+		 */
+		"sAjaxSource": null,
+	
+	
+		/**
+		 * This initialisation variable allows you to specify exactly where in the
+		 * DOM you want DataTables to inject the various controls it adds to the page
+		 * (for example you might want the pagination controls at the top of the
+		 * table). DIV elements (with or without a custom class) can also be added to
+		 * aid styling. The follow syntax is used:
+		 *   <ul>
+		 *     <li>The following options are allowed:
+		 *       <ul>
+		 *         <li>'l' - Length changing</li>
+		 *         <li>'f' - Filtering input</li>
+		 *         <li>'t' - The table!</li>
+		 *         <li>'i' - Information</li>
+		 *         <li>'p' - Pagination</li>
+		 *         <li>'r' - pRocessing</li>
+		 *       </ul>
+		 *     </li>
+		 *     <li>The following constants are allowed:
+		 *       <ul>
+		 *         <li>'H' - jQueryUI theme "header" classes ('fg-toolbar ui-widget-header ui-corner-tl ui-corner-tr ui-helper-clearfix')</li>
+		 *         <li>'F' - jQueryUI theme "footer" classes ('fg-toolbar ui-widget-header ui-corner-bl ui-corner-br ui-helper-clearfix')</li>
+		 *       </ul>
+		 *     </li>
+		 *     <li>The following syntax is expected:
+		 *       <ul>
+		 *         <li>'&lt;' and '&gt;' - div elements</li>
+		 *         <li>'&lt;"class" and '&gt;' - div with a class</li>
+		 *         <li>'&lt;"#id" and '&gt;' - div with an ID</li>
+		 *       </ul>
+		 *     </li>
+		 *     <li>Examples:
+		 *       <ul>
+		 *         <li>'&lt;"wrapper"flipt&gt;'</li>
+		 *         <li>'&lt;lf&lt;t&gt;ip&gt;'</li>
+		 *       </ul>
+		 *     </li>
+		 *   </ul>
+		 *  @type string
+		 *  @default lfrtip <i>(when `jQueryUI` is false)</i> <b>or</b>
+		 *    <"H"lfr>t<"F"ip> <i>(when `jQueryUI` is true)</i>
+		 *
+		 *  @dtopt Options
+		 *  @name DataTable.defaults.dom
+		 *
+		 *  @example
+		 *    $(document).ready( function() {
+		 *      $('#example').dataTable( {
+		 *        "dom": '&lt;"top"i&gt;rt&lt;"bottom"flp&gt;&lt;"clear"&gt;'
+		 *      } );
+		 *    } );
+		 */
+		"sDom": "lfrtip",
+	
+	
+		/**
+		 * Search delay option. This will throttle full table searches that use the
+		 * DataTables provided search input element (it does not effect calls to
+		 * `dt-api search()`, providing a delay before the search is made.
+		 *  @type integer
+		 *  @default 0
+		 *
+		 *  @dtopt Options
+		 *  @name DataTable.defaults.searchDelay
+		 *
+		 *  @example
+		 *    $(document).ready( function() {
+		 *      $('#example').dataTable( {
+		 *        "searchDelay": 200
+		 *      } );
+		 *    } )
+		 */
+		"searchDelay": null,
+	
+	
+		/**
+		 * DataTables features six different built-in options for the buttons to
+		 * display for pagination control:
+		 *
+		 * * `numbers` - Page number buttons only
+		 * * `simple` - 'Previous' and 'Next' buttons only
+		 * * 'simple_numbers` - 'Previous' and 'Next' buttons, plus page numbers
+		 * * `full` - 'First', 'Previous', 'Next' and 'Last' buttons
+		 * * `full_numbers` - 'First', 'Previous', 'Next' and 'Last' buttons, plus page numbers
+		 * * `first_last_numbers` - 'First' and 'Last' buttons, plus page numbers
+		 *  
+		 * Further methods can be added using {@link DataTable.ext.oPagination}.
+		 *  @type string
+		 *  @default simple_numbers
+		 *
+		 *  @dtopt Options
+		 *  @name DataTable.defaults.pagingType
+		 *
+		 *  @example
+		 *    $(document).ready( function() {
+		 *      $('#example').dataTable( {
+		 *        "pagingType": "full_numbers"
+		 *      } );
+		 *    } )
+		 */
+		"sPaginationType": "simple_numbers",
+	
+	
+		/**
+		 * Enable horizontal scrolling. When a table is too wide to fit into a
+		 * certain layout, or you have a large number of columns in the table, you
+		 * can enable x-scrolling to show the table in a viewport, which can be
+		 * scrolled. This property can be `true` which will allow the table to
+		 * scroll horizontally when needed, or any CSS unit, or a number (in which
+		 * case it will be treated as a pixel measurement). Setting as simply `true`
+		 * is recommended.
+		 *  @type boolean|string
+		 *  @default <i>blank string - i.e. disabled</i>
+		 *
+		 *  @dtopt Features
+		 *  @name DataTable.defaults.scrollX
+		 *
+		 *  @example
+		 *    $(document).ready( function() {
+		 *      $('#example').dataTable( {
+		 *        "scrollX": true,
+		 *        "scrollCollapse": true
+		 *      } );
+		 *    } );
+		 */
+		"sScrollX": "",
+	
+	
+		/**
+		 * This property can be used to force a DataTable to use more width than it
+		 * might otherwise do when x-scrolling is enabled. For example if you have a
+		 * table which requires to be well spaced, this parameter is useful for
+		 * "over-sizing" the table, and thus forcing scrolling. This property can by
+		 * any CSS unit, or a number (in which case it will be treated as a pixel
+		 * measurement).
+		 *  @type string
+		 *  @default <i>blank string - i.e. disabled</i>
+		 *
+		 *  @dtopt Options
+		 *  @name DataTable.defaults.scrollXInner
+		 *
+		 *  @example
+		 *    $(document).ready( function() {
+		 *      $('#example').dataTable( {
+		 *        "scrollX": "100%",
+		 *        "scrollXInner": "110%"
+		 *      } );
+		 *    } );
+		 */
+		"sScrollXInner": "",
+	
+	
+		/**
+		 * Enable vertical scrolling. Vertical scrolling will constrain the DataTable
+		 * to the given height, and enable scrolling for any data which overflows the
+		 * current viewport. This can be used as an alternative to paging to display
+		 * a lot of data in a small area (although paging and scrolling can both be
+		 * enabled at the same time). This property can be any CSS unit, or a number
+		 * (in which case it will be treated as a pixel measurement).
+		 *  @type string
+		 *  @default <i>blank string - i.e. disabled</i>
+		 *
+		 *  @dtopt Features
+		 *  @name DataTable.defaults.scrollY
+		 *
+		 *  @example
+		 *    $(document).ready( function() {
+		 *      $('#example').dataTable( {
+		 *        "scrollY": "200px",
+		 *        "paginate": false
+		 *      } );
+		 *    } );
+		 */
+		"sScrollY": "",
+	
+	
+		/**
+		 * __Deprecated__ The functionality provided by this parameter has now been
+		 * superseded by that provided through `ajax`, which should be used instead.
+		 *
+		 * Set the HTTP method that is used to make the Ajax call for server-side
+		 * processing or Ajax sourced data.
+		 *  @type string
+		 *  @default GET
+		 *
+		 *  @dtopt Options
+		 *  @dtopt Server-side
+		 *  @name DataTable.defaults.serverMethod
+		 *
+		 *  @deprecated 1.10. Please use `ajax` for this functionality now.
+		 */
+		"sServerMethod": "GET",
+	
+	
+		/**
+		 * DataTables makes use of renderers when displaying HTML elements for
+		 * a table. These renderers can be added or modified by plug-ins to
+		 * generate suitable mark-up for a site. For example the Bootstrap
+		 * integration plug-in for DataTables uses a paging button renderer to
+		 * display pagination buttons in the mark-up required by Bootstrap.
+		 *
+		 * For further information about the renderers available see
+		 * DataTable.ext.renderer
+		 *  @type string|object
+		 *  @default null
+		 *
+		 *  @name DataTable.defaults.renderer
+		 *
+		 */
+		"renderer": null,
+	
+	
+		/**
+		 * Set the data property name that DataTables should use to get a row's id
+		 * to set as the `id` property in the node.
+		 *  @type string
+		 *  @default DT_RowId
+		 *
+		 *  @name DataTable.defaults.rowId
+		 */
+		"rowId": "DT_RowId"
+	};
+	
+	_fnHungarianMap( DataTable.defaults );
+	
+	
+	
+	/*
+	 * Developer note - See note in model.defaults.js about the use of Hungarian
+	 * notation and camel case.
+	 */
+	
+	/**
+	 * Column options that can be given to DataTables at initialisation time.
+	 *  @namespace
+	 */
+	DataTable.defaults.column = {
+		/**
+		 * Define which column(s) an order will occur on for this column. This
+		 * allows a column's ordering to take multiple columns into account when
+		 * doing a sort or use the data from a different column. For example first
+		 * name / last name columns make sense to do a multi-column sort over the
+		 * two columns.
+		 *  @type array|int
+		 *  @default null <i>Takes the value of the column index automatically</i>
+		 *
+		 *  @name DataTable.defaults.column.orderData
+		 *  @dtopt Columns
+		 *
+		 *  @example
+		 *    // Using `columnDefs`
+		 *    $(document).ready( function() {
+		 *      $('#example').dataTable( {
+		 *        "columnDefs": [
+		 *          { "orderData": [ 0, 1 ], "targets": [ 0 ] },
+		 *          { "orderData": [ 1, 0 ], "targets": [ 1 ] },
+		 *          { "orderData": 2, "targets": [ 2 ] }
+		 *        ]
+		 *      } );
+		 *    } );
+		 *
+		 *  @example
+		 *    // Using `columns`
+		 *    $(document).ready( function() {
+		 *      $('#example').dataTable( {
+		 *        "columns": [
+		 *          { "orderData": [ 0, 1 ] },
+		 *          { "orderData": [ 1, 0 ] },
+		 *          { "orderData": 2 },
+		 *          null,
+		 *          null
+		 *        ]
+		 *      } );
+		 *    } );
+		 */
+		"aDataSort": null,
+		"iDataSort": -1,
+	
+	
+		/**
+		 * You can control the default ordering direction, and even alter the
+		 * behaviour of the sort handler (i.e. only allow ascending ordering etc)
+		 * using this parameter.
+		 *  @type array
+		 *  @default [ 'asc', 'desc' ]
+		 *
+		 *  @name DataTable.defaults.column.orderSequence
+		 *  @dtopt Columns
+		 *
+		 *  @example
+		 *    // Using `columnDefs`
+		 *    $(document).ready( function() {
+		 *      $('#example').dataTable( {
+		 *        "columnDefs": [
+		 *          { "orderSequence": [ "asc" ], "targets": [ 1 ] },
+		 *          { "orderSequence": [ "desc", "asc", "asc" ], "targets": [ 2 ] },
+		 *          { "orderSequence": [ "desc" ], "targets": [ 3 ] }
+		 *        ]
+		 *      } );
+		 *    } );
+		 *
+		 *  @example
+		 *    // Using `columns`
+		 *    $(document).ready( function() {
+		 *      $('#example').dataTable( {
+		 *        "columns": [
+		 *          null,
+		 *          { "orderSequence": [ "asc" ] },
+		 *          { "orderSequence": [ "desc", "asc", "asc" ] },
+		 *          { "orderSequence": [ "desc" ] },
+		 *          null
+		 *        ]
+		 *      } );
+		 *    } );
+		 */
+		"asSorting": [ 'asc', 'desc' ],
+	
+	
+		/**
+		 * Enable or disable filtering on the data in this column.
+		 *  @type boolean
+		 *  @default true
+		 *
+		 *  @name DataTable.defaults.column.searchable
+		 *  @dtopt Columns
+		 *
+		 *  @example
+		 *    // Using `columnDefs`
+		 *    $(document).ready( function() {
+		 *      $('#example').dataTable( {
+		 *        "columnDefs": [
+		 *          { "searchable": false, "targets": [ 0 ] }
+		 *        ] } );
+		 *    } );
+		 *
+		 *  @example
+		 *    // Using `columns`
+		 *    $(document).ready( function() {
+		 *      $('#example').dataTable( {
+		 *        "columns": [
+		 *          { "searchable": false },
+		 *          null,
+		 *          null,
+		 *          null,
+		 *          null
+		 *        ] } );
+		 *    } );
+		 */
+		"bSearchable": true,
+	
+	
+		/**
+		 * Enable or disable ordering on this column.
+		 *  @type boolean
+		 *  @default true
+		 *
+		 *  @name DataTable.defaults.column.orderable
+		 *  @dtopt Columns
+		 *
+		 *  @example
+		 *    // Using `columnDefs`
+		 *    $(document).ready( function() {
+		 *      $('#example').dataTable( {
+		 *        "columnDefs": [
+		 *          { "orderable": false, "targets": [ 0 ] }
+		 *        ] } );
+		 *    } );
+		 *
+		 *  @example
+		 *    // Using `columns`
+		 *    $(document).ready( function() {
+		 *      $('#example').dataTable( {
+		 *        "columns": [
+		 *          { "orderable": false },
+		 *          null,
+		 *          null,
+		 *          null,
+		 *          null
+		 *        ] } );
+		 *    } );
+		 */
+		"bSortable": true,
+	
+	
+		/**
+		 * Enable or disable the display of this column.
+		 *  @type boolean
+		 *  @default true
+		 *
+		 *  @name DataTable.defaults.column.visible
+		 *  @dtopt Columns
+		 *
+		 *  @example
+		 *    // Using `columnDefs`
+		 *    $(document).ready( function() {
+		 *      $('#example').dataTable( {
+		 *        "columnDefs": [
+		 *          { "visible": false, "targets": [ 0 ] }
+		 *        ] } );
+		 *    } );
+		 *
+		 *  @example
+		 *    // Using `columns`
+		 *    $(document).ready( function() {
+		 *      $('#example').dataTable( {
+		 *        "columns": [
+		 *          { "visible": false },
+		 *          null,
+		 *          null,
+		 *          null,
+		 *          null
+		 *        ] } );
+		 *    } );
+		 */
+		"bVisible": true,
+	
+	
+		/**
+		 * Developer definable function that is called whenever a cell is created (Ajax source,
+		 * etc) or processed for input (DOM source). This can be used as a compliment to mRender
+		 * allowing you to modify the DOM element (add background colour for example) when the
+		 * element is available.
+		 *  @type function
+		 *  @param {element} td The TD node that has been created
+		 *  @param {*} cellData The Data for the cell
+		 *  @param {array|object} rowData The data for the whole row
+		 *  @param {int} row The row index for the aoData data store
+		 *  @param {int} col The column index for aoColumns
+		 *
+		 *  @name DataTable.defaults.column.createdCell
+		 *  @dtopt Columns
+		 *
+		 *  @example
+		 *    $(document).ready( function() {
+		 *      $('#example').dataTable( {
+		 *        "columnDefs": [ {
+		 *          "targets": [3],
+		 *          "createdCell": function (td, cellData, rowData, row, col) {
+		 *            if ( cellData == "1.7" ) {
+		 *              $(td).css('color', 'blue')
+		 *            }
+		 *          }
+		 *        } ]
+		 *      });
+		 *    } );
+		 */
+		"fnCreatedCell": null,
+	
+	
+		/**
+		 * This parameter has been replaced by `data` in DataTables to ensure naming
+		 * consistency. `dataProp` can still be used, as there is backwards
+		 * compatibility in DataTables for this option, but it is strongly
+		 * recommended that you use `data` in preference to `dataProp`.
+		 *  @name DataTable.defaults.column.dataProp
+		 */
+	
+	
+		/**
+		 * This property can be used to read data from any data source property,
+		 * including deeply nested objects / properties. `data` can be given in a
+		 * number of different ways which effect its behaviour:
+		 *
+		 * * `integer` - treated as an array index for the data source. This is the
+		 *   default that DataTables uses (incrementally increased for each column).
+		 * * `string` - read an object property from the data source. There are
+		 *   three 'special' options that can be used in the string to alter how
+		 *   DataTables reads the data from the source object:
+		 *    * `.` - Dotted Javascript notation. Just as you use a `.` in
+		 *      Javascript to read from nested objects, so to can the options
+		 *      specified in `data`. For example: `browser.version` or
+		 *      `browser.name`. If your object parameter name contains a period, use
+		 *      `\\` to escape it - i.e. `first\\.name`.
+		 *    * `[]` - Array notation. DataTables can automatically combine data
+		 *      from and array source, joining the data with the characters provided
+		 *      between the two brackets. For example: `name[, ]` would provide a
+		 *      comma-space separated list from the source array. If no characters
+		 *      are provided between the brackets, the original array source is
+		 *      returned.
+		 *    * `()` - Function notation. Adding `()` to the end of a parameter will
+		 *      execute a function of the name given. For example: `browser()` for a
+		 *      simple function on the data source, `browser.version()` for a
+		 *      function in a nested property or even `browser().version` to get an
+		 *      object property if the function called returns an object. Note that
+		 *      function notation is recommended for use in `render` rather than
+		 *      `data` as it is much simpler to use as a renderer.
+		 * * `null` - use the original data source for the row rather than plucking
+		 *   data directly from it. This action has effects on two other
+		 *   initialisation options:
+		 *    * `defaultContent` - When null is given as the `data` option and
+		 *      `defaultContent` is specified for the column, the value defined by
+		 *      `defaultContent` will be used for the cell.
+		 *    * `render` - When null is used for the `data` option and the `render`
+		 *      option is specified for the column, the whole data source for the
+		 *      row is used for the renderer.
+		 * * `function` - the function given will be executed whenever DataTables
+		 *   needs to set or get the data for a cell in the column. The function
+		 *   takes three parameters:
+		 *    * Parameters:
+		 *      * `{array|object}` The data source for the row
+		 *      * `{string}` The type call data requested - this will be 'set' when
+		 *        setting data or 'filter', 'display', 'type', 'sort' or undefined
+		 *        when gathering data. Note that when `undefined` is given for the
+		 *        type DataTables expects to get the raw data for the object back<
+		 *      * `{*}` Data to set when the second parameter is 'set'.
+		 *    * Return:
+		 *      * The return value from the function is not required when 'set' is
+		 *        the type of call, but otherwise the return is what will be used
+		 *        for the data requested.
+		 *
+		 * Note that `data` is a getter and setter option. If you just require
+		 * formatting of data for output, you will likely want to use `render` which
+		 * is simply a getter and thus simpler to use.
+		 *
+		 * Note that prior to DataTables 1.9.2 `data` was called `mDataProp`. The
+		 * name change reflects the flexibility of this property and is consistent
+		 * with the naming of mRender. If 'mDataProp' is given, then it will still
+		 * be used by DataTables, as it automatically maps the old name to the new
+		 * if required.
+		 *
+		 *  @type string|int|function|null
+		 *  @default null <i>Use automatically calculated column index</i>
+		 *
+		 *  @name DataTable.defaults.column.data
+		 *  @dtopt Columns
+		 *
+		 *  @example
+		 *    // Read table data from objects
+		 *    // JSON structure for each row:
+		 *    //   {
+		 *    //      "engine": {value},
+		 *    //      "browser": {value},
+		 *    //      "platform": {value},
+		 *    //      "version": {value},
+		 *    //      "grade": {value}
+		 *    //   }
+		 *    $(document).ready( function() {
+		 *      $('#example').dataTable( {
+		 *        "ajaxSource": "sources/objects.txt",
+		 *        "columns": [
+		 *          { "data": "engine" },
+		 *          { "data": "browser" },
+		 *          { "data": "platform" },
+		 *          { "data": "version" },
+		 *          { "data": "grade" }
+		 *        ]
+		 *      } );
+		 *    } );
+		 *
+		 *  @example
+		 *    // Read information from deeply nested objects
+		 *    // JSON structure for each row:
+		 *    //   {
+		 *    //      "engine": {value},
+		 *    //      "browser": {value},
+		 *    //      "platform": {
+		 *    //         "inner": {value}
+		 *    //      },
+		 *    //      "details": [
+		 *    //         {value}, {value}
+		 *    //      ]
+		 *    //   }
+		 *    $(document).ready( function() {
+		 *      $('#example').dataTable( {
+		 *        "ajaxSource": "sources/deep.txt",
+		 *        "columns": [
+		 *          { "data": "engine" },
+		 *          { "data": "browser" },
+		 *          { "data": "platform.inner" },
+		 *          { "data": "details.0" },
+		 *          { "data": "details.1" }
+		 *        ]
+		 *      } );
+		 *    } );
+		 *
+		 *  @example
+		 *    // Using `data` as a function to provide different information for
+		 *    // sorting, filtering and display. In this case, currency (price)
+		 *    $(document).ready( function() {
+		 *      $('#example').dataTable( {
+		 *        "columnDefs": [ {
+		 *          "targets": [ 0 ],
+		 *          "data": function ( source, type, val ) {
+		 *            if (type === 'set') {
+		 *              source.price = val;
+		 *              // Store the computed dislay and filter values for efficiency
+		 *              source.price_display = val=="" ? "" : "$"+numberFormat(val);
+		 *              source.price_filter  = val=="" ? "" : "$"+numberFormat(val)+" "+val;
+		 *              return;
+		 *            }
+		 *            else if (type === 'display') {
+		 *              return source.price_display;
+		 *            }
+		 *            else if (type === 'filter') {
+		 *              return source.price_filter;
+		 *            }
+		 *            // 'sort', 'type' and undefined all just use the integer
+		 *            return source.price;
+		 *          }
+		 *        } ]
+		 *      } );
+		 *    } );
+		 *
+		 *  @example
+		 *    // Using default content
+		 *    $(document).ready( function() {
+		 *      $('#example').dataTable( {
+		 *        "columnDefs": [ {
+		 *          "targets": [ 0 ],
+		 *          "data": null,
+		 *          "defaultContent": "Click to edit"
+		 *        } ]
+		 *      } );
+		 *    } );
+		 *
+		 *  @example
+		 *    // Using array notation - outputting a list from an array
+		 *    $(document).ready( function() {
+		 *      $('#example').dataTable( {
+		 *        "columnDefs": [ {
+		 *          "targets": [ 0 ],
+		 *          "data": "name[, ]"
+		 *        } ]
+		 *      } );
+		 *    } );
+		 *
+		 */
+		"mData": null,
+	
+	
+		/**
+		 * This property is the rendering partner to `data` and it is suggested that
+		 * when you want to manipulate data for display (including filtering,
+		 * sorting etc) without altering the underlying data for the table, use this
+		 * property. `render` can be considered to be the the read only companion to
+		 * `data` which is read / write (then as such more complex). Like `data`
+		 * this option can be given in a number of different ways to effect its
+		 * behaviour:
+		 *
+		 * * `integer` - treated as an array index for the data source. This is the
+		 *   default that DataTables uses (incrementally increased for each column).
+		 * * `string` - read an object property from the data source. There are
+		 *   three 'special' options that can be used in the string to alter how
+		 *   DataTables reads the data from the source object:
+		 *    * `.` - Dotted Javascript notation. Just as you use a `.` in
+		 *      Javascript to read from nested objects, so to can the options
+		 *      specified in `data`. For example: `browser.version` or
+		 *      `browser.name`. If your object parameter name contains a period, use
+		 *      `\\` to escape it - i.e. `first\\.name`.
+		 *    * `[]` - Array notation. DataTables can automatically combine data
+		 *      from and array source, joining the data with the characters provided
+		 *      between the two brackets. For example: `name[, ]` would provide a
+		 *      comma-space separated list from the source array. If no characters
+		 *      are provided between the brackets, the original array source is
+		 *      returned.
+		 *    * `()` - Function notation. Adding `()` to the end of a parameter will
+		 *      execute a function of the name given. For example: `browser()` for a
+		 *      simple function on the data source, `browser.version()` for a
+		 *      function in a nested property or even `browser().version` to get an
+		 *      object property if the function called returns an object.
+		 * * `object` - use different data for the different data types requested by
+		 *   DataTables ('filter', 'display', 'type' or 'sort'). The property names
+		 *   of the object is the data type the property refers to and the value can
+		 *   defined using an integer, string or function using the same rules as
+		 *   `render` normally does. Note that an `_` option _must_ be specified.
+		 *   This is the default value to use if you haven't specified a value for
+		 *   the data type requested by DataTables.
+		 * * `function` - the function given will be executed whenever DataTables
+		 *   needs to set or get the data for a cell in the column. The function
+		 *   takes three parameters:
+		 *    * Parameters:
+		 *      * {array|object} The data source for the row (based on `data`)
+		 *      * {string} The type call data requested - this will be 'filter',
+		 *        'display', 'type' or 'sort'.
+		 *      * {array|object} The full data source for the row (not based on
+		 *        `data`)
+		 *    * Return:
+		 *      * The return value from the function is what will be used for the
+		 *        data requested.
+		 *
+		 *  @type string|int|function|object|null
+		 *  @default null Use the data source value.
+		 *
+		 *  @name DataTable.defaults.column.render
+		 *  @dtopt Columns
+		 *
+		 *  @example
+		 *    // Create a comma separated list from an array of objects
+		 *    $(document).ready( function() {
+		 *      $('#example').dataTable( {
+		 *        "ajaxSource": "sources/deep.txt",
+		 *        "columns": [
+		 *          { "data": "engine" },
+		 *          { "data": "browser" },
+		 *          {
+		 *            "data": "platform",
+		 *            "render": "[, ].name"
+		 *          }
+		 *        ]
+		 *      } );
+		 *    } );
+		 *
+		 *  @example
+		 *    // Execute a function to obtain data
+		 *    $(document).ready( function() {
+		 *      $('#example').dataTable( {
+		 *        "columnDefs": [ {
+		 *          "targets": [ 0 ],
+		 *          "data": null, // Use the full data source object for the renderer's source
+		 *          "render": "browserName()"
+		 *        } ]
+		 *      } );
+		 *    } );
+		 *
+		 *  @example
+		 *    // As an object, extracting different data for the different types
+		 *    // This would be used with a data source such as:
+		 *    //   { "phone": 5552368, "phone_filter": "5552368 555-2368", "phone_display": "555-2368" }
+		 *    // Here the `phone` integer is used for sorting and type detection, while `phone_filter`
+		 *    // (which has both forms) is used for filtering for if a user inputs either format, while
+		 *    // the formatted phone number is the one that is shown in the table.
+		 *    $(document).ready( function() {
+		 *      $('#example').dataTable( {
+		 *        "columnDefs": [ {
+		 *          "targets": [ 0 ],
+		 *          "data": null, // Use the full data source object for the renderer's source
+		 *          "render": {
+		 *            "_": "phone",
+		 *            "filter": "phone_filter",
+		 *            "display": "phone_display"
+		 *          }
+		 *        } ]
+		 *      } );
+		 *    } );
+		 *
+		 *  @example
+		 *    // Use as a function to create a link from the data source
+		 *    $(document).ready( function() {
+		 *      $('#example').dataTable( {
+		 *        "columnDefs": [ {
+		 *          "targets": [ 0 ],
+		 *          "data": "download_link",
+		 *          "render": function ( data, type, full ) {
+		 *            return '<a href="'+data+'">Download</a>';
+		 *          }
+		 *        } ]
+		 *      } );
+		 *    } );
+		 */
+		"mRender": null,
+	
+	
+		/**
+		 * Change the cell type created for the column - either TD cells or TH cells. This
+		 * can be useful as TH cells have semantic meaning in the table body, allowing them
+		 * to act as a header for a row (you may wish to add scope='row' to the TH elements).
+		 *  @type string
+		 *  @default td
+		 *
+		 *  @name DataTable.defaults.column.cellType
+		 *  @dtopt Columns
+		 *
+		 *  @example
+		 *    // Make the first column use TH cells
+		 *    $(document).ready( function() {
+		 *      $('#example').dataTable( {
+		 *        "columnDefs": [ {
+		 *          "targets": [ 0 ],
+		 *          "cellType": "th"
+		 *        } ]
+		 *      } );
+		 *    } );
+		 */
+		"sCellType": "td",
+	
+	
+		/**
+		 * Class to give to each cell in this column.
+		 *  @type string
+		 *  @default <i>Empty string</i>
+		 *
+		 *  @name DataTable.defaults.column.class
+		 *  @dtopt Columns
+		 *
+		 *  @example
+		 *    // Using `columnDefs`
+		 *    $(document).ready( function() {
+		 *      $('#example').dataTable( {
+		 *        "columnDefs": [
+		 *          { "class": "my_class", "targets": [ 0 ] }
+		 *        ]
+		 *      } );
+		 *    } );
+		 *
+		 *  @example
+		 *    // Using `columns`
+		 *    $(document).ready( function() {
+		 *      $('#example').dataTable( {
+		 *        "columns": [
+		 *          { "class": "my_class" },
+		 *          null,
+		 *          null,
+		 *          null,
+		 *          null
+		 *        ]
+		 *      } );
+		 *    } );
+		 */
+		"sClass": "",
+	
+		/**
+		 * When DataTables calculates the column widths to assign to each column,
+		 * it finds the longest string in each column and then constructs a
+		 * temporary table and reads the widths from that. The problem with this
+		 * is that "mmm" is much wider then "iiii", but the latter is a longer
+		 * string - thus the calculation can go wrong (doing it properly and putting
+		 * it into an DOM object and measuring that is horribly(!) slow). Thus as
+		 * a "work around" we provide this option. It will append its value to the
+		 * text that is found to be the longest string for the column - i.e. padding.
+		 * Generally you shouldn't need this!
+		 *  @type string
+		 *  @default <i>Empty string<i>
+		 *
+		 *  @name DataTable.defaults.column.contentPadding
+		 *  @dtopt Columns
+		 *
+		 *  @example
+		 *    // Using `columns`
+		 *    $(document).ready( function() {
+		 *      $('#example').dataTable( {
+		 *        "columns": [
+		 *          null,
+		 *          null,
+		 *          null,
+		 *          {
+		 *            "contentPadding": "mmm"
+		 *          }
+		 *        ]
+		 *      } );
+		 *    } );
+		 */
+		"sContentPadding": "",
+	
+	
+		/**
+		 * Allows a default value to be given for a column's data, and will be used
+		 * whenever a null data source is encountered (this can be because `data`
+		 * is set to null, or because the data source itself is null).
+		 *  @type string
+		 *  @default null
+		 *
+		 *  @name DataTable.defaults.column.defaultContent
+		 *  @dtopt Columns
+		 *
+		 *  @example
+		 *    // Using `columnDefs`
+		 *    $(document).ready( function() {
+		 *      $('#example').dataTable( {
+		 *        "columnDefs": [
+		 *          {
+		 *            "data": null,
+		 *            "defaultContent": "Edit",
+		 *            "targets": [ -1 ]
+		 *          }
+		 *        ]
+		 *      } );
+		 *    } );
+		 *
+		 *  @example
+		 *    // Using `columns`
+		 *    $(document).ready( function() {
+		 *      $('#example').dataTable( {
+		 *        "columns": [
+		 *          null,
+		 *          null,
+		 *          null,
+		 *          {
+		 *            "data": null,
+		 *            "defaultContent": "Edit"
+		 *          }
+		 *        ]
+		 *      } );
+		 *    } );
+		 */
+		"sDefaultContent": null,
+	
+	
+		/**
+		 * This parameter is only used in DataTables' server-side processing. It can
+		 * be exceptionally useful to know what columns are being displayed on the
+		 * client side, and to map these to database fields. When defined, the names
+		 * also allow DataTables to reorder information from the server if it comes
+		 * back in an unexpected order (i.e. if you switch your columns around on the
+		 * client-side, your server-side code does not also need updating).
+		 *  @type string
+		 *  @default <i>Empty string</i>
+		 *
+		 *  @name DataTable.defaults.column.name
+		 *  @dtopt Columns
+		 *
+		 *  @example
+		 *    // Using `columnDefs`
+		 *    $(document).ready( function() {
+		 *      $('#example').dataTable( {
+		 *        "columnDefs": [
+		 *          { "name": "engine", "targets": [ 0 ] },
+		 *          { "name": "browser", "targets": [ 1 ] },
+		 *          { "name": "platform", "targets": [ 2 ] },
+		 *          { "name": "version", "targets": [ 3 ] },
+		 *          { "name": "grade", "targets": [ 4 ] }
+		 *        ]
+		 *      } );
+		 *    } );
+		 *
+		 *  @example
+		 *    // Using `columns`
+		 *    $(document).ready( function() {
+		 *      $('#example').dataTable( {
+		 *        "columns": [
+		 *          { "name": "engine" },
+		 *          { "name": "browser" },
+		 *          { "name": "platform" },
+		 *          { "name": "version" },
+		 *          { "name": "grade" }
+		 *        ]
+		 *      } );
+		 *    } );
+		 */
+		"sName": "",
+	
+	
+		/**
+		 * Defines a data source type for the ordering which can be used to read
+		 * real-time information from the table (updating the internally cached
+		 * version) prior to ordering. This allows ordering to occur on user
+		 * editable elements such as form inputs.
+		 *  @type string
+		 *  @default std
+		 *
+		 *  @name DataTable.defaults.column.orderDataType
+		 *  @dtopt Columns
+		 *
+		 *  @example
+		 *    // Using `columnDefs`
+		 *    $(document).ready( function() {
+		 *      $('#example').dataTable( {
+		 *        "columnDefs": [
+		 *          { "orderDataType": "dom-text", "targets": [ 2, 3 ] },
+		 *          { "type": "numeric", "targets": [ 3 ] },
+		 *          { "orderDataType": "dom-select", "targets": [ 4 ] },
+		 *          { "orderDataType": "dom-checkbox", "targets": [ 5 ] }
+		 *        ]
+		 *      } );
+		 *    } );
+		 *
+		 *  @example
+		 *    // Using `columns`
+		 *    $(document).ready( function() {
+		 *      $('#example').dataTable( {
+		 *        "columns": [
+		 *          null,
+		 *          null,
+		 *          { "orderDataType": "dom-text" },
+		 *          { "orderDataType": "dom-text", "type": "numeric" },
+		 *          { "orderDataType": "dom-select" },
+		 *          { "orderDataType": "dom-checkbox" }
+		 *        ]
+		 *      } );
+		 *    } );
+		 */
+		"sSortDataType": "std",
+	
+	
+		/**
+		 * The title of this column.
+		 *  @type string
+		 *  @default null <i>Derived from the 'TH' value for this column in the
+		 *    original HTML table.</i>
+		 *
+		 *  @name DataTable.defaults.column.title
+		 *  @dtopt Columns
+		 *
+		 *  @example
+		 *    // Using `columnDefs`
+		 *    $(document).ready( function() {
+		 *      $('#example').dataTable( {
+		 *        "columnDefs": [
+		 *          { "title": "My column title", "targets": [ 0 ] }
+		 *        ]
+		 *      } );
+		 *    } );
+		 *
+		 *  @example
+		 *    // Using `columns`
+		 *    $(document).ready( function() {
+		 *      $('#example').dataTable( {
+		 *        "columns": [
+		 *          { "title": "My column title" },
+		 *          null,
+		 *          null,
+		 *          null,
+		 *          null
+		 *        ]
+		 *      } );
+		 *    } );
+		 */
+		"sTitle": null,
+	
+	
+		/**
+		 * The type allows you to specify how the data for this column will be
+		 * ordered. Four types (string, numeric, date and html (which will strip
+		 * HTML tags before ordering)) are currently available. Note that only date
+		 * formats understood by Javascript's Date() object will be accepted as type
+		 * date. For example: "Mar 26, 2008 5:03 PM". May take the values: 'string',
+		 * 'numeric', 'date' or 'html' (by default). Further types can be adding
+		 * through plug-ins.
+		 *  @type string
+		 *  @default null <i>Auto-detected from raw data</i>
+		 *
+		 *  @name DataTable.defaults.column.type
+		 *  @dtopt Columns
+		 *
+		 *  @example
+		 *    // Using `columnDefs`
+		 *    $(document).ready( function() {
+		 *      $('#example').dataTable( {
+		 *        "columnDefs": [
+		 *          { "type": "html", "targets": [ 0 ] }
+		 *        ]
+		 *      } );
+		 *    } );
+		 *
+		 *  @example
+		 *    // Using `columns`
+		 *    $(document).ready( function() {
+		 *      $('#example').dataTable( {
+		 *        "columns": [
+		 *          { "type": "html" },
+		 *          null,
+		 *          null,
+		 *          null,
+		 *          null
+		 *        ]
+		 *      } );
+		 *    } );
+		 */
+		"sType": null,
+	
+	
+		/**
+		 * Defining the width of the column, this parameter may take any CSS value
+		 * (3em, 20px etc). DataTables applies 'smart' widths to columns which have not
+		 * been given a specific width through this interface ensuring that the table
+		 * remains readable.
+		 *  @type string
+		 *  @default null <i>Automatic</i>
+		 *
+		 *  @name DataTable.defaults.column.width
+		 *  @dtopt Columns
+		 *
+		 *  @example
+		 *    // Using `columnDefs`
+		 *    $(document).ready( function() {
+		 *      $('#example').dataTable( {
+		 *        "columnDefs": [
+		 *          { "width": "20%", "targets": [ 0 ] }
+		 *        ]
+		 *      } );
+		 *    } );
+		 *
+		 *  @example
+		 *    // Using `columns`
+		 *    $(document).ready( function() {
+		 *      $('#example').dataTable( {
+		 *        "columns": [
+		 *          { "width": "20%" },
+		 *          null,
+		 *          null,
+		 *          null,
+		 *          null
+		 *        ]
+		 *      } );
+		 *    } );
+		 */
+		"sWidth": null
+	};
+	
+	_fnHungarianMap( DataTable.defaults.column );
+	
+	
+	
+	/**
+	 * DataTables settings object - this holds all the information needed for a
+	 * given table, including configuration, data and current application of the
+	 * table options. DataTables does not have a single instance for each DataTable
+	 * with the settings attached to that instance, but rather instances of the
+	 * DataTable "class" are created on-the-fly as needed (typically by a
+	 * $().dataTable() call) and the settings object is then applied to that
+	 * instance.
+	 *
+	 * Note that this object is related to {@link DataTable.defaults} but this
+	 * one is the internal data store for DataTables's cache of columns. It should
+	 * NOT be manipulated outside of DataTables. Any configuration should be done
+	 * through the initialisation options.
+	 *  @namespace
+	 *  @todo Really should attach the settings object to individual instances so we
+	 *    don't need to create new instances on each $().dataTable() call (if the
+	 *    table already exists). It would also save passing oSettings around and
+	 *    into every single function. However, this is a very significant
+	 *    architecture change for DataTables and will almost certainly break
+	 *    backwards compatibility with older installations. This is something that
+	 *    will be done in 2.0.
+	 */
+	DataTable.models.oSettings = {
+		/**
+		 * Primary features of DataTables and their enablement state.
+		 *  @namespace
+		 */
+		"oFeatures": {
+	
+			/**
+			 * Flag to say if DataTables should automatically try to calculate the
+			 * optimum table and columns widths (true) or not (false).
+			 * Note that this parameter will be set by the initialisation routine. To
+			 * set a default use {@link DataTable.defaults}.
+			 *  @type boolean
+			 */
+			"bAutoWidth": null,
+	
+			/**
+			 * Delay the creation of TR and TD elements until they are actually
+			 * needed by a driven page draw. This can give a significant speed
+			 * increase for Ajax source and Javascript source data, but makes no
+			 * difference at all fro DOM and server-side processing tables.
+			 * Note that this parameter will be set by the initialisation routine. To
+			 * set a default use {@link DataTable.defaults}.
+			 *  @type boolean
+			 */
+			"bDeferRender": null,
+	
+			/**
+			 * Enable filtering on the table or not. Note that if this is disabled
+			 * then there is no filtering at all on the table, including fnFilter.
+			 * To just remove the filtering input use sDom and remove the 'f' option.
+			 * Note that this parameter will be set by the initialisation routine. To
+			 * set a default use {@link DataTable.defaults}.
+			 *  @type boolean
+			 */
+			"bFilter": null,
+	
+			/**
+			 * Table information element (the 'Showing x of y records' div) enable
+			 * flag.
+			 * Note that this parameter will be set by the initialisation routine. To
+			 * set a default use {@link DataTable.defaults}.
+			 *  @type boolean
+			 */
+			"bInfo": null,
+	
+			/**
+			 * Present a user control allowing the end user to change the page size
+			 * when pagination is enabled.
+			 * Note that this parameter will be set by the initialisation routine. To
+			 * set a default use {@link DataTable.defaults}.
+			 *  @type boolean
+			 */
+			"bLengthChange": null,
+	
+			/**
+			 * Pagination enabled or not. Note that if this is disabled then length
+			 * changing must also be disabled.
+			 * Note that this parameter will be set by the initialisation routine. To
+			 * set a default use {@link DataTable.defaults}.
+			 *  @type boolean
+			 */
+			"bPaginate": null,
+	
+			/**
+			 * Processing indicator enable flag whenever DataTables is enacting a
+			 * user request - typically an Ajax request for server-side processing.
+			 * Note that this parameter will be set by the initialisation routine. To
+			 * set a default use {@link DataTable.defaults}.
+			 *  @type boolean
+			 */
+			"bProcessing": null,
+	
+			/**
+			 * Server-side processing enabled flag - when enabled DataTables will
+			 * get all data from the server for every draw - there is no filtering,
+			 * sorting or paging done on the client-side.
+			 * Note that this parameter will be set by the initialisation routine. To
+			 * set a default use {@link DataTable.defaults}.
+			 *  @type boolean
+			 */
+			"bServerSide": null,
+	
+			/**
+			 * Sorting enablement flag.
+			 * Note that this parameter will be set by the initialisation routine. To
+			 * set a default use {@link DataTable.defaults}.
+			 *  @type boolean
+			 */
+			"bSort": null,
+	
+			/**
+			 * Multi-column sorting
+			 * Note that this parameter will be set by the initialisation routine. To
+			 * set a default use {@link DataTable.defaults}.
+			 *  @type boolean
+			 */
+			"bSortMulti": null,
+	
+			/**
+			 * Apply a class to the columns which are being sorted to provide a
+			 * visual highlight or not. This can slow things down when enabled since
+			 * there is a lot of DOM interaction.
+			 * Note that this parameter will be set by the initialisation routine. To
+			 * set a default use {@link DataTable.defaults}.
+			 *  @type boolean
+			 */
+			"bSortClasses": null,
+	
+			/**
+			 * State saving enablement flag.
+			 * Note that this parameter will be set by the initialisation routine. To
+			 * set a default use {@link DataTable.defaults}.
+			 *  @type boolean
+			 */
+			"bStateSave": null
+		},
+	
+	
+		/**
+		 * Scrolling settings for a table.
+		 *  @namespace
+		 */
+		"oScroll": {
+			/**
+			 * When the table is shorter in height than sScrollY, collapse the
+			 * table container down to the height of the table (when true).
+			 * Note that this parameter will be set by the initialisation routine. To
+			 * set a default use {@link DataTable.defaults}.
+			 *  @type boolean
+			 */
+			"bCollapse": null,
+	
+			/**
+			 * Width of the scrollbar for the web-browser's platform. Calculated
+			 * during table initialisation.
+			 *  @type int
+			 *  @default 0
+			 */
+			"iBarWidth": 0,
+	
+			/**
+			 * Viewport width for horizontal scrolling. Horizontal scrolling is
+			 * disabled if an empty string.
+			 * Note that this parameter will be set by the initialisation routine. To
+			 * set a default use {@link DataTable.defaults}.
+			 *  @type string
+			 */
+			"sX": null,
+	
+			/**
+			 * Width to expand the table to when using x-scrolling. Typically you
+			 * should not need to use this.
+			 * Note that this parameter will be set by the initialisation routine. To
+			 * set a default use {@link DataTable.defaults}.
+			 *  @type string
+			 *  @deprecated
+			 */
+			"sXInner": null,
+	
+			/**
+			 * Viewport height for vertical scrolling. Vertical scrolling is disabled
+			 * if an empty string.
+			 * Note that this parameter will be set by the initialisation routine. To
+			 * set a default use {@link DataTable.defaults}.
+			 *  @type string
+			 */
+			"sY": null
+		},
+	
+		/**
+		 * Language information for the table.
+		 *  @namespace
+		 *  @extends DataTable.defaults.oLanguage
+		 */
+		"oLanguage": {
+			/**
+			 * Information callback function. See
+			 * {@link DataTable.defaults.fnInfoCallback}
+			 *  @type function
+			 *  @default null
+			 */
+			"fnInfoCallback": null
+		},
+	
+		/**
+		 * Browser support parameters
+		 *  @namespace
+		 */
+		"oBrowser": {
+			/**
+			 * Indicate if the browser incorrectly calculates width:100% inside a
+			 * scrolling element (IE6/7)
+			 *  @type boolean
+			 *  @default false
+			 */
+			"bScrollOversize": false,
+	
+			/**
+			 * Determine if the vertical scrollbar is on the right or left of the
+			 * scrolling container - needed for rtl language layout, although not
+			 * all browsers move the scrollbar (Safari).
+			 *  @type boolean
+			 *  @default false
+			 */
+			"bScrollbarLeft": false,
+	
+			/**
+			 * Flag for if `getBoundingClientRect` is fully supported or not
+			 *  @type boolean
+			 *  @default false
+			 */
+			"bBounding": false,
+	
+			/**
+			 * Browser scrollbar width
+			 *  @type integer
+			 *  @default 0
+			 */
+			"barWidth": 0
+		},
+	
+	
+		"ajax": null,
+	
+	
+		/**
+		 * Array referencing the nodes which are used for the features. The
+		 * parameters of this object match what is allowed by sDom - i.e.
+		 *   <ul>
+		 *     <li>'l' - Length changing</li>
+		 *     <li>'f' - Filtering input</li>
+		 *     <li>'t' - The table!</li>
+		 *     <li>'i' - Information</li>
+		 *     <li>'p' - Pagination</li>
+		 *     <li>'r' - pRocessing</li>
+		 *   </ul>
+		 *  @type array
+		 *  @default []
+		 */
+		"aanFeatures": [],
+	
+		/**
+		 * Store data information - see {@link DataTable.models.oRow} for detailed
+		 * information.
+		 *  @type array
+		 *  @default []
+		 */
+		"aoData": [],
+	
+		/**
+		 * Array of indexes which are in the current display (after filtering etc)
+		 *  @type array
+		 *  @default []
+		 */
+		"aiDisplay": [],
+	
+		/**
+		 * Array of indexes for display - no filtering
+		 *  @type array
+		 *  @default []
+		 */
+		"aiDisplayMaster": [],
+	
+		/**
+		 * Map of row ids to data indexes
+		 *  @type object
+		 *  @default {}
+		 */
+		"aIds": {},
+	
+		/**
+		 * Store information about each column that is in use
+		 *  @type array
+		 *  @default []
+		 */
+		"aoColumns": [],
+	
+		/**
+		 * Store information about the table's header
+		 *  @type array
+		 *  @default []
+		 */
+		"aoHeader": [],
+	
+		/**
+		 * Store information about the table's footer
+		 *  @type array
+		 *  @default []
+		 */
+		"aoFooter": [],
+	
+		/**
+		 * Store the applied global search information in case we want to force a
+		 * research or compare the old search to a new one.
+		 * Note that this parameter will be set by the initialisation routine. To
+		 * set a default use {@link DataTable.defaults}.
+		 *  @namespace
+		 *  @extends DataTable.models.oSearch
+		 */
+		"oPreviousSearch": {},
+	
+		/**
+		 * Store the applied search for each column - see
+		 * {@link DataTable.models.oSearch} for the format that is used for the
+		 * filtering information for each column.
+		 *  @type array
+		 *  @default []
+		 */
+		"aoPreSearchCols": [],
+	
+		/**
+		 * Sorting that is applied to the table. Note that the inner arrays are
+		 * used in the following manner:
+		 * <ul>
+		 *   <li>Index 0 - column number</li>
+		 *   <li>Index 1 - current sorting direction</li>
+		 * </ul>
+		 * Note that this parameter will be set by the initialisation routine. To
+		 * set a default use {@link DataTable.defaults}.
+		 *  @type array
+		 *  @todo These inner arrays should really be objects
+		 */
+		"aaSorting": null,
+	
+		/**
+		 * Sorting that is always applied to the table (i.e. prefixed in front of
+		 * aaSorting).
+		 * Note that this parameter will be set by the initialisation routine. To
+		 * set a default use {@link DataTable.defaults}.
+		 *  @type array
+		 *  @default []
+		 */
+		"aaSortingFixed": [],
+	
+		/**
+		 * Classes to use for the striping of a table.
+		 * Note that this parameter will be set by the initialisation routine. To
+		 * set a default use {@link DataTable.defaults}.
+		 *  @type array
+		 *  @default []
+		 */
+		"asStripeClasses": null,
+	
+		/**
+		 * If restoring a table - we should restore its striping classes as well
+		 *  @type array
+		 *  @default []
+		 */
+		"asDestroyStripes": [],
+	
+		/**
+		 * If restoring a table - we should restore its width
+		 *  @type int
+		 *  @default 0
+		 */
+		"sDestroyWidth": 0,
+	
+		/**
+		 * Callback functions array for every time a row is inserted (i.e. on a draw).
+		 *  @type array
+		 *  @default []
+		 */
+		"aoRowCallback": [],
+	
+		/**
+		 * Callback functions for the header on each draw.
+		 *  @type array
+		 *  @default []
+		 */
+		"aoHeaderCallback": [],
+	
+		/**
+		 * Callback function for the footer on each draw.
+		 *  @type array
+		 *  @default []
+		 */
+		"aoFooterCallback": [],
+	
+		/**
+		 * Array of callback functions for draw callback functions
+		 *  @type array
+		 *  @default []
+		 */
+		"aoDrawCallback": [],
+	
+		/**
+		 * Array of callback functions for row created function
+		 *  @type array
+		 *  @default []
+		 */
+		"aoRowCreatedCallback": [],
+	
+		/**
+		 * Callback functions for just before the table is redrawn. A return of
+		 * false will be used to cancel the draw.
+		 *  @type array
+		 *  @default []
+		 */
+		"aoPreDrawCallback": [],
+	
+		/**
+		 * Callback functions for when the table has been initialised.
+		 *  @type array
+		 *  @default []
+		 */
+		"aoInitComplete": [],
+	
+	
+		/**
+		 * Callbacks for modifying the settings to be stored for state saving, prior to
+		 * saving state.
+		 *  @type array
+		 *  @default []
+		 */
+		"aoStateSaveParams": [],
+	
+		/**
+		 * Callbacks for modifying the settings that have been stored for state saving
+		 * prior to using the stored values to restore the state.
+		 *  @type array
+		 *  @default []
+		 */
+		"aoStateLoadParams": [],
+	
+		/**
+		 * Callbacks for operating on the settings object once the saved state has been
+		 * loaded
+		 *  @type array
+		 *  @default []
+		 */
+		"aoStateLoaded": [],
+	
+		/**
+		 * Cache the table ID for quick access
+		 *  @type string
+		 *  @default <i>Empty string</i>
+		 */
+		"sTableId": "",
+	
+		/**
+		 * The TABLE node for the main table
+		 *  @type node
+		 *  @default null
+		 */
+		"nTable": null,
+	
+		/**
+		 * Permanent ref to the thead element
+		 *  @type node
+		 *  @default null
+		 */
+		"nTHead": null,
+	
+		/**
+		 * Permanent ref to the tfoot element - if it exists
+		 *  @type node
+		 *  @default null
+		 */
+		"nTFoot": null,
+	
+		/**
+		 * Permanent ref to the tbody element
+		 *  @type node
+		 *  @default null
+		 */
+		"nTBody": null,
+	
+		/**
+		 * Cache the wrapper node (contains all DataTables controlled elements)
+		 *  @type node
+		 *  @default null
+		 */
+		"nTableWrapper": null,
+	
+		/**
+		 * Indicate if when using server-side processing the loading of data
+		 * should be deferred until the second draw.
+		 * Note that this parameter will be set by the initialisation routine. To
+		 * set a default use {@link DataTable.defaults}.
+		 *  @type boolean
+		 *  @default false
+		 */
+		"bDeferLoading": false,
+	
+		/**
+		 * Indicate if all required information has been read in
+		 *  @type boolean
+		 *  @default false
+		 */
+		"bInitialised": false,
+	
+		/**
+		 * Information about open rows. Each object in the array has the parameters
+		 * 'nTr' and 'nParent'
+		 *  @type array
+		 *  @default []
+		 */
+		"aoOpenRows": [],
+	
+		/**
+		 * Dictate the positioning of DataTables' control elements - see
+		 * {@link DataTable.model.oInit.sDom}.
+		 * Note that this parameter will be set by the initialisation routine. To
+		 * set a default use {@link DataTable.defaults}.
+		 *  @type string
+		 *  @default null
+		 */
+		"sDom": null,
+	
+		/**
+		 * Search delay (in mS)
+		 *  @type integer
+		 *  @default null
+		 */
+		"searchDelay": null,
+	
+		/**
+		 * Which type of pagination should be used.
+		 * Note that this parameter will be set by the initialisation routine. To
+		 * set a default use {@link DataTable.defaults}.
+		 *  @type string
+		 *  @default two_button
+		 */
+		"sPaginationType": "two_button",
+	
+		/**
+		 * The state duration (for `stateSave`) in seconds.
+		 * Note that this parameter will be set by the initialisation routine. To
+		 * set a default use {@link DataTable.defaults}.
+		 *  @type int
+		 *  @default 0
+		 */
+		"iStateDuration": 0,
+	
+		/**
+		 * Array of callback functions for state saving. Each array element is an
+		 * object with the following parameters:
+		 *   <ul>
+		 *     <li>function:fn - function to call. Takes two parameters, oSettings
+		 *       and the JSON string to save that has been thus far created. Returns
+		 *       a JSON string to be inserted into a json object
+		 *       (i.e. '"param": [ 0, 1, 2]')</li>
+		 *     <li>string:sName - name of callback</li>
+		 *   </ul>
+		 *  @type array
+		 *  @default []
+		 */
+		"aoStateSave": [],
+	
+		/**
+		 * Array of callback functions for state loading. Each array element is an
+		 * object with the following parameters:
+		 *   <ul>
+		 *     <li>function:fn - function to call. Takes two parameters, oSettings
+		 *       and the object stored. May return false to cancel state loading</li>
+		 *     <li>string:sName - name of callback</li>
+		 *   </ul>
+		 *  @type array
+		 *  @default []
+		 */
+		"aoStateLoad": [],
+	
+		/**
+		 * State that was saved. Useful for back reference
+		 *  @type object
+		 *  @default null
+		 */
+		"oSavedState": null,
+	
+		/**
+		 * State that was loaded. Useful for back reference
+		 *  @type object
+		 *  @default null
+		 */
+		"oLoadedState": null,
+	
+		/**
+		 * Source url for AJAX data for the table.
+		 * Note that this parameter will be set by the initialisation routine. To
+		 * set a default use {@link DataTable.defaults}.
+		 *  @type string
+		 *  @default null
+		 */
+		"sAjaxSource": null,
+	
+		/**
+		 * Property from a given object from which to read the table data from. This
+		 * can be an empty string (when not server-side processing), in which case
+		 * it is  assumed an an array is given directly.
+		 * Note that this parameter will be set by the initialisation routine. To
+		 * set a default use {@link DataTable.defaults}.
+		 *  @type string
+		 */
+		"sAjaxDataProp": null,
+	
+		/**
+		 * Note if draw should be blocked while getting data
+		 *  @type boolean
+		 *  @default true
+		 */
+		"bAjaxDataGet": true,
+	
+		/**
+		 * The last jQuery XHR object that was used for server-side data gathering.
+		 * This can be used for working with the XHR information in one of the
+		 * callbacks
+		 *  @type object
+		 *  @default null
+		 */
+		"jqXHR": null,
+	
+		/**
+		 * JSON returned from the server in the last Ajax request
+		 *  @type object
+		 *  @default undefined
+		 */
+		"json": undefined,
+	
+		/**
+		 * Data submitted as part of the last Ajax request
+		 *  @type object
+		 *  @default undefined
+		 */
+		"oAjaxData": undefined,
+	
+		/**
+		 * Function to get the server-side data.
+		 * Note that this parameter will be set by the initialisation routine. To
+		 * set a default use {@link DataTable.defaults}.
+		 *  @type function
+		 */
+		"fnServerData": null,
+	
+		/**
+		 * Functions which are called prior to sending an Ajax request so extra
+		 * parameters can easily be sent to the server
+		 *  @type array
+		 *  @default []
+		 */
+		"aoServerParams": [],
+	
+		/**
+		 * Send the XHR HTTP method - GET or POST (could be PUT or DELETE if
+		 * required).
+		 * Note that this parameter will be set by the initialisation routine. To
+		 * set a default use {@link DataTable.defaults}.
+		 *  @type string
+		 */
+		"sServerMethod": null,
+	
+		/**
+		 * Format numbers for display.
+		 * Note that this parameter will be set by the initialisation routine. To
+		 * set a default use {@link DataTable.defaults}.
+		 *  @type function
+		 */
+		"fnFormatNumber": null,
+	
+		/**
+		 * List of options that can be used for the user selectable length menu.
+		 * Note that this parameter will be set by the initialisation routine. To
+		 * set a default use {@link DataTable.defaults}.
+		 *  @type array
+		 *  @default []
+		 */
+		"aLengthMenu": null,
+	
+		/**
+		 * Counter for the draws that the table does. Also used as a tracker for
+		 * server-side processing
+		 *  @type int
+		 *  @default 0
+		 */
+		"iDraw": 0,
+	
+		/**
+		 * Indicate if a redraw is being done - useful for Ajax
+		 *  @type boolean
+		 *  @default false
+		 */
+		"bDrawing": false,
+	
+		/**
+		 * Draw index (iDraw) of the last error when parsing the returned data
+		 *  @type int
+		 *  @default -1
+		 */
+		"iDrawError": -1,
+	
+		/**
+		 * Paging display length
+		 *  @type int
+		 *  @default 10
+		 */
+		"_iDisplayLength": 10,
+	
+		/**
+		 * Paging start point - aiDisplay index
+		 *  @type int
+		 *  @default 0
+		 */
+		"_iDisplayStart": 0,
+	
+		/**
+		 * Server-side processing - number of records in the result set
+		 * (i.e. before filtering), Use fnRecordsTotal rather than
+		 * this property to get the value of the number of records, regardless of
+		 * the server-side processing setting.
+		 *  @type int
+		 *  @default 0
+		 *  @private
+		 */
+		"_iRecordsTotal": 0,
+	
+		/**
+		 * Server-side processing - number of records in the current display set
+		 * (i.e. after filtering). Use fnRecordsDisplay rather than
+		 * this property to get the value of the number of records, regardless of
+		 * the server-side processing setting.
+		 *  @type boolean
+		 *  @default 0
+		 *  @private
+		 */
+		"_iRecordsDisplay": 0,
+	
+		/**
+		 * The classes to use for the table
+		 *  @type object
+		 *  @default {}
+		 */
+		"oClasses": {},
+	
+		/**
+		 * Flag attached to the settings object so you can check in the draw
+		 * callback if filtering has been done in the draw. Deprecated in favour of
+		 * events.
+		 *  @type boolean
+		 *  @default false
+		 *  @deprecated
+		 */
+		"bFiltered": false,
+	
+		/**
+		 * Flag attached to the settings object so you can check in the draw
+		 * callback if sorting has been done in the draw. Deprecated in favour of
+		 * events.
+		 *  @type boolean
+		 *  @default false
+		 *  @deprecated
+		 */
+		"bSorted": false,
+	
+		/**
+		 * Indicate that if multiple rows are in the header and there is more than
+		 * one unique cell per column, if the top one (true) or bottom one (false)
+		 * should be used for sorting / title by DataTables.
+		 * Note that this parameter will be set by the initialisation routine. To
+		 * set a default use {@link DataTable.defaults}.
+		 *  @type boolean
+		 */
+		"bSortCellsTop": null,
+	
+		/**
+		 * Initialisation object that is used for the table
+		 *  @type object
+		 *  @default null
+		 */
+		"oInit": null,
+	
+		/**
+		 * Destroy callback functions - for plug-ins to attach themselves to the
+		 * destroy so they can clean up markup and events.
+		 *  @type array
+		 *  @default []
+		 */
+		"aoDestroyCallback": [],
+	
+	
+		/**
+		 * Get the number of records in the current record set, before filtering
+		 *  @type function
+		 */
+		"fnRecordsTotal": function ()
+		{
+			return _fnDataSource( this ) == 'ssp' ?
+				this._iRecordsTotal * 1 :
+				this.aiDisplayMaster.length;
+		},
+	
+		/**
+		 * Get the number of records in the current record set, after filtering
+		 *  @type function
+		 */
+		"fnRecordsDisplay": function ()
+		{
+			return _fnDataSource( this ) == 'ssp' ?
+				this._iRecordsDisplay * 1 :
+				this.aiDisplay.length;
+		},
+	
+		/**
+		 * Get the display end point - aiDisplay index
+		 *  @type function
+		 */
+		"fnDisplayEnd": function ()
+		{
+			var
+				len      = this._iDisplayLength,
+				start    = this._iDisplayStart,
+				calc     = start + len,
+				records  = this.aiDisplay.length,
+				features = this.oFeatures,
+				paginate = features.bPaginate;
+	
+			if ( features.bServerSide ) {
+				return paginate === false || len === -1 ?
+					start + records :
+					Math.min( start+len, this._iRecordsDisplay );
+			}
+			else {
+				return ! paginate || calc>records || len===-1 ?
+					records :
+					calc;
+			}
+		},
+	
+		/**
+		 * The DataTables object for this table
+		 *  @type object
+		 *  @default null
+		 */
+		"oInstance": null,
+	
+		/**
+		 * Unique identifier for each instance of the DataTables object. If there
+		 * is an ID on the table node, then it takes that value, otherwise an
+		 * incrementing internal counter is used.
+		 *  @type string
+		 *  @default null
+		 */
+		"sInstance": null,
+	
+		/**
+		 * tabindex attribute value that is added to DataTables control elements, allowing
+		 * keyboard navigation of the table and its controls.
+		 */
+		"iTabIndex": 0,
+	
+		/**
+		 * DIV container for the footer scrolling table if scrolling
+		 */
+		"nScrollHead": null,
+	
+		/**
+		 * DIV container for the footer scrolling table if scrolling
+		 */
+		"nScrollFoot": null,
+	
+		/**
+		 * Last applied sort
+		 *  @type array
+		 *  @default []
+		 */
+		"aLastSort": [],
+	
+		/**
+		 * Stored plug-in instances
+		 *  @type object
+		 *  @default {}
+		 */
+		"oPlugins": {},
+	
+		/**
+		 * Function used to get a row's id from the row's data
+		 *  @type function
+		 *  @default null
+		 */
+		"rowIdFn": null,
+	
+		/**
+		 * Data location where to store a row's id
+		 *  @type string
+		 *  @default null
+		 */
+		"rowId": null
+	};
+
+	/**
+	 * Extension object for DataTables that is used to provide all extension
+	 * options.
+	 *
+	 * Note that the `DataTable.ext` object is available through
+	 * `jQuery.fn.dataTable.ext` where it may be accessed and manipulated. It is
+	 * also aliased to `jQuery.fn.dataTableExt` for historic reasons.
+	 *  @namespace
+	 *  @extends DataTable.models.ext
+	 */
+	
+	
+	/**
+	 * DataTables extensions
+	 * 
+	 * This namespace acts as a collection area for plug-ins that can be used to
+	 * extend DataTables capabilities. Indeed many of the build in methods
+	 * use this method to provide their own capabilities (sorting methods for
+	 * example).
+	 *
+	 * Note that this namespace is aliased to `jQuery.fn.dataTableExt` for legacy
+	 * reasons
+	 *
+	 *  @namespace
+	 */
+	DataTable.ext = _ext = {
+		/**
+		 * Buttons. For use with the Buttons extension for DataTables. This is
+		 * defined here so other extensions can define buttons regardless of load
+		 * order. It is _not_ used by DataTables core.
+		 *
+		 *  @type object
+		 *  @default {}
+		 */
+		buttons: {},
+	
+	
+		/**
+		 * Element class names
+		 *
+		 *  @type object
+		 *  @default {}
+		 */
+		classes: {},
+	
+	
+		/**
+		 * DataTables build type (expanded by the download builder)
+		 *
+		 *  @type string
+		 */
+		builder: "-source-",
+	
+	
+		/**
+		 * Error reporting.
+		 * 
+		 * How should DataTables report an error. Can take the value 'alert',
+		 * 'throw', 'none' or a function.
+		 *
+		 *  @type string|function
+		 *  @default alert
+		 */
+		errMode: "alert",
+	
+	
+		/**
+		 * Feature plug-ins.
+		 * 
+		 * This is an array of objects which describe the feature plug-ins that are
+		 * available to DataTables. These feature plug-ins are then available for
+		 * use through the `dom` initialisation option.
+		 * 
+		 * Each feature plug-in is described by an object which must have the
+		 * following properties:
+		 * 
+		 * * `fnInit` - function that is used to initialise the plug-in,
+		 * * `cFeature` - a character so the feature can be enabled by the `dom`
+		 *   instillation option. This is case sensitive.
+		 *
+		 * The `fnInit` function has the following input parameters:
+		 *
+		 * 1. `{object}` DataTables settings object: see
+		 *    {@link DataTable.models.oSettings}
+		 *
+		 * And the following return is expected:
+		 * 
+		 * * {node|null} The element which contains your feature. Note that the
+		 *   return may also be void if your plug-in does not require to inject any
+		 *   DOM elements into DataTables control (`dom`) - for example this might
+		 *   be useful when developing a plug-in which allows table control via
+		 *   keyboard entry
+		 *
+		 *  @type array
+		 *
+		 *  @example
+		 *    $.fn.dataTable.ext.features.push( {
+		 *      "fnInit": function( oSettings ) {
+		 *        return new TableTools( { "oDTSettings": oSettings } );
+		 *      },
+		 *      "cFeature": "T"
+		 *    } );
+		 */
+		feature: [],
+	
+	
+		/**
+		 * Row searching.
+		 * 
+		 * This method of searching is complimentary to the default type based
+		 * searching, and a lot more comprehensive as it allows you complete control
+		 * over the searching logic. Each element in this array is a function
+		 * (parameters described below) that is called for every row in the table,
+		 * and your logic decides if it should be included in the searching data set
+		 * or not.
+		 *
+		 * Searching functions have the following input parameters:
+		 *
+		 * 1. `{object}` DataTables settings object: see
+		 *    {@link DataTable.models.oSettings}
+		 * 2. `{array|object}` Data for the row to be processed (same as the
+		 *    original format that was passed in as the data source, or an array
+		 *    from a DOM data source
+		 * 3. `{int}` Row index ({@link DataTable.models.oSettings.aoData}), which
+		 *    can be useful to retrieve the `TR` element if you need DOM interaction.
+		 *
+		 * And the following return is expected:
+		 *
+		 * * {boolean} Include the row in the searched result set (true) or not
+		 *   (false)
+		 *
+		 * Note that as with the main search ability in DataTables, technically this
+		 * is "filtering", since it is subtractive. However, for consistency in
+		 * naming we call it searching here.
+		 *
+		 *  @type array
+		 *  @default []
+		 *
+		 *  @example
+		 *    // The following example shows custom search being applied to the
+		 *    // fourth column (i.e. the data[3] index) based on two input values
+		 *    // from the end-user, matching the data in a certain range.
+		 *    $.fn.dataTable.ext.search.push(
+		 *      function( settings, data, dataIndex ) {
+		 *        var min = document.getElementById('min').value * 1;
+		 *        var max = document.getElementById('max').value * 1;
+		 *        var version = data[3] == "-" ? 0 : data[3]*1;
+		 *
+		 *        if ( min == "" && max == "" ) {
+		 *          return true;
+		 *        }
+		 *        else if ( min == "" && version < max ) {
+		 *          return true;
+		 *        }
+		 *        else if ( min < version && "" == max ) {
+		 *          return true;
+		 *        }
+		 *        else if ( min < version && version < max ) {
+		 *          return true;
+		 *        }
+		 *        return false;
+		 *      }
+		 *    );
+		 */
+		search: [],
+	
+	
+		/**
+		 * Selector extensions
+		 *
+		 * The `selector` option can be used to extend the options available for the
+		 * selector modifier options (`selector-modifier` object data type) that
+		 * each of the three built in selector types offer (row, column and cell +
+		 * their plural counterparts). For example the Select extension uses this
+		 * mechanism to provide an option to select only rows, columns and cells
+		 * that have been marked as selected by the end user (`{selected: true}`),
+		 * which can be used in conjunction with the existing built in selector
+		 * options.
+		 *
+		 * Each property is an array to which functions can be pushed. The functions
+		 * take three attributes:
+		 *
+		 * * Settings object for the host table
+		 * * Options object (`selector-modifier` object type)
+		 * * Array of selected item indexes
+		 *
+		 * The return is an array of the resulting item indexes after the custom
+		 * selector has been applied.
+		 *
+		 *  @type object
+		 */
+		selector: {
+			cell: [],
+			column: [],
+			row: []
+		},
+	
+	
+		/**
+		 * Internal functions, exposed for used in plug-ins.
+		 * 
+		 * Please note that you should not need to use the internal methods for
+		 * anything other than a plug-in (and even then, try to avoid if possible).
+		 * The internal function may change between releases.
+		 *
+		 *  @type object
+		 *  @default {}
+		 */
+		internal: {},
+	
+	
+		/**
+		 * Legacy configuration options. Enable and disable legacy options that
+		 * are available in DataTables.
+		 *
+		 *  @type object
+		 */
+		legacy: {
+			/**
+			 * Enable / disable DataTables 1.9 compatible server-side processing
+			 * requests
+			 *
+			 *  @type boolean
+			 *  @default null
+			 */
+			ajax: null
+		},
+	
+	
+		/**
+		 * Pagination plug-in methods.
+		 * 
+		 * Each entry in this object is a function and defines which buttons should
+		 * be shown by the pagination rendering method that is used for the table:
+		 * {@link DataTable.ext.renderer.pageButton}. The renderer addresses how the
+		 * buttons are displayed in the document, while the functions here tell it
+		 * what buttons to display. This is done by returning an array of button
+		 * descriptions (what each button will do).
+		 *
+		 * Pagination types (the four built in options and any additional plug-in
+		 * options defined here) can be used through the `paginationType`
+		 * initialisation parameter.
+		 *
+		 * The functions defined take two parameters:
+		 *
+		 * 1. `{int} page` The current page index
+		 * 2. `{int} pages` The number of pages in the table
+		 *
+		 * Each function is expected to return an array where each element of the
+		 * array can be one of:
+		 *
+		 * * `first` - Jump to first page when activated
+		 * * `last` - Jump to last page when activated
+		 * * `previous` - Show previous page when activated
+		 * * `next` - Show next page when activated
+		 * * `{int}` - Show page of the index given
+		 * * `{array}` - A nested array containing the above elements to add a
+		 *   containing 'DIV' element (might be useful for styling).
+		 *
+		 * Note that DataTables v1.9- used this object slightly differently whereby
+		 * an object with two functions would be defined for each plug-in. That
+		 * ability is still supported by DataTables 1.10+ to provide backwards
+		 * compatibility, but this option of use is now decremented and no longer
+		 * documented in DataTables 1.10+.
+		 *
+		 *  @type object
+		 *  @default {}
+		 *
+		 *  @example
+		 *    // Show previous, next and current page buttons only
+		 *    $.fn.dataTableExt.oPagination.current = function ( page, pages ) {
+		 *      return [ 'previous', page, 'next' ];
+		 *    };
+		 */
+		pager: {},
+	
+	
+		renderer: {
+			pageButton: {},
+			header: {}
+		},
+	
+	
+		/**
+		 * Ordering plug-ins - custom data source
+		 * 
+		 * The extension options for ordering of data available here is complimentary
+		 * to the default type based ordering that DataTables typically uses. It
+		 * allows much greater control over the the data that is being used to
+		 * order a column, but is necessarily therefore more complex.
+		 * 
+		 * This type of ordering is useful if you want to do ordering based on data
+		 * live from the DOM (for example the contents of an 'input' element) rather
+		 * than just the static string that DataTables knows of.
+		 * 
+		 * The way these plug-ins work is that you create an array of the values you
+		 * wish to be ordering for the column in question and then return that
+		 * array. The data in the array much be in the index order of the rows in
+		 * the table (not the currently ordering order!). Which order data gathering
+		 * function is run here depends on the `dt-init columns.orderDataType`
+		 * parameter that is used for the column (if any).
+		 *
+		 * The functions defined take two parameters:
+		 *
+		 * 1. `{object}` DataTables settings object: see
+		 *    {@link DataTable.models.oSettings}
+		 * 2. `{int}` Target column index
+		 *
+		 * Each function is expected to return an array:
+		 *
+		 * * `{array}` Data for the column to be ordering upon
+		 *
+		 *  @type array
+		 *
+		 *  @example
+		 *    // Ordering using `input` node values
+		 *    $.fn.dataTable.ext.order['dom-text'] = function  ( settings, col )
+		 *    {
+		 *      return this.api().column( col, {order:'index'} ).nodes().map( function ( td, i ) {
+		 *        return $('input', td).val();
+		 *      } );
+		 *    }
+		 */
+		order: {},
+	
+	
+		/**
+		 * Type based plug-ins.
+		 *
+		 * Each column in DataTables has a type assigned to it, either by automatic
+		 * detection or by direct assignment using the `type` option for the column.
+		 * The type of a column will effect how it is ordering and search (plug-ins
+		 * can also make use of the column type if required).
+		 *
+		 * @namespace
+		 */
+		type: {
+			/**
+			 * Type detection functions.
+			 *
+			 * The functions defined in this object are used to automatically detect
+			 * a column's type, making initialisation of DataTables super easy, even
+			 * when complex data is in the table.
+			 *
+			 * The functions defined take two parameters:
+			 *
+		     *  1. `{*}` Data from the column cell to be analysed
+		     *  2. `{settings}` DataTables settings object. This can be used to
+		     *     perform context specific type detection - for example detection
+		     *     based on language settings such as using a comma for a decimal
+		     *     place. Generally speaking the options from the settings will not
+		     *     be required
+			 *
+			 * Each function is expected to return:
+			 *
+			 * * `{string|null}` Data type detected, or null if unknown (and thus
+			 *   pass it on to the other type detection functions.
+			 *
+			 *  @type array
+			 *
+			 *  @example
+			 *    // Currency type detection plug-in:
+			 *    $.fn.dataTable.ext.type.detect.push(
+			 *      function ( data, settings ) {
+			 *        // Check the numeric part
+			 *        if ( ! data.substring(1).match(/[0-9]/) ) {
+			 *          return null;
+			 *        }
+			 *
+			 *        // Check prefixed by currency
+			 *        if ( data.charAt(0) == '$' || data.charAt(0) == '&pound;' ) {
+			 *          return 'currency';
+			 *        }
+			 *        return null;
+			 *      }
+			 *    );
+			 */
+			detect: [],
+	
+	
+			/**
+			 * Type based search formatting.
+			 *
+			 * The type based searching functions can be used to pre-format the
+			 * data to be search on. For example, it can be used to strip HTML
+			 * tags or to de-format telephone numbers for numeric only searching.
+			 *
+			 * Note that is a search is not defined for a column of a given type,
+			 * no search formatting will be performed.
+			 * 
+			 * Pre-processing of searching data plug-ins - When you assign the sType
+			 * for a column (or have it automatically detected for you by DataTables
+			 * or a type detection plug-in), you will typically be using this for
+			 * custom sorting, but it can also be used to provide custom searching
+			 * by allowing you to pre-processing the data and returning the data in
+			 * the format that should be searched upon. This is done by adding
+			 * functions this object with a parameter name which matches the sType
+			 * for that target column. This is the corollary of <i>afnSortData</i>
+			 * for searching data.
+			 *
+			 * The functions defined take a single parameter:
+			 *
+		     *  1. `{*}` Data from the column cell to be prepared for searching
+			 *
+			 * Each function is expected to return:
+			 *
+			 * * `{string|null}` Formatted string that will be used for the searching.
+			 *
+			 *  @type object
+			 *  @default {}
+			 *
+			 *  @example
+			 *    $.fn.dataTable.ext.type.search['title-numeric'] = function ( d ) {
+			 *      return d.replace(/\n/g," ").replace( /<.*?>/g, "" );
+			 *    }
+			 */
+			search: {},
+	
+	
+			/**
+			 * Type based ordering.
+			 *
+			 * The column type tells DataTables what ordering to apply to the table
+			 * when a column is sorted upon. The order for each type that is defined,
+			 * is defined by the functions available in this object.
+			 *
+			 * Each ordering option can be described by three properties added to
+			 * this object:
+			 *
+			 * * `{type}-pre` - Pre-formatting function
+			 * * `{type}-asc` - Ascending order function
+			 * * `{type}-desc` - Descending order function
+			 *
+			 * All three can be used together, only `{type}-pre` or only
+			 * `{type}-asc` and `{type}-desc` together. It is generally recommended
+			 * that only `{type}-pre` is used, as this provides the optimal
+			 * implementation in terms of speed, although the others are provided
+			 * for compatibility with existing Javascript sort functions.
+			 *
+			 * `{type}-pre`: Functions defined take a single parameter:
+			 *
+		     *  1. `{*}` Data from the column cell to be prepared for ordering
+			 *
+			 * And return:
+			 *
+			 * * `{*}` Data to be sorted upon
+			 *
+			 * `{type}-asc` and `{type}-desc`: Functions are typical Javascript sort
+			 * functions, taking two parameters:
+			 *
+		     *  1. `{*}` Data to compare to the second parameter
+		     *  2. `{*}` Data to compare to the first parameter
+			 *
+			 * And returning:
+			 *
+			 * * `{*}` Ordering match: <0 if first parameter should be sorted lower
+			 *   than the second parameter, ===0 if the two parameters are equal and
+			 *   >0 if the first parameter should be sorted height than the second
+			 *   parameter.
+			 * 
+			 *  @type object
+			 *  @default {}
+			 *
+			 *  @example
+			 *    // Numeric ordering of formatted numbers with a pre-formatter
+			 *    $.extend( $.fn.dataTable.ext.type.order, {
+			 *      "string-pre": function(x) {
+			 *        a = (a === "-" || a === "") ? 0 : a.replace( /[^\d\-\.]/g, "" );
+			 *        return parseFloat( a );
+			 *      }
+			 *    } );
+			 *
+			 *  @example
+			 *    // Case-sensitive string ordering, with no pre-formatting method
+			 *    $.extend( $.fn.dataTable.ext.order, {
+			 *      "string-case-asc": function(x,y) {
+			 *        return ((x < y) ? -1 : ((x > y) ? 1 : 0));
+			 *      },
+			 *      "string-case-desc": function(x,y) {
+			 *        return ((x < y) ? 1 : ((x > y) ? -1 : 0));
+			 *      }
+			 *    } );
+			 */
+			order: {}
+		},
+	
+		/**
+		 * Unique DataTables instance counter
+		 *
+		 * @type int
+		 * @private
+		 */
+		_unique: 0,
+	
+	
+		//
+		// Depreciated
+		// The following properties are retained for backwards compatiblity only.
+		// The should not be used in new projects and will be removed in a future
+		// version
+		//
+	
+		/**
+		 * Version check function.
+		 *  @type function
+		 *  @depreciated Since 1.10
+		 */
+		fnVersionCheck: DataTable.fnVersionCheck,
+	
+	
+		/**
+		 * Index for what 'this' index API functions should use
+		 *  @type int
+		 *  @deprecated Since v1.10
+		 */
+		iApiIndex: 0,
+	
+	
+		/**
+		 * jQuery UI class container
+		 *  @type object
+		 *  @deprecated Since v1.10
+		 */
+		oJUIClasses: {},
+	
+	
+		/**
+		 * Software version
+		 *  @type string
+		 *  @deprecated Since v1.10
+		 */
+		sVersion: DataTable.version
+	};
+	
+	
+	//
+	// Backwards compatibility. Alias to pre 1.10 Hungarian notation counter parts
+	//
+	$.extend( _ext, {
+		afnFiltering: _ext.search,
+		aTypes:       _ext.type.detect,
+		ofnSearch:    _ext.type.search,
+		oSort:        _ext.type.order,
+		afnSortData:  _ext.order,
+		aoFeatures:   _ext.feature,
+		oApi:         _ext.internal,
+		oStdClasses:  _ext.classes,
+		oPagination:  _ext.pager
+	} );
+	
+	
+	$.extend( DataTable.ext.classes, {
+		"sTable": "dataTable",
+		"sNoFooter": "no-footer",
+	
+		/* Paging buttons */
+		"sPageButton": "paginate_button",
+		"sPageButtonActive": "current",
+		"sPageButtonDisabled": "disabled",
+	
+		/* Striping classes */
+		"sStripeOdd": "odd",
+		"sStripeEven": "even",
+	
+		/* Empty row */
+		"sRowEmpty": "dataTables_empty",
+	
+		/* Features */
+		"sWrapper": "dataTables_wrapper",
+		"sFilter": "dataTables_filter",
+		"sInfo": "dataTables_info",
+		"sPaging": "dataTables_paginate paging_", /* Note that the type is postfixed */
+		"sLength": "dataTables_length",
+		"sProcessing": "dataTables_processing",
+	
+		/* Sorting */
+		"sSortAsc": "sorting_asc",
+		"sSortDesc": "sorting_desc",
+		"sSortable": "sorting", /* Sortable in both directions */
+		"sSortableAsc": "sorting_asc_disabled",
+		"sSortableDesc": "sorting_desc_disabled",
+		"sSortableNone": "sorting_disabled",
+		"sSortColumn": "sorting_", /* Note that an int is postfixed for the sorting order */
+	
+		/* Filtering */
+		"sFilterInput": "",
+	
+		/* Page length */
+		"sLengthSelect": "",
+	
+		/* Scrolling */
+		"sScrollWrapper": "dataTables_scroll",
+		"sScrollHead": "dataTables_scrollHead",
+		"sScrollHeadInner": "dataTables_scrollHeadInner",
+		"sScrollBody": "dataTables_scrollBody",
+		"sScrollFoot": "dataTables_scrollFoot",
+		"sScrollFootInner": "dataTables_scrollFootInner",
+	
+		/* Misc */
+		"sHeaderTH": "",
+		"sFooterTH": "",
+	
+		// Deprecated
+		"sSortJUIAsc": "",
+		"sSortJUIDesc": "",
+		"sSortJUI": "",
+		"sSortJUIAscAllowed": "",
+		"sSortJUIDescAllowed": "",
+		"sSortJUIWrapper": "",
+		"sSortIcon": "",
+		"sJUIHeader": "",
+		"sJUIFooter": ""
+	} );
+	
+	
+	var extPagination = DataTable.ext.pager;
+	
+	function _numbers ( page, pages ) {
+		var
+			numbers = [],
+			buttons = extPagination.numbers_length,
+			half = Math.floor( buttons / 2 ),
+			i = 1;
+	
+		if ( pages <= buttons ) {
+			numbers = _range( 0, pages );
+		}
+		else if ( page <= half ) {
+			numbers = _range( 0, buttons-2 );
+			numbers.push( 'ellipsis' );
+			numbers.push( pages-1 );
+		}
+		else if ( page >= pages - 1 - half ) {
+			numbers = _range( pages-(buttons-2), pages );
+			numbers.splice( 0, 0, 'ellipsis' ); // no unshift in ie6
+			numbers.splice( 0, 0, 0 );
+		}
+		else {
+			numbers = _range( page-half+2, page+half-1 );
+			numbers.push( 'ellipsis' );
+			numbers.push( pages-1 );
+			numbers.splice( 0, 0, 'ellipsis' );
+			numbers.splice( 0, 0, 0 );
+		}
+	
+		numbers.DT_el = 'span';
+		return numbers;
+	}
+	
+	
+	$.extend( extPagination, {
+		simple: function ( page, pages ) {
+			return [ 'previous', 'next' ];
+		},
+	
+		full: function ( page, pages ) {
+			return [  'first', 'previous', 'next', 'last' ];
+		},
+	
+		numbers: function ( page, pages ) {
+			return [ _numbers(page, pages) ];
+		},
+	
+		simple_numbers: function ( page, pages ) {
+			return [ 'previous', _numbers(page, pages), 'next' ];
+		},
+	
+		full_numbers: function ( page, pages ) {
+			return [ 'first', 'previous', _numbers(page, pages), 'next', 'last' ];
+		},
+		
+		first_last_numbers: function (page, pages) {
+	 		return ['first', _numbers(page, pages), 'last'];
+	 	},
+	
+		// For testing and plug-ins to use
+		_numbers: _numbers,
+	
+		// Number of number buttons (including ellipsis) to show. _Must be odd!_
+		numbers_length: 7
+	} );
+	
+	
+	$.extend( true, DataTable.ext.renderer, {
+		pageButton: {
+			_: function ( settings, host, idx, buttons, page, pages ) {
+				var classes = settings.oClasses;
+				var lang = settings.oLanguage.oPaginate;
+				var aria = settings.oLanguage.oAria.paginate || {};
+				var btnDisplay, btnClass, counter=0;
+	
+				var attach = function( container, buttons ) {
+					var i, ien, node, button, tabIndex;
+					var disabledClass = classes.sPageButtonDisabled;
+					var clickHandler = function ( e ) {
+						_fnPageChange( settings, e.data.action, true );
+					};
+	
+					for ( i=0, ien=buttons.length ; i<ien ; i++ ) {
+						button = buttons[i];
+	
+						if ( $.isArray( button ) ) {
+							var inner = $( '<'+(button.DT_el || 'div')+'/>' )
+								.appendTo( container );
+							attach( inner, button );
+						}
+						else {
+							btnDisplay = null;
+							btnClass = button;
+							tabIndex = settings.iTabIndex;
+	
+							switch ( button ) {
+								case 'ellipsis':
+									container.append('<span class="ellipsis">&#x2026;</span>');
+									break;
+	
+								case 'first':
+									btnDisplay = lang.sFirst;
+	
+									if ( page === 0 ) {
+										tabIndex = -1;
+										btnClass += ' ' + disabledClass;
+									}
+									break;
+	
+								case 'previous':
+									btnDisplay = lang.sPrevious;
+	
+									if ( page === 0 ) {
+										tabIndex = -1;
+										btnClass += ' ' + disabledClass;
+									}
+									break;
+	
+								case 'next':
+									btnDisplay = lang.sNext;
+	
+									if ( pages === 0 || page === pages-1 ) {
+										tabIndex = -1;
+										btnClass += ' ' + disabledClass;
+									}
+									break;
+	
+								case 'last':
+									btnDisplay = lang.sLast;
+	
+									if ( page === pages-1 ) {
+										tabIndex = -1;
+										btnClass += ' ' + disabledClass;
+									}
+									break;
+	
+								default:
+									btnDisplay = button + 1;
+									btnClass = page === button ?
+										classes.sPageButtonActive : '';
+									break;
+							}
+	
+							if ( btnDisplay !== null ) {
+								node = $('<a>', {
+										'class': classes.sPageButton+' '+btnClass,
+										'aria-controls': settings.sTableId,
+										'aria-label': aria[ button ],
+										'data-dt-idx': counter,
+										'tabindex': tabIndex,
+										'id': idx === 0 && typeof button === 'string' ?
+											settings.sTableId +'_'+ button :
+											null
+									} )
+									.html( btnDisplay )
+									.appendTo( container );
+	
+								_fnBindAction(
+									node, {action: button}, clickHandler
+								);
+	
+								counter++;
+							}
+						}
+					}
+				};
+	
+				// IE9 throws an 'unknown error' if document.activeElement is used
+				// inside an iframe or frame. Try / catch the error. Not good for
+				// accessibility, but neither are frames.
+				var activeEl;
+	
+				try {
+					// Because this approach is destroying and recreating the paging
+					// elements, focus is lost on the select button which is bad for
+					// accessibility. So we want to restore focus once the draw has
+					// completed
+					activeEl = $(host).find(document.activeElement).data('dt-idx');
+				}
+				catch (e) {}
+	
+				attach( $(host).empty(), buttons );
+	
+				if ( activeEl !== undefined ) {
+					$(host).find( '[data-dt-idx='+activeEl+']' ).trigger('focus');
+				}
+			}
+		}
+	} );
+	
+	
+	
+	// Built in type detection. See model.ext.aTypes for information about
+	// what is required from this methods.
+	$.extend( DataTable.ext.type.detect, [
+		// Plain numbers - first since V8 detects some plain numbers as dates
+		// e.g. Date.parse('55') (but not all, e.g. Date.parse('22')...).
+		function ( d, settings )
+		{
+			var decimal = settings.oLanguage.sDecimal;
+			return _isNumber( d, decimal ) ? 'num'+decimal : null;
+		},
+	
+		// Dates (only those recognised by the browser's Date.parse)
+		function ( d, settings )
+		{
+			// V8 tries _very_ hard to make a string passed into `Date.parse()`
+			// valid, so we need to use a regex to restrict date formats. Use a
+			// plug-in for anything other than ISO8601 style strings
+			if ( d && !(d instanceof Date) && ! _re_date.test(d) ) {
+				return null;
+			}
+			var parsed = Date.parse(d);
+			return (parsed !== null && !isNaN(parsed)) || _empty(d) ? 'date' : null;
+		},
+	
+		// Formatted numbers
+		function ( d, settings )
+		{
+			var decimal = settings.oLanguage.sDecimal;
+			return _isNumber( d, decimal, true ) ? 'num-fmt'+decimal : null;
+		},
+	
+		// HTML numeric
+		function ( d, settings )
+		{
+			var decimal = settings.oLanguage.sDecimal;
+			return _htmlNumeric( d, decimal ) ? 'html-num'+decimal : null;
+		},
+	
+		// HTML numeric, formatted
+		function ( d, settings )
+		{
+			var decimal = settings.oLanguage.sDecimal;
+			return _htmlNumeric( d, decimal, true ) ? 'html-num-fmt'+decimal : null;
+		},
+	
+		// HTML (this is strict checking - there must be html)
+		function ( d, settings )
+		{
+			return _empty( d ) || (typeof d === 'string' && d.indexOf('<') !== -1) ?
+				'html' : null;
+		}
+	] );
+	
+	
+	
+	// Filter formatting functions. See model.ext.ofnSearch for information about
+	// what is required from these methods.
+	// 
+	// Note that additional search methods are added for the html numbers and
+	// html formatted numbers by `_addNumericSort()` when we know what the decimal
+	// place is
+	
+	
+	$.extend( DataTable.ext.type.search, {
+		html: function ( data ) {
+			return _empty(data) ?
+				data :
+				typeof data === 'string' ?
+					data
+						.replace( _re_new_lines, " " )
+						.replace( _re_html, "" ) :
+					'';
+		},
+	
+		string: function ( data ) {
+			return _empty(data) ?
+				data :
+				typeof data === 'string' ?
+					data.replace( _re_new_lines, " " ) :
+					data;
+		}
+	} );
+	
+	
+	
+	var __numericReplace = function ( d, decimalPlace, re1, re2 ) {
+		if ( d !== 0 && (!d || d === '-') ) {
+			return -Infinity;
+		}
+	
+		// If a decimal place other than `.` is used, it needs to be given to the
+		// function so we can detect it and replace with a `.` which is the only
+		// decimal place Javascript recognises - it is not locale aware.
+		if ( decimalPlace ) {
+			d = _numToDecimal( d, decimalPlace );
+		}
+	
+		if ( d.replace ) {
+			if ( re1 ) {
+				d = d.replace( re1, '' );
+			}
+	
+			if ( re2 ) {
+				d = d.replace( re2, '' );
+			}
+		}
+	
+		return d * 1;
+	};
+	
+	
+	// Add the numeric 'deformatting' functions for sorting and search. This is done
+	// in a function to provide an easy ability for the language options to add
+	// additional methods if a non-period decimal place is used.
+	function _addNumericSort ( decimalPlace ) {
+		$.each(
+			{
+				// Plain numbers
+				"num": function ( d ) {
+					return __numericReplace( d, decimalPlace );
+				},
+	
+				// Formatted numbers
+				"num-fmt": function ( d ) {
+					return __numericReplace( d, decimalPlace, _re_formatted_numeric );
+				},
+	
+				// HTML numeric
+				"html-num": function ( d ) {
+					return __numericReplace( d, decimalPlace, _re_html );
+				},
+	
+				// HTML numeric, formatted
+				"html-num-fmt": function ( d ) {
+					return __numericReplace( d, decimalPlace, _re_html, _re_formatted_numeric );
+				}
+			},
+			function ( key, fn ) {
+				// Add the ordering method
+				_ext.type.order[ key+decimalPlace+'-pre' ] = fn;
+	
+				// For HTML types add a search formatter that will strip the HTML
+				if ( key.match(/^html\-/) ) {
+					_ext.type.search[ key+decimalPlace ] = _ext.type.search.html;
+				}
+			}
+		);
+	}
+	
+	
+	// Default sort methods
+	$.extend( _ext.type.order, {
+		// Dates
+		"date-pre": function ( d ) {
+			var ts = Date.parse( d );
+			return isNaN(ts) ? -Infinity : ts;
+		},
+	
+		// html
+		"html-pre": function ( a ) {
+			return _empty(a) ?
+				'' :
+				a.replace ?
+					a.replace( /<.*?>/g, "" ).toLowerCase() :
+					a+'';
+		},
+	
+		// string
+		"string-pre": function ( a ) {
+			// This is a little complex, but faster than always calling toString,
+			// http://jsperf.com/tostring-v-check
+			return _empty(a) ?
+				'' :
+				typeof a === 'string' ?
+					a.toLowerCase() :
+					! a.toString ?
+						'' :
+						a.toString();
+		},
+	
+		// string-asc and -desc are retained only for compatibility with the old
+		// sort methods
+		"string-asc": function ( x, y ) {
+			return ((x < y) ? -1 : ((x > y) ? 1 : 0));
+		},
+	
+		"string-desc": function ( x, y ) {
+			return ((x < y) ? 1 : ((x > y) ? -1 : 0));
+		}
+	} );
+	
+	
+	// Numeric sorting types - order doesn't matter here
+	_addNumericSort( '' );
+	
+	
+	$.extend( true, DataTable.ext.renderer, {
+		header: {
+			_: function ( settings, cell, column, classes ) {
+				// No additional mark-up required
+				// Attach a sort listener to update on sort - note that using the
+				// `DT` namespace will allow the event to be removed automatically
+				// on destroy, while the `dt` namespaced event is the one we are
+				// listening for
+				$(settings.nTable).on( 'order.dt.DT', function ( e, ctx, sorting, columns ) {
+					if ( settings !== ctx ) { // need to check this this is the host
+						return;               // table, not a nested one
+					}
+	
+					var colIdx = column.idx;
+	
+					cell
+						.removeClass(
+							column.sSortingClass +' '+
+							classes.sSortAsc +' '+
+							classes.sSortDesc
+						)
+						.addClass( columns[ colIdx ] == 'asc' ?
+							classes.sSortAsc : columns[ colIdx ] == 'desc' ?
+								classes.sSortDesc :
+								column.sSortingClass
+						);
+				} );
+			},
+	
+			jqueryui: function ( settings, cell, column, classes ) {
+				$('<div/>')
+					.addClass( classes.sSortJUIWrapper )
+					.append( cell.contents() )
+					.append( $('<span/>')
+						.addClass( classes.sSortIcon+' '+column.sSortingClassJUI )
+					)
+					.appendTo( cell );
+	
+				// Attach a sort listener to update on sort
+				$(settings.nTable).on( 'order.dt.DT', function ( e, ctx, sorting, columns ) {
+					if ( settings !== ctx ) {
+						return;
+					}
+	
+					var colIdx = column.idx;
+	
+					cell
+						.removeClass( classes.sSortAsc +" "+classes.sSortDesc )
+						.addClass( columns[ colIdx ] == 'asc' ?
+							classes.sSortAsc : columns[ colIdx ] == 'desc' ?
+								classes.sSortDesc :
+								column.sSortingClass
+						);
+	
+					cell
+						.find( 'span.'+classes.sSortIcon )
+						.removeClass(
+							classes.sSortJUIAsc +" "+
+							classes.sSortJUIDesc +" "+
+							classes.sSortJUI +" "+
+							classes.sSortJUIAscAllowed +" "+
+							classes.sSortJUIDescAllowed
+						)
+						.addClass( columns[ colIdx ] == 'asc' ?
+							classes.sSortJUIAsc : columns[ colIdx ] == 'desc' ?
+								classes.sSortJUIDesc :
+								column.sSortingClassJUI
+						);
+				} );
+			}
+		}
+	} );
+	
+	/*
+	 * Public helper functions. These aren't used internally by DataTables, or
+	 * called by any of the options passed into DataTables, but they can be used
+	 * externally by developers working with DataTables. They are helper functions
+	 * to make working with DataTables a little bit easier.
+	 */
+	
+	var __htmlEscapeEntities = function ( d ) {
+		return typeof d === 'string' ?
+			d
+				.replace(/&/g, '&amp;')
+				.replace(/</g, '&lt;')
+				.replace(/>/g, '&gt;')
+				.replace(/"/g, '&quot;') :
+			d;
+	};
+	
+	/**
+	 * Helpers for `columns.render`.
+	 *
+	 * The options defined here can be used with the `columns.render` initialisation
+	 * option to provide a display renderer. The following functions are defined:
+	 *
+	 * * `number` - Will format numeric data (defined by `columns.data`) for
+	 *   display, retaining the original unformatted data for sorting and filtering.
+	 *   It takes 5 parameters:
+	 *   * `string` - Thousands grouping separator
+	 *   * `string` - Decimal point indicator
+	 *   * `integer` - Number of decimal points to show
+	 *   * `string` (optional) - Prefix.
+	 *   * `string` (optional) - Postfix (/suffix).
+	 * * `text` - Escape HTML to help prevent XSS attacks. It has no optional
+	 *   parameters.
+	 *
+	 * @example
+	 *   // Column definition using the number renderer
+	 *   {
+	 *     data: "salary",
+	 *     render: $.fn.dataTable.render.number( '\'', '.', 0, '$' )
+	 *   }
+	 *
+	 * @namespace
+	 */
+	DataTable.render = {
+		number: function ( thousands, decimal, precision, prefix, postfix ) {
+			return {
+				display: function ( d ) {
+					if ( typeof d !== 'number' && typeof d !== 'string' ) {
+						return d;
+					}
+	
+					var negative = d < 0 ? '-' : '';
+					var flo = parseFloat( d );
+	
+					// If NaN then there isn't much formatting that we can do - just
+					// return immediately, escaping any HTML (this was supposed to
+					// be a number after all)
+					if ( isNaN( flo ) ) {
+						return __htmlEscapeEntities( d );
+					}
+	
+					flo = flo.toFixed( precision );
+					d = Math.abs( flo );
+	
+					var intPart = parseInt( d, 10 );
+					var floatPart = precision ?
+						decimal+(d - intPart).toFixed( precision ).substring( 2 ):
+						'';
+	
+					return negative + (prefix||'') +
+						intPart.toString().replace(
+							/\B(?=(\d{3})+(?!\d))/g, thousands
+						) +
+						floatPart +
+						(postfix||'');
+				}
+			};
+		},
+	
+		text: function () {
+			return {
+				display: __htmlEscapeEntities,
+				filter: __htmlEscapeEntities
+			};
+		}
+	};
+	
+	
+	/*
+	 * This is really a good bit rubbish this method of exposing the internal methods
+	 * publicly... - To be fixed in 2.0 using methods on the prototype
+	 */
+	
+	
+	/**
+	 * Create a wrapper function for exporting an internal functions to an external API.
+	 *  @param {string} fn API function name
+	 *  @returns {function} wrapped function
+	 *  @memberof DataTable#internal
+	 */
+	function _fnExternApiFunc (fn)
+	{
+		return function() {
+			var args = [_fnSettingsFromNode( this[DataTable.ext.iApiIndex] )].concat(
+				Array.prototype.slice.call(arguments)
+			);
+			return DataTable.ext.internal[fn].apply( this, args );
+		};
+	}
+	
+	
+	/**
+	 * Reference to internal functions for use by plug-in developers. Note that
+	 * these methods are references to internal functions and are considered to be
+	 * private. If you use these methods, be aware that they are liable to change
+	 * between versions.
+	 *  @namespace
+	 */
+	$.extend( DataTable.ext.internal, {
+		_fnExternApiFunc: _fnExternApiFunc,
+		_fnBuildAjax: _fnBuildAjax,
+		_fnAjaxUpdate: _fnAjaxUpdate,
+		_fnAjaxParameters: _fnAjaxParameters,
+		_fnAjaxUpdateDraw: _fnAjaxUpdateDraw,
+		_fnAjaxDataSrc: _fnAjaxDataSrc,
+		_fnAddColumn: _fnAddColumn,
+		_fnColumnOptions: _fnColumnOptions,
+		_fnAdjustColumnSizing: _fnAdjustColumnSizing,
+		_fnVisibleToColumnIndex: _fnVisibleToColumnIndex,
+		_fnColumnIndexToVisible: _fnColumnIndexToVisible,
+		_fnVisbleColumns: _fnVisbleColumns,
+		_fnGetColumns: _fnGetColumns,
+		_fnColumnTypes: _fnColumnTypes,
+		_fnApplyColumnDefs: _fnApplyColumnDefs,
+		_fnHungarianMap: _fnHungarianMap,
+		_fnCamelToHungarian: _fnCamelToHungarian,
+		_fnLanguageCompat: _fnLanguageCompat,
+		_fnBrowserDetect: _fnBrowserDetect,
+		_fnAddData: _fnAddData,
+		_fnAddTr: _fnAddTr,
+		_fnNodeToDataIndex: _fnNodeToDataIndex,
+		_fnNodeToColumnIndex: _fnNodeToColumnIndex,
+		_fnGetCellData: _fnGetCellData,
+		_fnSetCellData: _fnSetCellData,
+		_fnSplitObjNotation: _fnSplitObjNotation,
+		_fnGetObjectDataFn: _fnGetObjectDataFn,
+		_fnSetObjectDataFn: _fnSetObjectDataFn,
+		_fnGetDataMaster: _fnGetDataMaster,
+		_fnClearTable: _fnClearTable,
+		_fnDeleteIndex: _fnDeleteIndex,
+		_fnInvalidate: _fnInvalidate,
+		_fnGetRowElements: _fnGetRowElements,
+		_fnCreateTr: _fnCreateTr,
+		_fnBuildHead: _fnBuildHead,
+		_fnDrawHead: _fnDrawHead,
+		_fnDraw: _fnDraw,
+		_fnReDraw: _fnReDraw,
+		_fnAddOptionsHtml: _fnAddOptionsHtml,
+		_fnDetectHeader: _fnDetectHeader,
+		_fnGetUniqueThs: _fnGetUniqueThs,
+		_fnFeatureHtmlFilter: _fnFeatureHtmlFilter,
+		_fnFilterComplete: _fnFilterComplete,
+		_fnFilterCustom: _fnFilterCustom,
+		_fnFilterColumn: _fnFilterColumn,
+		_fnFilter: _fnFilter,
+		_fnFilterCreateSearch: _fnFilterCreateSearch,
+		_fnEscapeRegex: _fnEscapeRegex,
+		_fnFilterData: _fnFilterData,
+		_fnFeatureHtmlInfo: _fnFeatureHtmlInfo,
+		_fnUpdateInfo: _fnUpdateInfo,
+		_fnInfoMacros: _fnInfoMacros,
+		_fnInitialise: _fnInitialise,
+		_fnInitComplete: _fnInitComplete,
+		_fnLengthChange: _fnLengthChange,
+		_fnFeatureHtmlLength: _fnFeatureHtmlLength,
+		_fnFeatureHtmlPaginate: _fnFeatureHtmlPaginate,
+		_fnPageChange: _fnPageChange,
+		_fnFeatureHtmlProcessing: _fnFeatureHtmlProcessing,
+		_fnProcessingDisplay: _fnProcessingDisplay,
+		_fnFeatureHtmlTable: _fnFeatureHtmlTable,
+		_fnScrollDraw: _fnScrollDraw,
+		_fnApplyToChildren: _fnApplyToChildren,
+		_fnCalculateColumnWidths: _fnCalculateColumnWidths,
+		_fnThrottle: _fnThrottle,
+		_fnConvertToWidth: _fnConvertToWidth,
+		_fnGetWidestNode: _fnGetWidestNode,
+		_fnGetMaxLenString: _fnGetMaxLenString,
+		_fnStringToCss: _fnStringToCss,
+		_fnSortFlatten: _fnSortFlatten,
+		_fnSort: _fnSort,
+		_fnSortAria: _fnSortAria,
+		_fnSortListener: _fnSortListener,
+		_fnSortAttachListener: _fnSortAttachListener,
+		_fnSortingClasses: _fnSortingClasses,
+		_fnSortData: _fnSortData,
+		_fnSaveState: _fnSaveState,
+		_fnLoadState: _fnLoadState,
+		_fnSettingsFromNode: _fnSettingsFromNode,
+		_fnLog: _fnLog,
+		_fnMap: _fnMap,
+		_fnBindAction: _fnBindAction,
+		_fnCallbackReg: _fnCallbackReg,
+		_fnCallbackFire: _fnCallbackFire,
+		_fnLengthOverflow: _fnLengthOverflow,
+		_fnRenderer: _fnRenderer,
+		_fnDataSource: _fnDataSource,
+		_fnRowAttributes: _fnRowAttributes,
+		_fnExtend: _fnExtend,
+		_fnCalculateEnd: function () {} // Used by a lot of plug-ins, but redundant
+		                                // in 1.10, so this dead-end function is
+		                                // added to prevent errors
+	} );
+	
+
+	// jQuery access
+	$.fn.dataTable = DataTable;
+
+	// Provide access to the host jQuery object (circular reference)
+	DataTable.$ = $;
+
+	// Legacy aliases
+	$.fn.dataTableSettings = DataTable.settings;
+	$.fn.dataTableExt = DataTable.ext;
+
+	// With a capital `D` we return a DataTables API instance rather than a
+	// jQuery object
+	$.fn.DataTable = function ( opts ) {
+		return $(this).dataTable( opts ).api();
+	};
+
+	// All properties that are available to $.fn.dataTable should also be
+	// available on $.fn.DataTable
+	$.each( DataTable, function ( prop, val ) {
+		$.fn.DataTable[ prop ] = val;
+	} );
+
+
+	// Information about events fired by DataTables - for documentation.
+	/**
+	 * Draw event, fired whenever the table is redrawn on the page, at the same
+	 * point as fnDrawCallback. This may be useful for binding events or
+	 * performing calculations when the table is altered at all.
+	 *  @name DataTable#draw.dt
+	 *  @event
+	 *  @param {event} e jQuery event object
+	 *  @param {object} o DataTables settings object {@link DataTable.models.oSettings}
+	 */
+
+	/**
+	 * Search event, fired when the searching applied to the table (using the
+	 * built-in global search, or column filters) is altered.
+	 *  @name DataTable#search.dt
+	 *  @event
+	 *  @param {event} e jQuery event object
+	 *  @param {object} o DataTables settings object {@link DataTable.models.oSettings}
+	 */
+
+	/**
+	 * Page change event, fired when the paging of the table is altered.
+	 *  @name DataTable#page.dt
+	 *  @event
+	 *  @param {event} e jQuery event object
+	 *  @param {object} o DataTables settings object {@link DataTable.models.oSettings}
+	 */
+
+	/**
+	 * Order event, fired when the ordering applied to the table is altered.
+	 *  @name DataTable#order.dt
+	 *  @event
+	 *  @param {event} e jQuery event object
+	 *  @param {object} o DataTables settings object {@link DataTable.models.oSettings}
+	 */
+
+	/**
+	 * DataTables initialisation complete event, fired when the table is fully
+	 * drawn, including Ajax data loaded, if Ajax data is required.
+	 *  @name DataTable#init.dt
+	 *  @event
+	 *  @param {event} e jQuery event object
+	 *  @param {object} oSettings DataTables settings object
+	 *  @param {object} json The JSON object request from the server - only
+	 *    present if client-side Ajax sourced data is used</li></ol>
+	 */
+
+	/**
+	 * State save event, fired when the table has changed state a new state save
+	 * is required. This event allows modification of the state saving object
+	 * prior to actually doing the save, including addition or other state
+	 * properties (for plug-ins) or modification of a DataTables core property.
+	 *  @name DataTable#stateSaveParams.dt
+	 *  @event
+	 *  @param {event} e jQuery event object
+	 *  @param {object} oSettings DataTables settings object
+	 *  @param {object} json The state information to be saved
+	 */
+
+	/**
+	 * State load event, fired when the table is loading state from the stored
+	 * data, but prior to the settings object being modified by the saved state
+	 * - allowing modification of the saved state is required or loading of
+	 * state for a plug-in.
+	 *  @name DataTable#stateLoadParams.dt
+	 *  @event
+	 *  @param {event} e jQuery event object
+	 *  @param {object} oSettings DataTables settings object
+	 *  @param {object} json The saved state information
+	 */
+
+	/**
+	 * State loaded event, fired when state has been loaded from stored data and
+	 * the settings object has been modified by the loaded data.
+	 *  @name DataTable#stateLoaded.dt
+	 *  @event
+	 *  @param {event} e jQuery event object
+	 *  @param {object} oSettings DataTables settings object
+	 *  @param {object} json The saved state information
+	 */
+
+	/**
+	 * Processing event, fired when DataTables is doing some kind of processing
+	 * (be it, order, search or anything else). It can be used to indicate to
+	 * the end user that there is something happening, or that something has
+	 * finished.
+	 *  @name DataTable#processing.dt
+	 *  @event
+	 *  @param {event} e jQuery event object
+	 *  @param {object} oSettings DataTables settings object
+	 *  @param {boolean} bShow Flag for if DataTables is doing processing or not
+	 */
+
+	/**
+	 * Ajax (XHR) event, fired whenever an Ajax request is completed from a
+	 * request to made to the server for new data. This event is called before
+	 * DataTables processed the returned data, so it can also be used to pre-
+	 * process the data returned from the server, if needed.
+	 *
+	 * Note that this trigger is called in `fnServerData`, if you override
+	 * `fnServerData` and which to use this event, you need to trigger it in you
+	 * success function.
+	 *  @name DataTable#xhr.dt
+	 *  @event
+	 *  @param {event} e jQuery event object
+	 *  @param {object} o DataTables settings object {@link DataTable.models.oSettings}
+	 *  @param {object} json JSON returned from the server
+	 *
+	 *  @example
+	 *     // Use a custom property returned from the server in another DOM element
+	 *     $('#table').dataTable().on('xhr.dt', function (e, settings, json) {
+	 *       $('#status').html( json.status );
+	 *     } );
+	 *
+	 *  @example
+	 *     // Pre-process the data returned from the server
+	 *     $('#table').dataTable().on('xhr.dt', function (e, settings, json) {
+	 *       for ( var i=0, ien=json.aaData.length ; i<ien ; i++ ) {
+	 *         json.aaData[i].sum = json.aaData[i].one + json.aaData[i].two;
+	 *       }
+	 *       // Note no return - manipulate the data directly in the JSON object.
+	 *     } );
+	 */
+
+	/**
+	 * Destroy event, fired when the DataTable is destroyed by calling fnDestroy
+	 * or passing the bDestroy:true parameter in the initialisation object. This
+	 * can be used to remove bound events, added DOM nodes, etc.
+	 *  @name DataTable#destroy.dt
+	 *  @event
+	 *  @param {event} e jQuery event object
+	 *  @param {object} o DataTables settings object {@link DataTable.models.oSettings}
+	 */
+
+	/**
+	 * Page length change event, fired when number of records to show on each
+	 * page (the length) is changed.
+	 *  @name DataTable#length.dt
+	 *  @event
+	 *  @param {event} e jQuery event object
+	 *  @param {object} o DataTables settings object {@link DataTable.models.oSettings}
+	 *  @param {integer} len New length
+	 */
+
+	/**
+	 * Column sizing has changed.
+	 *  @name DataTable#column-sizing.dt
+	 *  @event
+	 *  @param {event} e jQuery event object
+	 *  @param {object} o DataTables settings object {@link DataTable.models.oSettings}
+	 */
+
+	/**
+	 * Column visibility has changed.
+	 *  @name DataTable#column-visibility.dt
+	 *  @event
+	 *  @param {event} e jQuery event object
+	 *  @param {object} o DataTables settings object {@link DataTable.models.oSettings}
+	 *  @param {int} column Column index
+	 *  @param {bool} vis `false` if column now hidden, or `true` if visible
+	 */
+
+	return $.fn.dataTable;
+}));
 
 
 /***/ }),
@@ -37484,6 +57470,3196 @@ process.umask = function() { return 0; };
 
 /***/ }),
 
+/***/ "./node_modules/sweetalert2/dist/sweetalert2.all.js":
+/*!**********************************************************!*\
+  !*** ./node_modules/sweetalert2/dist/sweetalert2.all.js ***!
+  \**********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+/*!
+* sweetalert2 v9.17.1
+* Released under the MIT License.
+*/
+(function (global, factory) {
+   true ? module.exports = factory() :
+  undefined;
+}(this, function () { 'use strict';
+
+  function _typeof(obj) {
+    "@babel/helpers - typeof";
+
+    if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") {
+      _typeof = function (obj) {
+        return typeof obj;
+      };
+    } else {
+      _typeof = function (obj) {
+        return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
+      };
+    }
+
+    return _typeof(obj);
+  }
+
+  function _classCallCheck(instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+      throw new TypeError("Cannot call a class as a function");
+    }
+  }
+
+  function _defineProperties(target, props) {
+    for (var i = 0; i < props.length; i++) {
+      var descriptor = props[i];
+      descriptor.enumerable = descriptor.enumerable || false;
+      descriptor.configurable = true;
+      if ("value" in descriptor) descriptor.writable = true;
+      Object.defineProperty(target, descriptor.key, descriptor);
+    }
+  }
+
+  function _createClass(Constructor, protoProps, staticProps) {
+    if (protoProps) _defineProperties(Constructor.prototype, protoProps);
+    if (staticProps) _defineProperties(Constructor, staticProps);
+    return Constructor;
+  }
+
+  function _extends() {
+    _extends = Object.assign || function (target) {
+      for (var i = 1; i < arguments.length; i++) {
+        var source = arguments[i];
+
+        for (var key in source) {
+          if (Object.prototype.hasOwnProperty.call(source, key)) {
+            target[key] = source[key];
+          }
+        }
+      }
+
+      return target;
+    };
+
+    return _extends.apply(this, arguments);
+  }
+
+  function _inherits(subClass, superClass) {
+    if (typeof superClass !== "function" && superClass !== null) {
+      throw new TypeError("Super expression must either be null or a function");
+    }
+
+    subClass.prototype = Object.create(superClass && superClass.prototype, {
+      constructor: {
+        value: subClass,
+        writable: true,
+        configurable: true
+      }
+    });
+    if (superClass) _setPrototypeOf(subClass, superClass);
+  }
+
+  function _getPrototypeOf(o) {
+    _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) {
+      return o.__proto__ || Object.getPrototypeOf(o);
+    };
+    return _getPrototypeOf(o);
+  }
+
+  function _setPrototypeOf(o, p) {
+    _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) {
+      o.__proto__ = p;
+      return o;
+    };
+
+    return _setPrototypeOf(o, p);
+  }
+
+  function _isNativeReflectConstruct() {
+    if (typeof Reflect === "undefined" || !Reflect.construct) return false;
+    if (Reflect.construct.sham) return false;
+    if (typeof Proxy === "function") return true;
+
+    try {
+      Date.prototype.toString.call(Reflect.construct(Date, [], function () {}));
+      return true;
+    } catch (e) {
+      return false;
+    }
+  }
+
+  function _construct(Parent, args, Class) {
+    if (_isNativeReflectConstruct()) {
+      _construct = Reflect.construct;
+    } else {
+      _construct = function _construct(Parent, args, Class) {
+        var a = [null];
+        a.push.apply(a, args);
+        var Constructor = Function.bind.apply(Parent, a);
+        var instance = new Constructor();
+        if (Class) _setPrototypeOf(instance, Class.prototype);
+        return instance;
+      };
+    }
+
+    return _construct.apply(null, arguments);
+  }
+
+  function _assertThisInitialized(self) {
+    if (self === void 0) {
+      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+    }
+
+    return self;
+  }
+
+  function _possibleConstructorReturn(self, call) {
+    if (call && (typeof call === "object" || typeof call === "function")) {
+      return call;
+    }
+
+    return _assertThisInitialized(self);
+  }
+
+  function _createSuper(Derived) {
+    var hasNativeReflectConstruct = _isNativeReflectConstruct();
+
+    return function _createSuperInternal() {
+      var Super = _getPrototypeOf(Derived),
+          result;
+
+      if (hasNativeReflectConstruct) {
+        var NewTarget = _getPrototypeOf(this).constructor;
+
+        result = Reflect.construct(Super, arguments, NewTarget);
+      } else {
+        result = Super.apply(this, arguments);
+      }
+
+      return _possibleConstructorReturn(this, result);
+    };
+  }
+
+  function _superPropBase(object, property) {
+    while (!Object.prototype.hasOwnProperty.call(object, property)) {
+      object = _getPrototypeOf(object);
+      if (object === null) break;
+    }
+
+    return object;
+  }
+
+  function _get(target, property, receiver) {
+    if (typeof Reflect !== "undefined" && Reflect.get) {
+      _get = Reflect.get;
+    } else {
+      _get = function _get(target, property, receiver) {
+        var base = _superPropBase(target, property);
+
+        if (!base) return;
+        var desc = Object.getOwnPropertyDescriptor(base, property);
+
+        if (desc.get) {
+          return desc.get.call(receiver);
+        }
+
+        return desc.value;
+      };
+    }
+
+    return _get(target, property, receiver || target);
+  }
+
+  var consolePrefix = 'SweetAlert2:';
+  /**
+   * Filter the unique values into a new array
+   * @param arr
+   */
+
+  var uniqueArray = function uniqueArray(arr) {
+    var result = [];
+
+    for (var i = 0; i < arr.length; i++) {
+      if (result.indexOf(arr[i]) === -1) {
+        result.push(arr[i]);
+      }
+    }
+
+    return result;
+  };
+  /**
+   * Capitalize the first letter of a string
+   * @param str
+   */
+
+  var capitalizeFirstLetter = function capitalizeFirstLetter(str) {
+    return str.charAt(0).toUpperCase() + str.slice(1);
+  };
+  /**
+   * Returns the array of object values (Object.values isn't supported in IE11)
+   * @param obj
+   */
+
+  var objectValues = function objectValues(obj) {
+    return Object.keys(obj).map(function (key) {
+      return obj[key];
+    });
+  };
+  /**
+   * Convert NodeList to Array
+   * @param nodeList
+   */
+
+  var toArray = function toArray(nodeList) {
+    return Array.prototype.slice.call(nodeList);
+  };
+  /**
+   * Standardise console warnings
+   * @param message
+   */
+
+  var warn = function warn(message) {
+    console.warn("".concat(consolePrefix, " ").concat(message));
+  };
+  /**
+   * Standardise console errors
+   * @param message
+   */
+
+  var error = function error(message) {
+    console.error("".concat(consolePrefix, " ").concat(message));
+  };
+  /**
+   * Private global state for `warnOnce`
+   * @type {Array}
+   * @private
+   */
+
+  var previousWarnOnceMessages = [];
+  /**
+   * Show a console warning, but only if it hasn't already been shown
+   * @param message
+   */
+
+  var warnOnce = function warnOnce(message) {
+    if (!(previousWarnOnceMessages.indexOf(message) !== -1)) {
+      previousWarnOnceMessages.push(message);
+      warn(message);
+    }
+  };
+  /**
+   * Show a one-time console warning about deprecated params/methods
+   */
+
+  var warnAboutDepreation = function warnAboutDepreation(deprecatedParam, useInstead) {
+    warnOnce("\"".concat(deprecatedParam, "\" is deprecated and will be removed in the next major release. Please use \"").concat(useInstead, "\" instead."));
+  };
+  /**
+   * If `arg` is a function, call it (with no arguments or context) and return the result.
+   * Otherwise, just pass the value through
+   * @param arg
+   */
+
+  var callIfFunction = function callIfFunction(arg) {
+    return typeof arg === 'function' ? arg() : arg;
+  };
+  var hasToPromiseFn = function hasToPromiseFn(arg) {
+    return arg && typeof arg.toPromise === 'function';
+  };
+  var asPromise = function asPromise(arg) {
+    return hasToPromiseFn(arg) ? arg.toPromise() : Promise.resolve(arg);
+  };
+  var isPromise = function isPromise(arg) {
+    return arg && Promise.resolve(arg) === arg;
+  };
+
+  var DismissReason = Object.freeze({
+    cancel: 'cancel',
+    backdrop: 'backdrop',
+    close: 'close',
+    esc: 'esc',
+    timer: 'timer'
+  });
+
+  var isJqueryElement = function isJqueryElement(elem) {
+    return _typeof(elem) === 'object' && elem.jquery;
+  };
+
+  var isElement = function isElement(elem) {
+    return elem instanceof Element || isJqueryElement(elem);
+  };
+
+  var argsToParams = function argsToParams(args) {
+    var params = {};
+
+    if (_typeof(args[0]) === 'object' && !isElement(args[0])) {
+      _extends(params, args[0]);
+    } else {
+      ['title', 'html', 'icon'].forEach(function (name, index) {
+        var arg = args[index];
+
+        if (typeof arg === 'string' || isElement(arg)) {
+          params[name] = arg;
+        } else if (arg !== undefined) {
+          error("Unexpected type of ".concat(name, "! Expected \"string\" or \"Element\", got ").concat(_typeof(arg)));
+        }
+      });
+    }
+
+    return params;
+  };
+
+  var swalPrefix = 'swal2-';
+  var prefix = function prefix(items) {
+    var result = {};
+
+    for (var i in items) {
+      result[items[i]] = swalPrefix + items[i];
+    }
+
+    return result;
+  };
+  var swalClasses = prefix(['container', 'shown', 'height-auto', 'iosfix', 'popup', 'modal', 'no-backdrop', 'no-transition', 'toast', 'toast-shown', 'toast-column', 'show', 'hide', 'close', 'title', 'header', 'content', 'html-container', 'actions', 'confirm', 'cancel', 'footer', 'icon', 'icon-content', 'image', 'input', 'file', 'range', 'select', 'radio', 'checkbox', 'label', 'textarea', 'inputerror', 'validation-message', 'progress-steps', 'active-progress-step', 'progress-step', 'progress-step-line', 'loading', 'styled', 'top', 'top-start', 'top-end', 'top-left', 'top-right', 'center', 'center-start', 'center-end', 'center-left', 'center-right', 'bottom', 'bottom-start', 'bottom-end', 'bottom-left', 'bottom-right', 'grow-row', 'grow-column', 'grow-fullscreen', 'rtl', 'timer-progress-bar', 'timer-progress-bar-container', 'scrollbar-measure', 'icon-success', 'icon-warning', 'icon-info', 'icon-question', 'icon-error']);
+  var iconTypes = prefix(['success', 'warning', 'info', 'question', 'error']);
+
+  var getContainer = function getContainer() {
+    return document.body.querySelector(".".concat(swalClasses.container));
+  };
+  var elementBySelector = function elementBySelector(selectorString) {
+    var container = getContainer();
+    return container ? container.querySelector(selectorString) : null;
+  };
+
+  var elementByClass = function elementByClass(className) {
+    return elementBySelector(".".concat(className));
+  };
+
+  var getPopup = function getPopup() {
+    return elementByClass(swalClasses.popup);
+  };
+  var getIcons = function getIcons() {
+    var popup = getPopup();
+    return toArray(popup.querySelectorAll(".".concat(swalClasses.icon)));
+  };
+  var getIcon = function getIcon() {
+    var visibleIcon = getIcons().filter(function (icon) {
+      return isVisible(icon);
+    });
+    return visibleIcon.length ? visibleIcon[0] : null;
+  };
+  var getTitle = function getTitle() {
+    return elementByClass(swalClasses.title);
+  };
+  var getContent = function getContent() {
+    return elementByClass(swalClasses.content);
+  };
+  var getHtmlContainer = function getHtmlContainer() {
+    return elementByClass(swalClasses['html-container']);
+  };
+  var getImage = function getImage() {
+    return elementByClass(swalClasses.image);
+  };
+  var getProgressSteps = function getProgressSteps() {
+    return elementByClass(swalClasses['progress-steps']);
+  };
+  var getValidationMessage = function getValidationMessage() {
+    return elementByClass(swalClasses['validation-message']);
+  };
+  var getConfirmButton = function getConfirmButton() {
+    return elementBySelector(".".concat(swalClasses.actions, " .").concat(swalClasses.confirm));
+  };
+  var getCancelButton = function getCancelButton() {
+    return elementBySelector(".".concat(swalClasses.actions, " .").concat(swalClasses.cancel));
+  };
+  var getActions = function getActions() {
+    return elementByClass(swalClasses.actions);
+  };
+  var getHeader = function getHeader() {
+    return elementByClass(swalClasses.header);
+  };
+  var getFooter = function getFooter() {
+    return elementByClass(swalClasses.footer);
+  };
+  var getTimerProgressBar = function getTimerProgressBar() {
+    return elementByClass(swalClasses['timer-progress-bar']);
+  };
+  var getCloseButton = function getCloseButton() {
+    return elementByClass(swalClasses.close);
+  }; // https://github.com/jkup/focusable/blob/master/index.js
+
+  var focusable = "\n  a[href],\n  area[href],\n  input:not([disabled]),\n  select:not([disabled]),\n  textarea:not([disabled]),\n  button:not([disabled]),\n  iframe,\n  object,\n  embed,\n  [tabindex=\"0\"],\n  [contenteditable],\n  audio[controls],\n  video[controls],\n  summary\n";
+  var getFocusableElements = function getFocusableElements() {
+    var focusableElementsWithTabindex = toArray(getPopup().querySelectorAll('[tabindex]:not([tabindex="-1"]):not([tabindex="0"])')) // sort according to tabindex
+    .sort(function (a, b) {
+      a = parseInt(a.getAttribute('tabindex'));
+      b = parseInt(b.getAttribute('tabindex'));
+
+      if (a > b) {
+        return 1;
+      } else if (a < b) {
+        return -1;
+      }
+
+      return 0;
+    });
+    var otherFocusableElements = toArray(getPopup().querySelectorAll(focusable)).filter(function (el) {
+      return el.getAttribute('tabindex') !== '-1';
+    });
+    return uniqueArray(focusableElementsWithTabindex.concat(otherFocusableElements)).filter(function (el) {
+      return isVisible(el);
+    });
+  };
+  var isModal = function isModal() {
+    return !isToast() && !document.body.classList.contains(swalClasses['no-backdrop']);
+  };
+  var isToast = function isToast() {
+    return document.body.classList.contains(swalClasses['toast-shown']);
+  };
+  var isLoading = function isLoading() {
+    return getPopup().hasAttribute('data-loading');
+  };
+
+  var states = {
+    previousBodyPadding: null
+  };
+  var setInnerHtml = function setInnerHtml(elem, html) {
+    // #1926
+    elem.textContent = '';
+
+    if (html) {
+      var parser = new DOMParser();
+      var parsed = parser.parseFromString(html, "text/html");
+      toArray(parsed.querySelector('head').childNodes).forEach(function (child) {
+        elem.appendChild(child);
+      });
+      toArray(parsed.querySelector('body').childNodes).forEach(function (child) {
+        elem.appendChild(child);
+      });
+    }
+  };
+  var hasClass = function hasClass(elem, className) {
+    if (!className) {
+      return false;
+    }
+
+    var classList = className.split(/\s+/);
+
+    for (var i = 0; i < classList.length; i++) {
+      if (!elem.classList.contains(classList[i])) {
+        return false;
+      }
+    }
+
+    return true;
+  };
+
+  var removeCustomClasses = function removeCustomClasses(elem, params) {
+    toArray(elem.classList).forEach(function (className) {
+      if (!(objectValues(swalClasses).indexOf(className) !== -1) && !(objectValues(iconTypes).indexOf(className) !== -1) && !(objectValues(params.showClass).indexOf(className) !== -1)) {
+        elem.classList.remove(className);
+      }
+    });
+  };
+
+  var applyCustomClass = function applyCustomClass(elem, params, className) {
+    removeCustomClasses(elem, params);
+
+    if (params.customClass && params.customClass[className]) {
+      if (typeof params.customClass[className] !== 'string' && !params.customClass[className].forEach) {
+        return warn("Invalid type of customClass.".concat(className, "! Expected string or iterable object, got \"").concat(_typeof(params.customClass[className]), "\""));
+      }
+
+      addClass(elem, params.customClass[className]);
+    }
+  };
+  function getInput(content, inputType) {
+    if (!inputType) {
+      return null;
+    }
+
+    switch (inputType) {
+      case 'select':
+      case 'textarea':
+      case 'file':
+        return getChildByClass(content, swalClasses[inputType]);
+
+      case 'checkbox':
+        return content.querySelector(".".concat(swalClasses.checkbox, " input"));
+
+      case 'radio':
+        return content.querySelector(".".concat(swalClasses.radio, " input:checked")) || content.querySelector(".".concat(swalClasses.radio, " input:first-child"));
+
+      case 'range':
+        return content.querySelector(".".concat(swalClasses.range, " input"));
+
+      default:
+        return getChildByClass(content, swalClasses.input);
+    }
+  }
+  var focusInput = function focusInput(input) {
+    input.focus(); // place cursor at end of text in text input
+
+    if (input.type !== 'file') {
+      // http://stackoverflow.com/a/2345915
+      var val = input.value;
+      input.value = '';
+      input.value = val;
+    }
+  };
+  var toggleClass = function toggleClass(target, classList, condition) {
+    if (!target || !classList) {
+      return;
+    }
+
+    if (typeof classList === 'string') {
+      classList = classList.split(/\s+/).filter(Boolean);
+    }
+
+    classList.forEach(function (className) {
+      if (target.forEach) {
+        target.forEach(function (elem) {
+          condition ? elem.classList.add(className) : elem.classList.remove(className);
+        });
+      } else {
+        condition ? target.classList.add(className) : target.classList.remove(className);
+      }
+    });
+  };
+  var addClass = function addClass(target, classList) {
+    toggleClass(target, classList, true);
+  };
+  var removeClass = function removeClass(target, classList) {
+    toggleClass(target, classList, false);
+  };
+  var getChildByClass = function getChildByClass(elem, className) {
+    for (var i = 0; i < elem.childNodes.length; i++) {
+      if (hasClass(elem.childNodes[i], className)) {
+        return elem.childNodes[i];
+      }
+    }
+  };
+  var applyNumericalStyle = function applyNumericalStyle(elem, property, value) {
+    if (value || parseInt(value) === 0) {
+      elem.style[property] = typeof value === 'number' ? "".concat(value, "px") : value;
+    } else {
+      elem.style.removeProperty(property);
+    }
+  };
+  var show = function show(elem) {
+    var display = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'flex';
+    elem.style.opacity = '';
+    elem.style.display = display;
+  };
+  var hide = function hide(elem) {
+    elem.style.opacity = '';
+    elem.style.display = 'none';
+  };
+  var toggle = function toggle(elem, condition, display) {
+    condition ? show(elem, display) : hide(elem);
+  }; // borrowed from jquery $(elem).is(':visible') implementation
+
+  var isVisible = function isVisible(elem) {
+    return !!(elem && (elem.offsetWidth || elem.offsetHeight || elem.getClientRects().length));
+  };
+  /* istanbul ignore next */
+
+  var isScrollable = function isScrollable(elem) {
+    return !!(elem.scrollHeight > elem.clientHeight);
+  }; // borrowed from https://stackoverflow.com/a/46352119
+
+  var hasCssAnimation = function hasCssAnimation(elem) {
+    var style = window.getComputedStyle(elem);
+    var animDuration = parseFloat(style.getPropertyValue('animation-duration') || '0');
+    var transDuration = parseFloat(style.getPropertyValue('transition-duration') || '0');
+    return animDuration > 0 || transDuration > 0;
+  };
+  var contains = function contains(haystack, needle) {
+    if (typeof haystack.contains === 'function') {
+      return haystack.contains(needle);
+    }
+  };
+  var animateTimerProgressBar = function animateTimerProgressBar(timer) {
+    var reset = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
+    var timerProgressBar = getTimerProgressBar();
+
+    if (isVisible(timerProgressBar)) {
+      if (reset) {
+        timerProgressBar.style.transition = 'none';
+        timerProgressBar.style.width = '100%';
+      }
+
+      setTimeout(function () {
+        timerProgressBar.style.transition = "width ".concat(timer / 1000, "s linear");
+        timerProgressBar.style.width = '0%';
+      }, 10);
+    }
+  };
+  var stopTimerProgressBar = function stopTimerProgressBar() {
+    var timerProgressBar = getTimerProgressBar();
+    var timerProgressBarWidth = parseInt(window.getComputedStyle(timerProgressBar).width);
+    timerProgressBar.style.removeProperty('transition');
+    timerProgressBar.style.width = '100%';
+    var timerProgressBarFullWidth = parseInt(window.getComputedStyle(timerProgressBar).width);
+    var timerProgressBarPercent = parseInt(timerProgressBarWidth / timerProgressBarFullWidth * 100);
+    timerProgressBar.style.removeProperty('transition');
+    timerProgressBar.style.width = "".concat(timerProgressBarPercent, "%");
+  };
+
+  // Detect Node env
+  var isNodeEnv = function isNodeEnv() {
+    return typeof window === 'undefined' || typeof document === 'undefined';
+  };
+
+  var sweetHTML = "\n <div aria-labelledby=\"".concat(swalClasses.title, "\" aria-describedby=\"").concat(swalClasses.content, "\" class=\"").concat(swalClasses.popup, "\" tabindex=\"-1\">\n   <div class=\"").concat(swalClasses.header, "\">\n     <ul class=\"").concat(swalClasses['progress-steps'], "\"></ul>\n     <div class=\"").concat(swalClasses.icon, " ").concat(iconTypes.error, "\"></div>\n     <div class=\"").concat(swalClasses.icon, " ").concat(iconTypes.question, "\"></div>\n     <div class=\"").concat(swalClasses.icon, " ").concat(iconTypes.warning, "\"></div>\n     <div class=\"").concat(swalClasses.icon, " ").concat(iconTypes.info, "\"></div>\n     <div class=\"").concat(swalClasses.icon, " ").concat(iconTypes.success, "\"></div>\n     <img class=\"").concat(swalClasses.image, "\" />\n     <h2 class=\"").concat(swalClasses.title, "\" id=\"").concat(swalClasses.title, "\"></h2>\n     <button type=\"button\" class=\"").concat(swalClasses.close, "\"></button>\n   </div>\n   <div class=\"").concat(swalClasses.content, "\">\n     <div id=\"").concat(swalClasses.content, "\" class=\"").concat(swalClasses['html-container'], "\"></div>\n     <input class=\"").concat(swalClasses.input, "\" />\n     <input type=\"file\" class=\"").concat(swalClasses.file, "\" />\n     <div class=\"").concat(swalClasses.range, "\">\n       <input type=\"range\" />\n       <output></output>\n     </div>\n     <select class=\"").concat(swalClasses.select, "\"></select>\n     <div class=\"").concat(swalClasses.radio, "\"></div>\n     <label for=\"").concat(swalClasses.checkbox, "\" class=\"").concat(swalClasses.checkbox, "\">\n       <input type=\"checkbox\" />\n       <span class=\"").concat(swalClasses.label, "\"></span>\n     </label>\n     <textarea class=\"").concat(swalClasses.textarea, "\"></textarea>\n     <div class=\"").concat(swalClasses['validation-message'], "\" id=\"").concat(swalClasses['validation-message'], "\"></div>\n   </div>\n   <div class=\"").concat(swalClasses.actions, "\">\n     <button type=\"button\" class=\"").concat(swalClasses.confirm, "\">OK</button>\n     <button type=\"button\" class=\"").concat(swalClasses.cancel, "\">Cancel</button>\n   </div>\n   <div class=\"").concat(swalClasses.footer, "\"></div>\n   <div class=\"").concat(swalClasses['timer-progress-bar-container'], "\">\n     <div class=\"").concat(swalClasses['timer-progress-bar'], "\"></div>\n   </div>\n </div>\n").replace(/(^|\n)\s*/g, '');
+
+  var resetOldContainer = function resetOldContainer() {
+    var oldContainer = getContainer();
+
+    if (!oldContainer) {
+      return false;
+    }
+
+    oldContainer.parentNode.removeChild(oldContainer);
+    removeClass([document.documentElement, document.body], [swalClasses['no-backdrop'], swalClasses['toast-shown'], swalClasses['has-column']]);
+    return true;
+  };
+
+  var oldInputVal; // IE11 workaround, see #1109 for details
+
+  var resetValidationMessage = function resetValidationMessage(e) {
+    if (Swal.isVisible() && oldInputVal !== e.target.value) {
+      Swal.resetValidationMessage();
+    }
+
+    oldInputVal = e.target.value;
+  };
+
+  var addInputChangeListeners = function addInputChangeListeners() {
+    var content = getContent();
+    var input = getChildByClass(content, swalClasses.input);
+    var file = getChildByClass(content, swalClasses.file);
+    var range = content.querySelector(".".concat(swalClasses.range, " input"));
+    var rangeOutput = content.querySelector(".".concat(swalClasses.range, " output"));
+    var select = getChildByClass(content, swalClasses.select);
+    var checkbox = content.querySelector(".".concat(swalClasses.checkbox, " input"));
+    var textarea = getChildByClass(content, swalClasses.textarea);
+    input.oninput = resetValidationMessage;
+    file.onchange = resetValidationMessage;
+    select.onchange = resetValidationMessage;
+    checkbox.onchange = resetValidationMessage;
+    textarea.oninput = resetValidationMessage;
+
+    range.oninput = function (e) {
+      resetValidationMessage(e);
+      rangeOutput.value = range.value;
+    };
+
+    range.onchange = function (e) {
+      resetValidationMessage(e);
+      range.nextSibling.value = range.value;
+    };
+  };
+
+  var getTarget = function getTarget(target) {
+    return typeof target === 'string' ? document.querySelector(target) : target;
+  };
+
+  var setupAccessibility = function setupAccessibility(params) {
+    var popup = getPopup();
+    popup.setAttribute('role', params.toast ? 'alert' : 'dialog');
+    popup.setAttribute('aria-live', params.toast ? 'polite' : 'assertive');
+
+    if (!params.toast) {
+      popup.setAttribute('aria-modal', 'true');
+    }
+  };
+
+  var setupRTL = function setupRTL(targetElement) {
+    if (window.getComputedStyle(targetElement).direction === 'rtl') {
+      addClass(getContainer(), swalClasses.rtl);
+    }
+  };
+  /*
+   * Add modal + backdrop to DOM
+   */
+
+
+  var init = function init(params) {
+    // Clean up the old popup container if it exists
+    var oldContainerExisted = resetOldContainer();
+    /* istanbul ignore if */
+
+    if (isNodeEnv()) {
+      error('SweetAlert2 requires document to initialize');
+      return;
+    }
+
+    var container = document.createElement('div');
+    container.className = swalClasses.container;
+
+    if (oldContainerExisted) {
+      addClass(container, swalClasses['no-transition']);
+    }
+
+    setInnerHtml(container, sweetHTML);
+    var targetElement = getTarget(params.target);
+    targetElement.appendChild(container);
+    setupAccessibility(params);
+    setupRTL(targetElement);
+    addInputChangeListeners();
+  };
+
+  var parseHtmlToContainer = function parseHtmlToContainer(param, target) {
+    // DOM element
+    if (param instanceof HTMLElement) {
+      target.appendChild(param); // Object
+    } else if (_typeof(param) === 'object') {
+      handleObject(param, target); // Plain string
+    } else if (param) {
+      setInnerHtml(target, param);
+    }
+  };
+
+  var handleObject = function handleObject(param, target) {
+    // JQuery element(s)
+    if (param.jquery) {
+      handleJqueryElem(target, param); // For other objects use their string representation
+    } else {
+      setInnerHtml(target, param.toString());
+    }
+  };
+
+  var handleJqueryElem = function handleJqueryElem(target, elem) {
+    target.textContent = '';
+
+    if (0 in elem) {
+      for (var i = 0; (i in elem); i++) {
+        target.appendChild(elem[i].cloneNode(true));
+      }
+    } else {
+      target.appendChild(elem.cloneNode(true));
+    }
+  };
+
+  var animationEndEvent = function () {
+    // Prevent run in Node env
+
+    /* istanbul ignore if */
+    if (isNodeEnv()) {
+      return false;
+    }
+
+    var testEl = document.createElement('div');
+    var transEndEventNames = {
+      WebkitAnimation: 'webkitAnimationEnd',
+      OAnimation: 'oAnimationEnd oanimationend',
+      animation: 'animationend'
+    };
+
+    for (var i in transEndEventNames) {
+      if (Object.prototype.hasOwnProperty.call(transEndEventNames, i) && typeof testEl.style[i] !== 'undefined') {
+        return transEndEventNames[i];
+      }
+    }
+
+    return false;
+  }();
+
+  // https://github.com/twbs/bootstrap/blob/master/js/src/modal.js
+
+  var measureScrollbar = function measureScrollbar() {
+    var scrollDiv = document.createElement('div');
+    scrollDiv.className = swalClasses['scrollbar-measure'];
+    document.body.appendChild(scrollDiv);
+    var scrollbarWidth = scrollDiv.getBoundingClientRect().width - scrollDiv.clientWidth;
+    document.body.removeChild(scrollDiv);
+    return scrollbarWidth;
+  };
+
+  var renderActions = function renderActions(instance, params) {
+    var actions = getActions();
+    var confirmButton = getConfirmButton();
+    var cancelButton = getCancelButton(); // Actions (buttons) wrapper
+
+    if (!params.showConfirmButton && !params.showCancelButton) {
+      hide(actions);
+    } // Custom class
+
+
+    applyCustomClass(actions, params, 'actions'); // Render confirm button
+
+    renderButton(confirmButton, 'confirm', params); // render Cancel Button
+
+    renderButton(cancelButton, 'cancel', params);
+
+    if (params.buttonsStyling) {
+      handleButtonsStyling(confirmButton, cancelButton, params);
+    } else {
+      removeClass([confirmButton, cancelButton], swalClasses.styled);
+      confirmButton.style.backgroundColor = confirmButton.style.borderLeftColor = confirmButton.style.borderRightColor = '';
+      cancelButton.style.backgroundColor = cancelButton.style.borderLeftColor = cancelButton.style.borderRightColor = '';
+    }
+
+    if (params.reverseButtons) {
+      confirmButton.parentNode.insertBefore(cancelButton, confirmButton);
+    }
+  };
+
+  function handleButtonsStyling(confirmButton, cancelButton, params) {
+    addClass([confirmButton, cancelButton], swalClasses.styled); // Buttons background colors
+
+    if (params.confirmButtonColor) {
+      confirmButton.style.backgroundColor = params.confirmButtonColor;
+    }
+
+    if (params.cancelButtonColor) {
+      cancelButton.style.backgroundColor = params.cancelButtonColor;
+    } // Loading state
+
+
+    if (!isLoading()) {
+      var confirmButtonBackgroundColor = window.getComputedStyle(confirmButton).getPropertyValue('background-color');
+      confirmButton.style.borderLeftColor = confirmButtonBackgroundColor;
+      confirmButton.style.borderRightColor = confirmButtonBackgroundColor;
+    }
+  }
+
+  function renderButton(button, buttonType, params) {
+    toggle(button, params["show".concat(capitalizeFirstLetter(buttonType), "Button")], 'inline-block');
+    setInnerHtml(button, params["".concat(buttonType, "ButtonText")]); // Set caption text
+
+    button.setAttribute('aria-label', params["".concat(buttonType, "ButtonAriaLabel")]); // ARIA label
+    // Add buttons custom classes
+
+    button.className = swalClasses[buttonType];
+    applyCustomClass(button, params, "".concat(buttonType, "Button"));
+    addClass(button, params["".concat(buttonType, "ButtonClass")]);
+  }
+
+  function handleBackdropParam(container, backdrop) {
+    if (typeof backdrop === 'string') {
+      container.style.background = backdrop;
+    } else if (!backdrop) {
+      addClass([document.documentElement, document.body], swalClasses['no-backdrop']);
+    }
+  }
+
+  function handlePositionParam(container, position) {
+    if (position in swalClasses) {
+      addClass(container, swalClasses[position]);
+    } else {
+      warn('The "position" parameter is not valid, defaulting to "center"');
+      addClass(container, swalClasses.center);
+    }
+  }
+
+  function handleGrowParam(container, grow) {
+    if (grow && typeof grow === 'string') {
+      var growClass = "grow-".concat(grow);
+
+      if (growClass in swalClasses) {
+        addClass(container, swalClasses[growClass]);
+      }
+    }
+  }
+
+  var renderContainer = function renderContainer(instance, params) {
+    var container = getContainer();
+
+    if (!container) {
+      return;
+    }
+
+    handleBackdropParam(container, params.backdrop);
+
+    if (!params.backdrop && params.allowOutsideClick) {
+      warn('"allowOutsideClick" parameter requires `backdrop` parameter to be set to `true`');
+    }
+
+    handlePositionParam(container, params.position);
+    handleGrowParam(container, params.grow); // Custom class
+
+    applyCustomClass(container, params, 'container'); // Set queue step attribute for getQueueStep() method
+
+    var queueStep = document.body.getAttribute('data-swal2-queue-step');
+
+    if (queueStep) {
+      container.setAttribute('data-queue-step', queueStep);
+      document.body.removeAttribute('data-swal2-queue-step');
+    }
+  };
+
+  /**
+   * This module containts `WeakMap`s for each effectively-"private  property" that a `Swal` has.
+   * For example, to set the private property "foo" of `this` to "bar", you can `privateProps.foo.set(this, 'bar')`
+   * This is the approach that Babel will probably take to implement private methods/fields
+   *   https://github.com/tc39/proposal-private-methods
+   *   https://github.com/babel/babel/pull/7555
+   * Once we have the changes from that PR in Babel, and our core class fits reasonable in *one module*
+   *   then we can use that language feature.
+   */
+  var privateProps = {
+    promise: new WeakMap(),
+    innerParams: new WeakMap(),
+    domCache: new WeakMap()
+  };
+
+  var inputTypes = ['input', 'file', 'range', 'select', 'radio', 'checkbox', 'textarea'];
+  var renderInput = function renderInput(instance, params) {
+    var content = getContent();
+    var innerParams = privateProps.innerParams.get(instance);
+    var rerender = !innerParams || params.input !== innerParams.input;
+    inputTypes.forEach(function (inputType) {
+      var inputClass = swalClasses[inputType];
+      var inputContainer = getChildByClass(content, inputClass); // set attributes
+
+      setAttributes(inputType, params.inputAttributes); // set class
+
+      inputContainer.className = inputClass;
+
+      if (rerender) {
+        hide(inputContainer);
+      }
+    });
+
+    if (params.input) {
+      if (rerender) {
+        showInput(params);
+      } // set custom class
+
+
+      setCustomClass(params);
+    }
+  };
+
+  var showInput = function showInput(params) {
+    if (!renderInputType[params.input]) {
+      return error("Unexpected type of input! Expected \"text\", \"email\", \"password\", \"number\", \"tel\", \"select\", \"radio\", \"checkbox\", \"textarea\", \"file\" or \"url\", got \"".concat(params.input, "\""));
+    }
+
+    var inputContainer = getInputContainer(params.input);
+    var input = renderInputType[params.input](inputContainer, params);
+    show(input); // input autofocus
+
+    setTimeout(function () {
+      focusInput(input);
+    });
+  };
+
+  var removeAttributes = function removeAttributes(input) {
+    for (var i = 0; i < input.attributes.length; i++) {
+      var attrName = input.attributes[i].name;
+
+      if (!(['type', 'value', 'style'].indexOf(attrName) !== -1)) {
+        input.removeAttribute(attrName);
+      }
+    }
+  };
+
+  var setAttributes = function setAttributes(inputType, inputAttributes) {
+    var input = getInput(getContent(), inputType);
+
+    if (!input) {
+      return;
+    }
+
+    removeAttributes(input);
+
+    for (var attr in inputAttributes) {
+      // Do not set a placeholder for <input type="range">
+      // it'll crash Edge, #1298
+      if (inputType === 'range' && attr === 'placeholder') {
+        continue;
+      }
+
+      input.setAttribute(attr, inputAttributes[attr]);
+    }
+  };
+
+  var setCustomClass = function setCustomClass(params) {
+    var inputContainer = getInputContainer(params.input);
+
+    if (params.customClass) {
+      addClass(inputContainer, params.customClass.input);
+    }
+  };
+
+  var setInputPlaceholder = function setInputPlaceholder(input, params) {
+    if (!input.placeholder || params.inputPlaceholder) {
+      input.placeholder = params.inputPlaceholder;
+    }
+  };
+
+  var getInputContainer = function getInputContainer(inputType) {
+    var inputClass = swalClasses[inputType] ? swalClasses[inputType] : swalClasses.input;
+    return getChildByClass(getContent(), inputClass);
+  };
+
+  var renderInputType = {};
+
+  renderInputType.text = renderInputType.email = renderInputType.password = renderInputType.number = renderInputType.tel = renderInputType.url = function (input, params) {
+    if (typeof params.inputValue === 'string' || typeof params.inputValue === 'number') {
+      input.value = params.inputValue;
+    } else if (!isPromise(params.inputValue)) {
+      warn("Unexpected type of inputValue! Expected \"string\", \"number\" or \"Promise\", got \"".concat(_typeof(params.inputValue), "\""));
+    }
+
+    setInputPlaceholder(input, params);
+    input.type = params.input;
+    return input;
+  };
+
+  renderInputType.file = function (input, params) {
+    setInputPlaceholder(input, params);
+    return input;
+  };
+
+  renderInputType.range = function (range, params) {
+    var rangeInput = range.querySelector('input');
+    var rangeOutput = range.querySelector('output');
+    rangeInput.value = params.inputValue;
+    rangeInput.type = params.input;
+    rangeOutput.value = params.inputValue;
+    return range;
+  };
+
+  renderInputType.select = function (select, params) {
+    select.textContent = '';
+
+    if (params.inputPlaceholder) {
+      var placeholder = document.createElement('option');
+      setInnerHtml(placeholder, params.inputPlaceholder);
+      placeholder.value = '';
+      placeholder.disabled = true;
+      placeholder.selected = true;
+      select.appendChild(placeholder);
+    }
+
+    return select;
+  };
+
+  renderInputType.radio = function (radio) {
+    radio.textContent = '';
+    return radio;
+  };
+
+  renderInputType.checkbox = function (checkboxContainer, params) {
+    var checkbox = getInput(getContent(), 'checkbox');
+    checkbox.value = 1;
+    checkbox.id = swalClasses.checkbox;
+    checkbox.checked = Boolean(params.inputValue);
+    var label = checkboxContainer.querySelector('span');
+    setInnerHtml(label, params.inputPlaceholder);
+    return checkboxContainer;
+  };
+
+  renderInputType.textarea = function (textarea, params) {
+    textarea.value = params.inputValue;
+    setInputPlaceholder(textarea, params);
+
+    if ('MutationObserver' in window) {
+      // #1699
+      var initialPopupWidth = parseInt(window.getComputedStyle(getPopup()).width);
+      var popupPadding = parseInt(window.getComputedStyle(getPopup()).paddingLeft) + parseInt(window.getComputedStyle(getPopup()).paddingRight);
+
+      var outputsize = function outputsize() {
+        var contentWidth = textarea.offsetWidth + popupPadding;
+
+        if (contentWidth > initialPopupWidth) {
+          getPopup().style.width = "".concat(contentWidth, "px");
+        } else {
+          getPopup().style.width = null;
+        }
+      };
+
+      new MutationObserver(outputsize).observe(textarea, {
+        attributes: true,
+        attributeFilter: ['style']
+      });
+    }
+
+    return textarea;
+  };
+
+  var renderContent = function renderContent(instance, params) {
+    var content = getContent().querySelector("#".concat(swalClasses.content)); // Content as HTML
+
+    if (params.html) {
+      parseHtmlToContainer(params.html, content);
+      show(content, 'block'); // Content as plain text
+    } else if (params.text) {
+      content.textContent = params.text;
+      show(content, 'block'); // No content
+    } else {
+      hide(content);
+    }
+
+    renderInput(instance, params); // Custom class
+
+    applyCustomClass(getContent(), params, 'content');
+  };
+
+  var renderFooter = function renderFooter(instance, params) {
+    var footer = getFooter();
+    toggle(footer, params.footer);
+
+    if (params.footer) {
+      parseHtmlToContainer(params.footer, footer);
+    } // Custom class
+
+
+    applyCustomClass(footer, params, 'footer');
+  };
+
+  var renderCloseButton = function renderCloseButton(instance, params) {
+    var closeButton = getCloseButton();
+    setInnerHtml(closeButton, params.closeButtonHtml); // Custom class
+
+    applyCustomClass(closeButton, params, 'closeButton');
+    toggle(closeButton, params.showCloseButton);
+    closeButton.setAttribute('aria-label', params.closeButtonAriaLabel);
+  };
+
+  var renderIcon = function renderIcon(instance, params) {
+    var innerParams = privateProps.innerParams.get(instance); // if the give icon already rendered, apply the custom class without re-rendering the icon
+
+    if (innerParams && params.icon === innerParams.icon && getIcon()) {
+      applyCustomClass(getIcon(), params, 'icon');
+      return;
+    }
+
+    hideAllIcons();
+
+    if (!params.icon) {
+      return;
+    }
+
+    if (Object.keys(iconTypes).indexOf(params.icon) !== -1) {
+      var icon = elementBySelector(".".concat(swalClasses.icon, ".").concat(iconTypes[params.icon]));
+      show(icon); // Custom or default content
+
+      setContent(icon, params);
+      adjustSuccessIconBackgoundColor(); // Custom class
+
+      applyCustomClass(icon, params, 'icon'); // Animate icon
+
+      addClass(icon, params.showClass.icon);
+    } else {
+      error("Unknown icon! Expected \"success\", \"error\", \"warning\", \"info\" or \"question\", got \"".concat(params.icon, "\""));
+    }
+  };
+
+  var hideAllIcons = function hideAllIcons() {
+    var icons = getIcons();
+
+    for (var i = 0; i < icons.length; i++) {
+      hide(icons[i]);
+    }
+  }; // Adjust success icon background color to match the popup background color
+
+
+  var adjustSuccessIconBackgoundColor = function adjustSuccessIconBackgoundColor() {
+    var popup = getPopup();
+    var popupBackgroundColor = window.getComputedStyle(popup).getPropertyValue('background-color');
+    var successIconParts = popup.querySelectorAll('[class^=swal2-success-circular-line], .swal2-success-fix');
+
+    for (var i = 0; i < successIconParts.length; i++) {
+      successIconParts[i].style.backgroundColor = popupBackgroundColor;
+    }
+  };
+
+  var setContent = function setContent(icon, params) {
+    icon.textContent = '';
+
+    if (params.iconHtml) {
+      setInnerHtml(icon, iconContent(params.iconHtml));
+    } else if (params.icon === 'success') {
+      setInnerHtml(icon, "\n      <div class=\"swal2-success-circular-line-left\"></div>\n      <span class=\"swal2-success-line-tip\"></span> <span class=\"swal2-success-line-long\"></span>\n      <div class=\"swal2-success-ring\"></div> <div class=\"swal2-success-fix\"></div>\n      <div class=\"swal2-success-circular-line-right\"></div>\n    ");
+    } else if (params.icon === 'error') {
+      setInnerHtml(icon, "\n      <span class=\"swal2-x-mark\">\n        <span class=\"swal2-x-mark-line-left\"></span>\n        <span class=\"swal2-x-mark-line-right\"></span>\n      </span>\n    ");
+    } else {
+      var defaultIconHtml = {
+        question: '?',
+        warning: '!',
+        info: 'i'
+      };
+      setInnerHtml(icon, iconContent(defaultIconHtml[params.icon]));
+    }
+  };
+
+  var iconContent = function iconContent(content) {
+    return "<div class=\"".concat(swalClasses['icon-content'], "\">").concat(content, "</div>");
+  };
+
+  var renderImage = function renderImage(instance, params) {
+    var image = getImage();
+
+    if (!params.imageUrl) {
+      return hide(image);
+    }
+
+    show(image, ''); // Src, alt
+
+    image.setAttribute('src', params.imageUrl);
+    image.setAttribute('alt', params.imageAlt); // Width, height
+
+    applyNumericalStyle(image, 'width', params.imageWidth);
+    applyNumericalStyle(image, 'height', params.imageHeight); // Class
+
+    image.className = swalClasses.image;
+    applyCustomClass(image, params, 'image');
+  };
+
+  var currentSteps = [];
+  /*
+   * Global function for chaining sweetAlert popups
+   */
+
+  var queue = function queue(steps) {
+    var Swal = this;
+    currentSteps = steps;
+
+    var resetAndResolve = function resetAndResolve(resolve, value) {
+      currentSteps = [];
+      resolve(value);
+    };
+
+    var queueResult = [];
+    return new Promise(function (resolve) {
+      (function step(i, callback) {
+        if (i < currentSteps.length) {
+          document.body.setAttribute('data-swal2-queue-step', i);
+          Swal.fire(currentSteps[i]).then(function (result) {
+            if (typeof result.value !== 'undefined') {
+              queueResult.push(result.value);
+              step(i + 1, callback);
+            } else {
+              resetAndResolve(resolve, {
+                dismiss: result.dismiss
+              });
+            }
+          });
+        } else {
+          resetAndResolve(resolve, {
+            value: queueResult
+          });
+        }
+      })(0);
+    });
+  };
+  /*
+   * Global function for getting the index of current popup in queue
+   */
+
+  var getQueueStep = function getQueueStep() {
+    return getContainer() && getContainer().getAttribute('data-queue-step');
+  };
+  /*
+   * Global function for inserting a popup to the queue
+   */
+
+  var insertQueueStep = function insertQueueStep(step, index) {
+    if (index && index < currentSteps.length) {
+      return currentSteps.splice(index, 0, step);
+    }
+
+    return currentSteps.push(step);
+  };
+  /*
+   * Global function for deleting a popup from the queue
+   */
+
+  var deleteQueueStep = function deleteQueueStep(index) {
+    if (typeof currentSteps[index] !== 'undefined') {
+      currentSteps.splice(index, 1);
+    }
+  };
+
+  var createStepElement = function createStepElement(step) {
+    var stepEl = document.createElement('li');
+    addClass(stepEl, swalClasses['progress-step']);
+    setInnerHtml(stepEl, step);
+    return stepEl;
+  };
+
+  var createLineElement = function createLineElement(params) {
+    var lineEl = document.createElement('li');
+    addClass(lineEl, swalClasses['progress-step-line']);
+
+    if (params.progressStepsDistance) {
+      lineEl.style.width = params.progressStepsDistance;
+    }
+
+    return lineEl;
+  };
+
+  var renderProgressSteps = function renderProgressSteps(instance, params) {
+    var progressStepsContainer = getProgressSteps();
+
+    if (!params.progressSteps || params.progressSteps.length === 0) {
+      return hide(progressStepsContainer);
+    }
+
+    show(progressStepsContainer);
+    progressStepsContainer.textContent = '';
+    var currentProgressStep = parseInt(params.currentProgressStep === undefined ? getQueueStep() : params.currentProgressStep);
+
+    if (currentProgressStep >= params.progressSteps.length) {
+      warn('Invalid currentProgressStep parameter, it should be less than progressSteps.length ' + '(currentProgressStep like JS arrays starts from 0)');
+    }
+
+    params.progressSteps.forEach(function (step, index) {
+      var stepEl = createStepElement(step);
+      progressStepsContainer.appendChild(stepEl);
+
+      if (index === currentProgressStep) {
+        addClass(stepEl, swalClasses['active-progress-step']);
+      }
+
+      if (index !== params.progressSteps.length - 1) {
+        var lineEl = createLineElement(params);
+        progressStepsContainer.appendChild(lineEl);
+      }
+    });
+  };
+
+  var renderTitle = function renderTitle(instance, params) {
+    var title = getTitle();
+    toggle(title, params.title || params.titleText);
+
+    if (params.title) {
+      parseHtmlToContainer(params.title, title);
+    }
+
+    if (params.titleText) {
+      title.innerText = params.titleText;
+    } // Custom class
+
+
+    applyCustomClass(title, params, 'title');
+  };
+
+  var renderHeader = function renderHeader(instance, params) {
+    var header = getHeader(); // Custom class
+
+    applyCustomClass(header, params, 'header'); // Progress steps
+
+    renderProgressSteps(instance, params); // Icon
+
+    renderIcon(instance, params); // Image
+
+    renderImage(instance, params); // Title
+
+    renderTitle(instance, params); // Close button
+
+    renderCloseButton(instance, params);
+  };
+
+  var renderPopup = function renderPopup(instance, params) {
+    var popup = getPopup(); // Width
+
+    applyNumericalStyle(popup, 'width', params.width); // Padding
+
+    applyNumericalStyle(popup, 'padding', params.padding); // Background
+
+    if (params.background) {
+      popup.style.background = params.background;
+    } // Classes
+
+
+    addClasses(popup, params);
+  };
+
+  var addClasses = function addClasses(popup, params) {
+    // Default Class + showClass when updating Swal.update({})
+    popup.className = "".concat(swalClasses.popup, " ").concat(isVisible(popup) ? params.showClass.popup : '');
+
+    if (params.toast) {
+      addClass([document.documentElement, document.body], swalClasses['toast-shown']);
+      addClass(popup, swalClasses.toast);
+    } else {
+      addClass(popup, swalClasses.modal);
+    } // Custom class
+
+
+    applyCustomClass(popup, params, 'popup');
+
+    if (typeof params.customClass === 'string') {
+      addClass(popup, params.customClass);
+    } // Icon class (#1842)
+
+
+    if (params.icon) {
+      addClass(popup, swalClasses["icon-".concat(params.icon)]);
+    }
+  };
+
+  var render = function render(instance, params) {
+    renderPopup(instance, params);
+    renderContainer(instance, params);
+    renderHeader(instance, params);
+    renderContent(instance, params);
+    renderActions(instance, params);
+    renderFooter(instance, params);
+
+    if (typeof params.onRender === 'function') {
+      params.onRender(getPopup());
+    }
+  };
+
+  /*
+   * Global function to determine if SweetAlert2 popup is shown
+   */
+
+  var isVisible$1 = function isVisible$$1() {
+    return isVisible(getPopup());
+  };
+  /*
+   * Global function to click 'Confirm' button
+   */
+
+  var clickConfirm = function clickConfirm() {
+    return getConfirmButton() && getConfirmButton().click();
+  };
+  /*
+   * Global function to click 'Cancel' button
+   */
+
+  var clickCancel = function clickCancel() {
+    return getCancelButton() && getCancelButton().click();
+  };
+
+  function fire() {
+    var Swal = this;
+
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    return _construct(Swal, args);
+  }
+
+  /**
+   * Returns an extended version of `Swal` containing `params` as defaults.
+   * Useful for reusing Swal configuration.
+   *
+   * For example:
+   *
+   * Before:
+   * const textPromptOptions = { input: 'text', showCancelButton: true }
+   * const {value: firstName} = await Swal.fire({ ...textPromptOptions, title: 'What is your first name?' })
+   * const {value: lastName} = await Swal.fire({ ...textPromptOptions, title: 'What is your last name?' })
+   *
+   * After:
+   * const TextPrompt = Swal.mixin({ input: 'text', showCancelButton: true })
+   * const {value: firstName} = await TextPrompt('What is your first name?')
+   * const {value: lastName} = await TextPrompt('What is your last name?')
+   *
+   * @param mixinParams
+   */
+  function mixin(mixinParams) {
+    var MixinSwal = /*#__PURE__*/function (_this) {
+      _inherits(MixinSwal, _this);
+
+      var _super = _createSuper(MixinSwal);
+
+      function MixinSwal() {
+        _classCallCheck(this, MixinSwal);
+
+        return _super.apply(this, arguments);
+      }
+
+      _createClass(MixinSwal, [{
+        key: "_main",
+        value: function _main(params) {
+          return _get(_getPrototypeOf(MixinSwal.prototype), "_main", this).call(this, _extends({}, mixinParams, params));
+        }
+      }]);
+
+      return MixinSwal;
+    }(this);
+
+    return MixinSwal;
+  }
+
+  /**
+   * Show spinner instead of Confirm button
+   */
+
+  var showLoading = function showLoading() {
+    var popup = getPopup();
+
+    if (!popup) {
+      Swal.fire();
+    }
+
+    popup = getPopup();
+    var actions = getActions();
+    var confirmButton = getConfirmButton();
+    show(actions);
+    show(confirmButton, 'inline-block');
+    addClass([popup, actions], swalClasses.loading);
+    confirmButton.disabled = true;
+    popup.setAttribute('data-loading', true);
+    popup.setAttribute('aria-busy', true);
+    popup.focus();
+  };
+
+  var RESTORE_FOCUS_TIMEOUT = 100;
+
+  var globalState = {};
+
+  var focusPreviousActiveElement = function focusPreviousActiveElement() {
+    if (globalState.previousActiveElement && globalState.previousActiveElement.focus) {
+      globalState.previousActiveElement.focus();
+      globalState.previousActiveElement = null;
+    } else if (document.body) {
+      document.body.focus();
+    }
+  }; // Restore previous active (focused) element
+
+
+  var restoreActiveElement = function restoreActiveElement() {
+    return new Promise(function (resolve) {
+      var x = window.scrollX;
+      var y = window.scrollY;
+      globalState.restoreFocusTimeout = setTimeout(function () {
+        focusPreviousActiveElement();
+        resolve();
+      }, RESTORE_FOCUS_TIMEOUT); // issues/900
+
+      /* istanbul ignore if */
+
+      if (typeof x !== 'undefined' && typeof y !== 'undefined') {
+        // IE doesn't have scrollX/scrollY support
+        window.scrollTo(x, y);
+      }
+    });
+  };
+
+  /**
+   * If `timer` parameter is set, returns number of milliseconds of timer remained.
+   * Otherwise, returns undefined.
+   */
+
+  var getTimerLeft = function getTimerLeft() {
+    return globalState.timeout && globalState.timeout.getTimerLeft();
+  };
+  /**
+   * Stop timer. Returns number of milliseconds of timer remained.
+   * If `timer` parameter isn't set, returns undefined.
+   */
+
+  var stopTimer = function stopTimer() {
+    if (globalState.timeout) {
+      stopTimerProgressBar();
+      return globalState.timeout.stop();
+    }
+  };
+  /**
+   * Resume timer. Returns number of milliseconds of timer remained.
+   * If `timer` parameter isn't set, returns undefined.
+   */
+
+  var resumeTimer = function resumeTimer() {
+    if (globalState.timeout) {
+      var remaining = globalState.timeout.start();
+      animateTimerProgressBar(remaining);
+      return remaining;
+    }
+  };
+  /**
+   * Resume timer. Returns number of milliseconds of timer remained.
+   * If `timer` parameter isn't set, returns undefined.
+   */
+
+  var toggleTimer = function toggleTimer() {
+    var timer = globalState.timeout;
+    return timer && (timer.running ? stopTimer() : resumeTimer());
+  };
+  /**
+   * Increase timer. Returns number of milliseconds of an updated timer.
+   * If `timer` parameter isn't set, returns undefined.
+   */
+
+  var increaseTimer = function increaseTimer(n) {
+    if (globalState.timeout) {
+      var remaining = globalState.timeout.increase(n);
+      animateTimerProgressBar(remaining, true);
+      return remaining;
+    }
+  };
+  /**
+   * Check if timer is running. Returns true if timer is running
+   * or false if timer is paused or stopped.
+   * If `timer` parameter isn't set, returns undefined
+   */
+
+  var isTimerRunning = function isTimerRunning() {
+    return globalState.timeout && globalState.timeout.isRunning();
+  };
+
+  var defaultParams = {
+    title: '',
+    titleText: '',
+    text: '',
+    html: '',
+    footer: '',
+    icon: undefined,
+    iconHtml: undefined,
+    toast: false,
+    animation: true,
+    showClass: {
+      popup: 'swal2-show',
+      backdrop: 'swal2-backdrop-show',
+      icon: 'swal2-icon-show'
+    },
+    hideClass: {
+      popup: 'swal2-hide',
+      backdrop: 'swal2-backdrop-hide',
+      icon: 'swal2-icon-hide'
+    },
+    customClass: undefined,
+    target: 'body',
+    backdrop: true,
+    heightAuto: true,
+    allowOutsideClick: true,
+    allowEscapeKey: true,
+    allowEnterKey: true,
+    stopKeydownPropagation: true,
+    keydownListenerCapture: false,
+    showConfirmButton: true,
+    showCancelButton: false,
+    preConfirm: undefined,
+    confirmButtonText: 'OK',
+    confirmButtonAriaLabel: '',
+    confirmButtonColor: undefined,
+    cancelButtonText: 'Cancel',
+    cancelButtonAriaLabel: '',
+    cancelButtonColor: undefined,
+    buttonsStyling: true,
+    reverseButtons: false,
+    focusConfirm: true,
+    focusCancel: false,
+    showCloseButton: false,
+    closeButtonHtml: '&times;',
+    closeButtonAriaLabel: 'Close this dialog',
+    showLoaderOnConfirm: false,
+    imageUrl: undefined,
+    imageWidth: undefined,
+    imageHeight: undefined,
+    imageAlt: '',
+    timer: undefined,
+    timerProgressBar: false,
+    width: undefined,
+    padding: undefined,
+    background: undefined,
+    input: undefined,
+    inputPlaceholder: '',
+    inputValue: '',
+    inputOptions: {},
+    inputAutoTrim: true,
+    inputAttributes: {},
+    inputValidator: undefined,
+    validationMessage: undefined,
+    grow: false,
+    position: 'center',
+    progressSteps: [],
+    currentProgressStep: undefined,
+    progressStepsDistance: undefined,
+    onBeforeOpen: undefined,
+    onOpen: undefined,
+    onRender: undefined,
+    onClose: undefined,
+    onAfterClose: undefined,
+    onDestroy: undefined,
+    scrollbarPadding: true
+  };
+  var updatableParams = ['title', 'titleText', 'text', 'html', 'footer', 'icon', 'hideClass', 'customClass', 'allowOutsideClick', 'allowEscapeKey', 'showConfirmButton', 'showCancelButton', 'confirmButtonText', 'confirmButtonAriaLabel', 'confirmButtonColor', 'cancelButtonText', 'cancelButtonAriaLabel', 'cancelButtonColor', 'buttonsStyling', 'reverseButtons', 'showCloseButton', 'closeButtonHtml', 'closeButtonAriaLabel', 'imageUrl', 'imageWidth', 'imageHeight', 'imageAlt', 'progressSteps', 'currentProgressStep', 'onClose', 'onAfterClose', 'onDestroy'];
+  var deprecatedParams = {
+    animation: 'showClass" and "hideClass'
+  };
+  var toastIncompatibleParams = ['allowOutsideClick', 'allowEnterKey', 'backdrop', 'focusConfirm', 'focusCancel', 'heightAuto', 'keydownListenerCapture'];
+  /**
+   * Is valid parameter
+   * @param {String} paramName
+   */
+
+  var isValidParameter = function isValidParameter(paramName) {
+    return Object.prototype.hasOwnProperty.call(defaultParams, paramName);
+  };
+  /**
+   * Is valid parameter for Swal.update() method
+   * @param {String} paramName
+   */
+
+  var isUpdatableParameter = function isUpdatableParameter(paramName) {
+    return updatableParams.indexOf(paramName) !== -1;
+  };
+  /**
+   * Is deprecated parameter
+   * @param {String} paramName
+   */
+
+  var isDeprecatedParameter = function isDeprecatedParameter(paramName) {
+    return deprecatedParams[paramName];
+  };
+
+  var checkIfParamIsValid = function checkIfParamIsValid(param) {
+    if (!isValidParameter(param)) {
+      warn("Unknown parameter \"".concat(param, "\""));
+    }
+  };
+
+  var checkIfToastParamIsValid = function checkIfToastParamIsValid(param) {
+    if (toastIncompatibleParams.indexOf(param) !== -1) {
+      warn("The parameter \"".concat(param, "\" is incompatible with toasts"));
+    }
+  };
+
+  var checkIfParamIsDeprecated = function checkIfParamIsDeprecated(param) {
+    if (isDeprecatedParameter(param)) {
+      warnAboutDepreation(param, isDeprecatedParameter(param));
+    }
+  };
+  /**
+   * Show relevant warnings for given params
+   *
+   * @param params
+   */
+
+
+  var showWarningsForParams = function showWarningsForParams(params) {
+    for (var param in params) {
+      checkIfParamIsValid(param);
+
+      if (params.toast) {
+        checkIfToastParamIsValid(param);
+      }
+
+      checkIfParamIsDeprecated(param);
+    }
+  };
+
+
+
+  var staticMethods = /*#__PURE__*/Object.freeze({
+    isValidParameter: isValidParameter,
+    isUpdatableParameter: isUpdatableParameter,
+    isDeprecatedParameter: isDeprecatedParameter,
+    argsToParams: argsToParams,
+    isVisible: isVisible$1,
+    clickConfirm: clickConfirm,
+    clickCancel: clickCancel,
+    getContainer: getContainer,
+    getPopup: getPopup,
+    getTitle: getTitle,
+    getContent: getContent,
+    getHtmlContainer: getHtmlContainer,
+    getImage: getImage,
+    getIcon: getIcon,
+    getIcons: getIcons,
+    getCloseButton: getCloseButton,
+    getActions: getActions,
+    getConfirmButton: getConfirmButton,
+    getCancelButton: getCancelButton,
+    getHeader: getHeader,
+    getFooter: getFooter,
+    getTimerProgressBar: getTimerProgressBar,
+    getFocusableElements: getFocusableElements,
+    getValidationMessage: getValidationMessage,
+    isLoading: isLoading,
+    fire: fire,
+    mixin: mixin,
+    queue: queue,
+    getQueueStep: getQueueStep,
+    insertQueueStep: insertQueueStep,
+    deleteQueueStep: deleteQueueStep,
+    showLoading: showLoading,
+    enableLoading: showLoading,
+    getTimerLeft: getTimerLeft,
+    stopTimer: stopTimer,
+    resumeTimer: resumeTimer,
+    toggleTimer: toggleTimer,
+    increaseTimer: increaseTimer,
+    isTimerRunning: isTimerRunning
+  });
+
+  /**
+   * Enables buttons and hide loader.
+   */
+
+  function hideLoading() {
+    // do nothing if popup is closed
+    var innerParams = privateProps.innerParams.get(this);
+
+    if (!innerParams) {
+      return;
+    }
+
+    var domCache = privateProps.domCache.get(this);
+
+    if (!innerParams.showConfirmButton) {
+      hide(domCache.confirmButton);
+
+      if (!innerParams.showCancelButton) {
+        hide(domCache.actions);
+      }
+    }
+
+    removeClass([domCache.popup, domCache.actions], swalClasses.loading);
+    domCache.popup.removeAttribute('aria-busy');
+    domCache.popup.removeAttribute('data-loading');
+    domCache.confirmButton.disabled = false;
+    domCache.cancelButton.disabled = false;
+  }
+
+  function getInput$1(instance) {
+    var innerParams = privateProps.innerParams.get(instance || this);
+    var domCache = privateProps.domCache.get(instance || this);
+
+    if (!domCache) {
+      return null;
+    }
+
+    return getInput(domCache.content, innerParams.input);
+  }
+
+  var fixScrollbar = function fixScrollbar() {
+    // for queues, do not do this more than once
+    if (states.previousBodyPadding !== null) {
+      return;
+    } // if the body has overflow
+
+
+    if (document.body.scrollHeight > window.innerHeight) {
+      // add padding so the content doesn't shift after removal of scrollbar
+      states.previousBodyPadding = parseInt(window.getComputedStyle(document.body).getPropertyValue('padding-right'));
+      document.body.style.paddingRight = "".concat(states.previousBodyPadding + measureScrollbar(), "px");
+    }
+  };
+  var undoScrollbar = function undoScrollbar() {
+    if (states.previousBodyPadding !== null) {
+      document.body.style.paddingRight = "".concat(states.previousBodyPadding, "px");
+      states.previousBodyPadding = null;
+    }
+  };
+
+  /* istanbul ignore file */
+
+  var iOSfix = function iOSfix() {
+    var iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream || navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1;
+
+    if (iOS && !hasClass(document.body, swalClasses.iosfix)) {
+      var offset = document.body.scrollTop;
+      document.body.style.top = "".concat(offset * -1, "px");
+      addClass(document.body, swalClasses.iosfix);
+      lockBodyScroll();
+      addBottomPaddingForTallPopups(); // #1948
+    }
+  };
+
+  var addBottomPaddingForTallPopups = function addBottomPaddingForTallPopups() {
+    var safari = !navigator.userAgent.match(/(CriOS|FxiOS|EdgiOS|YaBrowser|UCBrowser)/i);
+
+    if (safari) {
+      var bottomPanelHeight = 44;
+
+      if (getPopup().scrollHeight > window.innerHeight - bottomPanelHeight) {
+        getContainer().style.paddingBottom = "".concat(bottomPanelHeight, "px");
+      }
+    }
+  };
+
+  var lockBodyScroll = function lockBodyScroll() {
+    // #1246
+    var container = getContainer();
+    var preventTouchMove;
+
+    container.ontouchstart = function (e) {
+      preventTouchMove = shouldPreventTouchMove(e.target);
+    };
+
+    container.ontouchmove = function (e) {
+      if (preventTouchMove) {
+        e.preventDefault();
+        e.stopPropagation();
+      }
+    };
+  };
+
+  var shouldPreventTouchMove = function shouldPreventTouchMove(target) {
+    var container = getContainer();
+
+    if (target === container) {
+      return true;
+    }
+
+    if (!isScrollable(container) && target.tagName !== 'INPUT' && // #1603
+    !(isScrollable(getContent()) && // #1944
+    getContent().contains(target))) {
+      return true;
+    }
+
+    return false;
+  };
+
+  var undoIOSfix = function undoIOSfix() {
+    if (hasClass(document.body, swalClasses.iosfix)) {
+      var offset = parseInt(document.body.style.top, 10);
+      removeClass(document.body, swalClasses.iosfix);
+      document.body.style.top = '';
+      document.body.scrollTop = offset * -1;
+    }
+  };
+
+  /* istanbul ignore file */
+
+  var isIE11 = function isIE11() {
+    return !!window.MSInputMethodContext && !!document.documentMode;
+  }; // Fix IE11 centering sweetalert2/issues/933
+
+
+  var fixVerticalPositionIE = function fixVerticalPositionIE() {
+    var container = getContainer();
+    var popup = getPopup();
+    container.style.removeProperty('align-items');
+
+    if (popup.offsetTop < 0) {
+      container.style.alignItems = 'flex-start';
+    }
+  };
+
+  var IEfix = function IEfix() {
+    if (typeof window !== 'undefined' && isIE11()) {
+      fixVerticalPositionIE();
+      window.addEventListener('resize', fixVerticalPositionIE);
+    }
+  };
+  var undoIEfix = function undoIEfix() {
+    if (typeof window !== 'undefined' && isIE11()) {
+      window.removeEventListener('resize', fixVerticalPositionIE);
+    }
+  };
+
+  // Adding aria-hidden="true" to elements outside of the active modal dialog ensures that
+  // elements not within the active modal dialog will not be surfaced if a user opens a screen
+  // reader’s list of elements (headings, form controls, landmarks, etc.) in the document.
+
+  var setAriaHidden = function setAriaHidden() {
+    var bodyChildren = toArray(document.body.children);
+    bodyChildren.forEach(function (el) {
+      if (el === getContainer() || contains(el, getContainer())) {
+        return;
+      }
+
+      if (el.hasAttribute('aria-hidden')) {
+        el.setAttribute('data-previous-aria-hidden', el.getAttribute('aria-hidden'));
+      }
+
+      el.setAttribute('aria-hidden', 'true');
+    });
+  };
+  var unsetAriaHidden = function unsetAriaHidden() {
+    var bodyChildren = toArray(document.body.children);
+    bodyChildren.forEach(function (el) {
+      if (el.hasAttribute('data-previous-aria-hidden')) {
+        el.setAttribute('aria-hidden', el.getAttribute('data-previous-aria-hidden'));
+        el.removeAttribute('data-previous-aria-hidden');
+      } else {
+        el.removeAttribute('aria-hidden');
+      }
+    });
+  };
+
+  /**
+   * This module containts `WeakMap`s for each effectively-"private  property" that a `Swal` has.
+   * For example, to set the private property "foo" of `this` to "bar", you can `privateProps.foo.set(this, 'bar')`
+   * This is the approach that Babel will probably take to implement private methods/fields
+   *   https://github.com/tc39/proposal-private-methods
+   *   https://github.com/babel/babel/pull/7555
+   * Once we have the changes from that PR in Babel, and our core class fits reasonable in *one module*
+   *   then we can use that language feature.
+   */
+  var privateMethods = {
+    swalPromiseResolve: new WeakMap()
+  };
+
+  /*
+   * Instance method to close sweetAlert
+   */
+
+  function removePopupAndResetState(instance, container, isToast$$1, onAfterClose) {
+    if (isToast$$1) {
+      triggerOnAfterCloseAndDispose(instance, onAfterClose);
+    } else {
+      restoreActiveElement().then(function () {
+        return triggerOnAfterCloseAndDispose(instance, onAfterClose);
+      });
+      globalState.keydownTarget.removeEventListener('keydown', globalState.keydownHandler, {
+        capture: globalState.keydownListenerCapture
+      });
+      globalState.keydownHandlerAdded = false;
+    }
+
+    if (container.parentNode && !document.body.getAttribute('data-swal2-queue-step')) {
+      container.parentNode.removeChild(container);
+    }
+
+    if (isModal()) {
+      undoScrollbar();
+      undoIOSfix();
+      undoIEfix();
+      unsetAriaHidden();
+    }
+
+    removeBodyClasses();
+  }
+
+  function removeBodyClasses() {
+    removeClass([document.documentElement, document.body], [swalClasses.shown, swalClasses['height-auto'], swalClasses['no-backdrop'], swalClasses['toast-shown'], swalClasses['toast-column']]);
+  }
+
+  function close(resolveValue) {
+    var popup = getPopup();
+
+    if (!popup) {
+      return;
+    }
+
+    var innerParams = privateProps.innerParams.get(this);
+
+    if (!innerParams || hasClass(popup, innerParams.hideClass.popup)) {
+      return;
+    }
+
+    var swalPromiseResolve = privateMethods.swalPromiseResolve.get(this);
+    removeClass(popup, innerParams.showClass.popup);
+    addClass(popup, innerParams.hideClass.popup);
+    var backdrop = getContainer();
+    removeClass(backdrop, innerParams.showClass.backdrop);
+    addClass(backdrop, innerParams.hideClass.backdrop);
+    handlePopupAnimation(this, popup, innerParams);
+
+    if (typeof resolveValue !== 'undefined') {
+      resolveValue.isDismissed = typeof resolveValue.dismiss !== 'undefined';
+      resolveValue.isConfirmed = typeof resolveValue.dismiss === 'undefined';
+    } else {
+      resolveValue = {
+        isDismissed: true,
+        isConfirmed: false
+      };
+    } // Resolve Swal promise
+
+
+    swalPromiseResolve(resolveValue || {});
+  }
+
+  var handlePopupAnimation = function handlePopupAnimation(instance, popup, innerParams) {
+    var container = getContainer(); // If animation is supported, animate
+
+    var animationIsSupported = animationEndEvent && hasCssAnimation(popup);
+    var onClose = innerParams.onClose,
+        onAfterClose = innerParams.onAfterClose;
+
+    if (onClose !== null && typeof onClose === 'function') {
+      onClose(popup);
+    }
+
+    if (animationIsSupported) {
+      animatePopup(instance, popup, container, onAfterClose);
+    } else {
+      // Otherwise, remove immediately
+      removePopupAndResetState(instance, container, isToast(), onAfterClose);
+    }
+  };
+
+  var animatePopup = function animatePopup(instance, popup, container, onAfterClose) {
+    globalState.swalCloseEventFinishedCallback = removePopupAndResetState.bind(null, instance, container, isToast(), onAfterClose);
+    popup.addEventListener(animationEndEvent, function (e) {
+      if (e.target === popup) {
+        globalState.swalCloseEventFinishedCallback();
+        delete globalState.swalCloseEventFinishedCallback;
+      }
+    });
+  };
+
+  var triggerOnAfterCloseAndDispose = function triggerOnAfterCloseAndDispose(instance, onAfterClose) {
+    setTimeout(function () {
+      if (typeof onAfterClose === 'function') {
+        onAfterClose();
+      }
+
+      instance._destroy();
+    });
+  };
+
+  function setButtonsDisabled(instance, buttons, disabled) {
+    var domCache = privateProps.domCache.get(instance);
+    buttons.forEach(function (button) {
+      domCache[button].disabled = disabled;
+    });
+  }
+
+  function setInputDisabled(input, disabled) {
+    if (!input) {
+      return false;
+    }
+
+    if (input.type === 'radio') {
+      var radiosContainer = input.parentNode.parentNode;
+      var radios = radiosContainer.querySelectorAll('input');
+
+      for (var i = 0; i < radios.length; i++) {
+        radios[i].disabled = disabled;
+      }
+    } else {
+      input.disabled = disabled;
+    }
+  }
+
+  function enableButtons() {
+    setButtonsDisabled(this, ['confirmButton', 'cancelButton'], false);
+  }
+  function disableButtons() {
+    setButtonsDisabled(this, ['confirmButton', 'cancelButton'], true);
+  }
+  function enableInput() {
+    return setInputDisabled(this.getInput(), false);
+  }
+  function disableInput() {
+    return setInputDisabled(this.getInput(), true);
+  }
+
+  function showValidationMessage(error) {
+    var domCache = privateProps.domCache.get(this);
+    setInnerHtml(domCache.validationMessage, error);
+    var popupComputedStyle = window.getComputedStyle(domCache.popup);
+    domCache.validationMessage.style.marginLeft = "-".concat(popupComputedStyle.getPropertyValue('padding-left'));
+    domCache.validationMessage.style.marginRight = "-".concat(popupComputedStyle.getPropertyValue('padding-right'));
+    show(domCache.validationMessage);
+    var input = this.getInput();
+
+    if (input) {
+      input.setAttribute('aria-invalid', true);
+      input.setAttribute('aria-describedBy', swalClasses['validation-message']);
+      focusInput(input);
+      addClass(input, swalClasses.inputerror);
+    }
+  } // Hide block with validation message
+
+  function resetValidationMessage$1() {
+    var domCache = privateProps.domCache.get(this);
+
+    if (domCache.validationMessage) {
+      hide(domCache.validationMessage);
+    }
+
+    var input = this.getInput();
+
+    if (input) {
+      input.removeAttribute('aria-invalid');
+      input.removeAttribute('aria-describedBy');
+      removeClass(input, swalClasses.inputerror);
+    }
+  }
+
+  function getProgressSteps$1() {
+    var domCache = privateProps.domCache.get(this);
+    return domCache.progressSteps;
+  }
+
+  var Timer = /*#__PURE__*/function () {
+    function Timer(callback, delay) {
+      _classCallCheck(this, Timer);
+
+      this.callback = callback;
+      this.remaining = delay;
+      this.running = false;
+      this.start();
+    }
+
+    _createClass(Timer, [{
+      key: "start",
+      value: function start() {
+        if (!this.running) {
+          this.running = true;
+          this.started = new Date();
+          this.id = setTimeout(this.callback, this.remaining);
+        }
+
+        return this.remaining;
+      }
+    }, {
+      key: "stop",
+      value: function stop() {
+        if (this.running) {
+          this.running = false;
+          clearTimeout(this.id);
+          this.remaining -= new Date() - this.started;
+        }
+
+        return this.remaining;
+      }
+    }, {
+      key: "increase",
+      value: function increase(n) {
+        var running = this.running;
+
+        if (running) {
+          this.stop();
+        }
+
+        this.remaining += n;
+
+        if (running) {
+          this.start();
+        }
+
+        return this.remaining;
+      }
+    }, {
+      key: "getTimerLeft",
+      value: function getTimerLeft() {
+        if (this.running) {
+          this.stop();
+          this.start();
+        }
+
+        return this.remaining;
+      }
+    }, {
+      key: "isRunning",
+      value: function isRunning() {
+        return this.running;
+      }
+    }]);
+
+    return Timer;
+  }();
+
+  var defaultInputValidators = {
+    email: function email(string, validationMessage) {
+      return /^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9.-]+\.[a-zA-Z0-9-]{2,24}$/.test(string) ? Promise.resolve() : Promise.resolve(validationMessage || 'Invalid email address');
+    },
+    url: function url(string, validationMessage) {
+      // taken from https://stackoverflow.com/a/3809435 with a small change from #1306 and #2013
+      return /^https?:\/\/(www\.)?[-a-zA-Z0-9@:%._+~#=]{1,256}\.[a-z]{2,63}\b([-a-zA-Z0-9@:%_+.~#?&/=]*)$/.test(string) ? Promise.resolve() : Promise.resolve(validationMessage || 'Invalid URL');
+    }
+  };
+
+  function setDefaultInputValidators(params) {
+    // Use default `inputValidator` for supported input types if not provided
+    if (!params.inputValidator) {
+      Object.keys(defaultInputValidators).forEach(function (key) {
+        if (params.input === key) {
+          params.inputValidator = defaultInputValidators[key];
+        }
+      });
+    }
+  }
+
+  function validateCustomTargetElement(params) {
+    // Determine if the custom target element is valid
+    if (!params.target || typeof params.target === 'string' && !document.querySelector(params.target) || typeof params.target !== 'string' && !params.target.appendChild) {
+      warn('Target parameter is not valid, defaulting to "body"');
+      params.target = 'body';
+    }
+  }
+  /**
+   * Set type, text and actions on popup
+   *
+   * @param params
+   * @returns {boolean}
+   */
+
+
+  function setParameters(params) {
+    setDefaultInputValidators(params); // showLoaderOnConfirm && preConfirm
+
+    if (params.showLoaderOnConfirm && !params.preConfirm) {
+      warn('showLoaderOnConfirm is set to true, but preConfirm is not defined.\n' + 'showLoaderOnConfirm should be used together with preConfirm, see usage example:\n' + 'https://sweetalert2.github.io/#ajax-request');
+    } // params.animation will be actually used in renderPopup.js
+    // but in case when params.animation is a function, we need to call that function
+    // before popup (re)initialization, so it'll be possible to check Swal.isVisible()
+    // inside the params.animation function
+
+
+    params.animation = callIfFunction(params.animation);
+    validateCustomTargetElement(params); // Replace newlines with <br> in title
+
+    if (typeof params.title === 'string') {
+      params.title = params.title.split('\n').join('<br />');
+    }
+
+    init(params);
+  }
+
+  /**
+   * Open popup, add necessary classes and styles, fix scrollbar
+   *
+   * @param {Array} params
+   */
+
+  var openPopup = function openPopup(params) {
+    var container = getContainer();
+    var popup = getPopup();
+
+    if (typeof params.onBeforeOpen === 'function') {
+      params.onBeforeOpen(popup);
+    }
+
+    var bodyStyles = window.getComputedStyle(document.body);
+    var initialBodyOverflow = bodyStyles.overflowY;
+    addClasses$1(container, popup, params); // scrolling is 'hidden' until animation is done, after that 'auto'
+
+    setScrollingVisibility(container, popup);
+
+    if (isModal()) {
+      fixScrollContainer(container, params.scrollbarPadding, initialBodyOverflow);
+      setAriaHidden();
+    }
+
+    if (!isToast() && !globalState.previousActiveElement) {
+      globalState.previousActiveElement = document.activeElement;
+    }
+
+    if (typeof params.onOpen === 'function') {
+      setTimeout(function () {
+        return params.onOpen(popup);
+      });
+    }
+
+    removeClass(container, swalClasses['no-transition']);
+  };
+
+  function swalOpenAnimationFinished(event) {
+    var popup = getPopup();
+
+    if (event.target !== popup) {
+      return;
+    }
+
+    var container = getContainer();
+    popup.removeEventListener(animationEndEvent, swalOpenAnimationFinished);
+    container.style.overflowY = 'auto';
+  }
+
+  var setScrollingVisibility = function setScrollingVisibility(container, popup) {
+    if (animationEndEvent && hasCssAnimation(popup)) {
+      container.style.overflowY = 'hidden';
+      popup.addEventListener(animationEndEvent, swalOpenAnimationFinished);
+    } else {
+      container.style.overflowY = 'auto';
+    }
+  };
+
+  var fixScrollContainer = function fixScrollContainer(container, scrollbarPadding, initialBodyOverflow) {
+    iOSfix();
+    IEfix();
+
+    if (scrollbarPadding && initialBodyOverflow !== 'hidden') {
+      fixScrollbar();
+    } // sweetalert2/issues/1247
+
+
+    setTimeout(function () {
+      container.scrollTop = 0;
+    });
+  };
+
+  var addClasses$1 = function addClasses(container, popup, params) {
+    addClass(container, params.showClass.backdrop);
+    show(popup); // Animate popup right after showing it
+
+    addClass(popup, params.showClass.popup);
+    addClass([document.documentElement, document.body], swalClasses.shown);
+
+    if (params.heightAuto && params.backdrop && !params.toast) {
+      addClass([document.documentElement, document.body], swalClasses['height-auto']);
+    }
+  };
+
+  var handleInputOptionsAndValue = function handleInputOptionsAndValue(instance, params) {
+    if (params.input === 'select' || params.input === 'radio') {
+      handleInputOptions(instance, params);
+    } else if (['text', 'email', 'number', 'tel', 'textarea'].indexOf(params.input) !== -1 && (hasToPromiseFn(params.inputValue) || isPromise(params.inputValue))) {
+      handleInputValue(instance, params);
+    }
+  };
+  var getInputValue = function getInputValue(instance, innerParams) {
+    var input = instance.getInput();
+
+    if (!input) {
+      return null;
+    }
+
+    switch (innerParams.input) {
+      case 'checkbox':
+        return getCheckboxValue(input);
+
+      case 'radio':
+        return getRadioValue(input);
+
+      case 'file':
+        return getFileValue(input);
+
+      default:
+        return innerParams.inputAutoTrim ? input.value.trim() : input.value;
+    }
+  };
+
+  var getCheckboxValue = function getCheckboxValue(input) {
+    return input.checked ? 1 : 0;
+  };
+
+  var getRadioValue = function getRadioValue(input) {
+    return input.checked ? input.value : null;
+  };
+
+  var getFileValue = function getFileValue(input) {
+    return input.files.length ? input.getAttribute('multiple') !== null ? input.files : input.files[0] : null;
+  };
+
+  var handleInputOptions = function handleInputOptions(instance, params) {
+    var content = getContent();
+
+    var processInputOptions = function processInputOptions(inputOptions) {
+      return populateInputOptions[params.input](content, formatInputOptions(inputOptions), params);
+    };
+
+    if (hasToPromiseFn(params.inputOptions) || isPromise(params.inputOptions)) {
+      showLoading();
+      asPromise(params.inputOptions).then(function (inputOptions) {
+        instance.hideLoading();
+        processInputOptions(inputOptions);
+      });
+    } else if (_typeof(params.inputOptions) === 'object') {
+      processInputOptions(params.inputOptions);
+    } else {
+      error("Unexpected type of inputOptions! Expected object, Map or Promise, got ".concat(_typeof(params.inputOptions)));
+    }
+  };
+
+  var handleInputValue = function handleInputValue(instance, params) {
+    var input = instance.getInput();
+    hide(input);
+    asPromise(params.inputValue).then(function (inputValue) {
+      input.value = params.input === 'number' ? parseFloat(inputValue) || 0 : "".concat(inputValue);
+      show(input);
+      input.focus();
+      instance.hideLoading();
+    })["catch"](function (err) {
+      error("Error in inputValue promise: ".concat(err));
+      input.value = '';
+      show(input);
+      input.focus();
+      instance.hideLoading();
+    });
+  };
+
+  var populateInputOptions = {
+    select: function select(content, inputOptions, params) {
+      var select = getChildByClass(content, swalClasses.select);
+
+      var renderOption = function renderOption(parent, optionLabel, optionValue) {
+        var option = document.createElement('option');
+        option.value = optionValue;
+        setInnerHtml(option, optionLabel);
+
+        if (params.inputValue.toString() === optionValue.toString()) {
+          option.selected = true;
+        }
+
+        parent.appendChild(option);
+      };
+
+      inputOptions.forEach(function (inputOption) {
+        var optionValue = inputOption[0];
+        var optionLabel = inputOption[1]; // <optgroup> spec:
+        // https://www.w3.org/TR/html401/interact/forms.html#h-17.6
+        // "...all OPTGROUP elements must be specified directly within a SELECT element (i.e., groups may not be nested)..."
+        // check whether this is a <optgroup>
+
+        if (Array.isArray(optionLabel)) {
+          // if it is an array, then it is an <optgroup>
+          var optgroup = document.createElement('optgroup');
+          optgroup.label = optionValue;
+          optgroup.disabled = false; // not configurable for now
+
+          select.appendChild(optgroup);
+          optionLabel.forEach(function (o) {
+            return renderOption(optgroup, o[1], o[0]);
+          });
+        } else {
+          // case of <option>
+          renderOption(select, optionLabel, optionValue);
+        }
+      });
+      select.focus();
+    },
+    radio: function radio(content, inputOptions, params) {
+      var radio = getChildByClass(content, swalClasses.radio);
+      inputOptions.forEach(function (inputOption) {
+        var radioValue = inputOption[0];
+        var radioLabel = inputOption[1];
+        var radioInput = document.createElement('input');
+        var radioLabelElement = document.createElement('label');
+        radioInput.type = 'radio';
+        radioInput.name = swalClasses.radio;
+        radioInput.value = radioValue;
+
+        if (params.inputValue.toString() === radioValue.toString()) {
+          radioInput.checked = true;
+        }
+
+        var label = document.createElement('span');
+        setInnerHtml(label, radioLabel);
+        label.className = swalClasses.label;
+        radioLabelElement.appendChild(radioInput);
+        radioLabelElement.appendChild(label);
+        radio.appendChild(radioLabelElement);
+      });
+      var radios = radio.querySelectorAll('input');
+
+      if (radios.length) {
+        radios[0].focus();
+      }
+    }
+  };
+  /**
+   * Converts `inputOptions` into an array of `[value, label]`s
+   * @param inputOptions
+   */
+
+  var formatInputOptions = function formatInputOptions(inputOptions) {
+    var result = [];
+
+    if (typeof Map !== 'undefined' && inputOptions instanceof Map) {
+      inputOptions.forEach(function (value, key) {
+        var valueFormatted = value;
+
+        if (_typeof(valueFormatted) === 'object') {
+          // case of <optgroup>
+          valueFormatted = formatInputOptions(valueFormatted);
+        }
+
+        result.push([key, valueFormatted]);
+      });
+    } else {
+      Object.keys(inputOptions).forEach(function (key) {
+        var valueFormatted = inputOptions[key];
+
+        if (_typeof(valueFormatted) === 'object') {
+          // case of <optgroup>
+          valueFormatted = formatInputOptions(valueFormatted);
+        }
+
+        result.push([key, valueFormatted]);
+      });
+    }
+
+    return result;
+  };
+
+  var handleConfirmButtonClick = function handleConfirmButtonClick(instance, innerParams) {
+    instance.disableButtons();
+
+    if (innerParams.input) {
+      handleConfirmWithInput(instance, innerParams);
+    } else {
+      confirm(instance, innerParams, true);
+    }
+  };
+  var handleCancelButtonClick = function handleCancelButtonClick(instance, dismissWith) {
+    instance.disableButtons();
+    dismissWith(DismissReason.cancel);
+  };
+
+  var handleConfirmWithInput = function handleConfirmWithInput(instance, innerParams) {
+    var inputValue = getInputValue(instance, innerParams);
+
+    if (innerParams.inputValidator) {
+      instance.disableInput();
+      var validationPromise = Promise.resolve().then(function () {
+        return asPromise(innerParams.inputValidator(inputValue, innerParams.validationMessage));
+      });
+      validationPromise.then(function (validationMessage) {
+        instance.enableButtons();
+        instance.enableInput();
+
+        if (validationMessage) {
+          instance.showValidationMessage(validationMessage);
+        } else {
+          confirm(instance, innerParams, inputValue);
+        }
+      });
+    } else if (!instance.getInput().checkValidity()) {
+      instance.enableButtons();
+      instance.showValidationMessage(innerParams.validationMessage);
+    } else {
+      confirm(instance, innerParams, inputValue);
+    }
+  };
+
+  var succeedWith = function succeedWith(instance, value) {
+    instance.closePopup({
+      value: value
+    });
+  };
+
+  var confirm = function confirm(instance, innerParams, value) {
+    if (innerParams.showLoaderOnConfirm) {
+      showLoading(); // TODO: make showLoading an *instance* method
+    }
+
+    if (innerParams.preConfirm) {
+      instance.resetValidationMessage();
+      var preConfirmPromise = Promise.resolve().then(function () {
+        return asPromise(innerParams.preConfirm(value, innerParams.validationMessage));
+      });
+      preConfirmPromise.then(function (preConfirmValue) {
+        if (isVisible(getValidationMessage()) || preConfirmValue === false) {
+          instance.hideLoading();
+        } else {
+          succeedWith(instance, typeof preConfirmValue === 'undefined' ? value : preConfirmValue);
+        }
+      });
+    } else {
+      succeedWith(instance, value);
+    }
+  };
+
+  var addKeydownHandler = function addKeydownHandler(instance, globalState, innerParams, dismissWith) {
+    if (globalState.keydownTarget && globalState.keydownHandlerAdded) {
+      globalState.keydownTarget.removeEventListener('keydown', globalState.keydownHandler, {
+        capture: globalState.keydownListenerCapture
+      });
+      globalState.keydownHandlerAdded = false;
+    }
+
+    if (!innerParams.toast) {
+      globalState.keydownHandler = function (e) {
+        return keydownHandler(instance, e, dismissWith);
+      };
+
+      globalState.keydownTarget = innerParams.keydownListenerCapture ? window : getPopup();
+      globalState.keydownListenerCapture = innerParams.keydownListenerCapture;
+      globalState.keydownTarget.addEventListener('keydown', globalState.keydownHandler, {
+        capture: globalState.keydownListenerCapture
+      });
+      globalState.keydownHandlerAdded = true;
+    }
+  }; // Focus handling
+
+  var setFocus = function setFocus(innerParams, index, increment) {
+    var focusableElements = getFocusableElements(); // search for visible elements and select the next possible match
+
+    for (var i = 0; i < focusableElements.length; i++) {
+      index = index + increment; // rollover to first item
+
+      if (index === focusableElements.length) {
+        index = 0; // go to last item
+      } else if (index === -1) {
+        index = focusableElements.length - 1;
+      }
+
+      return focusableElements[index].focus();
+    } // no visible focusable elements, focus the popup
+
+
+    getPopup().focus();
+  };
+  var arrowKeys = ['ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown', 'Left', 'Right', 'Up', 'Down' // IE11
+  ];
+  var escKeys = ['Escape', 'Esc' // IE11
+  ];
+
+  var keydownHandler = function keydownHandler(instance, e, dismissWith) {
+    var innerParams = privateProps.innerParams.get(instance);
+
+    if (innerParams.stopKeydownPropagation) {
+      e.stopPropagation();
+    } // ENTER
+
+
+    if (e.key === 'Enter') {
+      handleEnter(instance, e, innerParams); // TAB
+    } else if (e.key === 'Tab') {
+      handleTab(e, innerParams); // ARROWS - switch focus between buttons
+    } else if (arrowKeys.indexOf(e.key) !== -1) {
+      handleArrows(); // ESC
+    } else if (escKeys.indexOf(e.key) !== -1) {
+      handleEsc(e, innerParams, dismissWith);
+    }
+  };
+
+  var handleEnter = function handleEnter(instance, e, innerParams) {
+    // #720 #721
+    if (e.isComposing) {
+      return;
+    }
+
+    if (e.target && instance.getInput() && e.target.outerHTML === instance.getInput().outerHTML) {
+      if (['textarea', 'file'].indexOf(innerParams.input) !== -1) {
+        return; // do not submit
+      }
+
+      clickConfirm();
+      e.preventDefault();
+    }
+  };
+
+  var handleTab = function handleTab(e, innerParams) {
+    var targetElement = e.target;
+    var focusableElements = getFocusableElements();
+    var btnIndex = -1;
+
+    for (var i = 0; i < focusableElements.length; i++) {
+      if (targetElement === focusableElements[i]) {
+        btnIndex = i;
+        break;
+      }
+    }
+
+    if (!e.shiftKey) {
+      // Cycle to the next button
+      setFocus(innerParams, btnIndex, 1);
+    } else {
+      // Cycle to the prev button
+      setFocus(innerParams, btnIndex, -1);
+    }
+
+    e.stopPropagation();
+    e.preventDefault();
+  };
+
+  var handleArrows = function handleArrows() {
+    var confirmButton = getConfirmButton();
+    var cancelButton = getCancelButton(); // focus Cancel button if Confirm button is currently focused
+
+    if (document.activeElement === confirmButton && isVisible(cancelButton)) {
+      cancelButton.focus(); // and vice versa
+    } else if (document.activeElement === cancelButton && isVisible(confirmButton)) {
+      confirmButton.focus();
+    }
+  };
+
+  var handleEsc = function handleEsc(e, innerParams, dismissWith) {
+    if (callIfFunction(innerParams.allowEscapeKey)) {
+      e.preventDefault();
+      dismissWith(DismissReason.esc);
+    }
+  };
+
+  var handlePopupClick = function handlePopupClick(instance, domCache, dismissWith) {
+    var innerParams = privateProps.innerParams.get(instance);
+
+    if (innerParams.toast) {
+      handleToastClick(instance, domCache, dismissWith);
+    } else {
+      // Ignore click events that had mousedown on the popup but mouseup on the container
+      // This can happen when the user drags a slider
+      handleModalMousedown(domCache); // Ignore click events that had mousedown on the container but mouseup on the popup
+
+      handleContainerMousedown(domCache);
+      handleModalClick(instance, domCache, dismissWith);
+    }
+  };
+
+  var handleToastClick = function handleToastClick(instance, domCache, dismissWith) {
+    // Closing toast by internal click
+    domCache.popup.onclick = function () {
+      var innerParams = privateProps.innerParams.get(instance);
+
+      if (innerParams.showConfirmButton || innerParams.showCancelButton || innerParams.showCloseButton || innerParams.input) {
+        return;
+      }
+
+      dismissWith(DismissReason.close);
+    };
+  };
+
+  var ignoreOutsideClick = false;
+
+  var handleModalMousedown = function handleModalMousedown(domCache) {
+    domCache.popup.onmousedown = function () {
+      domCache.container.onmouseup = function (e) {
+        domCache.container.onmouseup = undefined; // We only check if the mouseup target is the container because usually it doesn't
+        // have any other direct children aside of the popup
+
+        if (e.target === domCache.container) {
+          ignoreOutsideClick = true;
+        }
+      };
+    };
+  };
+
+  var handleContainerMousedown = function handleContainerMousedown(domCache) {
+    domCache.container.onmousedown = function () {
+      domCache.popup.onmouseup = function (e) {
+        domCache.popup.onmouseup = undefined; // We also need to check if the mouseup target is a child of the popup
+
+        if (e.target === domCache.popup || domCache.popup.contains(e.target)) {
+          ignoreOutsideClick = true;
+        }
+      };
+    };
+  };
+
+  var handleModalClick = function handleModalClick(instance, domCache, dismissWith) {
+    domCache.container.onclick = function (e) {
+      var innerParams = privateProps.innerParams.get(instance);
+
+      if (ignoreOutsideClick) {
+        ignoreOutsideClick = false;
+        return;
+      }
+
+      if (e.target === domCache.container && callIfFunction(innerParams.allowOutsideClick)) {
+        dismissWith(DismissReason.backdrop);
+      }
+    };
+  };
+
+  function _main(userParams) {
+    showWarningsForParams(userParams);
+
+    if (globalState.currentInstance) {
+      globalState.currentInstance._destroy();
+    }
+
+    globalState.currentInstance = this;
+    var innerParams = prepareParams(userParams);
+    setParameters(innerParams);
+    Object.freeze(innerParams); // clear the previous timer
+
+    if (globalState.timeout) {
+      globalState.timeout.stop();
+      delete globalState.timeout;
+    } // clear the restore focus timeout
+
+
+    clearTimeout(globalState.restoreFocusTimeout);
+    var domCache = populateDomCache(this);
+    render(this, innerParams);
+    privateProps.innerParams.set(this, innerParams);
+    return swalPromise(this, domCache, innerParams);
+  }
+
+  var prepareParams = function prepareParams(userParams) {
+    var showClass = _extends({}, defaultParams.showClass, userParams.showClass);
+
+    var hideClass = _extends({}, defaultParams.hideClass, userParams.hideClass);
+
+    var params = _extends({}, defaultParams, userParams);
+
+    params.showClass = showClass;
+    params.hideClass = hideClass; // @deprecated
+
+    if (userParams.animation === false) {
+      params.showClass = {
+        popup: 'swal2-noanimation',
+        backdrop: 'swal2-noanimation'
+      };
+      params.hideClass = {};
+    }
+
+    return params;
+  };
+
+  var swalPromise = function swalPromise(instance, domCache, innerParams) {
+    return new Promise(function (resolve) {
+      // functions to handle all closings/dismissals
+      var dismissWith = function dismissWith(dismiss) {
+        instance.closePopup({
+          dismiss: dismiss
+        });
+      };
+
+      privateMethods.swalPromiseResolve.set(instance, resolve);
+
+      domCache.confirmButton.onclick = function () {
+        return handleConfirmButtonClick(instance, innerParams);
+      };
+
+      domCache.cancelButton.onclick = function () {
+        return handleCancelButtonClick(instance, dismissWith);
+      };
+
+      domCache.closeButton.onclick = function () {
+        return dismissWith(DismissReason.close);
+      };
+
+      handlePopupClick(instance, domCache, dismissWith);
+      addKeydownHandler(instance, globalState, innerParams, dismissWith);
+
+      if (innerParams.toast && (innerParams.input || innerParams.footer || innerParams.showCloseButton)) {
+        addClass(document.body, swalClasses['toast-column']);
+      } else {
+        removeClass(document.body, swalClasses['toast-column']);
+      }
+
+      handleInputOptionsAndValue(instance, innerParams);
+      openPopup(innerParams);
+      setupTimer(globalState, innerParams, dismissWith);
+      initFocus(domCache, innerParams); // Scroll container to top on open (#1247, #1946)
+
+      setTimeout(function () {
+        domCache.container.scrollTop = 0;
+      });
+    });
+  };
+
+  var populateDomCache = function populateDomCache(instance) {
+    var domCache = {
+      popup: getPopup(),
+      container: getContainer(),
+      content: getContent(),
+      actions: getActions(),
+      confirmButton: getConfirmButton(),
+      cancelButton: getCancelButton(),
+      closeButton: getCloseButton(),
+      validationMessage: getValidationMessage(),
+      progressSteps: getProgressSteps()
+    };
+    privateProps.domCache.set(instance, domCache);
+    return domCache;
+  };
+
+  var setupTimer = function setupTimer(globalState$$1, innerParams, dismissWith) {
+    var timerProgressBar = getTimerProgressBar();
+    hide(timerProgressBar);
+
+    if (innerParams.timer) {
+      globalState$$1.timeout = new Timer(function () {
+        dismissWith('timer');
+        delete globalState$$1.timeout;
+      }, innerParams.timer);
+
+      if (innerParams.timerProgressBar) {
+        show(timerProgressBar);
+        setTimeout(function () {
+          if (globalState$$1.timeout.running) {
+            // timer can be already stopped at this point
+            animateTimerProgressBar(innerParams.timer);
+          }
+        });
+      }
+    }
+  };
+
+  var initFocus = function initFocus(domCache, innerParams) {
+    if (innerParams.toast) {
+      return;
+    }
+
+    if (!callIfFunction(innerParams.allowEnterKey)) {
+      return blurActiveElement();
+    }
+
+    if (innerParams.focusCancel && isVisible(domCache.cancelButton)) {
+      return domCache.cancelButton.focus();
+    }
+
+    if (innerParams.focusConfirm && isVisible(domCache.confirmButton)) {
+      return domCache.confirmButton.focus();
+    }
+
+    setFocus(innerParams, -1, 1);
+  };
+
+  var blurActiveElement = function blurActiveElement() {
+    if (document.activeElement && typeof document.activeElement.blur === 'function') {
+      document.activeElement.blur();
+    }
+  };
+
+  /**
+   * Updates popup parameters.
+   */
+
+  function update(params) {
+    var popup = getPopup();
+    var innerParams = privateProps.innerParams.get(this);
+
+    if (!popup || hasClass(popup, innerParams.hideClass.popup)) {
+      return warn("You're trying to update the closed or closing popup, that won't work. Use the update() method in preConfirm parameter or show a new popup.");
+    }
+
+    var validUpdatableParams = {}; // assign valid params from `params` to `defaults`
+
+    Object.keys(params).forEach(function (param) {
+      if (Swal.isUpdatableParameter(param)) {
+        validUpdatableParams[param] = params[param];
+      } else {
+        warn("Invalid parameter to update: \"".concat(param, "\". Updatable params are listed here: https://github.com/sweetalert2/sweetalert2/blob/master/src/utils/params.js"));
+      }
+    });
+
+    var updatedParams = _extends({}, innerParams, validUpdatableParams);
+
+    render(this, updatedParams);
+    privateProps.innerParams.set(this, updatedParams);
+    Object.defineProperties(this, {
+      params: {
+        value: _extends({}, this.params, params),
+        writable: false,
+        enumerable: true
+      }
+    });
+  }
+
+  function _destroy() {
+    var domCache = privateProps.domCache.get(this);
+    var innerParams = privateProps.innerParams.get(this);
+
+    if (!innerParams) {
+      return; // This instance has already been destroyed
+    } // Check if there is another Swal closing
+
+
+    if (domCache.popup && globalState.swalCloseEventFinishedCallback) {
+      globalState.swalCloseEventFinishedCallback();
+      delete globalState.swalCloseEventFinishedCallback;
+    } // Check if there is a swal disposal defer timer
+
+
+    if (globalState.deferDisposalTimer) {
+      clearTimeout(globalState.deferDisposalTimer);
+      delete globalState.deferDisposalTimer;
+    }
+
+    if (typeof innerParams.onDestroy === 'function') {
+      innerParams.onDestroy();
+    }
+
+    disposeSwal(this);
+  }
+
+  var disposeSwal = function disposeSwal(instance) {
+    // Unset this.params so GC will dispose it (#1569)
+    delete instance.params; // Unset globalState props so GC will dispose globalState (#1569)
+
+    delete globalState.keydownHandler;
+    delete globalState.keydownTarget; // Unset WeakMaps so GC will be able to dispose them (#1569)
+
+    unsetWeakMaps(privateProps);
+    unsetWeakMaps(privateMethods);
+  };
+
+  var unsetWeakMaps = function unsetWeakMaps(obj) {
+    for (var i in obj) {
+      obj[i] = new WeakMap();
+    }
+  };
+
+
+
+  var instanceMethods = /*#__PURE__*/Object.freeze({
+    hideLoading: hideLoading,
+    disableLoading: hideLoading,
+    getInput: getInput$1,
+    close: close,
+    closePopup: close,
+    closeModal: close,
+    closeToast: close,
+    enableButtons: enableButtons,
+    disableButtons: disableButtons,
+    enableInput: enableInput,
+    disableInput: disableInput,
+    showValidationMessage: showValidationMessage,
+    resetValidationMessage: resetValidationMessage$1,
+    getProgressSteps: getProgressSteps$1,
+    _main: _main,
+    update: update,
+    _destroy: _destroy
+  });
+
+  var currentInstance;
+
+  var SweetAlert = /*#__PURE__*/function () {
+    function SweetAlert() {
+      _classCallCheck(this, SweetAlert);
+
+      // Prevent run in Node env
+      if (typeof window === 'undefined') {
+        return;
+      } // Check for the existence of Promise
+
+
+      if (typeof Promise === 'undefined') {
+        error('This package requires a Promise library, please include a shim to enable it in this browser (See: https://github.com/sweetalert2/sweetalert2/wiki/Migration-from-SweetAlert-to-SweetAlert2#1-ie-support)');
+      }
+
+      currentInstance = this;
+
+      for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+        args[_key] = arguments[_key];
+      }
+
+      var outerParams = Object.freeze(this.constructor.argsToParams(args));
+      Object.defineProperties(this, {
+        params: {
+          value: outerParams,
+          writable: false,
+          enumerable: true,
+          configurable: true
+        }
+      });
+
+      var promise = this._main(this.params);
+
+      privateProps.promise.set(this, promise);
+    } // `catch` cannot be the name of a module export, so we define our thenable methods here instead
+
+
+    _createClass(SweetAlert, [{
+      key: "then",
+      value: function then(onFulfilled) {
+        var promise = privateProps.promise.get(this);
+        return promise.then(onFulfilled);
+      }
+    }, {
+      key: "finally",
+      value: function _finally(onFinally) {
+        var promise = privateProps.promise.get(this);
+        return promise["finally"](onFinally);
+      }
+    }]);
+
+    return SweetAlert;
+  }(); // Assign instance methods from src/instanceMethods/*.js to prototype
+
+
+  _extends(SweetAlert.prototype, instanceMethods); // Assign static methods from src/staticMethods/*.js to constructor
+
+
+  _extends(SweetAlert, staticMethods); // Proxy to instance methods to constructor, for now, for backwards compatibility
+
+
+  Object.keys(instanceMethods).forEach(function (key) {
+    SweetAlert[key] = function () {
+      if (currentInstance) {
+        var _currentInstance;
+
+        return (_currentInstance = currentInstance)[key].apply(_currentInstance, arguments);
+      }
+    };
+  });
+  SweetAlert.DismissReason = DismissReason;
+  SweetAlert.version = '9.17.1';
+
+  var Swal = SweetAlert;
+  Swal["default"] = Swal;
+
+  return Swal;
+
+}));
+if (typeof this !== 'undefined' && this.Sweetalert2){  this.swal = this.sweetAlert = this.Swal = this.SweetAlert = this.Sweetalert2}
+
+"undefined"!=typeof document&&function(e,t){var n=e.createElement("style");if(e.getElementsByTagName("head")[0].appendChild(n),n.styleSheet)n.styleSheet.disabled||(n.styleSheet.cssText=t);else try{n.innerHTML=t}catch(e){n.innerText=t}}(document,".swal2-popup.swal2-toast{flex-direction:row;align-items:center;width:auto;padding:.625em;overflow-y:hidden;background:#fff;box-shadow:0 0 .625em #d9d9d9}.swal2-popup.swal2-toast .swal2-header{flex-direction:row;padding:0}.swal2-popup.swal2-toast .swal2-title{flex-grow:1;justify-content:flex-start;margin:0 .6em;font-size:1em}.swal2-popup.swal2-toast .swal2-footer{margin:.5em 0 0;padding:.5em 0 0;font-size:.8em}.swal2-popup.swal2-toast .swal2-close{position:static;width:.8em;height:.8em;line-height:.8}.swal2-popup.swal2-toast .swal2-content{justify-content:flex-start;padding:0;font-size:1em}.swal2-popup.swal2-toast .swal2-icon{width:2em;min-width:2em;height:2em;margin:0}.swal2-popup.swal2-toast .swal2-icon .swal2-icon-content{display:flex;align-items:center;font-size:1.8em;font-weight:700}@media all and (-ms-high-contrast:none),(-ms-high-contrast:active){.swal2-popup.swal2-toast .swal2-icon .swal2-icon-content{font-size:.25em}}.swal2-popup.swal2-toast .swal2-icon.swal2-success .swal2-success-ring{width:2em;height:2em}.swal2-popup.swal2-toast .swal2-icon.swal2-error [class^=swal2-x-mark-line]{top:.875em;width:1.375em}.swal2-popup.swal2-toast .swal2-icon.swal2-error [class^=swal2-x-mark-line][class$=left]{left:.3125em}.swal2-popup.swal2-toast .swal2-icon.swal2-error [class^=swal2-x-mark-line][class$=right]{right:.3125em}.swal2-popup.swal2-toast .swal2-actions{flex-basis:auto!important;width:auto;height:auto;margin:0 .3125em}.swal2-popup.swal2-toast .swal2-styled{margin:0 .3125em;padding:.3125em .625em;font-size:1em}.swal2-popup.swal2-toast .swal2-styled:focus{box-shadow:0 0 0 1px #fff,0 0 0 3px rgba(50,100,150,.4)}.swal2-popup.swal2-toast .swal2-success{border-color:#a5dc86}.swal2-popup.swal2-toast .swal2-success [class^=swal2-success-circular-line]{position:absolute;width:1.6em;height:3em;transform:rotate(45deg);border-radius:50%}.swal2-popup.swal2-toast .swal2-success [class^=swal2-success-circular-line][class$=left]{top:-.8em;left:-.5em;transform:rotate(-45deg);transform-origin:2em 2em;border-radius:4em 0 0 4em}.swal2-popup.swal2-toast .swal2-success [class^=swal2-success-circular-line][class$=right]{top:-.25em;left:.9375em;transform-origin:0 1.5em;border-radius:0 4em 4em 0}.swal2-popup.swal2-toast .swal2-success .swal2-success-ring{width:2em;height:2em}.swal2-popup.swal2-toast .swal2-success .swal2-success-fix{top:0;left:.4375em;width:.4375em;height:2.6875em}.swal2-popup.swal2-toast .swal2-success [class^=swal2-success-line]{height:.3125em}.swal2-popup.swal2-toast .swal2-success [class^=swal2-success-line][class$=tip]{top:1.125em;left:.1875em;width:.75em}.swal2-popup.swal2-toast .swal2-success [class^=swal2-success-line][class$=long]{top:.9375em;right:.1875em;width:1.375em}.swal2-popup.swal2-toast .swal2-success.swal2-icon-show .swal2-success-line-tip{-webkit-animation:swal2-toast-animate-success-line-tip .75s;animation:swal2-toast-animate-success-line-tip .75s}.swal2-popup.swal2-toast .swal2-success.swal2-icon-show .swal2-success-line-long{-webkit-animation:swal2-toast-animate-success-line-long .75s;animation:swal2-toast-animate-success-line-long .75s}.swal2-popup.swal2-toast.swal2-show{-webkit-animation:swal2-toast-show .5s;animation:swal2-toast-show .5s}.swal2-popup.swal2-toast.swal2-hide{-webkit-animation:swal2-toast-hide .1s forwards;animation:swal2-toast-hide .1s forwards}.swal2-container{display:flex;position:fixed;z-index:1060;top:0;right:0;bottom:0;left:0;flex-direction:row;align-items:center;justify-content:center;padding:.625em;overflow-x:hidden;transition:background-color .1s;-webkit-overflow-scrolling:touch}.swal2-container.swal2-backdrop-show,.swal2-container.swal2-noanimation{background:rgba(0,0,0,.4)}.swal2-container.swal2-backdrop-hide{background:0 0!important}.swal2-container.swal2-top{align-items:flex-start}.swal2-container.swal2-top-left,.swal2-container.swal2-top-start{align-items:flex-start;justify-content:flex-start}.swal2-container.swal2-top-end,.swal2-container.swal2-top-right{align-items:flex-start;justify-content:flex-end}.swal2-container.swal2-center{align-items:center}.swal2-container.swal2-center-left,.swal2-container.swal2-center-start{align-items:center;justify-content:flex-start}.swal2-container.swal2-center-end,.swal2-container.swal2-center-right{align-items:center;justify-content:flex-end}.swal2-container.swal2-bottom{align-items:flex-end}.swal2-container.swal2-bottom-left,.swal2-container.swal2-bottom-start{align-items:flex-end;justify-content:flex-start}.swal2-container.swal2-bottom-end,.swal2-container.swal2-bottom-right{align-items:flex-end;justify-content:flex-end}.swal2-container.swal2-bottom-end>:first-child,.swal2-container.swal2-bottom-left>:first-child,.swal2-container.swal2-bottom-right>:first-child,.swal2-container.swal2-bottom-start>:first-child,.swal2-container.swal2-bottom>:first-child{margin-top:auto}.swal2-container.swal2-grow-fullscreen>.swal2-modal{display:flex!important;flex:1;align-self:stretch;justify-content:center}.swal2-container.swal2-grow-row>.swal2-modal{display:flex!important;flex:1;align-content:center;justify-content:center}.swal2-container.swal2-grow-column{flex:1;flex-direction:column}.swal2-container.swal2-grow-column.swal2-bottom,.swal2-container.swal2-grow-column.swal2-center,.swal2-container.swal2-grow-column.swal2-top{align-items:center}.swal2-container.swal2-grow-column.swal2-bottom-left,.swal2-container.swal2-grow-column.swal2-bottom-start,.swal2-container.swal2-grow-column.swal2-center-left,.swal2-container.swal2-grow-column.swal2-center-start,.swal2-container.swal2-grow-column.swal2-top-left,.swal2-container.swal2-grow-column.swal2-top-start{align-items:flex-start}.swal2-container.swal2-grow-column.swal2-bottom-end,.swal2-container.swal2-grow-column.swal2-bottom-right,.swal2-container.swal2-grow-column.swal2-center-end,.swal2-container.swal2-grow-column.swal2-center-right,.swal2-container.swal2-grow-column.swal2-top-end,.swal2-container.swal2-grow-column.swal2-top-right{align-items:flex-end}.swal2-container.swal2-grow-column>.swal2-modal{display:flex!important;flex:1;align-content:center;justify-content:center}.swal2-container.swal2-no-transition{transition:none!important}.swal2-container:not(.swal2-top):not(.swal2-top-start):not(.swal2-top-end):not(.swal2-top-left):not(.swal2-top-right):not(.swal2-center-start):not(.swal2-center-end):not(.swal2-center-left):not(.swal2-center-right):not(.swal2-bottom):not(.swal2-bottom-start):not(.swal2-bottom-end):not(.swal2-bottom-left):not(.swal2-bottom-right):not(.swal2-grow-fullscreen)>.swal2-modal{margin:auto}@media all and (-ms-high-contrast:none),(-ms-high-contrast:active){.swal2-container .swal2-modal{margin:0!important}}.swal2-popup{display:none;position:relative;box-sizing:border-box;flex-direction:column;justify-content:center;width:32em;max-width:100%;padding:1.25em;border:none;border-radius:.3125em;background:#fff;font-family:inherit;font-size:1rem}.swal2-popup:focus{outline:0}.swal2-popup.swal2-loading{overflow-y:hidden}.swal2-header{display:flex;flex-direction:column;align-items:center;padding:0 1.8em}.swal2-title{position:relative;max-width:100%;margin:0 0 .4em;padding:0;color:#595959;font-size:1.875em;font-weight:600;text-align:center;text-transform:none;word-wrap:break-word}.swal2-actions{display:flex;z-index:1;flex-wrap:wrap;align-items:center;justify-content:center;width:100%;margin:1.25em auto 0}.swal2-actions:not(.swal2-loading) .swal2-styled[disabled]{opacity:.4}.swal2-actions:not(.swal2-loading) .swal2-styled:hover{background-image:linear-gradient(rgba(0,0,0,.1),rgba(0,0,0,.1))}.swal2-actions:not(.swal2-loading) .swal2-styled:active{background-image:linear-gradient(rgba(0,0,0,.2),rgba(0,0,0,.2))}.swal2-actions.swal2-loading .swal2-styled.swal2-confirm{box-sizing:border-box;width:2.5em;height:2.5em;margin:.46875em;padding:0;-webkit-animation:swal2-rotate-loading 1.5s linear 0s infinite normal;animation:swal2-rotate-loading 1.5s linear 0s infinite normal;border:.25em solid transparent;border-radius:100%;border-color:transparent;background-color:transparent!important;color:transparent!important;cursor:default;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.swal2-actions.swal2-loading .swal2-styled.swal2-cancel{margin-right:30px;margin-left:30px}.swal2-actions.swal2-loading :not(.swal2-styled).swal2-confirm::after{content:\"\";display:inline-block;width:15px;height:15px;margin-left:5px;-webkit-animation:swal2-rotate-loading 1.5s linear 0s infinite normal;animation:swal2-rotate-loading 1.5s linear 0s infinite normal;border:3px solid #999;border-radius:50%;border-right-color:transparent;box-shadow:1px 1px 1px #fff}.swal2-styled{margin:.3125em;padding:.625em 2em;box-shadow:none;font-weight:500}.swal2-styled:not([disabled]){cursor:pointer}.swal2-styled.swal2-confirm{border:0;border-radius:.25em;background:initial;background-color:#3085d6;color:#fff;font-size:1.0625em}.swal2-styled.swal2-cancel{border:0;border-radius:.25em;background:initial;background-color:#aaa;color:#fff;font-size:1.0625em}.swal2-styled:focus{outline:0;box-shadow:0 0 0 1px #fff,0 0 0 3px rgba(50,100,150,.4)}.swal2-styled::-moz-focus-inner{border:0}.swal2-footer{justify-content:center;margin:1.25em 0 0;padding:1em 0 0;border-top:1px solid #eee;color:#545454;font-size:1em}.swal2-timer-progress-bar-container{position:absolute;right:0;bottom:0;left:0;height:.25em;overflow:hidden;border-bottom-right-radius:.3125em;border-bottom-left-radius:.3125em}.swal2-timer-progress-bar{width:100%;height:.25em;background:rgba(0,0,0,.2)}.swal2-image{max-width:100%;margin:1.25em auto}.swal2-close{position:absolute;z-index:2;top:0;right:0;align-items:center;justify-content:center;width:1.2em;height:1.2em;padding:0;overflow:hidden;transition:color .1s ease-out;border:none;border-radius:0;background:0 0;color:#ccc;font-family:serif;font-size:2.5em;line-height:1.2;cursor:pointer}.swal2-close:hover{transform:none;background:0 0;color:#f27474}.swal2-close::-moz-focus-inner{border:0}.swal2-content{z-index:1;justify-content:center;margin:0;padding:0 1.6em;color:#545454;font-size:1.125em;font-weight:400;line-height:normal;text-align:center;word-wrap:break-word}.swal2-checkbox,.swal2-file,.swal2-input,.swal2-radio,.swal2-select,.swal2-textarea{margin:1em auto}.swal2-file,.swal2-input,.swal2-textarea{box-sizing:border-box;width:100%;transition:border-color .3s,box-shadow .3s;border:1px solid #d9d9d9;border-radius:.1875em;background:inherit;box-shadow:inset 0 1px 1px rgba(0,0,0,.06);color:inherit;font-size:1.125em}.swal2-file.swal2-inputerror,.swal2-input.swal2-inputerror,.swal2-textarea.swal2-inputerror{border-color:#f27474!important;box-shadow:0 0 2px #f27474!important}.swal2-file:focus,.swal2-input:focus,.swal2-textarea:focus{border:1px solid #b4dbed;outline:0;box-shadow:0 0 3px #c4e6f5}.swal2-file::-moz-placeholder,.swal2-input::-moz-placeholder,.swal2-textarea::-moz-placeholder{color:#ccc}.swal2-file:-ms-input-placeholder,.swal2-input:-ms-input-placeholder,.swal2-textarea:-ms-input-placeholder{color:#ccc}.swal2-file::-ms-input-placeholder,.swal2-input::-ms-input-placeholder,.swal2-textarea::-ms-input-placeholder{color:#ccc}.swal2-file::placeholder,.swal2-input::placeholder,.swal2-textarea::placeholder{color:#ccc}.swal2-range{margin:1em auto;background:#fff}.swal2-range input{width:80%}.swal2-range output{width:20%;color:inherit;font-weight:600;text-align:center}.swal2-range input,.swal2-range output{height:2.625em;padding:0;font-size:1.125em;line-height:2.625em}.swal2-input{height:2.625em;padding:0 .75em}.swal2-input[type=number]{max-width:10em}.swal2-file{background:inherit;font-size:1.125em}.swal2-textarea{height:6.75em;padding:.75em}.swal2-select{min-width:50%;max-width:100%;padding:.375em .625em;background:inherit;color:inherit;font-size:1.125em}.swal2-checkbox,.swal2-radio{align-items:center;justify-content:center;background:#fff;color:inherit}.swal2-checkbox label,.swal2-radio label{margin:0 .6em;font-size:1.125em}.swal2-checkbox input,.swal2-radio input{margin:0 .4em}.swal2-validation-message{display:none;align-items:center;justify-content:center;padding:.625em;overflow:hidden;background:#f0f0f0;color:#666;font-size:1em;font-weight:300}.swal2-validation-message::before{content:\"!\";display:inline-block;width:1.5em;min-width:1.5em;height:1.5em;margin:0 .625em;border-radius:50%;background-color:#f27474;color:#fff;font-weight:600;line-height:1.5em;text-align:center}.swal2-icon{position:relative;box-sizing:content-box;justify-content:center;width:5em;height:5em;margin:1.25em auto 1.875em;border:.25em solid transparent;border-radius:50%;font-family:inherit;line-height:5em;cursor:default;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.swal2-icon .swal2-icon-content{display:flex;align-items:center;font-size:3.75em}.swal2-icon.swal2-error{border-color:#f27474;color:#f27474}.swal2-icon.swal2-error .swal2-x-mark{position:relative;flex-grow:1}.swal2-icon.swal2-error [class^=swal2-x-mark-line]{display:block;position:absolute;top:2.3125em;width:2.9375em;height:.3125em;border-radius:.125em;background-color:#f27474}.swal2-icon.swal2-error [class^=swal2-x-mark-line][class$=left]{left:1.0625em;transform:rotate(45deg)}.swal2-icon.swal2-error [class^=swal2-x-mark-line][class$=right]{right:1em;transform:rotate(-45deg)}.swal2-icon.swal2-error.swal2-icon-show{-webkit-animation:swal2-animate-error-icon .5s;animation:swal2-animate-error-icon .5s}.swal2-icon.swal2-error.swal2-icon-show .swal2-x-mark{-webkit-animation:swal2-animate-error-x-mark .5s;animation:swal2-animate-error-x-mark .5s}.swal2-icon.swal2-warning{border-color:#facea8;color:#f8bb86}.swal2-icon.swal2-info{border-color:#9de0f6;color:#3fc3ee}.swal2-icon.swal2-question{border-color:#c9dae1;color:#87adbd}.swal2-icon.swal2-success{border-color:#a5dc86;color:#a5dc86}.swal2-icon.swal2-success [class^=swal2-success-circular-line]{position:absolute;width:3.75em;height:7.5em;transform:rotate(45deg);border-radius:50%}.swal2-icon.swal2-success [class^=swal2-success-circular-line][class$=left]{top:-.4375em;left:-2.0635em;transform:rotate(-45deg);transform-origin:3.75em 3.75em;border-radius:7.5em 0 0 7.5em}.swal2-icon.swal2-success [class^=swal2-success-circular-line][class$=right]{top:-.6875em;left:1.875em;transform:rotate(-45deg);transform-origin:0 3.75em;border-radius:0 7.5em 7.5em 0}.swal2-icon.swal2-success .swal2-success-ring{position:absolute;z-index:2;top:-.25em;left:-.25em;box-sizing:content-box;width:100%;height:100%;border:.25em solid rgba(165,220,134,.3);border-radius:50%}.swal2-icon.swal2-success .swal2-success-fix{position:absolute;z-index:1;top:.5em;left:1.625em;width:.4375em;height:5.625em;transform:rotate(-45deg)}.swal2-icon.swal2-success [class^=swal2-success-line]{display:block;position:absolute;z-index:2;height:.3125em;border-radius:.125em;background-color:#a5dc86}.swal2-icon.swal2-success [class^=swal2-success-line][class$=tip]{top:2.875em;left:.8125em;width:1.5625em;transform:rotate(45deg)}.swal2-icon.swal2-success [class^=swal2-success-line][class$=long]{top:2.375em;right:.5em;width:2.9375em;transform:rotate(-45deg)}.swal2-icon.swal2-success.swal2-icon-show .swal2-success-line-tip{-webkit-animation:swal2-animate-success-line-tip .75s;animation:swal2-animate-success-line-tip .75s}.swal2-icon.swal2-success.swal2-icon-show .swal2-success-line-long{-webkit-animation:swal2-animate-success-line-long .75s;animation:swal2-animate-success-line-long .75s}.swal2-icon.swal2-success.swal2-icon-show .swal2-success-circular-line-right{-webkit-animation:swal2-rotate-success-circular-line 4.25s ease-in;animation:swal2-rotate-success-circular-line 4.25s ease-in}.swal2-progress-steps{align-items:center;margin:0 0 1.25em;padding:0;background:inherit;font-weight:600}.swal2-progress-steps li{display:inline-block;position:relative}.swal2-progress-steps .swal2-progress-step{z-index:20;width:2em;height:2em;border-radius:2em;background:#3085d6;color:#fff;line-height:2em;text-align:center}.swal2-progress-steps .swal2-progress-step.swal2-active-progress-step{background:#3085d6}.swal2-progress-steps .swal2-progress-step.swal2-active-progress-step~.swal2-progress-step{background:#add8e6;color:#fff}.swal2-progress-steps .swal2-progress-step.swal2-active-progress-step~.swal2-progress-step-line{background:#add8e6}.swal2-progress-steps .swal2-progress-step-line{z-index:10;width:2.5em;height:.4em;margin:0 -1px;background:#3085d6}[class^=swal2]{-webkit-tap-highlight-color:transparent}.swal2-show{-webkit-animation:swal2-show .3s;animation:swal2-show .3s}.swal2-hide{-webkit-animation:swal2-hide .15s forwards;animation:swal2-hide .15s forwards}.swal2-noanimation{transition:none}.swal2-scrollbar-measure{position:absolute;top:-9999px;width:50px;height:50px;overflow:scroll}.swal2-rtl .swal2-close{right:auto;left:0}.swal2-rtl .swal2-timer-progress-bar{right:0;left:auto}@supports (-ms-accelerator:true){.swal2-range input{width:100%!important}.swal2-range output{display:none}}@media all and (-ms-high-contrast:none),(-ms-high-contrast:active){.swal2-range input{width:100%!important}.swal2-range output{display:none}}@-moz-document url-prefix(){.swal2-close:focus{outline:2px solid rgba(50,100,150,.4)}}@-webkit-keyframes swal2-toast-show{0%{transform:translateY(-.625em) rotateZ(2deg)}33%{transform:translateY(0) rotateZ(-2deg)}66%{transform:translateY(.3125em) rotateZ(2deg)}100%{transform:translateY(0) rotateZ(0)}}@keyframes swal2-toast-show{0%{transform:translateY(-.625em) rotateZ(2deg)}33%{transform:translateY(0) rotateZ(-2deg)}66%{transform:translateY(.3125em) rotateZ(2deg)}100%{transform:translateY(0) rotateZ(0)}}@-webkit-keyframes swal2-toast-hide{100%{transform:rotateZ(1deg);opacity:0}}@keyframes swal2-toast-hide{100%{transform:rotateZ(1deg);opacity:0}}@-webkit-keyframes swal2-toast-animate-success-line-tip{0%{top:.5625em;left:.0625em;width:0}54%{top:.125em;left:.125em;width:0}70%{top:.625em;left:-.25em;width:1.625em}84%{top:1.0625em;left:.75em;width:.5em}100%{top:1.125em;left:.1875em;width:.75em}}@keyframes swal2-toast-animate-success-line-tip{0%{top:.5625em;left:.0625em;width:0}54%{top:.125em;left:.125em;width:0}70%{top:.625em;left:-.25em;width:1.625em}84%{top:1.0625em;left:.75em;width:.5em}100%{top:1.125em;left:.1875em;width:.75em}}@-webkit-keyframes swal2-toast-animate-success-line-long{0%{top:1.625em;right:1.375em;width:0}65%{top:1.25em;right:.9375em;width:0}84%{top:.9375em;right:0;width:1.125em}100%{top:.9375em;right:.1875em;width:1.375em}}@keyframes swal2-toast-animate-success-line-long{0%{top:1.625em;right:1.375em;width:0}65%{top:1.25em;right:.9375em;width:0}84%{top:.9375em;right:0;width:1.125em}100%{top:.9375em;right:.1875em;width:1.375em}}@-webkit-keyframes swal2-show{0%{transform:scale(.7)}45%{transform:scale(1.05)}80%{transform:scale(.95)}100%{transform:scale(1)}}@keyframes swal2-show{0%{transform:scale(.7)}45%{transform:scale(1.05)}80%{transform:scale(.95)}100%{transform:scale(1)}}@-webkit-keyframes swal2-hide{0%{transform:scale(1);opacity:1}100%{transform:scale(.5);opacity:0}}@keyframes swal2-hide{0%{transform:scale(1);opacity:1}100%{transform:scale(.5);opacity:0}}@-webkit-keyframes swal2-animate-success-line-tip{0%{top:1.1875em;left:.0625em;width:0}54%{top:1.0625em;left:.125em;width:0}70%{top:2.1875em;left:-.375em;width:3.125em}84%{top:3em;left:1.3125em;width:1.0625em}100%{top:2.8125em;left:.8125em;width:1.5625em}}@keyframes swal2-animate-success-line-tip{0%{top:1.1875em;left:.0625em;width:0}54%{top:1.0625em;left:.125em;width:0}70%{top:2.1875em;left:-.375em;width:3.125em}84%{top:3em;left:1.3125em;width:1.0625em}100%{top:2.8125em;left:.8125em;width:1.5625em}}@-webkit-keyframes swal2-animate-success-line-long{0%{top:3.375em;right:2.875em;width:0}65%{top:3.375em;right:2.875em;width:0}84%{top:2.1875em;right:0;width:3.4375em}100%{top:2.375em;right:.5em;width:2.9375em}}@keyframes swal2-animate-success-line-long{0%{top:3.375em;right:2.875em;width:0}65%{top:3.375em;right:2.875em;width:0}84%{top:2.1875em;right:0;width:3.4375em}100%{top:2.375em;right:.5em;width:2.9375em}}@-webkit-keyframes swal2-rotate-success-circular-line{0%{transform:rotate(-45deg)}5%{transform:rotate(-45deg)}12%{transform:rotate(-405deg)}100%{transform:rotate(-405deg)}}@keyframes swal2-rotate-success-circular-line{0%{transform:rotate(-45deg)}5%{transform:rotate(-45deg)}12%{transform:rotate(-405deg)}100%{transform:rotate(-405deg)}}@-webkit-keyframes swal2-animate-error-x-mark{0%{margin-top:1.625em;transform:scale(.4);opacity:0}50%{margin-top:1.625em;transform:scale(.4);opacity:0}80%{margin-top:-.375em;transform:scale(1.15)}100%{margin-top:0;transform:scale(1);opacity:1}}@keyframes swal2-animate-error-x-mark{0%{margin-top:1.625em;transform:scale(.4);opacity:0}50%{margin-top:1.625em;transform:scale(.4);opacity:0}80%{margin-top:-.375em;transform:scale(1.15)}100%{margin-top:0;transform:scale(1);opacity:1}}@-webkit-keyframes swal2-animate-error-icon{0%{transform:rotateX(100deg);opacity:0}100%{transform:rotateX(0);opacity:1}}@keyframes swal2-animate-error-icon{0%{transform:rotateX(100deg);opacity:0}100%{transform:rotateX(0);opacity:1}}@-webkit-keyframes swal2-rotate-loading{0%{transform:rotate(0)}100%{transform:rotate(360deg)}}@keyframes swal2-rotate-loading{0%{transform:rotate(0)}100%{transform:rotate(360deg)}}body.swal2-shown:not(.swal2-no-backdrop):not(.swal2-toast-shown){overflow:hidden}body.swal2-height-auto{height:auto!important}body.swal2-no-backdrop .swal2-container{top:auto;right:auto;bottom:auto;left:auto;max-width:calc(100% - .625em * 2);background-color:transparent!important}body.swal2-no-backdrop .swal2-container>.swal2-modal{box-shadow:0 0 10px rgba(0,0,0,.4)}body.swal2-no-backdrop .swal2-container.swal2-top{top:0;left:50%;transform:translateX(-50%)}body.swal2-no-backdrop .swal2-container.swal2-top-left,body.swal2-no-backdrop .swal2-container.swal2-top-start{top:0;left:0}body.swal2-no-backdrop .swal2-container.swal2-top-end,body.swal2-no-backdrop .swal2-container.swal2-top-right{top:0;right:0}body.swal2-no-backdrop .swal2-container.swal2-center{top:50%;left:50%;transform:translate(-50%,-50%)}body.swal2-no-backdrop .swal2-container.swal2-center-left,body.swal2-no-backdrop .swal2-container.swal2-center-start{top:50%;left:0;transform:translateY(-50%)}body.swal2-no-backdrop .swal2-container.swal2-center-end,body.swal2-no-backdrop .swal2-container.swal2-center-right{top:50%;right:0;transform:translateY(-50%)}body.swal2-no-backdrop .swal2-container.swal2-bottom{bottom:0;left:50%;transform:translateX(-50%)}body.swal2-no-backdrop .swal2-container.swal2-bottom-left,body.swal2-no-backdrop .swal2-container.swal2-bottom-start{bottom:0;left:0}body.swal2-no-backdrop .swal2-container.swal2-bottom-end,body.swal2-no-backdrop .swal2-container.swal2-bottom-right{right:0;bottom:0}@media print{body.swal2-shown:not(.swal2-no-backdrop):not(.swal2-toast-shown){overflow-y:scroll!important}body.swal2-shown:not(.swal2-no-backdrop):not(.swal2-toast-shown)>[aria-hidden=true]{display:none}body.swal2-shown:not(.swal2-no-backdrop):not(.swal2-toast-shown) .swal2-container{position:static!important}}body.swal2-toast-shown .swal2-container{background-color:transparent}body.swal2-toast-shown .swal2-container.swal2-top{top:0;right:auto;bottom:auto;left:50%;transform:translateX(-50%)}body.swal2-toast-shown .swal2-container.swal2-top-end,body.swal2-toast-shown .swal2-container.swal2-top-right{top:0;right:0;bottom:auto;left:auto}body.swal2-toast-shown .swal2-container.swal2-top-left,body.swal2-toast-shown .swal2-container.swal2-top-start{top:0;right:auto;bottom:auto;left:0}body.swal2-toast-shown .swal2-container.swal2-center-left,body.swal2-toast-shown .swal2-container.swal2-center-start{top:50%;right:auto;bottom:auto;left:0;transform:translateY(-50%)}body.swal2-toast-shown .swal2-container.swal2-center{top:50%;right:auto;bottom:auto;left:50%;transform:translate(-50%,-50%)}body.swal2-toast-shown .swal2-container.swal2-center-end,body.swal2-toast-shown .swal2-container.swal2-center-right{top:50%;right:0;bottom:auto;left:auto;transform:translateY(-50%)}body.swal2-toast-shown .swal2-container.swal2-bottom-left,body.swal2-toast-shown .swal2-container.swal2-bottom-start{top:auto;right:auto;bottom:0;left:0}body.swal2-toast-shown .swal2-container.swal2-bottom{top:auto;right:auto;bottom:0;left:50%;transform:translateX(-50%)}body.swal2-toast-shown .swal2-container.swal2-bottom-end,body.swal2-toast-shown .swal2-container.swal2-bottom-right{top:auto;right:0;bottom:0;left:auto}body.swal2-toast-column .swal2-toast{flex-direction:column;align-items:stretch}body.swal2-toast-column .swal2-toast .swal2-actions{flex:1;align-self:stretch;height:2.2em;margin-top:.3125em}body.swal2-toast-column .swal2-toast .swal2-loading{justify-content:center}body.swal2-toast-column .swal2-toast .swal2-input{height:2em;margin:.3125em auto;font-size:1em}body.swal2-toast-column .swal2-toast .swal2-validation-message{font-size:1em}");
+
+/***/ }),
+
 /***/ "./node_modules/timers-browserify/main.js":
 /*!************************************************!*\
   !*** ./node_modules/timers-browserify/main.js ***!
@@ -37559,10 +60735,1032 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
 
 /***/ }),
 
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Dashboard.vue?vue&type=template&id=040e2ab9&":
-/*!************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Dashboard.vue?vue&type=template&id=040e2ab9& ***!
-  \************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/vform/dist/vform.common.js":
+/*!*************************************************!*\
+  !*** ./node_modules/vform/dist/vform.common.js ***!
+  \*************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports =
+/******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId]) {
+/******/ 			return installedModules[moduleId].exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+/******/
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+/******/
+/******/ 	// define getter function for harmony exports
+/******/ 	__webpack_require__.d = function(exports, name, getter) {
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, { enumerable: true, get: getter });
+/******/ 		}
+/******/ 	};
+/******/
+/******/ 	// define __esModule on exports
+/******/ 	__webpack_require__.r = function(exports) {
+/******/ 		if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 			Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 		}
+/******/ 		Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 	};
+/******/
+/******/ 	// create a fake namespace object
+/******/ 	// mode & 1: value is a module id, require it
+/******/ 	// mode & 2: merge all properties of value into the ns
+/******/ 	// mode & 4: return value when already ns object
+/******/ 	// mode & 8|1: behave like require
+/******/ 	__webpack_require__.t = function(value, mode) {
+/******/ 		if(mode & 1) value = __webpack_require__(value);
+/******/ 		if(mode & 8) return value;
+/******/ 		if((mode & 4) && typeof value === 'object' && value && value.__esModule) return value;
+/******/ 		var ns = Object.create(null);
+/******/ 		__webpack_require__.r(ns);
+/******/ 		Object.defineProperty(ns, 'default', { enumerable: true, value: value });
+/******/ 		if(mode & 2 && typeof value != 'string') for(var key in value) __webpack_require__.d(ns, key, function(key) { return value[key]; }.bind(null, key));
+/******/ 		return ns;
+/******/ 	};
+/******/
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = function(module) {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			function getDefault() { return module['default']; } :
+/******/ 			function getModuleExports() { return module; };
+/******/ 		__webpack_require__.d(getter, 'a', getter);
+/******/ 		return getter;
+/******/ 	};
+/******/
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+/******/
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "";
+/******/
+/******/
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(__webpack_require__.s = "fb15");
+/******/ })
+/************************************************************************/
+/******/ ({
+
+/***/ "1eb2":
+/***/ (function(module, exports, __webpack_require__) {
+
+// This file is imported into lib/wc client bundles.
+
+if (typeof window !== 'undefined') {
+  var i
+  if ((i = window.document.currentScript) && (i = i.src.match(/(.+\/)[^/]+\.js$/))) {
+    __webpack_require__.p = i[1] // eslint-disable-line
+  }
+}
+
+
+/***/ }),
+
+/***/ "cebe":
+/***/ (function(module, exports) {
+
+module.exports = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+
+/***/ }),
+
+/***/ "fb15":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+
+// EXTERNAL MODULE: ./node_modules/@vue/cli-service/lib/commands/build/setPublicPath.js
+var setPublicPath = __webpack_require__("1eb2");
+
+// EXTERNAL MODULE: external "axios"
+var external_axios_ = __webpack_require__("cebe");
+var external_axios_default = /*#__PURE__*/__webpack_require__.n(external_axios_);
+
+// CONCATENATED MODULE: ./src/util.js
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+/**
+ * Deep copy the given object.
+ *
+ * @param  {Object} obj
+ * @return {Object}
+ */
+function deepCopy(obj) {
+  if (obj === null || _typeof(obj) !== 'object') {
+    return obj;
+  }
+
+  var copy = Array.isArray(obj) ? [] : {};
+  Object.keys(obj).forEach(function (key) {
+    copy[key] = deepCopy(obj[key]);
+  });
+  return copy;
+}
+/**
+ * If the given value is not an array, wrap it in one.
+ *
+ * @param  {Any} value
+ * @return {Array}
+ */
+
+function arrayWrap(value) {
+  return Array.isArray(value) ? value : [value];
+}
+// CONCATENATED MODULE: ./src/Errors.js
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { _defineProperty(target, key, source[key]); }); } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function Errors_typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { Errors_typeof = function _typeof(obj) { return typeof obj; }; } else { Errors_typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return Errors_typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+
+
+var Errors_Errors =
+/*#__PURE__*/
+function () {
+  /**
+   * Create a new error bag instance.
+   */
+  function Errors() {
+    _classCallCheck(this, Errors);
+
+    this.errors = {};
+  }
+  /**
+   * Set the errors object or field error messages.
+   *
+   * @param {Object|String} field
+   * @param {Array|String|undefined} messages
+   */
+
+
+  _createClass(Errors, [{
+    key: "set",
+    value: function set(field, messages) {
+      if (Errors_typeof(field) === 'object') {
+        this.errors = field;
+      } else {
+        this.set(_objectSpread({}, this.errors, _defineProperty({}, field, arrayWrap(messages))));
+      }
+    }
+    /**
+     * Get all the errors.
+     *
+     * @return {Object}
+     */
+
+  }, {
+    key: "all",
+    value: function all() {
+      return this.errors;
+    }
+    /**
+     * Determine if there is an error for the given field.
+     *
+     * @param  {String} field
+     * @return {Boolean}
+     */
+
+  }, {
+    key: "has",
+    value: function has(field) {
+      return this.errors.hasOwnProperty(field);
+    }
+    /**
+     * Determine if there are any errors for the given fields.
+     *
+     * @param  {...String} fields
+     * @return {Boolean}
+     */
+
+  }, {
+    key: "hasAny",
+    value: function hasAny() {
+      var _this = this;
+
+      for (var _len = arguments.length, fields = new Array(_len), _key = 0; _key < _len; _key++) {
+        fields[_key] = arguments[_key];
+      }
+
+      return fields.some(function (field) {
+        return _this.has(field);
+      });
+    }
+    /**
+     * Determine if there are any errors.
+     *
+     * @return {Boolean}
+     */
+
+  }, {
+    key: "any",
+    value: function any() {
+      return Object.keys(this.errors).length > 0;
+    }
+    /**
+     * Get the first error message for the given field.
+     *
+     * @param  String} field
+     * @return {String|undefined}
+     */
+
+  }, {
+    key: "get",
+    value: function get(field) {
+      if (this.has(field)) {
+        return this.getAll(field)[0];
+      }
+    }
+    /**
+     * Get all the error messages for the given field.
+     *
+     * @param  {String} field
+     * @return {Array}
+     */
+
+  }, {
+    key: "getAll",
+    value: function getAll(field) {
+      return arrayWrap(this.errors[field] || []);
+    }
+    /**
+     * Get the error message for the given fields.
+     *
+     * @param  {...String} fields
+     * @return {Array}
+     */
+
+  }, {
+    key: "only",
+    value: function only() {
+      var _this2 = this;
+
+      var messages = [];
+
+      for (var _len2 = arguments.length, fields = new Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {
+        fields[_key2] = arguments[_key2];
+      }
+
+      fields.forEach(function (field) {
+        var message = _this2.get(field);
+
+        if (message) {
+          messages.push(message);
+        }
+      });
+      return messages;
+    }
+    /**
+     * Get all the errors in a flat array.
+     *
+     * @return {Array}
+     */
+
+  }, {
+    key: "flatten",
+    value: function flatten() {
+      return Object.values(this.errors).reduce(function (a, b) {
+        return a.concat(b);
+      }, []);
+    }
+    /**
+     * Clear one or all error fields.
+     *
+     * @param {String|undefined} field
+     */
+
+  }, {
+    key: "clear",
+    value: function clear(field) {
+      var _this3 = this;
+
+      var errors = {};
+
+      if (field) {
+        Object.keys(this.errors).forEach(function (key) {
+          if (key !== field) {
+            errors[key] = _this3.errors[key];
+          }
+        });
+      }
+
+      this.set(errors);
+    }
+  }]);
+
+  return Errors;
+}();
+
+
+// CONCATENATED MODULE: ./src/Form.js
+function Form_typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { Form_typeof = function _typeof(obj) { return typeof obj; }; } else { Form_typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return Form_typeof(obj); }
+
+function Form_objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { Form_defineProperty(target, key, source[key]); }); } return target; }
+
+function Form_defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function Form_classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function Form_defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function Form_createClass(Constructor, protoProps, staticProps) { if (protoProps) Form_defineProperties(Constructor.prototype, protoProps); if (staticProps) Form_defineProperties(Constructor, staticProps); return Constructor; }
+
+
+
+
+
+var Form_Form =
+/*#__PURE__*/
+function () {
+  /**
+   * Create a new form instance.
+   *
+   * @param {Object} data
+   */
+  function Form() {
+    var data = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+
+    Form_classCallCheck(this, Form);
+
+    this.busy = false;
+    this.successful = false;
+    this.errors = new Errors_Errors();
+    this.originalData = deepCopy(data);
+    Object.assign(this, data);
+  }
+  /**
+   * Fill form data.
+   *
+   * @param {Object} data
+   */
+
+
+  Form_createClass(Form, [{
+    key: "fill",
+    value: function fill(data) {
+      var _this = this;
+
+      this.keys().forEach(function (key) {
+        _this[key] = data[key];
+      });
+    }
+    /**
+     * Get the form data.
+     *
+     * @return {Object}
+     */
+
+  }, {
+    key: "data",
+    value: function data() {
+      var _this2 = this;
+
+      return this.keys().reduce(function (data, key) {
+        return Form_objectSpread({}, data, Form_defineProperty({}, key, _this2[key]));
+      }, {});
+    }
+    /**
+     * Get the form data keys.
+     *
+     * @return {Array}
+     */
+
+  }, {
+    key: "keys",
+    value: function keys() {
+      return Object.keys(this).filter(function (key) {
+        return !Form.ignore.includes(key);
+      });
+    }
+    /**
+     * Start processing the form.
+     */
+
+  }, {
+    key: "startProcessing",
+    value: function startProcessing() {
+      this.errors.clear();
+      this.busy = true;
+      this.successful = false;
+    }
+    /**
+     * Finish processing the form.
+     */
+
+  }, {
+    key: "finishProcessing",
+    value: function finishProcessing() {
+      this.busy = false;
+      this.successful = true;
+    }
+    /**
+     * Clear the form errors.
+     */
+
+  }, {
+    key: "clear",
+    value: function clear() {
+      this.errors.clear();
+      this.successful = false;
+    }
+    /**
+     * Reset the form fields.
+     */
+
+  }, {
+    key: "reset",
+    value: function reset() {
+      var _this3 = this;
+
+      Object.keys(this).filter(function (key) {
+        return !Form.ignore.includes(key);
+      }).forEach(function (key) {
+        _this3[key] = deepCopy(_this3.originalData[key]);
+      });
+    }
+    /**
+     * Submit the form via a GET request.
+     *
+     * @param  {String} url
+     * @param  {Object} config (axios config)
+     * @return {Promise}
+     */
+
+  }, {
+    key: "get",
+    value: function get(url) {
+      var config = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+      return this.submit('get', url, config);
+    }
+    /**
+     * Submit the form via a POST request.
+     *
+     * @param  {String} url
+     * @param  {Object} config (axios config)
+     * @return {Promise}
+     */
+
+  }, {
+    key: "post",
+    value: function post(url) {
+      var config = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+      return this.submit('post', url, config);
+    }
+    /**
+     * Submit the form via a PATCH request.
+     *
+     * @param  {String} url
+     * @param  {Object} config (axios config)
+     * @return {Promise}
+     */
+
+  }, {
+    key: "patch",
+    value: function patch(url) {
+      var config = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+      return this.submit('patch', url, config);
+    }
+    /**
+     * Submit the form via a PUT request.
+     *
+     * @param  {String} url
+     * @param  {Object} config (axios config)
+     * @return {Promise}
+     */
+
+  }, {
+    key: "put",
+    value: function put(url) {
+      var config = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+      return this.submit('put', url, config);
+    }
+    /**
+     * Submit the form via a DELETE request.
+     *
+     * @param  {String} url
+     * @param  {Object} config (axios config)
+     * @return {Promise}
+     */
+
+  }, {
+    key: "delete",
+    value: function _delete(url) {
+      var config = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+      return this.submit('delete', url, config);
+    }
+    /**
+     * Submit the form data via an HTTP request.
+     *
+     * @param  {String} method (get, post, patch, put)
+     * @param  {String} url
+     * @param  {Object} config (axios config)
+     * @return {Promise}
+     */
+
+  }, {
+    key: "submit",
+    value: function submit(method, url) {
+      var _this4 = this;
+
+      var config = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
+      this.startProcessing();
+      var data = method === 'get' ? {
+        params: this.data()
+      } : this.data();
+      return new Promise(function (resolve, reject) {
+        (Form.axios || external_axios_default.a).request(Form_objectSpread({
+          url: _this4.route(url),
+          method: method,
+          data: data
+        }, config)).then(function (response) {
+          _this4.finishProcessing();
+
+          resolve(response);
+        }).catch(function (error) {
+          _this4.busy = false;
+
+          if (error.response) {
+            _this4.errors.set(_this4.extractErrors(error.response));
+          }
+
+          reject(error);
+        });
+      });
+    }
+    /**
+     * Extract the errors from the response object.
+     *
+     * @param  {Object} response
+     * @return {Object}
+     */
+
+  }, {
+    key: "extractErrors",
+    value: function extractErrors(response) {
+      if (!response.data || Form_typeof(response.data) !== 'object') {
+        return {
+          error: Form.errorMessage
+        };
+      }
+
+      if (response.data.errors) {
+        return Form_objectSpread({}, response.data.errors);
+      }
+
+      if (response.data.message) {
+        return {
+          error: response.data.message
+        };
+      }
+
+      return Form_objectSpread({}, response.data);
+    }
+    /**
+     * Get a named route.
+     *
+     * @param  {String} name
+     * @return {Object} parameters
+     * @return {String}
+     */
+
+  }, {
+    key: "route",
+    value: function route(name) {
+      var parameters = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+      var url = name;
+
+      if (Form.routes.hasOwnProperty(name)) {
+        url = decodeURI(Form.routes[name]);
+      }
+
+      if (Form_typeof(parameters) !== 'object') {
+        parameters = {
+          id: parameters
+        };
+      }
+
+      Object.keys(parameters).forEach(function (key) {
+        url = url.replace("{".concat(key, "}"), parameters[key]);
+      });
+      return url;
+    }
+    /**
+     * Clear errors on keydown.
+     *
+     * @param {KeyboardEvent} event
+     */
+
+  }, {
+    key: "onKeydown",
+    value: function onKeydown(event) {
+      if (event.target.name) {
+        this.errors.clear(event.target.name);
+      }
+    }
+  }]);
+
+  return Form;
+}();
+
+Form_Form.routes = {};
+Form_Form.errorMessage = 'Something went wrong. Please try again.';
+Form_Form.ignore = ['busy', 'successful', 'errors', 'originalData'];
+/* harmony default export */ var src_Form = (Form_Form);
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules//.cache//vue-loader","cacheIdentifier":"d2817be2-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/HasError.vue?vue&type=template&id=fcc9e406&
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return (_vm.form.errors.has(_vm.field))?_c('div',{staticClass:"help-block invalid-feedback",domProps:{"innerHTML":_vm._s(_vm.form.errors.get(_vm.field))}}):_vm._e()}
+var staticRenderFns = []
+
+
+// CONCATENATED MODULE: ./src/components/HasError.vue?vue&type=template&id=fcc9e406&
+
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/vue-loader/lib??vue-loader-options!./src/components/HasError.vue?vue&type=script&lang=js&
+//
+//
+//
+//
+/* harmony default export */ var HasErrorvue_type_script_lang_js_ = ({
+  name: 'has-error',
+  props: {
+    form: {
+      type: Object,
+      required: true
+    },
+    field: {
+      type: String,
+      required: true
+    }
+  }
+});
+// CONCATENATED MODULE: ./src/components/HasError.vue?vue&type=script&lang=js&
+ /* harmony default export */ var components_HasErrorvue_type_script_lang_js_ = (HasErrorvue_type_script_lang_js_); 
+// CONCATENATED MODULE: ./node_modules/vue-loader/lib/runtime/componentNormalizer.js
+/* globals __VUE_SSR_CONTEXT__ */
+
+// IMPORTANT: Do NOT use ES2015 features in this file (except for modules).
+// This module is a runtime utility for cleaner component module output and will
+// be included in the final webpack user bundle.
+
+function normalizeComponent (
+  scriptExports,
+  render,
+  staticRenderFns,
+  functionalTemplate,
+  injectStyles,
+  scopeId,
+  moduleIdentifier, /* server only */
+  shadowMode /* vue-cli only */
+) {
+  // Vue.extend constructor export interop
+  var options = typeof scriptExports === 'function'
+    ? scriptExports.options
+    : scriptExports
+
+  // render functions
+  if (render) {
+    options.render = render
+    options.staticRenderFns = staticRenderFns
+    options._compiled = true
+  }
+
+  // functional template
+  if (functionalTemplate) {
+    options.functional = true
+  }
+
+  // scopedId
+  if (scopeId) {
+    options._scopeId = 'data-v-' + scopeId
+  }
+
+  var hook
+  if (moduleIdentifier) { // server build
+    hook = function (context) {
+      // 2.3 injection
+      context =
+        context || // cached call
+        (this.$vnode && this.$vnode.ssrContext) || // stateful
+        (this.parent && this.parent.$vnode && this.parent.$vnode.ssrContext) // functional
+      // 2.2 with runInNewContext: true
+      if (!context && typeof __VUE_SSR_CONTEXT__ !== 'undefined') {
+        context = __VUE_SSR_CONTEXT__
+      }
+      // inject component styles
+      if (injectStyles) {
+        injectStyles.call(this, context)
+      }
+      // register component module identifier for async chunk inferrence
+      if (context && context._registeredComponents) {
+        context._registeredComponents.add(moduleIdentifier)
+      }
+    }
+    // used by ssr in case component is cached and beforeCreate
+    // never gets called
+    options._ssrRegister = hook
+  } else if (injectStyles) {
+    hook = shadowMode
+      ? function () { injectStyles.call(this, this.$root.$options.shadowRoot) }
+      : injectStyles
+  }
+
+  if (hook) {
+    if (options.functional) {
+      // for template-only hot-reload because in that case the render fn doesn't
+      // go through the normalizer
+      options._injectStyles = hook
+      // register for functioal component in vue file
+      var originalRender = options.render
+      options.render = function renderWithStyleInjection (h, context) {
+        hook.call(context)
+        return originalRender(h, context)
+      }
+    } else {
+      // inject component registration as beforeCreate hook
+      var existing = options.beforeCreate
+      options.beforeCreate = existing
+        ? [].concat(existing, hook)
+        : [hook]
+    }
+  }
+
+  return {
+    exports: scriptExports,
+    options: options
+  }
+}
+
+// CONCATENATED MODULE: ./src/components/HasError.vue
+
+
+
+
+
+/* normalize component */
+
+var component = normalizeComponent(
+  components_HasErrorvue_type_script_lang_js_,
+  render,
+  staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+component.options.__file = "HasError.vue"
+/* harmony default export */ var HasError = (component.exports);
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules//.cache//vue-loader","cacheIdentifier":"d2817be2-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/AlertError.vue?vue&type=template&id=5610eddd&
+var AlertErrorvue_type_template_id_5610eddd_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return (_vm.form.errors.any())?_c('div',{staticClass:"alert alert-danger alert-dismissible",attrs:{"role":"alert"}},[(_vm.dismissible)?_c('button',{staticClass:"close",attrs:{"type":"button","aria-label":"Close"},on:{"click":_vm.dismiss}},[_c('span',{attrs:{"aria-hidden":"true"}},[_vm._v("×")])]):_vm._e(),_vm._t("default",[(_vm.form.errors.has('error'))?_c('div',{domProps:{"innerHTML":_vm._s(_vm.form.errors.get('error'))}}):_c('div',{domProps:{"innerHTML":_vm._s(_vm.message)}})])],2):_vm._e()}
+var AlertErrorvue_type_template_id_5610eddd_staticRenderFns = []
+
+
+// CONCATENATED MODULE: ./src/components/AlertError.vue?vue&type=template&id=5610eddd&
+
+// CONCATENATED MODULE: ./src/components/Alert.js
+/* harmony default export */ var Alert = ({
+  props: {
+    form: {
+      type: Object,
+      required: true
+    },
+    dismissible: {
+      type: Boolean,
+      default: true
+    }
+  },
+  methods: {
+    dismiss: function dismiss() {
+      if (this.dismissible) {
+        this.form.clear();
+      }
+    }
+  }
+});
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/vue-loader/lib??vue-loader-options!./src/components/AlertError.vue?vue&type=script&lang=js&
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ var AlertErrorvue_type_script_lang_js_ = ({
+  name: 'alert-error',
+  extends: Alert,
+  props: {
+    message: {
+      type: String,
+      default: 'There were some problems with your input.'
+    }
+  }
+});
+// CONCATENATED MODULE: ./src/components/AlertError.vue?vue&type=script&lang=js&
+ /* harmony default export */ var components_AlertErrorvue_type_script_lang_js_ = (AlertErrorvue_type_script_lang_js_); 
+// CONCATENATED MODULE: ./src/components/AlertError.vue
+
+
+
+
+
+/* normalize component */
+
+var AlertError_component = normalizeComponent(
+  components_AlertErrorvue_type_script_lang_js_,
+  AlertErrorvue_type_template_id_5610eddd_render,
+  AlertErrorvue_type_template_id_5610eddd_staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+AlertError_component.options.__file = "AlertError.vue"
+/* harmony default export */ var AlertError = (AlertError_component.exports);
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules//.cache//vue-loader","cacheIdentifier":"d2817be2-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/AlertErrors.vue?vue&type=template&id=40d77fd7&
+var AlertErrorsvue_type_template_id_40d77fd7_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return (_vm.form.errors.any())?_c('div',{staticClass:"alert alert-danger alert-dismissible",attrs:{"role":"alert"}},[(_vm.dismissible)?_c('button',{staticClass:"close",attrs:{"type":"button","aria-label":"Close"},on:{"click":_vm.dismiss}},[_c('span',{attrs:{"aria-hidden":"true"}},[_vm._v("×")])]):_vm._e(),(_vm.message)?_c('div',{domProps:{"innerHTML":_vm._s(_vm.message)}}):_vm._e(),_c('ul',_vm._l((_vm.form.errors.flatten()),function(error){return _c('li',{domProps:{"innerHTML":_vm._s(error)}})}))]):_vm._e()}
+var AlertErrorsvue_type_template_id_40d77fd7_staticRenderFns = []
+
+
+// CONCATENATED MODULE: ./src/components/AlertErrors.vue?vue&type=template&id=40d77fd7&
+
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/vue-loader/lib??vue-loader-options!./src/components/AlertErrors.vue?vue&type=script&lang=js&
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ var AlertErrorsvue_type_script_lang_js_ = ({
+  name: 'alert-errors',
+  extends: Alert,
+  props: {
+    message: {
+      type: String,
+      default: 'There were some problems with your input.'
+    }
+  }
+});
+// CONCATENATED MODULE: ./src/components/AlertErrors.vue?vue&type=script&lang=js&
+ /* harmony default export */ var components_AlertErrorsvue_type_script_lang_js_ = (AlertErrorsvue_type_script_lang_js_); 
+// CONCATENATED MODULE: ./src/components/AlertErrors.vue
+
+
+
+
+
+/* normalize component */
+
+var AlertErrors_component = normalizeComponent(
+  components_AlertErrorsvue_type_script_lang_js_,
+  AlertErrorsvue_type_template_id_40d77fd7_render,
+  AlertErrorsvue_type_template_id_40d77fd7_staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+AlertErrors_component.options.__file = "AlertErrors.vue"
+/* harmony default export */ var AlertErrors = (AlertErrors_component.exports);
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules//.cache//vue-loader","cacheIdentifier":"d2817be2-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/AlertSuccess.vue?vue&type=template&id=fd18e236&
+var AlertSuccessvue_type_template_id_fd18e236_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return (_vm.form.successful)?_c('div',{staticClass:"alert alert-success alert-dismissible",attrs:{"role":"alert"}},[(_vm.dismissible)?_c('button',{staticClass:"close",attrs:{"type":"button","aria-label":"Close"},on:{"click":_vm.dismiss}},[_c('span',{attrs:{"aria-hidden":"true"}},[_vm._v("×")])]):_vm._e(),_vm._t("default",[_c('div',{domProps:{"innerHTML":_vm._s(_vm.message)}})])],2):_vm._e()}
+var AlertSuccessvue_type_template_id_fd18e236_staticRenderFns = []
+
+
+// CONCATENATED MODULE: ./src/components/AlertSuccess.vue?vue&type=template&id=fd18e236&
+
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/vue-loader/lib??vue-loader-options!./src/components/AlertSuccess.vue?vue&type=script&lang=js&
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ var AlertSuccessvue_type_script_lang_js_ = ({
+  name: 'alert-success',
+  extends: Alert,
+  props: {
+    message: {
+      type: String,
+      default: ''
+    }
+  }
+});
+// CONCATENATED MODULE: ./src/components/AlertSuccess.vue?vue&type=script&lang=js&
+ /* harmony default export */ var components_AlertSuccessvue_type_script_lang_js_ = (AlertSuccessvue_type_script_lang_js_); 
+// CONCATENATED MODULE: ./src/components/AlertSuccess.vue
+
+
+
+
+
+/* normalize component */
+
+var AlertSuccess_component = normalizeComponent(
+  components_AlertSuccessvue_type_script_lang_js_,
+  AlertSuccessvue_type_template_id_fd18e236_render,
+  AlertSuccessvue_type_template_id_fd18e236_staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+AlertSuccess_component.options.__file = "AlertSuccess.vue"
+/* harmony default export */ var AlertSuccess = (AlertSuccess_component.exports);
+// CONCATENATED MODULE: ./src/index.js
+
+
+
+
+
+
+
+// CONCATENATED MODULE: ./node_modules/@vue/cli-service/lib/commands/build/entry-lib.js
+/* concated harmony reexport Form */__webpack_require__.d(__webpack_exports__, "Form", function() { return src_Form; });
+/* concated harmony reexport Errors */__webpack_require__.d(__webpack_exports__, "Errors", function() { return Errors_Errors; });
+/* concated harmony reexport HasError */__webpack_require__.d(__webpack_exports__, "HasError", function() { return HasError; });
+/* concated harmony reexport AlertError */__webpack_require__.d(__webpack_exports__, "AlertError", function() { return AlertError; });
+/* concated harmony reexport AlertErrors */__webpack_require__.d(__webpack_exports__, "AlertErrors", function() { return AlertErrors; });
+/* concated harmony reexport AlertSuccess */__webpack_require__.d(__webpack_exports__, "AlertSuccess", function() { return AlertSuccess; });
+
+
+/* harmony default export */ var entry_lib = __webpack_exports__["default"] = (src_Form);
+
+
+
+/***/ })
+
+/******/ });
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/backend/HomeComponent.vue?vue&type=template&id=f3444070&scoped=true&":
+/*!************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/backend/HomeComponent.vue?vue&type=template&id=f3444070&scoped=true& ***!
+  \************************************************************************************************************************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -37582,17 +61780,124 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "container" }, [
-      _c("div", { staticClass: "row justify-content-center" }, [
-        _c("div", { staticClass: "col-md-8" }, [
-          _c("div", { staticClass: "card" }, [
-            _c("div", { staticClass: "card-header" }, [
-              _vm._v("Dashboard Component")
+      _c("div", { staticClass: "content-header" }, [
+        _c("div", { staticClass: "container-fluid" }, [
+          _c("div", { staticClass: "row mb-2" }, [
+            _c("div", { staticClass: "col-sm-6" }, [
+              _c("h1", { staticClass: "m-0 text-dark" }, [_vm._v("Dashboard")])
             ]),
             _vm._v(" "),
-            _c("div", { staticClass: "card-body" }, [
-              _vm._v(
-                "\n                    I'm an dashboard component.\n                "
-              )
+            _c("div", { staticClass: "col-sm-6" }, [
+              _c("ol", { staticClass: "breadcrumb float-sm-right" }, [
+                _c("li", { staticClass: "breadcrumb-item" }, [_vm._v("Home")]),
+                _vm._v(" "),
+                _c("li", { staticClass: "breadcrumb-item active" }, [
+                  _c("a", { attrs: { href: "" } }, [_vm._v("Dashboard")])
+                ])
+              ])
+            ])
+          ])
+        ])
+      ]),
+      _vm._v(" "),
+      _c("section", { staticClass: "content" }, [
+        _c("div", { staticClass: "container-fluid" }, [
+          _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "col-lg-3 col-6" }, [
+              _c("div", { staticClass: "small-box bg-info" }, [
+                _c("div", { staticClass: "inner" }, [
+                  _c("h3", [_vm._v("150")]),
+                  _vm._v(" "),
+                  _c("p", [_vm._v("New Posts")])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "icon" }, [
+                  _c("i", { staticClass: "ion ion-bag" })
+                ]),
+                _vm._v(" "),
+                _c(
+                  "a",
+                  { staticClass: "small-box-footer", attrs: { href: "#" } },
+                  [
+                    _vm._v("More info "),
+                    _c("i", { staticClass: "fas fa-arrow-circle-right" })
+                  ]
+                )
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-lg-3 col-6" }, [
+              _c("div", { staticClass: "small-box bg-success" }, [
+                _c("div", { staticClass: "inner" }, [
+                  _c("h3", [
+                    _vm._v("53"),
+                    _c("sup", { staticStyle: { "font-size": "20px" } }, [
+                      _vm._v("%")
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("p", [_vm._v("Comment Rate")])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "icon" }, [
+                  _c("i", { staticClass: "ion ion-stats-bars" })
+                ]),
+                _vm._v(" "),
+                _c(
+                  "a",
+                  { staticClass: "small-box-footer", attrs: { href: "#" } },
+                  [
+                    _vm._v("More info "),
+                    _c("i", { staticClass: "fas fa-arrow-circle-right" })
+                  ]
+                )
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-lg-3 col-6" }, [
+              _c("div", { staticClass: "small-box bg-warning" }, [
+                _c("div", { staticClass: "inner" }, [
+                  _c("h3", [_vm._v("44")]),
+                  _vm._v(" "),
+                  _c("p", [_vm._v("Total User")])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "icon" }, [
+                  _c("i", { staticClass: "ion ion-person-add" })
+                ]),
+                _vm._v(" "),
+                _c(
+                  "a",
+                  { staticClass: "small-box-footer", attrs: { href: "#" } },
+                  [
+                    _vm._v("More info "),
+                    _c("i", { staticClass: "fas fa-arrow-circle-right" })
+                  ]
+                )
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-lg-3 col-6" }, [
+              _c("div", { staticClass: "small-box bg-danger" }, [
+                _c("div", { staticClass: "inner" }, [
+                  _c("h3", [_vm._v("65")]),
+                  _vm._v(" "),
+                  _c("p", [_vm._v("Total Like's")])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "icon" }, [
+                  _c("i", { staticClass: "ion ion-pie-graph" })
+                ]),
+                _vm._v(" "),
+                _c(
+                  "a",
+                  { staticClass: "small-box-footer", attrs: { href: "#" } },
+                  [
+                    _vm._v("More info "),
+                    _c("i", { staticClass: "fas fa-arrow-circle-right" })
+                  ]
+                )
+              ])
             ])
           ])
         ])
@@ -37606,10 +61911,10 @@ render._withStripped = true
 
 /***/ }),
 
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Profile.vue?vue&type=template&id=3bd692e4&":
-/*!**********************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Profile.vue?vue&type=template&id=3bd692e4& ***!
-  \**********************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/backend/category/CreateComponent.vue?vue&type=template&id=72365216&scoped=true&":
+/*!***********************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/backend/category/CreateComponent.vue?vue&type=template&id=72365216&scoped=true& ***!
+  \***********************************************************************************************************************************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -37621,24 +61926,381 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div", { staticClass: "container" }, [
+    _c("div", { staticClass: "content-header" }, [
+      _c("div", { staticClass: "container-fluid" }, [
+        _c("div", { staticClass: "row mb-2" }, [
+          _vm._m(0),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-sm-6" }, [
+            _c("ol", { staticClass: "breadcrumb float-sm-right" }, [
+              _c("li", { staticClass: "breadcrumb-item" }, [_vm._v("Home")]),
+              _vm._v(" "),
+              _c(
+                "li",
+                { staticClass: "breadcrumb-item active" },
+                [
+                  _c("router-link", { attrs: { to: "/categories/create" } }, [
+                    _vm._v("Add Category")
+                  ])
+                ],
+                1
+              )
+            ])
+          ])
+        ])
+      ])
+    ]),
+    _vm._v(" "),
+    _c("section", { staticClass: "content" }, [
+      _c("div", { staticClass: "container-fluid" }, [
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-8 offset-2" }, [
+            _c("div", { staticClass: "card card-primary" }, [
+              _vm._m(1),
+              _vm._v(" "),
+              _c(
+                "form",
+                {
+                  attrs: { role: "form" },
+                  on: {
+                    submit: function($event) {
+                      $event.preventDefault()
+                      return _vm.addCategory($event)
+                    }
+                  }
+                },
+                [
+                  _c("div", { staticClass: "card-body" }, [
+                    _c(
+                      "div",
+                      { staticClass: "form-group" },
+                      [
+                        _c("label", { attrs: { for: "name" } }, [
+                          _vm._v("Category Name")
+                        ]),
+                        _vm._v(" "),
+                        _c("input", {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.form.name,
+                              expression: "form.name"
+                            }
+                          ],
+                          staticClass: "form-control",
+                          class: { "is-invalid": _vm.form.errors.has("name") },
+                          attrs: {
+                            type: "text",
+                            id: "name",
+                            placeholder: "Enter Category Name"
+                          },
+                          domProps: { value: _vm.form.name },
+                          on: {
+                            input: function($event) {
+                              if ($event.target.composing) {
+                                return
+                              }
+                              _vm.$set(_vm.form, "name", $event.target.value)
+                            }
+                          }
+                        }),
+                        _vm._v(" "),
+                        _c("has-error", {
+                          attrs: { form: _vm.form, field: "name" }
+                        })
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _c("label", [_vm._v("Status")]),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      { staticClass: "form-group clearfix" },
+                      [
+                        _c("div", { staticClass: "icheck-primary d-inline" }, [
+                          _c("input", {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.form.status,
+                                expression: "form.status"
+                              }
+                            ],
+                            attrs: {
+                              type: "radio",
+                              id: "active",
+                              value: "active"
+                            },
+                            domProps: {
+                              checked: _vm._q(_vm.form.status, "active")
+                            },
+                            on: {
+                              change: function($event) {
+                                return _vm.$set(_vm.form, "status", "active")
+                              }
+                            }
+                          }),
+                          _vm._v(" "),
+                          _c("label", { attrs: { for: "active" } }, [
+                            _vm._v(
+                              "Active\n                                        "
+                            )
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "icheck-primary d-inline" }, [
+                          _c("input", {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.form.status,
+                                expression: "form.status"
+                              }
+                            ],
+                            attrs: {
+                              type: "radio",
+                              id: "inactive",
+                              value: "inactive"
+                            },
+                            domProps: {
+                              checked: _vm._q(_vm.form.status, "inactive")
+                            },
+                            on: {
+                              change: function($event) {
+                                return _vm.$set(_vm.form, "status", "inactive")
+                              }
+                            }
+                          }),
+                          _vm._v(" "),
+                          _c("label", { attrs: { for: "inactive" } }, [
+                            _vm._v(
+                              "Inactive\n                                        "
+                            )
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c("span", {
+                          class: { "is-invalid": _vm.form.errors.has("status") }
+                        }),
+                        _vm._v(" "),
+                        _c("has-error", {
+                          attrs: { form: _vm.form, field: "status" }
+                        })
+                      ],
+                      1
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "card-footer" }, [
+                    _c(
+                      "button",
+                      {
+                        staticClass: "btn btn-primary",
+                        attrs: { type: "submit", disabled: _vm.form.busy }
+                      },
+                      [_vm._v("Add Category")]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "button",
+                      {
+                        staticClass: "btn btn-secondary",
+                        attrs: { type: "reset" }
+                      },
+                      [_vm._v("Reset")]
+                    )
+                  ])
+                ]
+              )
+            ])
+          ])
+        ])
+      ])
+    ])
+  ])
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "container" }, [
-      _c("div", { staticClass: "row justify-content-center" }, [
-        _c("div", { staticClass: "col-md-8" }, [
+    return _c("div", { staticClass: "col-sm-6" }, [
+      _c("h1", { staticClass: "m-0 text-dark" }, [_vm._v("Category")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "card-header" }, [
+      _c("h3", { staticClass: "card-title" }, [_vm._v("Add Category")])
+    ])
+  }
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/backend/category/IndexComponent.vue?vue&type=template&id=7d6f2d26&scoped=true&":
+/*!**********************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/backend/category/IndexComponent.vue?vue&type=template&id=7d6f2d26&scoped=true& ***!
+  \**********************************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "container" }, [
+    _c("div", { staticClass: "content-header" }, [
+      _c("div", { staticClass: "container-fluid" }, [
+        _c("div", { staticClass: "row mb-2" }, [
+          _vm._m(0),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-sm-6" }, [
+            _c("ol", { staticClass: "breadcrumb float-sm-right" }, [
+              _c("li", { staticClass: "breadcrumb-item" }, [_vm._v("Home")]),
+              _vm._v(" "),
+              _c(
+                "li",
+                { staticClass: "breadcrumb-item active" },
+                [
+                  _c("router-link", { attrs: { to: "/home/categories" } }, [
+                    _vm._v("Manage Category")
+                  ])
+                ],
+                1
+              )
+            ])
+          ])
+        ])
+      ])
+    ]),
+    _vm._v(" "),
+    _vm._m(1)
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-sm-6" }, [
+      _c("h1", { staticClass: "m-0 text-dark" }, [_vm._v("Category")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("section", { staticClass: "content" }, [
+      _c("div", { staticClass: "row" }, [
+        _c("div", { staticClass: "col-12" }, [
           _c("div", { staticClass: "card" }, [
             _c("div", { staticClass: "card-header" }, [
-              _vm._v("User Profile Component")
+              _c("h3", { staticClass: "card-title" }, [
+                _vm._v("Category List of Datatable")
+              ])
             ]),
             _vm._v(" "),
             _c("div", { staticClass: "card-body" }, [
-              _vm._v(
-                "\n                    I'm an user Profile component.\n                "
+              _c(
+                "table",
+                {
+                  staticClass: "table table-bordered table-striped",
+                  attrs: { id: "categoryDataTable" }
+                },
+                [
+                  _c("thead", [
+                    _c("tr", [
+                      _c("th", [_vm._v("Sl No.")]),
+                      _vm._v(" "),
+                      _c("th", [_vm._v("Category Name")]),
+                      _vm._v(" "),
+                      _c("th", [_vm._v("Category Image")]),
+                      _vm._v(" "),
+                      _c("th", [_vm._v("Status")]),
+                      _vm._v(" "),
+                      _c("th", [_vm._v("Action")])
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("tbody", [
+                    _c("tr", [
+                      _c("td", [_vm._v("1")]),
+                      _vm._v(" "),
+                      _c("td", [_vm._v("1")]),
+                      _vm._v(" "),
+                      _c("td", [
+                        _c("img", {
+                          attrs: {
+                            src: "",
+                            alt: "Category Image",
+                            width: "100",
+                            height: "70"
+                          }
+                        })
+                      ]),
+                      _vm._v(" "),
+                      _c("td", [
+                        _c("input", {
+                          attrs: {
+                            type: "checkbox",
+                            id: "categoryStatusToggle",
+                            "data-id": "",
+                            "data-toggle": "toggle",
+                            "data-size": "xs",
+                            "data-on": "Active",
+                            "data-off": "InActive",
+                            "data-onstyle": "success",
+                            "data-offstyle": "danger"
+                          }
+                        })
+                      ]),
+                      _vm._v(" "),
+                      _c("td", [
+                        _c(
+                          "button",
+                          {
+                            staticClass: "btn btn-info btn-sm",
+                            attrs: {
+                              type: "submit",
+                              id: "showCategory",
+                              title: "View Category"
+                            }
+                          },
+                          [_c("i", { staticClass: "fas fa-eye" })]
+                        )
+                      ])
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("tfoot", [
+                    _c("tr", [
+                      _c("th", [_vm._v("Sl No.")]),
+                      _vm._v(" "),
+                      _c("th", [_vm._v("Category Name")]),
+                      _vm._v(" "),
+                      _c("th", [_vm._v("Category Image")]),
+                      _vm._v(" "),
+                      _c("th", [_vm._v("Status")]),
+                      _vm._v(" "),
+                      _c("th", [_vm._v("Action")])
+                    ])
+                  ])
+                ]
               )
             ])
           ])
@@ -52856,28 +77518,42 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var vue_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue-router */ "./node_modules/vue-router/dist/vue-router.esm.js");
-__webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js"); // window.Vue = require('vue');
+/* harmony import */ var _routes_routes__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./routes/routes */ "./resources/js/routes/routes.js");
+/* harmony import */ var vform__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! vform */ "./node_modules/vform/dist/vform.common.js");
+/* harmony import */ var vform__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(vform__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! sweetalert2 */ "./node_modules/sweetalert2/dist/sweetalert2.all.js");
+/* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(sweetalert2__WEBPACK_IMPORTED_MODULE_4__);
+__webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
+
+__webpack_require__(/*! ./custom */ "./resources/js/custom.js"); // Vue Js...
+// window.Vue = require('vue');
 
 
+ // Globally use Vue Js...
+
+window.Vue = vue__WEBPACK_IMPORTED_MODULE_0___default.a; // Vue Router...
 
 
-vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]);
-var routes = [{
-  path: '/dashboard',
-  component: __webpack_require__(/*! ./components/Dashboard.vue */ "./resources/js/components/Dashboard.vue")["default"]
-}, {
-  path: '/profile',
-  component: __webpack_require__(/*! ./components/Profile.vue */ "./resources/js/components/Profile.vue")["default"]
-}];
+vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]); // Vue Components Routes path...
+
+
 var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
   mode: 'history',
-  routes: routes
+  routes: _routes_routes__WEBPACK_IMPORTED_MODULE_2__["routes"]
 }); // Vue.component('example-component', require('./components/ExampleComponent.vue').default);
+// V-Form validation plugin...
 
+ // Globally Use V-Form...
+
+window.Form = vform__WEBPACK_IMPORTED_MODULE_3__["Form"];
+vue__WEBPACK_IMPORTED_MODULE_0___default.a.component(vform__WEBPACK_IMPORTED_MODULE_3__["HasError"].name, vform__WEBPACK_IMPORTED_MODULE_3__["HasError"]);
+vue__WEBPACK_IMPORTED_MODULE_0___default.a.component(vform__WEBPACK_IMPORTED_MODULE_3__["AlertError"].name, vform__WEBPACK_IMPORTED_MODULE_3__["AlertError"]); // Sweet Alert2 ES6 Modules or TypeScript...
+
+
+window.Swal = sweetalert2__WEBPACK_IMPORTED_MODULE_4___default.a;
 var app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
-  el: '#app',
   router: router
-});
+}).$mount('#app');
 
 /***/ }),
 
@@ -52902,6 +77578,16 @@ try {
   __webpack_require__(/*! bootstrap */ "./node_modules/bootstrap/dist/js/bootstrap.js");
 
   __webpack_require__(/*! admin-lte */ "./node_modules/admin-lte/dist/js/adminlte.min.js");
+
+  __webpack_require__(/*! @fortawesome/fontawesome-free */ "./node_modules/@fortawesome/fontawesome-free/js/fontawesome.js");
+
+  __webpack_require__(/*! admin-lte/plugins/datatables/jquery.dataTables.min */ "./node_modules/admin-lte/plugins/datatables/jquery.dataTables.min.js");
+
+  __webpack_require__(/*! admin-lte/plugins/datatables-bs4/js/dataTables.bootstrap4.min */ "./node_modules/admin-lte/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js");
+
+  __webpack_require__(/*! admin-lte/plugins/datatables-responsive/js/dataTables.responsive.min */ "./node_modules/admin-lte/plugins/datatables-responsive/js/dataTables.responsive.min.js");
+
+  __webpack_require__(/*! admin-lte/plugins/datatables-responsive/js/responsive.bootstrap4.min */ "./node_modules/admin-lte/plugins/datatables-responsive/js/responsive.bootstrap4.min.js");
 } catch (e) {}
 /**
  * We'll load the axios HTTP library which allows us to easily issue requests
@@ -52928,18 +77614,18 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 /***/ }),
 
-/***/ "./resources/js/components/Dashboard.vue":
-/*!***********************************************!*\
-  !*** ./resources/js/components/Dashboard.vue ***!
-  \***********************************************/
+/***/ "./resources/js/components/backend/HomeComponent.vue":
+/*!***********************************************************!*\
+  !*** ./resources/js/components/backend/HomeComponent.vue ***!
+  \***********************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _Dashboard_vue_vue_type_template_id_040e2ab9___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Dashboard.vue?vue&type=template&id=040e2ab9& */ "./resources/js/components/Dashboard.vue?vue&type=template&id=040e2ab9&");
-/* harmony import */ var _Dashboard_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Dashboard.vue?vue&type=script&lang=js& */ "./resources/js/components/Dashboard.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* harmony import */ var _HomeComponent_vue_vue_type_template_id_f3444070_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./HomeComponent.vue?vue&type=template&id=f3444070&scoped=true& */ "./resources/js/components/backend/HomeComponent.vue?vue&type=template&id=f3444070&scoped=true&");
+/* harmony import */ var _HomeComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./HomeComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/backend/HomeComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
 
@@ -52948,121 +77634,259 @@ __webpack_require__.r(__webpack_exports__);
 /* normalize component */
 
 var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
-  _Dashboard_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _Dashboard_vue_vue_type_template_id_040e2ab9___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _Dashboard_vue_vue_type_template_id_040e2ab9___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  _HomeComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _HomeComponent_vue_vue_type_template_id_f3444070_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _HomeComponent_vue_vue_type_template_id_f3444070_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
   null,
-  null,
+  "f3444070",
   null
   
 )
 
 /* hot reload */
 if (false) { var api; }
-component.options.__file = "resources/js/components/Dashboard.vue"
+component.options.__file = "resources/js/components/backend/HomeComponent.vue"
 /* harmony default export */ __webpack_exports__["default"] = (component.exports);
 
 /***/ }),
 
-/***/ "./resources/js/components/Dashboard.vue?vue&type=script&lang=js&":
-/*!************************************************************************!*\
-  !*** ./resources/js/components/Dashboard.vue?vue&type=script&lang=js& ***!
-  \************************************************************************/
+/***/ "./resources/js/components/backend/HomeComponent.vue?vue&type=script&lang=js&":
+/*!************************************************************************************!*\
+  !*** ./resources/js/components/backend/HomeComponent.vue?vue&type=script&lang=js& ***!
+  \************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Dashboard_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./Dashboard.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Dashboard.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Dashboard_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_HomeComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./HomeComponent.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/backend/HomeComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_HomeComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
 
 /***/ }),
 
-/***/ "./resources/js/components/Dashboard.vue?vue&type=template&id=040e2ab9&":
-/*!******************************************************************************!*\
-  !*** ./resources/js/components/Dashboard.vue?vue&type=template&id=040e2ab9& ***!
-  \******************************************************************************/
+/***/ "./resources/js/components/backend/HomeComponent.vue?vue&type=template&id=f3444070&scoped=true&":
+/*!******************************************************************************************************!*\
+  !*** ./resources/js/components/backend/HomeComponent.vue?vue&type=template&id=f3444070&scoped=true& ***!
+  \******************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Dashboard_vue_vue_type_template_id_040e2ab9___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./Dashboard.vue?vue&type=template&id=040e2ab9& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Dashboard.vue?vue&type=template&id=040e2ab9&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Dashboard_vue_vue_type_template_id_040e2ab9___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_HomeComponent_vue_vue_type_template_id_f3444070_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./HomeComponent.vue?vue&type=template&id=f3444070&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/backend/HomeComponent.vue?vue&type=template&id=f3444070&scoped=true&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_HomeComponent_vue_vue_type_template_id_f3444070_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Dashboard_vue_vue_type_template_id_040e2ab9___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_HomeComponent_vue_vue_type_template_id_f3444070_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 
 /***/ }),
 
-/***/ "./resources/js/components/Profile.vue":
-/*!*********************************************!*\
-  !*** ./resources/js/components/Profile.vue ***!
-  \*********************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _Profile_vue_vue_type_template_id_3bd692e4___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Profile.vue?vue&type=template&id=3bd692e4& */ "./resources/js/components/Profile.vue?vue&type=template&id=3bd692e4&");
-/* harmony import */ var _Profile_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Profile.vue?vue&type=script&lang=js& */ "./resources/js/components/Profile.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
-
-
-
-
-
-/* normalize component */
-
-var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
-  _Profile_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _Profile_vue_vue_type_template_id_3bd692e4___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _Profile_vue_vue_type_template_id_3bd692e4___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
-  false,
-  null,
-  null,
-  null
-  
-)
-
-/* hot reload */
-if (false) { var api; }
-component.options.__file = "resources/js/components/Profile.vue"
-/* harmony default export */ __webpack_exports__["default"] = (component.exports);
-
-/***/ }),
-
-/***/ "./resources/js/components/Profile.vue?vue&type=script&lang=js&":
+/***/ "./resources/js/components/backend/category/CreateComponent.vue":
 /*!**********************************************************************!*\
-  !*** ./resources/js/components/Profile.vue?vue&type=script&lang=js& ***!
+  !*** ./resources/js/components/backend/category/CreateComponent.vue ***!
   \**********************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Profile_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./Profile.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Profile.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Profile_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+/* harmony import */ var _CreateComponent_vue_vue_type_template_id_72365216_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./CreateComponent.vue?vue&type=template&id=72365216&scoped=true& */ "./resources/js/components/backend/category/CreateComponent.vue?vue&type=template&id=72365216&scoped=true&");
+/* harmony import */ var _CreateComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./CreateComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/backend/category/CreateComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _CreateComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _CreateComponent_vue_vue_type_template_id_72365216_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _CreateComponent_vue_vue_type_template_id_72365216_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  "72365216",
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/backend/category/CreateComponent.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
 
 /***/ }),
 
-/***/ "./resources/js/components/Profile.vue?vue&type=template&id=3bd692e4&":
-/*!****************************************************************************!*\
-  !*** ./resources/js/components/Profile.vue?vue&type=template&id=3bd692e4& ***!
-  \****************************************************************************/
+/***/ "./resources/js/components/backend/category/CreateComponent.vue?vue&type=script&lang=js&":
+/*!***********************************************************************************************!*\
+  !*** ./resources/js/components/backend/category/CreateComponent.vue?vue&type=script&lang=js& ***!
+  \***********************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_CreateComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../node_modules/vue-loader/lib??vue-loader-options!./CreateComponent.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/backend/category/CreateComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_CreateComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/backend/category/CreateComponent.vue?vue&type=template&id=72365216&scoped=true&":
+/*!*****************************************************************************************************************!*\
+  !*** ./resources/js/components/backend/category/CreateComponent.vue?vue&type=template&id=72365216&scoped=true& ***!
+  \*****************************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Profile_vue_vue_type_template_id_3bd692e4___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./Profile.vue?vue&type=template&id=3bd692e4& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Profile.vue?vue&type=template&id=3bd692e4&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Profile_vue_vue_type_template_id_3bd692e4___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CreateComponent_vue_vue_type_template_id_72365216_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../node_modules/vue-loader/lib??vue-loader-options!./CreateComponent.vue?vue&type=template&id=72365216&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/backend/category/CreateComponent.vue?vue&type=template&id=72365216&scoped=true&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CreateComponent_vue_vue_type_template_id_72365216_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Profile_vue_vue_type_template_id_3bd692e4___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CreateComponent_vue_vue_type_template_id_72365216_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
+
+/***/ }),
+
+/***/ "./resources/js/components/backend/category/IndexComponent.vue":
+/*!*********************************************************************!*\
+  !*** ./resources/js/components/backend/category/IndexComponent.vue ***!
+  \*********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _IndexComponent_vue_vue_type_template_id_7d6f2d26_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./IndexComponent.vue?vue&type=template&id=7d6f2d26&scoped=true& */ "./resources/js/components/backend/category/IndexComponent.vue?vue&type=template&id=7d6f2d26&scoped=true&");
+/* harmony import */ var _IndexComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./IndexComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/backend/category/IndexComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _IndexComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _IndexComponent_vue_vue_type_template_id_7d6f2d26_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _IndexComponent_vue_vue_type_template_id_7d6f2d26_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  "7d6f2d26",
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/backend/category/IndexComponent.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/backend/category/IndexComponent.vue?vue&type=script&lang=js&":
+/*!**********************************************************************************************!*\
+  !*** ./resources/js/components/backend/category/IndexComponent.vue?vue&type=script&lang=js& ***!
+  \**********************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_IndexComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../node_modules/vue-loader/lib??vue-loader-options!./IndexComponent.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/backend/category/IndexComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_IndexComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/backend/category/IndexComponent.vue?vue&type=template&id=7d6f2d26&scoped=true&":
+/*!****************************************************************************************************************!*\
+  !*** ./resources/js/components/backend/category/IndexComponent.vue?vue&type=template&id=7d6f2d26&scoped=true& ***!
+  \****************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_IndexComponent_vue_vue_type_template_id_7d6f2d26_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../node_modules/vue-loader/lib??vue-loader-options!./IndexComponent.vue?vue&type=template&id=7d6f2d26&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/backend/category/IndexComponent.vue?vue&type=template&id=7d6f2d26&scoped=true&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_IndexComponent_vue_vue_type_template_id_7d6f2d26_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_IndexComponent_vue_vue_type_template_id_7d6f2d26_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/custom.js":
+/*!********************************!*\
+  !*** ./resources/js/custom.js ***!
+  \********************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! sweetalert2 */ "./node_modules/sweetalert2/dist/sweetalert2.all.js");
+/* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(sweetalert2__WEBPACK_IMPORTED_MODULE_0__);
+// alert();
+// Data table page script...
+// $(function () {
+//     $('#categoryDataTable').DataTable({
+//         "paging": true,
+//         "lengthChange": false,
+//         "searching": false,
+//         "ordering": true,
+//         "info": true,
+//         "autoWidth": true,
+//         "responsive": true,
+//     });
+// });
+
+var Toast = sweetalert2__WEBPACK_IMPORTED_MODULE_0___default.a.mixin({
+  toast: true,
+  position: 'top-end',
+  showConfirmButton: false,
+  timer: 4000,
+  timerProgressBar: true,
+  onOpen: function onOpen(toast) {
+    toast.addEventListener('mouseenter', sweetalert2__WEBPACK_IMPORTED_MODULE_0___default.a.stopTimer);
+    toast.addEventListener('mouseleave', sweetalert2__WEBPACK_IMPORTED_MODULE_0___default.a.resumeTimer);
+  }
+});
+window.Toast = Toast;
+
+/***/ }),
+
+/***/ "./resources/js/routes/routes.js":
+/*!***************************************!*\
+  !*** ./resources/js/routes/routes.js ***!
+  \***************************************/
+/*! exports provided: routes */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "routes", function() { return routes; });
+/* harmony import */ var _components_backend_HomeComponent_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../components/backend/HomeComponent.vue */ "./resources/js/components/backend/HomeComponent.vue");
+/* harmony import */ var _components_backend_category_IndexComponent_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/backend/category/IndexComponent.vue */ "./resources/js/components/backend/category/IndexComponent.vue");
+/* harmony import */ var _components_backend_category_CreateComponent_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/backend/category/CreateComponent.vue */ "./resources/js/components/backend/category/CreateComponent.vue");
+
+
+
+var routes = [{
+  path: '/home',
+  component: _components_backend_HomeComponent_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
+}, {
+  path: '/categories',
+  component: _components_backend_category_IndexComponent_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
+}, {
+  path: '/categories/create',
+  component: _components_backend_category_CreateComponent_vue__WEBPACK_IMPORTED_MODULE_2__["default"]
+}];
 
 /***/ }),
 
@@ -53077,14 +77901,26 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/sass/custom.scss":
+/*!************************************!*\
+  !*** ./resources/sass/custom.scss ***!
+  \************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
 /***/ 0:
-/*!*************************************************************!*\
-  !*** multi ./resources/js/app.js ./resources/sass/app.scss ***!
-  \*************************************************************/
+/*!******************************************************************************************!*\
+  !*** multi ./resources/js/app.js ./resources/sass/custom.scss ./resources/sass/app.scss ***!
+  \******************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(/*! C:\laragon\www\lara-blog-vue\resources\js\app.js */"./resources/js/app.js");
+__webpack_require__(/*! C:\laragon\www\lara-blog-vue\resources\sass\custom.scss */"./resources/sass/custom.scss");
 module.exports = __webpack_require__(/*! C:\laragon\www\lara-blog-vue\resources\sass\app.scss */"./resources/sass/app.scss");
 
 

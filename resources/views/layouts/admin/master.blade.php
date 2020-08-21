@@ -13,7 +13,7 @@
 </head>
 <body class="hold-transition sidebar-mini">
 
-@if(request()->is('home*'))
+@if(Auth::user()->status == 'active')
 
     <div class="wrapper" id="app">
 
@@ -21,12 +21,9 @@
 
         @includeIf('admin.components.left-sidebar')
 
-    <!-- Content Wrapper. Contains page content -->
+            <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
-
-            @yield('content')
-{{--            <router-view></router-view>--}}
-
+            <router-view></router-view>
         </div>
         <!-- /.content-wrapper -->
 
@@ -39,7 +36,6 @@
 
 
     <!-- REQUIRED SCRIPTS -->
-    <script src="{{ mix('js/custom.js') }}"></script>
     <script src="{{ mix('js/app.js') }}"></script>
 </body>
 </html>

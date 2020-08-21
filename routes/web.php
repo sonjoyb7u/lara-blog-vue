@@ -19,11 +19,7 @@ Route::get('/', function () {
 
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/{anypath}', 'HomeController@index')->where('path', '.*');
+Route::get('/{anypath1}/{anypath2}', 'HomeController@index')->where('path', '.*');
+Route::post('/category/store', 'Admin\Category\CategoryController@store')->name('category.store')->middleware('auth');
 
-Route::group(['middleware'=>'auth', 'prefix'=>'home/category', 'as'=>'home.', 'namespace'=>'Admin\Category'], function() {
-    Route::get('index', 'CategoryController@index')->name('category.index');
-});
-
-Route::group(['middleware'=>'auth', 'prefix'=>'home/post', 'as'=>'home.', 'namespace'=>'Admin\Post'], function() {
-    Route::get('index', 'PostController@index')->name('post.index');
-});

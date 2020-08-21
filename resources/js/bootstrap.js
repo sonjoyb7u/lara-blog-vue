@@ -12,6 +12,11 @@ try {
 
     require('bootstrap');
     require('admin-lte');
+    require('@fortawesome/fontawesome-free');
+    require('admin-lte/plugins/datatables/jquery.dataTables.min');
+    require('admin-lte/plugins/datatables-bs4/js/dataTables.bootstrap4.min');
+    require('admin-lte/plugins/datatables-responsive/js/dataTables.responsive.min');
+    require('admin-lte/plugins/datatables-responsive/js/responsive.bootstrap4.min');
 
 } catch (e) {}
 
